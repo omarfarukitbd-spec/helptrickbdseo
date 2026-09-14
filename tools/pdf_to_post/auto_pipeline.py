@@ -69,7 +69,11 @@ def run_pipeline(pdf_path=None, topic=None, category="সাধারণ শি�
     validator_script = os.path.join(BASE_DIR, "tools", "schema_validator", "validate_schema.py")
     subprocess.run([sys.executable, validator_script, "--file", html_file])
 
-    print("[*] Step 5: Preparing Blogger Publication & Prime-Time Schedule (7:00 PM - 8:30 PM BST) ...")
+    print("[*] Step 5: Auditing Google AdSense & Blogger Policy Compliance ...")
+    policy_script = os.path.join(BASE_DIR, "tools", "policy_guard", "policy_scanner.py")
+    policy_res = subprocess.run([sys.executable, policy_script, "--file", html_file])
+
+    print("[*] Step 6: Preparing Blogger Publication & Prime-Time Schedule (7:00 PM - 8:30 PM BST) ...")
     publisher_script = os.path.join(BASE_DIR, "tools", "blogger_publisher", "publisher.py")
     subprocess.run([sys.executable, publisher_script, "--post", meta_file, "--mode", "schedule"])
 
