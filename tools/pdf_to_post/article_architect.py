@@ -69,7 +69,67 @@ def generate_world_class_article(topic, category="সাধারণ শিক�
             print(f"[!] Warning: Scheduler calculation: {e}")
 
     # Construct Inner Article HTML Body
-    html_content = f"""<div class="htbd-post-wrapper" style="font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif; font-size: 17px; line-height: 1.85; color: #202124;">
+    html_content = f"""<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+  .htbd-post-wrapper,
+  .htbd-post-wrapper * {{
+    font-family: 'Hind Siliguri', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }}
+  .htbd-post-wrapper p {{
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+  }}
+  .htbd-heading {{
+    color: #1a73e8 !important;
+    border-left: 5px solid #1a73e8 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }}
+  .htbd-toc-box {{
+    background: #f8fafd !important;
+    border: 1px solid #d2e3fc !important;
+    border-radius: 10px !important;
+    padding: 20px 24px !important;
+    margin: 25px 0 !important;
+    box-shadow: 0 1px 4px rgba(26,115,232,0.06) !important;
+  }}
+  .htbd-toc-list {{
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin: 12px 0 0 0 !important;
+  }}
+  .htbd-toc-list li {{
+    list-style-type: none !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px dashed #e8eaed !important;
+    font-size: 16.5px !important;
+  }}
+  .htbd-toc-list li:last-child {{
+    border-bottom: none !important;
+  }}
+  .htbd-toc-list li a {{
+    color: #1a73e8 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+  }}
+  .htbd-toc-list li a:hover {{
+    color: #0d47a1 !important;
+    text-decoration: underline !important;
+  }}
+</style>
+
+<div class="htbd-post-wrapper">
   
   <!-- Category & Freshness Badge -->
   <div style="margin-bottom: 15px;">
@@ -87,29 +147,29 @@ def generate_world_class_article(topic, category="সাধারণ শিক�
   </div>
 
   <!-- Table of Contents -->
-  <div class="htbd-link-box" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin: 25px 0;">
+  <div class="htbd-toc-box">
     <h3 style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 8px;">📑 সূচিপত্র (Table of Contents)</h3>
-    <ol style="margin-bottom: 0; padding-left: 25px; line-height: 2.2;">
-      <li><a href="#intro" style="color: #1a73e8; text-decoration: none;">১. {topic} কী? তাত্ত্বিক ও প্রাতিষ্ঠানিক ধারণা</a></li>
-      <li><a href="#prominent-scholars" style="color: #1a73e8; text-decoration: none;">২. প্রখ্যাত রাষ্ট্রবিজ্ঞানীদের প্রামাণ্য বিশ্লেষণ ও উক্তি</a></li>
-      <li><a href="#history" style="color: #1a73e8; text-decoration: none;">৩. ঐতিহাসিক প্রেক্ষাপট ও উৎপত্তির ইতিহাস</a></li>
-      <li><a href="#features" style="color: #1a73e8; text-decoration: none;">৪. অপরিহার্য মূল বৈশিষ্ট্যসমূহ (Detailed Features)</a></li>
-      <li><a href="#comparison" style="color: #1a73e8; text-decoration: none;">৫. এককেন্দ্রিক বনাম যুক্তরাষ্ট্রীয় সরকারের তুলনামূলক ছক</a></li>
-      <li><a href="#advantages" style="color: #1a73e8; text-decoration: none;">৬. ইতিবাচক দিক ও বাস্তব প্রায়োগিক সুবিধাসমূহ</a></li>
-      <li><a href="#limitations" style="color: #1a73e8; text-decoration: none;">৭. সীমাবদ্ধতা ও বিদ্যমান প্রশাসনিক চ্যালেঞ্জসমূহ</a></li>
-      <li><a href="#exam-corner" style="color: #1a73e8; text-decoration: none;">৮. বিশ্ববিদ্যালয় ও চাকরির পরীক্ষার স্পেশাল টিপস</a></li>
-      <li><a href="#faqs" style="color: #1a73e8; text-decoration: none;">৯. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ) ও সমাধান</a></li>
-    </ol>
+    <ul class="htbd-toc-list">
+      <li><a href="#intro">👉 ১. {topic} কী? তাত্ত্বিক ও প্রাতিষ্ঠানিক ধারণা</a></li>
+      <li><a href="#prominent-scholars">👉 ২. প্রখ্যাত রাষ্ট্রবিজ্ঞানীদের প্রামাণ্য বিশ্লেষণ ও উক্তি</a></li>
+      <li><a href="#history">👉 ৩. ঐতিহাসিক প্রেক্ষাপট ও উৎপত্তির ইতিহাস</a></li>
+      <li><a href="#features">👉 ৪. অপরিহার্য মূল বৈশিষ্ট্যসমূহ (Detailed Features)</a></li>
+      <li><a href="#comparison">👉 ৫. এককেন্দ্রিক বনাম যুক্তরাষ্ট্রীয় সরকারের তুলনামূলক ছক</a></li>
+      <li><a href="#advantages">👉 ৬. ইতিবাচক দিক ও বাস্তব প্রায়োগিক সুবিধাসমূহ</a></li>
+      <li><a href="#limitations">👉 ৭. সীমাবদ্ধতা ও বিদ্যমান প্রশাসনিক চ্যালেঞ্জসমূহ</a></li>
+      <li><a href="#exam-corner">👉 ৮. বিশ্ববিদ্যালয় ও চাকরির পরীক্ষার স্পেশাল টিপস</a></li>
+      <li><a href="#faqs">👉 ৯. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ) ও সমাধান</a></li>
+    </ul>
   </div>
 
   <!-- Section 1: Introduction -->
-  <h2 id="intro" style="color: #202124; border-bottom: 2px solid #1a73e8; padding-bottom: 6px; margin-top: 35px;">১. {topic} কী? তাত্ত্বিক ও প্রাতিষ্ঠানিক ধারণা</h2>
+  <h2 id="intro" class="htbd-heading">১. {topic} কী? তাত্ত্বিক ও প্রাতিষ্ঠানিক ধারণা</h2>
   <p>আধুনিক রাষ্ট্রবিজ্ঞান, সরকার পরিচালনা ও প্রশাসনিক কাঠামোর মৌলিক আলোচনায় <strong>{topic}</strong> বিষয়টি অত্যন্ত তাৎপর্যপূর্ণ ও প্রভাবশালী স্থান দখল করে আছে। বিশ্বজুড়ে বিভিন্ন ভৌগোলিক আয়তন, নৃতাত্ত্বিক ভিন্নতা, ভাষাগত বৈচিত্র্য এবং সাংস্কৃতিক বৈশিষ্ট্যের প্রেক্ষাপটে একটি গণতান্ত্রিক রাষ্ট্রকে সুদৃঢ় রাখতে এই ব্যবস্থা এক যুগান্তকারী সাংবিধানিক সমাধান উপস্থাপন করেছে।</p>
   
   <p>ল্যাটিন শব্দ <em>'Foedus'</em> (ফেডাস) থেকে ইংরেজি <em>'Federal'</em> শব্দের উৎপত্তি হয়েছে, যার অর্থ হলো সন্ধি, চুক্তি বা মৈত্রী। অর্থাৎ একাধিক স্বতন্ত্র প্রদেশ বা অঞ্চল যখন একটি সাধারণ জাতীয় ঐক্য গড়ে তোলার লক্ষ্যে স্বেচ্ছায় একটি সুনির্দিষ্ট চুক্তিতে উপনীত হয়ে কেন্দ্রীয় কর্তৃপক্ষ গঠন করে, তখনই তাকে এই পদ্ধতির শাসনব্যবস্থা বলা হয়।</p>
 
   <!-- Section 2: Scholar Quotations -->
-  <h2 id="prominent-scholars" style="color: #202124; border-bottom: 2px solid #1a73e8; padding-bottom: 6px; margin-top: 35px;">২. প্রখ্যাত রাষ্ট্রবিজ্ঞানীদের প্রামাণ্য বিশ্লেষণ ও উক্তি</h2>
+  <h2 id="prominent-scholars" class="htbd-heading">২. প্রখ্যাত রাষ্ট্রবিজ্ঞানীদের প্রামাণ্য বিশ্লেষণ ও উক্তি</h2>
   <p>অ্যাকাডেমিক ও বিশ্ববিদ্যালয় স্তরের পরীক্ষায় সর্বোচ্চ নম্বর নিশ্চিত করতে আন্তর্জাতিক তত্ত্ববিদদের প্রামাণ্য সংজ্ঞা ও উক্তি উদ্ধৃত করা অপরিহার্য:</p>
   <ul>
     <li><strong>অধ্যাপক এ. ভি. ডাইসি (A. V. Dicey):</strong> তাঁর কালজয়ী গবেষণায় উল্লেখ করেছেন— <em>"এটি এমন একটি রাজনৈতিক কৌশল, যা জাতীয় ঐক্য ও ক্ষমতার সাথে স্থানীয় অধিকার ও স্বাধীনতার অপূর্ব সমন্বয় সাধন করে।"</em></li>
@@ -122,12 +182,12 @@ def generate_world_class_article(topic, category="সাধারণ শিক�
   {internal_links_html}
 
   <!-- Section 3: History -->
-  <h2 id="history" style="color: #202124; border-bottom: 2px solid #1a73e8; padding-bottom: 6px; margin-top: 35px;">৩. ঐতিহাসিক প্রেক্ষাপট ও উৎপত্তির ইতিহাস</h2>
+  <h2 id="history" class="htbd-heading">৩. ঐতিহাসিক প্রেক্ষাপট ও উৎপত্তির ইতিহাস</h2>
   <p>বিশ্ব রাজনৈতিক ইতিহাসে এই ব্যবস্থার বিবর্তন কোনো আকস্মিক ঘটনা নয়। প্রাচীন গ্রিসের নগররাষ্ট্রগুলোর মধ্যে সাময়িক সামরিক মৈত্রীর (Confederation) নজির দেখা গেলেও আধুনিক অর্থে প্রাতিষ্ঠানিক শাসন সর্বপ্রথম রূপ লাভ করে উত্তর আমেরিকায়।</p>
   <p>১৭৭৬ সালে ব্রিটিশ শাসন থেকে স্বাধীনতা লাভের পর ১৩টি সাবেক উপনিবেশ নিজেদের সার্বভৌমিকতা বজায় রেখে ১৭৮১ সালে কনফেডারেশন গঠন করে। পরবর্তীতে শাসনতান্ত্রিক দুর্বলতা দূর করতে ১৭৮৭ সালে ঐতিহাসিক ফিলাডেলফিয়া সম্মেলনের মাধ্যমে পৃথিবীর প্রথম পূর্ণাঙ্গ লিখিত সংবিধান রচিত হয়, যা আধুনিক গণতান্ত্রিক বিশ্বের জন্য আদর্শ কাঠামো হিসেবে স্বীকৃতি লাভ করে।</p>
 
   <!-- Section 4: Key Features -->
-  <h2 id="features" style="color: #202124; border-bottom: 2px solid #1a73e8; padding-bottom: 6px; margin-top: 35px;">৪. {topic}-এর অপরিহার্য মূল বৈশিষ্ট্যসমূহ</h2>
+  <h2 id="features" class="htbd-heading">৪. {topic}-এর অপরিহার্য মূল বৈশিষ্ট্যসমূহ</h2>
   <p>একটি পূর্ণাঙ্গ কাঠামোর মূল ভিত্তি হিসেবে নিম্নলিখিত স্তম্ভগুলো অবশ্যম্ভাবীভাবে বিদ্যমান থাকে:</p>
   
   <h3 style="color: #1a73e8; margin-top: 20px;">ক. লিখিত ও দুষ্পরিবর্তনীয় সংবিধান (Rigid & Written Constitution)</h3>
@@ -143,7 +203,7 @@ def generate_world_class_article(topic, category="সাধারণ শিক�
   <p>আইনসভার একটি কক্ষ সমগ্র দেশের জনসংখ্যার আনুপাতিক প্রতিনিধিত্ব নিশ্চিত করে এবং উচ্চকক্ষটি সমতার ভিত্তিতে ছোট-বড় প্রতিটি অঙ্গরাজ্যের সম-মর্যাদা রক্ষা করে।</p>
 
   <!-- Section 5: Comparison Table -->
-  <h2 id="comparison" style="color: #202124; border-bottom: 2px solid #1a73e8; padding-bottom: 6px; margin-top: 35px;">৫. এককেন্দ্রিক বনাম যুক্তরাষ্ট্রীয় সরকারের তুলনামূলক বিশ্লেষণ</h2>
+  <h2 id="comparison" class="htbd-heading">৫. এককেন্দ্রিক বনাম যুক্তরাষ্ট্রীয় সরকারের তুলনামূলক বিশ্লেষণ</h2>
   <p>পরীক্ষার্থীদের পরিষ্কার ধারণার জন্য উভয় কাঠামোর মৌলিক পার্থক্যসমূহ নিচে সারণীর মাধ্যমে উপস্থাপন করা হলো:</p>
   <div style="overflow-x: auto;">
     <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -180,7 +240,7 @@ def generate_world_class_article(topic, category="সাধারণ শিক�
   </div>
 
   <!-- Section 6: Advantages -->
-  <h2 id="advantages" style="color: #202124; border-bottom: 2px solid #1a73e8; padding-bottom: 6px; margin-top: 35px;">৬. ইতিবাচক দিক ও বাস্তব প্রায়োগিক সুবিধাসমূহ</h2>
+  <h2 id="advantages" class="htbd-heading">৬. ইতিবাচক দিক ও বাস্তব প্রায়োগিক সুবিধাসমূহ</h2>
   <ol style="padding-left: 25px; line-height: 2;">
     <li><strong>স্বৈরাচারী একনায়কতন্ত্রের অবসান:</strong> একক ব্যক্তি বা কোনো একটি নির্দিষ্ট কেন্দ্রীয় গোষ্ঠীর হাতে রাষ্ট্রীয় সমস্ত কর্তৃত্ব কুক্ষিগত না থাকায় ক্ষমতার অপব্যবহার প্রাকৃতিকভাবে নিয়ন্ত্রিত থাকে। এটি গণতান্ত্রিক মূল্যবোধ রক্ষার প্রধান ঢাল।</li>
     <li><strong>স্থানীয় সমস্যার দ্রুত ও টেকসই সমাধান:</strong> কেন্দ্র থেকে শত শত মাইল দূরে অবস্থিত প্রান্তিক অঞ্চলের ভৌগোলিক ও সামাজিক সমস্যাগুলো স্থানীয় প্রশাসন ও জনপ্রতিনিধিরা সবচেয়ে দ্রুত এবং বাস্তবসম্মতভাবে সমাধান করতে পারেন।</li>
@@ -195,7 +255,7 @@ def generate_world_class_article(topic, category="সাধারণ শিক�
   </p>
 
   <!-- Section 7: Limitations -->
-  <h2 id="limitations" style="color: #202124; border-bottom: 2px solid #1a73e8; padding-bottom: 6px; margin-top: 35px;">৭. প্রধান সীমাবদ্ধতা ও প্রশাসনিক চ্যালেঞ্জসমূহ</h2>
+  <h2 id="limitations" class="htbd-heading">৭. প্রধান সীমাবদ্ধতা ও প্রশাসনিক চ্যালেঞ্জসমূহ</h2>
   <p>অনন্য সুবিধাসমূহ থাকা সত্ত্বেও বাস্তব প্রয়োগে বিভিন্ন রাষ্ট্রবিজ্ঞানী এর কিছু চ্যালেঞ্জ চিহ্নিত করেছেন:</p>
   <ul>
     <li><strong>অধিক প্রশাসনিক ব্যয়ভার:</strong> কেন্দ্র ও প্রদেশের জন্য পৃথক আইনসভা, একাধিক মন্ত্রিসভা এবং বিশাল আমলাতন্ত্র পরিচালনার কারণে জাতীয় বাজেটের উল্লেখযোগ্য অংশ প্রশাসনিক ব্যয়ে নিঃশেষিত হয়।</li>
@@ -225,7 +285,7 @@ def generate_world_class_article(topic, category="সাধারণ শিক�
 
   <!-- Section 9: FAQ with Schema -->
   <div class="htbd-faq-wrap" id="faqs" style="margin-top: 35px;">
-    <h2 style="color: #202124; border-bottom: 2px solid #1a73e8; padding-bottom: 6px;">৯. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+    <h2 class="htbd-heading">৯. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
     
     <div class="htbd-faq-item" style="border-bottom: 1px solid #e0e0e0; padding: 15px 0;">
       <h3 class="htbd-faq-q" style="margin: 0 0 8px 0; font-size: 18px; color: #1a73e8;">❓ {topic}-এর প্রধান উদ্দেশ্য কী?</h3>
