@@ -24,6 +24,7 @@ service_account.json
 credentials.json
 client_secrets.json
 blogger_token.json
+login_link.txt
 *.pem
 *.key
 tokens.json

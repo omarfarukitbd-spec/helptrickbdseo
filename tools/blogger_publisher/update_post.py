@@ -44,6 +44,11 @@ def get_authenticated_service():
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
             else:
+                print("\n" + "="*70)
+                print("  🌐 আপনার ব্রাউজারে একটি Google লগইন পেজ ওপেন হচ্ছে...")
+                print("  👉 অনুগ্রহ করে 'arafatunnesa.feni@gmail.com' সিলেক্ট করে 'Continue' বা 'Allow' দিন।")
+                print("  (এটি কেবল ১ বার করতে হবে, পরবর্তীতে সব অটোমেটিক হবে)")
+                print("="*70 + "\n")
                 flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_FILE, SCOPES)
                 creds = flow.run_local_server(port=0)
             with open(TOKEN_FILE, "w") as token:
