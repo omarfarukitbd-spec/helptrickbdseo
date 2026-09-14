@@ -22,6 +22,8 @@ jspm_packages/
 service_account.json
 *service_account*.json
 credentials.json
+client_secrets.json
+blogger_token.json
 *.pem
 *.key
 tokens.json
