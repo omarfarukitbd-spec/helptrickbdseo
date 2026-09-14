@@ -1,0 +1,60 @@
+<!--
+================================================================================
+HelpTrickBD - Sitewide SolaimanLipi Font & Bengali Typography Engine
+================================================================================
+সুবিধা: 
+১. পুরো ব্লগের সমস্ত পুরনো ৭৮টি পোস্ট, হোমপেজ, মেনুবার, উইজেট ও টাইটেল এক নিমেষেই সোলায়মানলিপিতে কনভার্ট হয়ে যাবে।
+২. বাংলা সংখ্যা '১, ২, ৩, ৪, ৫, ৬, ৭, ৮, ৯, ০' সকল স্থানে গোল, স্পষ্ট ও প্রিমিয়াম দেখাবে।
+৩. প্রতিটি পোস্টে আলাদাভাবে ফন্ট লোড করার প্রয়োজন হবে না, যার ফলে সাইট সুপার ফাস্ট লোড হবে।
+
+সেটআপ নির্দেশিকা:
+১. Blogger Dashboard-এ যান: https://www.blogger.com/blog/themes/1975983966532887960
+২. বাম পাশের মেনু থেকে "Theme" (থিম) সিলেক্ট করুন।
+৩. "Customize" বাটনের পাশে থাকা ড্রপডাউন তীরে (Arrow) ক্লিক করে "Edit HTML" (এইচটিএমএল সম্পাদনা) সিলেক্ট করুন।
+৪. কীবোর্ডে Ctrl + F চেপে <head> লিখে এন্টার দিন।
+৫. <head> ট্যাগের ঠিক নিচে নিচের কোডটুকু পেস্ট করে দিন এবং ডানদিকের সেভ (Disk Icon) বাটনে ক্লিক করুন।
+================================================================================
+-->
+
+<!-- [START] HelpTrickBD SolaimanLipi Global Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+
+<style type="text/css">
+  @font-face {
+    font-family: 'SolaimanLipi';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-normal-v1.0.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'SolaimanLipi';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
+  }
+
+  /* HelpTrickBD সাইটের সর্বত্র SolaimanLipi ফন্ট প্রয়োগ */
+  html, body, 
+  .post-body, 
+  .post-title, 
+  .post-title a,
+  h1, h2, h3, h4, h5, h6, 
+  p, span, a, li, td, th, 
+  input, button, select, textarea,
+  .widget, .sidebar, .header-menu, .footer,
+  .entry-title, .entry-content {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }
+  
+  /* পোস্টের রিডাবিলিটি ও লাইন হাইট পারফেকশন */
+  .post-body p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+  }
+</style>
+<!-- [END] HelpTrickBD SolaimanLipi Global Typography -->
