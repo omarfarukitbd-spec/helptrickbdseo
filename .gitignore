@@ -20,10 +20,12 @@ jspm_packages/
 .env.local
 .env.*.local
 service_account.json
+*service_account*.json
 credentials.json
 *.pem
 *.key
 tokens.json
+indexing_history.log
 
 # Build outputs
 dist/

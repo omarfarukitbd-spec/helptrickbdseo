@@ -44,53 +44,63 @@ HISTORY_LOG_FILE = "indexing_history.log"
 
 def get_authenticated_service(credentials_path=DEFAULT_SERVICE_ACCOUNT_FILE):
     """Authenticate with Google Cloud using the Service Account JSON file."""
-    if not os.path.exists(credentials_path):
-        print(f"\n[ERROR] Service account file not found: {credentials_path}")
-        print("Please follow the setup instructions in README.md to download your service_account.json.\n")
+    # Look in current directory, script directory, and tools/indexer
+    candidate_paths = [
+        credentials_path,
+        os.path.join(os.path.dirname(__file__), credentials_path),
+        os.path.join("tools", "indexer", credentials_path),
+        os.path.join(os.path.dirname(__file__), "service_account.json")
+    ]
+
+    actual_path = None
+    for p in candidate_paths:
+        if p and os.path.exists(p):
+            actual_path = p
+            break
+
+    if not actual_path:
+        print(f"\n[ERROR] Service account file not found in candidates: {candidate_paths}")
+        print("Please follow the setup instructions in README.md to place your service_account.json.\n")
         return None
 
     try:
-        credentials = ServiceAccountCredentials.from_json_keyfile_name(credentials_path, scopes=SCOPES)
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(actual_path, scopes=SCOPES)
         return credentials
     except Exception as e:
-        print(f"[ERROR] Failed to load credentials from {credentials_path}: {e}")
+        print(f"[ERROR] Failed to load credentials from {actual_path}: {e}")
         return None
 
 
-def submit_url(credentials, url, action_type="URL_UPDATED"):
+def submit_url(service, url, action_type="URL_UPDATED"):
     """
-    Submits a single URL notification to Google Indexing API.
+    Submits a single URL notification to Google Indexing API using googleapiclient.
     action_type: 'URL_UPDATED' or 'URL_DELETED'
     """
-    http_client = credentials.authorize(requests.Session())
-    content = {
+    body = {
         "url": url.strip(),
         "type": action_type
     }
 
     try:
-        response = http_client.post(
-            ENDPOINT,
-            headers={"Content-Type": "application/json"},
-            data=json.dumps(content)
-        )
+        response = service.urlNotifications().publish(body=body).execute()
         
-        status_code = response.status_code
-        res_data = response.json() if response.content else {}
-
-        log_entry = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] [{action_type}] Status: {status_code} | URL: {url}\n"
+        notify_time = response.get("urlNotificationMetadata", {}).get("latestUpdate", {}).get("notifyTime", "N/A")
+        log_entry = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] [{action_type}] Status: 200 | URL: {url} | Recorded: {notify_time}\n"
         with open(HISTORY_LOG_FILE, "a", encoding="utf-8") as f:
             f.write(log_entry)
 
-        if status_code == 200:
-            notify_time = res_data.get("urlNotificationMetadata", {}).get("latestUpdate", {}).get("notifyTime", "N/A")
-            print(f" [SUCCESS] {action_type} -> {url} (Recorded: {notify_time})")
-            return True
-        else:
-            error_msg = res_data.get("error", {}).get("message", response.text)
-            print(f" [FAILED ({status_code})] {url} -> {error_msg}")
-            return False
+        print(f" [SUCCESS] {action_type} -> {url} (Recorded: {notify_time})")
+        return True
 
+    except HttpError as e:
+        status_code = e.resp.status if hasattr(e, 'resp') else "Error"
+        error_details = str(e)
+        log_entry = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] [{action_type}] Status: {status_code} | URL: {url} | Error: {error_details}\n"
+        with open(HISTORY_LOG_FILE, "a", encoding="utf-8") as f:
+            f.write(log_entry)
+
+        print(f" [FAILED ({status_code})] {url} -> {error_details}")
+        return False
     except Exception as e:
         print(f" [EXCEPTION] {url} -> {e}")
         return False
@@ -174,12 +184,18 @@ def main():
     if not credentials:
         sys.exit(1)
 
+    try:
+        service = build("indexing", "v3", credentials=credentials)
+    except Exception as e:
+        print(f"[ERROR] Failed to build indexing service: {e}")
+        sys.exit(1)
+
     successful = 0
     failed = 0
 
     for idx, url in enumerate(urls_to_process, 1):
         print(f"[{idx}/{len(urls_to_process)}] Processing: {url}")
-        success = submit_url(credentials, url, action_type=args.type)
+        success = submit_url(service, url, action_type=args.type)
         if success:
             successful += 1
         else:
