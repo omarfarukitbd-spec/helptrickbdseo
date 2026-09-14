@@ -1,0 +1,14 @@
+# Optimized Custom robots.txt for HelpTrickBD (www.helptrickbd.com)
+# Location: Blogger Dashboard > Settings > Crawlers and indexing > Custom robots.txt
+
+User-agent: *
+Disallow: /search
+Disallow: /*?m=1
+Disallow: /*?m=0
+Disallow: /feeds/*
+Allow: /
+
+# Direct XML Sitemaps
+Sitemap: https://www.helptrickbd.com/sitemap.xml
+Sitemap: https://www.helptrickbd.com/sitemap-pages.xml
+Sitemap: https://www.helptrickbd.com/atom.xml?redirect=false&start-index=1&max-results=500
