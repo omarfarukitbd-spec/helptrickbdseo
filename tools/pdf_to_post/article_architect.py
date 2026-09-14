@@ -71,12 +71,12 @@ def generate_world_class_article(topic, category="সাধারণ শিক�
     # Construct Inner Article HTML Body
     html_content = f"""<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
   .htbd-post-wrapper,
   .htbd-post-wrapper * {{
-    font-family: 'Hind Siliguri', 'Noto Sans Bengali', Arial, sans-serif !important;
+    font-family: 'Noto Sans Bengali', 'SolaimanLipi', Arial, sans-serif !important;
   }}
   .htbd-post-wrapper p {{
     font-size: 18px !important;
