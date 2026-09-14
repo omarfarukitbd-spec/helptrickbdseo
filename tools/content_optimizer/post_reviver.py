@@ -62,10 +62,23 @@ def generate_bangladesh_history_article():
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+  @font-face {{
+    font-family: 'SolaimanLipi';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-normal-v1.0.woff2') format('woff2');
+  }}
+  @font-face {{
+    font-family: 'SolaimanLipi';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
+  }}
   .htbd-post-wrapper,
   .htbd-post-wrapper * {{
-    font-family: 'Noto Sans Bengali', 'SolaimanLipi', Arial, sans-serif !important;
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
   }}
   .htbd-post-wrapper p {{
     font-size: 18px !important;
