@@ -11,11 +11,19 @@ Helptrickbd SEO full site/
 ├── tools/
 │   ├── indexer/                      # Google Indexing API Automation
 │   │   ├── index_now.py              # Instant URL submitter to Googlebot
-│   │   ├── urls.txt                  # Pre-populated list of 79 published posts
+│   │   ├── urls.txt                  # Pre-populated list of 78 published posts
 │   │   ├── requirements.txt          # Python dependencies
 │   │   └── README.md                 # Setup guide for Google Cloud Service Account
 │   ├── auditor/                      # Site Crawler & AdSense Validator
 │   │   └── audit_site.py             # Scans 404s, thin content, headings, meta tags
+│   ├── content_optimizer/            # On-Page SEO & Content Quality Analyzer (Yoast/Advertools style)
+│   │   └── content_analyzer.py       # Scores keyword density, word count, headings (0-100%)
+│   ├── serp_preview/                 # Google SERP Snippet Preview & CTR Optimizer
+│   │   └── serp_preview.py           # Simulates desktop & mobile search snippets
+│   ├── schema_validator/             # Schema.org Structured Data Validator
+│   │   └── validate_schema.py        # Verifies Article/BlogPosting JSON-LD compliance
+│   ├── lighthouse/                   # Google Lighthouse Performance & SEO Auditor (33k Stars)
+│   │   └── audit_performance.js      # Headless Chrome Core Web Vitals runner
 │   └── redirects/                    # Blogger 301 Redirect Tools
 │       └── generate_redirects.py     # Converts GSC 404 URLs to Blogger custom redirects
 ├── templates/
@@ -69,6 +77,30 @@ Outputs `audit_report.md` and `audit_report.json` with an AdSense Readiness Scor
 Fix crawl budget destruction caused by deleted posts:
 ```powershell
 python tools/redirects/generate_redirects.py --input gsc_404_urls.txt
+```
+
+### 5. On-Page Content & Readability Analyzer (Yoast/Advertools style)
+Audit your articles before or after publishing to guarantee 80+ score:
+```powershell
+python tools/content_optimizer/content_analyzer.py --url https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html --keyword "সার্বভৌমত্ব"
+```
+
+### 6. Google SERP Snippet Preview & CTR Optimizer
+Simulate how your article snippet looks on Google Desktop & Mobile search:
+```powershell
+python tools/serp_preview/serp_preview.py --url https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html
+```
+
+### 7. Google Article & Schema Validator
+Ensure your Blogger theme outputs 100% compliant Schema.org JSON-LD:
+```powershell
+python tools/schema_validator/validate_schema.py --url https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html
+```
+
+### 8. Google Lighthouse Audit Runner (33k Stars)
+Audit live site Core Web Vitals and PageSpeed in Headless Chrome:
+```powershell
+node tools/lighthouse/audit_performance.js
 ```
 
 ---

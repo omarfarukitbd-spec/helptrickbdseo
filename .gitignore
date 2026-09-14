@@ -27,11 +27,15 @@ credentials.json
 tokens.json
 indexing_history.log
 
-# Build outputs
+# Build outputs & generated test reports
 dist/
 build/
 out/
 .next/
+*.html.report
+serp_preview.html
+lighthouse_report.html
+lighthouse_report.json
 
 # IDE and Editor files
 .vscode/
