@@ -1,0 +1,723 @@
+{
+  "total_posts": 78,
+  "clean_count": 47,
+  "critical_count": 0,
+  "warning_count": 31,
+  "critical_posts": [],
+  "warning_posts": [
+    {
+      "url": "https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html",
+      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 452 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "452 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 452
+    },
+    {
+      "url": "https://www.helptrickbd.com/2026/01/samajikikorone-khelar-sathir-bhumika.html",
+      "title": "শিশুর মানসিক বিকাশ: খেলার সাথী ও বন্ধুদের প্রভাব নিয়ে সতর্কবার্তা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 430 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "430 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 430
+    },
+    {
+      "url": "https://www.helptrickbd.com/2026/01/nari-andolon-ostitto-rokhar-lorai.html",
+      "title": "রাষ্ট্র, সমাজ ও নারী: আন্দোলনের প্রেক্ষাপট ও চ্যালেঞ্জ",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "SENSITIVE_OR_ADULT",
+          "severity": "HIGH",
+          "description": "সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)",
+          "matches": [
+            [
+              "যৌন",
+              " নারীদের ব্যক্তিস্বাধীনতা এবং যৌন হয়রানির বিরুদ্ধে প্রতিবাদ শুর"
+            ],
+            [
+              "যৌন",
+              " সহিংসতা, ধর্ষণ, কর্মক্ষেত্রে যৌন হয়রানি এবং সমান মজুরি থেকে বঞ"
+            ],
+            [
+              "sex",
+              "য বোভোয়ার এর লেখা \"The Second Sex\" এই ঢেউয়ে বড় ভূমিকা রাখে। তৃত"
+            ]
+          ],
+          "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
+        }
+      ],
+      "word_count": 528
+    },
+    {
+      "url": "https://www.helptrickbd.com/2026/01/jonosonkha-poribortoner-prodhan-niyamok-somuho.html",
+      "title": "জনসংখ্যার পরিবর্তনের কারণ ও প্রভাব নিয়ে বিস্তারিত আলোচনা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 436 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "436 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 436
+    },
+    {
+      "url": "https://www.helptrickbd.com/2026/01/what-is-political-economy-definition-concept.html",
+      "title": "রাজনৈতিক অর্থনীতি কাকে বলে? সংজ্ঞা ও ধারণা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 463 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "463 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 463
+    },
+    {
+      "url": "https://www.helptrickbd.com/2026/01/goals-and-objectives-of-womens-decade.html",
+      "title": "নারী দশকের লক্ষ্য ও উদ্দেশ্য: বিশ্ব নারী দশকের পটভূমি",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 413 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "413 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 413
+    },
+    {
+      "url": "https://www.helptrickbd.com/2026/01/what-is-patriarchy-definition-characteristics-impact.html",
+      "title": "পুরুষতন্ত্র বলতে কী বুঝ? সংজ্ঞা, বৈশিষ্ট্য ও প্রভাব",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 348 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "348 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 348
+    },
+    {
+      "url": "https://www.helptrickbd.com/2026/01/role-of-ngos-in-womens-empowerment-benefits.html",
+      "title": "নারীর ক্ষমতায়নে NGO দের ভূমিকা ও সুফল",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 351 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "351 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 351
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/what-is-violence-against-women-definition-impact.html",
+      "title": "নারী নির্যাতন কী? সংজ্ঞা, কারণ ও প্রভাব",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "SENSITIVE_OR_ADULT",
+          "severity": "HIGH",
+          "description": "সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)",
+          "matches": [
+            [
+              "যৌন",
+              "িত্তিক নির্যাতন। যেমন: দৈহিক, যৌন বা মানসিক ক্ষতি বা যন্ত্রণা, "
+            ],
+            [
+              "যৌন",
+              "যাতন সাধারণত শারীরিক, মানসিক, যৌন এবং অর্থনৈতিক—এই চার প্রকারের"
+            ]
+          ],
+          "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
+        }
+      ],
+      "word_count": 557
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/imam-ghazali-contribution-political-thought.html",
+      "title": "রাষ্ট্রচিন্তায় ইমাম গাজ্জালির অবদান ও রাজনৈতিক দর্শন",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "SENSITIVE_OR_ADULT",
+          "severity": "HIGH",
+          "description": "সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)",
+          "matches": [
+            [
+              "যৌন",
+              "্পরের নৈকট্য কামনা করে। মানুষ যৌন সম্পর্ক ও সন্তান লাভের আশায় "
+            ]
+          ],
+          "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
+        }
+      ],
+      "word_count": 711
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html",
+      "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 455 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "455 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 455
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/ishwar-chandra-vidyasagar-social-reform-contribution.html",
+      "title": "সমাজ সংস্কারে ঈশ্বরচন্দ্র বিদ্যাসাগরের অবদান ও ভূমিকা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 418 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "418 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 418
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/bangladesh-livestock-resources-research-institutes.html",
+      "title": "বাংলাদেশের প্রাণিজ সম্পদ: গবেষণা প্রতিষ্ঠান, রোগবালাই ও গুরুত্বপূর্ণ তথ্য",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 415 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "415 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 415
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/computer-generations-features-part3.html",
+      "title": "কম্পিউটারের প্রজন্ম: প্রথম থেকে পঞ্চম প্রজন্মের বৈশিষ্ট্য ও ইতিহাস (পর্ব-৩)",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "SENSITIVE_OR_ADULT",
+          "severity": "HIGH",
+          "description": "সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)",
+          "matches": [
+            [
+              "চটি",
+              "তে কম্পিউটার প্রজন্মকে মোট পাঁচটি ভাগে ভাগ করা যায়। কম্পিউটারের"
+            ],
+            [
+              "চটি",
+              "। একনজরে কম্পিউটার প্রজন্ম পাঁচটি প্রজন্মের প্রধান বৈশিষ্ট্যগুল"
+            ]
+          ],
+          "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
+        }
+      ],
+      "word_count": 618
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/computer-history-inventions-part2.html",
+      "title": "কম্পিউটারের ইতিহাস: Abacus থেকে Integrated Circuit (পর্ব-২)",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 475 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "475 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 475
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/07/what-is-meant-by-recent-nationalism.html",
+      "title": "সাম্প্রতিক কালের রাষ্ট্রচিন্তা বলতে কী বুঝ",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 391 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "391 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 391
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/07/what-is-statesmanship.html",
+      "title": "রাষ্ট্রচিন্তার সংজ্ঞা দাও | What is statesmanship?",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 288 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "288 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 288
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/11/history-of-bangladesh.html",
+      "title": "বাংলাদেশের বিস্তারিত ইতিহাস: সংগ্রাম, মুক্তিযুদ্ধ ও বিজয়",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 15 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "15 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 15
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/07/recent-political-thought-suggestion-2024.html",
+      "title": "রাষ্ট্রবিজ্ঞান মাস্টার্স সাজেশন্স ২০২৪: সাম্প্রতিক রাষ্ট্রচিন্তা (৩১১৯০১)",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 304 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "304 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 304
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html",
+      "title": "ঘরে বসেই সার্টিফিকেট সংশোধন করার নিয়ম ২০২৫ | Rules of Certificate Correction 2025",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 185 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "185 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 185
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/04/important-instructions-for-ssc-candidates.html",
+      "title": "এসএসসি পরীক্ষার্থীদের জন্য গুরুত্বপূর্ণ ৯টি নির্দেশনা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 301 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "301 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 301
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/03/allah-allah-allahu-la-ilaha-illa-hu-lyrics.html",
+      "title": "মিলাদ শরীফ এর ক্বাসিদা - আল্লাহ আল্লাহ আল্লাহু, লা ইলাহা ইল্লাহু",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 128 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "128 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 128
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/03/marhaba-ya-marhaba-rahmatullah-alamin-e-marhaba-lyrics.html",
+      "title": "মিলাদ শরীফ এর ক্বাসিদা - মারহাবা ইয়া মারহাবা ইয়া মারহাবা, রাহমাতাল্লিল আলামিনে মারহাবা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 101 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "101 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 101
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/03/allahumma-salli-ala-sayyidina-muhammad-lyrics.html",
+      "title": "মিলাদ শরীফ এর ক্বাসিদা - আল্লাহুমা সল্লি আলা সায়্যিদিনা মাওলানা মুহাম্মদ",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 226 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "226 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 226
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/01/masters-social-change-and-political-development-suggestions.html",
+      "title": "মাস্টার্স সামাজিক পরিবর্তন ও রাজনৈতিক উন্নয়ন সাজেশন | রাষ্ট্রবিজ্ঞান বিভাগ বিষয়কোড: ৩১১৯০৩",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 299 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "299 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 299
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/02/milad-sharif-salatun-ya-rasulallah-alaikum.html",
+      "title": "মিলাদ শরীফ এর ক্বাসিদা - সালাতুন ইয়া রাসুলাল্লাহ আলাইকুম",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 231 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "231 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 231
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/01/hason-raja-was-born-in-1854-class-six.html",
+      "title": "Hason Raja Was Born in 1854 | Class Six Seen Comprehension",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 413 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "413 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 413
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/01/namta-1-to-20.html",
+      "title": "নামতা ১ থেকে ২০ পর্যন্ত - এক থেকে বিশ এর নামতা - 1 হতে 20 এর নামতা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 439 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "439 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 439
+    },
+    {
+      "url": "https://www.helptrickbd.com/2024/12/simple-guide-to-job-and-bcs-preparation.html",
+      "title": "অলস, ব্যাকবেঞ্চারদের জন্য চাকরি ও বিসিএস প্রস্তুতির সহজ গাইড",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 323 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "323 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 323
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html",
+      "title": "রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা বিষয় কোডসহ | Political Science Honors 1st, 2nd, 3rd and 4th Year Book List",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 389 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "389 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 389
+    },
+    {
+      "url": "https://www.helptrickbd.com/2024/11/modern-political-thought-answer-sheet-2019-pdf.html",
+      "title": "আধুনিক রাষ্ট্রচিন্তা : ২০১৯ সালের প্রশ্নের উত্তরপত্র | অনার্স ৪র্থ বর্ষ",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "SENSITIVE_OR_ADULT",
+          "severity": "HIGH",
+          "description": "সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)",
+          "matches": [
+            [
+              "চটি",
+              "ংঘটিত হয় খ-বিভাগ [যে-কোনো পাঁচটি প্রশ্নের উত্তর দাও। ৮ X ৫ = ২"
+            ],
+            [
+              "চটি",
+              " ১৭.০৭ নং গ-বিভাগ [যে-কোনো পাঁচটি প্রশ্নের উত্তর দাও। ৫ x ১০ = "
+            ]
+          ],
+          "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
+        },
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 352 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "352 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 352
+    }
+  ]
+}
