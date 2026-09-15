@@ -15,14 +15,22 @@
    - Bengali Font: `Hind Siliguri Bold` or `SolaimanLipi`.
    - English Font: `Inter Bold` or `Poppins Bold`.
    - Never mix languages on the banner (Bengali post = 100% Bengali text; English post = 100% English text).
-3. **Category Background Rule**:
-   - Use fixed template backgrounds from `Thumbnail BG/` according to category mapping:
-     * Education / Board Guides ➡️ Specified Education BG
-     * Technology / Cloud ➡️ Tech BG
-     * Politics / Academic ➡️ Academic BG
-     * Islamic / Devotional ➡️ Islamic BG
-     * Job Preparation / BCS ➡️ Job Prep BG
-4. **Original Author Thumbnail Preservation (মৌলিক থাম্বনেইল অপরিবর্তনীয়)**:
+3. **Mandatory 'Thumbnail BG/' Template Rule (নিজস্ব টেমপ্লেট ব্যাকগ্রাউন্ড বাধ্যতামূলক)**:
+   - কোনো কৃত্রিম, প্লেইন বা জেনেরিক গ্র্যাডিয়েন্ট ব্যাকগ্রাউন্ড তৈরি করা সম্পূর্ণ নিষিদ্ধ।
+   - প্রতিটি থাম্বনেইল অবশ্যই `Thumbnail BG/` ফোল্ডারের নির্দিষ্ট হাই-রেজোলিউশন টেমপ্লেট ব্যাকগ্রাউন্ডের ওপর ফ্রস্টেড গ্লাস কার্ড ও টাইপোগ্রাফি কম্পোজিট করে তৈরি করতে হবে:
+     * `Thumbnail BG/bg.png` ➔ ইসলামিক আর্টিকেল (Islamic Article)
+     * `Thumbnail BG/bg_1.png` ➔ স্কুল / ক্লাস ৬ / ফলব্যাক (Class 6 & General School Guides)
+     * `Thumbnail BG/bg_2.png` ➔ রাষ্ট্রবিজ্ঞান ও অ্যাকাডেমিক (Political Science)
+     * `Thumbnail BG/bg_3.png` ➔ শিক্ষা গাইড ও নোটিশ (Education Guide)
+     * `Thumbnail BG/bg_4.png` ➔ চাকরির প্রস্তুতি ও পরীক্ষা (Job Study Article — Primary Viva, BCS)
+     * `Thumbnail BG/bg_5.png` ➔ তথ্যপ্রযুক্তি ও কম্পিউটার (ICT Guide — Cloud Computing, Computer Virus)
+4. **HarfBuzz Engine for Flawless Bengali Conjuncts (যুক্তাক্ষর বিকৃতি রোধ)**:
+   - উইন্ডোজে বেসিক PIL/FreeType বাংলা যুক্তাক্ষর সঠিকভাবে শেপ করতে পারে না (যেমন: `ক্লাউড` হয়ে যায় `ক্-লাউড`)।
+   - তাই ব্যানার তৈরির জন্য সবসময় `tools/image_generator/build_official_bg_thumbnails.py` (Chromium HarfBuzz ইঞ্জিন) ব্যবহার করতে হবে, যা ১০০% নির্ভুল বাংলা যুক্তাক্ষর ও প্রফেশনাল টাইপোগ্রাফি নিশ্চিত করে।
+5. **Strict Bilingual Governance (দ্বিভাষিক কঠোরতা — Rule 8)**:
+   - পোস্ট যদি ইংরেজিতে হয়, তবে থাম্বনেইলের সমস্ত টেক্সট (ব্র্যান্ড, ক্যাটাগরি ব্যাজ, টাইটেল, সাবটাইটেল, ফিচার পিল এবং ফুটার `All Rights Reserved 2026`) **১০০% ইংরেজিতে** হবে। ফুটারে কোনো বাংলা টেক্সট রাখা যাবে না।
+   - পোস্ট যদি বাংলায় হয়, তবে থাম্বনেইলের সমস্ত টেক্সট **১০০% বাংলায়** হবে। কোনো অবস্থাতেই ভাষা মিশ্রণ করা যাবে না।
+6. **Original Author Thumbnail Preservation (মৌলিক থাম্বনেইল অপরিবর্তনীয়)**:
    - If a post already possesses an authentic thumbnail designed by the site owner, the agent **MUST NOT replace or overwrite it**.
    - Only create new thumbnails for posts that completely lack a featured image or when explicitly requested by the user.
 

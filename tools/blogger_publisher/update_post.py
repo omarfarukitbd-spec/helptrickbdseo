@@ -84,7 +84,7 @@ def find_post_id_by_slug_or_title(service, slug, title=""):
         return None, None
 
 
-def update_post_on_blogger(metadata_file_or_html, slug):
+def update_post_on_blogger(metadata_file_or_html, slug=None, post_id=None):
     service = get_authenticated_service()
     if not service:
         print("\n" + "="*70)
@@ -123,7 +123,14 @@ def update_post_on_blogger(metadata_file_or_html, slug):
                 title = m.group(1).strip()
                 print(f"[*] Auto-extracted title from HTML: {title}")
 
-    post_id, original_post = find_post_id_by_slug_or_title(service, slug, title)
+    if not post_id:
+        post_id, original_post = find_post_id_by_slug_or_title(service, slug, title)
+    else:
+        try:
+            original_post = service.posts().get(blogId=BLOG_ID, postId=post_id).execute()
+        except Exception:
+            original_post = None
+
     if not post_id:
         print(f"[ERROR] Could not find post on Blogger with slug: {slug}")
         return False
@@ -157,10 +164,11 @@ def update_post_on_blogger(metadata_file_or_html, slug):
 def main():
     parser = argparse.ArgumentParser(description="HelpTrickBD Automated Blogger Post Updater")
     parser.add_argument("--file", required=True, help="Path to updated HTML or metadata JSON")
-    parser.add_argument("--slug", required=True, help="Slug of the post (e.g. 'history-of-bangladesh')")
+    parser.add_argument("--slug", required=False, default=None, help="Slug of the post (e.g. 'history-of-bangladesh')")
+    parser.add_argument("--post_id", required=False, default=None, help="Direct Blogger Post ID")
 
     args = parser.parse_args()
-    update_post_on_blogger(args.file, args.slug)
+    update_post_on_blogger(args.file, args.slug, post_id=args.post_id)
 
 
 if __name__ == "__main__":

@@ -57,9 +57,9 @@ def calculate_reading_time(soup: BeautifulSoup) -> Tuple[int, int, str]:
     if is_bengali:
         bn_words = to_bengali_num(word_count)
         bn_mins = to_bengali_num(minutes)
-        badge_text = f"⏱️ পড়ার আনুমানিক সময়: {bn_mins} মিনিট ({bn_words} শব্দ)"
+        badge_text = f"পড়ার সময়: {bn_mins} মিনিট ({bn_words} শব্দ)"
     else:
-        badge_text = f"⏱️ Estimated Reading Time: {minutes} min ({word_count} words)"
+        badge_text = f"Estimated Reading Time: {minutes} min ({word_count} words)"
 
     return word_count, minutes, badge_text
 
@@ -86,15 +86,16 @@ def generate_scroll_progress_bar() -> str:
 
 
 def generate_meta_badge(badge_text: str, is_bengali: bool = True) -> str:
-    """Generates a SolaimanLipi-ready reading time and freshness badge."""
-    label = "সর্বশেষ হালনাগাদ ২০২৬" if is_bengali else "Updated 2026"
+    """Generates a SolaimanLipi-ready reading time and freshness badge with zero emojis."""
+    label = "সর্বশেষ সংস্করণ: ২০২৬" if is_bengali else "Updated: 2026"
+    study_badge = "HelpTrickBD স্পেশাল গাইড" if is_bengali else "HelpTrickBD Verified Study Guide"
     return f"""
 <div class="ht-meta-engagement-badge" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 24px 0; padding: 10px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 6px; font-family: 'SolaimanLipi', sans-serif; font-size: 15px; color: #334155;">
   <span style="font-weight: 600; color: #0369a1;">{badge_text}</span>
   <span style="color: #cbd5e1;">|</span>
-  <span style="display: inline-flex; align-items: center; gap: 4px; background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; font-size: 13px; font-weight: 600;">✅ {label}</span>
+  <span style="display: inline-flex; align-items: center; background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; font-size: 13px; font-weight: 600;">{label}</span>
   <span style="color: #cbd5e1;">|</span>
-  <span style="color: #64748b; font-size: 14px;">🎓 HelpTrickBD Verified Study Guide</span>
+  <span style="color: #64748b; font-size: 14px;">{study_badge}</span>
 </div>
 """
 
@@ -102,19 +103,20 @@ def generate_meta_badge(badge_text: str, is_bengali: bool = True) -> str:
 def inject_table_of_contents(soup: BeautifulSoup, is_bengali: bool = True) -> BeautifulSoup:
     """
     Extracts h2 and h3 headings, creates IDs if missing,
-    and prepends an interactive Jump Navigation TOC block.
+    and prepends an interactive Jump Navigation TOC block with clean typographic styling (zero emojis).
     """
     headings = soup.find_all(["h2", "h3"])
     if len(headings) < 3:
         # Not enough headings for a TOC
         return soup
 
-    toc_title = "📌 এই আর্টিকেলের গুরুত্বপূর্ণ সূচিপত্র" if is_bengali else "📌 Quick Table of Contents"
+    toc_title = "সূচিপত্র (গুরুত্বপূর্ণ বিষয়বস্তু)" if is_bengali else "Table of Contents"
+    hint_text = "(পড়ার সুবিধার্থে ক্লিক করে সরাসরি যান)" if is_bengali else "(Click to jump to section)"
     toc_html = [
-        f'<div class="ht-toc-container" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 22px; margin: 24px 0; font-family: \'SolaimanLipi\', sans-serif;">',
+        f'<div class="ht-toc-container" style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #2563eb; border-radius: 8px; padding: 18px 22px; margin: 24px 0; font-family: \'SolaimanLipi\', sans-serif;">',
         f'  <div style="font-weight: 700; font-size: 18px; color: #0f172a; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">',
         f'    <span>{toc_title}</span>',
-        f'    <span style="font-size: 12px; color: #64748b; font-weight: normal;">(পড়ার সুবিধার্থে ক্লিক করে সরাসরি যান)</span>',
+        f'    <span style="font-size: 13px; color: #64748b; font-weight: normal;">{hint_text}</span>',
         f'  </div>',
         f'  <ul style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">'
     ]
@@ -131,14 +133,14 @@ def inject_table_of_contents(soup: BeautifulSoup, is_bengali: bool = True) -> Be
             h["id"] = h_id
 
         is_h3 = (h.name == "h3")
-        indent = "margin-left: 20px;" if is_h3 else "font-weight: 600;"
-        icon = "↳ " if is_h3 else "👉 "
-        color = "#2563eb" if not is_h3 else "#475569"
+        indent = "margin-left: 22px;" if is_h3 else "font-weight: 600;"
+        bullet_symbol = "— " if is_h3 else "• "
+        color = "#1d4ed8" if not is_h3 else "#475569"
 
         toc_html.append(
             f'    <li style="{indent}">'
             f'<a href="#{h_id}" style="color: {color}; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'">'
-            f'{icon}{text}</a></li>'
+            f'{bullet_symbol}{text}</a></li>'
         )
 
     toc_html.append('  </ul>')
@@ -156,31 +158,11 @@ def inject_table_of_contents(soup: BeautifulSoup, is_bengali: bool = True) -> Be
     return soup
 
 
-def inject_social_share_trigger(soup: BeautifulSoup, is_bengali: bool = True) -> BeautifulSoup:
-    """Injects high-converting 1-click share triggers at the bottom of the content."""
-    share_title = "📢 আপনার সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন:" if is_bengali else "📢 Share this helpful guide:"
-    share_box_html = f"""
-<div class="ht-social-share-box" style="margin: 36px 0 20px 0; padding: 18px 22px; background: #faf5ff; border: 1px dashed #a855f7; border-radius: 8px; font-family: 'SolaimanLipi', sans-serif; text-align: center;">
-  <p style="margin: 0 0 12px 0; font-size: 16px; font-weight: 700; color: #581c87;">{share_title}</p>
-  <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-    <a href="https://api.whatsapp.com/send?text=Helpful%20Study%20Guide:%20" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; background: #25d366; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; text-decoration: none; font-weight: 600;">
-      💬 WhatsApp এ পাঠান
-    </a>
-    <a href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; background: #1877f2; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; text-decoration: none; font-weight: 600;">
-      📘 Facebook এ শেয়ার করুন
-    </a>
-  </div>
-</div>
-"""
-    share_soup = BeautifulSoup(share_box_html, "html.parser")
-    soup.append(share_soup)
-    return soup
-
-
 def optimize_post_engagement(html_content: str) -> Tuple[str, Dict]:
     """
     Optimizes a post HTML string by calculating reading time,
-    injecting progress bar, metadata badge, interactive TOC, and share triggers.
+    injecting progress bar, metadata badge, and interactive TOC.
+    (Redundant share box is strictly disabled since Blogger theme has native share).
     """
     soup = BeautifulSoup(html_content, "html.parser")
     
@@ -204,8 +186,7 @@ def optimize_post_engagement(html_content: str) -> Tuple[str, Dict]:
     # 3. Inject Interactive TOC if multiple headings exist
     soup = inject_table_of_contents(soup, is_bengali)
 
-    # 4. Inject 1-Click Social Share Triggers
-    soup = inject_social_share_trigger(soup, is_bengali)
+    # Note: Custom social share box is completely removed (theme native buttons handle sharing)
 
     stats = {
         "word_count": word_count,

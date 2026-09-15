@@ -36,10 +36,16 @@
 1. **Bengali Font Standard**:
    - Default font for Bengali content: `SolaimanLipi` (applied cleanly via `@font-face` from jsDelivr / Ekushey CDN).
    - Never use fonts that distort Bengali conjuncts (যেমন: ১, ঙ্গ, ঙ্ক, ত্র, ক্ষ, ষ্ণ).
-2. **Zero Emoji in Professional Content**:
-   - Do not clutter academic, legal, board examination, or educational posts with decorative emojis (🚫 😀 👍 🚀 🔥).
-   - Maintain clean, newspaper-grade, textbook-quality editorial dignity.
-3. **Mandatory Jump Break (`<!--more-->`)**:
+2. **Zero-Emoji Policy (১০০% ইমোজি বর্জন — Absolute Ban)**:
+   - পোস্টের টাইটেল, সাবটাইটেল, হেডিং (H2, H3), সূচিপত্র (TOC), পড়ার সময় মেটা ব্যাজ, কলআউট বক্স কিংবা পোস্ট বডির কোথাও কোনো ধরণের ইমোজি (`📌`, `👉`, `📢`, `⏱️`, `✅`, `🎓`, `📘`, `💬`, `💡`, `⚠️`, `🔍`, `🚀`, `⭐`, `❶`, `❷` ইত্যাদি) ব্যবহার সম্পূর্ণ নিষিদ্ধ।
+   - সূচিপত্রে কোনো হাত নির্দেশক (`👉`) বা পিন (`📌`) থাকবে না। সূচিপত্র হবে পরিপাটি টাইপোগ্রাফিক ("সূচিপত্র (গুরুত্বপূর্ণ বিষয়বস্তু)") এবং আইটেমগুলো ক্লিন বুলেট (`• ` বা `— `) বা নম্বরযুক্ত হবে।
+   - কলআউট বক্সে ইমোজির বদলে মার্জিত টেক্সট ("পরামর্শ:", "সতর্কতা:", "নোট:") ব্যবহার করতে হবে।
+   - মেটা ব্যাজে ইমোজিহীন টেক্সট ("পড়ার সময়:", "সর্বশেষ সংস্করণ: ২০২৬") ব্যবহার করতে হবে।
+3. **Native Theme Share Governance (কাস্টম শেয়ার বক্স সম্পূর্ণ নিষিদ্ধ)**:
+   - ব্লগারে প্রতিটি পোস্টের নিচে থিমের নিজস্ব সোশ্যাল শেয়ার প্লাগইন (Facebook, Twitter, WhatsApp, ইত্যাদি) বিল্ট-ইনভাবে প্রদর্শিত হয়।
+   - কোনো পোস্টের বডির ভেতর কৃত্রিম কাস্টম শেয়ার বক্স (`<div class="ht-social-share-box">` বা "আপনার সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন") যুক্ত করা সম্পূর্ণ নিষিদ্ধ।
+   - পোস্টের কনটেন্ট কনক্লুশন বা এফএকিউ-এর সাথে সাথে পরিচ্ছন্নভাবে শেষ হবে, যাতে থিমের নিজস্ব শেয়ার বাটনগুলো প্রাকৃতিক সৌন্দর্যে প্রকাশিত হয়।
+4. **Mandatory Jump Break (`<!--more-->`)**:
    - In Blogger HTML, place `<!--more-->` immediately after the first 2–3 sentences (within the first 50–100 words).
    - This ensures proper excerpt clipping on the homepage and index cards without breaking page layouts.
 

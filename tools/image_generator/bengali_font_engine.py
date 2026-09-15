@@ -18,31 +18,35 @@ def get_bengali_font(size=24, bold=False):
     """
     candidates = []
     
+    # Priority 1: High-quality bundled project fonts (guarantees identical rendering across all PCs)
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    local_font_dir = os.path.join(project_root, "assets", "fonts")
+    
+    if bold:
+        candidates.append(os.path.join(local_font_dir, 'HindSiliguri-Bold.ttf'))
+        candidates.append(os.path.join(local_font_dir, 'NotoSansBengali.ttf'))
+    else:
+        candidates.append(os.path.join(local_font_dir, 'NotoSansBengali.ttf'))
+        candidates.append(os.path.join(local_font_dir, 'HindSiliguri-Bold.ttf'))
+
+    # Priority 2: Native Windows fonts
     if sys.platform == 'win32':
         windir = os.environ.get('WINDIR', 'C:\\Windows')
         fonts_dir = os.path.join(windir, 'Fonts')
         if bold:
             candidates.extend([
-                os.path.join(fonts_dir, 'NirmalaB.ttf'),
                 os.path.join(fonts_dir, 'solaimanlipi.ttf'),
                 os.path.join(fonts_dir, 'kalpurush.ttf'),
+                os.path.join(fonts_dir, 'NirmalaB.ttf'),
                 os.path.join(fonts_dir, 'NirmalaUI.ttf'),
             ])
         else:
             candidates.extend([
-                os.path.join(fonts_dir, 'NirmalaUI.ttf'),
                 os.path.join(fonts_dir, 'solaimanlipi.ttf'),
                 os.path.join(fonts_dir, 'kalpurush.ttf'),
+                os.path.join(fonts_dir, 'NirmalaUI.ttf'),
                 os.path.join(fonts_dir, 'NirmalaB.ttf'),
             ])
-            
-    # Also check local project fonts
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-    local_font_dir = os.path.join(project_root, "assets", "fonts")
-    if os.path.exists(local_font_dir):
-        for f in os.listdir(local_font_dir):
-            if f.lower().endswith(('.ttf', '.otf')):
-                candidates.append(os.path.join(local_font_dir, f))
 
     for font_path in candidates:
         if os.path.exists(font_path):

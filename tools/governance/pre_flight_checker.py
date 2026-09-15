@@ -242,6 +242,35 @@ class PreFlightChecker:
             else:
                 self.passed.append(f"Permalink: Clean custom slug verified (PASSED)")
 
+    def check_zero_emojis(self):
+        """Rule 12: Zero-Emoji Policy (AdSense & Professional Editorial Quality)"""
+        temp_soup = BeautifulSoup(self.raw_html, 'html.parser')
+        for s in temp_soup(["script", "style"]):
+            s.decompose()
+            
+        text = temp_soup.get_text()
+        emoji_pattern = re.compile(
+            r"[\U00010000-\U0010FFFF\uD800-\uDBFF\uDC00-\uDFFF\u2600-\u26FF\u2700-\u27BF\uFE00-\uFE0F]"
+            r"|[📌📊📝⚡⭐🛡️🔒🌐🏢💾💻☁️✨👉📘📢⏱️✅🎓💬💡⚠️]"
+        )
+        found_emojis = emoji_pattern.findall(text)
+        if found_emojis:
+            unique_emojis = list(set(found_emojis))[:5]
+            self.errors.append(f"Zero-Emoji Policy: Found {len(found_emojis)} forbidden emoji(s) in post content: {' '.join(unique_emojis)}")
+        else:
+            self.passed.append("Zero-Emoji Policy: 100% clean typographic content, zero emojis (PASSED)")
+
+    def check_no_redundant_share_box(self):
+        """Rule 13: Redundant Share Box Prevention (Blogger Theme has native share)"""
+        has_share_box = 'ht-social-share-box' in self.raw_html
+        has_share_trigger = bool(re.search(r'আপনার সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন|Share this helpful guide', self.raw_html))
+        has_manual_share_links = 'api.whatsapp.com/send' in self.raw_html or 'facebook.com/sharer/sharer.php' in self.raw_html
+        
+        if has_share_box or has_share_trigger or has_manual_share_links:
+            self.errors.append("Share Box: CRITICAL! Redundant custom social share box detected. Post must rely exclusively on Blogger theme's native share buttons!")
+        else:
+            self.passed.append("Share Box: No redundant custom share boxes detected, theme native share preserved (PASSED)")
+
     def run_all(self):
         self.check_word_count()
         self.check_jump_break()
@@ -251,6 +280,8 @@ class PreFlightChecker:
         self.check_schema_markup()
         self.check_dead_links()
         self.check_title_and_slug()
+        self.check_zero_emojis()
+        self.check_no_redundant_share_box()
         
         return len(self.errors) == 0
 
