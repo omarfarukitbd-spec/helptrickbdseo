@@ -125,7 +125,14 @@ Ensure article format matches user intent:
 3. **Intro (First 100 Words):** মূল প্রশ্নের সরাসরি সারসংক্ষেপ উত্তর।
 4. **Jump Break:** প্রথম প্যারার পর `<!--more-->`।
 5. **Internal Linking:** প্রাসঙ্গিক ২-৩টি পোস্টের লিঙ্ক।
-6. **FAQ Schema:** ৩-৫টি বাস্তবসম্মত প্রশ্নোত্তর সহ Schema.org microdata।
+### F. Bilingual Thumbnail & Brand Visual Standards (দ্বিভাষিক থাম্বনেইল নীতিমালা)
+- **100% Language Isolation (সম্পূর্ণ ভাষা স্বাতন্ত্র্য):**
+  * **ইংরেজি পোস্ট:** থাম্বনেইলের প্রতিটি উপাদান (Title, Subtitle, Category Badge, Footer Tagline, Edition Mark) **১০০% ইংরেজিতে** হবে। উদাহরণ: *Education & Study Guide*, *Learn Smart • Lead Future • Latest Edition 2026*।
+  * **বাংলা পোস্ট:** থাম্বনেইলের প্রতিটি উপাদান (Title, Subtitle, Category Badge, Footer Tagline, Edition Mark) **১০০% বাংলায়** হবে। উদাহরণ: *রাষ্ট্রবিজ্ঞান বিভাগ*, *সঠিক জ্ঞান • উজ্জ্বল ভবিষ্যৎ • সর্বশেষ সংস্করণ ২০২৬*।
+  * কোনো অবস্থাতেই বাংলায় লিখিত থাম্বনেইলে ইংরেজি ট্যাগলাইন বা ব্যাজ এবং ইংরেজি থাম্বনেইলে বাংলা লেখা যুক্ত করা যাবে না (শুধু ওয়েবসাইটের ডোমেইন `www.helptrickbd.com` ও অফিসিয়াল লোগো অপরিবর্তিত থাকবে)।
+- **Category-to-Background Mapping (১ ক্যাটাগরি = ১ ফিক্সড ব্যাকগ্রাউন্ড):**
+  * `Thumbnail BG/` ফোল্ডারের ৬টি নির্দিষ্ট ব্যাকগ্রাউন্ড থেকে প্রতিটি ক্যাটাগরির জন্য একটি নির্দিষ্ট টেমপ্লেট ব্যবহৃত হবে (রাষ্ট্রবিজ্ঞান: `bg_2.png`, ইসলামিক: `bg.png`, শিক্ষা: `bg_3.png`, চাকরি: `bg_4.png`, আইসিটি: `bg_5.png`, সাধারণ: `bg_1.png`)।
+- **Typography Standard:** টাইটেলের ক্ষেত্রে সবসময় সুন্দর ও স্ট্যান্ডার্ড `Hind Siliguri` ফন্ট ব্যবহৃত হবে।
 
 ---
 

@@ -4,13 +4,17 @@ HelpTrickBD - Category-Wise Automated Thumbnail Generator
 Uses custom background templates from 'Thumbnail BG/', Hind Siliguri typography,
 the official transparent HelpTrickBD logo, and consistent brand elements.
 
-Category Mapping (1 Category = 1 Fixed Design):
-- Political Science  -> bg_2.png (Deep Navy Blue & Gold Academic Curves)
-- Islamic Article    -> bg.png   (Emerald Green & Gold Botanical Watercolor)
-- Education Guide    -> bg_3.png (Teal Waves & Geometric Shapes)
-- Job Study Article  -> bg_4.png (Forest Green & Warm Sand Fluid Shapes)
-- ICT Guide          -> bg_5.png (Dark Navy & Tech Yellow Diagonal Geometry)
-- Fallback / School  -> bg_1.png (Clean Dual-tone Green Waves)
+Features:
+- Full English & Bengali Bilingual Support:
+  * English Post -> 100% English Thumbnail (English Badge, English Edition Tag, English Title/Subtitle)
+  * Bengali Post -> 100% Bengali Thumbnail (Bengali Badge, Bengali Edition Tag, Bengali Title/Subtitle)
+- 1 Category = 1 Fixed Background Template:
+  * Political Science  -> bg_2.png (Deep Navy Blue & Gold Academic Curves)
+  * Islamic Article    -> bg.png   (Emerald Green & Gold Botanical Watercolor)
+  * Education Guide    -> bg_3.png (Teal Waves & Geometric Shapes)
+  * Job Study Article  -> bg_4.png (Forest Green & Warm Sand Fluid Shapes)
+  * ICT Guide          -> bg_5.png (Dark Navy & Tech Yellow Diagonal Geometry)
+  * Fallback / School  -> bg_1.png (Clean Dual-tone Green Waves)
 """
 
 import os
@@ -48,11 +52,12 @@ for c in CHROME_CANDIDATES:
 if not CHROME_PATH:
     raise RuntimeError("Google Chrome executable not found for headless thumbnail rendering.")
 
-# Category Configuration Dictionary
+# Category Configuration Dictionary with Bilingual Badges
 CATEGORY_CONFIG = {
     "Political Science": {
         "bg_file": "bg_2.png",
-        "badge_name": "রাষ্ট্রবিজ্ঞান বিভাগ",
+        "badge_bn": "রাষ্ট্রবিজ্ঞান বিভাগ",
+        "badge_en": "Political Science",
         "badge_icon": "📚",
         "badge_bg": "#0c2340",
         "badge_border": "#d4af37",
@@ -61,10 +66,13 @@ CATEGORY_CONFIG = {
         "sub_bg": "#f0f4f9",
         "sub_border": "#c2d4ea",
         "sub_text": "#0c2340",
+        "default_sub_bn": "অনার্স ও ডিগ্রি বিষয়ের পূর্ণাঙ্গ লেকচার হ্যান্ডনোট",
+        "default_sub_en": "Comprehensive Academic Lecture & Notes",
     },
     "Islamic Article": {
         "bg_file": "bg.png",
-        "badge_name": "ইসলামিক সাহিত্য ও প্রবন্ধ",
+        "badge_bn": "ইসলামিক সাহিত্য ও প্রবন্ধ",
+        "badge_en": "Islamic Studies & Qasida",
         "badge_icon": "🌙",
         "badge_bg": "#0a4c2e",
         "badge_border": "#e2b024",
@@ -73,10 +81,13 @@ CATEGORY_CONFIG = {
         "sub_bg": "#f2faf5",
         "sub_border": "#b8e2cb",
         "sub_text": "#0a4c2e",
+        "default_sub_bn": "বিশুদ্ধ ক্বাসিদা, মূল শ্লোক ও তাৎপর্য ব্যাখ্যা",
+        "default_sub_en": "Authentic Texts, Reflections & Qasida",
     },
     "Education Guide": {
         "bg_file": "bg_3.png",
-        "badge_name": "শিক্ষা সহায়িকা ও স্টাডি গাইড",
+        "badge_bn": "শিক্ষা সহায়িকা ও স্টাডি গাইড",
+        "badge_en": "Education & Study Guide",
         "badge_icon": "🎓",
         "badge_bg": "#025b5e",
         "badge_border": "#20b2aa",
@@ -85,10 +96,13 @@ CATEGORY_CONFIG = {
         "sub_bg": "#f0faf9",
         "sub_border": "#b2e3e1",
         "sub_text": "#025b5e",
+        "default_sub_bn": "পূর্ণাঙ্গ পাঠ্য বিশ্লেষণ ও মডেল প্রশ্নোত্তর",
+        "default_sub_en": "Complete Syllabus Analysis & Study Guide",
     },
     "Job Study Article": {
         "bg_file": "bg_4.png",
-        "badge_name": "বিসিএস ও চাকরির প্রস্তুতি",
+        "badge_bn": "বিসিএস ও চাকরির প্রস্তুতি",
+        "badge_en": "BCS & Career Preparation",
         "badge_icon": "💼",
         "badge_bg": "#164e3b",
         "badge_border": "#b48c36",
@@ -97,10 +111,13 @@ CATEGORY_CONFIG = {
         "sub_bg": "#f7f6f0",
         "sub_border": "#dcd4b8",
         "sub_text": "#164e3b",
+        "default_sub_bn": "বিসিএস ও সরকারি চাকরির প্রস্তুতি নোট",
+        "default_sub_en": "BCS & Government Job Preparation Guide",
     },
     "ICT Guide": {
         "bg_file": "bg_5.png",
-        "badge_name": "কম্পিউটার ও তথ্যপ্রযুক্তি",
+        "badge_bn": "কম্পিউটার ও তথ্যপ্রযুক্তি",
+        "badge_en": "ICT & Computer Science",
         "badge_icon": "💻",
         "badge_bg": "#0f172a",
         "badge_border": "#eab308",
@@ -109,10 +126,13 @@ CATEGORY_CONFIG = {
         "sub_bg": "#f8fafc",
         "sub_border": "#cbd5e1",
         "sub_text": "#0f172a",
+        "default_sub_bn": "সহজ ভাষায় প্রযুক্তি ও তথ্যকোষ",
+        "default_sub_en": "Technology, Computing & Information Guide",
     },
     "Default": {
         "bg_file": "bg_1.png",
-        "badge_name": "স্টাডি ও ক্যারিয়ার গাইড",
+        "badge_bn": "স্টাডি ও ক্যারিয়ার গাইড",
+        "badge_en": "Study & Career Guide",
         "badge_icon": "📝",
         "badge_bg": "#064e3b",
         "badge_border": "#10b981",
@@ -121,8 +141,18 @@ CATEGORY_CONFIG = {
         "sub_bg": "#f0fdf4",
         "sub_border": "#bbf7d0",
         "sub_text": "#064e3b",
+        "default_sub_bn": "পূর্ণাঙ্গ শিক্ষা ও ক্যারিয়ার সহায়িকা",
+        "default_sub_en": "Complete Education & Career Guide",
     },
 }
+
+
+def detect_language(text):
+    """Detects if text is primarily English or Bengali."""
+    if not text:
+        return "bn"
+    bengali_chars = [c for c in text if "\u0980" <= c <= "\u09ff"]
+    return "bn" if len(bengali_chars) > 0 else "en"
 
 
 def get_category_config(category_name):
@@ -150,11 +180,28 @@ def get_category_config(category_name):
     return CATEGORY_CONFIG["Default"]
 
 
-def render_html_template(title, category, subtitle=None):
+def render_html_template(title, category, subtitle=None, lang=None):
     """Generates pure HTML5/CSS3 template for Chrome headless rendering."""
+    if not lang:
+        lang = detect_language(title)
+
     conf = get_category_config(category)
     bg_file_path = os.path.join(BG_DIR, conf["bg_file"]).replace(os.sep, "/")
     logo_file_path = LOGO_PATH.replace(os.sep, "/")
+
+    # Language-sensitive labels and taglines
+    if lang == "en":
+        badge_label = conf["badge_en"]
+        edition_label = "Latest Edition 2026"
+        tagline_1 = "Learn Smart"
+        tagline_2 = "Lead Future"
+        default_sub = conf.get("default_sub_en", "Complete Study Guide & Examination Notes")
+    else:
+        badge_label = conf["badge_bn"]
+        edition_label = "সর্বশেষ সংস্করণ ২০২৬"
+        tagline_1 = "সঠিক জ্ঞান"
+        tagline_2 = "উজ্জ্বল ভবিষ্যৎ"
+        default_sub = conf.get("default_sub_bn", "পূর্ণাঙ্গ লেকচার ও বিশেষ পরীক্ষার সহায়িকা")
 
     # Title size calculation based on character count
     title_len = len(title)
@@ -168,22 +215,23 @@ def render_html_template(title, category, subtitle=None):
         title_font_size = "56px"
         title_line_height = "1.38"
 
+    sub_to_use = subtitle or default_sub
     subtitle_html = ""
-    if subtitle:
+    if sub_to_use:
         subtitle_html = f"""
         <div class="subtitle-pill">
             <span style="font-size: 20px;">✨</span>
-            <span>{subtitle}</span>
+            <span>{sub_to_use}</span>
         </div>
         """
 
     html = f"""<!DOCTYPE html>
-<html lang="bn">
+<html lang="{lang}">
 <head>
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500;600;700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   * {{
     box-sizing: border-box;
@@ -194,7 +242,7 @@ def render_html_template(title, category, subtitle=None):
     width: 1200px;
     height: 675px;
     overflow: hidden;
-    font-family: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Hind Siliguri', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-image: url('file:///{bg_file_path}');
     background-size: cover;
     background-position: center center;
@@ -331,7 +379,7 @@ def render_html_template(title, category, subtitle=None):
     </div>
     <div class="category-pill">
       <span>{conf['badge_icon']}</span>
-      <span>{conf['badge_name']}</span>
+      <span>{badge_label}</span>
     </div>
   </div>
 
@@ -348,11 +396,11 @@ def render_html_template(title, category, subtitle=None):
       <span>www.helptrickbd.com</span>
     </div>
     <div class="footer-tagline-pill">
-      <span>Learn Smart</span>
+      <span>{tagline_1}</span>
       <span class="dot">•</span>
-      <span>Lead Future</span>
+      <span>{tagline_2}</span>
       <span class="dot">•</span>
-      <span style="color: #047857; font-weight: 700;">সর্বশেষ সংস্করণ ২০২৬</span>
+      <span style="color: #047857; font-weight: 700;">{edition_label}</span>
     </div>
   </div>
 
@@ -361,9 +409,10 @@ def render_html_template(title, category, subtitle=None):
     return html
 
 
-def generate_thumbnail(title, category, subtitle=None, output_filename=None):
+def generate_thumbnail(title, category, subtitle=None, output_filename=None, lang=None):
     """
     Renders and exports a 1200x675 16:9 banner image.
+    Automatically detects language if lang is None.
     Returns the absolute path to the generated image.
     """
     if not output_filename:
@@ -374,7 +423,7 @@ def generate_thumbnail(title, category, subtitle=None, output_filename=None):
         output_filename += ".png"
 
     output_path = os.path.join(OUTPUT_DIR, output_filename)
-    html_content = render_html_template(title, category, subtitle)
+    html_content = render_html_template(title, category, subtitle, lang=lang)
 
     with tempfile.NamedTemporaryFile(suffix=".html", delete=False, mode="w", encoding="utf-8") as tf:
         tf.write(html_content)
@@ -396,7 +445,8 @@ def generate_thumbnail(title, category, subtitle=None, output_filename=None):
         with Image.open(output_path) as im:
             im.save(output_path, optimize=True)
 
-        print(f"✅ Thumbnail Generated: {output_filename}")
+        detected = lang or detect_language(title)
+        print(f"✅ Thumbnail Generated ({detected.upper()}): {output_filename}")
         return output_path
     finally:
         if os.path.exists(temp_html_path):
