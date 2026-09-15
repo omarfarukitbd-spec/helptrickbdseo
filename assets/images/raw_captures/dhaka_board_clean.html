@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+
+<html>
+<meta content="text/html;charset=utf-8" http-equiv="content-type"/>
+<head>
+<meta charset="utf-8"/>
+<title>Dhaka Education Board</title>
+<link href="assets/admin/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+<link href="assets/admin/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet"/>
+<link href="assets/admin/dist/css/AdminLTE.min.css" rel="stylesheet"/>
+<link href="assets/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/custom/css/layout.css" rel="stylesheet"/>
+<link href="assets/custom/img/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="custom/css/mystyle.css" rel="stylesheet"/>
+<style>
+/* Modal Header à¦¸à§à¦à¦¾à¦à¦² */
+#allNewsModal .modal-header {
+  background-color: #0d6efd; /* à¦¨à§à¦² */
+  color: white;
+  border-bottom: none;
+}
+
+/* Close à¦¬à¦¾à¦à¦¨ (X) à¦¸à§à¦à¦¾à¦à¦² */
+#allNewsModal .modal-header .close {
+  color: white;
+  opacity: 1;
+  font-size: 1.5rem;
+}
+
+/* Hover à¦ Close à¦¬à¦¾à¦à¦¨ */
+#allNewsModal .modal-header .close:hover {
+  color: #ffc107; /* à¦¹à¦²à§à¦¦ à¦¹à§à¦­à¦¾à¦° */
+}
+
+/* Modal Footer */
+#allNewsModal .modal-footer {
+  background-color: #f1f1f1;
+  border-top: none;
+}
+
+/* Footer à¦¬à¦¾à¦à¦¨ */
+#allNewsModal .modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+/* Footer à¦¬à¦¾à¦à¦¨ Hover */
+#allNewsModal .modal-footer .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+</style>
+<style>
+.news-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  /*background: #003366; /* à¦¬à§à¦¯à¦¾à¦à¦à§à¦°à¦¾à¦à¦¨à§à¦¡ à¦à¦¾à¦²à¦¾à¦° */
+  color: white;
+  padding: 5px 0;
+  position: relative;
+  /*border-top: 2px solid #ffc107;
+  --border-bottom: 2px solid #ffc107;*/
+}
+.news-marquee-wrapper:hover .news-marquee {
+  animation-play-state: paused;
+}
+
+.news-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-left 90s linear infinite;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.fntclrw {
+  color: #fff;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.news-item {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .news-marquee {
+    animation-duration: 50s; /* à¦®à§à¦¬à¦¾à¦à¦²à§ à¦à¦°à¦ à¦§à§à¦° */
+  }
+}
+
+.box {
+  position: relative;
+  border-radius: 3px;
+  background: #ffffff;
+  border-top: 3px solid #d2d6de;
+  border-top-color: rgb(210, 214, 222);
+  margin-bottom: 2px;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 1200px) {
+  .col-lg-10 {
+    width: 90.333% !important;
+  }
+}
+
+
+    /* Modal background */
+    #modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Image style */
+    #modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    /* Hide modal */
+    .hidden {
+      display: none;
+    }
+</style>
+</head>
+<style>
+  #start-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .modal-content {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    border: 3px solid #4CAF50; /* Professional border */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-width: 100%;
+  }
+
+  .modal-content img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .close-btn:hover {
+    background: #e60000;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+.profile-user-img-chairman {
+  margin: 0 auto;
+  width: 115px;
+  padding: 3px;
+  border: 3px solid #05bdea;
+}
+
+.profile-user-img-sec {
+  margin: 0 auto;
+  width: 100px;
+  padding: 3px;
+  border: 3px solid #81d6ff;
+}
+
+.popup {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+</style>
+<style>
+  #start-modal {
+    display: flex;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  /* JavaScript à¦à¦ class à¦¦à¦¿à¦²à§ modal à¦¬à¦¨à§à¦§ à¦¹à¦¬à§ */
+  #start-modal.hidden {
+    display: none !important;
+  }
+
+  #start-modal .modal-content {
+    position: relative;
+    background: #fff;
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 35px 45px;
+    border-radius: 6px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+    box-sizing: border-box;
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif;
+    color: #222;
+  }
+
+  #start-modal .close-btn {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  #start-modal .close-btn:hover {
+    color: #d00;
+  }
+
+  #start-modal .notice-title {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    color: #b30000;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+
+  #start-modal .notice-date {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  #start-modal p {
+    font-size: 17px;
+    line-height: 1.9;
+    text-align: justify;
+    margin: 0 0 18px 0;
+  }
+
+  #start-modal .heading {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  #start-modal .important {
+    font-weight: bold;
+  }
+
+  #start-modal .signature {
+  width: 350px;
+  margin-left: auto;
+  margin-top: 35px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+#start-modal .signature-image {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+	#start-modal .signature-image img {
+		width: 200px;
+		height: auto;
+		display: inline-block;
+	}
+
+
+@media (max-width: 600px) {
+    #start-modal {
+        width: 100vw;
+        height: 100dvh;
+        min-height: 100dvh;
+        padding: 0;
+    }
+
+    #start-modal .modal-content {
+        width: 100vw;
+        min-height: 100dvh;
+        margin: 0;
+        border-radius: 0;
+        box-sizing: border-box;
+    }
+}
+
+
+  
+  
+  #start-modal .modal-content p {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(3px);
+    animation: noticeParagraph 0.9s ease-out forwards;
+}
+
+#start-modal .modal-content p:nth-of-type(1) {
+    animation-delay: 0.4s;
+}
+
+#start-modal .modal-content p:nth-of-type(2) {
+    animation-delay: 1.3s;
+}
+
+#start-modal .modal-content p:nth-of-type(3) {
+    animation-delay: 2.2s;
+}
+
+#start-modal .modal-content p:nth-of-type(4) {
+    animation-delay: 3.1s;
+}
+
+@keyframes noticeParagraph {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+</style>
+<div class="hidden" id="start-modal">
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("start-modal");
+    function showModal() {
+        modal.classList.remove("hidden");
+        setTimeout(closeModal, 90000);
+    }
+    window.closeModal = function () {
+        modal.classList.add("hidden");
+    };
+    showModal();
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+});
+</script>
+<!-- Contact Us MODAL -->
+
+<!-- Contact Us MODAL -->
+<body>
+<div class="main">
+<div id="layer"></div>
+
+
+<div class="head_section">
+<div class="logo">
+<a href="https://dhakaeducationboard.gov.bd"> <img alt="" src="assets/custom/img/logog.gif"/> </a>
+</div>
+<div class="title">
+<div class="main_title">à¦®à¦¾à¦§à§à¦¯à¦®à¦¿à¦ à¦ à¦à¦à§à¦à¦®à¦¾à¦§à§à¦¯à¦®à¦¿à¦ à¦¶à¦¿à¦à§à¦·à¦¾ à¦¬à§à¦°à§à¦¡, à¦¢à¦¾à¦à¦¾</div>
+<div class="sub_title">Board of Intermediate and Secondary Education, Dhaka</div>
+</div>
+<div class="lang"><a href="index.html?changelang=bangla">à¦¬à¦¾à¦à¦²à¦¾</a></div>
+<div class="cb"></div>
+</div>
+<div class="news_section">
+<section class="content" style="min-height: 0px;">
+<div class="row">
+<div class="col-lg-10">
+<div class="news-marquee-wrapper" id="marqueeWrapper">
+<div class="news-marquee" id="latest_news">
+									ð à¦²à§à¦¡ à¦¹à¦à§à¦à§...
+								</div>
+<!--<a href="Sresc_result_final_ssc_2026.pdf" target="_blank" rel="noopener noreferrer">
+									RE-EXAMINATION RESULTS OF SSC EXAM - 2026
+									<span>PDF Link: Click to View</span>
+								</a>-->
+<!--<a href="https://dhakaeducationboard.gov.bd/site/res_all.html" target="_blank">ð  Scholarship Results of JSC-2025 available here.</a>-->
+</div>
+</div>
+<div style="text-align:center; margin-top: 5px;">
+<button class="" data-target="#allNewsModal" data-toggle="modal" id="showAllNewsBtn"><span style="font-size: 20px; font-weight: bold;">à¦¸à¦à¦² à¦à¦¬à¦°</span></button>
+</div>
+</div>
+</section>
+</div>
+<!-- Modal -->
+
+<div class="menu_section">
+<div class="menu">
+<ul>
+<li><a href="https://dhakaeducationboard.gov.bd/site/"><div class="menu_item">Home</div></a></li>
+<li>
+<a><div class="menu_item">About Board</div></a>
+<ul>
+<li><a class="btnClick" href="" id="cms17"><div class="menu_item">History</div></a></li>
+<!--<li><a  target=""	class="btnClick" id="" ><div class="menu_item">Ordinance</div></a></li>-->
+<li><a class="btnClick" href="" id="18373"><div class="menu_item">Officers (Deputed)</div></a></li>
+<li><a class="btnClick" href="" id="21"><div class="menu_item">Officers (Board)</div></a></li>
+<li><a class="btnClick" href="" id="citizencharter"><div class="menu_item">Citizen Charter</div></a></li>
+<li><a class="btnClick" href="" id="Regulation1"><div class="menu_item">Regulation, 2009 (Amendment)</div></a></li>
+<li><a class="btnClick" href="" id="Regulation2"><div class="menu_item">Regulation, 2009</div></a></li>
+<li><a class="btnClick" href="" id="19641"><div class="menu_item">à¦à¦¨à¦¿à¦ à¦ à¦à¦ªà¦¿à¦² à¦à¦°à§à¦®à¦à¦°à§à¦¤à¦¾</div></a></li>
+<li><a class="btnClick" href="" id="19642"><div class="menu_item">à¦¸à¦¿à¦à¦¿à¦à§à¦¨ à¦à¦¾à¦°à§à¦à¦¾à¦° à¦«à§à¦à¦¾à¦² à¦ªà§à§à¦¨à§à¦ à¦à¦°à§à¦®à¦à¦°à§à¦¤à¦¾/à¦ªà¦°à¦¿à¦¬à§à¦à§à¦·à¦£ à¦à¦®à¦¿à¦à¦¿</div></a></li>
+<li><a class="btnClick" href="" id="19646"><div class="menu_item">à¦¤à¦¥à§à¦¯ à¦à¦§à¦¿à¦à¦¾à¦° à¦à¦à¦¨à§ à¦¦à¦¾à§à¦¿à¦¤à§à¦¬à¦ªà§à¦°à¦¾à¦ªà§à¦¤ à¦à¦°à§à¦®à¦à¦°à§à¦¤à¦¾ à¦ à¦à¦ªà¦¿à¦² à¦à¦°à§à¦¤à§à¦ªà¦à§à¦·</div></a></li>
+<li><a class="btnClick" href="" id="19643"><div class="menu_item">à¦¶à§à¦¦à§à¦§à¦¾à¦à¦¾à¦° à¦«à§à¦à¦¾à¦² à¦ªà§à§à¦¨à§à¦ à¦ à¦¬à¦¿à¦à¦²à§à¦ª à¦«à§à¦à¦¾à¦² à¦ªà§à§à¦¨à§à¦ à¦à¦°à§à¦®à¦à¦°à§à¦¤à¦¾</div></a></li>
+<li><a class="btnClick" href="" id="fc"><div class="menu_item">Foreign Curriculum</div></a></li>
+<li><a class="btnClick" href="" id="19645"><div class="menu_item">à¦¸à¦¿à¦à¦¿à¦à§à¦¨à§âà¦¸ à¦à¦¾à¦°à§à¦à¦¾à¦° à¦¸à¦à¦à§à¦°à¦¾à¦¨à§à¦¤ à¦à¦à¦¨/à¦¬à¦¿à¦§à§/à¦¨à§à¦¤à¦¿à¦®à¦¾à¦²à¦¾/à¦ªà¦°à¦¿à¦ªà¦¤à§à¦°/à¦¨à¦¿à¦°à§à¦¦à§à¦¶à¦¿à¦à¦¾/à¦ªà¦°à¦¿à¦ªà¦¤à§à¦°</div></a></li>
+<li><a class="btnClick" href="" id="18695"><div class="menu_item">à¦.à¦ªà¦¿.à¦ à¦¨à¦¿à¦°à§à¦¦à§à¦¶à¦¿à¦à¦¾/à¦ªà¦°à¦¿à¦ªà¦¤à§à¦°/à¦à¦ªà¦¿à¦ à¦à¦¿à¦®</div></a></li>
+<li><a class="btnClick" href="" id="20893"><div class="menu_item">à¦¬à¦¿à¦­à¦¾à¦/à¦¦à¦ªà§à¦¤à¦°-à¦¸à¦à¦¸à§à¦¥à¦¾à¦° à¦à§à¦à§à¦¤à¦¿à¦¸à¦®à§à¦¹</div></a></li>
+<li><a class="btnClick" href="" id="21154"><div class="menu_item">à¦à¦¨à§à¦­à§à¦¶à¦¨ à¦à§à¦®</div></a></li>
+<li><a class="btnClick" href="" id="20894"><div class="menu_item">à¦ªà¦°à¦¿à¦¬à§à¦à§à¦·à¦£ à¦ à¦®à§à¦²à§à¦¯à¦¾à§à¦¨ à¦ªà§à¦°à¦¤à¦¿à¦¬à§à¦¦à¦¨</div></a></li>
+</ul>
+</li>
+<li>
+<a><div class="menu_item">Forms</div></a>
+<ul>
+<li><a class="btnClick" href="" id="CertificateSectionForm"><div class="menu_item">Certificate Section Form</div></a></li>
+<li><a><div class="menu_item">College Sectionâ¼</div></a>
+<ul>
+<li><a class="btnClick" href="" id="1st_temporary_recognition"><div class="menu_item">1st Temporary Recognition</div></a></li>
+<li><a class="btnClick" href="" id="RecognitionRenewal"><div class="menu_item">Recognition Renewal</div></a></li>
+<li><a class="btnClick" href="" id="AcademicAffiliationForm"><div class="menu_item">Academic Affiliation Form</div></a></li>
+<li><a class="btnClick" href="" id="GroupSubject"><div class="menu_item">Group,Subject,Ad.Class sec. open Form</div></a></li>
+<li><a class="btnClick" href="" id="NewcollegeEstablish"><div class="menu_item">New college Establish Form</div></a></li>
+<li><a class="btnClick" href="" id="Permissionfor"><div class="menu_item">Permission for college education</div></a></li>
+<li><a class="btnClick" href="" id="HSC2ndYearBTC"><div class="menu_item">HSC 2nd Year BTC Form</div></a></li>
+<li><a class="btnClick" href="" id="HSC1stYearBTC"><div class="menu_item">HSC 1st Year BTC Form</div></a></li>
+</ul>
+</li>
+<li><a><div class="menu_item">School Sectionâ¼</div></a>
+<ul>
+<li><a class="btnClick" href="" id="SchoolInformationForm"><div class="menu_item">School Information Form.</div></a></li>
+<li><a class="btnClick" href="" id="InspectionForm"><div class="menu_item">Inspection Form</div></a></li>
+<li><a class="btnClick" href="" id="jscsscCorrectionForm"><div class="menu_item">JSC &amp; SSC Reg. Correction Form</div></a></li>
+<li><a class="btnClick" href="" id="AppealArbitration"><div class="menu_item">Appeal &amp; Arbitration From</div></a></li>
+<li><a class="btnClick" href="" id="SchoolTCForm"><div class="menu_item">School TC Form</div></a></li>
+<li><a class="btnClick" href="" id="SchoolBTCForm"><div class="menu_item">School BTC/TC Class (7,8,9,10)</div></a></li>
+</ul>
+</li>
+<li><a class="btnClick" href="" id="CertificateVerification"><div class="menu_item">Certificate Verification Form</div></a></li>
+<li><a class="btnClick" href="" id="NameCorrection"><div class="menu_item">Name Correction Form</div></a></li>
+<li><a class="btnClick" href="" id="Applicationappeal"><div class="menu_item">Application and appeal form</div></a></li>
+<li><a class="btnClick" href="" id="Admissioncancellation"><div class="menu_item">Admission cancellation form</div></a></li>
+</ul>
+</li>
+<li>
+<a href="http://dhakaeducationboard.gov.bd/data/Income_Fee_List_of_Dhaka_Board.pdf" target="_blank"><div class="menu_item">Fees</div></a>
+</li>
+<li>
+<a><div class="menu_item">Result Archive</div></a>
+<ul>
+<li><a href="https://result.dhakaeducationboard.gov.bd/v2/home" target="_blank"><div class="menu_item">Dhaka Board Server</div></a></li>
+<li><a href="http://www.educationboardresults.gov.bd/" target="_blank"><div class="menu_item">Teletalk Archive</div></a></li>
+<!--<li><a   target="_blank" href="https://efile.dhakaeducationboard.gov.bd/index.php/result/rsc/hsc/2024/"><div class="menu_item">Rescrutiny Result</div></a></li>-->
+</ul>
+</li>
+<!--<li>
+							<a  target="_blank"  href="http://www.educationboardresults.gov.bd/"><div class="menu_item">Result Archive</div></a>
+						</li>-->
+<!--<li>
+							<a><div class="menu_item">XI Admission</div></a>
+							<ul>
+								<li><a   target="_blank" href="http://xiclassadmission.gov.bd/"><div class="menu_item">XI Admission</div></a></li>
+								<li><a   target="_blank" href="https://deb.xiclassadmission.gov.bd/reg/"><div class="menu_item">Sub change & Group change</div></a></li>
+							</ul>
+						</li>-->
+<li>
+<a href="https://xiclassadmission.gov.bd/" target="_blank"><div class="menu_item">XI Admission</div></a>
+</li>
+<li>
+<a data-target="#ContactUs" data-toggle="modal"><div class="menu_item">Contact Us</div></a>
+</li>
+<li>
+<a href="http://efile.dhakaeducationboard.gov.bd/" target="_blank"><div class="menu_item">Login</div></a>
+</li>
+<!--<li>
+							<a  target="_blank"  href="https://dhakaeducationboard.gov.bd/site/data/hresc_result_final_2024_signed.pdf"><div class="menu_item">HSC Rescrutiny Result 2024 (Changed Only)</div></a>
+						</li> -->
+</ul>
+</div>
+</div>
+<div class="body_section">
+<div class="body_left">
+<!-- CHAIRMAN -->
+<div class="chairman_corner">
+<div class="box box-info">
+<div class="box-body box-profile">
+<img alt="Chairman" class="profile-user-img-chairman img-responsive img-circle" id="chairmanPhoto" src=""/>
+<h3 class="profile-username text-center" id="chairmanName" style="font-size:15px;font-weight:bold;"></h3>
+<p class="text-muted text-center" id="chairmanPost"></p>
+</div>
+</div>
+</div>
+<!-- SECRETARY -->
+<div class="chairman_corner">
+<div class="box box-info">
+<div class="box-body box-profile">
+<img alt="Secretary" class="profile-user-img-sec img-responsive img-circle" id="secretaryPhoto" src=""/>
+<h3 class="profile-username text-center" id="secretaryName" style="font-size:15px;font-weight:bold;"></h3>
+<p class="text-muted text-center" id="secretaryPost"></p>
+</div>
+</div>
+</div>
+<div class="service_menu">
+<a href="https://efile.dhakaeducationboard.gov.bd/index.php/eservice/menu" target="_blank">
+<!-- <a href="" data-toggle="modal" data-target="#myModal">-->
+<div class="info-box info-box-big">
+<div class="info-box-icon bg-green">
+<img src="assets/custom/img/online2.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number" style="color:#08a6e1; font-weight: bold; font-size: 16px;">On-line Application</div>
+</div>
+</div>
+</a>
+<!--<a target="_blank" href="https://global.uat.ieims.org/home/public/dashboard">
+        <div class="info-box info-box-big">
+            <div class="info-box-icon bg-red">
+                <img src="https://global.qa.ieims.org/home/_next/static/media/Online Application.3d3937c3.svg">
+            </div>
+            <div class="info-box-content">
+                <div style="color:#08a6e1; font-weight: bold; font-size: 16px;" class="info-box-number">Examiner Recruitment</div>
+            </div>
+        </div>    
+    </a> -->
+<a href="https://dhakaeducationboard.gov.bd/index.php/site/eiinsimlogin" target="_blank">
+<div class="info-box info-box-big">
+<div class="info-box-icon bg-yellow">
+<img src="assets/custom/img/sim5g.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number" style="color:#08a6e1; font-weight: bold; font-size: 16px;">EIIN SIM Application</div>
+</div>
+</div>
+</a>
+<a href="https://erp.dhakaeducationboard.gov.bd/" target="_blank">
+<div class="info-box info-box-small">
+<div class="info-box-icon bg-aqua">
+<img src="assets/custom/img/esif.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">OEMS</div>
+</div>
+</div>
+</a>
+<a href="https://erp.dhakaeducationboard.gov.bd/index.php/tc" target="_blank">
+<div class="info-box info-box-small">
+<div class="info-box-icon bg-green">
+<img src="assets/custom/img/esif.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">e-TC</div>
+</div>
+</div>
+</a>
+<a href="https://dhakaeducationboard.gov.bd/index.php/etif/" target="_blank">
+<div class="info-box info-box-small">
+<div class="info-box-icon bg-red">
+<img src="assets/custom/img/etif.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">e-TIF</div>
+</div>
+</div>
+</a>
+<a href="https://erp.dhakaeducationboard.gov.bd/" target="_blank">
+<div class="info-box info-box-small">
+<div class="info-box-icon bg-green">
+<img src="assets/custom/img/esif.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">e-SIF</div>
+</div>
+</div>
+</a>
+<a href="https://erp.dhakaeducationboard.gov.bd/" target="_blank">
+<div class="info-box info-box-small">
+<div class="info-box-icon bg-yellow">
+<img src="assets/custom/img/esif.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">e-FF</div>
+</div>
+</div>
+</a>
+<a href="https://dhakaeducationboard.gov.bd/uno/" target="_blank">
+<div class="info-box info-box-small">
+<div class="info-box-icon bg-yellow">
+<img src="assets/custom/img/esif.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">UNO LIST</div>
+</div>
+</div>
+</a>
+<a href="https://dhakaeducationboard.gov.bd/index.php/site/subdomain" target="_blank">
+<div class="info-box info-box-big">
+<div class="info-box-icon bg-red">
+<img src="assets/custom/img/website.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">Institute Website</div>
+</div>
+</div>
+</a>
+<a href="https://result.dhakaeducationboard.gov.bd/v2/home" target="_blank">
+<div class="info-box info-box-small">
+<div class="info-box-icon">
+<img src="assets/custom/img/result3.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">SSC,HSC Result<br/>Board Server</div>
+</div>
+</div>
+</a>
+<a href="http://www.educationboardresults.gov.bd" target="_blank">
+<div class="info-box info-box-small">
+<div class="info-box-icon bg-white">
+<img src="assets/custom/img/teletalk-logo.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">SSC,HSC Result<br/>TeleTalk Server</div>
+</div>
+</div>
+</a>
+<!--<a target="_blank" href="https://result.dhakaeducationboard.gov.bd/v2/home">
+        <div class="info-box info-box-big">
+            <div class="info-box-icon bg-success">
+                <img src="assets/custom/img/esif.png">
+            </div>
+            <div class="info-box-content">
+                <div style="color:red" class="info-box-number">Result[JSC,SSC,HSC]</div>
+            </div>
+			
+        </div>    
+    </a>-->
+<!--<a target="_blank" href="https://efile.dhakaeducationboard.gov.bd/index.php/result/rsc/hsc/2024/">-->
+<a href="https://dhakaeducationboard.gov.bd/data/20251116123034975415.pdf" target="_blank">
+<div class="info-box info-box-big">
+<div class="info-box-icon bg-success">
+<img src="assets/custom/img/res.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number" style="color:red">HSC Rescrutiny Result 2025</div>
+</div>
+</div>
+</a>
+<a class="btnClick" href="" id="SonaliSeba">
+<div class="info-box info-box-big">
+<div class="info-box-icon bg-aqua">
+<img src="assets/custom/img/sonali_logo.jpg"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">Sonali Seba</div>
+</div>
+</div>
+</a>
+<a class="btnClick" href="" id="SonaliSebaverify">
+<div class="info-box info-box-big">
+<div class="info-box-icon bg-aqua">
+<img src="assets/custom/img/sonali_logo.jpg"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">Sonali Seba Verify</div>
+</div>
+</div>
+</a>
+<a href="https://dhakaeducationboard.gov.bd/mail/roundcubemail/" target="_blank">
+<div class="info-box info-box-big">
+<div class="info-box-icon bg-green">
+<img src="assets/custom/img/webmail.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">Web Mail</div>
+</div>
+</div>
+</a>
+<!--<a href="#">
+        <div class="info-box info-box-big">
+            <div class="info-box-icon bg-yellow">
+                <img src="assets/custom/img/attendance.png">
+            </div>
+            <div class="info-box-content">
+                <div class="info-box-number">Attendance</div>
+            </div>
+        </div>    
+    </a> -->
+<a href="https://dhakaeducationboard.gov.bd/index.php/site/center_info" target="_blank">
+<div class="info-box info-box-big">
+<div class="info-box-icon bg-green">
+<img src="assets/custom/img/center_information.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">Center Information</div>
+</div>
+</div>
+</a>
+<a href="tel:#">
+<div class="info-box info-box-big">
+<div class="info-box-icon -bg-green">
+<img src="assets/custom/img/333.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number"><b>à§©à§©à§© (à¦¸à¦°à¦à¦¾à¦°à¦¿ à¦¤à¦¥à§à¦¯ à¦ à¦¸à§à¦¬à¦¾)</b></div>
+</div>
+</div>
+</a>
+<a href="tel:#">
+<div class="info-box info-box-big">
+<div class="info-box-icon -bg-green">
+<img src="assets/custom/img/999.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number"><b>à§¯à§¯à§¯ (à¦à¦°à§à¦°à¦¿ à¦¸à§à¦¬à¦¾)</b></div>
+</div>
+</div>
+</a>
+<a href="tel:#">
+<div class="info-box info-box-big">
+<div class="info-box-icon -bg-green">
+<img src="assets/custom/img/109.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number"><b style="font-size: 12px;">à§§à§¦à§¯ (à¦¨à¦¾à¦°à§ à¦ à¦¶à¦¿à¦¶à§ à¦¨à¦¿à¦°à§à¦¯à¦¾à¦¤à¦¨ à¦ªà§à¦°à¦¤à¦¿à¦°à§à¦§)</b></div>
+</div>
+</div>
+</a>
+<a href="tel:#">
+<div class="info-box info-box-big">
+<div class="info-box-icon -bg-green">
+<img src="assets/custom/img/106.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number"><b>à§§à§¦à§¬ (à¦¦à§à¦¦à¦)</b></div>
+</div>
+</div>
+</a>
+<a href="tel:#">
+<div class="info-box info-box-big">
+<div class="info-box-icon -bg-green">
+<img src="assets/custom/img/1090.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number"><b>à§§à§¦à§¯à§¦ (à¦¦à§à¦°à§à¦¯à§à¦à§à¦° à¦à¦à¦¾à¦® à¦¬à¦¾à¦°à§à¦¤à¦¾)</b></div>
+</div>
+</div>
+</a>
+</div>
+<div class="product">
+<div class="product_title">Exam Control Room</div>
+<div class="event_body">
+<ul class="product_list">
+<li>Phone: 029669815</li>
+<li>Mobile: 01977733553</li>
+</ul>
+</div>
+</div>
+<div class="product">
+<div class="product_title">Social Communication</div>
+<div class="event_body">
+<p></p>
+<style>
+		.info-box-icon {
+		background: rgba(0, 0, 0, 0);
+		}
+		</style>
+<a href="https://www.facebook.com/dhakaeducationboardofficial" target="_blank">
+<div class="info-box info-box-sml">
+<div class="info-box-icon bg-light">
+<img src="assets/custom/img/fb.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">Facebook</div>
+</div>
+</div>
+</a>
+<a href="https://www.youtube.com/channel/UCs6NU54zqHn7GBQaOsxkuRg" target="_blank">
+<div class="info-box info-box-sml">
+<div class="info-box-icon bg-light">
+<img src="assets/custom/img/yt.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">YouTube</div>
+</div>
+</div>
+</a>
+<a href="https://www.youtube.com/channel/UCs6NU54zqHn7GBQaOsxkuRg/playlists" target="_blank">
+<div class="info-box info-box-sml">
+<div class="info-box-icon bg-light">
+<img src="assets/custom/img/classroom.png"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">Online Class</div>
+</div>
+</div>
+</a>
+<a href="https://rb.gy/l5604p" target="_blank">
+<div class="info-box info-box-sml">
+<div class="info-box-icon bg-light">
+<img src="assets/custom/img/kishor_batayon.jpg"/>
+</div>
+<div class="info-box-content">
+<div class="info-box-number">à¦à¦¿à¦¶à§à¦° à¦¬à¦¾à¦¤à¦¾à§à¦¨</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="body_right">
+<div class="home">
+<table>
+<tr>
+<td colspan="2">
+<div class="slide">
+<div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
+<ol class="carousel-indicators">
+<!--<li data-target="#carousel-example-generic" data-slide-to="0" class="Active"></li>-->
+<li class="Active" data-slide-to="0" data-target="#carousel-example-generic"></li>
+<li class="" data-slide-to="1" data-target="#carousel-example-generic"></li>
+<li class="" data-slide-to="2" data-target="#carousel-example-generic"></li>
+<!--<li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
+						<li data-target="#carousel-example-generic" data-slide-to="4" class=""></li>-->
+</ol>
+<div class="carousel-inner">
+<!--<div class="item active">
+								<img style="width: 550px; height: 300px;" src="data/milestone_tragedy.jpg" alt="No Image">
+								
+							</div>-->
+<!--<div class="item active">
+								<img style="width: 550px; height: 300px;" src="data/à¦¶à§à¦à¦¬à¦¾à¦°à§à¦¤à¦¾_.jpg" alt="No Image">
+								
+							</div>
+							<div class="item">
+								<img style="width: 550px; height: 300px;" src="data/à¦¶à§à¦à¦¬à¦¾à¦°à§à¦¤à¦¾_.jpg" alt="No Image">
+								
+							</div>-->
+<div class="item active">
+<img alt="No Image" src="data/dhakaeducationboard.jpg" style="width: 550px; height: 300px;"/>
+</div>
+<div class="item">
+<img alt="No Image" src="data/name_age.jpg" style="width: 550px; height: 300px;"/>
+<div class="carousel-caption"><div class="carousel-caption">
+<a href="https://efile.dhakaeducationboard.gov.bd/index.php/eiin" target="_blank"><span class="linkbutton">APPLY</span></a>
+<a href="https://efile.dhakaeducationboard.gov.bd/index.php/name/lastupdate" target="_blank"><span class="linkbutton">Last Update</span></a>
+</div></div>
+</div>
+<div class="item">
+<img alt="No Image" src="data/Slide-1.jpg" style="width: 550px; height: 300px;"/>
+<div class="carousel-caption"><div class="carousel-caption">
+<a href="https://www.mygov.bd/services/info?id=BDGS-1722229346" target="_blank"><span class="linkbutton">SSC LINK</span></a>
+<a href="https://www.mygov.bd/services/info?id=BDGS-1723276694" target="_blank"><span class="linkbutton">HSC LINK</span></a>
+</div></div>
+</div>
+<!--<div class="item ">
+								<img style="width: 550px; height: 300px;" src="data/tc.jpg" alt="No Image">
+								<div class="carousel-caption"><div class="carousel-caption">
+								<a href="https://global.xiclassadmission.gov.bd/home/public/dashboard" target="_blank"><span class="linkbutton">TC APPLY</span></a>
+								<a href="https://global.xiclassadmission.gov.bd/sso/login" target="_blank"><span class="linkbutton">College</span></a>
+								</div></div>
+							</div>-->
+<!--<div class="item ">
+								<img style="width: 550px; height: 300px;" src="data/Slide-3.jpg" alt="No Image">
+								<div class="carousel-caption">Â </div>
+							</div>-->
+</div>
+<a class="left carousel-control" data-slide="prev" href="#carousel-example-generic">
+<span class="fa fa-angle-left"></span>
+</a>
+<a class="right carousel-control" data-slide="next" href="#carousel-example-generic">
+<span class="fa fa-angle-right"></span>
+</a>
+</div>
+</div>
+</td>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#npanel").slideDown("slow");
+  });
+});
+</script>
+<style> 
+#npanel, #flip {
+  padding: 5px;
+  --text-align: center;
+  --background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+	font-weight: bold; 
+	text-align: left;
+}
+
+.gray-text {
+  color: gray;
+}
+.gray-text:hover {
+  color: blue;
+}
+
+
+
+.blink {
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+</style>
+<td class="product">
+<div class="product_title btnLNc" id="flip"><b class="xblink">Latest Notice</b></div>
+<div id="npanel">
+<!--<marquee class="product_marquee" direction="up" behavior="scroll" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 2, 0);" scrollamount="2" style="height:240px;">-->
+<div class="container2 gray-text">
+<span class="xmarquee2">
+<!--<ul class="product_list">
+				<a target="_blank" href="https://result.dhakaeducationboard.gov.bd/v2/home">  SSC Result 2025 </a><p style="border-bottom: 1px dotted #000;"></p>
+				</ul>-->
+<!--<div id="latest_notice"></div>-->
+<div id="latest_notice">ð à¦¨à§à¦à¦¿à¦¶ à¦²à§à¦¡ à¦¹à¦à§à¦à§...</div>
+</span>
+</div>
+<!--<marquee class="product_marquee" direction="up" behavior="scroll" style="height:240px;">
+					<div id="latest_notice"></div>
+				</marquee>-->
+</div>
+</td>
+</tr>
+
+
+<!--<div class="modal fade" id="info_modal" role="dialog">
+    <div class="modal-dialog modal-lg" style="width:1000px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div id="info"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>  -->
+<!-- Responsive Bootstrap Modal -->
+<!-- Professional Fullscreen Responsive Modal -->
+<style>
+
+#info_modal .modal-fullscreen-custom {
+    width: 100vw;
+    max-width: 97vw;
+    --height: 100vh;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    #info_modal .modal-title {
+        font-size: 18px;
+    }
+
+    #info_modal .custom-body {
+        height: calc(100vh - 60px);
+        padding: 15px;
+    }
+	
+	#info_modal .modal-fullscreen-custom {
+    width: 100vw;
+    max-width: 97vw;
+    --height: 100vh;
+}
+
+}
+
+</style>
+<!-- Borderless Fullscreen Professional Modal -->
+<!-- Fullscreen Center Modal -->
+
+<!------BOX ---->
+<tr>
+<!--<td class="product">
+				<b  class="btnClick" id="jsc"><br>
+				<center>
+				<div class="box2">
+					<h4>à¦à§à¦à¦¸à¦¸à¦¿ à¦à¦°à§à¦¨à¦¾à¦°</h4>
+					<img src="img/jsc.jpg" alt="à¦à§à¦à¦¸à¦¸à¦¿ à¦à¦°à§à¦¨à¦¾à¦°" width="110">		
+				</div>
+				</center>
+				</b>
+			</td>-->
+<td class="product">
+<b class="btnClick" id="jse"><br/>
+<center>
+<div class="box2">
+<h4>à¦à§à¦¨à¦¿à§à¦° à¦¬à§à¦¤à§à¦¤à¦¿</h4>
+<img alt="à¦à§à¦¨à¦¿à¦à¦° à¦¬à§à¦¤à§à¦¤à¦¿" src="img/jse.jpg" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<!--<td class="product">
+				<b onclick="window.open('https://erp.dhakaeducationboard.gov.bd/index.php/auth/login/', '_blank')">
+				  <br>
+				  <center>
+					<div class="box2">
+					  <h4>OEMS</h4>
+					  <img src="img/oems.png" alt="à¦à§à¦à¦¸à¦¸à¦¿ à¦à¦°à§à¦¨à¦¾à¦°" width="110">
+					</div>
+				  </center>
+				</b>
+			</td>-->
+<td class="product">
+<b class="btnClick" id="ssc"><br/>
+<center>
+<div class="box2">
+<h4>à¦à¦¸à¦à¦¸à¦¸à¦¿ à¦à¦°à§à¦¨à¦¾à¦°</h4>
+<img alt="à¦à¦¸à¦à¦¸à¦¸à¦¿ à¦à¦°à§à¦¨à¦¾à¦°" src="img/ssc.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b class="btnClick" id="hsc"><br/>
+<center>
+<div class="box2">
+<h4>à¦à¦à¦à¦à¦¸à¦¸à¦¿ à¦à¦°à§à¦¨à¦¾à¦°</h4>
+<img alt="à¦à¦à¦à¦à¦¸à¦¸à¦¿ à¦à¦°à§à¦¨à¦¾à¦°" src="img/hsc.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+</tr>
+<tr>
+<td class="product">
+<b class="btnClick" id="adminorder"><br/>
+<center>
+<div class="box2">
+<h4>à¦ªà§à¦°à¦¶à¦¾à¦¸à¦¨à¦¿à¦ à¦à¦¦à§à¦¶</h4>
+<img alt="à¦ªà§à¦°à¦¶à¦¾à¦¸à¦¨à¦¿à¦ à¦à¦¦à§à¦¶" src="img/order.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b data-target="#school_order" data-toggle="modal"><br/>
+<center>
+<div class="box2">
+<h4>à¦¸à§à¦à§à¦² à¦¸à¦à¦à§à¦°à¦¾à¦¨à§à¦¤ à¦à¦¦à§à¦¶</h4>
+<img alt="à¦¸à§à¦à§à¦² à¦¸à¦à¦à§à¦°à¦¾à¦¨à§à¦¤ à¦à¦¦à§à¦¶" src="img/school.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b data-target="#college_order" data-toggle="modal"><br/>
+<center>
+<div class="box2">
+<h4>à¦à¦²à§à¦ à¦¸à¦à¦à§à¦°à¦¾à¦¨à§à¦¤ à¦à¦¦à§à¦¶</h4>
+<img alt="à¦à¦²à§à¦ à¦¸à¦à¦à§à¦°à¦¾à¦¨à§à¦¤ à¦à¦¦à§à¦¶" src="img/college.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+</tr> <!------ SCHOOL & COLLEGE ---->
+<tr>
+<td class="product">
+<b class="btnClick" id="citizen"><br/>
+<center>
+<div class="box2">
+<h4>à¦¸à§à¦¬à¦¾ à¦ªà§à¦°à¦¦à¦¾à¦¨ à¦ªà§à¦°à¦¤à¦¿à¦¶à§à¦°à§à¦¤à¦¿ (à¦¸à¦¿à¦à¦¿à¦à§à¦¨à§âà¦¸ à¦à¦¾à¦°à§à¦à¦¾à¦°)</h4>
+<img alt="à¦¸à§à¦¬à¦¾ à¦ªà§à¦°à¦¦à¦¾à¦¨ à¦ªà§à¦°à¦¤à¦¿à¦¶à§à¦°à§à¦¤à¦¿ (à¦¸à¦¿à¦à¦¿à¦à§à¦¨à§âà¦¸ à¦à¦¾à¦°à§à¦à¦¾à¦°)" src="img/service.png" width="120"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b class="btnClick" id="nationalintegrity"><br/>
+<center>
+<div class="box2">
+<h4>à¦à¦¾à¦¤à§à§ à¦¶à§à¦¦à§à¦§à¦¾à¦à¦¾à¦° à¦à§à¦¶à¦²</h4>
+<img alt="à¦à¦¾à¦¤à§à§ à¦¶à§à¦¦à§à¦§à¦¾à¦à¦¾à¦° à¦à§à¦¶à¦²" src="img/nis.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b class="btnClick" id="grievance"><br/>
+<center>
+<div class="box2">
+<h4>à¦à¦­à¦¿à¦¯à§à¦ à¦ªà§à¦°à¦¤à¦¿à¦à¦¾à¦° à¦¬à§à¦¯à¦¬à¦¸à§à¦¥à¦¾à¦ªà¦¨à¦¾</h4>
+<img alt="à¦à¦­à¦¿à¦¯à§à¦ à¦ªà§à¦°à¦¤à¦¿à¦à¦¾à¦° à¦¬à§à¦¯à¦¬à¦¸à§à¦¥à¦¾à¦ªà¦¨à¦¾" src="img/complain.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+</tr>
+<tr>
+<td class="product">
+<b class="btnClick" id="apa"><br/>
+<center>
+<div class="box2">
+<h4>à¦¬à¦¾à¦°à§à¦·à¦¿à¦ à¦à¦°à§à¦®à¦¸à¦®à§à¦ªà¦¾à¦¦à¦¨ à¦à§à¦à§à¦¤à¦¿ </h4>
+<img alt="à¦¬à¦¾à¦°à§à¦·à¦¿à¦ à¦à¦°à§à¦®à¦¸à¦®à§à¦ªà¦¾à¦¦à¦¨ à¦à§à¦à§à¦¤à¦¿ " src="img/apa.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b class="btnClick" id="righttoinfo"><br/>
+<center>
+<div class="box2">
+<h4>à¦¤à¦¥à§à¦¯ à¦à¦§à¦¿à¦à¦¾à¦°</h4>
+<img alt="à¦¤à¦¥à§à¦¯ à¦à¦§à¦¿à¦à¦¾à¦°" src="img/infocom.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b class="btnClick" id="serviceprocess"><br/>
+<center>
+<div class="box2">
+<h4>à¦¸à§à¦¬à¦¾ à¦¸à¦¹à¦à¦¿à¦à¦°à¦£/à¦à¦¦à§à¦­à¦¾à¦¬à¦¨à§ à¦à¦¾à¦°à§à¦¯à¦à§à¦°à¦® </h4>
+<img alt="à¦¸à§à¦¬à¦¾ à¦¸à¦¹à¦à¦¿à¦à¦°à¦£/à¦à¦¦à§à¦­à¦¾à¦¬à¦¨à§ à¦à¦¾à¦°à§à¦¯à¦à§à¦°à¦® " src="img/innovation.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+</tr>
+<tr>
+<td class="product">
+<b class="btnClick" id="nameage"><br/>
+<center>
+<div class="box2">
+<h4>à¦¨à¦¾à¦® à¦¬à§à¦¸ à¦¸à¦à¦à§à¦°à¦¾à¦¨à§à¦¤ à¦®à¦¿à¦à¦¿à¦ </h4>
+<img alt="à¦¨à¦¾à¦® à¦¬à§à¦¸ à¦¸à¦à¦à§à¦°à¦¾à¦¨à§à¦¤ à¦®à¦¿à¦à¦¿à¦ " src="img/name_age.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b class="btnClick" id="purchaseorder"><br/>
+<center>
+<div class="box2">
+<h4>à¦¬à¦¾à¦à§à¦ à¦ à¦à¦²à¦®à¦¾à¦¨ à¦ªà§à¦°à¦à¦²à§à¦ªà¦¸à¦®à§à¦¹</h4>
+<img alt="à¦¬à¦¾à¦à§à¦ à¦ à¦à¦²à¦®à¦¾à¦¨ à¦ªà§à¦°à¦à¦²à§à¦ªà¦¸à¦®à§à¦¹" src="img/budget.png" width="110"/>
+</div>
+</center>
+</b>
+</td>
+<td class="product">
+<b class="btnClick" id="citizencharter"><br/>
+<center>
+<div class="box2">
+<h4>à¦¨à¦¾à¦à¦°à¦¿à¦ à¦¸à¦¨à¦¦</h4>
+<img alt="à¦ªà¦°à¦¿à¦¸à¦à¦à§à¦¯à¦¾à¦¨" src="img/citizencharter.png" width="120"/>
+</div>
+</center>
+</b>
+</td>
+</tr>
+<!------BOX ---->
+</table>
+</div>
+<style type="text/css">
+    .product_body {
+        min-height: 150px;
+    }
+</style>
+</div>
+<div class="cb"></div>
+</div>
+<div class="feture_section">
+<section class="content">
+<div class="row">
+<div class="col-lg-5 contacts">
+<div class="contact_head">Contact Information</div>
+<div class="contacts_item">Board of Intermediate and Secondary Education, Dhaka</div>
+<div class="contacts_item">Address: 13-14, Joynag Road, Bakshibazar, Dhaka-1211</div>
+<div class="contacts_item">Email : infobisedhaka@gmail.com</div>
+</div>
+<div class="col-lg-4 feture">
+<div class="feture_head">Important Link</div>
+<div class="feture_body">
+<ul>
+<li><a href="http://konnect.edu.bd/" target="_blank">à¦à¦¿à¦¶à§à¦° à¦¬à¦¾à¦¤à¦¾à§à¦¨</a></li>
+<li><a href="http://www.moedu.gov.bd/" target="_blank">à¦¶à¦¿à¦à§à¦·à¦¾ à¦®à¦¨à§à¦¤à§à¦°à¦£à¦¾à¦²à§ </a>
+</li>
+<li><a href="http://www.infokosh.gov.bd/" target="_blank">à¦à¦¾à¦¤à§à¦¯à¦¼ à¦-à¦¤à¦¥à§à¦¯à¦à§à¦·</a></li>
+<li><a href="http://banbeis.gov.bd/" target="_blank">BANBEIS</a></li>
+</ul>
+</div>
+</div>
+<!--<div class="col-lg-3 feture">
+				<div class="feture_head">Awards</div>
+				<div class="feture_body">
+					<ul>
+					<li><a href="http://efile.dhakaeducationboard.gov.bd/manual/awards.pdf" target="_blank">â à¦®à¦¾à¦¨à¦¨à§à§ à¦ªà§à¦°à¦§à¦¾à¦¨à¦®à¦¨à§à¦¤à§à¦°à§à¦° à¦¡à¦à§à¦à¦° à¦à¦¬ à¦²à¦¿à¦à¦¾à¦°à§à¦à¦¾à¦° (à¦¡à¦¿-à¦²à¦¿à¦) à¦¡à¦¿à¦à§à¦°à¦¿ à¦à¦°à§à¦à¦¨à¥¤</a></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					</ul>
+				</div>
+			</div>-->
+</div>
+</section>
+</div>
+<div class="footer_section">
+<table style="width: 100%; color: #222222;">
+<tr>
+<td style="text-align: left">Copyright 2024 @ <a> BISE, DHAKA</a> All Rights Reserved.</td>
+<td style="text-align: right"><b>Time</b> 1.8890sec  
+                        <b>Memory</b> 4.83MB</td>
+</tr>
+</table>
+</div>
+</div>
+<script src="assets/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="assets/admin/ui/1.11.4/jquery-ui.js"></script>
+<script src="assets/admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/admin/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="assets/admin/plugins/fastclick/fastclick.min.js"></script>
+<script src="assets/admin/dist/js/app.min.js"></script>
+<script>		
+
+//localStorage.removeItem("news_cache_html");
+//localStorage.removeItem("news_cache_version"); 
+fetch('get_officer_info.php')
+    .then(response => response.json())
+    .then(res => {
+
+        // Chairman
+        const c = res?.data?.chairman;
+
+        document.getElementById('chairmanName').innerText =
+            c?.title_bn || 'à¦à§à§à¦¾à¦°à¦®à§à¦¯à¦¾à¦¨';
+
+        document.getElementById('chairmanPost').innerText =
+            c?.post_bn || '';
+
+        const chairmanPhoto = document.getElementById('chairmanPhoto');
+        chairmanPhoto.src = c?.photo
+            ? `https://dhakaeducationboard.gov.bd/uploads/officials/${c.photo}`
+            : 'https://dhakaeducationboard.gov.bd/uploads/officials/no-image.jpg';
+
+        chairmanPhoto.onerror = function () {
+            this.src = 'no-image.jpg';
+        };
+
+        // Secretary
+        const s = res?.data?.secretary;
+
+        document.getElementById('secretaryName').innerText =
+            s?.title_bn || 'à¦¸à¦à¦¿à¦¬';
+
+        document.getElementById('secretaryPost').innerText =
+            s?.post_bn || '';
+
+        const secretaryPhoto = document.getElementById('secretaryPhoto');
+        secretaryPhoto.src = s?.photo
+            ? `https://dhakaeducationboard.gov.bd/uploads/officials/${s.photo}`
+            : 'https://dhakaeducationboard.gov.bd/uploads/officials/no-image.jpg';
+
+        secretaryPhoto.onerror = function () {
+            this.src = 'no-image.jpg';
+        };
+    })
+    .catch(error => {
+        // API error à¦¹à¦²à§ à¦¡à¦¿à¦«à¦²à§à¦ à¦¦à§à¦à¦¾à¦¬à§
+
+        document.getElementById('chairmanName').innerText = 'à¦à§à§à¦¾à¦°à¦®à§à¦¯à¦¾à¦¨';
+        document.getElementById('chairmanPost').innerText = 'à¦à§à§à¦¾à¦°à¦®à§à¦¯à¦¾à¦¨';
+        document.getElementById('chairmanPhoto').src = 'https://dhakaeducationboard.gov.bd/uploads/officials/no-image.jpg';
+
+        document.getElementById('secretaryName').innerText = 'à¦¸à¦à¦¿à¦¬';
+        document.getElementById('secretaryPost').innerText = 'à¦¸à¦à¦¿à¦¬';
+        document.getElementById('secretaryPhoto').src = 'https://dhakaeducationboard.gov.bd/uploads/officials/no-image.jpg';
+
+        console.error(error);
+    });
+
+
+
+$(document).ready(function () {
+  $('#showAllNewsBtn').on('click', function () {
+    $('#allNewsContent').html("ð à¦²à§à¦¡ à¦¹à¦à§à¦à§...");
+
+    $.ajax({
+      url: "getnews_table.php", // OFF
+      success: function (data) {
+        $('#allNewsContent').html(data);
+      },
+      error: function () {
+        $('#allNewsContent').html("<p>à¦¨à¦¿à¦à¦ à¦²à§à¦¡ à¦à¦°à¦¤à§ à¦¸à¦®à¦¸à§à¦¯à¦¾ à¦¹à§à§à¦à§à¥¤</p>");
+      }
+    });
+  });
+});
+
+
+$(document).on('click','.btnClick', function(e) {
+//$("#school_order").modal('hide');
+//$("#college_order").modal('hide');
+	 e.preventDefault();
+		var id = $(this).attr("id");
+	 	$.ajax({
+		type: "POST",
+		data:{id:id},
+		async: false,
+		url: "getinfo.php", //OFF
+		success: function(data){
+			
+			$("#info_modal").modal('show');
+			$("#info").html(data);
+		}
+		});
+});
+
+//NEWS & NOTICE ****
+const noticeCacheKey = "notice_cache_html";
+const noticeVersionKey = "notice_cache_version";
+
+function loadNotice() {
+    const cachedHTML = localStorage.getItem(noticeCacheKey);
+    const cachedVersion = localStorage.getItem(noticeVersionKey);
+
+    fetch("getnotice_version.php")
+        .then(res => res.json())
+        .then(data => {
+            const serverVersion = data.last_updated;
+
+            if (cachedHTML && cachedVersion === serverVersion) {
+                // à¦­à¦¾à¦°à§à¦¸à¦¨ à¦®à¦¿à¦²à§ à¦à§à¦à§ â à¦²à§à¦à¦¾à¦² à¦¸à§à¦à§à¦°à§à¦ à¦¥à§à¦à§ à¦¦à§à¦à¦¾à¦
+                $("#latest_notice").html(cachedHTML);
+            } else {
+                // à¦¨à¦¤à§à¦¨ à¦­à¦¾à¦°à§à¦¸à¦¨ à¦à¦¸à§à¦à§, à¦¸à¦¾à¦°à§à¦­à¦¾à¦° à¦¥à§à¦à§ à¦¡à§à¦à¦¾ à¦à¦¨à§
+                fetch("getnotice1.php")
+                    .then(res => res.text())
+                    .then(noticeHtml => {
+                        localStorage.setItem(noticeCacheKey, noticeHtml);
+                        localStorage.setItem(noticeVersionKey, serverVersion);
+                        $("#latest_notice").html(noticeHtml);
+                    });
+            }
+        })
+        .catch(err => {
+            // fallback if version check fails
+            if (cachedHTML) {
+                $("#latest_notice").html(cachedHTML);
+            } else {
+                $("#latest_notice").html("<p>à¦¨à§à¦à¦¿à¦¶ à¦²à§à¦¡ à¦¹à¦à§à¦à§ à¦¨à¦¾</p>");
+            }
+        });
+}
+
+
+//NEWS & NOTICE ****
+const newsCacheKey = "news_cache_html";
+const newsVersionKey = "news_cache_version";
+
+function loadNewsNotice() {
+    const cachedHTML = localStorage.getItem(newsCacheKey);
+    const cachedVersion = localStorage.getItem(newsVersionKey);
+
+    // Step 1: Check version from server
+    fetch("getnews_version.php")
+        .then(res => res.json())
+        .then(data => {
+            const serverVersion = data.last_updated;
+
+            if (cachedHTML && cachedVersion === serverVersion) {
+                // Version match â à¦²à§à¦à¦¾à¦² à¦à¦¨à¦à§à¦¨à§à¦ à¦¦à§à¦à¦¾à¦
+                $("#latest_news").html(cachedHTML);
+            } else {
+                // à¦¨à¦¤à§à¦¨ à¦­à¦¾à¦°à§à¦¸à¦¨ à¦à¦¸à§à¦à§, à¦¸à¦¾à¦°à§à¦­à¦¾à¦° à¦¥à§à¦à§ à¦¨à¦¿à§à§ à¦²à§à¦à¦¾à¦²à¦¿ à¦¸à§à¦­ à¦à¦°à§
+                fetch("getnews1.php")
+                    .then(res => res.text())
+                    .then(newsHtml => {
+                        localStorage.setItem(newsCacheKey, newsHtml);
+                        localStorage.setItem(newsVersionKey, serverVersion);
+                        $("#latest_news").html(newsHtml);
+                    });
+            }
+        })
+        .catch(err => {
+            // fallback if version check fails
+            if (cachedHTML) {
+                $("#latest_news").html(cachedHTML);
+            } else {
+                $("#latest_news").html("<p>à¦¨à§à¦à¦¿à¦¶ à¦²à§à¦¡ à¦¹à¦à§à¦à§ à¦¨à¦¾</p>");
+            }
+        });
+}
+
+setTimeout(() => {
+    loadNewsNotice();
+    loadNotice();
+}, 3000);
+
+//mobile schroll stop
+const marquee = document.querySelector(".news-marquee-wrapper");
+marquee.addEventListener("touchstart", () => {
+  marquee.querySelector(".news-marquee").style.animationPlayState = "paused";
+});
+marquee.addEventListener("touchend", () => {
+  marquee.querySelector(".news-marquee").style.animationPlayState = "running";
+});
+
+
+const wrapper = document.getElementById('marqueeWrapper');
+
+let direction = -1; // à¦¡à¦¿à¦«à¦²à§à¦ à¦¬à¦¾à¦® à¦¦à¦¿à¦à§
+let speed = 1; // px per tick
+
+// auto scroll
+function autoScroll() {
+  wrapper.scrollLeft += direction * speed;
+
+  // à¦¯à¦¦à¦¿ à¦à¦à¦¦à¦® à¦¶à§à¦·à§ à¦à¦²à§ à¦¯à¦¾à§ à¦¤à¦à¦¨ à¦¦à¦¿à¦ à¦à¦²à§à¦à§ à¦à¦°à¦¿
+  if (wrapper.scrollLeft <= 0) direction = 1;
+  else if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth) direction = -1;
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// à¦®à¦¾à¦à¦¸ à¦¡à¦¾à¦¨ à¦¦à¦¿à¦à§ à¦¥à¦¾à¦à¦²à§ à¦¡à¦¾à¦¨à§, à¦¬à¦¾à¦®à§ à¦¥à¦¾à¦à¦²à§ à¦¬à¦¾à¦®à§ scroll à¦à¦°à¦¬à§
+wrapper.addEventListener('mousemove', function (e) {
+  const mouseX = e.offsetX;
+  const width = wrapper.clientWidth;
+
+  if (mouseX < width / 2) direction = -1;
+  else direction = 1;
+});
+
+
+	(function (i, s, o, g, r, a, m) {
+	i['GoogleAnalyticsObject'] = r;
+	i[r] = i[r] || function () {
+	(i[r].q = i[r].q || []).push(arguments)
+	}, i[r].l = 1 * new Date();
+	a = s.createElement(o),
+	m = s.getElementsByTagName(o)[0];
+	a.async = 1;
+	a.src = g;
+	m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '../www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-75852192-1', 'auto');
+	ga('send', 'pageview');
+			
+			
+			
+	/* Vanilla JS */
+
+	var rightJS = {
+	  init: function(){
+		rightJS.Tags = document.querySelectorAll('.rightJS');
+		for(var i = 0; i < rightJS.Tags.length; i++){
+		  rightJS.Tags[i].style.overflow = 'hidden';
+		}
+		rightJS.Tags = document.querySelectorAll('.rightJS div');
+		for(var i = 0; i < rightJS.Tags.length; i++){
+		  rightJS.Tags[i].style.position = 'relative';
+		  rightJS.Tags[i].style.right = '-'+rightJS.Tags[i].parentElement.offsetWidth+'px';
+		}
+		rightJS.loop();
+	  },
+	  loop: function(){
+		for(var i = 0; i < rightJS.Tags.length; i++){
+		  var x = parseFloat(rightJS.Tags[i].style.right);
+		  x ++;
+		  var W = rightJS.Tags[i].parentElement.offsetWidth;
+		  var w = rightJS.Tags[i].offsetWidth;
+		  if((x/100) * W  > w) x = -W;
+		  if (rightJS.Tags[i].parentElement.parentElement.querySelector(':hover') !== rightJS.Tags[i].parentElement) rightJS.Tags[i].style.right = x + 'px';
+		} 
+		requestAnimationFrame(this.loop.bind(this));
+	  }
+	};
+	window.addEventListener('load',rightJS.init);
+    </script>
+</body>
+</html>
