@@ -60,25 +60,58 @@ Setup Instructions:
   .post-filter .entry-title, 
   .post-filter .entry-title a,
   .raw-box .entry-title,
-  .raw-box .entry-title a {
+  .raw-box .entry-title a,
+  .block-step .entry-title,
+  .block-step .entry-title a {
     font-size: 17.5px !important;
     font-weight: 700 !important;
     line-height: 1.45 !important;
+    color: #1a1a1a !important;
   }
 
-  /* 3. Featured Image Overlay Titles (Must Be 100% Crisp White) */
+  /* 3. Featured Image Overlay Titles & Metadata (Must Be 100% Crisp White) */
+  .entery-category-fly,
+  .entery-category-fly .entry-title,
+  .entery-category-fly .entry-title a,
+  .entery-category-fly .post-snip,
+  .entery-category-fly .post-snip *,
+  .entery-category-fly .post-author,
+  .entery-category-fly .post-date,
   .block-section.item0 .entry-title,
   .block-section.item0 .entry-title a,
+  .hall-section.item0 .entry-title,
+  .hall-section.item0 .entry-title a,
   .featured-box.item0 .entry-title,
   .featured-box.item0 .entry-title a,
   .video-section.item0 .entry-title,
   .video-section.item0 .entry-title a,
+  .modal-grid .entry-title,
+  .modal-grid .entry-title a,
+  .sidebar .PopularPosts .gaint h2.entry-title,
+  .sidebar .PopularPosts .gaint h2.entry-title a {
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+  }
+
+  .block-section.item0 .entry-title,
+  .block-section.item0 .entry-title a,
   .hall-section.item0 .entry-title,
   .hall-section.item0 .entry-title a,
-  .modal-grid .entry-title,
-  .modal-grid .entry-title a {
-    color: #ffffff !important;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8) !important;
+  .video-section.item0 .entry-title,
+  .video-section.item0 .entry-title a,
+  .featured-box.item0 .entry-title,
+  .featured-box.item0 .entry-title a {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+
+  .entery-category-fly .post-author,
+  .entery-category-fly .post-date,
+  .entery-category-fly .post-snip {
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-size: 13px !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85) !important;
   }
 
   /* 4. Bold and Sharp Popular Posts in Sidebar */
