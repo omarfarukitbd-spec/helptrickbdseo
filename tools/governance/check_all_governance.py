@@ -33,7 +33,8 @@ def check_rules():
         "03_PUBLISHING_PERMALINK_RULES.md",
         "04_LABEL_TAXONOMY_GOVERNANCE.md",
         "05_MULTI_PC_SYNC_PROTOCOL.md",
-        "06_COMMUNICATION_AND_REPORTING_PROTOCOL.md"
+        "06_COMMUNICATION_AND_REPORTING_PROTOCOL.md",
+        "07_POST_BACKUP_AND_RESTORE_PROTOCOL.md"
     ]
     all_ok = True
     for r in expected_rules:

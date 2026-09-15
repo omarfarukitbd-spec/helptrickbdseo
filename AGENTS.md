@@ -24,6 +24,7 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 5. **[04_LABEL_TAXONOMY_GOVERNANCE.md](file:///.agents/rules/04_LABEL_TAXONOMY_GOVERNANCE.md)**: Strict Label Permission Gate & AdSense category balance.
 6. **[05_MULTI_PC_SYNC_PROTOCOL.md](file:///.agents/rules/05_MULTI_PC_SYNC_PROTOCOL.md)**: Git Pull Strictly Manual (User Instruction Only), Post-Task Auto-Push (`git push origin main`), Secrets safety.
 7. **[06_COMMUNICATION_AND_REPORTING_PROTOCOL.md](file:///.agents/rules/06_COMMUNICATION_AND_REPORTING_PROTOCOL.md)**: Mandatory Live Bengali Reporting & 100% Bengali Artifacts (Plans, Walkthroughs & Audits).
+8. **[07_POST_BACKUP_AND_RESTORE_PROTOCOL.md](file:///.agents/rules/07_POST_BACKUP_AND_RESTORE_PROTOCOL.md)**: Mandatory Pre-Edit Full Post Backup & Rollback Protocol (Original HTML, Image Manifest, Labels & Metadata).
 
 ### 🛡️ Automated Quality Gatekeeper Tools:
 - **Pre-Flight Post Validator (Quality Gatekeeper):**
@@ -94,6 +95,7 @@ Every revived or new article MUST strictly adhere to:
 12. **Zero-Emoji Policy (১০০% ইমোজি বর্জন):** পোস্টের টাইটেল, সাবটাইটেল, হেডিং (H2, H3), সূচিপত্র (TOC), কলআউট বক্স বা বডির কোথাও কোনো ধরণের ইমোজি (`📌`, `👉`, `📢`, `⏱️`, `✅`, `🎓`, `📘`, `💬`, `💡`, `⚠️` ইত্যাদি) ব্যবহার সম্পূর্ণ নিষিদ্ধ। টাইপোগ্রাফি হবে শতভাগ মার্জিত, পাঠ্যপুস্তক ও জাতীয় দৈনিকের মতো মানসম্মত।
 13. **Theme Native Share Exclusivity (কাস্টম শেয়ার বক্স সম্পূর্ণ নিষিদ্ধ):** ব্লগারে প্রতিটি পোস্টের নিচে থিমের নিজস্ব সোশ্যাল শেয়ার বাটন (Facebook, Twitter, WhatsApp) বিল্ট-ইনভাবে প্রদর্শিত হয়। পোস্টের কনটেন্টের ভেতর অতিরিক্ত কাস্টম শেয়ার বক্স (`📢 আপনার সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন:`) ঢোকানো সম্পূর্ণ নিষিদ্ধ।
 14. **Live Bengali Reporting & 100% Bengali Artifacts (লাইভ বাংলা রিপোর্টিং ও শতভাগ বাংলা প্ল্যান/ওয়াকথ্রু):** কাজ চলাকালীন এজেন্ট কখন কী করছে, কোন ফাইল বা স্ক্রিপ্ট নিয়ে কাজ করছে—তা চ্যাটে লাইভ বাংলায় লিখে ইউজারকে জানাবে। টুলস কলের নাম ও বিবরণ (`toolAction` ও `toolSummary`) বাংলায় নির্ধারণ করতে হবে। এছাড়া সমস্ত `implementation_plan.md` ও `walkthrough.md` সহ যাবতীয় অডিট রিপোর্ট ও প্ল্যান শতভাগ প্রাঞ্জল বাংলায় প্রণয়ন করা বাধ্যতামূলক (কোনো ইংরেজি প্ল্যান বা ওয়াকথ্রু লেখা যাবে না)।
+15. **Mandatory Pre-Edit Full Post Backup & Label Protection (সম্পাদনার পূর্বে বাধ্যতামূলক পূর্ণাঙ্গ ব্যাকআপ ও লেবেল সংরক্ষণ):** ব্লগারে বিদ্যমান বা পুরনো কোনো পোস্ট সম্পাদনা (Edit) বা আপডেট (Update) করার পূর্বে বাধ্যতামূলকভাবে সেই পোস্টের আসল এইচটিএমএল কোড, ইমেজ লিঙ্ক, ক্যাটাগরি লেবেল এবং মেটাডাটা `backups/posts/<slug>/<timestamp>/` ফোল্ডারে ব্যাকআপ রাখতে হবে। পোস্টের পূর্বের লেবেল কোনো অবস্থাতেই হারিয়ে যাওয়া বা মুছে ফেলা যাবে না।
 
 ---
 

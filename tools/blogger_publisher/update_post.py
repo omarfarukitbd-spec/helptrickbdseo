@@ -135,6 +135,20 @@ def update_post_on_blogger(metadata_file_or_html, slug=None, post_id=None):
         print(f"[ERROR] Could not find post on Blogger with slug: {slug}")
         return False
 
+    # 🛡️ MANDATORY PRE-EDIT BACKUP GUARDIAN (Rule 07)
+    # Before making ANY modification, take a 100% snapshot of live post
+    if original_post:
+        try:
+            from tools.backup_manager.post_backup_manager import create_post_backup
+            create_post_backup(original_post, reason="pre_update_live_backup")
+        except Exception as e:
+            print(f"[!] Warning: Backup failed: {e}")
+
+    # If incoming labels are empty, strictly preserve existing live labels!
+    if not labels and original_post and original_post.get("labels"):
+        labels = original_post.get("labels")
+        print(f"[*] Preserving existing labels: {labels}")
+
     # If title is still default placeholder, preserve original post title
     if title == "Updated Post" and original_post and original_post.get("title"):
         title = original_post.get("title")

@@ -10,7 +10,7 @@
 When processing any task or prompt, the agent MUST resolve conflicts in the following strict order:
 1. **Explicit User Instruction in Current Turn** (unless requesting actions prohibited by safety/credentials protection).
 2. **This Agent Constitution (`.agents/rules/00_AGENT_CONSTITUTION.md`)**.
-3. **Domain Rulebooks (`.agents/rules/01_*.md` to `06_*.md`)**.
+3. **Domain Rulebooks (`.agents/rules/01_*.md` to `07_*.md`)**.
 4. **Project Skill (`.agents/skills/seo-blogger-adsense/SKILL.md`)**.
 5. **Project Overview (`AGENTS.md`)**.
 6. **Agent's Internal/Pre-trained Default Instincts** (Lowest Priority).
@@ -29,6 +29,7 @@ The agent is strictly FORBIDDEN from performing any of the following actions wit
 | 5 | **Translating Article Content to Another Language** | English posts have international keyword value; Bengali posts target local searchers. Cross-translating destroys intent. | English stays 100% English; Bengali stays 100% Bengali. Zero exceptions. |
 | 6 | **Final Live Publishing to Blogger** | Publishing untested, raw AI content directly to live production bypasses quality gatekeeping. | Agent must run `pre_flight_checker.py`, present preview/metadata to user, and confirm before calling live publish. |
 | 7 | **Pulling Updates from Git (`git pull` / `git fetch`)** | Unprompted pulls cause unwanted merge conflicts, rebase locks, or unexpected local overwrites. | Only execute `git pull` when the user explicitly instructs in chat (e.g., "গিট থেকে পুল করো" / "pull koro"). |
+| 8 | **Editing Existing Posts Without Pre-Backup** | Overwriting content without a snapshot prevents rollback if mistakes occur. | Agent MUST verify that a 100% snapshot (HTML, labels, images, metadata) is created in `backups/posts/` before any update. |
 
 ---
 
