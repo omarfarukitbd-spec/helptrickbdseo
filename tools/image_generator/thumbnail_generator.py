@@ -225,6 +225,8 @@ def render_html_template(title, category, subtitle=None, lang=None):
         </div>
         """
 
+    local_font_path = os.path.join(PROJECT_ROOT, "assets", "fonts", "HindSiliguri-Bold.ttf").replace(os.sep, "/")
+
     html = f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -233,6 +235,12 @@ def render_html_template(title, category, subtitle=None, lang=None):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500;600;700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
+  @font-face {{
+    font-family: 'Hind Siliguri';
+    src: url('file:///{local_font_path}') format('truetype');
+    font-weight: 500 700;
+    font-display: block;
+  }}
   * {{
     box-sizing: border-box;
     margin: 0;
