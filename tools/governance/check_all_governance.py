@@ -32,7 +32,8 @@ def check_rules():
         "02_IMAGE_AND_ASSET_RULES.md",
         "03_PUBLISHING_PERMALINK_RULES.md",
         "04_LABEL_TAXONOMY_GOVERNANCE.md",
-        "05_MULTI_PC_SYNC_PROTOCOL.md"
+        "05_MULTI_PC_SYNC_PROTOCOL.md",
+        "06_COMMUNICATION_AND_REPORTING_PROTOCOL.md"
     ]
     all_ok = True
     for r in expected_rules:

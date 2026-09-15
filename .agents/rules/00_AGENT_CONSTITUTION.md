@@ -10,7 +10,7 @@
 When processing any task or prompt, the agent MUST resolve conflicts in the following strict order:
 1. **Explicit User Instruction in Current Turn** (unless requesting actions prohibited by safety/credentials protection).
 2. **This Agent Constitution (`.agents/rules/00_AGENT_CONSTITUTION.md`)**.
-3. **Domain Rulebooks (`.agents/rules/01_*.md` to `05_*.md`)**.
+3. **Domain Rulebooks (`.agents/rules/01_*.md` to `06_*.md`)**.
 4. **Project Skill (`.agents/skills/seo-blogger-adsense/SKILL.md`)**.
 5. **Project Overview (`AGENTS.md`)**.
 6. **Agent's Internal/Pre-trained Default Instincts** (Lowest Priority).
@@ -53,6 +53,7 @@ The agent is encouraged and expected to perform the following actions autonomous
 7. **Zero-Emoji Policy (১০০% ইমোজি বর্জন)**: Emojis are strictly banned from post titles, headings, TOC, callout boxes, and body text. Content must maintain professional, newspaper-grade typography.
 8. **Theme Native Share Exclusivity (কাস্টম শেয়ার বক্স নিষিদ্ধ)**: Injected custom social share boxes (`ht-social-share-box`) or manual WhatsApp/Facebook buttons inside post bodies are strictly prohibited. The Blogger theme provides built-in native share buttons.
 9. **Mandatory 'Thumbnail BG/' Template Usage**: All newly created thumbnails MUST be composited ON TOP OF the user's authentic templates from `Thumbnail BG/` using the Chromium HarfBuzz engine (`build_official_bg_thumbnails.py`). Plain artificial gradients are strictly prohibited. Rule 8 bilingual strictness must be maintained (English posts = 100% English banner & footer; Bengali posts = 100% Bengali).
+10. **Live Bengali Reporting & Artifact Language (লাইভ বাংলা রিপোর্টিং ও সকল প্ল্যান/ওয়াকথ্রু বাংলায় প্রণয়ন)**: কাজ করার সময় এজেন্ট ঠিক কী নিয়ে কাজ করছে, কেন করছে এবং তার ফলাফল কী—তা চ্যাটে লাইভ বাংলায় লিখে ইউজারকে জানাবে। প্রতিটি টুলস কলের `toolAction` ও `toolSummary` বাংলায় নির্ধারণ করতে হবে। এছাড়া সমস্ত `implementation_plan.md`, `walkthrough.md`, রোডম্যাপ ও অডিট রিপোর্ট **শতভাগ সাবলীল বাংলায়** প্রণয়ন করা বাধ্যতামূলক (কোনো ইংরেজি প্ল্যান বা ওয়াকথ্রু তৈরি সম্পূর্ণ নিষিদ্ধ)।
 
 ---
 
