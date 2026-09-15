@@ -1,28 +1,27 @@
 <!--
 ================================================================================
-HelpTrickBD - Sitewide SolaimanLipi Font & Bengali Typography Engine
+HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
 ================================================================================
 সুবিধা: 
-১. পুরো ব্লগের সমস্ত পুরনো ৭৮টি পোস্ট, হোমপেজ, মেনুবার, উইজেট ও টাইটেল এক নিমেষেই সোলায়মানলিপিতে কনভার্ট হয়ে যাবে।
-২. বাংলা সংখ্যা '১, ২, ৩, ৪, ৫, ৬, ৭, ৮, ৯, ০' সকল স্থানে গোল, স্পষ্ট ও প্রিমিয়াম দেখাবে।
-৩. প্রতিটি পোস্টে আলাদাভাবে ফন্ট লোড করার প্রয়োজন হবে না, যার ফলে সাইট সুপার ফাস্ট লোড হবে।
-৪. পুরো ওয়েবসাইট দুই পাশ থেকে সুন্দরভাবে ১২৮০ পিক্সেল প্রশস্ত হয়ে স্ক্রিন জুড়ে আকর্ষণীয় দেখাবে।
+১. পুরো ব্লগের সমস্ত পোস্ট টাইটেল minibd.com এর মতো বড়, স্পষ্ট এবং বোল্ড (Bold) দেখাবে।
+২. সাইডবারের পপুলার পোস্টের লেখা বোল্ড ও প্রিমিয়াম হবে।
+৩. পুরো ওয়েবসাইট দুই পাশ থেকে ১২৮০ পিক্সেল প্রশস্ত হয়ে ফুল ডিসপ্লে লুক পাবে।
+৪. সিডিএটিএ (CDATA) ব্লকে থাকায় ব্লগারে কোনো &#39; বা হিজিবিজি কোড আসবে না।
 
 সেটআপ নির্দেশিকা:
 ১. Blogger Dashboard-এ যান: https://www.blogger.com/blog/themes/1975983966532887960
-2. বাম পাশের মেনু থেকে "Theme" (থিম) সিলেক্ট করুন।
-৩. "Customize" বাটনের পাশে থাকা ড্রপডাউন তীরে (Arrow) ক্লিক করে "Edit HTML" (এইচটিএমএল সম্পাদনা) সিলেক্ট করুন।
-৪. কীবোর্ডে Ctrl + F চেপে <head> লিখে এন্টার দিন।
-৫. <head> ট্যাগের ঠিক নিচে নিচের কোডটুকু পেস্ট করে দিন এবং ডানদিকের সেভ (Disk Icon) বাটনে ক্লিক করুন।
+২. "Customize" বাটনের পাশের তীরে ক্লিক করে "Edit HTML" সিলেক্ট করুন।
+৩. <head> ট্যাগের ঠিক নিচে আগের কোডটি মুছে এটি পেস্ট করে সেভ করুন।
 ================================================================================
 -->
 
-<!-- [START] HelpTrickBD SolaimanLipi Global Typography & Full Width Container -->
+<!-- [START] HelpTrickBD SolaimanLipi Global Typography & Bold Layout -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 
 <style type="text/css">
+/*<![CDATA[*/
   @font-face {
     font-family: 'SolaimanLipi';
     font-display: swap;
@@ -38,7 +37,7 @@ HelpTrickBD - Sitewide SolaimanLipi Font & Bengali Typography Engine
     src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
   }
 
-  /* HelpTrickBD সাইটের সর্বত্র SolaimanLipi ফন্ট প্রয়োগ */
+  /* সাইটের সর্বত্র SolaimanLipi ফন্ট প্রয়োগ */
   html, body, 
   .post-body, 
   .post-title, 
@@ -50,18 +49,52 @@ HelpTrickBD - Sitewide SolaimanLipi Font & Bengali Typography Engine
   .entry-title, .entry-content {
     font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
   }
+
+  /* ১. কার্ড ও হোমপেজ পোস্টের টাইটেল বড় এবং বোল্ড করা (minibd.com এর মতো) */
+  .entry-title, 
+  .entry-title a, 
+  .post-filter .entry-title, 
+  .post-filter .entry-title a,
+  .raw-box .entry-title,
+  .raw-box .entry-title a {
+    font-size: 17.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.45 !important;
+    color: #1a1a1a !important;
+  }
+
+  /* ২. সাইডবারের পপুলার পোস্টের লেখা বোল্ড ও পরিষ্কার করা */
+  .sidebar .PopularPosts .entry-title,
+  .sidebar .PopularPosts .entry-title a,
+  .sidebarui-posts .entry-title,
+  .sidebarui-posts .entry-title a {
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: #202124 !important;
+  }
+
+  /* ৩. ক্যাটাগরি ব্যাজ বোল্ড ও হাই-কন্ট্রাস্ট করা */
+  .entery-category a,
+  .post-filter .entery-category a,
+  .sidebar .PopularPosts .entery-category a {
+    font-weight: 700 !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.5px;
+  }
   
-  /* পোস্টের রিডাবিলিটি ও লাইন হাইট পারফেকশন */
+  /* ৪. পোস্টের ভেতরের লেখার আরামদায়ক সাইজ ও রিডাবিলিটি */
   .post-body p {
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #202124 !important;
   }
 
-  /* HelpTrickBD সাইটের আধুনিক প্রশস্ততা ও দুই পাশের মার্জিন পারফেকশন */
+  /* ৫. পুরো সাইটের প্রশস্ততা ও দুই পাশের মার্জিন পারফেকশন */
   .container {
     width: 1280px !important;
     max-width: 95% !important;
   }
+/*]]>*/
 </style>
-<!-- [END] HelpTrickBD SolaimanLipi Global Typography & Full Width Container -->
+<!-- [END] HelpTrickBD SolaimanLipi Global Typography & Bold Layout -->
