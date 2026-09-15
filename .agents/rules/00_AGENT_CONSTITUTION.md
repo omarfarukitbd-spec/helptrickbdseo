@@ -47,7 +47,7 @@ The agent is encouraged and expected to perform the following actions autonomous
 ## 🎯 4. Non-Negotiable Core Truths (পরম মূলনীতি)
 1. **Zero Thin Content**: Every revived or new post MUST exceed **1,200 to 1,600+ words** with rich depth, practical guidance, and zero fluffy repetition.
 2. **Zero Cookie-Cutter Uniformity**: Never output cookie-cutter articles where every post looks identical with the same blue boxes and identical headings. Respect the 5 Human Archetypes (Academic Handnote, Job Bullet Sheet, Tutorial Step Card, Literary Essay, School Study Guide).
-3. **Mandatory Jump Break**: Every post published to Blogger MUST include `<!--more-->` immediately following the first 2–3 sentences or introductory paragraph.
+3. **Mandatory Jump Break Strictly AFTER Hero Image**: Every post published to Blogger MUST place the featured hero image (`<img>`) at the top, followed by the introductory text, and then `<!--more-->`. Never place `<!--more-->` before the hero image (which breaks RSS feed thumbnails and triggers gray camera placeholders).
 4. **Mandatory 2-Step Custom Permalinks**: Every new post MUST be minted with an English slug before applying the Bengali title. Never allow `blog-post_xx.html`.
 5. **jsDelivr CDN Hosting**: Never reference local filesystem image paths (`file:///` or relative paths) inside post HTML intended for Blogger. All images MUST reside in GitHub and resolve through jsDelivr CDN.
 6. **Anti-Hallucination Grounding**: For Bangladesh board results, certificate corrections, BCS syllabus, and government portals, verify real procedures against official `.gov.bd` sources. Never fabricate fee amounts, gazette dates, or portal links.

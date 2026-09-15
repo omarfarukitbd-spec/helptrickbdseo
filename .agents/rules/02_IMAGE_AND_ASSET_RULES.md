@@ -33,6 +33,10 @@
 6. **Original Author Thumbnail Preservation (মৌলিক থাম্বনেইল অপরিবর্তনীয়)**:
    - If a post already possesses an authentic thumbnail designed by the site owner, the agent **MUST NOT replace or overwrite it**.
    - Only create new thumbnails for posts that completely lack a featured image or when explicitly requested by the user.
+7. **Mandatory HTML Placement — Strictly BEFORE `<!--more-->` (ফিচার্ড ইমেজ অবস্থান ও জাম্প ব্রেক)**:
+   - প্রতিটি আর্টিকেলের শুরুতে হিরো ব্যানার বা মূল ফিচার্ড ইমেজটি (`<img>`) অবশ্যই সবার উপরে বা ইন্ট্রোর প্রারম্ভে অবস্থান করবে।
+   - ব্লগারে স্নsnippet ও ফেজ কাটার জন্য ব্যবহৃত `<!--more-->` ট্যাগটি **বাধ্যতামূলকভাবে হিরো ইমেজের পরে** বসাতে হবে।
+   - কোনো অবস্থাতেই হিরো ইমেজের পূর্বে `<!--more-->` বসানো যাবে না। কারণ `<!--more-->` ইমেজের আগে বসলে ব্লগার আরএসএস/জেসন ফিডে (`c[l].content.$t`) ইমেজ অন্তর্ভুক্ত হয় না, যার ফলে হোমপেজ বা আর্টিকেলের নিচের রিলেটেড পোস্ট উইজেটে ("YOU MAY LIKE") ধূসর ক্যামেরা আইকন (`noThumb`) প্রদর্শন করে।
 
 ---
 

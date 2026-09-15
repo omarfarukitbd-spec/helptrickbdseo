@@ -74,13 +74,21 @@ class PreFlightChecker:
             self.errors.append(f"Word Count: {count:,} words (CRITICAL: under 1,000 words thin content)")
 
     def check_jump_break(self):
-        """Rule 01: Mandatory <!--more--> tag in first 2-3 lines"""
+        """Rule 01 & 02: Mandatory <!--more--> tag placed strictly AFTER the featured hero <img>"""
         if '<!--more-->' in self.raw_html:
-            pos = self.raw_html.find('<!--more-->')
-            if pos < 2500:
-                self.passed.append(f"Jump Break: <!--more--> found at char {pos} (PASSED)")
+            more_pos = self.raw_html.find('<!--more-->')
+            img_pos = self.raw_html.find('<img')
+            
+            # 🛡️ STRICT RULE: Hero <img> MUST be placed BEFORE <!--more-->
+            if img_pos == -1:
+                self.errors.append("Jump Break / Thumbnail: CRITICAL! No <img> found in post!")
+            elif img_pos > more_pos:
+                self.errors.append("Jump Break / Thumbnail: CRITICAL! The hero <img> MUST be placed BEFORE <!--more-->! Placing <!--more--> before <img> cuts the image from Blogger feeds, displaying gray camera placeholders!")
             else:
-                self.warnings.append(f"Jump Break: <!--more--> is placed too late (char {pos})")
+                self.passed.append(f"Jump Break: <!--more--> correctly placed AFTER featured hero image (img at {img_pos}, more at {more_pos}) (PASSED)")
+
+            if more_pos > 5000:
+                self.warnings.append(f"Jump Break: <!--more--> is placed relatively late (char {more_pos})")
         else:
             self.errors.append("Jump Break: <!--more--> tag is MISSING from the post!")
 
