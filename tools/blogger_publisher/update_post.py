@@ -115,6 +115,13 @@ def update_post_on_blogger(metadata_file_or_html, slug):
     if not content and os.path.exists(html_file):
         with open(html_file, "r", encoding="utf-8") as f:
             content = f.read()
+        # Auto-extract <title> from HTML if not set via metadata
+        if title == "Updated Post":
+            import re
+            m = re.search(r"<title>(.*?)</title>", content, re.IGNORECASE | re.DOTALL)
+            if m:
+                title = m.group(1).strip()
+                print(f"[*] Auto-extracted title from HTML: {title}")
 
     post_id, original_post = find_post_id_by_slug_or_title(service, slug, title)
     if not post_id:
