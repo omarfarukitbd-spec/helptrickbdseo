@@ -97,11 +97,18 @@ class PreFlightChecker:
         else:
             self.passed.append("Typography: English article, SolaimanLipi not required (PASSED)")
 
+    def check_featured_image(self):
+        """Rule 02: Every article MUST have at least one featured <img> tag (prevents gray camera placeholder)"""
+        imgs = self.soup.find_all('img')
+        if not imgs:
+            self.errors.append("Featured Image: CRITICAL! No <img> tag found in post HTML! Blogger will display gray camera placeholder!")
+        else:
+            self.passed.append(f"Featured Image: Found {len(imgs)} image(s) in post HTML (PASSED)")
+
     def check_image_sources(self):
         """Rule 02: Images must be CDN hosted, zero local filesystem leaks"""
         imgs = self.soup.find_all('img')
         if not imgs:
-            self.warnings.append("Images: No <img> tags found in article")
             return
             
         local_leak = False
@@ -239,6 +246,7 @@ class PreFlightChecker:
         self.check_word_count()
         self.check_jump_break()
         self.check_typography()
+        self.check_featured_image()
         self.check_image_sources()
         self.check_schema_markup()
         self.check_dead_links()
