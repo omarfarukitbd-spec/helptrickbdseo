@@ -128,6 +128,10 @@ def update_post_on_blogger(metadata_file_or_html, slug):
         print(f"[ERROR] Could not find post on Blogger with slug: {slug}")
         return False
 
+    # If title is still default placeholder, preserve original post title
+    if title == "Updated Post" and original_post and original_post.get("title"):
+        title = original_post.get("title")
+
     print(f"[*] Updating Post ID {post_id} on Blogger...")
     try:
         body = {
