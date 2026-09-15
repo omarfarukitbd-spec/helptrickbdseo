@@ -52,13 +52,13 @@ for c in CHROME_CANDIDATES:
 if not CHROME_PATH:
     raise RuntimeError("Google Chrome executable not found for headless thumbnail rendering.")
 
-# Category Configuration Dictionary with Bilingual Badges
+# Category Configuration Dictionary with Bilingual Badges & Vector Icons
 CATEGORY_CONFIG = {
     "Political Science": {
         "bg_file": "bg_2.png",
         "badge_bn": "রাষ্ট্রবিজ্ঞান বিভাগ",
         "badge_en": "Political Science",
-        "badge_icon": "📚",
+        "badge_icon": '<svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;vertical-align:middle"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>',
         "badge_bg": "#0c2340",
         "badge_border": "#d4af37",
         "badge_text": "#ffffff",
@@ -73,7 +73,7 @@ CATEGORY_CONFIG = {
         "bg_file": "bg.png",
         "badge_bn": "ইসলামিক সাহিত্য ও প্রবন্ধ",
         "badge_en": "Islamic Studies & Qasida",
-        "badge_icon": "🌙",
+        "badge_icon": '<svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;vertical-align:middle"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.85 0 3.58-.5 5.07-1.38-4.49-1.04-7.82-5.07-7.82-9.87 0-4.08 2.4-7.6 5.86-9.19C14.07 2.53 13.06 2 12 2z"/></svg>',
         "badge_bg": "#0a4c2e",
         "badge_border": "#e2b024",
         "badge_text": "#ffffff",
@@ -88,7 +88,7 @@ CATEGORY_CONFIG = {
         "bg_file": "bg_3.png",
         "badge_bn": "শিক্ষা সহায়িকা ও স্টাডি গাইড",
         "badge_en": "Education & Study Guide",
-        "badge_icon": "🎓",
+        "badge_icon": '<svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;vertical-align:middle"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>',
         "badge_bg": "#025b5e",
         "badge_border": "#20b2aa",
         "badge_text": "#ffffff",
@@ -103,7 +103,7 @@ CATEGORY_CONFIG = {
         "bg_file": "bg_4.png",
         "badge_bn": "বিসিএস ও চাকরির প্রস্তুতি",
         "badge_en": "BCS & Career Preparation",
-        "badge_icon": "💼",
+        "badge_icon": '<svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;vertical-align:middle"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>',
         "badge_bg": "#164e3b",
         "badge_border": "#b48c36",
         "badge_text": "#ffffff",
@@ -118,7 +118,7 @@ CATEGORY_CONFIG = {
         "bg_file": "bg_5.png",
         "badge_bn": "কম্পিউটার ও তথ্যপ্রযুক্তি",
         "badge_en": "ICT & Computer Science",
-        "badge_icon": "💻",
+        "badge_icon": '<svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;vertical-align:middle"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>',
         "badge_bg": "#0f172a",
         "badge_border": "#eab308",
         "badge_text": "#facc15",
@@ -133,7 +133,7 @@ CATEGORY_CONFIG = {
         "bg_file": "bg_1.png",
         "badge_bn": "স্টাডি ও ক্যারিয়ার গাইড",
         "badge_en": "Study & Career Guide",
-        "badge_icon": "📝",
+        "badge_icon": '<svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;vertical-align:middle"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
         "badge_bg": "#064e3b",
         "badge_border": "#10b981",
         "badge_text": "#ffffff",
@@ -409,11 +409,16 @@ def render_html_template(title, category, subtitle=None, lang=None):
     return html
 
 
+sys.path.insert(0, PROJECT_ROOT)
+from tools.image_optimizer.webp_compressor import compress_to_target_webp
+
+
 def generate_thumbnail(title, category, subtitle=None, output_filename=None, lang=None):
     """
     Renders and exports a 1200x675 16:9 banner image.
     Automatically detects language if lang is None.
-    Returns the absolute path to the generated image.
+    Automatically compresses output to a 10–20 KB ultra-fast WebP for Core Web Vitals.
+    Returns the absolute path to the generated WebP image.
     """
     if not output_filename:
         safe_name = "".join(c if c.isalnum() else "_" for c in title[:30]).strip("_")
@@ -441,17 +446,34 @@ def generate_thumbnail(title, category, subtitle=None, output_filename=None, lan
         ]
         subprocess.run(cmd, check=True, capture_output=True)
 
-        # Optimize image with PIL
+        # Optimize raw PNG with PIL
         with Image.open(output_path) as im:
             im.save(output_path, optimize=True)
 
+        # Automatically create the 10-20 KB WebP version
+        webp_path = os.path.splitext(output_path)[0] + ".webp"
+        compress_to_target_webp(output_path, webp_path, target_min_kb=10.0, target_max_kb=20.0)
+
         detected = lang or detect_language(title)
         print(f"✅ Thumbnail Generated ({detected.upper()}): {output_filename}")
-        return output_path
+        print(f"⚡ Auto-WebP Compressed (10–20 KB Target): {os.path.basename(webp_path)}")
+        return webp_path
     finally:
         if os.path.exists(temp_html_path):
             os.remove(temp_html_path)
 
 
 if __name__ == "__main__":
-    print("Thumbnail Generator Engine Initialized.")
+    import argparse
+    parser = argparse.ArgumentParser(description="HelpTrickBD Automated Category Thumbnail Generator")
+    parser.add_argument("--title", "-t", help="Post Title (Bengali or English)")
+    parser.add_argument("--category", "-c", default="Education Guide", help="Category name")
+    parser.add_argument("--subtitle", "-s", help="Optional Subtitle")
+    parser.add_argument("--output", "-o", help="Output filename")
+    parser.add_argument("--lang", "-l", choices=["bn", "en"], help="Language override")
+    args = parser.parse_args()
+
+    if args.title:
+        generate_thumbnail(args.title, args.category, args.subtitle, args.output, args.lang)
+    else:
+        print("Thumbnail Generator Engine Initialized. Use --title to render banner.")

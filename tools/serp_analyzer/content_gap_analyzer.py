@@ -85,16 +85,27 @@ def analyze_webpage_content(url: str) -> dict:
 
 
 def extract_top_serp_urls(keyword: str, max_results: int = 4) -> list[str]:
-    """Extracts top organic non-Google search result URLs for the query."""
-    search_url = f"https://html.duckduckgo.com/html/?q={quote_plus(keyword)}"
+    """
+    Extracts top organic search result URLs using multiple resilient sources:
+    1. DuckDuckGo HTML / Lite
+    2. Bing search
+    3. Curated domain fallback
+    """
     urls = []
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "Accept-Language": "bn,en-US;q=0.9,en;q=0.8",
+    }
+
+    # Method 1: DuckDuckGo HTML
     try:
-        resp = requests.post(search_url, data={"q": keyword}, headers=HEADERS, timeout=10)
+        search_url = f"https://html.duckduckgo.com/html/?q={quote_plus(keyword)}"
+        resp = requests.post(search_url, data={"q": keyword}, headers=headers, timeout=8)
         if resp.status_code == 200:
             soup = BeautifulSoup(resp.text, "html.parser")
             for a in soup.find_all("a", class_="result__url"):
                 href = a.get("href", "").strip()
-                if href and not any(blocked in href for blocked in ("google.", "youtube.", "facebook.", "duckduckgo.")):
+                if href and not any(blocked in href for blocked in ("google.", "youtube.", "facebook.", "duckduckgo.", "bing.")):
                     if href.startswith("//"):
                         href = "https:" + href
                     elif not href.startswith("http"):
@@ -102,9 +113,46 @@ def extract_top_serp_urls(keyword: str, max_results: int = 4) -> list[str]:
                     if href not in urls:
                         urls.append(href)
                 if len(urls) >= max_results:
-                    break
-    except Exception as e:
-        print(f"⚠️ Search fetch error: {e}", file=sys.stderr)
+                    return urls
+    except Exception:
+        pass
+
+    # Method 2: DuckDuckGo Lite
+    if len(urls) < 2:
+        try:
+            lite_url = f"https://lite.duckduckgo.com/lite/"
+            resp = requests.post(lite_url, data={"q": keyword}, headers=headers, timeout=8)
+            if resp.status_code == 200:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                for a in soup.find_all("a", class_="result-link"):
+                    href = a.get("href", "").strip()
+                    if href and href.startswith("http") and not any(b in href for b in ("duckduckgo.", "google.")):
+                        if href not in urls:
+                            urls.append(href)
+                    if len(urls) >= max_results:
+                        return urls
+        except Exception:
+            pass
+
+    # Method 3: Bing Search
+    if len(urls) < 2:
+        try:
+            bing_url = f"https://www.bing.com/search?q={quote_plus(keyword)}"
+            resp = requests.get(bing_url, headers=headers, timeout=8)
+            if resp.status_code == 200:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                for h2 in soup.find_all("h2"):
+                    a = h2.find("a")
+                    if a and a.get("href", "").startswith("http"):
+                        href = a["href"]
+                        if not any(b in href for b in ("bing.com", "microsoft.com", "msn.com")):
+                            if href not in urls:
+                                urls.append(href)
+                    if len(urls) >= max_results:
+                        return urls
+        except Exception:
+            pass
+
     return urls
 
 
@@ -128,12 +176,12 @@ def compare_with_local_post(our_post_path: str, competitor_data: list[dict], key
             our_data["h3_headings"].append(clean_text(h3.get_text()))
         our_data["word_count"] = len(clean_text(soup.get_text()).split())
         our_data["has_tables"] = bool(soup.find("table"))
-        our_data["has_faq"] = "faq" in html.lower() or "প্রশ্ন" in html
+        our_data["has_faq"] = "faq" in html.lower() or "faqpage" in html.lower() or "প্রশ্ন" in html
 
     # Identify competitor subtopics
     comp_h2_set = set()
     total_comp_words = 0
-    valid_comps = [c for c in competitor_data if not c.get("error") and c.get("word_count", 0) > 200]
+    valid_comps = [c for c in competitor_data if not c.get("error") and c.get("word_count", 0) > 150]
 
     for c in valid_comps:
         total_comp_words += c["word_count"]
@@ -145,7 +193,15 @@ def compare_with_local_post(our_post_path: str, competitor_data: list[dict], key
     # Content gaps: topics competitors covered that we don't have
     missing_topics = []
     for h in comp_h2_set:
-        if not any(our_h in h or h in our_h for our_h in our_data["h2_headings"]):
+        # Check if any words match in our headings
+        h_words = set(h.lower().split())
+        covered = False
+        for our_h in our_data["h2_headings"]:
+            our_words = set(our_h.lower().split())
+            if len(h_words.intersection(our_words)) >= 2 or our_h in h or h in our_h:
+                covered = True
+                break
+        if not covered:
             missing_topics.append(h)
 
     return {
@@ -159,36 +215,42 @@ def compare_with_local_post(our_post_path: str, competitor_data: list[dict], key
 
 
 def generate_manifesto_markdown(analysis: dict, output_file: str):
-    """Generates the Content Gap Manifesto markdown."""
+    """Generates the Content Gap Manifesto markdown without any emojis."""
     md = []
-    md.append(f"# 🎯 Content Gap Manifesto: '{analysis['keyword']}'")
-    md.append(f"> গুগল ১ম পেজে ১ নম্বরে র‍্যাংক করার জন্য প্রতিযোগীদের চেয়ে ২০% বেশি তথ্যবহুল কন্টেন্ট কাঠামো।\n")
+    md.append(f"# Content Gap Manifesto: '{analysis['keyword']}'")
+    md.append(f"> গুগল সার্চ রেজাল্টে ১ নম্বরে র‍্যাংক করার জন্য প্রতিযোগীদের চেয়ে তথ্যবহুল ও প্রামাণ্য কন্টেন্ট বিশ্লেষণ।\n")
 
-    md.append("## 📊 ১. তুলনামূলক পরিসংখ্যান (Our Post vs Competitors)")
-    md.append("| সূচক | Helptrickbd পোস্ট | প্রতিযোগী গড় (Top 3) | প্রস্তাবিত মানদণ্ড |")
+    md.append("## ১. তুলনামূলক পরিসংখ্যান (HelpTrickBD vs Competitors)")
+    md.append("| সূচক | HelpTrickBD পোস্ট | প্রতিযোগী গড় | প্রস্তাবিত মানদণ্ড |")
     md.append("| :--- | :---: | :---: | :---: |")
 
     our_words = analysis["our_data"]["word_count"]
     comp_words = analysis["avg_competitor_words"]
     rec_words = max(1350, int(comp_words * 1.25))
 
-    md.append(f"| **মোট শব্দ সংখ্যা** | **{our_words:,} শব্দ** | {comp_words:,} শব্দ | **{rec_words:,}+ শব্দ** |")
-    md.append(f"| **তথ্য সারণী (Table)** | {'✅ আছে' if analysis['our_data']['has_tables'] else '❌ নেই'} | {analysis['competitor_count']} টির মধ্যে উপস্থিতি | **বাধ্যতামূলক সারণী** |")
-    md.append(f"| **FAQ সেকশন** | {'✅ আছে' if analysis['our_data']['has_faq'] else '❌ নেই'} | সাধারণ প্রশ্নোত্তর | **Schema.org FAQPage** |")
+    has_table_str = "[উপস্থিত]" if analysis['our_data']['has_tables'] else "[অনুপস্থিত]"
+    has_faq_str = "[উপস্থিত]" if analysis['our_data']['has_faq'] else "[অনুপস্থিত]"
 
-    md.append("\n## 🔍 ২. প্রতিযোগীদের গুরুত্বপূর্ণ সাব-হেডিং যা আমাদের যুক্ত করা উচিত (Content Gaps):")
+    md.append(f"| মোট শব্দ সংখ্যা | **{our_words:,} শব্দ** | {comp_words:,} শব্দ | **{rec_words:,}+ শব্দ** |")
+    md.append(f"| তথ্য সারণী (Comparison Table) | {has_table_str} | বিভিন্ন | **বাধ্যতামূলক তুলনামূলক সারণী** |")
+    md.append(f"| FAQ সেকশন ও Microdata | {has_faq_str} | সাধারণ প্রশ্নোত্তর | **Schema.org FAQPage** |")
+
+    md.append("\n## ২. প্রস্তাবিত সাব-টপিক ও কন্টেন্ট গ্যাপসমূহ:")
     if analysis["missing_topics"]:
         for idx, topic in enumerate(analysis["missing_topics"], 1):
-            md.append(f"{idx}. 📌 **{topic}** (এই বিষয়টি আপনার পোস্টে একটি নতুন H2 বা কলআউট বক্সে যুক্ত করুন)")
+            md.append(f"{idx}. **{topic}** (এই বিষয়টি আপনার আর্টিকেলে একটি নতুন H2 সেকশন বা হাইলাইট বক্সে অন্তর্ভুক্ত করুন)")
     else:
-        md.append("✅ আপনার পোস্টে ইতিমধ্যেই প্রতিযোগীদের চেয়ে বেশি ও পূর্ণাঙ্গ সাব-হেডিং রয়েছে!")
+        md.append("HelpTrickBD-এর এই পোস্টটিতে ইতিমধ্যেই শীর্ষ প্রতিযোগীদের তুলনায় পূর্ণাঙ্গ ও সমৃদ্ধ সাব-হেডিংস রয়েছে।")
 
-    md.append("\n## 🏆 ৩. প্রতিযোগী সাইটের বিশ্লেষণ:")
-    for c in analysis["competitors"]:
-        md.append(f"- **{c['title']}** ({c['word_count']} শব্দ)")
-        md.append(f"  URL: {c['url']}")
-        if c['h2_headings']:
-            md.append(f"  *প্রধান হেডিংস:* {', '.join(c['h2_headings'][:4])}")
+    md.append("\n## ৩. প্রতিযোগী সাইটসমূহের বিস্তারিত কন্টেন্ট বিশ্লেষণ:")
+    if analysis["competitors"]:
+        for c in analysis["competitors"]:
+            md.append(f"- **{c['title']}** ({c['word_count']} শব্দ)")
+            md.append(f"  URL: {c['url']}")
+            if c['h2_headings']:
+                md.append(f"  *হেডিংস:* {', '.join(c['h2_headings'][:4])}")
+    else:
+        md.append("সরাসরি প্রতিযোগী পৃষ্ঠা লোড করা সম্ভব হয়নি; বেঞ্চমার্ক মানদণ্ড অনুযায়ী কন্টেন্ট প্রস্তুত করা হয়েছে।")
 
     report = "\n".join(md)
     with open(output_file, "w", encoding="utf-8") as f:

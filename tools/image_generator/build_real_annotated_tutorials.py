@@ -74,6 +74,10 @@ def prepare_sources():
         "step6": bg6_path
     }
 
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+from tools.image_optimizer.webp_compressor import compress_to_target_webp
+
 def render_annotated_image(html_content, out_path, width=1280, height=800):
     tmp_html = os.path.join(OUT_DIR, "temp_render.html")
     with open(tmp_html, "w", encoding="utf-8") as f:
@@ -91,6 +95,13 @@ def render_annotated_image(html_content, out_path, width=1280, height=800):
     subprocess.run(cmd, check=True)
     if os.path.exists(tmp_html):
         os.remove(tmp_html)
+
+    # Automatically generate 10–20 KB WebP version for Core Web Vitals
+    webp_out = os.path.splitext(out_path)[0] + ".webp"
+    compress_to_target_webp(out_path, webp_out, target_min_kb=10.0, target_max_kb=20.0, max_width=width, max_height=height)
+    sz_kb = os.path.getsize(webp_out) / 1024.0
+    print(f"  ⚡ WebP Created: {os.path.basename(webp_out)} ({sz_kb:.1f} KB)")
+    return webp_out
 
 def main():
     print("Preparing authentic source backgrounds...")

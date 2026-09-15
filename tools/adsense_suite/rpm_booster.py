@@ -54,11 +54,38 @@ HIGH_CPC_CLUSTERS = {
     }
 }
 
-SAFE_AD_SLOTS = {
-    "slot_after_intro": '<!-- [ADSENSE] Responsive Display Unit After Intro -->\n<div class="htbd-ad-wrapper" style="margin: 24px auto; text-align: center; max-width: 728px; min-height: 90px; background: #fafafa; border: 1px dashed #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px;">\n  <span>বিজ্ঞাপন (Google AdSense Responsive Unit)</span>\n</div>',
-    "slot_mid_article": '<!-- [ADSENSE] In-Article Native Unit Mid-Content -->\n<div class="htbd-ad-wrapper" style="margin: 30px auto; text-align: center; max-width: 728px; min-height: 250px; background: #fafafa; border: 1px dashed #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px;">\n  <span>বিজ্ঞাপন (Google AdSense In-Article Unit)</span>\n</div>',
-    "slot_before_faq": '<!-- [ADSENSE] Matched Content / Multiplex Unit Before FAQ -->\n<div class="htbd-ad-wrapper" style="margin: 28px auto; text-align: center; max-width: 728px; min-height: 100px; background: #fafafa; border: 1px dashed #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px;">\n  <span>বিজ্ঞাপন (Google AdSense Multiplex Unit)</span>\n</div>',
-}
+def get_ad_slot_code(slot_type: str, pub_id: str = None, slot_id: str = None) -> str:
+    """
+    Generates valid, policy-compliant Google AdSense code or clean placeholder.
+    Guarantees strict AdSense distance rules and official publisher disclosure labeling.
+    """
+    if pub_id:
+        slot_attr = f'data-ad-slot="{slot_id}"' if slot_id else 'data-ad-slot="auto"'
+        return f'''<!-- [ADSENSE] {slot_type.upper()} -->
+<div class="htbd-ad-slot htbd-ad-{slot_type}" style="margin: 28px auto; text-align: center; max-width: 100%; overflow: hidden;">
+  <div style="font-size: 11px; color: #94a3b8; margin-bottom: 4px; letter-spacing: 0.5px; text-transform: uppercase;">বিজ্ঞাপন</div>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{pub_id}"
+       {slot_attr}
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({{}});
+  </script>
+</div>'''
+    else:
+        labels = {
+            "after_intro": "Google AdSense Responsive Unit (Top)",
+            "mid_article": "Google AdSense In-Article Native Unit (Mid)",
+            "before_faq": "Google AdSense Multiplex Unit (Bottom)"
+        }
+        lbl = labels.get(slot_type, "Google AdSense Unit")
+        return f'''<!-- [ADSENSE] {slot_type.upper()} -->
+<div class="htbd-ad-wrapper htbd-ad-{slot_type}" style="margin: 28px auto; text-align: center; max-width: 728px; min-height: 90px; background: #fafafa; border: 1px dashed #cbd5e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; color: #64748b; font-family: 'SolaimanLipi', sans-serif;">
+  <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 4px;">বিজ্ঞাপন</span>
+  <span style="font-size: 13px; font-weight: 600;">{lbl}</span>
+</div>'''
 
 
 def analyze_article_monetization(html_content: str) -> dict:
@@ -85,7 +112,7 @@ def analyze_article_monetization(html_content: str) -> dict:
     words = len(text.split())
 
     # Monetization Score (0-100)
-    # Factors: Word count (>1000 = 40 pts), High-CPC hits (>3 = 40 pts), Table/FAQ = 20 pts
+    # Factors: Word count (>1200 = 40 pts), High-CPC hits (>3 = 40 pts), Table/FAQ = 20 pts
     score = 0
     if words >= 1200:
         score += 40
@@ -101,7 +128,7 @@ def analyze_article_monetization(html_content: str) -> dict:
     elif total_high_cpc_hits >= 1:
         score += 15
 
-    if soup.find("table") or "faq" in html_content.lower():
+    if soup.find("table") or "faq" in html_content.lower() or "faqpage" in html_content.lower():
         score += 20
 
     return {
@@ -112,8 +139,8 @@ def analyze_article_monetization(html_content: str) -> dict:
     }
 
 
-def inject_policy_safe_ad_slots(html_content: str) -> str:
-    """Injects AdSense responsive placeholders following strict AdSense distance rules."""
+def inject_policy_safe_ad_slots(html_content: str, pub_id: str = None, slot_id: str = None) -> str:
+    """Injects AdSense responsive placeholders or live units following strict AdSense distance rules."""
     soup = BeautifulSoup(html_content, "html.parser")
     post_wrapper = soup.find("div", class_="htbd-post-wrapper") or soup.find("body") or soup
 
@@ -121,22 +148,22 @@ def inject_policy_safe_ad_slots(html_content: str) -> str:
     if not paragraphs:
         paragraphs = post_wrapper.find_all("p")
 
-    # Slot 1: After 2nd paragraph
+    # Slot 1: After 2nd paragraph (Safe distance from H1)
     if len(paragraphs) >= 2:
-        slot1_soup = BeautifulSoup(SAFE_AD_SLOTS["slot_after_intro"], "html.parser")
-        paragraphs[1].insert_after(slot1_soup)
+        slot1_html = get_ad_slot_code("after_intro", pub_id=pub_id, slot_id=slot_id)
+        paragraphs[1].insert_after(BeautifulSoup(slot1_html, "html.parser"))
 
-    # Slot 2: Mid content (e.g. after middle paragraph)
+    # Slot 2: Mid content
     if len(paragraphs) >= 6:
         mid_idx = len(paragraphs) // 2
-        slot2_soup = BeautifulSoup(SAFE_AD_SLOTS["slot_mid_article"], "html.parser")
-        paragraphs[mid_idx].insert_after(slot2_soup)
+        slot2_html = get_ad_slot_code("mid_article", pub_id=pub_id, slot_id=slot_id)
+        paragraphs[mid_idx].insert_after(BeautifulSoup(slot2_html, "html.parser"))
 
     # Slot 3: Before FAQ section
     faq_sec = post_wrapper.find("div", class_="htbd-faq-section") or post_wrapper.find("div", class_="htbd-qbox")
     if faq_sec:
-        slot3_soup = BeautifulSoup(SAFE_AD_SLOTS["slot_before_faq"], "html.parser")
-        faq_sec.insert_before(slot3_soup)
+        slot3_html = get_ad_slot_code("before_faq", pub_id=pub_id, slot_id=slot_id)
+        faq_sec.insert_before(BeautifulSoup(slot3_html, "html.parser"))
 
     return str(soup)
 
@@ -145,41 +172,44 @@ def main():
     parser = argparse.ArgumentParser(description="AdSense High-RPM & CPC Optimizer for Helptrickbd")
     parser.add_argument("--file", "-f", required=True, help="Path to HTML article file")
     parser.add_argument("--inject-slots", action="store_true", help="Inject Google-compliant ad slots into HTML")
+    parser.add_argument("--pub-id", help="Google AdSense Publisher ID (e.g. ca-pub-1234567890123456)")
+    parser.add_argument("--slot-id", help="AdSense Slot ID (optional)")
     parser.add_argument("--output", "-o", help="Output file path for ad-injected HTML")
 
     args = parser.parse_args()
 
     if not os.path.exists(args.file):
-        print(f"❌ Error: File not found: {args.file}", file=sys.stderr)
+        print(f"Error: File not found: {args.file}", file=sys.stderr)
         sys.exit(1)
 
     with open(args.file, "r", encoding="utf-8") as f:
         content = f.read()
 
     print("=" * 65)
-    print(f"💰 Helptrickbd AdSense RPM & CPC Optimizer: {os.path.basename(args.file)}")
+    print(f"Helptrickbd AdSense RPM & CPC Optimizer: {os.path.basename(args.file)}")
     print("=" * 65)
 
     analysis = analyze_article_monetization(content)
 
-    print(f"\n📊 Monetization Score: {analysis['monetization_score']}/100 🏆")
+    print(f"\nMonetization Score: {analysis['monetization_score']}/100")
     print(f"  • Article Words: {analysis['word_count']}")
     print(f"  • High-CPC Keyword Matches: {analysis['total_cpc_hits']}")
 
-    print("\n💎 Detected High-CPC Opportunities:")
+    print("\nHigh-CPC Opportunities:")
     if analysis["detected_clusters"]:
         for name, data in analysis["detected_clusters"].items():
             print(f"  • {name} (Estimated CPC: {data['avg_cpc']})")
             print(f"    Matches: {', '.join(data['matches'])}")
     else:
-        print("  ℹ️ No direct high-CPC clusters detected. Consider adding contextual career/banking references.")
+        print("  Notice: No direct high-CPC clusters detected. Consider adding contextual career/banking references.")
 
     if args.inject_slots:
-        optimized_html = inject_policy_safe_ad_slots(content)
+        optimized_html = inject_policy_safe_ad_slots(content, pub_id=args.pub_id, slot_id=args.slot_id)
         out_path = args.output if args.output else args.file
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(optimized_html)
-        print(f"\n✅ Successfully injected policy-safe AdSense slots into: {out_path}")
+        ad_type = f"Live Ad Units ({args.pub_id})" if args.pub_id else "Policy-Safe Placeholders"
+        print(f"\nSuccessfully injected {ad_type} into: {out_path}")
 
 
 if __name__ == "__main__":

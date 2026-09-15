@@ -127,13 +127,13 @@ def analyze_striking_distance(rows: list[dict]) -> tuple[list[dict], list[dict]]
 
 
 def generate_markdown_report(striking: list[dict], ctr_opps: list[dict], output_file: str):
-    """Generates an actionable markdown report for Google ranking boosts."""
+    """Generates an actionable markdown report for Google ranking boosts without any emojis."""
     md = []
-    md.append("# 🎯 Helptrickbd Google Search Console Opportunity Report")
+    md.append("# Helptrickbd Google Search Console Opportunity Report")
     md.append(f"**Generated Date:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n")
     md.append("> এই রিপোর্টে গুগলের পেজ ২-এ থাকা লো-হ্যাংগিং কি-ওয়ার্ড এবং যে পোস্টগুলোর CTR কম রয়েছে, সেগুলোকে দ্রুত গুগল ১ম পেজে নিয়ে আসার কর্মপরিকল্পনা দেওয়া হলো।\n")
 
-    md.append("## 🚀 ১. Striking Distance Keywords (পজিশন ১১–২৫: দ্রুত ১ম পেজে নেওয়ার সুযোগ)")
+    md.append("## ১. Striking Distance Keywords (পজিশন ১১–২৫: দ্রুত ১ম পেজে নেওয়ার সুযোগ)")
     md.append("| ক্রম | সার্চ কি-ওয়ার্ড (Query) | বর্তমান পজিশন | ইমপ্রেশন | ক্লিক | বর্তমান CTR | অ্যাকশন সুপারিশ |")
     md.append("| :---: | :--- | :---: | :---: | :---: | :---: | :--- |")
 
@@ -142,7 +142,7 @@ def generate_markdown_report(striking: list[dict], ctr_opps: list[dict], output_
         action = "H2 সাব-হেডিং যুক্ত করুন + ১টি ইন্টারনাল লিঙ্ক"
         md.append(f"| {i} | **{item['query']}** | `Pos {item['position']}` | {item['impressions']:,} | {item['clicks']:,} | {ctr_pct} | {action} |")
 
-    md.append("\n## ⚡ ২. High Impression, Low CTR Pages (টাইটেল ও মেটা ডেসক্রিপশন অপ্টিমাইজেশন)")
+    md.append("\n## ২. High Impression, Low CTR Pages (টাইটেল ও মেটা ডেসক্রিপশন অপ্টিমাইজেশন)")
     md.append("> এই পোস্টগুলো প্রচুর ভিজিটর গুগলে দেখছে কিন্তু ক্লিকের হার কম। আকর্ষণীয় টাইটেল ও মেটা ডেসক্রিপশন দিলেই ক্লিক ৩–৫ গুণ বাড়বে।\n")
     md.append("| ক্রম | কি-ওয়ার্ড | ইমপ্রেশন | বর্তমান CTR | পোস্টের URL | সমাধান |")
     md.append("| :---: | :--- | :---: | :---: | :--- | :--- |")
@@ -159,41 +159,117 @@ def generate_markdown_report(striking: list[dict], ctr_opps: list[dict], output_
     return report_content
 
 
+def map_and_inject_gsc_keywords(html_path: str, striking_rows: list[dict], apply: bool = False) -> list[dict]:
+    """
+    Analyzes an HTML article against GSC Page 2 queries,
+    identifies missing high-impact queries, and suggests exact injection points.
+    """
+    from bs4 import BeautifulSoup
+
+    if not os.path.exists(html_path):
+        print(f"Error: HTML file not found: {html_path}", file=sys.stderr)
+        return []
+
+    with open(html_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    soup = BeautifulSoup(content, "html.parser")
+    full_text = soup.get_text().lower()
+    headings = [h.get_text().strip().lower() for h in soup.find_all(["h1", "h2", "h3"])]
+
+    recommendations = []
+    for r in striking_rows:
+        q = r["query"]
+        q_lower = q.lower()
+        in_headings = any(q_lower in h or h in q_lower for h in headings)
+        in_body = q_lower in full_text
+
+        if not in_headings:
+            status = "Missing from Headings" if in_body else "Completely Missing"
+            recommendations.append({
+                "query": q,
+                "position": r["position"],
+                "impressions": r["impressions"],
+                "status": status,
+                "suggested_action": f"Add H2 section: '{q}'" if status == "Completely Missing" else f"Upgrade existing paragraph mentioning '{q}' into a dedicated H3 heading"
+            })
+
+    if apply and recommendations:
+        post_wrapper = soup.find("div", class_="htbd-post-wrapper") or soup.find("body") or soup
+        # Build contextual query block
+        top_missing = [rec["query"] for rec in recommendations[:4]]
+        if top_missing:
+            block_html = f'''<!-- [GSC STRIKING DISTANCE BOOST] Auto-Mapped Queries -->
+<div class="htbd-gsc-opportunity-box" style="margin: 28px 0; padding: 18px 22px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 8px; font-family: 'SolaimanLipi', sans-serif;">
+  <h4 style="margin: 0 0 10px 0; color: #0369a1; font-size: 17.5px; font-weight: 700;">গুরুত্বপূর্ণ প্রাসঙ্গিক অনুসন্ধান ও বিষয়াবলি:</h4>
+  <ul style="margin: 0; padding-left: 20px; color: #334155; line-height: 1.8; font-size: 15.5px;">
+'''
+            for q_item in top_missing:
+                block_html += f"    <li><strong>{q_item}</strong>: সর্বশেষ প্রাতিষ্ঠানিক নির্দেশিকা অনুযায়ী এই ধাপটি সতর্কতার সাথে অনুসরণ করুন।</li>\n"
+            block_html += "  </ul>\n</div>"
+
+            # Insert before FAQ section or near end of post
+            faq = post_wrapper.find("div", class_="htbd-faq-section")
+            if faq:
+                faq.insert_before(BeautifulSoup(block_html, "html.parser"))
+            else:
+                post_wrapper.append(BeautifulSoup(block_html, "html.parser"))
+
+            with open(html_path, "w", encoding="utf-8") as f:
+                f.write(str(soup))
+            print(f"Successfully injected GSC keyword boost block into: {html_path}")
+
+    return recommendations
+
+
 def main():
     parser = argparse.ArgumentParser(description="Google Search Console Striking Distance & CTR Miner")
     parser.add_argument("--site-url", default=DEFAULT_SITE_URL, help="Website URL in GSC")
     parser.add_argument("--creds", help="Path to service_account.json or OAuth credentials")
     parser.add_argument("--output", "-o", default=REPORT_PATH, help="Path to save markdown report")
+    parser.add_argument("--inject-into", help="Path to local HTML article to map missing Page 2 keywords")
+    parser.add_argument("--apply", action="store_true", help="Automatically inject missing keyword boost block into HTML")
     parser.add_argument("--demo", action="store_true", help="Run in demo/simulated mode without live API")
 
     args = parser.parse_args()
 
     print("=" * 65)
-    print("🎯 Helptrickbd GSC Striking Distance & CTR Opportunity Miner")
+    print("Helptrickbd GSC Striking Distance & CTR Opportunity Miner")
     print("=" * 65)
 
     data = []
     if not args.demo:
         service = get_gsc_service(args.creds)
         if service:
-            print(f"📡 Querying live GSC API for: {args.site_url} ...")
+            print(f"Querying live GSC API for: {args.site_url} ...")
             data = fetch_live_gsc_data(service, args.site_url)
         else:
-            print(f"ℹ️ Note: Live credentials not found. Falling back to Demo/Simulated Dataset.")
+            print(f"Notice: Live credentials not found or unauthorized. Using realistic simulated GSC dataset.")
             data = generate_simulated_gsc_data()
     else:
-        print("ℹ️ Running in Demo/Simulation Mode.")
+        print("Running in Demo/Simulation Mode.")
         data = generate_simulated_gsc_data()
 
     striking, ctr_opps = analyze_striking_distance(data)
 
-    print(f"\n📊 Analysis Summary:")
+    print(f"\nAnalysis Summary:")
     print(f"  • Total Queries Analyzed: {len(data)}")
     print(f"  • Striking Distance Queries (Pos 11-25): {len(striking)}")
     print(f"  • High-Impression Low-CTR Opportunities: {len(ctr_opps)}")
 
     generate_markdown_report(striking, ctr_opps, args.output)
-    print(f"\n✅ Actionable Report saved to: {args.output}")
+    print(f"\nReport saved to: {args.output}")
+
+    if args.inject_into:
+        print(f"\nAnalyzing '{os.path.basename(args.inject_into)}' for missing Page 2 keywords...")
+        recs = map_and_inject_gsc_keywords(args.inject_into, striking, apply=args.apply)
+        if recs:
+            print(f"Found {len(recs)} striking distance opportunities:")
+            for r in recs[:5]:
+                print(f"  • [{r['status']}] '{r['query']}' (Pos {r['position']}, {r['impressions']} imp)")
+                print(f"    Action: {r['suggested_action']}")
+        else:
+            print("Article already has comprehensive coverage of top striking distance queries.")
 
 
 if __name__ == "__main__":

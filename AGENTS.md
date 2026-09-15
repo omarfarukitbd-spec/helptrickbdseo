@@ -130,6 +130,10 @@ pip install -r requirements.txt
   ```bash
   python tools/image_generator/build_real_annotated_tutorials.py
   ```
+- **Master Unified Publishing & SEO Pipeline (The Central Engine):**
+  ```bash
+  python tools/pipeline/master_publisher_pipeline.py --html <FILE> --post-id <ID> --url <LIVE_URL> --auto-compress --check-links --publish --index
+  ```
 
 ---
 
