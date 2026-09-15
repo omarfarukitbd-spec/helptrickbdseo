@@ -126,7 +126,17 @@ Setup Instructions:
     }
   }
 
-  /* 8. Image Cumulative Layout Shift (CLS) Prevention (চ) */
+    /* Font-Display Swap Override for FontAwesome */
+  @font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-display: swap;
+  }
+
+  /* 7. Image Cumulative Layout Shift (CLS) Prevention (চ) */
   .post-body img {
     max-width: 100% !important;
     height: auto !important;
