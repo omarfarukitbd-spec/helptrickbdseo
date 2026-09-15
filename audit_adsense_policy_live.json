@@ -1,8 +1,8 @@
 {
   "total_posts": 78,
-  "clean_count": 58,
+  "clean_count": 62,
   "critical_count": 0,
-  "warning_count": 20,
+  "warning_count": 16,
   "critical_posts": [],
   "warning_posts": [
     {
@@ -26,28 +26,6 @@
         }
       ],
       "word_count": 512
-    },
-    {
-      "url": "https://www.helptrickbd.com/2026/01/samajikikorone-khelar-sathir-bhumika.html",
-      "title": "শিশুর সামাজিকীকরণ প্রক্রিয়ায় খেলার সাথী ও বন্ধুদের ভূমিকা (২০২৬)",
-      "status_code": 200,
-      "error": null,
-      "is_clean": true,
-      "violations": [
-        {
-          "category": "LOW_VALUE_CONTENT",
-          "severity": "WARNING",
-          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 460 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
-          "matches": [
-            [
-              "460 words",
-              "আর্টিকেলের পরিধি খুব ছোট"
-            ]
-          ],
-          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
-        }
-      ],
-      "word_count": 460
     },
     {
       "url": "https://www.helptrickbd.com/2026/01/bangladeshe-shilpo-jatiyokoron-shomossha.html",
@@ -92,6 +70,28 @@
         }
       ],
       "word_count": 452
+    },
+    {
+      "url": "https://www.helptrickbd.com/2026/01/samajikikorone-khelar-sathir-bhumika.html",
+      "title": "শিশুর সামাজিকীকরণ প্রক্রিয়ায় খেলার সাথী ও বন্ধুদের ভূমিকা (২০২৬)",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 460 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "460 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 460
     },
     {
       "url": "https://www.helptrickbd.com/2026/01/what-is-patriarchy-definition-characteristics-impact.html",
@@ -150,28 +150,6 @@
       "word_count": 557
     },
     {
-      "url": "https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html",
-      "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
-      "status_code": 200,
-      "error": null,
-      "is_clean": true,
-      "violations": [
-        {
-          "category": "LOW_VALUE_CONTENT",
-          "severity": "WARNING",
-          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 455 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
-          "matches": [
-            [
-              "455 words",
-              "আর্টিকেলের পরিধি খুব ছোট"
-            ]
-          ],
-          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
-        }
-      ],
-      "word_count": 455
-    },
-    {
       "url": "https://www.helptrickbd.com/2026/01/goals-and-objectives-of-womens-decade.html",
       "title": "নারী দশকের লক্ষ্য ও উদ্দেশ্য: বিশ্ব নারী দশকের পটভূমি",
       "status_code": 200,
@@ -192,6 +170,28 @@
         }
       ],
       "word_count": 413
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html",
+      "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 455 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "455 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 455
     },
     {
       "url": "https://www.helptrickbd.com/2025/12/imam-ghazali-contribution-political-thought.html",
@@ -366,94 +366,6 @@
         }
       ],
       "word_count": 486
-    },
-    {
-      "url": "https://www.helptrickbd.com/2025/03/marhaba-ya-marhaba-rahmatullah-alamin-e-marhaba-lyrics.html",
-      "title": "মিলাদ শরীফের ক্বাসিদা: মারহাবা ইয়া মারহাবা—তাৎপর্য, ব্যাখ্যা ও পূর্ণাঙ্গ লিরিক্স (২০২৬)",
-      "status_code": 200,
-      "error": null,
-      "is_clean": true,
-      "violations": [
-        {
-          "category": "LOW_VALUE_CONTENT",
-          "severity": "WARNING",
-          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 479 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
-          "matches": [
-            [
-              "479 words",
-              "আর্টিকেলের পরিধি খুব ছোট"
-            ]
-          ],
-          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
-        }
-      ],
-      "word_count": 479
-    },
-    {
-      "url": "https://www.helptrickbd.com/2025/03/allahumma-salli-ala-sayyidina-muhammad-lyrics.html",
-      "title": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দুরুদ শরীফের ফজিলত, অর্থ ও ক্বাসিদা হ্যান্ডনোট (২০২৬)",
-      "status_code": 200,
-      "error": null,
-      "is_clean": true,
-      "violations": [
-        {
-          "category": "LOW_VALUE_CONTENT",
-          "severity": "WARNING",
-          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 410 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
-          "matches": [
-            [
-              "410 words",
-              "আর্টিকেলের পরিধি খুব ছোট"
-            ]
-          ],
-          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
-        }
-      ],
-      "word_count": 410
-    },
-    {
-      "url": "https://www.helptrickbd.com/2025/02/milad-sharif-salatun-ya-rasulallah-alaikum.html",
-      "title": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম: ঐতিহাসিক প্রেক্ষিত, তাৎপর্য ও পূর্ণাঙ্গ লিরিক্স (২০২৬)",
-      "status_code": 200,
-      "error": null,
-      "is_clean": true,
-      "violations": [
-        {
-          "category": "LOW_VALUE_CONTENT",
-          "severity": "WARNING",
-          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 374 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
-          "matches": [
-            [
-              "374 words",
-              "আর্টিকেলের পরিধি খুব ছোট"
-            ]
-          ],
-          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
-        }
-      ],
-      "word_count": 374
-    },
-    {
-      "url": "https://www.helptrickbd.com/2025/03/allah-allah-allahu-la-ilaha-illa-hu-lyrics.html",
-      "title": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লা হু: যিকিরের মহিমা, অর্থ ও পূর্ণাঙ্গ লিরিক্স (২০২৬)",
-      "status_code": 200,
-      "error": null,
-      "is_clean": true,
-      "violations": [
-        {
-          "category": "LOW_VALUE_CONTENT",
-          "severity": "WARNING",
-          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 431 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
-          "matches": [
-            [
-              "431 words",
-              "আর্টিকেলের পরিধি খুব ছোট"
-            ]
-          ],
-          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
-        }
-      ],
-      "word_count": 431
     },
     {
       "url": "https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html",

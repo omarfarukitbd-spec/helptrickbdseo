@@ -1,9 +1,9 @@
 # HelpTrickBD 78 Live Posts AdSense Policy Audit Report
 
 - **Total Posts Scanned:** 78
-- **100% Policy Safe:** 58
+- **100% Policy Safe:** 62
 - **Critical Policy Violations:** 0
-- **Warnings (Thin content / questionable terms):** 20
+- **Warnings (Thin content / questionable terms):** 16
 
 ## ⚠️ Warnings & Thin Content
 
@@ -11,17 +11,17 @@
 - **Word Count:** 512 words
 - **Warning:** সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)
 
-### 2. [শিশুর সামাজিকীকরণ প্রক্রিয়ায় খেলার সাথী ও বন্ধুদের ভূমিকা (২০২৬)](https://www.helptrickbd.com/2026/01/samajikikorone-khelar-sathir-bhumika.html)
-- **Word Count:** 460 words
-- **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 460 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
-
-### 3. [বাংলাদেশে শিল্প জাতীয়করণের ইতিহাস, পটভূমি, সমস্যা ও প্রভাব (২০২৬)](https://www.helptrickbd.com/2026/01/bangladeshe-shilpo-jatiyokoron-shomossha.html)
+### 2. [বাংলাদেশে শিল্প জাতীয়করণের ইতিহাস, পটভূমি, সমস্যা ও প্রভাব (২০২৬)](https://www.helptrickbd.com/2026/01/bangladeshe-shilpo-jatiyokoron-shomossha.html)
 - **Word Count:** 472 words
 - **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 472 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
 
-### 4. [জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)](https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html)
+### 3. [জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)](https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html)
 - **Word Count:** 452 words
 - **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 452 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
+
+### 4. [শিশুর সামাজিকীকরণ প্রক্রিয়ায় খেলার সাথী ও বন্ধুদের ভূমিকা (২০২৬)](https://www.helptrickbd.com/2026/01/samajikikorone-khelar-sathir-bhumika.html)
+- **Word Count:** 460 words
+- **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 460 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
 
 ### 5. [পুরুষতন্ত্র কাকে বলে? সমাজতাত্ত্বিক সংজ্ঞা, উৎপত্তি, বৈশিষ্ট্য ও প্রভাব (২০২৬)](https://www.helptrickbd.com/2026/01/what-is-patriarchy-definition-characteristics-impact.html)
 - **Word Count:** 539 words
@@ -31,13 +31,13 @@
 - **Word Count:** 557 words
 - **Warning:** সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)
 
-### 7. [সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা](https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html)
-- **Word Count:** 455 words
-- **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 455 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
-
-### 8. [নারী দশকের লক্ষ্য ও উদ্দেশ্য: বিশ্ব নারী দশকের পটভূমি](https://www.helptrickbd.com/2026/01/goals-and-objectives-of-womens-decade.html)
+### 7. [নারী দশকের লক্ষ্য ও উদ্দেশ্য: বিশ্ব নারী দশকের পটভূমি](https://www.helptrickbd.com/2026/01/goals-and-objectives-of-womens-decade.html)
 - **Word Count:** 413 words
 - **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 413 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
+
+### 8. [সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা](https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html)
+- **Word Count:** 455 words
+- **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 455 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
 
 ### 9. [রাষ্ট্রচিন্তায় ইমাম গাজ্জালির অবদান ও রাজনৈতিক দর্শন](https://www.helptrickbd.com/2025/12/imam-ghazali-contribution-political-thought.html)
 - **Word Count:** 711 words
@@ -68,23 +68,7 @@
 - **Warning:** সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)
 - **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 486 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
 
-### 16. [মিলাদ শরীফের ক্বাসিদা: মারহাবা ইয়া মারহাবা—তাৎপর্য, ব্যাখ্যা ও পূর্ণাঙ্গ লিরিক্স (২০২৬)](https://www.helptrickbd.com/2025/03/marhaba-ya-marhaba-rahmatullah-alamin-e-marhaba-lyrics.html)
-- **Word Count:** 479 words
-- **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 479 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
-
-### 17. [আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দুরুদ শরীফের ফজিলত, অর্থ ও ক্বাসিদা হ্যান্ডনোট (২০২৬)](https://www.helptrickbd.com/2025/03/allahumma-salli-ala-sayyidina-muhammad-lyrics.html)
-- **Word Count:** 410 words
-- **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 410 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
-
-### 18. [সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম: ঐতিহাসিক প্রেক্ষিত, তাৎপর্য ও পূর্ণাঙ্গ লিরিক্স (২০২৬)](https://www.helptrickbd.com/2025/02/milad-sharif-salatun-ya-rasulallah-alaikum.html)
-- **Word Count:** 374 words
-- **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 374 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
-
-### 19. [আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লা হু: যিকিরের মহিমা, অর্থ ও পূর্ণাঙ্গ লিরিক্স (২০২৬)](https://www.helptrickbd.com/2025/03/allah-allah-allahu-la-ilaha-illa-hu-lyrics.html)
-- **Word Count:** 431 words
-- **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 431 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
-
-### 20. [রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)](https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html)
+### 16. [রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)](https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html)
 - **Word Count:** 478 words
 - **Warning:** লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 478 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।
 
