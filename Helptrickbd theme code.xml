@@ -4,6 +4,9 @@
 <head>
 
 <!-- [START] HelpTrickBD SolaimanLipi Global Typography & Bold Layout -->
+<link href='https://fonts.maateen.me' rel='preconnect' crossorigin='anonymous'/>
+<link as='font' crossorigin='anonymous' href='https://fonts.maateen.me/solaiman-lipi/solaimanlipi-normal-v1.0.woff2' rel='preload' type='font/woff2'/>
+<link as='font' crossorigin='anonymous' href='https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2' rel='preload' type='font/woff2'/>
 <link href='https://fonts.googleapis.com' rel='preconnect'/>
 <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
 <!-- Google Fonts Async Non-blocking (Preload + Swap) -->
@@ -1632,6 +1635,13 @@ disqusShortname = "templateiki";
 <meta expr:content='data:view.description.escaped ? data:view.description.escaped : (data:blog.metaDescription ? data:blog.metaDescription : data:blog.title + &quot; - শিক্ষা, চাকরি প্রস্তুতি, জাতীয় বিশ্ববিদ্যালয়ের বইয়ের তালিকা, ইসলামিক প্রবন্ধ ও তথ্যপ্রযুক্তি সহায়িকা।&quot;)' property='og:description'/>
 <meta expr:content='data:blog.title.escaped' property='og:site_name'/>
 <b:tag cond='data:widgets.Blog.first.posts[0].featuredImage' expr:content='resizeImage(data:widgets.Blog.first.posts[0].featuredImage , 1600, &quot;1:1&quot;)' name='meta' property='og:image'/>
+<b:if cond='data:view.isHomepage and data:widgets.Blog.first.posts[0].featuredImage'>
+  <!-- LCP Hero Image Instant Discovery & High Priority Preload (Fixes LCP 6.8s) -->
+  <link as='image' expr:href='resizeImage(data:widgets.Blog.first.posts[0].featuredImage, 800, &quot;16:9&quot;)' fetchpriority='high' rel='preload'/>
+</b:if>
+<b:if cond='data:view.isSingleItem and data:view.featuredImage'>
+  <link as='image' expr:href='data:view.featuredImage' fetchpriority='high' rel='preload'/>
+</b:if>
 <b:if cond='data:view.featuredImage'>
 <meta expr:content='data:view.featuredImage' property='og:image'/>
 <meta expr:content='data:view.featuredImage' name='twitter:image'/>
@@ -1720,7 +1730,7 @@ disqusShortname = "templateiki";
                 <b:tag class='post-filter-inner gaint' cond='data:i == 0 and (data:widget.sectionId == &quot;ft-post&quot;)' expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle' name='a'>
                 <b:tag class='post-filter-inner' cond='data:widget.sectionId != &quot;ft-post&quot; or (data:i != 0 and (data:widget.sectionId == &quot;ft-post&quot;))' expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle' name='a'>
                     <b:tag expr:class='data:i == 0 and (data:widget.sectionId == &quot;ft-post&quot;) ? &quot;post-filter-link background-layer&quot; : &quot;post-filter-link&quot;' name='span'>
-                        <b:if cond='data:post.featuredImage'><img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)'/>
+                        <b:if cond='data:post.featuredImage'><img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' loading='lazy' decoding='async'/>
                             <b:else/>
                             <img class='snip-thumbnail' data-src='https://resources.blogblog.com/img/icon_delete13.gif' expr:alt='data:post.title ? data:post.title : data:messages.noTitle'/>
                         </b:if>
@@ -1743,7 +1753,7 @@ disqusShortname = "templateiki";
             <b:if cond='data:widget.sectionId in [&quot;sidebar&quot;]'>
             <b:tag class='post-filter-inner' expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle' name='a'>
                   <b:if cond='data:post.featuredImage'>
-                      <img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)'/>
+                      <img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' loading='lazy' decoding='async'/>
                       <b:else/><img class='snip-thumbnail' data-src='https://resources.blogblog.com/img/icon_delete13.gif' expr:alt='data:post.title ? data:post.title : data:messages.noTitle'/>
                   </b:if><b:class expr:name='data:post.featuredImage.isYouTube ? &quot;video-nos&quot; : &quot;image-nos&quot;'/>
             </b:tag>
@@ -2085,7 +2095,7 @@ disqusShortname = "templateiki";
       <a class='post-filter-inner' expr:href='data:post.url'>
       <span class='post-filter-link'>
       <b:if cond='data:post.featuredImage'>
-          <img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)'/>
+          <img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' loading='lazy' decoding='async'/>
           <b:else/>
           <img class='snip-thumbnail' data-src='https://resources.blogblog.com/img/icon_delete13.gif' expr:alt='data:post.title ? data:post.title : data:messages.noTitle'/>
       </b:if>
@@ -2440,7 +2450,7 @@ disqusShortname = "templateiki";
     <b:includable id='postContent' var='post'>
         <div class='post-content'>
             <a class='post-filter-link' expr:href='data:post.url'>
-                <b:if cond='data:post.featuredImage'><img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)'/>
+                <b:if cond='data:post.featuredImage'><img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' loading='lazy' decoding='async'/>
                     <b:else/><img class='snip-thumbnail' data-src='https://resources.blogblog.com/img/icon_delete13.gif' expr:alt='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </b:if><b:class expr:name='data:post.featuredImage.isYouTube ? &quot;video-nos&quot; : &quot;image-nos&quot;'/>
             </a>
@@ -3292,7 +3302,7 @@ disqusShortname = "templateiki";
               <a class='post-filter-inner' expr:href='data:post.url'>
               <span class='post-filter-link'>
               <b:if cond='data:post.featuredImage'>
-                  <img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)'/>
+                  <img class='snip-thumbnail' expr:alt='data:post.title ? data:post.title : data:messages.noTitle' expr:src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped , 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage , 72, &quot;1:1&quot;)' loading='lazy' decoding='async'/>
                   <b:else/>
                   <img class='snip-thumbnail' data-src='https://resources.blogblog.com/img/icon_delete13.gif' expr:alt='data:post.title ? data:post.title : data:messages.noTitle'/>
               </b:if>

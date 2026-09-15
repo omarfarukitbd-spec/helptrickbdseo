@@ -17,6 +17,9 @@ Setup Instructions:
 -->
 
 <!-- [START] HelpTrickBD SolaimanLipi Global Typography & Bold Layout -->
+<link href='https://fonts.maateen.me' rel='preconnect' crossorigin='anonymous'/>
+<link as='font' crossorigin='anonymous' href='https://fonts.maateen.me/solaiman-lipi/solaimanlipi-normal-v1.0.woff2' rel='preload' type='font/woff2'/>
+<link as='font' crossorigin='anonymous' href='https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2' rel='preload' type='font/woff2'/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
