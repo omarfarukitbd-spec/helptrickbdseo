@@ -6,32 +6,20 @@
 
 ---
 
-## 🔁 1. Pre-Task Protocol (কাজের শুরুর পূর্বশর্ত)
-Before inspecting files, drafting code, or answering any implementation request, the agent MUST run:
-
-```bash
-git fetch origin
-git status
-```
-
-1. **If Remote Has New Commits**:
-   - Immediately pull updates using rebase to maintain a clean linear commit graph:
-     ```bash
-     git pull --rebase origin main
-     ```
-2. **If Local Working Tree Is Dirty**:
-   - Inspect uncommitted changes. Stash or commit before pulling to prevent merge collisions.
-3. **Verify Synchronized State**:
-   - Ensure local `HEAD` matches `origin/main`.
+## 🛑 1. Git Pull Protocol (ইউজারের সরাসরি নির্দেশ ব্যতীত পুল সম্পূর্ণ নিষিদ্ধ)
+> [!CAUTION]
+> **স্বয়ংক্রিয় পুল নিষিদ্ধ (No Autonomous Git Pull)**:
+> এজেন্ট নিজ থেকে বা স্বয়ংক্রিয়ভাবে কোনো টাস্ক শুরুর আগে `git pull` বা `git pull --rebase` চালাবে না।
+> গিটহাব থেকে নতুন কোনো আপডেট বা ফাইল লোকাল পিসিতে আনার জন্য **ইউজার নিজে যখন চ্যাটে স্পষ্ট নির্দেশ দেবেন** (যেমন: *"গিট থেকে পুল করো"* বা *"git theke update ano"*), **শুধুমাত্র তখনই** এজেন্ট গিট থেকে পুল করবে।
 
 ---
 
-## 📤 2. Post-Task Protocol (কাজের শেষের পূর্বশর্ত)
-Immediately after completing a code modification, post expansion, asset generation, or milestone, the agent MUST execute:
+## 📤 2. Post-Task Protocol (কাজ শেষে বাধ্যতামূলক স্বয়ংক্রিয় পুশ)
+যেকোনো কাজ, ফাইল এডিট, পোস্ট পরিশোধন, ব্যানার তৈরি বা কোনো মাইলস্টোন সফলভাবে সম্পন্ন হওয়া মাত্র এজেন্ট স্বয়ংক্রিয়ভাবে কমিট করে রিমোট রিপোজিটরিতে পুশ করবে:
 
 ```bash
 git add -A
-git commit -m "<type>(<scope>): <clear descriptive message>"
+git commit -m "<type>(<scope>): <স্পষ্ট ও অর্থপূর্ণ বার্তা>"
 git push origin main
 ```
 

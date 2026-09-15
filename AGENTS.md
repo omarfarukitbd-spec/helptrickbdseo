@@ -22,7 +22,7 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 3. **[02_IMAGE_AND_ASSET_RULES.md](file:///.agents/rules/02_IMAGE_AND_ASSET_RULES.md)**: 16:9 banners, 10–20 KB WebP compression, jsDelivr CDN hosting, authentic author thumbnail preservation, UI annotations (Red Box, Arrow, Pin).
 4. **[03_PUBLISHING_PERMALINK_RULES.md](file:///.agents/rules/03_PUBLISHING_PERMALINK_RULES.md)**: Mandatory 2-Step Custom English Permalink Minting (Zero generic `blog-post_xx.html`), Blogger API v3, Google Indexing API pinging.
 5. **[04_LABEL_TAXONOMY_GOVERNANCE.md](file:///.agents/rules/04_LABEL_TAXONOMY_GOVERNANCE.md)**: Strict Label Permission Gate & AdSense category balance.
-6. **[05_MULTI_PC_SYNC_PROTOCOL.md](file:///.agents/rules/05_MULTI_PC_SYNC_PROTOCOL.md)**: Mandatory Pre-Task Pull (`git fetch` + `git pull --rebase origin main`), Post-Task Auto-Push (`git push origin main`), Secrets safety.
+6. **[05_MULTI_PC_SYNC_PROTOCOL.md](file:///.agents/rules/05_MULTI_PC_SYNC_PROTOCOL.md)**: Git Pull Strictly Manual (User Instruction Only), Post-Task Auto-Push (`git push origin main`), Secrets safety.
 7. **[06_COMMUNICATION_AND_REPORTING_PROTOCOL.md](file:///.agents/rules/06_COMMUNICATION_AND_REPORTING_PROTOCOL.md)**: Mandatory Live Bengali Reporting & 100% Bengali Artifacts (Plans, Walkthroughs & Audits).
 
 ### 🛡️ Automated Quality Gatekeeper Tools:

@@ -28,18 +28,18 @@ The agent is strictly FORBIDDEN from performing any of the following actions wit
 | 4 | **Replacing Original Author Thumbnails** | The site owner values authentic, author-designed graphics. Overwriting them breaks brand identity. | If an original author thumbnail exists, it must remain untouched unless user explicitly requests replacement. |
 | 5 | **Translating Article Content to Another Language** | English posts have international keyword value; Bengali posts target local searchers. Cross-translating destroys intent. | English stays 100% English; Bengali stays 100% Bengali. Zero exceptions. |
 | 6 | **Final Live Publishing to Blogger** | Publishing untested, raw AI content directly to live production bypasses quality gatekeeping. | Agent must run `pre_flight_checker.py`, present preview/metadata to user, and confirm before calling live publish. |
+| 7 | **Pulling Updates from Git (`git pull` / `git fetch`)** | Unprompted pulls cause unwanted merge conflicts, rebase locks, or unexpected local overwrites. | Only execute `git pull` when the user explicitly instructs in chat (e.g., "গিট থেকে পুল করো" / "pull koro"). |
 
 ---
 
 ## ⚡ 3. Autonomous Permissions (যা এজেন্ট নিজের দায়িত্বে তাৎক্ষণিকভাবে করবে)
 The agent is encouraged and expected to perform the following actions autonomously without interrupting the user:
-- [x] Pulling latest git updates (`git fetch origin` + `git pull --rebase origin main`) before starting work.
 - [x] Researching keywords, SERP gaps, Google PAA queries, and competitors.
 - [x] Writing and saving post drafts locally into `output_posts/` with full semantic HTML, schema, and metadata.
 - [x] Optimizing and converting images to 10–20 KB WebP format with jsDelivr CDN paths.
 - [x] Creating annotated tutorial screenshots with red boxes, directional arrows, and step pins.
 - [x] Running automated health audits (`pre_flight_checker.py`, `scan_live_site.py`, `link_checker.py`).
-- [x] Pushing committed work to GitHub (`git push origin main`) upon completing a milestone.
+- [x] **Post-Task Auto-Push**: Pushing committed work to GitHub (`git push origin main`) immediately upon completing a task, file update, or milestone.
 
 ---
 
@@ -61,12 +61,11 @@ The agent is encouraged and expected to perform the following actions autonomous
 Every agent session on any machine MUST adhere to this operational loop:
 ```mermaid
 graph TD
-    A[Start Session] --> B[Pre-Task: git fetch & git pull --rebase origin main]
-    B --> C[Perform Task adhering to 01-05 Rules]
-    C --> D[Run Automated Gatekeeper: python tools/governance/pre_flight_checker.py]
-    D -->|Fails Checks| E[Self-Correct Issues]
-    E --> D
-    D -->|Passes 100%| F[If Live Publish: Seek Explicit User Approval]
-    F --> G[Post-Task: git add -A, git commit, git push origin main]
-    G --> H[Update Handover Log in docs/CHAT_HISTORY.md]
+    A[Start Session: Receive User Request] --> B[Perform Task adhering to 00-06 Rules (Pull ONLY when explicitly instructed by user)]
+    B --> C[Run Automated Gatekeeper: python tools/governance/pre_flight_checker.py]
+    C -->|Fails Checks| D[Self-Correct Issues]
+    D --> C
+    C -->|Passes 100%| E[If Live Publish: Seek Explicit User Approval]
+    E --> F[Post-Task: git add -A, git commit, git push origin main]
+    F --> G[Provide Live Bengali Summary & Complete Turn]
 ```
