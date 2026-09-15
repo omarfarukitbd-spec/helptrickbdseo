@@ -2,8 +2,9 @@
 """
 Builds the complete 2026 flagship tutorial post for:
 "ঘরে বসেই সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম (২০২৬)"
-Includes all 6 annotated interface step cards, legal drafting templates,
+Includes all 6 authentic annotated government portal screenshots, legal drafting templates,
 fee schedule, troubleshooting guide, FAQs, and valid HowTo + FAQPage Schema.
+Zero emojis policy enforced: Uses clean SVG vector icons and typography.
 """
 
 import json
@@ -187,6 +188,19 @@ HTML_CONTENT = f"""<!DOCTYPE html>
     font-size: 15.5px !important;
     color: #1e40af !important;
     margin-top: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+  }}
+  .htbd-warning-box {{
+    background: #fffbeb !important;
+    border-left: 4px solid #d97706 !important;
+    padding: 12px 18px !important;
+    border-radius: 0 8px 8px 0 !important;
+    font-size: 15.5px !important;
+    color: #92400e !important;
+    margin-top: 18px !important;
+    display: flex !important;
+    align-items: center !important;
   }}
 
   /* Document Draft Box */
@@ -205,7 +219,7 @@ HTML_CONTENT = f"""<!DOCTYPE html>
 <div class="htbd-post-wrapper">
   <div style="margin-bottom: 18px;">
     <span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
-      📚 বিভাগ: শিক্ষা সহায়িকা ও নাগরিক ই-সেবা | সংস্করণ: ২০২৬ | ঘরে বসে অনলাইন গাইডলাইন
+      বিভাগ: শিক্ষা সহায়িকা ও নাগরিক ই-সেবা | সংস্করণ: ২০২৬ | ঘরে বসে অনলাইন গাইডলাইন
     </span>
   </div>
 
@@ -213,7 +227,7 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   <div style="text-align: center; margin: 18px 0 25px 0;">
     <img src="{CDN_PREFIX}/thumbnails/thumb_certificate_correction_2026.png" 
          alt="ঘরে বসেই সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম ২০২৬" 
-         title="সার্টিফিকেট নাম ও বয়স সংশোধন অনলাইন আবেদন"
+         title="সার্টিফিকেট নাম ও বয়স সংশোধন অনলাইন আবেদন" 
          width="1200" height="675"
          loading="eager"
          style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;"/>
@@ -224,7 +238,7 @@ HTML_CONTENT = f"""<!DOCTYPE html>
 
   <div class="htbd-qbox">
     <p style="margin: 0; font-size: 18px; line-height: 1.8;">
-      <strong>📌 সারসংক্ষেপ (Quick Overview):</strong> 
+      <strong style="color: #1a73e8;">সারসংক্ষেপ (Quick Overview):</strong> 
       <strong>সার্টিফিকেট নাম ও বয়স সংশোধন</strong> হলো বাংলাদেশের শিক্ষা বোর্ডগুলোর (যেমন—ঢাকা, রাজশাহী, চট্টগ্রাম, কুমিল্লা ইত্যাদি) নির্ধারিত অফিসিয়াল ই-সার্ভিস পোর্টালের মাধ্যমে পিএসসি, জেএসসি, এসএসসি ও এইচএসসি পরীক্ষার সনদপত্রে বিদ্যমান নামের বানান ভুল, পিতা-মাতার নামের অসঙ্গতি কিংবা জন্মতারিখ সংশোধন করার একটি সমন্বিত আইনি ও প্রশাসনিক প্রক্রিয়া। ২০২৬ সালের হালনাগাদ নিয়মে সম্পূর্ণ প্রক্রিয়াটি ঘরে বসেই অনলাইনে সোনালী সেবার মাধ্যমে ফি পরিশোধ, ডিজিটাল জন্মসনদ ভেরিফিকেশন ও এফিডেভিট আপলোড করে সম্পন্ন করা যায়। নিচে প্রামাণ্য নথিপত্র, এফিডেভিটের খসড়া বয়ান এবং <strong>প্রতিটি ধাপের অরিজিনাল ইন্টারফেস স্ক্রিনশট ও লাল ক্লিক মার্কারসহ</strong> পূর্ণাঙ্গ নির্দেশিকা তুলে ধরা হলো।
     </p>
   </div>
@@ -232,16 +246,16 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   <!--more-->
 
   <div class="htbd-toc-box">
-    <h3 style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;">📑 সূচিপত্র (Table of Contents)</h3>
+    <h3 style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;">সূচিপত্র (Table of Contents)</h3>
     <ul class="htbd-toc-list">
-      <li><a href="#need">👉 ১. সার্টিফিকেট সংশোধনের প্রয়োজনীয়তা ও সাধারণ জটিলতাসমূহ</a></li>
-      <li><a href="#documents">👉 ২. প্রয়োজনীয় কাগজপত্র ও দলিলের পূর্ণাঙ্গ চেকলিস্ট</a></li>
-      <li><a href="#affidavit-sample">👉 ৩. ১ম শ্রেণির ম্যাজিস্ট্রেট এফিডেভিট ও পত্রিকায় বিজ্ঞপ্তির আইনি নমুনা বয়ান</a></li>
-      <li><a href="#step-by-step">👉 ৪. ধাপে ধাপে অনলাইন আবেদন নির্দেশিকা (৬টি ইন্টারফেস স্ক্রিনশটসহ)</a></li>
-      <li><a href="#fees-table">👉 ৫. বিভিন্ন শিক্ষাবোর্ডের ফি ও সম্ভাব্য সময়সীমার তথ্য ছক</a></li>
-      <li><a href="#board-hearing">👉 ৬. বোর্ড মিটিংয়ের শুনানি, সাক্ষাৎকার ও নতুন মূল সনদ উত্তোলন</a></li>
-      <li><a href="#troubleshooting">👉 ৭. সাধারণ ভুল ও টেকনিক্যাল ট্রাবলশুটিং গাইড</a></li>
-      <li><a href="#faqs">👉 ৮. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+      <li><a href="#need">১. সার্টিফিকেট সংশোধনের প্রয়োজনীয়তা ও সাধারণ জটিলতাসমূহ</a></li>
+      <li><a href="#documents">২. প্রয়োজনীয় কাগজপত্র ও দলিলের পূর্ণাঙ্গ চেকলিস্ট</a></li>
+      <li><a href="#affidavit-sample">৩. ১ম শ্রেণির ম্যাজিস্ট্রেট এফিডেভিট ও পত্রিকায় বিজ্ঞপ্তির আইনি নমুনা বয়ান</a></li>
+      <li><a href="#step-by-step">৪. ধাপে ধাপে অনলাইন আবেদন নির্দেশিকা (৬টি ইন্টারফেস স্ক্রিনশটসহ)</a></li>
+      <li><a href="#fees-table">৫. বিভিন্ন শিক্ষাবোর্ডের ফি ও সম্ভাব্য সময়সীমার তথ্য ছক</a></li>
+      <li><a href="#board-hearing">৬. বোর্ড মিটিংয়ের শুনানি, সাক্ষাৎকার ও নতুন মূল সনদ উত্তোলন</a></li>
+      <li><a href="#troubleshooting">৭. সাধারণ ভুল ও টেকনিক্যাল ট্রাবলশুটিং গাইড</a></li>
+      <li><a href="#faqs">৮. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
     </ul>
   </div>
 
@@ -261,11 +275,11 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   </ul>
 
   <div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
-    <strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;">📖 সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
+    <strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;">সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
     <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-      <li><a href="https://www.helptrickbd.com/2026/01/what-is-patriarchy-definition-characteristics-impact.html" target="_blank" rel="noopener">📌 পিতৃতন্ত্র কাকে বলে? সমাজতাত্ত্বিক সংজ্ঞা, উৎপত্তি ও বৈশিষ্ট্য</a></li>
-      <li><a href="https://www.helptrickbd.com/2025/01/namta-1-to-20.html" target="_blank" rel="noopener">📌 নামতা ১ থেকে ২০ পর্যন্ত সহজে মুখস্থ করার চার্ট ও টেকনিক</a></li>
-      <li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" target="_blank" rel="noopener">📌 শেরে বাংলা এ কে ফজলুল হকের সমাজকল্যাণমূলক অবদান</a></li>
+      <li><a href="https://www.helptrickbd.com/2026/01/what-is-patriarchy-definition-characteristics-impact.html" target="_blank" rel="noopener">পিতৃতন্ত্র কাকে বলে? সমাজতাত্ত্বিক সংজ্ঞা, উৎপত্তি ও বৈশিষ্ট্য</a></li>
+      <li><a href="https://www.helptrickbd.com/2025/01/namta-1-to-20.html" target="_blank" rel="noopener">নামতা ১ থেকে ২০ পর্যন্ত সহজে মুখস্থ করার চার্ট ও টেকনিক</a></li>
+      <li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" target="_blank" rel="noopener">শেরে বাংলা এ কে ফজলুল হকের সমাজকল্যাণমূলক অবদান</a></li>
     </ul>
   </div>
 
@@ -285,30 +299,31 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   </div>
 
   <h2 id="step-by-step" class="htbd-heading">৪. ধাপে ধাপে অনলাইন আবেদন নির্দেশিকা (৬টি ইন্টারফেস স্ক্রিনশটসহ)</h2>
-  <p>বাংলাদেশ শিক্ষাবোর্ডের অনলাইন পোর্টালে ঘরে বসেই কীভাবে আবেদন করবেন, তা নিচের ৬টি কার্ডে বিস্তারিত দেখানো হলো। প্রতিটি স্ক্রিনশটের <strong>লাল চিহ্নিত বর্ডার ও নির্দেশক তীর</strong> খেয়াল করুন:</p>
+  <p>বাংলাদেশ শিক্ষাবোর্ডের অফিসিয়াল অনলাইন পোর্টালে ঘরে বসেই কীভাবে আবেদন করবেন, তা নিচে সরকারি ওয়েবসাইটের অরিজিনাল ইন্টারফেসের ৬টি ধাপে তুলে ধরা হলো। প্রতিটি ছবির <strong>লাল চিহ্নিত বর্ডার ও নির্দেশক মার্কার</strong> খেয়াল করুন:</p>
 
   <!-- STEP 1 -->
   <div class="htbd-tutorial-step-card">
     <div class="htbd-step-header">
       <span class="htbd-step-num">ধাপ ০১</span>
-      <h3 class="htbd-step-title">শিক্ষা বোর্ডের অফিসিয়াল ই-সেবা পোর্টালে প্রবেশ ও মেনু নির্বাচন</h3>
+      <h3 class="htbd-step-title">শিক্ষা বোর্ডের অফিসিয়াল ই-ফাইলিং পোর্টালে প্রবেশ ও মেনু নির্বাচন</h3>
     </div>
-    <p>প্রথমে আপনার কম্পিউটার বা মোবাইলের ব্রাউজার থেকে ঢাকা শিক্ষা বোর্ডের অফিসিয়াল ই-সেবা পোর্টাল (<strong>eservices.dhakaeducationboard.gov.bd</strong>)-এ প্রবেশ করুন। হোমপেজের নাগরিক সেবা গ্রিড থেকে 'নাম ও বয়স সংশোধন আবেদন' কার্ডে থাকা নীল বাটনে ক্লিক করুন।</p>
+    <p>প্রথমে আপনার কম্পিউটার বা মোবাইলের ব্রাউজার থেকে ঢাকা শিক্ষা বোর্ডের অফিসিয়াল অনলাইন ই-ফাইলিং সিস্টেম (<strong>efile.dhakaeducationboard.gov.bd</strong>)-এ প্রবেশ করুন। মেনু তালিকা থেকে <strong>'নাম ও বয়স সংশোধনের আবেদন ও ফ্রেশ ডকুমেন্ট এর আবেদন'</strong> অপশনে ক্লিক করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
       <img src="{CDN_PREFIX}/tutorials/cert_step1_portal_access.png" 
-           alt="ঢাকা শিক্ষা বোর্ড ই-সেবা পোর্টালে নাম ও বয়স সংশোধন মেনু নির্বাচন ধাপ ১" 
-           title="ই-সেবা ড্যাশবোর্ডে আবেদন বাটনে ক্লিক করুন" 
+           alt="ঢাকা শিক্ষা বোর্ড অনলাইন ই-ফাইলিং পোর্টালে নাম ও বয়স সংশোধন মেনু নির্বাচন ধাপ ১" 
+           title="ই-ফাইলিং পোর্টালে নাম ও বয়স সংশোধন অপশনে ক্লিক করুন" 
            loading="lazy" 
-           width="1200" height="675"
+           width="1200" height="526"
            class="htbd-step-img">
       <figcaption class="htbd-step-caption">
-        📷 চিত্র ১: লাল বক্স চিহ্নিত 'আবেদন করতে প্রবেশ করুন' বাটনে ক্লিক করে পরবর্তী ধাপে প্রবেশ করুন।
+        চিত্র ১: লাল বক্স চিহ্নিত 'নাম ও বয়স সংশোধনের আবেদন ও ফ্রেশ ডকুমেন্ট এর আবেদন' অপশনে ক্লিক করুন।
       </figcaption>
     </figure>
 
     <div class="htbd-tip-box">
-      💡 <strong>জরুরি টিপস:</strong> অন্যান্য সাধারণ শিক্ষাবোর্ড (যেমন: রাজশাহী, কুমিল্লা, চট্টগ্রাম, যশোর, দিনাজপুর, বরিশাল, সিলেট, ময়মনসিংহ) এবং মাদ্রাসা বোর্ডের নিজস্ব পোর্টালেও একইভাবে 'অনলাইন নাম সংশোধন' মেনু পাওয়া যায়।
+      <svg style="vertical-align: -3px; margin-right: 8px; flex-shrink: 0;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span><strong>জরুরি পরামর্শ:</strong> রাজশাহী, কুমিল্লা, চট্টগ্রাম, যশোর, দিনাজপুর, বরিশাল, সিলেট ও মাদ্রাসা বোর্ডের পোর্টালেও একইভাবে 'e-Service' মেনুর অধীনে নাম ও বয়স সংশোধন ফরম পাওয়া যায়।</span>
     </div>
   </div>
 
@@ -316,24 +331,25 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   <div class="htbd-tutorial-step-card">
     <div class="htbd-step-header">
       <span class="htbd-step-num">ধাপ ০২</span>
-      <h3 class="htbd-step-title">পরীক্ষার সন, রোল ও রেজিস্ট্রেশন নম্বর দিয়ে ডাটাবেজ অনুসন্ধান</h3>
+      <h3 class="htbd-step-title">সাব-মেনু থেকে নতুন আবেদন ফরম নির্বাচন</h3>
     </div>
-    <p>এই ধাপে একটি সার্চ ফরম প্রদর্শিত হবে। ড্রপডাউন মেনু থেকে আপনার পরীক্ষার নাম (জেএসসি/এসএসসি/এইচএসসি), পাসের সন (যেমন: ২০২৪) নির্বাচন করুন এবং এডমিট কার্ড দেখে রোল ও রেজিস্ট্রেশন নম্বর নির্ভুলভাবে টাইপ করুন। এরপর নীল রঙের 'ডাটা খুঁজুন' বাটনে ক্লিক করুন।</p>
+    <p>নাম সংশোধন অপশনে ক্লিক করার পর একটি সাব-মেনু বার উন্মুক্ত হবে। এখানে বিভিন্ন বিকল্প যেমন—সর্বশেষ অবস্থা, ফ্রেশ ডকুমেন্ট ও নির্দেশিকা প্রদর্শিত হবে। নতুন আবেদন শুরু করতে সর্ববামে অবস্থিত সায়ান রঙের <strong>'আবেদন ফরম'</strong> বাটনে ক্লিক করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
       <img src="{CDN_PREFIX}/tutorials/cert_step2_student_search.png" 
-           alt="শিক্ষার্থীর রোল ও রেজিস্ট্রেশন দিয়ে ডাটাবেজ অনুসন্ধান ধাপ ২" 
-           title="ডাটা খুঁজুন ও আবেদন ফরম খুলুন বাটনে ক্লিক করুন" 
+           alt="শিক্ষা বোর্ডের সাব-মেনু থেকে আবেদন ফরম বাটন নির্বাচন ধাপ ২" 
+           title="নতুন আবেদনের জন্য আবেদন ফরম বাটনে ক্লিক করুন" 
            loading="lazy" 
-           width="1200" height="675"
+           width="1200" height="526"
            class="htbd-step-img">
       <figcaption class="htbd-step-caption">
-        📷 চিত্র ২: লাল বক্স চিহ্নিত 'ডাটা খুঁজুন ও আবেদন ফরম খুলুন' বাটনে ক্লিক করে সেন্ট্রাল সার্ভার থেকে ডাটা লোড করুন।
+        চিত্র ২: লাল বক্স চিহ্নিত 'আবেদন ফরম' বাটনে ক্লিক করে মূল আবেদন ফর্মে প্রবেশ করুন।
       </figcaption>
     </figure>
 
     <div class="htbd-tip-box">
-      💡 <strong>জরুরি টিপস:</strong> তথ্য দেওয়ার পর যদি "Record Not Found" দেখায়, তবে আপনার পাসের সাল বা বোর্ডের নাম পুনরায় মিলিয়ে দেখুন। পুরাতন সনদের ক্ষেত্রে রোল-রেজির আগে অতিরিক্ত কোনো শূন্য আছে কি না নিশ্চিত হোন।
+      <svg style="vertical-align: -3px; margin-right: 8px; flex-shrink: 0;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span><strong>জরুরি পরামর্শ:</strong> ঢাকা শিক্ষাবোর্ডে আবেদন দাখিলের ক্ষেত্রে প্রাতিষ্ঠানিক প্রধানের অনুমোদন বা EIIN ভেরিফিকেশনের প্রয়োজন হতে পারে, যা আপনার শিক্ষা প্রতিষ্ঠানের মাধ্যমে অনলাইনে ফরওয়ার্ড করা যায়।</span>
     </div>
   </div>
 
@@ -341,24 +357,25 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   <div class="htbd-tutorial-step-card">
     <div class="htbd-step-header">
       <span class="htbd-step-num">ধাপ ০৩</span>
-      <h3 class="htbd-step-title">আবেদন ফরম পূরণ ও সংশোধিত তথ্যের সঠিক বানান এন্ট্রি</h3>
+      <h3 class="htbd-step-title">পরীক্ষার সন, রোল ও রেজিস্ট্রেশন নম্বর প্রদান করে 'Search' করুন</h3>
     </div>
-    <p>ডাটা লোড হলে স্ক্রিনে শিক্ষার্থীর বর্তমান সংরক্ষিত তথ্য দেখতে পাবেন। আপনি যে তথ্যটি সংশোধন করতে চান (নিজের নাম, পিতার নাম, বা মাতার নাম) তার পাশের চেকক্সে টিক দিন। এরপর ডানপাশের বক্সে ডিজিটাল জন্মনিবন্ধন বা এনআইডি কার্ড অনুযায়ী সংশোধিত বাংলা ও ইংরেজি সঠিক বানান টাইপ করুন। ইংরেজি নামের প্রতিটি অক্ষর ক্যাপিটাল লেটারে লিখবেন। এরপর 'সংরক্ষণ করুন ও পরবর্তী ধাপে যান' বাটনে ক্লিক করুন।</p>
+    <p>মূল আবেদন উইন্ডো ওপেন হলে 'Exam Information' সেকশনে পরীক্ষার ধরন (JSC/SSC/HSC), পাসের সন, রোল ও রেজিস্ট্রেশন নম্বর লিখুন। এরপর বামপাশের ক্যাপচা কোডটি ডানপাশের বক্সে টাইপ করে সায়ান রঙের <strong>'Search'</strong> বাটনে ক্লিক করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
       <img src="{CDN_PREFIX}/tutorials/cert_step3_correction_form.png" 
-           alt="সার্টিফিকেট নাম সংশোধন ফরম পূরণ ও সঠিক নাম এন্ট্রি ধাপ ৩" 
-           title="সঠিক বানান লিখে সংরক্ষণ করুন ও পরবর্তী ধাপে যান" 
+           alt="পরীক্ষার তথ্য রোল ও রেজিস্ট্রেশন লিখে সার্চ ধাপ ৩" 
+           title="পরীক্ষার তথ্য এন্ট্রি করে সার্চ বাটনে ক্লিক করুন" 
            loading="lazy" 
-           width="1200" height="675"
+           width="1200" height="562"
            class="htbd-step-img">
       <figcaption class="htbd-step-caption">
-        📷 চিত্র ৩: লাল বক্স চিহ্নিত 'সংরক্ষণ করুন ও পরবর্তী ধাপে যান' বাটনে ক্লিক করে তথ্য নিশ্চিত করুন।
+        চিত্র ৩: লাল বক্সে নির্দেশিত 'Search' বাটনে ক্লিক করে শিক্ষাবোর্ডের সেন্ট্রাল সার্ভার থেকে ডাটা লোড করুন।
       </figcaption>
     </figure>
 
     <div class="htbd-tip-box">
-      💡 <strong>জরুরি টিপস:</strong> একই আবেদনে একসাথে একাধিক বিষয় (যেমন: নিজের নাম + পিতার নাম) সংশোধন করা সম্ভব। তবে প্রতিটি সংশোধনের জন্য নির্ধারিত সরকারি বোর্ড ফি প্রযোজ্য হবে।
+      <svg style="vertical-align: -3px; margin-right: 8px; flex-shrink: 0;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span><strong>জরুরি পরামর্শ:</strong> রোল ও রেজি নম্বর দেওয়ার পর সার্ভারে তথ্য না পেলে পাসের সাল ও বোর্ড সঠিকভাবে নির্বাচন করা হয়েছে কি না পরীক্ষা করে দেখুন।</span>
     </div>
   </div>
 
@@ -366,24 +383,25 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   <div class="htbd-tutorial-step-card">
     <div class="htbd-step-header">
       <span class="htbd-step-num">ধাপ ০৪</span>
-      <h3 class="htbd-step-title">এফিডেভিট, জন্মসনদ, এনআইডি ও পেপার কাটিং আপলোড</h3>
+      <h3 class="htbd-step-title">সংশোধিত সঠিক নাম, পিতা-মাতার নাম ও যোগাযোগের তথ্য এন্ট্রি</h3>
     </div>
-    <p>এই ধাপে প্রয়োজনীয় প্রামাণ্য নথিসমূহ সংযুক্ত করতে হবে। ১ম শ্রেণির ম্যাজিস্ট্রেটের এফিডেভিট, জাতীয় দৈনিক পত্রিকার মূল কাটিং, ১৭ ডিজিটের অনলাইন জন্মসনদ এবং পিতা-মাতার এনআইডি কার্ডের স্ক্যান কপি নির্ধারিত আপলোড বক্সে আপলোড করুন। ফাইল ফরম্যাট হতে হবে PDF বা JPG এবং প্রতি ফাইলের সাইজ ২ মেগাবাইটের মধ্যে হতে হবে। সব ফাইল আপলোড শেষ হলে 'ডকুমেন্টস জমা দিয়ে ফি প্রদানের জন্য এগিয়ে যান' বাটনে ক্লিক করুন।</p>
+    <p>ডাটা লোড হলে 'Correction Information' বক্সে আপনার বর্তমান সংরক্ষিত তথ্য দেখা যাবে। যে বিষয়টি সংশোধন করতে চান (নিজের নাম, পিতা বা মাতার নাম) তা নির্বাচন করে ডিজিটাল জন্মসনদ অনুযায়ী সঠিক বানান লিখুন। প্রার্থীর একটি সচল মোবাইল নম্বর ও ইমেইল এড্রেস প্রদান করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
       <img src="{CDN_PREFIX}/tutorials/cert_step4_document_upload.png" 
-           alt="প্রয়োজনীয় কাগজপত্র এফিডেভিট ও পেপার কাটিং আপলোড ধাপ ৪" 
-           title="ডকুমেন্টস জমা দিয়ে ফি প্রদানের জন্য এগিয়ে যান বাটনে ক্লিক করুন" 
+           alt="সংশোধিত সঠিক নাম ও তথ্যাদি নির্ভুলভাবে পূরণ ধাপ ৪" 
+           title="সংশোধিত তথ্য ও প্রার্থীর যোগাযোগ নম্বর এন্ট্রি করুন" 
            loading="lazy" 
-           width="1200" height="675"
+           width="1200" height="511"
            class="htbd-step-img">
       <figcaption class="htbd-step-caption">
-        📷 চিত্র ৪: লাল চিহ্নিত 'ডকুমেন্টস জমা দিয়ে ফি প্রদানের জন্য এগিয়ে যান' বাটনে ক্লিক করুন।
+        চিত্র ৪: লাল বক্স চিহ্নিত অংশে সংশোধিত শুদ্ধ তথ্য ও সচল মোবাইল নম্বর পূরণ করুন।
       </figcaption>
     </figure>
 
-    <div class="htbd-tip-box">
-      ⚠️ <strong>সতর্কতা:</strong> ঝাপসা বা মোবাইল দিয়ে সাধারণ ছবি তুলে আপলোড করবেন না। স্পষ্ট ফ্ল্যাটবেড স্ক্যানার দিয়ে ৩০০ ডিপিআই (300 DPI)-তে স্ক্যান করে ফাইল আপলোড করুন, অন্যথায় যাচাই কমিটি ফাইল রিজেক্ট করতে পারে।
+    <div class="htbd-warning-box">
+      <svg style="vertical-align: -3px; margin-right: 8px; flex-shrink: 0;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      <span><strong>বিশেষ সতর্কতা:</strong> ইংরেজি নামের ক্ষেত্রে প্রতিটি অক্ষর বড় হাতের অক্ষরে (Capital Letters) লিখবেন। বানান একবার সাবমিট করার পর পরিবর্তনের সুযোগ থাকে না।</span>
     </div>
   </div>
 
@@ -391,24 +409,25 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   <div class="htbd-tutorial-step-card">
     <div class="htbd-step-header">
       <span class="htbd-step-num">ধাপ ০৫</span>
-      <h3 class="htbd-step-title">সোনালী সেবায় অনলাইন ফি পরিশোধ (Sonali e-Sheba / bKash / Nagad)</h3>
+      <h3 class="htbd-step-title">সোনালী সেবায় অনলাইন ফি যাচাই ও পেমেন্ট সম্পন্নকরণ</h3>
     </div>
-    <p>ডকুমেন্টস আপলোড শেষ হলে সিস্টেম আপনাকে সোনালী ব্যাংকের সরকারি পেমেন্ট গেটওয়েতে (Sonali e-Sheba) নিয়ে যাবে। স্ক্রিনে আপনার আবেদন ফি (যেমন: ১,৫০০ টাকা) প্রদর্শিত হবে। পেমেন্ট অপশন থেকে বিকাশ (bKash), নগদ (Nagad), রকেট বা সোনালী ব্যাংক একাউন্ট সিলেক্ট করুন। এরপর নিচের লাল চিহ্নিত 'বিকাশ দিয়ে ফি পরিশোধ করুন' বাটনে ক্লিক করে মোবাইল পিন ও ওটিপি (OTP) দিয়ে ফি জমা সম্পন্ন করুন।</p>
+    <p>তথ্য এন্ট্রি শেষে সিস্টেম স্বয়ংক্রিয়ভাবে সোনালী সেবার (Sonali Seba) সরকারি পেমেন্ট সেকশনে নিয়ে যাবে। এখানে পরীক্ষার ধরন ও জরুরি ফি অনুযায়ী মোট প্রদেয় টাকার পরিমাণ (Total Amount) দেখতে পাবেন। এরপর সোনালী ব্যাংকের মাধ্যমে বিকাশ, নগদ, কার্ড বা ব্যাংক চালানের মাধ্যমে ফি পরিশোধ করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
       <img src="{CDN_PREFIX}/tutorials/cert_step5_sonali_payment.png" 
-           alt="সোনালী সেবায় বিকাশ ও নগদ দিয়ে বোর্ড ফি পরিশোধ ধাপ ৫" 
-           title="বিকাশ দিয়ে ফি পরিশোধ করুন বাটনে ক্লিক করুন" 
+           alt="সোনালী সেবা অনলাইন পেমেন্ট ও ফি যাচাই ধাপ ৫" 
+           title="সোনালী সেবার মাধ্যমে ফি পরিশোধ করুন" 
            loading="lazy" 
-           width="1200" height="675"
+           width="1200" height="600"
            class="htbd-step-img">
       <figcaption class="htbd-step-caption">
-        📷 চিত্র ৫: লাল চিহ্নিত 'বিকাশ দিয়ে ফি পরিশোধ করুন' বাটনে ক্লিক করে সরকারি ফি পরিশোধ সম্পন্ন করুন।
+        চিত্র ৫: লাল চিহ্নিত বক্সে ফি যাচাই করে অনলাইন ব্যাংকিং বা মোবাইল ওয়ালেটের মাধ্যমে ফি পরিশোধ করুন।
       </figcaption>
     </figure>
 
     <div class="htbd-tip-box">
-      💡 <strong>জরুরি টিপস:</strong> সোনালী সেবায় ট্রানজেকশন সফল হলে স্ক্রিন রিফ্রেশ করবেন না। ৫–১০ সেকেন্ড অপেক্ষা করলে স্বয়ংক্রিয়ভাবে পোর্টালে ফিরে আসবে এবং পেমেন্ট রসিদ জেনারেট হবে।
+      <svg style="vertical-align: -3px; margin-right: 8px; flex-shrink: 0;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span><strong>জরুরি পরামর্শ:</strong> ফি পরিশোধের ট্রানজেকশন আইডি (TrxID) এবং ব্যাংক স্ক্রিনশট ভবিষ্যতের যেকোনো প্রমাণের জন্য সংরক্ষণ করে রাখুন।</span>
     </div>
   </div>
 
@@ -416,24 +435,25 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   <div class="htbd-tutorial-step-card">
     <div class="htbd-step-header">
       <span class="htbd-step-num">ধাপ ০৬</span>
-      <h3 class="htbd-step-title">অফিসিয়াল আবেদন রসিদ ও ট্র্যাকিং স্লিপ ডাউনলোড ও সংরক্ষণ</h3>
+      <h3 class="htbd-step-title">Application ID ও Password দিয়ে আবেদনের অগ্রগতি ট্র্যাকিং</h3>
     </div>
-    <p>পেমেন্ট সফল হওয়ার সাথে সাথে অভিনন্দন বার্তা এবং একটি ইউনিক <strong>Application ID (যেমন: DEB-2026-78491)</strong> ও সিকিউরিটি পিন নম্বর প্রদান করা হবে। সবুজ রঙের 'অফিসিয়াল আবেদন রসিদ ও ট্র্যাকিং স্লিপ ডাউনলোড করুন' বাটনে ক্লিক করে মূল আবেদন কপিটি PDF ফরম্যাটে ডাউনলোড করে ২ কপি রঙিন প্রিন্ট নিয়ে নিজের কাছে সংরক্ষণ করুন।</p>
+    <p>পেমেন্ট সম্পন্ন হলে আপনার মোবাইলে এসএমএস-এর মাধ্যমে একটি ইউনিক <strong>Application ID</strong> এবং পাসওয়ার্ড প্রেরণ করা হবে। শিক্ষাবোর্ডের ট্র্যাকিং পোর্টালে গিয়ে আইডি ও পাসওয়ার্ড বসিয়ে নীল রঙের <strong>'Find'</strong> বাটনে ক্লিক করে আপনার ফাইল কোন ধাপে রয়েছে তা লাইভ পর্যবেক্ষণ করতে পারবেন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
       <img src="{CDN_PREFIX}/tutorials/cert_step6_tracking_receipt.png" 
-           alt="আবেদন সফল ও অফিসিয়াল ট্র্যাকিং স্লিপ ডাউনলোড ধাপ ৬" 
-           title="অফিসিয়াল আবেদন রসিদ ও ট্র্যাকিং স্লিপ ডাউনলোড করুন" 
+           alt="আবেদনের সর্বশেষ অবস্থা ট্র্যাকিং ধাপ ৬" 
+           title="আইডি ও পাসওয়ার্ড লিখে ফাইন্ড বাটনে ক্লিক করে স্ট্যাটাস দেখুন" 
            loading="lazy" 
-           width="1200" height="675"
+           width="1200" height="750"
            class="htbd-step-img">
       <figcaption class="htbd-step-caption">
-        📷 চিত্র ৬: লাল চিহ্নিত 'অফিসিয়াল আবেদন রসিদ ও ট্র্যাকিং স্লিপ ডাউনলোড করুন' বাটনে ক্লিক করে রসিদ সংরক্ষণ করুন।
+        চিত্র ৬: লাল বক্সে নির্দেশিত 'Find' বাটনে ক্লিক করে আবেদনের বর্তমান অবস্থান ও বোর্ড মিটিংয়ের তারিখ দেখুন।
       </figcaption>
     </figure>
 
-    <div class="htbd-tip-box">
-      ⚠️ <strong>সতর্কতা:</strong> এই ট্র্যাকিং স্লিপেই আপনার সিকিউরিটি পাসকোড সংরক্ষিত থাকে। পরবর্তীতে আবেদন কোন পর্যায়ে আছে তা ট্র্যাক করতে এবং বোর্ড মিটিংয়ে মূল সনদ উত্তোলনের সময় এই ট্র্যাকিং স্লিপ প্রদর্শন বাধ্যতামূলক।
+    <div class="htbd-warning-box">
+      <svg style="vertical-align: -3px; margin-right: 8px; flex-shrink: 0;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      <span><strong>বিশেষ সতর্কতা:</strong> ট্র্যাকিং আইডি সম্বলিত প্রিন্ট কপিটি সযত্নে রাখুন। বোর্ড মিটিংয়ে সংশোধন অনুমোদিত হলে মূল সনদ উত্তোলনের সময় এটি জমা দিতে হবে।</span>
     </div>
   </div>
 
@@ -493,21 +513,21 @@ HTML_CONTENT = f"""<!DOCTYPE html>
   <h2 id="troubleshooting" class="htbd-heading">৭. সাধারণ ভুল ও টেকনিক্যাল ট্রাবলশুটিং গাইড</h2>
   <div style="margin: 20px 0;">
     <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px;">
-      <h4 style="margin: 0 0 6px 0; color: #dc2626; font-size: 17px; font-weight: 700;">❓ সমস্যা ১: বিকাশ থেকে ফি কেটে নিয়েছে কিন্তু ওয়েবসাইটে ট্র্যাকিং স্লিপ আসেনি—কী করবেন?</h4>
+      <h4 style="margin: 0 0 6px 0; color: #dc2626; font-size: 17px; font-weight: 700;">সমস্যা ১: বিকাশ থেকে ফি কেটে নিয়েছে কিন্তু ওয়েবসাইটে ট্র্যাকিং স্লিপ আসেনি—কী করবেন?</h4>
       <p style="margin: 0; font-size: 15.5px; color: #475569;">
-        ঘাবড়াবেন না। পেমেন্ট গেটওয়েতে নেটওয়ার্ক সমস্যার কারণে এমন হতে পারে। বিকাশ ট্রানজেকশন আইডি (TrxID) সংরক্ষণ করুন। ১-২ ঘণ্টা পর শিক্ষা বোর্ডের পোর্টালে গিয়ে 'আবেদন ট্র্যাকিং' মেনুতে রোল-রেজি দিয়ে সার্চ করলে স্বয়ংক্রিয়ভাবে পেমেন্ট ভেরিফায়েড দেখাবে। তখনও সমস্যা থাকলে বোর্ডের হেল্পলাইন ১৬১২৩ নম্বরে TrxID জানিয়ে রসিদ ভ্যালিড করে নেওয়া যায়।
+        ঘাবড়াবেন না। পেমেন্ট গেটওয়েতে নেটওয়ার্ক সমস্যার কারণে এমন হতে পারে। বিকাশ ট্রানজেকশন আইডি (TrxID) সংরক্ষণ করুন। ১-২ ঘণ্টা পর শিক্ষা বোর্ডের পোর্টালে গিয়ে 'আবেদন ট্র্যাকিং' মেনুতে রোল-রেজি দিয়ে সার্চ করলে স্বয়ংক্রিয়ভাবে পেমেন্ট ভেরিফায়েড দেখাবে। তখনও সমস্যা থাকলে বোর্ডের হেল্পলাইনে TrxID জানিয়ে রসিদ ভ্যালিড করে নেওয়া যায়।
       </p>
     </div>
 
     <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px;">
-      <h4 style="margin: 0 0 6px 0; color: #dc2626; font-size: 17px; font-weight: 700;">❓ সমস্যা ২: জেএসসি ও এসএসসি সনদে একই সাথে ভুল থাকলে কোনটা আগে আবেদন করবেন?</h4>
+      <h4 style="margin: 0 0 6px 0; color: #dc2626; font-size: 17px; font-weight: 700;">সমস্যা ২: জেএসসি ও এসএসসি সনদে একই সাথে ভুল থাকলে কোনটা আগে আবেদন করবেন?</h4>
       <p style="margin: 0; font-size: 15.5px; color: #475569;">
         নিয়ম অনুযায়ী নিচের ক্লাসের তথ্য আগে সংশোধিত হতে হয়। তবে শিক্ষা বোর্ডের অনলাইন পোর্টালে একই সাথে জেএসসি ও এসএসসি উভয় সনদের জন্য ধারাবাহিক আবেদন দাখিল করা যায়। এতে উভয় সনদ একই বোর্ড মিটিংয়ে একসাথে অনুমোদিত হয়ে যায় এবং সময় বাঁচে।
       </p>
     </div>
 
     <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 20px;">
-      <h4 style="margin: 0 0 6px 0; color: #dc2626; font-size: 17px; font-weight: 700;">❓ সমস্যা ৩: দালাল বা তৃতীয় পক্ষের মাধ্যমে আবেদন করা কি নিরাপদ?</h4>
+      <h4 style="margin: 0 0 6px 0; color: #dc2626; font-size: 17px; font-weight: 700;">সমস্যা ৩: দালাল বা তৃতীয় পক্ষের মাধ্যমে আবেদন করা কি নিরাপদ?</h4>
       <p style="margin: 0; font-size: 15.5px; color: #475569;">
         সম্পূর্ণ অপ্রয়োজনীয় ও ঝুঁকিপূর্ণ। শিক্ষাবোর্ডের সকল সেবা বর্তমানে শতভাগ ডিজিটাল ও স্বচ্ছ। দালালরা সাধারণ শিক্ষার্থীদের বিভ্রান্ত করে অতিরিক্ত অর্থ হাতিয়ে নেয়। আপনি নিজেই মোবাইল বা কম্পিউটারে বসে আমাদের এই গাইডের ৬টি ধাপ অনুসরণ করে মাত্র ২০ মিনিটে আবেদন শেষ করতে পারবেন।
       </p>
@@ -548,42 +568,42 @@ HTML_CONTENT = f"""<!DOCTYPE html>
         {{
           "@type": "HowToStep",
           "name": "ই-সেবা পোর্টালে প্রবেশ",
-          "text": "ঢাকা শিক্ষাবোর্ডের অফিশিয়াল ওয়েবসাইটে গিয়ে 'নাম ও বয়স সংশোধন অনলাইন আবেদন' লিংকে ক্লিক করুন।",
+          "text": "শিক্ষা বোর্ডের অফিশিয়াল ওয়েবসাইটে গিয়ে 'নাম ও বয়স সংশোধন অনলাইন আবেদন' লিংকে ক্লিক করুন।",
           "image": "{CDN_PREFIX}/tutorials/cert_step1_portal_access.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
         }},
         {{
           "@type": "HowToStep",
-          "name": "রোল-রেজিস্ট্রেশন দিয়ে ডাটাবেজ অনুসন্ধান",
-          "text": "পরীক্ষার নাম, পাসের সন, রোল এবং রেজি নম্বর প্রদান করে 'ডাটা খুঁজুন' বাটনে ক্লিক করে রেকর্ড লোড করুন।",
+          "name": "সাব-মেনু থেকে আবেদন ফরম নির্বাচন",
+          "text": "সাব-মেনু থেকে 'আবেদন ফরম' বাটনে ক্লিক করে মূল আবেদন ফর্মে প্রবেশ করুন।",
           "image": "{CDN_PREFIX}/tutorials/cert_step2_student_search.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
         }},
         {{
           "@type": "HowToStep",
-          "name": "সংশোধিত তথ্যের সঠিক বানান এন্ট্রি",
-          "text": "যে যে তথ্য পরিবর্তন করতে চান তার টিক দিন এবং ডিজিটাল জন্মসনদ অনুযায়ী সঠিক বানান লিখুন।",
+          "name": "রোল-রেজিস্ট্রেশন দিয়ে ডাটাবেজ অনুসন্ধান",
+          "text": "পরীক্ষার নাম, পাসের সন, রোল এবং রেজি নম্বর প্রদান করে 'Search' বাটনে ক্লিক করে রেকর্ড লোড করুন।",
           "image": "{CDN_PREFIX}/tutorials/cert_step3_correction_form.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
         }},
         {{
           "@type": "HowToStep",
-          "name": "এফিডেভিট ও প্রামাণ্য দলিল আপলোড",
-          "text": "১ম শ্রেণির ম্যাজিস্ট্রেট এফিডেভিট, পেপার কাটিং ও জন্মসনদের স্পষ্ট স্ক্যান কপি সংযুক্ত করুন।",
+          "name": "সংশোধিত তথ্যের সঠিক বানান এন্ট্রি",
+          "text": "ডিজিটাল জন্মসনদ অনুযায়ী সংশোধিত বাংলা ও ইংরেজি বানান এবং মোবাইল নম্বর পূরণ করুন।",
           "image": "{CDN_PREFIX}/tutorials/cert_step4_document_upload.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
         }},
         {{
           "@type": "HowToStep",
           "name": "সোনালী সেবায় ফি পরিশোধ",
-          "text": "সোনালী পেমেন্ট গেটওয়েতে বিকাশ, নগদ বা রকেটের মাধ্যমে বোর্ড ফি পরিশোধ সম্পন্ন করুন।",
+          "text": "সোনালী পেমেন্ট গেটওয়েতে বিকাশ, নগদ বা ব্যাংকের মাধ্যমে বোর্ড ফি পরিশোধ সম্পন্ন করুন।",
           "image": "{CDN_PREFIX}/tutorials/cert_step5_sonali_payment.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
         }},
         {{
           "@type": "HowToStep",
-          "name": "ট্র্যাকিং স্লিপ ডাউনলোড",
-          "text": "আবেদন সফল হওয়ার পর ইউনিক Application ID সম্বলিত ট্র্যাকিং স্লিপটি প্রিন্ট করে নিজের কাছে রাখুন।",
+          "name": "ট্র্যাকিং আইডি দিয়ে স্ট্যাটাস পর্যবেক্ষণ",
+          "text": "আবেদন সফল হওয়ার পর প্রাপ্ত Application ID ও পাসওয়ার্ড দিয়ে আবেদনের অগ্রগতি লাইভ ট্র্যাক করুন।",
           "image": "{CDN_PREFIX}/tutorials/cert_step6_tracking_receipt.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
         }}
@@ -635,7 +655,7 @@ HTML_CONTENT = f"""<!DOCTYPE html>
 """
 
 def main():
-    print("Building full tutorial article...")
+    print("Building full tutorial article (zero emojis, authentic screenshots)...")
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(HTML_CONTENT)
 
@@ -648,14 +668,14 @@ def main():
         "labels": ["Education Guide", "সার্টিফিকেট সংশোধন"],
         "meta_description": "জেএসসি, এসএসসি ও এইচএসসি সার্টিফিকেটের নিজের নাম, পিতা-মাতার নাম বা বয়স সংশোধনের অনলাইন আবেদন নিয়ম, ফি ও প্রয়োজনীয় কাগজপত্রের তালিকা পড়ুন HelpTrickBD-তে।",
         "word_count": word_count,
-        "updated_at": "2026-09-15T12:45:00+06:00"
+        "updated_at": "2026-09-15T13:25:00+06:00"
     }
 
     with open(METADATA_FILE, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Generated article saved to: {OUTPUT_FILE}")
-    print(f"📊 Total word count: {word_count}")
+    print(f"Generated article saved to: {OUTPUT_FILE}")
+    print(f"Total word count: {word_count}")
 
 
 if __name__ == "__main__":
