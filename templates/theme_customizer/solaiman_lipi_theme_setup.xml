@@ -2,16 +2,17 @@
 ================================================================================
 HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
 ================================================================================
-সুবিধা: 
-১. পুরো ব্লগের সমস্ত পোস্ট টাইটেল minibd.com এর মতো বড়, স্পষ্ট এবং বোল্ড (Bold) দেখাবে।
-২. সাইডবারের পপুলার পোস্টের লেখা বোল্ড ও প্রিমিয়াম হবে।
-৩. পুরো ওয়েবসাইট দুই পাশ থেকে ১২৮০ পিক্সেল প্রশস্ত হয়ে ফুল ডিসপ্লে লুক পাবে।
-৪. সিডিএটিএ (CDATA) ব্লকে থাকায় ব্লগারে কোনো &#39; বা হিজিবিজি কোড আসবে না।
+Benefits:
+1. All post titles display bold, enlarged (17.5px), and high contrast like minibd.com.
+2. Sidebar popular posts are bold and easily legible.
+3. Website container expands to 1280px (95% max-width), eliminating side whitespace.
+4. Clean CDATA block prevents Blogger XML encoding issues.
 
-সেটআপ নির্দেশিকা:
-১. Blogger Dashboard-এ যান: https://www.blogger.com/blog/themes/1975983966532887960
-২. "Customize" বাটনের পাশের তীরে ক্লিক করে "Edit HTML" সিলেক্ট করুন।
-৩. <head> ট্যাগের ঠিক নিচে আগের কোডটি মুছে এটি পেস্ট করে সেভ করুন।
+Setup Instructions:
+1. Go to Blogger Dashboard: https://www.blogger.com/blog/themes/1975983966532887960
+2. Click the arrow next to "Customize" and select "Edit HTML".
+3. Find <head> and paste this entire snippet immediately below <head>.
+4. Click Save.
 ================================================================================
 -->
 
@@ -37,7 +38,7 @@ HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
     src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
   }
 
-  /* সাইটের সর্বত্র SolaimanLipi ফন্ট প্রয়োগ */
+  /* 1. Apply SolaimanLipi Sitewide */
   html, body, 
   .post-body, 
   .post-title, 
@@ -50,7 +51,7 @@ HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
     font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
   }
 
-  /* ১. কার্ড ও হোমপেজ পোস্টের টাইটেল বড় এবং বোল্ড করা (minibd.com এর মতো) */
+  /* 2. Bold and Enlarged Post Titles on Home and Archive Pages */
   .entry-title, 
   .entry-title a, 
   .post-filter .entry-title, 
@@ -63,7 +64,7 @@ HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
     color: #1a1a1a !important;
   }
 
-  /* ২. সাইডবারের পপুলার পোস্টের লেখা বোল্ড ও পরিষ্কার করা */
+  /* 3. Bold and Sharp Popular Posts in Sidebar */
   .sidebar .PopularPosts .entry-title,
   .sidebar .PopularPosts .entry-title a,
   .sidebarui-posts .entry-title,
@@ -74,7 +75,7 @@ HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
     color: #202124 !important;
   }
 
-  /* ৩. ক্যাটাগরি ব্যাজ বোল্ড ও হাই-কন্ট্রাস্ট করা */
+  /* 4. High-Contrast Bold Category Badges */
   .entery-category a,
   .post-filter .entery-category a,
   .sidebar .PopularPosts .entery-category a {
@@ -83,14 +84,14 @@ HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
     letter-spacing: 0.5px;
   }
   
-  /* ৪. পোস্টের ভেতরের লেখার আরামদায়ক সাইজ ও রিডাবিলিটি */
+  /* 5. Post Body Typography and Readability */
   .post-body p {
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #202124 !important;
   }
 
-  /* ৫. পুরো সাইটের প্রশস্ততা ও দুই পাশের মার্জিন পারফেকশন */
+  /* 6. Modern Full-Width Container (1280px) */
   .container {
     width: 1280px !important;
     max-width: 95% !important;
