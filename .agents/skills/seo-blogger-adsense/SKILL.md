@@ -134,6 +134,34 @@ Ensure article format matches user intent:
   * `Thumbnail BG/` ফোল্ডারের ৬টি নির্দিষ্ট ব্যাকগ্রাউন্ড থেকে প্রতিটি ক্যাটাগরির জন্য একটি নির্দিষ্ট টেমপ্লেট ব্যবহৃত হবে (রাষ্ট্রবিজ্ঞান: `bg_2.png`, ইসলামিক: `bg.png`, শিক্ষা: `bg_3.png`, চাকরি: `bg_4.png`, আইসিটি: `bg_5.png`, সাধারণ: `bg_1.png`)।
 - **Typography Standard:** টাইটেলের ক্ষেত্রে সবসময় সুন্দর ও স্ট্যান্ডার্ড `Hind Siliguri` ফন্ট ব্যবহৃত হবে।
 
+### G. In-Body Visuals & Anti-AI Image Standards (বড় পোস্টের বডি ইমেজ ও কপিরাইট পলিসি)
+- **কখন অতিরিক্ত ইমেজ যুক্ত হবে:**
+  * ১,০০০–১,৫০০+ শব্দের দীর্ঘ বা অ্যাকাডেমিক আর্টিকেলে দীর্ঘ টেক্সটের একঘেয়েমি কাটাতে এবং Dwell Time ও অন-পেজ এনগেজমেন্ট বাড়াতে বডির মাঝে ১–২টি প্রাসঙ্গিক চিত্র/ইনফোগ্রাফিক যুক্ত করা হবে।
+- **১০০% কপিরাইট সুরক্ষা (Zero Copyright Risk):**
+  * কোনো কপিরাইটযুক্ত ওয়েবসাইট বা গুগল থেকে সরাসরি ছবি ডাউনলোড করা যাবে না।
+  * উৎস হবে: (১) পাবলিক ডোমেইন / উইকিমিডিয়া কমন্স (ঐতিহাসিক ও অ্যাকাডেমিক বিষয়ের আসল আলোকচিত্র), (২) ক্লিন ভেক্টর ডায়াগ্রাম, অথবা (৩) কপিরাইট-মুক্ত রিয়েলিস্টিক এআই ভিজ্যুয়াল।
+- **এআই বোঝার কোনো সুযোগ না রাখার প্রম্পট কৌশল (Anti-AI Aesthetic Formula):**
+  * ❌ *পরিহারযোগ্য ত্রুটি:* মোমের মতো প্লাস্টিক ত্বক, কৃত্রিম নিয়ন/চকচকে আভা, বিকৃত হাত/আঙুল, অপ্রাকৃতিক চোখ, অথবা ব্যাকগ্রাউন্ডে দুর্বোধ্য হিজিবিজি হরফ।
+  * ✅ *ফটোগ্রাফির ক্ষেত্রে প্রম্পট:* "Realistic 35mm documentary photography, photojournalism style, natural ambient daylight, shot on professional DSLR, authentic textures, neutral realistic color grading, candid framing, sharp focus, no CGI, no 3D render, no plastic skin, no distorted details, 16:9 aspect ratio."
+  * ✅ *এডুকেশনাল চার্ট/ডায়াগ্রামের ক্ষেত্রে:* "Clean minimalist educational diagram, flat 2D vector graphic, textbook infographic style, high contrast, elegant structure, white background, no gibberish text, professional academic layout."
+  * ✅ *ঐতিহাসিক বিষয়ের ক্ষেত্রে:* পাবলিক ডোমেইনের আসল ঐতিহাসিক আলোকচিত্র বা আর্টওয়ার্ক ব্যবহার করতে হবে (যেমন: হাসন রাজা, ঈশ্বরচন্দ্র বিদ্যাসাগর, ১৯৭১ সালের মুক্তিযুদ্ধ)।
+- **পারফেক্ট এসইও ও এইচটিএমএল স্ট্রাকচার (Semantic Markup):**
+  * পোস্টের ভেতরে ইমেজ যুক্ত করার সময় নিচের পারফেক্ট এইচটিএমএল স্ট্রাকচার মেনে চলতে হবে:
+```html
+<figure class="htbd-inbody-image-box" style="margin: 30px auto; max-width: 820px; text-align: center;">
+  <img src="IMAGE_URL" 
+       alt="[বিষয়ভিত্তিক প্রাসঙ্গিক বাংলা/ইংরেজি কি-ওয়ার্ড সমৃদ্ধ অল্টার টেক্সট]" 
+       title="[ছবির স্পষ্ট শিরোনাম]" 
+       loading="lazy" 
+       width="1200" 
+       height="675"
+       style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); display: block; margin: 0 auto;">
+  <figcaption style="font-size: 14.5px; color: #5f6368; margin-top: 10px; font-style: italic; font-family: 'SolaimanLipi', sans-serif;">
+    📷 চিত্র: [ছবির প্রাসঙ্গিক বিবরণ ও প্রাতিষ্ঠানিক ক্যাপশন]
+  </figcaption>
+</figure>
+```
+
 ---
 
 ## 🎭 6. Anti-AI Template Protocol & Human Editorial Diversity (স্বাভাবিক মানবিক কনটেন্ট আর্কিটেকচার)
