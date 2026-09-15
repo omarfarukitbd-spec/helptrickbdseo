@@ -34,6 +34,14 @@ Every revived or new article MUST strictly adhere to:
 - Full live audit completed across all 78 posts.
 - **Result:** **0 Critical AdSense Policy Violations** (no copyright issues, no adult content, no deceptive downloads).
 
+### D. Critical Content Preservation & Publishing Rules (কঠোর সম্পাদকীয় নীতিমালা):
+1. **Audience & Intent Profiling:** প্রতিটি পোস্টের মূল বিষয়বস্তু দেখে তার টার্গেট পাঠক নিশ্চিত করতে হবে (স্কুল ছাত্র, অনার্স/মাস্টার্স রাষ্ট্রবিজ্ঞান শিক্ষার্থী, চাকরি প্রার্থী, না ইসলামিক পাঠক)।
+2. **Strict Language Preservation:** ইংরেজি পোস্ট **১০০% ইংরেজিতেই** রাখতে হবে। কোনো ইংরেজি পোস্ট বাংলায় রূপান্তর করা সম্পূর্ণ নিষিদ্ধ।
+3. **Non-destructive Augmentation:** ইউজারের মূল টেক্সট সবসময় অক্ষুণ্ণ রাখতে হবে। পোস্ট বড় করতে হলে ইউজারের লেখার **আগে ভূমিকা** এবং **পরে মডেল প্রশ্ন/বিশ্লেষণ/নোটস** যোগ করতে হবে।
+4. **Original Thumbnail Preservation:** লেখকের নিজস্ব থাম্বনেইল থাকলে তা কোনোভাবেই প্রতিস্থাপন করা যাবে না।
+5. **Mandatory `<!--more-->` Jump Break:** ব্লগারে পোস্টের প্রথম ২-৩ লাইন বা প্রথম প্যারাগ্রাফের ঠিক পরেই `<!--more-->` ট্যাগ বসাতে হবে।
+6. **Label Governance (ইউজারের পূর্বানুমতি):** পোস্ট পাবলিশ বা আপডেটের আগে অবশ্যই ইউজারকে জিজ্ঞেস করতে হবে কোন লেবেলে যুক্ত হবে এবং কোনো নতুন লেবেল যোগ করা হবে কি না।
+
 ---
 
 ## 🚀 3. Milestones Completed So Far
