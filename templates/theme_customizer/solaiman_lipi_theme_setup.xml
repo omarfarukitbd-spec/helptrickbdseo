@@ -6,17 +6,18 @@ HelpTrickBD - Sitewide SolaimanLipi Font & Bengali Typography Engine
 ১. পুরো ব্লগের সমস্ত পুরনো ৭৮টি পোস্ট, হোমপেজ, মেনুবার, উইজেট ও টাইটেল এক নিমেষেই সোলায়মানলিপিতে কনভার্ট হয়ে যাবে।
 ২. বাংলা সংখ্যা '১, ২, ৩, ৪, ৫, ৬, ৭, ৮, ৯, ০' সকল স্থানে গোল, স্পষ্ট ও প্রিমিয়াম দেখাবে।
 ৩. প্রতিটি পোস্টে আলাদাভাবে ফন্ট লোড করার প্রয়োজন হবে না, যার ফলে সাইট সুপার ফাস্ট লোড হবে।
+৪. পুরো ওয়েবসাইট দুই পাশ থেকে সুন্দরভাবে ১২৮০ পিক্সেল প্রশস্ত হয়ে স্ক্রিন জুড়ে আকর্ষণীয় দেখাবে।
 
 সেটআপ নির্দেশিকা:
 ১. Blogger Dashboard-এ যান: https://www.blogger.com/blog/themes/1975983966532887960
-২. বাম পাশের মেনু থেকে "Theme" (থিম) সিলেক্ট করুন।
+2. বাম পাশের মেনু থেকে "Theme" (থিম) সিলেক্ট করুন।
 ৩. "Customize" বাটনের পাশে থাকা ড্রপডাউন তীরে (Arrow) ক্লিক করে "Edit HTML" (এইচটিএমএল সম্পাদনা) সিলেক্ট করুন।
 ৪. কীবোর্ডে Ctrl + F চেপে <head> লিখে এন্টার দিন।
 ৫. <head> ট্যাগের ঠিক নিচে নিচের কোডটুকু পেস্ট করে দিন এবং ডানদিকের সেভ (Disk Icon) বাটনে ক্লিক করুন।
 ================================================================================
 -->
 
-<!-- [START] HelpTrickBD SolaimanLipi Global Typography -->
+<!-- [START] HelpTrickBD SolaimanLipi Global Typography & Full Width Container -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -63,4 +64,4 @@ HelpTrickBD - Sitewide SolaimanLipi Font & Bengali Typography Engine
     max-width: 95% !important;
   }
 </style>
-<!-- [END] HelpTrickBD SolaimanLipi Global Typography -->
+<!-- [END] HelpTrickBD SolaimanLipi Global Typography & Full Width Container -->
