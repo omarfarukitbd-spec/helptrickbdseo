@@ -420,7 +420,7 @@ def purge_generic_posts_and_republish():
         print(f"\n[*] Processing: {slug}")
 
         webp_filename = os.path.splitext(art["banner_filename"])[0] + ".webp"
-        webp_rel_url = f"https://www.helptrickbd.com/images/{webp_filename}"
+        webp_rel_url = f"https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/{webp_filename}"
 
         full_html = f"""
 <div class="htbd-article-body" style="font-family: 'SolaimanLipi', sans-serif; font-size: 18px; line-height: 1.85; color: #1e293b;">
