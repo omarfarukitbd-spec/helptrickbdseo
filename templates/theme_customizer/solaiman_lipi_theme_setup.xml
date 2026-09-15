@@ -4,9 +4,10 @@ HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
 ================================================================================
 Benefits:
 1. All post titles display bold, enlarged (17.5px), and high contrast like minibd.com.
-2. Sidebar popular posts are bold and easily legible.
-3. Website container expands to 1280px (95% max-width), eliminating side whitespace.
-4. Clean CDATA block prevents Blogger XML encoding issues.
+2. Featured post overlay titles stay crisp white (#ffffff) with high contrast.
+3. Sidebar popular posts are bold and easily legible.
+4. Website container expands to 1280px (95% max-width), eliminating side whitespace.
+5. Clean CDATA block prevents Blogger XML encoding issues.
 
 Setup Instructions:
 1. Go to Blogger Dashboard: https://www.blogger.com/blog/themes/1975983966532887960
@@ -61,10 +62,24 @@ Setup Instructions:
     font-size: 17.5px !important;
     font-weight: 700 !important;
     line-height: 1.45 !important;
-    color: #1a1a1a !important;
   }
 
-  /* 3. Bold and Sharp Popular Posts in Sidebar */
+  /* 3. Featured Image Overlay Titles (Must Be 100% Crisp White) */
+  .block-section.item0 .entry-title,
+  .block-section.item0 .entry-title a,
+  .featured-box.item0 .entry-title,
+  .featured-box.item0 .entry-title a,
+  .video-section.item0 .entry-title,
+  .video-section.item0 .entry-title a,
+  .hall-section.item0 .entry-title,
+  .hall-section.item0 .entry-title a,
+  .modal-grid .entry-title,
+  .modal-grid .entry-title a {
+    color: #ffffff !important;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* 4. Bold and Sharp Popular Posts in Sidebar */
   .sidebar .PopularPosts .entry-title,
   .sidebar .PopularPosts .entry-title a,
   .sidebarui-posts .entry-title,
@@ -72,10 +87,9 @@ Setup Instructions:
     font-size: 14.5px !important;
     font-weight: 700 !important;
     line-height: 1.4 !important;
-    color: #202124 !important;
   }
 
-  /* 4. High-Contrast Bold Category Badges */
+  /* 5. High-Contrast Bold Category Badges */
   .entery-category a,
   .post-filter .entery-category a,
   .sidebar .PopularPosts .entery-category a {
@@ -84,14 +98,14 @@ Setup Instructions:
     letter-spacing: 0.5px;
   }
   
-  /* 5. Post Body Typography and Readability */
+  /* 6. Post Body Typography and Readability */
   .post-body p {
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #202124 !important;
   }
 
-  /* 6. Modern Full-Width Container (1280px) */
+  /* 7. Modern Full-Width Container (1280px) */
   .container {
     width: 1280px !important;
     max-width: 95% !important;
