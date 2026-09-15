@@ -162,6 +162,43 @@ Ensure article format matches user intent:
 </figure>
 ```
 
+### H. Tutorial & Practical How-To Guide Architecture (টিউটোরিয়াল ও স্টেপ-বাই-স্টেপ ইন্টারফেস মার্কিং স্ট্যান্ডার্ড)
+- **লক্ষ্য ও দর্শন:** যেকোনো টিউটোরিয়াল বা অনলাইন আবেদন গাইড (সার্টিফিকেট সংশোধন, সরকারি ফরম পূরণ, সফটওয়্যার সেটিংস)-এর মূল শক্তি হলো ভিজ্যুয়াল স্পষ্টতা। শুধু মুখে না বলে চোখে আঙুল দিয়ে দেখিয়ে দিতে হবে।
+- **৪টি আবশ্যিক টিউটোরিয়াল উপাদান:**
+  1. **পূর্বপ্রস্তুতি ও প্রয়োজনীয় কাগজপত্রের চেকলিস্ট:** কাজ শুরুর আগেই কী কী প্রস্তুত রাখতে হবে তার তালিকা।
+  2. **স্টেপ কার্ড লেআউট (`htbd-tutorial-step-card`):** প্রতিটি ধাপের জন্য পৃথক নাম্বারড কার্ড (`ধাপ ০১`, `ধাপ ০২`)।
+  3. **অরিজিনাল ইন্টারফেস ও ভিজ্যুয়াল ক্লিক মার্কার (Annotated UI Screenshot):**
+     - ওয়েবসাইট বা সফটওয়্যারের আসল স্ক্রিনশট দিতে হবে।
+     - ব্যবহারকারী ঠিক কোথায় ক্লিক করবেন, তা **লাল রঙের হাইলাইট বক্স (`Red Box`)** এবং **নির্দেশক তীর (`Arrow`)** বা **নম্বর পিন (`❶`, `❷`)** দিয়ে সুস্পষ্টভাবে মার্ক করা থাকবে।
+  4. **সতর্কবার্তা ও প্রো-টিপস কলআউট:** প্রতিটি ধাপের শেষে সম্ভাব্য ভুল ও তার প্রতিকার সংক্রান্ত কলআউট বক্স।
+
+```html
+<div class="htbd-tutorial-step-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin: 28px 0; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+    <span style="background: #2563eb; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 15px;">ধাপ ০১</span>
+    <h3 style="margin: 0; font-size: 20px; color: #0f172a; font-weight: 700;">ই-সেবা পোর্টালে প্রবেশ ও তথ্য যাচাই</h3>
+  </div>
+  <p style="font-size: 17px; line-height: 1.8; color: #334155; margin-bottom: 18px;">
+    প্রথমে বোর্ডের অফিসিয়াল ওয়েবসাইটে গিয়ে রোল ও রেজিস্ট্রেশন নম্বর সঠিকভাবে ইনপুট করুন।
+  </p>
+  
+  <figure style="margin: 20px 0; text-align: center;">
+    <img src="IMAGE_URL" 
+         alt="অনলাইন আবেদন পোর্টাল ধাপ ১ স্ক্রিনশট" 
+         title="লাল চিহ্নিত বাটনে ক্লিক করুন" 
+         loading="lazy" 
+         style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: block; margin: 0 auto;">
+    <figcaption style="font-size: 14px; color: #64748b; margin-top: 8px; font-style: italic;">
+      📷 চিত্র: লাল চিহ্নিত 'Find Record & Proceed' বাটনে ক্লিক করে পরবর্তী ধাপে যান।
+    </figcaption>
+  </figure>
+
+  <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 12px 18px; border-radius: 0 8px 8px 0; font-size: 15.5px; color: #1e40af;">
+    💡 <strong>জরুরি টিপস:</strong> তথ্য না মিললে আপনার পাসের সাল ও বোর্ডের নাম পুনরায় মিলিয়ে দেখুন।
+  </div>
+</div>
+```
+
 ---
 
 ## 🎭 6. Anti-AI Template Protocol & Human Editorial Diversity (স্বাভাবিক মানবিক কনটেন্ট আর্কিটেকচার)
