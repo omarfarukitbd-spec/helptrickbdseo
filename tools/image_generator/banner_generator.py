@@ -7,6 +7,7 @@ with custom topic gradients, clean typography, category badges, feature pills, a
 
 import math
 import os
+import sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 FONT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "assets", "fonts", "NotoSansBengali.ttf"))
@@ -152,6 +153,18 @@ def generate_banner(
     out_file = os.path.join(OUTPUT_DIR, filename)
     final_img.save(out_file, quality=92)
     print(f"  [+] Banner generated: {out_file} ({os.path.getsize(out_file)} bytes)")
+
+    # Auto-generate ultra-optimized 10-20 KB WebP for Core Web Vitals
+    try:
+        sys_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+        if sys_path not in sys.path:
+            sys.path.insert(0, sys_path)
+        from tools.image_optimizer.webp_compressor import compress_to_target_webp
+        webp_file = os.path.splitext(out_file)[0] + ".webp"
+        compress_to_target_webp(out_file, webp_file, target_min_kb=10.0, target_max_kb=20.0)
+        print(f"  [⚡ WebP] 10-20KB Optimized: {webp_file} ({os.path.getsize(webp_file) / 1024.0:.1f} KB)")
+    except Exception as e:
+        print(f"  [!] WebP compression skipped: {e}")
     return out_file
 
 
