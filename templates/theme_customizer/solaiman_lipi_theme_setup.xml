@@ -56,5 +56,11 @@ HelpTrickBD - Sitewide SolaimanLipi Font & Bengali Typography Engine
     line-height: 1.85 !important;
     color: #202124 !important;
   }
+
+  /* HelpTrickBD সাইটের আধুনিক প্রশস্ততা ও দুই পাশের মার্জিন পারফেকশন */
+  .container {
+    width: 1280px !important;
+    max-width: 95% !important;
+  }
 </style>
 <!-- [END] HelpTrickBD SolaimanLipi Global Typography -->
