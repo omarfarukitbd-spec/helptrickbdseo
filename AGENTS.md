@@ -14,6 +14,29 @@ This file is automatically loaded by Antigravity IDE into the AI agent's memory 
 
 ---
 
+## 🏛️ Autonomous Agent Governance & Multi-PC Rules System (MANDATORY)
+This project enforces a fail-safe, multi-machine agent governance system. Antigravity IDE automatically loads all modular rulebooks from `.agents/rules/` into every agent's core memory across all devices (Home PC, Office Laptop, etc.):
+
+1. **[00_AGENT_CONSTITUTION.md](file:///.agents/rules/00_AGENT_CONSTITUTION.md)**: Supreme authority, Stop-Gates & User Permission Matrix.
+2. **[01_CONTENT_STANDARDS.md](file:///.agents/rules/01_CONTENT_STANDARDS.md)**: Word counts (1,200–1,600+), Language strictness (English stays English, Bengali stays Bengali), SolaimanLipi, `<!--more-->` tag, 5 Human Archetypes.
+3. **[02_IMAGE_AND_ASSET_RULES.md](file:///.agents/rules/02_IMAGE_AND_ASSET_RULES.md)**: 16:9 banners, 10–20 KB WebP compression, jsDelivr CDN hosting, authentic author thumbnail preservation, UI annotations (Red Box, Arrow, Pin).
+4. **[03_PUBLISHING_PERMALINK_RULES.md](file:///.agents/rules/03_PUBLISHING_PERMALINK_RULES.md)**: Mandatory 2-Step Custom English Permalink Minting (Zero generic `blog-post_xx.html`), Blogger API v3, Google Indexing API pinging.
+5. **[04_LABEL_TAXONOMY_GOVERNANCE.md](file:///.agents/rules/04_LABEL_TAXONOMY_GOVERNANCE.md)**: Strict Label Permission Gate & AdSense category balance.
+6. **[05_MULTI_PC_SYNC_PROTOCOL.md](file:///.agents/rules/05_MULTI_PC_SYNC_PROTOCOL.md)**: Mandatory Pre-Task Pull (`git fetch` + `git pull --rebase origin main`), Post-Task Auto-Push (`git push origin main`), Secrets safety.
+
+### 🛡️ Automated Quality Gatekeeper Tools:
+- **Pre-Flight Post Validator (Quality Gatekeeper):**
+  ```bash
+  python tools/governance/pre_flight_checker.py <PATH_TO_HTML> [--metadata <PATH_TO_JSON>]
+  ```
+  *Every agent MUST run this before publishing. If any check fails, publishing is strictly BLOCKED.*
+- **User Permission Gatekeeper:**
+  ```bash
+  python tools/governance/agent_permission_gate.py <ACTION_NAME> --details "<DETAILS>" [--confirmed]
+  ```
+
+---
+
 ## 💎 2. Established Architectural Decisions & Standards
 
 ### A. Typography & Fonts:

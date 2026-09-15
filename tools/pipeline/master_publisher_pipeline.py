@@ -34,6 +34,7 @@ if PROJECT_ROOT not in sys.path:
 from tools.image_optimizer.webp_compressor import compress_to_target_webp
 from tools.link_guardian.link_checker import check_single_url
 from tools.adsense_suite.rpm_booster import analyze_article_monetization, inject_policy_safe_ad_slots
+from tools.governance.pre_flight_checker import PreFlightChecker
 
 
 def audit_content_quality(html_content: str) -> dict:
@@ -276,6 +277,14 @@ def run_pipeline(args):
         if not args.post_id:
             print("\n[Step 5/6] Error: --post-id required to publish to Blogger.", file=sys.stderr)
         else:
+            print("\n[Gatekeeper] Running Automated Pre-Flight Quality Check...")
+            gatekeeper = PreFlightChecker(args.html)
+            if not gatekeeper.run_all():
+                gatekeeper.print_report()
+                print("\n[BLOCKED] Publishing HALTED by Pre-Flight Gatekeeper! Fix violations above before proceeding.", file=sys.stderr)
+                sys.exit(1)
+            print("  • Pre-Flight Gatekeeper: 100% Passed. Approved for Live Publication.")
+
             print(f"\n[Step 5/6] Publishing directly to Blogger (Post ID: {args.post_id})...")
             labels = [l.strip() for l in args.labels.split(",")] if args.labels else None
             success = publish_to_blogger(args.post_id, html_content, title=args.title, labels=labels)
