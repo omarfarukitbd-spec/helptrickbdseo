@@ -1,15 +1,32 @@
+
+<!-- HelpTrickBD Zero-Lag Scroll Progress Bar -->
+<div id="ht-reading-progress-container" style="position: sticky; top: 0; left: 0; width: 100%; height: 5px; background: rgba(226, 232, 240, 0.4); z-index: 99999;">
+<div id="ht-reading-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #2563eb, #38bdf8, #10b981); transition: width 0.1s ease-out;"></div>
+</div>
+<script>
+(function() {
+  window.addEventListener('scroll', function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (height > 0) ? (winScroll / height) * 100 : 0;
+    var bar = document.getElementById("ht-reading-progress-bar");
+    if (bar) { bar.style.width = scrolled + "%"; }
+  }, { passive: true });
+})();
+</script>
 <!DOCTYPE html>
+
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)</title>
-  <meta name="description" content="জাতীয় বিশ্ববিদ্যালয় রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের বিষয় কোডসহ সমস্ত পাঠ্য বইয়ের পূর্ণাঙ্গ তালিকা ও সেরা লেখকদের রেফারেন্স গাইড।">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<title>রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)</title>
+<meta content="জাতীয় বিশ্ববিদ্যালয় রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের বিষয় কোডসহ সমস্ত পাঠ্য বইয়ের পূর্ণাঙ্গ তালিকা ও সেরা লেখকদের রেফারেন্স গাইড।" name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 </head>
 <body>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
   @font-face {
     font-family: 'SolaimanLipi';
@@ -107,140 +124,145 @@
     background-color: #f8fafd !important;
   }
 </style>
-
 <div class="htbd-post-wrapper">
-  <div style="margin-bottom: 18px;">
-    <span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
+<div style="margin-bottom: 18px;">
+<span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
       📚 বিভাগ: জাতীয় বিশ্ববিদ্যালয় অনার্স রাষ্ট্রবিজ্ঞান | ১ম থেকে ৪র্থ বর্ষ | পূর্ণাঙ্গ বইয়ের তালিকা
     </span>
-  </div>
-  <!-- Hero Thumbnail Banner (Blogger Featured Image & Social OpenGraph) -->
-  <div style="text-align: center; margin: 18px 0 25px 0;">
-    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/political-science-book-list-banner.png" 
-         alt="অনার্স রাষ্ট্রবিজ্ঞান ১ম থেকে ৪র্থ বর্ষের রেফারেন্স বইয়ের পূর্ণাঙ্গ তালিকা" 
-         title="অনার্স রাষ্ট্রবিজ্ঞান রেফারেন্স বুক লিস্ট"
-         width="1200" height="675"
-         loading="eager"
-         style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;"/>
-    <span style="display: block; font-size: 14px; color: #5f6368; margin-top: 8px; font-style: italic;">
+</div>
+<!-- Hero Thumbnail Banner (Blogger Featured Image & Social OpenGraph) -->
+<div style="text-align: center; margin: 18px 0 25px 0;">
+<img alt="অনার্স রাষ্ট্রবিজ্ঞান ১ম থেকে ৪র্থ বর্ষের রেফারেন্স বইয়ের পূর্ণাঙ্গ তালিকা" height="675" loading="eager" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/political-science-book-list-banner.png" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;" title="অনার্স রাষ্ট্রবিজ্ঞান রেফারেন্স বুক লিস্ট" width="1200"/>
+<span style="display: block; font-size: 14px; color: #5f6368; margin-top: 8px; font-style: italic;">
       চিত্র: জাতীয় বিশ্ববিদ্যালয় অনার্স রাষ্ট্রবিজ্ঞান ১ম থেকে ৪র্থ বর্ষের সেরা রেফারেন্স বইয়ের তালিকা
     </span>
-  </div>
-
-  <div class="htbd-qbox" style="background: #f8f9fa; border-left: 5px solid #1a73e8; padding: 20px 24px; margin: 22px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-    <p style="margin: 0; font-size: 18px; line-height: 1.8;">
-      <strong>📌 সারসংক্ষেপ (Quick Overview):</strong> 
+</div>
+<div class="htbd-qbox" style="background: #f8f9fa; border-left: 5px solid #1a73e8; padding: 20px 24px; margin: 22px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+<p style="margin: 0; font-size: 18px; line-height: 1.8;">
+<strong>📌 সারসংক্ষেপ (Quick Overview):</strong> 
       জাতীয় বিশ্ববিদ্যালয়ের অধীনে রাষ্ট্রবিজ্ঞান বিভাগে স্নাতক (সম্মান) শ্রেণির শিক্ষার্থীদের জন্য সঠিক ও মানসম্মত বই নির্বাচন পরীক্ষার ফলাফলে সবচেয়ে গুরুত্বপূর্ণ ভূমিকা পালন করে। অনার্স ১ম বর্ষ থেকে ৪র্থ বর্ষ পর্যন্ত প্রতিটি বর্ষের সুনির্দিষ্ট <strong>বিষয় কোড (Course Code)</strong>, পত্রের নাম এবং প্রখ্যাত লেখকদের প্রামাণ্য রেফারেন্স বইয়ের পূর্ণাঙ্গ তালিকা নিচে বিশদভাবে উপস্থাপন করা হলো।
-    </p>
-  </div>
-
-  <div class="htbd-toc-box">
-    <h3 style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;">📑 সূচিপত্র (Table of Contents)</h3>
-    <ul class="htbd-toc-list">
-      <li><a href="#year1">👉 ১. অনার্স ১ম বর্ষের বিষয় কোড ও পাঠ্য বইয়ের তালিকা</a></li>
-      <li><a href="#year2">👉 ২. অনার্স ২য় বর্ষের বিষয় কোড ও রেফারেন্স বই</a></li>
-      <li><a href="#year3">👉 ৩. অনার্স ৩য় বর্ষের প্রধান প্রধান পত্রসমূহ</a></li>
-      <li><a href="#year4">👉 ৪. অনার্স ৪র্থ বর্ষের ফাইনাল পেপারের তালিকা</a></li>
-      <li><a href="#summary-table">👉 ৫. চার বর্ষের ক্রেডিট ও সিলেবাসের সারসংক্ষেপ ছক</a></li>
-      <li><a href="#study-tips">👉 ৬. বিশ্ববিদ্যালয়ের পরীক্ষায় ভালো জিপিএ (CGPA) অর্জনের টেকনিক</a></li>
-      <li><a href="#faqs">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
-    </ul>
-  </div>
-
-  <h2 id="year1" class="htbd-heading">১. অনার্স ১ম বর্ষের বিষয় কোড ও পাঠ্য বইয়ের তালিকা</h2>
-  <ul>
-    <li><strong>২১১৯০১ - রাজনৈতিক প্রতিষ্ঠান ও সংগঠন:</strong> লেখক: ড. মো. মকসুদুর রহমান / ড. মোজাফফর আহমদ চৌধুরী</li>
-    <li><strong>২১১৯০৩ - পাশ্চাত্য রাষ্ট্রচিন্তা:</strong> লেখক: ড. অমল কুমার মুখোপাধ্যায় / ড. মো. এহসানুল হক</li>
-    <li><strong>২১১৯০৫ - বাংলাদেশের সমাজ ও সংস্কৃতি:</strong> লেখক: ড. এ. কে. এম. গোলাম রব্বানী</li>
-    <li><strong>২১১৫০১ - স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস (আবশ্যিক):</strong> লেখক: ড. মুনতাসীর মামুন / ড. মো. আনোয়ার হোসেন</li>
-  </ul>
-
-  <h2 id="year2" class="htbd-heading">২. অনার্স ২য় বর্ষের বিষয় কোড ও রেফারেন্স বই</h2>
-  <ul>
-    <li><strong>২২১৯০১ - যুক্তরাজ্যের ও মার্কিন যুক্তরাষ্ট্রের শাসনব্যবস্থা:</strong> লেখক: ড. মো. মকসুদুর রহমান</li>
-    <li><strong>২২১৯০৩ - প্রাচ্যের রাষ্ট্রচিন্তা:</strong> লেখক: ড. মো. এহসানুল হক</li>
-    <li><strong>২২১৯০৫ - বাংলাদেশের অর্থনীতি:</strong> লেখক: ড. মইনুল ইসলাম</li>
-    <li><strong>২২১৯০৭ - দক্ষিণ এশিয়ার রাজনীতি (ভারত, পাকিস্তান ও শ্রীলঙ্কা):</strong> লেখক: ড. হারুন-অর-রশিদ</li>
-  </ul>
-
-  <div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
-  <strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;">📖 সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
-  <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-    <li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" target="_blank" rel="noopener">📌 Sher E Bangla Fazlul Haque Social Welfare</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html" target="_blank" rel="noopener">📌 Sarbobhoumotto Ki Songga Boishisto O Prokarved</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotter-ekottobad-o-bohubadi-motobad.html" target="_blank" rel="noopener">📌 Sarbobhoumotter Ekottobad O Bohubadi Motobad</a></li>
-  </ul>
+    </p><div class="ht-toc-container" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 22px; margin: 24px 0; font-family: 'SolaimanLipi', sans-serif;">
+<div style="font-weight: 700; font-size: 18px; color: #0f172a; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+<span>📌 এই আর্টিকেলের গুরুত্বপূর্ণ সূচিপত্র</span>
+<span style="font-size: 12px; color: #64748b; font-weight: normal;">(পড়ার সুবিধার্থে ক্লিক করে সরাসরি যান)</span>
+</div>
+<ul style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+<li style="margin-left: 20px;"><a href="#section-1" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #475569; text-decoration: none; font-size: 15px; transition: color 0.2s;">↳ 📑 সূচিপত্র (Table of Contents)</a></li>
+<li style="font-weight: 600;"><a href="#year1" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ১. অনার্স ১ম বর্ষের বিষয় কোড ও পাঠ্য বইয়ের তালিকা</a></li>
+<li style="font-weight: 600;"><a href="#year2" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ২. অনার্স ২য় বর্ষের বিষয় কোড ও রেফারেন্স বই</a></li>
+<li style="font-weight: 600;"><a href="#summary-table" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৫. চার বর্ষের ক্রেডিট ও সিলেবাসের সারসংক্ষেপ ছক</a></li>
+<li style="font-weight: 600;"><a href="#section-5" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+<li style="margin-left: 20px;"><a href="#section-6" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #475569; text-decoration: none; font-size: 15px; transition: color 0.2s;">↳ ❓ স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস কি সব বিভাগের জন্য বাধ্যতামূলক?</a></li>
+<li style="font-weight: 600;"><a href="#exam-success-tips" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৫.১ জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষায় প্রথম শ্রেণি (First Class) পাওয়ার পরীক্ষিত কৌশল</a></li>
+<li style="font-weight: 600;"><a href="#year-wise-strategy" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৫.২ ১ম থেকে ৪র্থ বর্ষ পর্যন্ত প্রতিটি বর্ষের পড়াশোনার দীর্ঘমেয়াদী পরিকল্পনা</a></li>
+</ul>
+</div>
+</div>
+<div class="htbd-toc-box">
+<h3 id="section-1" style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;">📑 সূচিপত্র (Table of Contents)</h3>
+<ul class="htbd-toc-list">
+<li><a href="#year1">👉 ১. অনার্স ১ম বর্ষের বিষয় কোড ও পাঠ্য বইয়ের তালিকা</a></li>
+<li><a href="#year2">👉 ২. অনার্স ২য় বর্ষের বিষয় কোড ও রেফারেন্স বই</a></li>
+<li><a href="#year3">👉 ৩. অনার্স ৩য় বর্ষের প্রধান প্রধান পত্রসমূহ</a></li>
+<li><a href="#year4">👉 ৪. অনার্স ৪র্থ বর্ষের ফাইনাল পেপারের তালিকা</a></li>
+<li><a href="#summary-table">👉 ৫. চার বর্ষের ক্রেডিট ও সিলেবাসের সারসংক্ষেপ ছক</a></li>
+<li><a href="#study-tips">👉 ৬. বিশ্ববিদ্যালয়ের পরীক্ষায় ভালো জিপিএ (CGPA) অর্জনের টেকনিক</a></li>
+<li><a href="#faqs">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="year1">১. অনার্স ১ম বর্ষের বিষয় কোড ও পাঠ্য বইয়ের তালিকা</h2>
+<div class="ht-meta-engagement-badge" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 24px 0; padding: 10px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 6px; font-family: 'SolaimanLipi', sans-serif; font-size: 15px; color: #334155;">
+<span style="font-weight: 600; color: #0369a1;">⏱️ পড়ার আনুমানিক সময়: ১০ মিনিট (১৭৫০ শব্দ)</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; font-size: 13px; font-weight: 600;">✅ সর্বশেষ হালনাগাদ ২০২৬</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="color: #64748b; font-size: 14px;">🎓 HelpTrickBD Verified Study Guide</span>
 </div>
 
-  <h2 id="summary-table" class="htbd-heading">৫. চার বর্ষের ক্রেডিট ও সিলেবাসের সারসংক্ষেপ ছক</h2>
-  <div class="htbd-table-wrapper">
-    <table class="htbd-table">
-      <thead>
-        <tr>
-          <th>শিক্ষাবর্ষ</th>
-          <th>মোট পেপার</th>
-          <th>মোট ক্রেডিট</th>
-          <th>পরীক্ষার ধরন</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>অনার্স ১ম বর্ষ</strong></td>
-          <td>৬টি বিষয়</td>
-          <td>২৪ ক্রেডিট</td>
-          <td>তত্ত্বীয় ও মৌখিক</td>
-        </tr>
-        <tr>
-          <td><strong>অনার্স ২য় বর্ষ</strong></td>
-          <td>৬টি বিষয়</td>
-          <td>২৪ ক্রেডিট</td>
-          <td>তত্ত্বীয় ও ইংরেজি আবশ্যিক</td>
-        </tr>
-        <tr>
-          <td><strong>অনার্স ৩য় বর্ষ</strong></td>
-          <td>৮টি বিষয়</td>
-          <td>৩২ ক্রেডিট</td>
-          <td>কোর তত্ত্বীয় কোর্স</td>
-        </tr>
-        <tr>
-          <td><strong>অনার্স ৪র্থ বর্ষ</strong></td>
-          <td>৯টি বিষয় + ভাইভা</td>
-          <td>৩৬ ক্রেডিট</td>
-          <td>চূড়ান্ত তত্ত্বীয় ও টার্ম পেপার</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="htbd-faq-wrap" id="faqs" style="margin-top: 35px;">
-    <h2 class="htbd-heading">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
-    <div style="border-bottom: 1px solid #e0e0e0; padding: 14px 0;">
-      <h3 style="margin: 0 0 6px 0; font-size: 18px; color: #1a73e8;">❓ স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস কি সব বিভাগের জন্য বাধ্যতামূলক?</h3>
-      <div style="color: #3c4043; line-height: 1.7;">
+<ul>
+<li><strong>২১১৯০১ - রাজনৈতিক প্রতিষ্ঠান ও সংগঠন:</strong> লেখক: ড. মো. মকসুদুর রহমান / ড. মোজাফফর আহমদ চৌধুরী</li>
+<li><strong>২১১৯০৩ - পাশ্চাত্য রাষ্ট্রচিন্তা:</strong> লেখক: ড. অমল কুমার মুখোপাধ্যায় / ড. মো. এহসানুল হক</li>
+<li><strong>২১১৯০৫ - বাংলাদেশের সমাজ ও সংস্কৃতি:</strong> লেখক: ড. এ. কে. এম. গোলাম রব্বানী</li>
+<li><strong>২১১৫০১ - স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস (আবশ্যিক):</strong> লেখক: ড. মুনতাসীর মামুন / ড. মো. আনোয়ার হোসেন</li>
+</ul>
+<h2 class="htbd-heading" id="year2">২. অনার্স ২য় বর্ষের বিষয় কোড ও রেফারেন্স বই</h2>
+<ul>
+<li><strong>২২১৯০১ - যুক্তরাজ্যের ও মার্কিন যুক্তরাষ্ট্রের শাসনব্যবস্থা:</strong> লেখক: ড. মো. মকসুদুর রহমান</li>
+<li><strong>২২১৯০৩ - প্রাচ্যের রাষ্ট্রচিন্তা:</strong> লেখক: ড. মো. এহসানুল হক</li>
+<li><strong>২২১৯০৫ - বাংলাদেশের অর্থনীতি:</strong> লেখক: ড. মইনুল ইসলাম</li>
+<li><strong>২২১৯০৭ - দক্ষিণ এশিয়ার রাজনীতি (ভারত, পাকিস্তান ও শ্রীলঙ্কা):</strong> লেখক: ড. হারুন-অর-রশিদ</li>
+</ul>
+<div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
+<strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;">📖 সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
+<ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+<li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" rel="noopener" target="_blank">📌 Sher E Bangla Fazlul Haque Social Welfare</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html" rel="noopener" target="_blank">📌 Sarbobhoumotto Ki Songga Boishisto O Prokarved</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotter-ekottobad-o-bohubadi-motobad.html" rel="noopener" target="_blank">📌 Sarbobhoumotter Ekottobad O Bohubadi Motobad</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="summary-table">৫. চার বর্ষের ক্রেডিট ও সিলেবাসের সারসংক্ষেপ ছক</h2>
+<div class="htbd-table-wrapper">
+<table class="htbd-table">
+<thead>
+<tr>
+<th>শিক্ষাবর্ষ</th>
+<th>মোট পেপার</th>
+<th>মোট ক্রেডিট</th>
+<th>পরীক্ষার ধরন</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>অনার্স ১ম বর্ষ</strong></td>
+<td>৬টি বিষয়</td>
+<td>২৪ ক্রেডিট</td>
+<td>তত্ত্বীয় ও মৌখিক</td>
+</tr>
+<tr>
+<td><strong>অনার্স ২য় বর্ষ</strong></td>
+<td>৬টি বিষয়</td>
+<td>২৪ ক্রেডিট</td>
+<td>তত্ত্বীয় ও ইংরেজি আবশ্যিক</td>
+</tr>
+<tr>
+<td><strong>অনার্স ৩য় বর্ষ</strong></td>
+<td>৮টি বিষয়</td>
+<td>৩২ ক্রেডিট</td>
+<td>কোর তত্ত্বীয় কোর্স</td>
+</tr>
+<tr>
+<td><strong>অনার্স ৪র্থ বর্ষ</strong></td>
+<td>৯টি বিষয় + ভাইভা</td>
+<td>৩৬ ক্রেডিট</td>
+<td>চূড়ান্ত তত্ত্বীয় ও টার্ম পেপার</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="htbd-faq-wrap" id="faqs" style="margin-top: 35px;">
+<h2 class="htbd-heading" id="section-5">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+<div style="border-bottom: 1px solid #e0e0e0; padding: 14px 0;">
+<h3 id="section-6" style="margin: 0 0 6px 0; font-size: 18px; color: #1a73e8;">❓ স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস কি সব বিভাগের জন্য বাধ্যতামূলক?</h3>
+<div style="color: #3c4043; line-height: 1.7;">
         হ্যাঁ, জাতীয় বিশ্ববিদ্যালয়ের অনার্স ১ম বর্ষের সকল বিভাগের ছাত্র-ছাত্রীদের জন্য এই কোর্সটি ১০০ নম্বরের আবশ্যিক বিষয়।
       </div>
-    </div>
-  </div>
-
-  
-  <h2 id="exam-success-tips" class="htbd-heading">৫.১ জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষায় প্রথম শ্রেণি (First Class) পাওয়ার পরীক্ষিত কৌশল</h2>
-  <p>জাতীয় বিশ্ববিদ্যালয়ের রাষ্ট্রবিজ্ঞান অনার্স পরীক্ষায় অনেকেই প্রচুর পড়াশোনা করেও আশানুরূপ সিজিপিএ অর্জন করতে পারেন না শুধুমাত্র পরীক্ষার খাতায় লেখার সঠিক কৌশল না জানার কারণে। ফার্স্ট ক্লাস নিশ্চিত করতে নিচের বিষয়গুলো অক্ষরে অক্ষরে মেনে চলা প্রয়োজন:</p>
-  <ul>
-    <li><strong>ক-বিভাগের ১০টি প্রশ্ন:</strong> এখানে এক কথায় নির্ভুল উত্তর দিন। ১০ এ ১০ পাওয়া সিজিপিএ বাড়ানোর মূল ভিত্তি।</li>
-    <li><strong>খ-বিভাগের ৪টি প্রশ্ন:</strong> অনর্থক ভূমিকা না বাড়িয়ে সরাসরি মূল পয়েন্টে প্রবেশ করুন। প্রতিটি উত্তরের দৈর্ঘ্য ১.৫ থেকে ২ পৃষ্ঠার বেশি হওয়া উচিত নয়। অন্তত একটি করে প্রামাণ্য সংজ্ঞা ও রাষ্ট্রবিজ্ঞানীর উক্তি যোগ করুন।</li>
-    <li><strong>গ-বিভাগের ৫টি রচনামূলক প্রশ্ন:</strong> প্রতিটি প্রশ্নের উত্তর অন্তত ৪ থেকে ৫ পৃষ্ঠা হওয়া আবশ্যক। উত্তরে সুন্দর পয়েন্ট হেডিং, বিখ্যাত দার্শনিকদের কোটেশন, ফ্লো-চার্ট বা তুলনামূলক তথ্য সারণী যুক্ত করলে পরীক্ষক সহজেই ৮ থেকে ৯ নম্বর বরাদ্দ করেন।</li>
-    <li><strong>নীল কালির সাব-হেডিং:</strong> কালো কালির লেখার মাঝে গুরুত্বপূর্ণ উক্তি ও পয়েন্টের নিচে বা পয়েন্টের শিরোনামে নীল কালি ব্যবহার করলে খাতার উপস্থাপন দৃষ্টিনন্দন হয়।</li>
-  </ul>
-
-  
-  <h2 id="year-wise-strategy" class="htbd-heading">৫.২ ১ম থেকে ৪র্থ বর্ষ পর্যন্ত প্রতিটি বর্ষের পড়াশোনার দীর্ঘমেয়াদী পরিকল্পনা</h2>
-  <p>অনার্স পড়ার পাশাপাশি প্রথম বর্ষ থেকেই বিসিএস ও কর্মজীবনের প্রস্তুতি কীভাবে এগিয়ে নেওয়া যায়, তার সমন্বিত রোডম্যাপ নিচে আলোচনা করা হলো:</p>
-  <ul>
-    <li><strong>১ম বর্ষ (বেসিক বিল্ডিং):</strong> বাংলা ও ইংরেজি ভাষার মৌলিক ব্যাকরণ এবং রাষ্ট্রবিজ্ঞানের মূল প্রত্যয়গুলো (যেমন—সার্বভৌমত্ব, আইন, স্বাধীনতা) আত্মস্থ করুন। ইংরেজি পড়ার ভয় দূর করতে নিয়মিত ইংরেজি পত্রিকা পড়ার অভ্যাস গড়ে তুলুন।</li>
-    <li><strong>২য় বর্ষ (আন্তর্জাতিক ও প্রাচ্য দর্শন):</strong> প্রাচীন ও মধ্যযুগের রাষ্ট্রচিন্তা এবং আন্তর্জাতিক রাজনীতির মৌলিক বিষয়গুলো গভীরভাবে পড়ুন। এই বিষয়গুলো ভবিষ্যতে বিসিএস আন্তর্জাতিক বিষয়াবলির ৫০% প্রস্তুতি সম্পন্ন করে দেয়।</li>
-    <li><strong>৩য় বর্ষ (তুলনামূলক সরকার ও স্থানীয় সরকার):</strong> যুক্তরাজ্য, মার্কিন যুক্তরাষ্ট্র ও বাংলাদেশের শাসনব্যবস্থা তুলনামূলক বিশ্লেষণ করুন। বাংলাদেশের সংবিধান মুখস্থ করার এখনই উপযুক্ত সময়।</li>
-    <li><strong>৪র্থ বর্ষ (গবেষণা ও সাম্প্রতিক রাষ্ট্রচিন্তা):</strong> গবেষণার মৌলিক নিয়মাবলি শেখার পাশাপাশি লিখিত পরীক্ষার জন্য প্রতিদিন লেখার গতি বৃদ্ধি করুন। হ্যান্ডনোট নিজে তৈরি করার অভ্যাস ফার্স্ট ক্লাস পেতে সাহায্য করবে।</li>
-  </ul>
-
-  <script type="application/ld+json">
+</div>
+</div>
+<h2 class="htbd-heading" id="exam-success-tips">৫.১ জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষায় প্রথম শ্রেণি (First Class) পাওয়ার পরীক্ষিত কৌশল</h2>
+<p>জাতীয় বিশ্ববিদ্যালয়ের রাষ্ট্রবিজ্ঞান অনার্স পরীক্ষায় অনেকেই প্রচুর পড়াশোনা করেও আশানুরূপ সিজিপিএ অর্জন করতে পারেন না শুধুমাত্র পরীক্ষার খাতায় লেখার সঠিক কৌশল না জানার কারণে। ফার্স্ট ক্লাস নিশ্চিত করতে নিচের বিষয়গুলো অক্ষরে অক্ষরে মেনে চলা প্রয়োজন:</p>
+<ul>
+<li><strong>ক-বিভাগের ১০টি প্রশ্ন:</strong> এখানে এক কথায় নির্ভুল উত্তর দিন। ১০ এ ১০ পাওয়া সিজিপিএ বাড়ানোর মূল ভিত্তি।</li>
+<li><strong>খ-বিভাগের ৪টি প্রশ্ন:</strong> অনর্থক ভূমিকা না বাড়িয়ে সরাসরি মূল পয়েন্টে প্রবেশ করুন। প্রতিটি উত্তরের দৈর্ঘ্য ১.৫ থেকে ২ পৃষ্ঠার বেশি হওয়া উচিত নয়। অন্তত একটি করে প্রামাণ্য সংজ্ঞা ও রাষ্ট্রবিজ্ঞানীর উক্তি যোগ করুন।</li>
+<li><strong>গ-বিভাগের ৫টি রচনামূলক প্রশ্ন:</strong> প্রতিটি প্রশ্নের উত্তর অন্তত ৪ থেকে ৫ পৃষ্ঠা হওয়া আবশ্যক। উত্তরে সুন্দর পয়েন্ট হেডিং, বিখ্যাত দার্শনিকদের কোটেশন, ফ্লো-চার্ট বা তুলনামূলক তথ্য সারণী যুক্ত করলে পরীক্ষক সহজেই ৮ থেকে ৯ নম্বর বরাদ্দ করেন।</li>
+<li><strong>নীল কালির সাব-হেডিং:</strong> কালো কালির লেখার মাঝে গুরুত্বপূর্ণ উক্তি ও পয়েন্টের নিচে বা পয়েন্টের শিরোনামে নীল কালি ব্যবহার করলে খাতার উপস্থাপন দৃষ্টিনন্দন হয়।</li>
+</ul>
+<h2 class="htbd-heading" id="year-wise-strategy">৫.২ ১ম থেকে ৪র্থ বর্ষ পর্যন্ত প্রতিটি বর্ষের পড়াশোনার দীর্ঘমেয়াদী পরিকল্পনা</h2>
+<p>অনার্স পড়ার পাশাপাশি প্রথম বর্ষ থেকেই বিসিএস ও কর্মজীবনের প্রস্তুতি কীভাবে এগিয়ে নেওয়া যায়, তার সমন্বিত রোডম্যাপ নিচে আলোচনা করা হলো:</p>
+<ul>
+<li><strong>১ম বর্ষ (বেসিক বিল্ডিং):</strong> বাংলা ও ইংরেজি ভাষার মৌলিক ব্যাকরণ এবং রাষ্ট্রবিজ্ঞানের মূল প্রত্যয়গুলো (যেমন—সার্বভৌমত্ব, আইন, স্বাধীনতা) আত্মস্থ করুন। ইংরেজি পড়ার ভয় দূর করতে নিয়মিত ইংরেজি পত্রিকা পড়ার অভ্যাস গড়ে তুলুন।</li>
+<li><strong>২য় বর্ষ (আন্তর্জাতিক ও প্রাচ্য দর্শন):</strong> প্রাচীন ও মধ্যযুগের রাষ্ট্রচিন্তা এবং আন্তর্জাতিক রাজনীতির মৌলিক বিষয়গুলো গভীরভাবে পড়ুন। এই বিষয়গুলো ভবিষ্যতে বিসিএস আন্তর্জাতিক বিষয়াবলির ৫০% প্রস্তুতি সম্পন্ন করে দেয়।</li>
+<li><strong>৩য় বর্ষ (তুলনামূলক সরকার ও স্থানীয় সরকার):</strong> যুক্তরাজ্য, মার্কিন যুক্তরাষ্ট্র ও বাংলাদেশের শাসনব্যবস্থা তুলনামূলক বিশ্লেষণ করুন। বাংলাদেশের সংবিধান মুখস্থ করার এখনই উপযুক্ত সময়।</li>
+<li><strong>৪র্থ বর্ষ (গবেষণা ও সাম্প্রতিক রাষ্ট্রচিন্তা):</strong> গবেষণার মৌলিক নিয়মাবলি শেখার পাশাপাশি লিখিত পরীক্ষার জন্য প্রতিদিন লেখার গতি বৃদ্ধি করুন। হ্যান্ডনোট নিজে তৈরি করার অভ্যাস ফার্স্ট ক্লাস পেতে সাহায্য করবে।</li>
+</ul>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -257,6 +279,16 @@
   }
   </script>
 </div>
-
 </body>
 </html>
+<div class="ht-social-share-box" style="margin: 36px 0 20px 0; padding: 18px 22px; background: #faf5ff; border: 1px dashed #a855f7; border-radius: 8px; font-family: 'SolaimanLipi', sans-serif; text-align: center;">
+<p style="margin: 0 0 12px 0; font-size: 16px; font-weight: 700; color: #581c87;">📢 আপনার সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন:</p>
+<div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+<a href="https://api.whatsapp.com/send?text=Helpful%20Study%20Guide:%20" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; background: #25d366; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; text-decoration: none; font-weight: 600;" target="_blank">
+      💬 WhatsApp এ পাঠান
+    </a>
+<a href="https://www.facebook.com/sharer/sharer.php" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; background: #1877f2; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; text-decoration: none; font-weight: 600;" target="_blank">
+      📘 Facebook এ শেয়ার করুন
+    </a>
+</div>
+</div>

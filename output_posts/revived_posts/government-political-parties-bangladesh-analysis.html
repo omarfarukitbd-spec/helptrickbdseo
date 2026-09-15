@@ -1,15 +1,32 @@
+
+<!-- HelpTrickBD Zero-Lag Scroll Progress Bar -->
+<div id="ht-reading-progress-container" style="position: sticky; top: 0; left: 0; width: 100%; height: 5px; background: rgba(226, 232, 240, 0.4); z-index: 99999;">
+<div id="ht-reading-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #2563eb, #38bdf8, #10b981); transition: width 0.1s ease-out;"></div>
+</div>
+<script>
+(function() {
+  window.addEventListener('scroll', function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (height > 0) ? (winScroll / height) * 100 : 0;
+    var bar = document.getElementById("ht-reading-progress-bar");
+    if (bar) { bar.style.width = scrolled + "%"; }
+  }, { passive: true });
+})();
+</script>
 <!DOCTYPE html>
+
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>সরকার ও রাজনৈতিক দল: ধারণা, সম্পর্ক ও বাংলাদেশে গণতান্ত্রিক চর্চা (২০২৬)</title>
-  <meta name="description" content="সরকার ও রাজনৈতিক দল কাকে বলে? রাজনৈতিক দলের কাজ, বিরোধী দলের ভূমিকা, সুশাসন এবং বাংলাদেশে সংসদীয় গণতন্ত্রের বিশদ বিশ্লেষণ পড়ুন।">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<title>সরকার ও রাজনৈতিক দল: ধারণা, সম্পর্ক ও বাংলাদেশে গণতান্ত্রিক চর্চা (২০২৬)</title>
+<meta content="সরকার ও রাজনৈতিক দল কাকে বলে? রাজনৈতিক দলের কাজ, বিরোধী দলের ভূমিকা, সুশাসন এবং বাংলাদেশে সংসদীয় গণতন্ত্রের বিশদ বিশ্লেষণ পড়ুন।" name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 </head>
 <body>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
   @font-face {
     font-family: 'SolaimanLipi';
@@ -107,121 +124,123 @@
     background-color: #f8fafd !important;
   }
 </style>
-
 <div class="htbd-post-wrapper">
-  <div style="margin-bottom: 18px;">
-    <span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
+<div style="margin-bottom: 18px;">
+<span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
       📚 বিভাগ: রাষ্ট্রবিজ্ঞান ও রাজনীতি | সর্বশেষ সংস্করণ: ২০২৬ | বিসিএস ও মাস্টার্স বিশেষ গাইড
     </span>
-  </div>
-
-  <!-- Hero Thumbnail Banner -->
-  <div style="text-align: center; margin: 18px 0 25px 0;">
-    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/government-political-parties-banner.png" 
-         alt="সরকার ও রাজনৈতিক দল: ধারণা, সম্পর্ক ও বাংলাদেশে গণতান্ত্রিক চর্চা" 
-         title="সরকার ও রাজনৈতিক দল সম্পর্ক ও গণতান্ত্রিক চর্চা"
-         width="1200" height="675"
-         loading="eager"
-         style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;"/>
-    <span style="display: block; font-size: 14px; color: #5f6368; margin-top: 8px; font-style: italic;">
+</div>
+<!-- Hero Thumbnail Banner -->
+<div style="text-align: center; margin: 18px 0 25px 0;">
+<img alt="সরকার ও রাজনৈতিক দল: ধারণা, সম্পর্ক ও বাংলাদেশে গণতান্ত্রিক চর্চা" height="675" loading="eager" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/government-political-parties-banner.png" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;" title="সরকার ও রাজনৈতিক দল সম্পর্ক ও গণতান্ত্রিক চর্চা" width="1200"/>
+<span style="display: block; font-size: 14px; color: #5f6368; margin-top: 8px; font-style: italic;">
       চিত্র: সংসদীয় গণতন্ত্রে সরকারি দল, বিরোধী দল, জাতীয় সংসদ ও সুশাসনের ভারসাম্য
     </span>
-  </div>
-
-  <div class="htbd-qbox" style="background: #f8f9fa; border-left: 5px solid #1a73e8; padding: 20px 24px; margin: 22px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-    <p style="margin: 0; font-size: 18px; line-height: 1.8;">
-      <strong>📌 সারসংক্ষেপ (Quick Overview):</strong> 
-      <strong>সরকার ও রাজনৈতিক দল (Government and Political Parties)</strong> হলো আধুনিক প্রতিনিধিত্বমূলক গণতন্ত্রের দুটি পারস্পরিক নির্ভরশীল অপরিহার্য স্তম্ভ। রাষ্ট্রবিজ্ঞানী ম্যাকাইভারের মতে, সরকার হলো রাষ্ট্রের ইচ্ছা প্রকাশের সাংগঠনিক যন্ত্র, আর রাজনৈতিক দল হলো সেই দলীয় ইঞ্জিন যার মাধ্যমে জনগণের সমর্থন নিয়ে একটি দল রাষ্ট্রক্ষমতায় অধিষ্ঠিত হয়ে সরকার গঠন করে। সংসদীয় শাসনব্যবস্থায় সরকারি দল যেমন নির্বাহী ক্ষমতা পরিচালনা করে, তেমনি একটি দায়িত্বশীল ও গঠনমূলক বিরোধী দল সরকারের স্বেচ্ছাচারিতা রোধ করে জবাবদিহিতা নিশ্চিত করে। নিচে এর সংজ্ঞা, পার্থক্য ও মডেল প্রশ্নোত্তর তুলে ধরা হলো।
-    </p>
-  </div>
-
-  <div class="htbd-toc-box">
-    <h3 style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;">📑 সূচিপত্র (Table of Contents)</h3>
-    <ul class="htbd-toc-list">
-      <li><a href="#definition">👉 ১. রাজনৈতিক দল ও সরকারের মৌলিক সংজ্ঞা ও তাত্ত্বিক ধারণা</a></li>
-      <li><a href="#functions">👉 ২. গণতান্ত্রিক শাসনব্যবস্থায় রাজনৈতিক দলের অপরিহার্য কার্যাবলি</a></li>
-      <li><a href="#systems">👉 ৩. দলীয় ব্যবস্থার শ্রেণিবিভাগ: একদলীয়, দ্বিদলীয় ও বহুদলীয় ব্যবস্থা</a></li>
-      <li><a href="#opposition">👉 ৪. সংসদীয় গণতন্ত্রে একটি শক্তিশালী বিরোধী দলের ভূমিকা ও গুরুত্ব</a></li>
-      <li><a href="#comparison-table">👉 ৫. সরকার বনাম রাজনৈতিক দলের তুলনামূলক পার্থক্য ছক</a></li>
-      <li><a href="#bd-context">👉 ৬. বাংলাদেশে রাজনৈতিক দলের চ্যালেঞ্জ ও গণতান্ত্রিক সংস্কারের পথ</a></li>
-      <li><a href="#faqs">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
-    </ul>
-  </div>
-
-  <h2 id="definition" class="htbd-heading">১. রাজনৈতিক দল ও সরকারের মৌলিক সংজ্ঞা ও তাত্ত্বিক ধারণা</h2>
-  <p>দার্শনিক এডমুন্ড বার্কের (Edmund Burke) ধ্রুপদী সংজ্ঞা অনুযায়ী—<em>"রাজনৈতিক দল হলো এমন একদল জনগোষ্ঠী যারা কোনো বিশেষ নীতির ওপর একমত হয়ে যৌথ প্রচেষ্টায় জাতীয় স্বার্থ সমুন্নত রাখার জন্য ঐক্যবদ্ধ হয়।"</em></p>
-  <p>অপরদিকে সরকার হলো রাষ্ট্রের সার্বভৌম ক্ষমতার বাস্তবায়নকারী কর্তৃপক্ষ, যা আইন বিভাগ, শাসন বিভাগ এবং বিচার বিভাগের সমন্বয়ে গঠিত। রাজনৈতিক দল হলো পরিবর্তনশীল ও অনানুষ্ঠানিক সংস্থা, কিন্তু সরকার হলো একটি আনুষ্ঠানিক ও আইনগত সাংবিধানিক প্রতিষ্ঠান।</p>
-
-  <h2 id="functions" class="htbd-heading">২. গণতান্ত্রিক শাসনব্যবস্থায় রাজনৈতিক দলের অপরিহার্য কার্যাবলি</h2>
-  <ul>
-    <li><strong>জনমত গঠন:</strong> জাতীয় সংকট ও জনগুরুত্বপূর্ণ বিষয়ে জনগণকে সচেতন করা ও দাবি সুসংহত করা।</li>
-    <li><strong>যোগ্য প্রার্থী মনোনয়ন:</strong> নির্বাচনে যোগ্য ও সৎ প্রার্থী বাছাই করে জনগণের সামনে তুলে ধরা।</li>
-    <li><strong>সরকার গঠন ও নীতি প্রণয়ন:</strong> সংখ্যাগরিষ্ঠ ভোটে জয়লাভ করে মন্ত্রিপরিষদ গঠন ও নির্বাচনী ইশতেহার বাস্তবায়ন।</li>
-    <li><strong>রাজনৈতিক শিক্ষা বিস্তার:</strong> সভা-সমাবেশের মাধ্যমে সাধারণ মানুষকে নাগরিক অধিকার ও রাষ্ট্রীয় বিষয়ে রাজনৈতিক শিক্ষায় শিক্ষিত করা।</li>
-  </ul>
-
-  <div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
-  <strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;">📖 সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
-  <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-    <li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" target="_blank" rel="noopener">📌 Sher E Bangla Fazlul Haque Social Welfare</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html" target="_blank" rel="noopener">📌 Sarbobhoumotto Ki Songga Boishisto O Prokarved</a></li><li><a href="https://www.helptrickbd.com/2025/04/political-science-masters-exam-2022-all-short-questions-and-answers.html" target="_blank" rel="noopener">📌 Political Science Masters Exam All Short Questions Answers</a></li>
-  </ul>
+</div>
+<div class="htbd-qbox" style="background: #f8f9fa; border-left: 5px solid #1a73e8; padding: 20px 24px; margin: 22px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+<p style="margin: 0; font-size: 18px; line-height: 1.8;">
+<strong>📌 সারসংক্ষেপ (Quick Overview):</strong>
+<strong>সরকার ও রাজনৈতিক দল (Government and Political Parties)</strong> হলো আধুনিক প্রতিনিধিত্বমূলক গণতন্ত্রের দুটি পারস্পরিক নির্ভরশীল অপরিহার্য স্তম্ভ। রাষ্ট্রবিজ্ঞানী ম্যাকাইভারের মতে, সরকার হলো রাষ্ট্রের ইচ্ছা প্রকাশের সাংগঠনিক যন্ত্র, আর রাজনৈতিক দল হলো সেই দলীয় ইঞ্জিন যার মাধ্যমে জনগণের সমর্থন নিয়ে একটি দল রাষ্ট্রক্ষমতায় অধিষ্ঠিত হয়ে সরকার গঠন করে। সংসদীয় শাসনব্যবস্থায় সরকারি দল যেমন নির্বাহী ক্ষমতা পরিচালনা করে, তেমনি একটি দায়িত্বশীল ও গঠনমূলক বিরোধী দল সরকারের স্বেচ্ছাচারিতা রোধ করে জবাবদিহিতা নিশ্চিত করে। নিচে এর সংজ্ঞা, পার্থক্য ও মডেল প্রশ্নোত্তর তুলে ধরা হলো।
+    </p><div class="ht-toc-container" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 22px; margin: 24px 0; font-family: 'SolaimanLipi', sans-serif;">
+<div style="font-weight: 700; font-size: 18px; color: #0f172a; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+<span>📌 এই আর্টিকেলের গুরুত্বপূর্ণ সূচিপত্র</span>
+<span style="font-size: 12px; color: #64748b; font-weight: normal;">(পড়ার সুবিধার্থে ক্লিক করে সরাসরি যান)</span>
+</div>
+<ul style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+<li style="margin-left: 20px;"><a href="#section-1" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #475569; text-decoration: none; font-size: 15px; transition: color 0.2s;">↳ 📑 সূচিপত্র (Table of Contents)</a></li>
+<li style="font-weight: 600;"><a href="#definition" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ১. রাজনৈতিক দল ও সরকারের মৌলিক সংজ্ঞা ও তাত্ত্বিক ধারণা</a></li>
+<li style="font-weight: 600;"><a href="#functions" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ২. গণতান্ত্রিক শাসনব্যবস্থায় রাজনৈতিক দলের অপরিহার্য কার্যাবলি</a></li>
+<li style="font-weight: 600;"><a href="#comparison-table" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৫. সরকার বনাম রাজনৈতিক দলের তুলনামূলক পার্থক্য ছক</a></li>
+<li style="font-weight: 600;"><a href="#civil-society-role" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৫.১ সুশাসন প্রতিষ্ঠায় নাগরিক সমাজ ও স্বাধীন নির্বাচন কমিশনের ভূমিকা</a></li>
+<li style="font-weight: 600;"><a href="#faqs" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+</div>
+<div class="htbd-toc-box">
+<h3 id="section-1" style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;">📑 সূচিপত্র (Table of Contents)</h3>
+<ul class="htbd-toc-list">
+<li><a href="#definition">👉 ১. রাজনৈতিক দল ও সরকারের মৌলিক সংজ্ঞা ও তাত্ত্বিক ধারণা</a></li>
+<li><a href="#functions">👉 ২. গণতান্ত্রিক শাসনব্যবস্থায় রাজনৈতিক দলের অপরিহার্য কার্যাবলি</a></li>
+<li><a href="#systems">👉 ৩. দলীয় ব্যবস্থার শ্রেণিবিভাগ: একদলীয়, দ্বিদলীয় ও বহুদলীয় ব্যবস্থা</a></li>
+<li><a href="#opposition">👉 ৪. সংসদীয় গণতন্ত্রে একটি শক্তিশালী বিরোধী দলের ভূমিকা ও গুরুত্ব</a></li>
+<li><a href="#comparison-table">👉 ৫. সরকার বনাম রাজনৈতিক দলের তুলনামূলক পার্থক্য ছক</a></li>
+<li><a href="#bd-context">👉 ৬. বাংলাদেশে রাজনৈতিক দলের চ্যালেঞ্জ ও গণতান্ত্রিক সংস্কারের পথ</a></li>
+<li><a href="#faqs">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="definition">১. রাজনৈতিক দল ও সরকারের মৌলিক সংজ্ঞা ও তাত্ত্বিক ধারণা</h2>
+<div class="ht-meta-engagement-badge" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 24px 0; padding: 10px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 6px; font-family: 'SolaimanLipi', sans-serif; font-size: 15px; color: #334155;">
+<span style="font-weight: 600; color: #0369a1;">⏱️ পড়ার আনুমানিক সময়: ৯ মিনিট (১৫৩৯ শব্দ)</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; font-size: 13px; font-weight: 600;">✅ সর্বশেষ হালনাগাদ ২০২৬</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="color: #64748b; font-size: 14px;">🎓 HelpTrickBD Verified Study Guide</span>
 </div>
 
-  <h2 id="comparison-table" class="htbd-heading">৫. সরকার বনাম রাজনৈতিক দলের তুলনামূলক পার্থক্য ছক</h2>
-  <div class="htbd-table-wrapper">
-    <table class="htbd-table">
-      <thead>
-        <tr>
-          <th>পার্থক্যসূচক বিষয়</th>
-          <th>সরকার (Government)</th>
-          <th>রাজনৈতিক দল (Political Party)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>আইনগত মর্যাদা</strong></td>
-          <td>রাষ্ট্রের সাংবিধানিক ও আইনি ক্ষমতাপ্রাপ্ত অঙ্গ</td>
-          <td>একটি স্বেচ্ছাসেবী রাজনৈতিক ও সামাজিক সংগঠন</td>
-        </tr>
-        <tr>
-          <td><strong>সদস্যপদ</strong></td>
-          <td>দেশের সকল নাগরিক সরকারের অধীন</td>
-          <td>একটি নির্দিষ্ট মতাদর্শের মানুষেরাই দলের সদস্য হন</td>
-        </tr>
-        <tr>
-          <td><strong>স্থায়িত্ব</strong></td>
-          <td>সরকার একটি স্থায়ী প্রতিষ্ঠান (ব্যক্তি বদলালেও আসন থাকে)</td>
-          <td>নির্বাচনে পরাজয় বা ভাঙনে দলের ক্ষমতা পরিবর্তিত হয়</td>
-        </tr>
-        <tr>
-          <td><strong>ক্ষমতা প্রয়োগ</strong></td>
-          <td>বাধ্যতামূলকভাবে আইন ও বলপ্রয়োগের অধিকারী</td>
-          <td>শুধুমাত্র প্ররোচনা ও জনমতের ওপর নির্ভরশীল</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  
-  <h2 id="civil-society-role" class="htbd-heading">৫.১ সুশাসন প্রতিষ্ঠায় নাগরিক সমাজ ও স্বাধীন নির্বাচন কমিশনের ভূমিকা</h2>
-  <p>শুধুমাত্র নির্বাচনের মাধ্যমে সরকার গঠন করাই গণতন্ত্রের শেষ কথা নয়; বরং নির্বাচনের পর সরকারের জবাবদিহিতা নিশ্চিত করতে একটি স্বাধীন গণমাধ্যম, শক্তিশালী নাগরিক সমাজ (Civil Society) এবং নিরপেক্ষ নির্বাচন কমিশন অপরিহার্য।</p>
-  <p>যখন একটি রাষ্ট্রে নির্বাচনী প্রক্রিয়া বিতর্কিত হয় বা রাজনৈতিক দলগুলোর ভেতর অভ্যন্তরীণ গণতন্ত্রের চর্চা থাকে না, তখন ক্ষমতার ভারসাম্য ভেঙে পড়ে। তাই কার্যকর গণতন্ত্রের পূর্বশর্ত হলো প্রতিটি দলের তৃণমূল থেকে শীর্ষ পর্যন্ত সৎ, যোগ্য ও গণতান্ত্রিকভাবে নেতৃত্ব বাছাই করা।</p>
-
-  <h2 id="faqs" class="htbd-heading">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
-  <div style="margin-top: 15px;">
-    <p><strong>প্রশ্ন ১: সংসদীয় গণতন্ত্রের বিকল্প সরকার (Shadow Government) বলা হয় কাকে?</strong><br>
+<p>দার্শনিক এডমুন্ড বার্কের (Edmund Burke) ধ্রুপদী সংজ্ঞা অনুযায়ী—<em>"রাজনৈতিক দল হলো এমন একদল জনগোষ্ঠী যারা কোনো বিশেষ নীতির ওপর একমত হয়ে যৌথ প্রচেষ্টায় জাতীয় স্বার্থ সমুন্নত রাখার জন্য ঐক্যবদ্ধ হয়।"</em></p>
+<p>অপরদিকে সরকার হলো রাষ্ট্রের সার্বভৌম ক্ষমতার বাস্তবায়নকারী কর্তৃপক্ষ, যা আইন বিভাগ, শাসন বিভাগ এবং বিচার বিভাগের সমন্বয়ে গঠিত। রাজনৈতিক দল হলো পরিবর্তনশীল ও অনানুষ্ঠানিক সংস্থা, কিন্তু সরকার হলো একটি আনুষ্ঠানিক ও আইনগত সাংবিধানিক প্রতিষ্ঠান।</p>
+<h2 class="htbd-heading" id="functions">২. গণতান্ত্রিক শাসনব্যবস্থায় রাজনৈতিক দলের অপরিহার্য কার্যাবলি</h2>
+<ul>
+<li><strong>জনমত গঠন:</strong> জাতীয় সংকট ও জনগুরুত্বপূর্ণ বিষয়ে জনগণকে সচেতন করা ও দাবি সুসংহত করা।</li>
+<li><strong>যোগ্য প্রার্থী মনোনয়ন:</strong> নির্বাচনে যোগ্য ও সৎ প্রার্থী বাছাই করে জনগণের সামনে তুলে ধরা।</li>
+<li><strong>সরকার গঠন ও নীতি প্রণয়ন:</strong> সংখ্যাগরিষ্ঠ ভোটে জয়লাভ করে মন্ত্রিপরিষদ গঠন ও নির্বাচনী ইশতেহার বাস্তবায়ন।</li>
+<li><strong>রাজনৈতিক শিক্ষা বিস্তার:</strong> সভা-সমাবেশের মাধ্যমে সাধারণ মানুষকে নাগরিক অধিকার ও রাষ্ট্রীয় বিষয়ে রাজনৈতিক শিক্ষায় শিক্ষিত করা।</li>
+</ul>
+<div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
+<strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;">📖 সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
+<ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+<li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" rel="noopener" target="_blank">📌 Sher E Bangla Fazlul Haque Social Welfare</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html" rel="noopener" target="_blank">📌 Sarbobhoumotto Ki Songga Boishisto O Prokarved</a></li><li><a href="https://www.helptrickbd.com/2025/04/political-science-masters-exam-2022-all-short-questions-and-answers.html" rel="noopener" target="_blank">📌 Political Science Masters Exam All Short Questions Answers</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="comparison-table">৫. সরকার বনাম রাজনৈতিক দলের তুলনামূলক পার্থক্য ছক</h2>
+<div class="htbd-table-wrapper">
+<table class="htbd-table">
+<thead>
+<tr>
+<th>পার্থক্যসূচক বিষয়</th>
+<th>সরকার (Government)</th>
+<th>রাজনৈতিক দল (Political Party)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>আইনগত মর্যাদা</strong></td>
+<td>রাষ্ট্রের সাংবিধানিক ও আইনি ক্ষমতাপ্রাপ্ত অঙ্গ</td>
+<td>একটি স্বেচ্ছাসেবী রাজনৈতিক ও সামাজিক সংগঠন</td>
+</tr>
+<tr>
+<td><strong>সদস্যপদ</strong></td>
+<td>দেশের সকল নাগরিক সরকারের অধীন</td>
+<td>একটি নির্দিষ্ট মতাদর্শের মানুষেরাই দলের সদস্য হন</td>
+</tr>
+<tr>
+<td><strong>স্থায়িত্ব</strong></td>
+<td>সরকার একটি স্থায়ী প্রতিষ্ঠান (ব্যক্তি বদলালেও আসন থাকে)</td>
+<td>নির্বাচনে পরাজয় বা ভাঙনে দলের ক্ষমতা পরিবর্তিত হয়</td>
+</tr>
+<tr>
+<td><strong>ক্ষমতা প্রয়োগ</strong></td>
+<td>বাধ্যতামূলকভাবে আইন ও বলপ্রয়োগের অধিকারী</td>
+<td>শুধুমাত্র প্ররোচনা ও জনমতের ওপর নির্ভরশীল</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="htbd-heading" id="civil-society-role">৫.১ সুশাসন প্রতিষ্ঠায় নাগরিক সমাজ ও স্বাধীন নির্বাচন কমিশনের ভূমিকা</h2>
+<p>শুধুমাত্র নির্বাচনের মাধ্যমে সরকার গঠন করাই গণতন্ত্রের শেষ কথা নয়; বরং নির্বাচনের পর সরকারের জবাবদিহিতা নিশ্চিত করতে একটি স্বাধীন গণমাধ্যম, শক্তিশালী নাগরিক সমাজ (Civil Society) এবং নিরপেক্ষ নির্বাচন কমিশন অপরিহার্য।</p>
+<p>যখন একটি রাষ্ট্রে নির্বাচনী প্রক্রিয়া বিতর্কিত হয় বা রাজনৈতিক দলগুলোর ভেতর অভ্যন্তরীণ গণতন্ত্রের চর্চা থাকে না, তখন ক্ষমতার ভারসাম্য ভেঙে পড়ে। তাই কার্যকর গণতন্ত্রের পূর্বশর্ত হলো প্রতিটি দলের তৃণমূল থেকে শীর্ষ পর্যন্ত সৎ, যোগ্য ও গণতান্ত্রিকভাবে নেতৃত্ব বাছাই করা।</p>
+<h2 class="htbd-heading" id="faqs">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+<div style="margin-top: 15px;">
+<p><strong>প্রশ্ন ১: সংসদীয় গণতন্ত্রের বিকল্প সরকার (Shadow Government) বলা হয় কাকে?</strong><br/>
     উত্তর: প্রধান বিরোধী দলকে 'বিকল্প সরকার' বা 'ছায়া সরকার' বলা হয়।</p>
-    
-    <p><strong>প্রশ্ন ২: দ্বিদলীয় ব্যবস্থা প্রচলিত আছে কোন কোন দেশে?</strong><br>
+<p><strong>প্রশ্ন ২: দ্বিদলীয় ব্যবস্থা প্রচলিত আছে কোন কোন দেশে?</strong><br/>
     উত্তর: যুক্তরাজ্য (কনজারভেটিভ ও লেবার পার্টি) এবং মার্কিন যুক্তরাষ্ট্রে (ডেমোক্রেটিক ও রিপাবলিকান পার্টি)।</p>
-  
-    <p><strong>প্রশ্ন ৩: রাজনৈতিক দলের প্রধান লক্ষ্য কী?</strong><br>
+<p><strong>প্রশ্ন ৩: রাজনৈতিক দলের প্রধান লক্ষ্য কী?</strong><br/>
     উত্তর: সাংবিধানিক ও শান্তিপূর্ণ নির্বাচনের মাধ্যমে রাষ্ট্রক্ষমতা অর্জন করে জনকল্যাণমূলক নীতি ও কর্মসূচি বাস্তবায়ন করা।</p>
-    <p><strong>প্রশ্ন ৪: বাংলাদেশের সংবিধানের কোন অনুচ্ছেদে বাক ও সংগঠনের স্বাধীনতার কথা বলা হয়েছে?</strong><br>
+<p><strong>প্রশ্ন ৪: বাংলাদেশের সংবিধানের কোন অনুচ্ছেদে বাক ও সংগঠনের স্বাধীনতার কথা বলা হয়েছে?</strong><br/>
     উত্তর: সংবিধানের ৩৯ অনুচ্ছেদে চিন্তা ও বিবেকের স্বাধীনতা এবং ৩৮ অনুচ্ছেদে সমিতি ও সংগঠন গঠনের মৌলিক অধিকার দেওয়া হয়েছে।</p>
-  </div>
 </div>
-
+</div>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -246,6 +265,16 @@
   ]
 }
 </script>
-
 </body>
 </html>
+<div class="ht-social-share-box" style="margin: 36px 0 20px 0; padding: 18px 22px; background: #faf5ff; border: 1px dashed #a855f7; border-radius: 8px; font-family: 'SolaimanLipi', sans-serif; text-align: center;">
+<p style="margin: 0 0 12px 0; font-size: 16px; font-weight: 700; color: #581c87;">📢 আপনার সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন:</p>
+<div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+<a href="https://api.whatsapp.com/send?text=Helpful%20Study%20Guide:%20" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; background: #25d366; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; text-decoration: none; font-weight: 600;" target="_blank">
+      💬 WhatsApp এ পাঠান
+    </a>
+<a href="https://www.facebook.com/sharer/sharer.php" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; background: #1877f2; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; text-decoration: none; font-weight: 600;" target="_blank">
+      📘 Facebook এ শেয়ার করুন
+    </a>
+</div>
+</div>

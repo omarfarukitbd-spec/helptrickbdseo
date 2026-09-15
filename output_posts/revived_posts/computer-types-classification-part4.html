@@ -1,15 +1,32 @@
+
+<!-- HelpTrickBD Zero-Lag Scroll Progress Bar -->
+<div id="ht-reading-progress-container" style="position: sticky; top: 0; left: 0; width: 100%; height: 5px; background: rgba(226, 232, 240, 0.4); z-index: 99999;">
+<div id="ht-reading-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #2563eb, #38bdf8, #10b981); transition: width 0.1s ease-out;"></div>
+</div>
+<script>
+(function() {
+  window.addEventListener('scroll', function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (height > 0) ? (winScroll / height) * 100 : 0;
+    var bar = document.getElementById("ht-reading-progress-bar");
+    if (bar) { bar.style.width = scrolled + "%"; }
+  }, { passive: true });
+})();
+</script>
 <!DOCTYPE html>
+
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>কম্পিউটারের প্রকারভেদ: অ্যানালগ, ডিজিটাল, হাইব্রিড ও সুপার কম্পিউটার (পার্ট-৪)</title>
-  <meta name="description" content="কম্পিউটারের পূর্ণাঙ্গ শ্রেণিবিভাগ: কাজের নীতি ও আকারভেদে অ্যানালগ, ডিজিটাল, হাইব্রিড, সুপার, মেইনফ্রেম ও মাইক্রোকম্পিউটারের বিস্তারিত গাইড।">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<title>কম্পিউটারের প্রকারভেদ: অ্যানালগ, ডিজিটাল, হাইব্রিড ও সুপার কম্পিউটার (পার্ট-৪)</title>
+<meta content="কম্পিউটারের পূর্ণাঙ্গ শ্রেণিবিভাগ: কাজের নীতি ও আকারভেদে অ্যানালগ, ডিজিটাল, হাইব্রিড, সুপার, মেইনফ্রেম ও মাইক্রোকম্পিউটারের বিস্তারিত গাইড।" name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 </head>
 <body>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
   @font-face {
     font-family: 'SolaimanLipi';
@@ -107,130 +124,132 @@
     background-color: #f8fafd !important;
   }
 </style>
-
 <div class="htbd-post-wrapper">
-  <div style="margin-bottom: 18px;">
-    <span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
+<div style="margin-bottom: 18px;">
+<span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
       📚 বিভাগ: তথ্য ও যোগাযোগ প্রযুক্তি (ICT) | সর্বশেষ সংস্করণ: ২০২৬ | পূর্ণাঙ্গ শ্রেণিবিভাগ গাইড
     </span>
-  </div>
-
-  <!-- Hero Thumbnail Banner -->
-  <div style="text-align: center; margin: 18px 0 25px 0;">
-    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/computer-types-part4-banner.png" 
-         alt="কম্পিউটারের প্রকারভেদ: অ্যানালগ, ডিজিটাল, হাইব্রিড ও সুপার কম্পিউটার" 
-         title="কম্পিউটারের সম্পূর্ণ শ্রেণিবিভাগ"
-         width="1200" height="675"
-         loading="eager"
-         style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;"/>
-    <span style="display: block; font-size: 14px; color: #5f6368; margin-top: 8px; font-style: italic;">
+</div>
+<!-- Hero Thumbnail Banner -->
+<div style="text-align: center; margin: 18px 0 25px 0;">
+<img alt="কম্পিউটারের প্রকারভেদ: অ্যানালগ, ডিজিটাল, হাইব্রিড ও সুপার কম্পিউটার" height="675" loading="eager" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/computer-types-part4-banner.png" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;" title="কম্পিউটারের সম্পূর্ণ শ্রেণিবিভাগ" width="1200"/>
+<span style="display: block; font-size: 14px; color: #5f6368; margin-top: 8px; font-style: italic;">
       চিত্র: কাজের ধরণ ও ক্ষমতাভেদে সুপার কম্পিউটার, সার্ভার, ল্যাপটপ ও ডিজিটাল কম্পিউটারের শ্রেণিবিন্যাস
     </span>
-  </div>
-
-  <div class="htbd-qbox" style="background: #f8f9fa; border-left: 5px solid #1a73e8; padding: 20px 24px; margin: 22px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-    <p style="margin: 0; font-size: 18px; line-height: 1.8;">
-      <strong>📌 সারসংক্ষেপ (Quick Overview):</strong> 
-      <strong>কম্পিউটারের শ্রেণিবিভাগ (Classification of Computers)</strong> প্রধানত দুটি মানদণ্ডের ওপর ভিত্তি করে করা হয়—<strong>১. প্রয়োগনীতি বা কাজের ধরন</strong> এবং <strong>২. আকার, আকৃতি ও কার্যক্ষমতা</strong>। প্রয়োগনীতির দিক থেকে কম্পিউটার ৩ প্রকার: অ্যানালগ, ডিজিটাল এবং হাইব্রিড। অন্যদিকে আকার ও ক্ষমতার ভিত্তিতে ডিজিটাল কম্পিউটার আবার ৪ প্রকার: সুপার কম্পিউটার, মেইনফ্রেম, মিনি এবং মাইক্রোকম্পিউটার (পিসি, ল্যাপটপ ইত্যাদি)। নিচে এই প্রতিটি বিভাগের বাস্তব প্রয়োগ, কার্যপদ্ধতি ও পূর্ণাঙ্গ তথ্য ছক বিস্তারিত আলোচনা করা হলো।
-    </p>
-  </div>
-
-  <div class="htbd-toc-box">
-    <h3 style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;">📑 সূচিপত্র (Table of Contents)</h3>
-    <ul class="htbd-toc-list">
-      <li><a href="#principles">👉 ১. কাজের প্রকৃতি অনুসারে শ্রেণিবিভাগ (অ্যানালগ, ডিজিটাল ও হাইব্রিড)</a></li>
-      <li><a href="#supercomputers">👉 ২. সুপার কম্পিউটার: ক্ষমতা, গতি ও বৈজ্ঞানিক গবেষণা ক্ষেত্র</a></li>
-      <li><a href="#mainframe-mini">👉 ৩. মেইনফ্রেম ও মিনি কম্পিউটার: ব্যাংকিং ও সার্ভার নেটওয়ার্ক</a></li>
-      <li><a href="#micro">👉 ৪. মাইক্রোকম্পিউটার: ডেস্কটপ, ল্যাপটপ, ট্যাবলেট ও স্মার্টফোন</a></li>
-      <li><a href="#embedded">👉 ৫. এমবেডেড কম্পিউটার (Embedded Systems): আইওটি ও আধুনিক গাড়ি</a></li>
-      <li><a href="#types-table">👉 ৬. সকল প্রকার কম্পিউটারের তুলনামূলক বিশ্লেষণ তথ্য ছক</a></li>
-      <li><a href="#faqs">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
-    </ul>
-  </div>
-
-  <h2 id="principles" class="htbd-heading">১. কাজের প্রকৃতি অনুসারে শ্রেণিবিভাগ (অ্যানালগ, ডিজিটাল ও হাইব্রিড)</h2>
-  <ul>
-    <li><strong>অ্যানালগ কম্পিউটার (Analog):</strong> যা ভোল্টেজ, তাপমাত্রা, বায়ুর চাপ বা তরলের ঘনত্বের মতো ক্রমাগত পরিবর্তনশীল ভৌত রাশির পরিমাপ করে কাজ করে। উদাহরণ: স্পিডোমিটার, ব্যারোমিটার।</li>
-    <li><strong>ডিজিটাল কম্পিউটার (Digital):</strong> যা বিচ্ছিন্ন সংকেত (০ এবং ১) ব্যবহার করে সুনির্দিষ্ট গাণিতিক ও যৌক্তিক হিসাব সম্পন্ন করে। উদাহরণ: আমাদের ব্যবহৃত পিসি, ম্যাক ও ল্যাপটপ।</li>
-    <li><strong>হাইব্রিড কম্পিউটার (Hybrid):</strong> যা অ্যানালগ ও ডিজিটাল উভয়ের বৈশিষ্ট্যের সমন্বয়ে গঠিত। ইনপুট অ্যানালগ হলেও প্রসেসিং ও আউটপুট হয় ডিজিটালি। উদাহরণ: হাসপাতালের আইসিইউ (ICU)-এর হার্টবিট মনিটর, রক্তচাপ মাপার মেশিন।</li>
-  </ul>
-
-  <h2 id="supercomputers" class="htbd-heading">২. সুপার কম্পিউটার: ক্ষমতা, গতি ও বৈজ্ঞানিক গবেষণা ক্ষেত্র</h2>
-  <p>সুপার কম্পিউটার হলো পৃথিবীর সবচেয়ে দ্রুতগামী এবং শক্তিশালী কম্পিউটার। এর গতি পরিমাপ করা হয় <strong>ফ্লপস (FLOPS - Floating Point Operations Per Second)</strong>-এ। বর্তমানে সেরা সুপার কম্পিউটারগুলো 'এক্সাফ্লপস' (Exaflops) গতিতে কাজ করে। পারমাণবিক অস্ত্রের সিমুলেশন, আবহাওয়া পূর্বাভাস, মহাকাশ গবেষণা এবং কৃত্রিম বুদ্ধিমত্তা প্রশিক্ষণে সুপার কম্পিউটার ব্যবহৃত হয়। উদাহরণ: Frontier (USA), Fugaku (Japan)।</p>
-
-  <div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
-  <strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;">📖 সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
-  <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-    <li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" target="_blank" rel="noopener">📌 Sher E Bangla Fazlul Haque Social Welfare</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html" target="_blank" rel="noopener">📌 Sarbobhoumotto Ki Songga Boishisto O Prokarved</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotter-ekottobad-o-bohubadi-motobad.html" target="_blank" rel="noopener">📌 Sarbobhoumotter Ekottobad O Bohubadi Motobad</a></li>
-  </ul>
+</div>
+<div class="htbd-qbox" style="background: #f8f9fa; border-left: 5px solid #1a73e8; padding: 20px 24px; margin: 22px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+<p style="margin: 0; font-size: 18px; line-height: 1.8;">
+<strong>📌 সারসংক্ষেপ (Quick Overview):</strong>
+<strong>কম্পিউটারের শ্রেণিবিভাগ (Classification of Computers)</strong> প্রধানত দুটি মানদণ্ডের ওপর ভিত্তি করে করা হয়—<strong>১. প্রয়োগনীতি বা কাজের ধরন</strong> এবং <strong>২. আকার, আকৃতি ও কার্যক্ষমতা</strong>। প্রয়োগনীতির দিক থেকে কম্পিউটার ৩ প্রকার: অ্যানালগ, ডিজিটাল এবং হাইব্রিড। অন্যদিকে আকার ও ক্ষমতার ভিত্তিতে ডিজিটাল কম্পিউটার আবার ৪ প্রকার: সুপার কম্পিউটার, মেইনফ্রেম, মিনি এবং মাইক্রোকম্পিউটার (পিসি, ল্যাপটপ ইত্যাদি)। নিচে এই প্রতিটি বিভাগের বাস্তব প্রয়োগ, কার্যপদ্ধতি ও পূর্ণাঙ্গ তথ্য ছক বিস্তারিত আলোচনা করা হলো।
+    </p><div class="ht-toc-container" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 22px; margin: 24px 0; font-family: 'SolaimanLipi', sans-serif;">
+<div style="font-weight: 700; font-size: 18px; color: #0f172a; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+<span>📌 এই আর্টিকেলের গুরুত্বপূর্ণ সূচিপত্র</span>
+<span style="font-size: 12px; color: #64748b; font-weight: normal;">(পড়ার সুবিধার্থে ক্লিক করে সরাসরি যান)</span>
+</div>
+<ul style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+<li style="margin-left: 20px;"><a href="#section-1" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #475569; text-decoration: none; font-size: 15px; transition: color 0.2s;">↳ 📑 সূচিপত্র (Table of Contents)</a></li>
+<li style="font-weight: 600;"><a href="#principles" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ১. কাজের প্রকৃতি অনুসারে শ্রেণিবিভাগ (অ্যানালগ, ডিজিটাল ও হাইব্রিড)</a></li>
+<li style="font-weight: 600;"><a href="#supercomputers" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ২. সুপার কম্পিউটার: ক্ষমতা, গতি ও বৈজ্ঞানিক গবেষণা ক্ষেত্র</a></li>
+<li style="font-weight: 600;"><a href="#types-table" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৬. সকল প্রকার কম্পিউটারের তুলনামূলক বিশ্লেষণ তথ্য ছক</a></li>
+<li style="font-weight: 600;"><a href="#micro-evolution" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৫.১ মাইক্রোকম্পিউটারের রূপান্তর: পিসি থেকে পরিধেয় প্রযুক্তি (Wearable Tech)</a></li>
+<li style="font-weight: 600;"><a href="#faqs" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+</div>
+<div class="htbd-toc-box">
+<h3 id="section-1" style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;">📑 সূচিপত্র (Table of Contents)</h3>
+<ul class="htbd-toc-list">
+<li><a href="#principles">👉 ১. কাজের প্রকৃতি অনুসারে শ্রেণিবিভাগ (অ্যানালগ, ডিজিটাল ও হাইব্রিড)</a></li>
+<li><a href="#supercomputers">👉 ২. সুপার কম্পিউটার: ক্ষমতা, গতি ও বৈজ্ঞানিক গবেষণা ক্ষেত্র</a></li>
+<li><a href="#mainframe-mini">👉 ৩. মেইনফ্রেম ও মিনি কম্পিউটার: ব্যাংকিং ও সার্ভার নেটওয়ার্ক</a></li>
+<li><a href="#micro">👉 ৪. মাইক্রোকম্পিউটার: ডেস্কটপ, ল্যাপটপ, ট্যাবলেট ও স্মার্টফোন</a></li>
+<li><a href="#embedded">👉 ৫. এমবেডেড কম্পিউটার (Embedded Systems): আইওটি ও আধুনিক গাড়ি</a></li>
+<li><a href="#types-table">👉 ৬. সকল প্রকার কম্পিউটারের তুলনামূলক বিশ্লেষণ তথ্য ছক</a></li>
+<li><a href="#faqs">👉 ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="principles">১. কাজের প্রকৃতি অনুসারে শ্রেণিবিভাগ (অ্যানালগ, ডিজিটাল ও হাইব্রিড)</h2>
+<div class="ht-meta-engagement-badge" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 24px 0; padding: 10px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 6px; font-family: 'SolaimanLipi', sans-serif; font-size: 15px; color: #334155;">
+<span style="font-weight: 600; color: #0369a1;">⏱️ পড়ার আনুমানিক সময়: ৯ মিনিট (১৫৮৬ শব্দ)</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; font-size: 13px; font-weight: 600;">✅ সর্বশেষ হালনাগাদ ২০২৬</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="color: #64748b; font-size: 14px;">🎓 HelpTrickBD Verified Study Guide</span>
 </div>
 
-  <h2 id="types-table" class="htbd-heading">৬. সকল প্রকার কম্পিউটারের তুলনামূলক বিশ্লেষণ তথ্য ছক</h2>
-  <div class="htbd-table-wrapper">
-    <table class="htbd-table">
-      <thead>
-        <tr>
-          <th>কম্পিউটারের প্রকার</th>
-          <th>মূল বৈশিষ্ট্য</th>
-          <th>ব্যবহারকারী ও ক্ষেত্র</th>
-          <th>উদাহরণ</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>সুপার কম্পিউটার</strong></td>
-          <td>সর্বোচ্চ প্রসেসিং গতি ও হাজার হাজার সমান্তরাল সিপিইউ</td>
-          <td>নাসা, আবহাওয়া অধিদপ্তর, পারমাণবিক গবেষণা</td>
-          <td>Frontier, Summit</td>
-        </tr>
-        <tr>
-          <td><strong>মেইনফ্রেম</strong></td>
-          <td>বিশাল ডেটা সংরক্ষণ ও শত শত টার্মিনাল সাপোর্ট</td>
-          <td>বড় ব্যাংক, এয়ারলাইন্স রিজার্ভেশন, জাতীয় ডাটাবেজ</td>
-          <td>IBM z16</td>
-        </tr>
-        <tr>
-          <td><strong>মিনি কম্পিউটার</strong></td>
-          <td>মাঝারি আকারের মাল্টি-ইউজার নেটওয়ার্ক সিস্টেম</td>
-          <td>বিশ্ববিদ্যালয়, মাঝারি শিল্প কারখানা</td>
-          <td>PDP-11, VAX</td>
-        </tr>
-        <tr>
-          <td><strong>মাইক্রোকম্পিউটার</strong></td>
-          <td>একক মাইক্রোপ্রসেসর বিশিষ্ট ব্যক্তিগত পিসি</td>
-          <td>সাধারণ ব্যবহারকারী, শিক্ষার্থী, অফিস</td>
-          <td>Dell, HP, Apple Mac</td>
-        </tr>
-        <tr>
-          <td><strong>হাইব্রিড</strong></td>
-          <td>অ্যানালগ সংকেতকে ডিজিটালে রূপান্তর</td>
-          <td>হাসপাতালের আইসিইউ, রকেট লঞ্চ প্যাড</td>
-          <td>ইসিজি মেশিন, ডায়ালাইসিস</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  
-  <h2 id="micro-evolution" class="htbd-heading">৫.১ মাইক্রোকম্পিউটারের রূপান্তর: পিসি থেকে পরিধেয় প্রযুক্তি (Wearable Tech)</h2>
-  <p>১৯৭০-এর দশকে মাইক্রোপ্রসেসর আবিষ্কারের পর মাইক্রোকম্পিউটার বিশাল ডেস্কটপ থেকে আজ হাতের মুঠোয় স্মার্টফোন ও স্মার্টওয়াচে পরিণত হয়েছে। ইন্টেল ও এআরএম (ARM) আর্কিটেকচারের সাশ্রয়ী চিপগুলোর কারণে আজ একটি সাধারণ স্মার্টফোনের প্রসেসিং ক্ষমতা ১৯৬৯ সালে অ্যাপোলো ১১ চন্দ্রাভিযানের মূল কম্পিউটারের চেয়েও কোটি গুণ বেশি শক্তিশালী!</p>
-  <p>এছাড়া স্মার্ট হোম ডিভাইস, স্মার্ট টিভি এবং চিকিৎসা বিজ্ঞানের রোবোটিক সার্জারিতে ব্যবহৃত কম্পিউটারগুলো সবই মাইক্রোকম্পিউটারের অত্যাধুনিক সংস্করণ।</p>
-
-  <h2 id="faqs" class="htbd-heading">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
-  <div style="margin-top: 15px;">
-    <p><strong>প্রশ্ন ১: সুপার কম্পিউটারের গতি মাপার একক কী?</strong><br>
+<ul>
+<li><strong>অ্যানালগ কম্পিউটার (Analog):</strong> যা ভোল্টেজ, তাপমাত্রা, বায়ুর চাপ বা তরলের ঘনত্বের মতো ক্রমাগত পরিবর্তনশীল ভৌত রাশির পরিমাপ করে কাজ করে। উদাহরণ: স্পিডোমিটার, ব্যারোমিটার।</li>
+<li><strong>ডিজিটাল কম্পিউটার (Digital):</strong> যা বিচ্ছিন্ন সংকেত (০ এবং ১) ব্যবহার করে সুনির্দিষ্ট গাণিতিক ও যৌক্তিক হিসাব সম্পন্ন করে। উদাহরণ: আমাদের ব্যবহৃত পিসি, ম্যাক ও ল্যাপটপ।</li>
+<li><strong>হাইব্রিড কম্পিউটার (Hybrid):</strong> যা অ্যানালগ ও ডিজিটাল উভয়ের বৈশিষ্ট্যের সমন্বয়ে গঠিত। ইনপুট অ্যানালগ হলেও প্রসেসিং ও আউটপুট হয় ডিজিটালি। উদাহরণ: হাসপাতালের আইসিইউ (ICU)-এর হার্টবিট মনিটর, রক্তচাপ মাপার মেশিন।</li>
+</ul>
+<h2 class="htbd-heading" id="supercomputers">২. সুপার কম্পিউটার: ক্ষমতা, গতি ও বৈজ্ঞানিক গবেষণা ক্ষেত্র</h2>
+<p>সুপার কম্পিউটার হলো পৃথিবীর সবচেয়ে দ্রুতগামী এবং শক্তিশালী কম্পিউটার। এর গতি পরিমাপ করা হয় <strong>ফ্লপস (FLOPS - Floating Point Operations Per Second)</strong>-এ। বর্তমানে সেরা সুপার কম্পিউটারগুলো 'এক্সাফ্লপস' (Exaflops) গতিতে কাজ করে। পারমাণবিক অস্ত্রের সিমুলেশন, আবহাওয়া পূর্বাভাস, মহাকাশ গবেষণা এবং কৃত্রিম বুদ্ধিমত্তা প্রশিক্ষণে সুপার কম্পিউটার ব্যবহৃত হয়। উদাহরণ: Frontier (USA), Fugaku (Japan)।</p>
+<div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
+<strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;">📖 সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
+<ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+<li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" rel="noopener" target="_blank">📌 Sher E Bangla Fazlul Haque Social Welfare</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html" rel="noopener" target="_blank">📌 Sarbobhoumotto Ki Songga Boishisto O Prokarved</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotter-ekottobad-o-bohubadi-motobad.html" rel="noopener" target="_blank">📌 Sarbobhoumotter Ekottobad O Bohubadi Motobad</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="types-table">৬. সকল প্রকার কম্পিউটারের তুলনামূলক বিশ্লেষণ তথ্য ছক</h2>
+<div class="htbd-table-wrapper">
+<table class="htbd-table">
+<thead>
+<tr>
+<th>কম্পিউটারের প্রকার</th>
+<th>মূল বৈশিষ্ট্য</th>
+<th>ব্যবহারকারী ও ক্ষেত্র</th>
+<th>উদাহরণ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>সুপার কম্পিউটার</strong></td>
+<td>সর্বোচ্চ প্রসেসিং গতি ও হাজার হাজার সমান্তরাল সিপিইউ</td>
+<td>নাসা, আবহাওয়া অধিদপ্তর, পারমাণবিক গবেষণা</td>
+<td>Frontier, Summit</td>
+</tr>
+<tr>
+<td><strong>মেইনফ্রেম</strong></td>
+<td>বিশাল ডেটা সংরক্ষণ ও শত শত টার্মিনাল সাপোর্ট</td>
+<td>বড় ব্যাংক, এয়ারলাইন্স রিজার্ভেশন, জাতীয় ডাটাবেজ</td>
+<td>IBM z16</td>
+</tr>
+<tr>
+<td><strong>মিনি কম্পিউটার</strong></td>
+<td>মাঝারি আকারের মাল্টি-ইউজার নেটওয়ার্ক সিস্টেম</td>
+<td>বিশ্ববিদ্যালয়, মাঝারি শিল্প কারখানা</td>
+<td>PDP-11, VAX</td>
+</tr>
+<tr>
+<td><strong>মাইক্রোকম্পিউটার</strong></td>
+<td>একক মাইক্রোপ্রসেসর বিশিষ্ট ব্যক্তিগত পিসি</td>
+<td>সাধারণ ব্যবহারকারী, শিক্ষার্থী, অফিস</td>
+<td>Dell, HP, Apple Mac</td>
+</tr>
+<tr>
+<td><strong>হাইব্রিড</strong></td>
+<td>অ্যানালগ সংকেতকে ডিজিটালে রূপান্তর</td>
+<td>হাসপাতালের আইসিইউ, রকেট লঞ্চ প্যাড</td>
+<td>ইসিজি মেশিন, ডায়ালাইসিস</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="htbd-heading" id="micro-evolution">৫.১ মাইক্রোকম্পিউটারের রূপান্তর: পিসি থেকে পরিধেয় প্রযুক্তি (Wearable Tech)</h2>
+<p>১৯৭০-এর দশকে মাইক্রোপ্রসেসর আবিষ্কারের পর মাইক্রোকম্পিউটার বিশাল ডেস্কটপ থেকে আজ হাতের মুঠোয় স্মার্টফোন ও স্মার্টওয়াচে পরিণত হয়েছে। ইন্টেল ও এআরএম (ARM) আর্কিটেকচারের সাশ্রয়ী চিপগুলোর কারণে আজ একটি সাধারণ স্মার্টফোনের প্রসেসিং ক্ষমতা ১৯৬৯ সালে অ্যাপোলো ১১ চন্দ্রাভিযানের মূল কম্পিউটারের চেয়েও কোটি গুণ বেশি শক্তিশালী!</p>
+<p>এছাড়া স্মার্ট হোম ডিভাইস, স্মার্ট টিভি এবং চিকিৎসা বিজ্ঞানের রোবোটিক সার্জারিতে ব্যবহৃত কম্পিউটারগুলো সবই মাইক্রোকম্পিউটারের অত্যাধুনিক সংস্করণ।</p>
+<h2 class="htbd-heading" id="faqs">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+<div style="margin-top: 15px;">
+<p><strong>প্রশ্ন ১: সুপার কম্পিউটারের গতি মাপার একক কী?</strong><br/>
     উত্তর: ফ্লপস (FLOPS - Floating Point Operations Per Second)।</p>
-    
-    <p><strong>প্রশ্ন ২: পিডিএ (PDA) কী ধরনের কম্পিউটার?</strong><br>
+<p><strong>প্রশ্ন ২: পিডিএ (PDA) কী ধরনের কম্পিউটার?</strong><br/>
     উত্তর: পিডিএ (Personal Digital Assistant) হলো হ্যান্ডহেল্ড ধরনের ক্ষুদ্র মাইক্রোকম্পিউটার।</p>
-  
-    <p><strong>প্রশ্ন ৩: মাইক্রোকম্পিউটার ও সুপার কম্পিউটারের প্রধান পার্থক্য কী?</strong><br>
+<p><strong>প্রশ্ন ৩: মাইক্রোকম্পিউটার ও সুপার কম্পিউটারের প্রধান পার্থক্য কী?</strong><br/>
     উত্তর: মাইক্রোকম্পিউটার একজন ব্যবহারকারীর দৈনন্দিন কাজের জন্য একক সিপিইউ ব্যবহার করে, আর সুপার কম্পিউটার হাজার হাজার প্রসেসরের সমন্বয়ে জটিল গাণিতিক ও বৈজ্ঞানিক গণনা পরিচালনা করে।</p>
-    <p><strong>প্রশ্ন ৪: বিশ্বের দ্রুততম সুপার কম্পিউটার কোনটি?</strong><br>
+<p><strong>প্রশ্ন ৪: বিশ্বের দ্রুততম সুপার কম্পিউটার কোনটি?</strong><br/>
     উত্তর: বর্তমানে যুক্তরাষ্ট্রের ওক রিজ ন্যাশনাল ল্যাবরেটরির 'ফ্রন্টিয়ার' (Frontier) বিশ্বের দ্রুততম এক্সাস্কেল সুপার কম্পিউটার।</p>
-  </div>
 </div>
-
+</div>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -255,6 +274,16 @@
   ]
 }
 </script>
-
 </body>
 </html>
+<div class="ht-social-share-box" style="margin: 36px 0 20px 0; padding: 18px 22px; background: #faf5ff; border: 1px dashed #a855f7; border-radius: 8px; font-family: 'SolaimanLipi', sans-serif; text-align: center;">
+<p style="margin: 0 0 12px 0; font-size: 16px; font-weight: 700; color: #581c87;">📢 আপনার সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন:</p>
+<div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+<a href="https://api.whatsapp.com/send?text=Helpful%20Study%20Guide:%20" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; background: #25d366; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; text-decoration: none; font-weight: 600;" target="_blank">
+      💬 WhatsApp এ পাঠান
+    </a>
+<a href="https://www.facebook.com/sharer/sharer.php" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; background: #1877f2; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 14px; text-decoration: none; font-weight: 600;" target="_blank">
+      📘 Facebook এ শেয়ার করুন
+    </a>
+</div>
+</div>
