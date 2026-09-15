@@ -98,9 +98,37 @@ pip install -r requirements.txt
   ```bash
   python tools/policy_guard/scan_live_site.py
   ```
-- **Submit URLs to Google Indexing API:**
+- **All-in-One Credentials & API Health Checker:**
   ```bash
-  python tools/indexer/ping_all_revived.py
+  python tools/check_all_credentials.py
+  ```
+- **10-20 KB Ultra WebP Image Compressor (Core Web Vitals):**
+  ```bash
+  python tools/image_optimizer/webp_compressor.py -i <IMAGE_PATH>
+  ```
+- **Google People Also Ask (PAA) Long-Tail Query Scraper:**
+  ```bash
+  python tools/paa_miner/paa_scraper.py -k "<KEYWORD>" --lang bn
+  ```
+- **Google Search Console Striking Distance (Page 2 Keywords) Miner:**
+  ```bash
+  python tools/gsc_miner/striking_distance_miner.py
+  ```
+- **Outbound & Inbound Link-Rot / Dead Link Guardian:**
+  ```bash
+  python tools/link_guardian/link_checker.py
+  ```
+- **Competitor SERP Content Gap Analyzer:**
+  ```bash
+  python tools/serp_analyzer/content_gap_analyzer.py -k "<KEYWORD>"
+  ```
+- **AdSense High-RPM Keyword Matcher & Ad Placement Advisor:**
+  ```bash
+  python tools/adsense_suite/rpm_booster.py -f <HTML_FILE>
+  ```
+- **Generate Authentic Tutorial Screenshots:**
+  ```bash
+  python tools/image_generator/build_real_annotated_tutorials.py
   ```
 
 ---
