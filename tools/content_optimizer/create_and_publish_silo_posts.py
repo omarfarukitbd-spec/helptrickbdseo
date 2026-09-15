@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
 tools/content_optimizer/create_and_publish_silo_posts.py
-HelpTrickBD Topical Authority Expansion Engine.
+HelpTrickBD Topical Authority Expansion Engine (Google-Standard Custom Permalink Edition).
 
-Creates 4 high-value, comprehensive flagship articles (1,300-1,500+ words each)
-with 16:9 banners (strictly 10-20 KB WebP), SolaimanLipi typography,
-Position-0 boxes, tables, dwell time boosters, and FAQ microdata.
-Directly publishes them to Blogger via Blogger API v3.
+Deletes generic 'blog-post*.html' posts, notifies Google Indexing of URL_DELETED,
+and publishes the 4 new flagship articles using the 2-step English slug technique
+to guarantee 100% Google-standard, keyword-rich permalinks.
 """
 
 import os
@@ -29,14 +28,22 @@ if PROJECT_ROOT not in sys.path:
 from tools.blogger_publisher.update_post import get_authenticated_service, BLOG_ID
 from tools.image_generator.banner_generator import generate_banner
 from tools.engagement_booster.dwell_optimizer import optimize_post_engagement
+from tools.indexer.index_now import submit_url, get_authenticated_service as get_indexing_service
 
 OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output_posts", "new_silo_posts")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# 4 New Flagship Articles Definition
+# 4 Generic IDs to purge
+GENERIC_POSTS_TO_DELETE = [
+    ("4492713766663660802", "https://www.helptrickbd.com/2026/09/blog-post.html"),
+    ("1150610782355395631", "https://www.helptrickbd.com/2026/09/blog-post_15.html"),
+    ("7011106507492728087", "https://www.helptrickbd.com/2026/09/blog-post_910.html"),
+    ("4541992745905806299", "https://www.helptrickbd.com/2026/09/blog-post_535.html")
+]
+
 ARTICLES = [
     {
-        "slug": "computer-virus-and-cyber-security-guide-2026",
+        "slug": "computer-virus-cyber-security-guide-2026",
         "title": "কম্পিউটার ভাইরাস ও সাইবার নিরাপত্তা: ম্যালওয়্যার থেকে ডাটা সুরক্ষার সেরা উপায় (২০২৬)",
         "category": "তথ্য ও যোগাযোগ প্রযুক্তি",
         "labels": ["কম্পিউটার শিক্ষা", "তথ্য ও যোগাযোগ প্রযুক্তি"],
@@ -122,31 +129,6 @@ ARTICLES = [
   <h3>প্রশ্ন ২: ফ্রি অ্যান্টিভাইরাস কি যথেষ্ট?</h3>
   <p>উত্তর: সাধারণ ব্যক্তিগত ব্যবহারের জন্য উইন্ডোজ ১০ ও ১১-এর বিল্ট-ইন <strong>Windows Defender</strong> অত্যন্ত শক্তিশালী ও নিরাপদ। অতিরিক্ত কোনো ক্র্যাক অ্যান্টিভাইরাস ইন্সটল করার প্রয়োজন নেই।</p>
 </div>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "পেনড্রাইভের মাধ্যমে ভাইরাস ছড়ানো কীভাবে বন্ধ করা যায়?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "কম্পিউটারে পেনড্রাইভ প্রবেশ করিয়ে সরাসরি ডাবল ক্লিক করে খুলবেন না। অ্যান্টিভাইরাস দিয়ে প্রথমে স্ক্যান করে তারপর ওপেন করুন।"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ফ্রি অ্যান্টিভাইরাস কি যথেষ্ট?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "সাধারণ ব্যক্তিগত ব্যবহারের জন্য উইন্ডোজের বিল্ট-ইন Windows Defender অত্যন্ত শক্তিশালী ও যথেষ্ট।"
-      }
-    }
-  ]
-}
-</script>
 """
     },
     {
@@ -404,37 +386,42 @@ ARTICLES = [
 ]
 
 
-def create_and_publish():
+def purge_generic_posts_and_republish():
     service = get_authenticated_service()
     if not service:
         print("[!] Blogger API authentication failed.")
         sys.exit(1)
 
+    indexing_service = get_indexing_service()
+
     print("\n=======================================================")
-    print("  HelpTrickBD Topical Authority Expansion Engine")
+    print("  HelpTrickBD Custom Permalink Regeneration Engine")
     print("=======================================================")
 
-    published_urls = []
+    # Step 1: Purge Generic 'blog-post*.html' Posts
+    print("\n[*] Step 1: Purging generic 'blog-post*.html' posts...")
+    for pid, gurl in GENERIC_POSTS_TO_DELETE:
+        try:
+            service.posts().delete(blogId=BLOG_ID, postId=pid).execute()
+            print(f"    [🗑️ Deleted] Post ID: {pid} ({gurl})")
+            # Notify Google Indexing API of deletion
+            if indexing_service:
+                submit_url(indexing_service, gurl, action_type="URL_DELETED")
+                print(f"    [📡 Pinged Google] URL_DELETED: {gurl}")
+        except Exception as e:
+            print(f"    [i] Delete notice for {pid}: {e}")
+
+    # Step 2: Re-publish with 2-Step Custom Permalink Engine
+    print("\n[*] Step 2: Publishing posts with Google-standard custom English permalinks...")
+    new_published_urls = []
 
     for art in ARTICLES:
-        print(f"\n[*] Creating: {art['title']}")
-
-        # 1. Generate 16:9 Banner and 10-20KB WebP
-        banner_path = generate_banner(
-            filename=art["banner_filename"],
-            category_text=art["banner_category"],
-            title_text=art["banner_title"],
-            subtitle_text=art["banner_subtitle"],
-            features=art["banner_features"],
-            start_color=art["start_color"],
-            end_color=art["end_color"],
-            accent_color=art["accent_color"]
-        )
+        slug = art["slug"]
+        print(f"\n[*] Processing: {slug}")
 
         webp_filename = os.path.splitext(art["banner_filename"])[0] + ".webp"
         webp_rel_url = f"https://www.helptrickbd.com/images/{webp_filename}"
 
-        # 2. Build full HTML with SolaimanLipi, Hero Figure, and Content
         full_html = f"""
 <div class="htbd-article-body" style="font-family: 'SolaimanLipi', sans-serif; font-size: 18px; line-height: 1.85; color: #1e293b;">
   <figure style="margin: 0 0 25px 0; text-align: center;">
@@ -445,62 +432,66 @@ def create_and_publish():
   {art['body_paragraphs']}
 </div>
 """
-
-        # 3. Inject Dwell Time and Engagement boosters
         optimized_html, stats = optimize_post_engagement(full_html)
-        print(f"    - Content Prepared: {stats['word_count']} words | {stats['estimated_minutes']}m reading time | {stats['headings_count']} headings")
 
-        # 4. Save local copy in output_posts/new_silo_posts/
-        local_file = os.path.join(OUTPUT_DIR, f"{art['slug']}.html")
-        with open(local_file, "w", encoding="utf-8") as lf:
-            lf.write(optimized_html)
-
-        meta_file = local_file.replace(".html", "_metadata.json")
-        with open(meta_file, "w", encoding="utf-8") as mf:
-            json.dump({
-                "slug": art["slug"],
-                "title": art["title"],
-                "labels": art["labels"],
-                "meta_desc": art["meta_desc"],
-                "word_count": stats["word_count"]
-            }, mf, indent=2, ensure_ascii=False)
-
-        # 5. Publish to Blogger via Blogger API
-        post_body = {
+        # 2-Step Custom Permalink:
+        # Step A: Insert draft with slug as title to force Blogger to mint custom English permalink
+        english_title = slug.replace("-", " ")
+        draft_body = {
             "kind": "blogger#post",
-            "title": art["title"],
+            "title": english_title,
             "content": optimized_html,
             "labels": art["labels"]
         }
 
         try:
-            new_post = service.posts().insert(blogId=BLOG_ID, body=post_body, isDraft=False).execute()
-            post_id = new_post.get("id")
-            live_url = new_post.get("url")
-            print(f"    [+] Published Live on Blogger! ID: {post_id} -> {live_url}")
-            published_urls.append(live_url)
+            # 1. Insert draft
+            draft_post = service.posts().insert(blogId=BLOG_ID, body=draft_body, isDraft=True).execute()
+            post_id = draft_post["id"]
+            time.sleep(1)
 
-            # Update local metadata with live post_id
-            with open(meta_file, "r+", encoding="utf-8") as mf:
-                d = json.load(mf)
-                d["post_id"] = post_id
-                d["live_url"] = live_url
-                mf.seek(0)
-                json.dump(d, mf, indent=2, ensure_ascii=False)
-                mf.truncate()
+            # 2. Publish draft to cement permalink
+            pub_post = service.posts().publish(blogId=BLOG_ID, postId=post_id).execute()
+            minted_url = pub_post.get("url")
+            print(f"    [🔗 Minted Custom Permalink] {minted_url}")
+
+            # 3. Update title to full Bengali title
+            pub_post["title"] = art["title"]
+            final_post = service.posts().update(blogId=BLOG_ID, postId=post_id, body=pub_post).execute()
+            final_url = final_post.get("url")
+            print(f"    [✅ Live with Bengali Title] {final_url} (ID: {post_id})")
+            new_published_urls.append(final_url)
+
+            # Update local metadata
+            local_meta = os.path.join(OUTPUT_DIR, f"{slug}_metadata.json")
+            with open(local_meta, "w", encoding="utf-8") as lf:
+                json.dump({
+                    "slug": slug,
+                    "title": art["title"],
+                    "post_id": post_id,
+                    "live_url": final_url,
+                    "labels": art["labels"],
+                    "word_count": stats["word_count"]
+                }, lf, indent=2, ensure_ascii=False)
+
+            # Notify Google Indexing API of new clean URL
+            if indexing_service:
+                submit_url(indexing_service, final_url, action_type="URL_UPDATED")
+                print(f"    [📡 Pinged Google] URL_UPDATED: {final_url}")
 
             time.sleep(2)
-        except Exception as e:
-            print(f"    [!] Publishing failed: {e}")
 
-    # Save all newly published URLs for Google Indexing API
-    index_file = os.path.join(PROJECT_ROOT, "tools", "indexer", "new_silo_published_urls.txt")
-    with open(index_file, "w", encoding="utf-8") as inf:
-        for u in published_urls:
-            inf.write(u + "\n")
-    print(f"\n[+] Saved {len(published_urls)} new live URLs to {index_file}")
+        except Exception as e:
+            print(f"    [!] Failed to publish {slug}: {e}")
+
+    # Save URLs
+    out_file = os.path.join(PROJECT_ROOT, "tools", "indexer", "new_silo_custom_permalinks.txt")
+    with open(out_file, "w", encoding="utf-8") as f:
+        for u in new_published_urls:
+            f.write(u + "\n")
+    print(f"\n[+] Saved {len(new_published_urls)} custom permalinks to {out_file}")
     print("=======================================================\n")
 
 
 if __name__ == "__main__":
-    create_and_publish()
+    purge_generic_posts_and_republish()
