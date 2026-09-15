@@ -82,3 +82,21 @@ Never apply a single cookie-cutter format to all posts. Match the structure to t
    - Embed valid `application/ld+json` schema at the end of the post HTML:
      * `BlogPosting` schema with `headline`, `author`, `publisher`, `image`, and `datePublished`.
      * `FAQPage` schema containing at least 3–5 high-intent FAQ questions and comprehensive answers.
+
+---
+
+## 🏛️ 6. বাংলাদেশ সরকারি তথ্য ও অ্যান্টি-হ্যালুসিনেশন নীতিমালা (BD Grounding)
+1. **সরকারি সাইট ও গেজেট ভেরিফিকেশন**:
+   - শিক্ষাবোর্ড আবেদন (যেমন: ঢাকা শিক্ষা বোর্ড `dhakaeducationboard.gov.bd`), বিসিএস (`bpsc.gov.bd`), জাতীয় বিশ্ববিদ্যালয় (`nu.ac.bd`), এনআইডি (`nidw.gov.bd`), এবং সরকারি চাকরির আবেদন সম্পর্কিত যেকোনো পোস্ট লেখার সময় তথ্য সবসময় আসল সরকারি গেজেট ও পোর্টাল অনুযায়ী ভেরিফাই করতে হবে।
+2. **জিরো ফ্যাব্রিকেশন (No Invented Numbers/Dates)**:
+   - কোনো কাল্পনিক সোনালী সেবা ফি, ভুয়া বিজ্ঞপ্তির তারিখ, ভুল আবেদন লিঙ্ক বা অস্পষ্ট নিয়ম বানিয়ে লেখা সম্পূর্ণ নিষিদ্ধ।
+   - ফি বা নিয়ম পরিবর্তনশীল হলে সরকারি ওয়েবসাইটের সর্বশেষ নোটিশ উল্লেখ করে লিঙ্ক বা নির্দেশিকা দিতে হবে।
+
+---
+
+## 🔗 7. লাইভ ইন্টারনাল লিঙ্কিং ইন্টিগ্রিটি (Zero Dead Links)
+1. **শুধুমাত্র লাইভ ইউআরএল ব্যবহার**:
+   - আর্টিকেলে ইন্টারনাল লিঙ্ক দেওয়ার সময় কেবল `helptrickbd.com`-এর ইতিমধ্যে লাইভ ও গুগল ইনডেক্সড থাকা পোস্টগুলোর লিংক ব্যবহার করতে হবে।
+   - ড্রাফট অবস্থায় থাকা পোস্টের অনুমিত লিংক বা ভাঙা অ্যাঙ্কর (`href="#"` বা `href=""`) ব্যবহার করা সম্পূর্ণ নিষিদ্ধ।
+2. **লিংক ট্র্যাকার ভেরিফিকেশন**:
+   - লিঙ্ক যুক্ত করার পূর্বে `tools/indexer/all_fixed_urls.txt` অথবা `audit_adsense_policy_live.json` ফাইল দেখে লাইভ ইউআরএল নিশ্চিত করতে হবে।

@@ -52,7 +52,8 @@ The following files contain private tokens and must **NEVER** be committed or pu
 
 ### Safe Handling Rule:
 - Verify `.gitignore` contains all secret filenames.
-- If a token expires or fails on a new machine, instruct the user to copy the authenticated token file locally or run `python tools/blogger_publisher/authenticate.py`. **Never attempt to commit tokens to Git.**
+- **Zero-Deletion Policy (টোকেন ফাইল ডিলিট সম্পূর্ণ নিষিদ্ধ)**: If a token expires or Blogger API reports an authentication error on a new machine, the agent **MUST NOT delete or recreate `blogger_token.json` autonomously**. The agent must run `python tools/check_all_credentials.py`, diagnose the issue, and inform the user with actionable instructions.
+- If a new authentication is needed, instruct the user to run `python tools/blogger_publisher/authenticate.py`. **Never attempt to commit tokens to Git.**
 
 ---
 
