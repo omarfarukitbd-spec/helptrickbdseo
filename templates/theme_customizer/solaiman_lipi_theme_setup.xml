@@ -6,8 +6,7 @@ Benefits:
 1. All post titles display bold, enlarged (17.5px), and high contrast like minibd.com.
 2. Featured post overlay titles stay crisp white (#ffffff) with high contrast.
 3. Sidebar popular posts are bold and easily legible.
-4. Website container expands to 1280px (95% max-width), eliminating side whitespace.
-5. Clean CDATA block prevents Blogger XML encoding issues.
+4. Clean CDATA block prevents Blogger XML encoding issues.
 
 Setup Instructions:
 1. Go to Blogger Dashboard: https://www.blogger.com/blog/themes/1975983966532887960
@@ -103,12 +102,6 @@ Setup Instructions:
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #202124 !important;
-  }
-
-  /* 7. Modern Full-Width Container (1280px) */
-  .container {
-    width: 1280px !important;
-    max-width: 95% !important;
   }
 /*]]>*/
 </style>
