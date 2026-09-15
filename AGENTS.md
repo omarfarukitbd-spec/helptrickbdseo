@@ -146,3 +146,7 @@ The following 3 files must be placed locally in the project:
 2. Follow all guidelines in [`.agents/skills/seo-blogger-adsense/SKILL.md`](file:///.agents/skills/seo-blogger-adsense/SKILL.md).
 3. Always verify changes with live site inspections or tests before claiming completion.
 4. Auto-commit and push significant milestones to `origin main`.
+5. **Strict Multi-PC Sync Protocol (বাসা ও অফিস পিসি নিরবচ্ছিন্ন সিঙ্ক নিয়ম):**
+   - **প্রতিটি কাজের শুরুতে (Pre-task Check):** যেকোনো নতুন টাস্ক বা প্রম্পটের শুরুতে `git fetch origin` করে দেখতে হবে অন্য পিসি (বাসার পিসি বা অফিস ল্যাপটপ) থেকে কোনো নতুন কমিট এসেছে কিনা। নতুন আপডেট থাকলে তা `git pull --rebase origin main` দিয়ে সাথে সাথে লোকাল প্রজেক্টে যুক্ত করে নিতে হবে।
+   - **প্রতিটি কাজের শেষে (Post-task Auto-Push):** যেকোনো কাজ সম্পন্ন হওয়ামাত্র সমস্ত নতুন কোড, রিপোর্ট, আর্টিকেল বা অ্যাসেট স্বয়ংক্রিয়ভাবে `git add`, `git commit` এবং `git push origin main` করে দিতে হবে, যাতে অন্য পিসিতে বসার সাথে সাথেই সব কাজ সম্পূর্ণ আপ-টু-ডেট পাওয়া যায়।
+
