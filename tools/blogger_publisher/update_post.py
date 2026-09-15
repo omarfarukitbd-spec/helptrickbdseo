@@ -112,7 +112,7 @@ def update_post_on_blogger(metadata_file_or_html, slug):
             content = mdata.get("html_content", "")
             cat = mdata.get("category", "")
             labels = [c.strip() for c in cat.split(",") if c.strip()]
-    elif os.path.exists(html_file):
+    if not content and os.path.exists(html_file):
         with open(html_file, "r", encoding="utf-8") as f:
             content = f.read()
 

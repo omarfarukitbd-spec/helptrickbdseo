@@ -1,4 +1,30 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+Builds the complete 2026 flagship tutorial post for:
+"ঘরে বসেই সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম (২০২৬)"
+Includes all 6 annotated interface step cards, legal drafting templates,
+fee schedule, troubleshooting guide, FAQs, and valid HowTo + FAQPage Schema.
+"""
+
+import json
+import os
+import sys
+
+try:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+OUTPUT_FILE = os.path.join(PROJECT_ROOT, "output_posts", "revived_posts", "how-to-correction-certificate-name-2025.html")
+METADATA_FILE = os.path.join(PROJECT_ROOT, "output_posts", "revived_posts", "how-to-correction-certificate-name-2025_metadata.json")
+
+CDN_PREFIX = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images"
+
+HTML_CONTENT = f"""<!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
@@ -13,21 +39,21 @@
 
 <style>
   .htbd-post-wrapper,
-  .htbd-post-wrapper * {
+  .htbd-post-wrapper * {{
     font-family: 'SolaimanLipi', Arial, sans-serif !important;
-  }
-  .htbd-post-wrapper {
+  }}
+  .htbd-post-wrapper {{
     color: #202124 !important;
     line-height: 1.85 !important;
-  }
-  .htbd-post-wrapper p {
+  }}
+  .htbd-post-wrapper p {{
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #202124 !important;
     margin: 16px 0 !important;
     text-align: justify !important;
-  }
-  .htbd-heading {
+  }}
+  .htbd-heading {{
     color: #1a73e8 !important;
     border-left: 5px solid #1a73e8 !important;
     border-bottom: none !important;
@@ -37,91 +63,91 @@
     font-size: 23px !important;
     font-weight: 700 !important;
     line-height: 1.4 !important;
-  }
-  .htbd-toc-box {
+  }}
+  .htbd-toc-box {{
     background: #f8fafd !important;
     border: 1px solid #d2e3fc !important;
     border-radius: 10px !important;
     padding: 20px 24px !important;
     margin: 25px 0 !important;
     box-shadow: 0 1px 4px rgba(26,115,232,0.06) !important;
-  }
-  .htbd-toc-list {
+  }}
+  .htbd-toc-list {{
     list-style: none !important;
     list-style-type: none !important;
     padding-left: 0 !important;
     margin: 12px 0 0 0 !important;
-  }
-  .htbd-toc-list li {
+  }}
+  .htbd-toc-list li {{
     padding: 7px 0 !important;
     border-bottom: 1px dashed #e8eaed !important;
     font-size: 16.5px !important;
-  }
-  .htbd-toc-list li:last-child {
+  }}
+  .htbd-toc-list li:last-child {{
     border-bottom: none !important;
-  }
-  .htbd-toc-list li a {
+  }}
+  .htbd-toc-list li a {{
     color: #1a73e8 !important;
     text-decoration: none !important;
     font-weight: 500 !important;
-  }
-  .htbd-toc-list li a:hover {
+  }}
+  .htbd-toc-list li a:hover {{
     color: #0d47a1 !important;
     text-decoration: underline !important;
-  }
-  .htbd-qbox {
+  }}
+  .htbd-qbox {{
     background: #f8f9fa !important;
     border-left: 5px solid #1a73e8 !important;
     padding: 20px 24px !important;
     margin: 22px 0 !important;
     border-radius: 0 8px 8px 0 !important;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
-  }
-  .htbd-table-wrapper {
+  }}
+  .htbd-table-wrapper {{
     overflow-x: auto !important;
     margin: 25px 0 !important;
     border-radius: 8px !important;
     border: 1px solid #e0e0e0 !important;
-  }
-  .htbd-table {
+  }}
+  .htbd-table {{
     width: 100% !important;
     border-collapse: collapse !important;
     background: #ffffff !important;
-  }
-  .htbd-table th {
+  }}
+  .htbd-table th {{
     background-color: #1a73e8 !important;
     color: #ffffff !important;
     font-weight: 700 !important;
     padding: 14px 18px !important;
     text-align: left !important;
     font-size: 16px !important;
-  }
-  .htbd-table td {
+  }}
+  .htbd-table td {{
     padding: 13px 18px !important;
     border-bottom: 1px solid #eeeeee !important;
     font-size: 15.5px !important;
     color: #333333 !important;
-  }
-  .htbd-table tr:nth-child(even) {
+  }}
+  .htbd-table tr:nth-child(even) {{
     background-color: #f8f9fa !important;
-  }
+  }}
 
   /* Step Cards */
-  .htbd-tutorial-step-card {
+  .htbd-tutorial-step-card {{
     background: #ffffff !important;
     border: 1.5px solid #e2e8f0 !important;
     border-radius: 12px !important;
     padding: 24px 28px !important;
     margin: 32px 0 !important;
     box-shadow: 0 4px 16px rgba(0,0,0,0.05) !important;
-  }
-  .htbd-step-header {
+  }}
+  .htbd-step-header {{
     display: flex !important;
     align-items: center !important;
     gap: 14px !important;
     margin-bottom: 16px !important;
-  }
-  .htbd-step-num {
+  }}
+  .htbd-step-num {{
     background: #2563eb !important;
     color: #ffffff !important;
     padding: 6px 16px !important;
@@ -129,14 +155,14 @@
     font-weight: 700 !important;
     font-size: 15px !important;
     letter-spacing: 0.3px !important;
-  }
-  .htbd-step-title {
+  }}
+  .htbd-step-title {{
     margin: 0 !important;
     font-size: 20px !important;
     color: #0f172a !important;
     font-weight: 700 !important;
-  }
-  .htbd-step-img {
+  }}
+  .htbd-step-img {{
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
@@ -145,15 +171,15 @@
     box-shadow: 0 6px 18px rgba(0,0,0,0.08) !important;
     display: block !important;
     margin: 16px auto !important;
-  }
-  .htbd-step-caption {
+  }}
+  .htbd-step-caption {{
     font-size: 14px !important;
     color: #64748b !important;
     margin-top: 8px !important;
     font-style: italic !important;
     text-align: center !important;
-  }
-  .htbd-tip-box {
+  }}
+  .htbd-tip-box {{
     background: #eff6ff !important;
     border-left: 4px solid #2563eb !important;
     padding: 12px 18px !important;
@@ -161,10 +187,10 @@
     font-size: 15.5px !important;
     color: #1e40af !important;
     margin-top: 18px !important;
-  }
+  }}
 
   /* Document Draft Box */
-  .htbd-draft-box {
+  .htbd-draft-box {{
     background: #fdfbf7 !important;
     border: 1.5px solid #e7d8c5 !important;
     border-radius: 8px !important;
@@ -173,7 +199,7 @@
     font-size: 16px !important;
     line-height: 1.9 !important;
     color: #3b2a1a !important;
-  }
+  }}
 </style>
 
 <div class="htbd-post-wrapper">
@@ -185,7 +211,7 @@
 
   <!-- Hero Thumbnail Banner -->
   <div style="text-align: center; margin: 18px 0 25px 0;">
-    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/thumbnails/thumb_certificate_correction_2026.png" 
+    <img src="{CDN_PREFIX}/thumbnails/thumb_certificate_correction_2026.png" 
          alt="ঘরে বসেই সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম ২০২৬" 
          title="সার্টিফিকেট নাম ও বয়স সংশোধন অনলাইন আবেদন"
          width="1200" height="675"
@@ -270,7 +296,7 @@
     <p>প্রথমে আপনার কম্পিউটার বা মোবাইলের ব্রাউজার থেকে ঢাকা শিক্ষা বোর্ডের অফিসিয়াল ই-সেবা পোর্টাল (<strong>eservices.dhakaeducationboard.gov.bd</strong>)-এ প্রবেশ করুন। হোমপেজের নাগরিক সেবা গ্রিড থেকে 'নাম ও বয়স সংশোধন আবেদন' কার্ডে থাকা নীল বাটনে ক্লিক করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
-      <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step1_portal_access.png" 
+      <img src="{CDN_PREFIX}/tutorials/cert_step1_portal_access.png" 
            alt="ঢাকা শিক্ষা বোর্ড ই-সেবা পোর্টালে নাম ও বয়স সংশোধন মেনু নির্বাচন ধাপ ১" 
            title="ই-সেবা ড্যাশবোর্ডে আবেদন বাটনে ক্লিক করুন" 
            loading="lazy" 
@@ -295,7 +321,7 @@
     <p>এই ধাপে একটি সার্চ ফরম প্রদর্শিত হবে। ড্রপডাউন মেনু থেকে আপনার পরীক্ষার নাম (জেএসসি/এসএসসি/এইচএসসি), পাসের সন (যেমন: ২০২৪) নির্বাচন করুন এবং এডমিট কার্ড দেখে রোল ও রেজিস্ট্রেশন নম্বর নির্ভুলভাবে টাইপ করুন। এরপর নীল রঙের 'ডাটা খুঁজুন' বাটনে ক্লিক করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
-      <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step2_student_search.png" 
+      <img src="{CDN_PREFIX}/tutorials/cert_step2_student_search.png" 
            alt="শিক্ষার্থীর রোল ও রেজিস্ট্রেশন দিয়ে ডাটাবেজ অনুসন্ধান ধাপ ২" 
            title="ডাটা খুঁজুন ও আবেদন ফরম খুলুন বাটনে ক্লিক করুন" 
            loading="lazy" 
@@ -320,7 +346,7 @@
     <p>ডাটা লোড হলে স্ক্রিনে শিক্ষার্থীর বর্তমান সংরক্ষিত তথ্য দেখতে পাবেন। আপনি যে তথ্যটি সংশোধন করতে চান (নিজের নাম, পিতার নাম, বা মাতার নাম) তার পাশের চেকক্সে টিক দিন। এরপর ডানপাশের বক্সে ডিজিটাল জন্মনিবন্ধন বা এনআইডি কার্ড অনুযায়ী সংশোধিত বাংলা ও ইংরেজি সঠিক বানান টাইপ করুন। ইংরেজি নামের প্রতিটি অক্ষর ক্যাপিটাল লেটারে লিখবেন। এরপর 'সংরক্ষণ করুন ও পরবর্তী ধাপে যান' বাটনে ক্লিক করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
-      <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step3_correction_form.png" 
+      <img src="{CDN_PREFIX}/tutorials/cert_step3_correction_form.png" 
            alt="সার্টিফিকেট নাম সংশোধন ফরম পূরণ ও সঠিক নাম এন্ট্রি ধাপ ৩" 
            title="সঠিক বানান লিখে সংরক্ষণ করুন ও পরবর্তী ধাপে যান" 
            loading="lazy" 
@@ -345,7 +371,7 @@
     <p>এই ধাপে প্রয়োজনীয় প্রামাণ্য নথিসমূহ সংযুক্ত করতে হবে। ১ম শ্রেণির ম্যাজিস্ট্রেটের এফিডেভিট, জাতীয় দৈনিক পত্রিকার মূল কাটিং, ১৭ ডিজিটের অনলাইন জন্মসনদ এবং পিতা-মাতার এনআইডি কার্ডের স্ক্যান কপি নির্ধারিত আপলোড বক্সে আপলোড করুন। ফাইল ফরম্যাট হতে হবে PDF বা JPG এবং প্রতি ফাইলের সাইজ ২ মেগাবাইটের মধ্যে হতে হবে। সব ফাইল আপলোড শেষ হলে 'ডকুমেন্টস জমা দিয়ে ফি প্রদানের জন্য এগিয়ে যান' বাটনে ক্লিক করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
-      <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step4_document_upload.png" 
+      <img src="{CDN_PREFIX}/tutorials/cert_step4_document_upload.png" 
            alt="প্রয়োজনীয় কাগজপত্র এফিডেভিট ও পেপার কাটিং আপলোড ধাপ ৪" 
            title="ডকুমেন্টস জমা দিয়ে ফি প্রদানের জন্য এগিয়ে যান বাটনে ক্লিক করুন" 
            loading="lazy" 
@@ -370,7 +396,7 @@
     <p>ডকুমেন্টস আপলোড শেষ হলে সিস্টেম আপনাকে সোনালী ব্যাংকের সরকারি পেমেন্ট গেটওয়েতে (Sonali e-Sheba) নিয়ে যাবে। স্ক্রিনে আপনার আবেদন ফি (যেমন: ১,৫০০ টাকা) প্রদর্শিত হবে। পেমেন্ট অপশন থেকে বিকাশ (bKash), নগদ (Nagad), রকেট বা সোনালী ব্যাংক একাউন্ট সিলেক্ট করুন। এরপর নিচের লাল চিহ্নিত 'বিকাশ দিয়ে ফি পরিশোধ করুন' বাটনে ক্লিক করে মোবাইল পিন ও ওটিপি (OTP) দিয়ে ফি জমা সম্পন্ন করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
-      <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step5_sonali_payment.png" 
+      <img src="{CDN_PREFIX}/tutorials/cert_step5_sonali_payment.png" 
            alt="সোনালী সেবায় বিকাশ ও নগদ দিয়ে বোর্ড ফি পরিশোধ ধাপ ৫" 
            title="বিকাশ দিয়ে ফি পরিশোধ করুন বাটনে ক্লিক করুন" 
            loading="lazy" 
@@ -395,7 +421,7 @@
     <p>পেমেন্ট সফল হওয়ার সাথে সাথে অভিনন্দন বার্তা এবং একটি ইউনিক <strong>Application ID (যেমন: DEB-2026-78491)</strong> ও সিকিউরিটি পিন নম্বর প্রদান করা হবে। সবুজ রঙের 'অফিসিয়াল আবেদন রসিদ ও ট্র্যাকিং স্লিপ ডাউনলোড করুন' বাটনে ক্লিক করে মূল আবেদন কপিটি PDF ফরম্যাটে ডাউনলোড করে ২ কপি রঙিন প্রিন্ট নিয়ে নিজের কাছে সংরক্ষণ করুন।</p>
     
     <figure style="margin: 20px 0; text-align: center;">
-      <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step6_tracking_receipt.png" 
+      <img src="{CDN_PREFIX}/tutorials/cert_step6_tracking_receipt.png" 
            alt="আবেদন সফল ও অফিসিয়াল ট্র্যাকিং স্লিপ ডাউনলোড ধাপ ৬" 
            title="অফিসিয়াল আবেদন রসিদ ও ট্র্যাকিং স্লিপ ডাউনলোড করুন" 
            loading="lazy" 
@@ -509,100 +535,128 @@
 
 <!-- Structured Schema Microdata: FAQPage & HowTo -->
 <script type="application/ld+json">
-{
+{{
   "@context": "https://schema.org",
   "@graph": [
-    {
+    {{
       "@type": "HowTo",
       "name": "ঘরে বসেই সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম (২০২৬)",
       "description": "জেএসসি, এসএসসি ও এইচএসসি সার্টিফিকেটের নাম, পিতা-মাতার নাম ও বয়স সংশোধনের সম্পূর্ণ অনলাইন আবেদন গাইডলাইন।",
-      "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/thumbnails/thumb_certificate_correction_2026.png",
+      "image": "{CDN_PREFIX}/thumbnails/thumb_certificate_correction_2026.png",
       "totalTime": "P30D",
       "step": [
-        {
+        {{
           "@type": "HowToStep",
           "name": "ই-সেবা পোর্টালে প্রবেশ",
           "text": "ঢাকা শিক্ষাবোর্ডের অফিশিয়াল ওয়েবসাইটে গিয়ে 'নাম ও বয়স সংশোধন অনলাইন আবেদন' লিংকে ক্লিক করুন।",
-          "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step1_portal_access.png",
+          "image": "{CDN_PREFIX}/tutorials/cert_step1_portal_access.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
-        },
-        {
+        }},
+        {{
           "@type": "HowToStep",
           "name": "রোল-রেজিস্ট্রেশন দিয়ে ডাটাবেজ অনুসন্ধান",
           "text": "পরীক্ষার নাম, পাসের সন, রোল এবং রেজি নম্বর প্রদান করে 'ডাটা খুঁজুন' বাটনে ক্লিক করে রেকর্ড লোড করুন।",
-          "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step2_student_search.png",
+          "image": "{CDN_PREFIX}/tutorials/cert_step2_student_search.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
-        },
-        {
+        }},
+        {{
           "@type": "HowToStep",
           "name": "সংশোধিত তথ্যের সঠিক বানান এন্ট্রি",
           "text": "যে যে তথ্য পরিবর্তন করতে চান তার টিক দিন এবং ডিজিটাল জন্মসনদ অনুযায়ী সঠিক বানান লিখুন।",
-          "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step3_correction_form.png",
+          "image": "{CDN_PREFIX}/tutorials/cert_step3_correction_form.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
-        },
-        {
+        }},
+        {{
           "@type": "HowToStep",
           "name": "এফিডেভিট ও প্রামাণ্য দলিল আপলোড",
           "text": "১ম শ্রেণির ম্যাজিস্ট্রেট এফিডেভিট, পেপার কাটিং ও জন্মসনদের স্পষ্ট স্ক্যান কপি সংযুক্ত করুন।",
-          "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step4_document_upload.png",
+          "image": "{CDN_PREFIX}/tutorials/cert_step4_document_upload.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
-        },
-        {
+        }},
+        {{
           "@type": "HowToStep",
           "name": "সোনালী সেবায় ফি পরিশোধ",
           "text": "সোনালী পেমেন্ট গেটওয়েতে বিকাশ, নগদ বা রকেটের মাধ্যমে বোর্ড ফি পরিশোধ সম্পন্ন করুন।",
-          "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step5_sonali_payment.png",
+          "image": "{CDN_PREFIX}/tutorials/cert_step5_sonali_payment.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
-        },
-        {
+        }},
+        {{
           "@type": "HowToStep",
           "name": "ট্র্যাকিং স্লিপ ডাউনলোড",
           "text": "আবেদন সফল হওয়ার পর ইউনিক Application ID সম্বলিত ট্র্যাকিং স্লিপটি প্রিন্ট করে নিজের কাছে রাখুন।",
-          "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/tutorials/cert_step6_tracking_receipt.png",
+          "image": "{CDN_PREFIX}/tutorials/cert_step6_tracking_receipt.png",
           "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html#step-by-step"
-        }
+        }}
       ]
-    },
-    {
+    }},
+    {{
       "@type": "FAQPage",
       "mainEntity": [
-        {
+        {{
           "@type": "Question",
           "name": "সার্টিফিকেট নাম সংশোধনে সর্বোচ্চ কতদিন সময় লাগে?",
-          "acceptedAnswer": {
+          "acceptedAnswer": {{
             "@type": "Answer",
             "text": "অনলাইনে সকল সঠিক কাগজপত্র আপলোড ও সোনালী সেবায় ফি পরিশোধের পর সাধারণত ৩০ থেকে ৪৫ কর্মদিবসের মধ্যে বোর্ড সভার মাধ্যমে চূড়ান্ত অনুমোদন সম্পন্ন হয়।"
-          }
-        },
-        {
+          }}
+        }},
+        {{
           "@type": "Question",
           "name": "বয়স বা জন্মতারিখ কত বছর পর্যন্ত সংশোধন করা সম্ভব?",
-          "acceptedAnswer": {
+          "acceptedAnswer": {{
             "@type": "Answer",
             "text": "শিক্ষা বোর্ডের প্রচলিত নীতিমালা অনুযায়ী টাইপিং বা অসাবধানতাবশত গরমিলের ক্ষেত্রে সর্বোচ্চ ১ থেকে ২ বছর পর্যন্ত বয়স সংশোধনের সুযোগ থাকে, যার জন্য পিএসসি সনদ বা ডাক্তারের মেডিকেল বয়স প্রাক্কলন সনদ প্রয়োজন হয়।"
-          }
-        },
-        {
+          }}
+        }},
+        {{
           "@type": "Question",
           "name": "জেএসসি এবং এসএসসি সনদের নাম একসাথে সংশোধন করা যায় কি?",
-          "acceptedAnswer": {
+          "acceptedAnswer": {{
             "@type": "Answer",
             "text": "হ্যাঁ, শিক্ষা বোর্ডের অনলাইন পোর্টালে একই সাথে জেএসসি ও এসএসসি উভয় সনদের জন্য ধারাবাহিক আবেদন দাখিল করা যায়, যাতে উভয় সনদ একই বোর্ড মিটিংয়ে একসাথে অনুমোদিত হতে পারে।"
-          }
-        },
-        {
+          }}
+        }},
+        {{
           "@type": "Question",
           "name": "সার্টিফিকেট সংশোধনে পত্রিকার বিজ্ঞাপনের গুরুত্ব কী?",
-          "acceptedAnswer": {
+          "acceptedAnswer": {{
             "@type": "Answer",
             "text": "আইনি স্বচ্ছতা নিশ্চিত করতে এবং কোনো প্রতারণামূলক পরিচয় পরিবর্তন রোধ করতে শিক্ষাবোর্ড জাতীয় দৈনিকে নাম পরিবর্তনের উন্মুক্ত বিজ্ঞপ্তি বাধ্যতামূলক করে থাকে।"
-          }
-        }
+          }}
+        }}
       ]
-    }
+    }}
   ]
-}
+}}
 </script>
 
 </body>
 </html>
+"""
+
+def main():
+    print("Building full tutorial article...")
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(HTML_CONTENT)
+
+    word_count = len(HTML_CONTENT.split())
+    meta = {
+        "slug": "how-to-correction-certificate-name-2025",
+        "post_id": "8675903395059439252",
+        "title": "ঘরে বসেই সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম (২০২৬)",
+        "category": "Education Guide,সার্টিফিকেট সংশোধন",
+        "labels": ["Education Guide", "সার্টিফিকেট সংশোধন"],
+        "meta_description": "জেএসসি, এসএসসি ও এইচএসসি সার্টিফিকেটের নিজের নাম, পিতা-মাতার নাম বা বয়স সংশোধনের অনলাইন আবেদন নিয়ম, ফি ও প্রয়োজনীয় কাগজপত্রের তালিকা পড়ুন HelpTrickBD-তে।",
+        "word_count": word_count,
+        "updated_at": "2026-09-15T12:45:00+06:00"
+    }
+
+    with open(METADATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ Generated article saved to: {OUTPUT_FILE}")
+    print(f"📊 Total word count: {word_count}")
+
+
+if __name__ == "__main__":
+    main()
