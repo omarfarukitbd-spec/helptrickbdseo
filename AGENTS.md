@@ -134,6 +134,30 @@ pip install -r requirements.txt
   ```bash
   python tools/pipeline/master_publisher_pipeline.py --html <FILE> --post-id <ID> --url <LIVE_URL> --auto-compress --check-links --publish --index
   ```
+- **Keyword Cannibalization Auditor & Resolver:**
+  ```bash
+  python tools/cannibalization_detector/cannibalization_finder.py
+  ```
+- **Seasonal Trend & Traffic Forecaster:**
+  ```bash
+  python tools/trend_forecaster/trend_predictor.py
+  ```
+- **Silo Architecture & Internal Link Visualizer:**
+  ```bash
+  python tools/silo_architect/cluster_visualizer.py
+  ```
+- **10-20 KB Social Share Card & OpenGraph Generator:**
+  ```bash
+  python tools/social_card_generator/social_card_builder.py -t "<TITLE>" -c "<CATEGORY>"
+  ```
+- **Dwell Time & User Engagement Booster:**
+  ```bash
+  python tools/engagement_booster/dwell_optimizer.py -f <HTML_FILE>
+  ```
+- **Visual Asset & Core Web Vitals Image Safety Auditor:**
+  ```bash
+  python tools/vision_auditor/image_safety_auditor.py [--auto_fix]
+  ```
 
 ---
 
