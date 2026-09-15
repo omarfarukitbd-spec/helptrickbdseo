@@ -113,6 +113,19 @@
     font-display: swap;
   }
 
+    /* Header Logo Responsive Dimensions (Mobile 98x40) */
+  #darkroom1 {
+    max-height: 42px;
+    width: auto;
+    object-fit: contain;
+  }
+  @media screen and (max-width: 768px) {
+    #darkroom1 {
+      max-width: 105px !important;
+      height: auto !important;
+    }
+  }
+
   /* 7. Image Cumulative Layout Shift (CLS) Prevention (চ) */
   .post-body img {
     max-width: 100% !important;
@@ -1645,6 +1658,8 @@ disqusShortname = "templateiki";
 <link href='//1.bp.blogspot.com' rel='dns-prefetch'/> <link href='//28.2bp.blogspot.com' rel='dns-prefetch'/> <link href='//3.bp.blogspot.com' rel='dns-prefetch'/> <link href='//4.bp.blogspot.com' rel='dns-prefetch'/> <link href='//2.bp.blogspot.com' rel='dns-prefetch'/> <link href='//www.blogger.com' rel='dns-prefetch'/> <link href='//maxcdn.bootstrapcdn.com' rel='dns-prefetch'/> <link href='//fonts.googleapis.com' rel='dns-prefetch'/> <link href='//use.fontawesome.com' rel='dns-prefetch'/> <link href='//ajax.googleapis.com' rel='dns-prefetch'/> <link href='//resources.blogblog.com' rel='dns-prefetch'/> <link href='//feeds.feedburner.com' rel='dns-prefetch'/> <link href='//cdnjs.cloudflare.com' rel='dns-prefetch'/> <link href='//www.google-analytics.com' rel='dns-prefetch'/> <link href='//themes.googleusercontent.com ' rel='dns-prefetch'/> <link href='//pagead2.googlesyndication.com' rel='dns-prefetch'/> <link href='//googleads.g.doubleclick.net' rel='dns-prefetch'/> <link href='//www.gstatic.com' rel='preconnect'/> <link href='//www.googletagservices.com' rel='dns-prefetch'/> <link href='//static.xx.fbcdn.net' rel='dns-prefetch'/> <link href='//tpc.googlesyndication.com' rel='dns-prefetch'/> <link href='//apis.google.com' rel='dns-prefetch'/> <link href='//www.facebook.com' rel='dns-prefetch'/> <link href='//connect.facebook.net' rel='dns-prefetch'/> <link href='//x.com' rel='dns-prefetch'/> <link href='//www.youtube.com' rel='dns-prefetch'/> <link href='//www.pinterest.com' rel='dns-prefetch'/> <link href='//www.linkedin.com' rel='dns-prefetch'/>
 <!-- Font Awesome Free 6.7.2 -->
 <!-- Font Awesome Free 6.7.2 (Async Non-blocking for Core Web Vitals) -->
+<link as='font' crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2' rel='preload' type='font/woff2'/>
+<link as='font' crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-brands-400.woff2' rel='preload' type='font/woff2'/>
 <link as='style' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' rel='preload'/>
 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' media='print' onload='this.media=&quot;all&quot;' rel='stylesheet'/>
 <noscript><link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' rel='stylesheet'/></noscript>
@@ -2693,7 +2708,7 @@ disqusShortname = "templateiki";
                   </b:includable>
                 <b:includable id='content'>
                     <a class='SuperLogo-img' expr:href='data:blog.homepageUrl'>
-                    <img expr:alt='data:blog.title.escaped' expr:data-normal='data:sourceUrl' expr:height='data:height' expr:src='data:sourceUrl' expr:width='data:width' id='darkroom1'>
+                    <img expr:alt='data:blog.title.escaped' expr:data-normal='data:sourceUrl contains &quot;googleusercontent.com&quot; and not (data:sourceUrl contains &quot;-rw&quot;) ? data:sourceUrl + &quot;-rw&quot; : data:sourceUrl' expr:height='data:height' expr:src='data:sourceUrl contains &quot;googleusercontent.com&quot; and not (data:sourceUrl contains &quot;-rw&quot;) ? data:sourceUrl + &quot;-rw&quot; : data:sourceUrl' expr:width='data:width' id='darkroom1'>
                     <b:attr cond='data:link' expr:value='data:link' name='data-dark'/></img>
                   <b:if cond='data:link contains &quot;http&quot;'><b:tag name='script' type='text/javascript'>var darkImage = document.querySelector(&#39;#darkroom1&#39;); (localStorage.getItem(&#39;mode&#39;)) === &#39;darkmode&#39; ? darkImage.setAttribute(&quot;src&quot;, darkImage.getAttribute(&quot;data-dark&quot;)): darkImage.setAttribute(&quot;src&quot;, darkImage.getAttribute(&quot;data-normal&quot;))</b:tag></b:if>
                     </a>
@@ -4087,7 +4102,7 @@ disqusShortname = "templateiki";
 $(function(n){n.fn.lazyticker=function(){return this.each(function(){var n,t=0,e=$(".breaking-ticker .tickerNews");function i(){null!=n&&(clearInterval(n),n=null)}function c(){n=setInterval(function(){a(1)},5e3)}function a(n){var i,c,a;e.not(t).removeClass("active"),i=t,c=n,a=e.length,t=(i+c+a)%a,e.eq(t).addClass("active")}$(this).find(".widget-content").append('<div class="buttons-fix"><a class="prev" href="javascript:;" aria-label="button" role="button"/><a class="next" href="javascript:;" aria-label="button" role="button"/></div>'),jQuery(function(){e.first().addClass("active"),c(),$(".next").click(function(n){i(),a(1),c()}),$(".prev").click(function(n){i(),a(-1),c()})})})}});
 
 <!-- Lazy Loading jQuery Plugin  | v1.5.0 | https://templateiki.com
-!function(t){t.fn.lazyimg=function(){return this.each((function(){var r=t(this),o=t(window),a=r.attr("data-src"),h=a.toLowerCase().match(".webp")?"":"-rw",n="w"+Math.round(r.width()+r.width()/10)+"-h"+Math.round(r.height()+r.height()/10)+"-p-k-no-nu";a.match("resources.blogblog.com")&&(a=noThumb),(a.match("/img/a")||a.match("/blogger_img_proxy"))&&(a.match("=")?(parts=a.split("="),a=parts[1]&&""!=parts[1].trim()?parts[0]+"=w72-h72-p-k-no-nu":a):a+="=w72-h72-p-k-no-nu");var i={"/s72-c":["/s72-c","/"+n+h],"/w72-h":["/w72-h72-p-k-no-nu","/"+n+h],"=w72-h":["=w72-h72-p-k-no-nu","="+n+h]},s=a;for(var c in i)if(a.match(c)){s=a.replace(i[c][0],i[c][1]);break}r.is(":hidden")||o.on("load resize scroll",(function t(){o.scrollTop()+o.height()>=r.offset().top&&(o.off("load resize scroll",t),r.attr("src",""+s).addClass("lazy-img"))})).trigger("scroll")}))}}(jQuery);
+!function(t){t.fn.lazyimg=function(){return this.each((function(){var r=t(this),o=t(window),a=r.attr("data-src"),h=a.toLowerCase().match(".webp")?"":"-rw",n="w"+Math.round(r.width()+r.width()/10)+"-h"+Math.round(r.height()+r.height()/10)+"-p-k-no-nu";a.match("resources.blogblog.com")&&(a=noThumb),(a.match("/img/a")||a.match("/blogger_img_proxy"))&&(a.match("=")?(parts=a.split("="),a=parts[1]&&""!=parts[1].trim()?parts[0]+"=w72-h72-p-k-no-nu":a):a+="=w72-h72-p-k-no-nu");var i={"/s72-c":["/s72-c","/"+n+h],"/w72-h":["/w72-h72-p-k-no-nu","/"+n+h],"=w72-h":["=w72-h72-p-k-no-nu","="+n+h]},s=a;for(var c in i)if(a.match(c)){s=a.replace(i[c][0],i[c][1]);break}if(!r.is(":hidden")){if(r.offset().top<=o.height()+150){r.attr("src",""+s).addClass("lazy-img")}else{o.on("load resize scroll",(function t(){o.scrollTop()+o.height()>=r.offset().top&&(o.off("load resize scroll",t),r.attr("src",""+s).addClass("lazy-img"))}))}}}))}}(jQuery);
 
 <!-- Javascript Cookie - v1.5.1 | https://github.com/js-cookie/js-cookie  -->
 !function(e){var n;if("function"==typeof define&&define.amd)define(["jquery"],e);else if("object"==typeof exports){try{n=require("jquery")}catch(e){}module.exports=e(n)}else{var o=window.Cookies,r=window.Cookies=e(window.jQuery);r.noConflict=function(){return window.Cookies=o,r}}}(function(e){var n=/\+/g;function o(e){return u.raw?e:encodeURIComponent(e)}function r(e){return o(u.json?JSON.stringify(e):String(e))}function t(e,o){var r=u.raw?e:function(e){0===e.indexOf('"')&&(e=e.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return e=decodeURIComponent(e.replace(n," ")),u.json?JSON.parse(e):e}catch(e){}}(e);return c(o)?o(r):r}function i(){for(var e,n,o=0,r={};o<arguments.length;o++)for(e in n=arguments[o])r[e]=n[e];return r}function c(e){return"[object Function]"===Object.prototype.toString.call(e)}var u=function(e,n,f){if(arguments.length>1&&!c(n)){if("number"==typeof(f=i(u.defaults,f)).expires){var s=f.expires,a=f.expires=new Date;a.setMilliseconds(a.getMilliseconds()+864e5*s)}return document.cookie=[o(e),"=",r(n),f.expires?"; expires="+f.expires.toUTCString():"",f.path?"; path="+f.path:"",f.domain?"; domain="+f.domain:"",f.secure?"; secure":""].join("")}for(var d,p=e?void 0:{},l=document.cookie?document.cookie.split("; "):[],m=0,v=l.length;m<v;m++){var g=l[m].split("="),w=(d=g.shift(),u.raw?d:decodeURIComponent(d)),j=g.join("=");if(e===w){p=t(j,n);break}e||void 0===(j=t(j))||(p[w]=j)}return p};return u.get=u.set=u,u.defaults={},u.remove=function(e,n){return u(e,"",i(n,{expires:-1})),!u(e)},e&&(e.cookie=u,e.removeCookie=u.remove),u});

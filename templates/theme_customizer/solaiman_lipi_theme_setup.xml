@@ -136,6 +136,19 @@ Setup Instructions:
     font-display: swap;
   }
 
+    /* Header Logo Responsive Dimensions (Mobile 98x40) */
+  #darkroom1 {
+    max-height: 42px;
+    width: auto;
+    object-fit: contain;
+  }
+  @media screen and (max-width: 768px) {
+    #darkroom1 {
+      max-width: 105px !important;
+      height: auto !important;
+    }
+  }
+
   /* 7. Image Cumulative Layout Shift (CLS) Prevention (চ) */
   .post-body img {
     max-width: 100% !important;
