@@ -1,0 +1,288 @@
+
+<!-- HelpTrickBD Zero-Lag Scroll Progress Bar -->
+<div id="ht-reading-progress-container" style="position: sticky; top: 0; left: 0; width: 100%; height: 5px; background: rgba(226, 232, 240, 0.4); z-index: 99999;">
+<div id="ht-reading-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #2563eb, #38bdf8, #10b981); transition: width 0.1s ease-out;"></div>
+</div>
+<script>
+(function() {
+  window.addEventListener('scroll', function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (height > 0) ? (winScroll / height) * 100 : 0;
+    var bar = document.getElementById("ht-reading-progress-bar");
+    if (bar) { bar.style.width = scrolled + "%"; }
+  }, { passive: true });
+})();
+</script>
+<!DOCTYPE html>
+
+<html lang="bn">
+<head>
+<meta charset="utf-8"/>
+<title>কম্পিউটারের ইতিহাস: এবাকাস থেকে ইন্টিগ্রেটেড সার্কিট পর্যন্ত পূর্ণাঙ্গ রূপরেখা (পার্ট-২)</title>
+<meta content="কম্পিউটারের ইতিহাস: এবাকাস, প্যাসকেলাইন, চার্লস ব্যাবেজের অ্যানালিটিক্যাল ইঞ্জিন, এনিয়াক ও ট্রানজিস্টর বিপ্লবের ধারাবাহিক বিশ্লেষণ পড়ুন।" name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+</head>
+<body>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  @font-face {
+    font-family: 'SolaimanLipi';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-normal-v1.0.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'SolaimanLipi';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
+  }
+  .htbd-post-wrapper,
+  .htbd-post-wrapper * {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }
+  .htbd-post-wrapper p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+    text-align: justify !important;
+  }
+  .htbd-heading {
+    color: #1a73e8 !important;
+    border-left: 5px solid #1a73e8 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-toc-box {
+    background: #f8fafd !important;
+    border: 1px solid #d2e3fc !important;
+    border-radius: 10px !important;
+    padding: 20px 24px !important;
+    margin: 25px 0 !important;
+    box-shadow: 0 1px 4px rgba(26,115,232,0.06) !important;
+  }
+  .htbd-toc-list {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin: 12px 0 0 0 !important;
+  }
+  .htbd-toc-list li {
+    list-style-type: none !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px dashed #e8eaed !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-toc-list li:last-child {
+    border-bottom: none !important;
+  }
+  .htbd-toc-list li a {
+    color: #1a73e8 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+  }
+  .htbd-toc-list li a:hover {
+    color: #0d47a1 !important;
+    text-decoration: underline !important;
+  }
+  .htbd-table-wrapper {
+    overflow-x: auto !important;
+    margin: 22px 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+  .htbd-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background: #ffffff !important;
+    font-size: 16px !important;
+  }
+  .htbd-table th {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    padding: 13px 15px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+  }
+  .htbd-table td {
+    padding: 12px 15px !important;
+    border: 1px solid #e8eaed !important;
+    color: #333333 !important;
+  }
+  .htbd-table tr:nth-child(even) {
+    background-color: #f8fafd !important;
+  }
+</style>
+<div class="htbd-post-wrapper">
+<div style="margin-bottom: 18px;">
+<span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
+ বিভাগ: তথ্য ও যোগাযোগ প্রযুক্তি (ICT) | সর্বশেষ সংস্করণ: ২০২৬ | এইচএসসি ও বিসিএস বিশেষ হ্যান্ডনোট
+ </span>
+</div>
+<!-- Hero Thumbnail Banner -->
+<div style="text-align: center; margin: 18px 0 25px 0;">
+<img alt="কম্পিউটারের ইতিহাস ও বিবর্তন রূপরেখা - HelpTrickBD" height="675" loading="eager" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/computer-history-inventions-official-banner.webp" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto 24px;" title="কম্পিউটারের ইতিহাস: এবাকাস থেকে ইন্টিগ্রেটেড সার্কিট পর্যন্ত পূর্ণাঙ্গ রূপরেখা (পার্ট-২)" width="1200"/>
+<span style="display: block; font-size: 14px; color: #5f6368; margin-top: 8px; font-style: italic;">
+      চিত্র: এবাকাস, নেপিয়ারের অস্থি, প্যাসকেলাইন থেকে শুরু করে সিলিকন চিপ ও ট্রানজিস্টর বিপ্লব
+    </span>
+</div>
+<div class="htbd-qbox" style="background: #f8f9fa; border-left: 5px solid #1a73e8; padding: 20px 24px; margin: 22px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+<p style="margin: 0; font-size: 18px; line-height: 1.8;">
+<strong> সারসংক্ষেপ (Quick Overview):</strong>
+<strong>কম্পিউটারের ইতিহাস (History of Computing)</strong> হলো প্রাচীন কাঠের তৈরি ফ্রেমযুক্ত গণনাকারী যন্ত্র এবাকাস থেকে শুরু করে আধুনিক ন্যানোমিটার সিলিকন চিপের ইন্টিগ্রেটেড সার্কিট (IC) পর্যন্ত প্রায় চার হাজার বছরের এক অবিস্মরণীয় বৈজ্ঞানিক অভিযাত্রা। জন নেপিয়ারের লগারিদম স্কেল, ব্লেইজ প্যাসকেলের গিয়ারভিত্তিক ক্যালকুলেটর, চার্লস ব্যাবেজের যুগান্তকারী অ্যানালিটিক্যাল ইঞ্জিন এবং দ্বিতীয় বিশ্বযুদ্ধের সময় অ্যালান ট্যুরিং ও এনিয়াকের মতো দানবাকৃতির ভ্যাকুয়াম টিউব কম্পিউটারের মধ্য দিয়েই আজকের স্মার্ট প্রযুক্তি রূপ নিয়েছে। নিচে প্রতিটি ঐতিহাসিক আবিষ্কারের কালানুক্রমিক ধারাবাহিক তথ্য ছক তুলে ধরা হলো।
+    </p><div class="ht-toc-container" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 22px; margin: 24px 0; font-family: 'SolaimanLipi', sans-serif;">
+<div style="font-weight: 700; font-size: 18px; color: #0f172a; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+<span>সূচিপত্র (গুরুত্বপূর্ণ বিষয়বস্তু)</span>
+<span style="font-size: 12px; color: #64748b; font-weight: normal;">(পড়ার সুবিধার্থে ক্লিক করে সরাসরি যান)</span>
+</div>
+<ul style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+<li style="margin-left: 20px;"><a href="#section-1" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #475569; text-decoration: none; font-size: 15px; transition: color 0.2s;">↳ সূচিপত্র (Table of Contents)</a></li>
+<li style="font-weight: 600;"><a href="#ancient" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ১. প্রাচীন গণনাকারী যন্ত্র: এবাকাস ও নেপিয়ারের অস্থি (Napier's Bones)</a></li>
+<li style="font-weight: 600;"><a href="#mechanical" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ২. মেকানিক্যাল যুগ: প্যাসকেলাইন ও লাইবনিজের ক্যালকুলেটর</a></li>
+<li style="font-weight: 600;"><a href="#babbage" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৩. চার্লস ব্যাবেজের ডিফারেন্স ও অ্যানালিটিক্যাল ইঞ্জিন</a></li>
+<li style="font-weight: 600;"><a href="#timeline-table" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৬. কম্পিউটারের ঐতিহাসিক আবিষ্কারের প্রামাণ্য টাইমলাইন ছক</a></li>
+<li style="font-weight: 600;"><a href="#transistor-revolution" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৫.১ ট্রানজিস্টর ও সিলিকন ভ্যালির উত্থান</a></li>
+<li style="font-weight: 600;"><a href="#exam-prep" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৭. বিসিএস ও চাকরির পরীক্ষার মডেল প্রশ্নোত্তর</a></li>
+<li style="font-weight: 600;"><a href="#faqs" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৮. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+</div>
+<div class="htbd-toc-box">
+<h3 id="section-1" style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;"> সূচিপত্র (Table of Contents)</h3>
+<ul class="htbd-toc-list">
+<li><a href="#ancient"> ১. প্রাচীন গণনাকারী যন্ত্র: এবাকাস ও নেপিয়ারের অস্থি (Napier's Bones)</a></li>
+<li><a href="#mechanical"> ২. মেকানিক্যাল যুগ: প্যাসকেলাইন ও লাইবনিজের ক্যালকুলেটর</a></li>
+<li><a href="#babbage"> ৩. চার্লস ব্যাবেজের ডিফারেন্স ও অ্যানালিটিক্যাল ইঞ্জিন</a></li>
+<li><a href="#hollerith"> ৪. হারম্যান হলেরিথ ও পাঞ্চ কার্ড সেন্সাস মেশিন</a></li>
+<li><a href="#turing-eniac"> ৫. ট্যুরিং মেশিন ও প্রথম ইলেকট্রনিক ডিজিটাল কম্পিউটার (ENIAC)</a></li>
+<li><a href="#timeline-table"> ৬. কম্পিউটারের ঐতিহাসিক আবিষ্কারের প্রামাণ্য টাইমলাইন ছক</a></li>
+<li><a href="#exam-prep"> ৭. বিসিএস ও চাকরির পরীক্ষার মডেল প্রশ্নোত্তর</a></li>
+<li><a href="#faqs"> ৮. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="ancient">১. প্রাচীন গণনাকারী যন্ত্র: এবাকাস ও নেপিয়ারের অস্থি (Napier's Bones)</h2>
+<div class="ht-meta-engagement-badge" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 24px 0; padding: 10px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 6px; font-family: 'SolaimanLipi', sans-serif; font-size: 15px; color: #334155;">
+<span style="font-weight: 600; color: #0369a1;"> পড়ার আনুমানিক সময়: ১০ মিনিট (১৮৫৩ শব্দ)</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; font-size: 13px; font-weight: 600;"> সর্বশেষ হালনাগাদ ২০২৬</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="color: #64748b; font-size: 14px;"> HelpTrickBD Verified Study Guide</span>
+</div>
+<p>খ্রিস্টপূর্ব ২৪০০ অব্দে ব্যবিলনে প্রথম গণনার উদ্দেশ্যে <strong>এবাকাস (Abacus)</strong> তৈরি করা হয়। পরবর্তীতে চীন ও জাপানে (সরোবান) এটি ব্যাপকভাবে জনপ্রিয় হয়। ১৬১৪ সালে স্কটিশ গণিতবিদ জন নেপিয়ার লগারিদমের ধারণা উদ্ভাবন করেন এবং ১৬১৭ সালে হাতির দাঁতের রড দিয়ে গুণ ও ভাগের জন্য 'নেপিয়ার্স বোনস' তৈরি করেন।</p>
+<h2 class="htbd-heading" id="mechanical">২. মেকানিক্যাল যুগ: প্যাসকেলাইন ও লাইবনিজের ক্যালকুলেটর</h2>
+<p>১৬৪২ সালে মাত্র ১৯ বছর বয়সে ফরাসি বিজ্ঞানী <strong>ব্লেইজ প্যাসকেল</strong> তাঁর পিতার কর হিসাবের সুবিধার্থে প্রথম মেকানিক্যাল যোগ-বিয়োগের যন্ত্র <strong>'প্যাসকেলাইন' (Pascaline)</strong> আবিষ্কার করেন। এরপর ১৬৭১ সালে জার্মান গণিতবিদ গটফ্রিড ভন লাইবনিজ প্যাসকেলাইনের উন্নতি ঘটিয়ে গুণ ও ভাগ করতে সক্ষম 'স্টেপড রিকনার' (Stepped Reckoner) তৈরি করেন এবং আধুনিক কম্পিউটারের জন্য দ্বিমিক বা বাইনারি পদ্ধতির প্রস্তাব দেন।</p>
+<div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
+<strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;"> সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
+<ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+<li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" rel="noopener" target="_blank"> Sher E Bangla Fazlul Haque Social Welfare</a></li><li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html" rel="noopener" target="_blank"> Sarbobhoumotto Ki Songga Boishisto O Prokarved</a></li><li><a href="https://www.helptrickbd.com/2025/04/political-science-masters-exam-2022-all-short-questions-and-answers.html" rel="noopener" target="_blank"> Political Science Masters Exam All Short Questions Answers</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="babbage">৩. চার্লস ব্যাবেজের ডিফারেন্স ও অ্যানালিটিক্যাল ইঞ্জিন</h2>
+<p>১৮২২ সালে ব্রিটিশ গণিতবিদ <strong>চার্লস ব্যাবেজ</strong> বাষ্পচালিত 'ডিফারেন্স ইঞ্জিন' এবং ১৮৩৩ সালে আধুনিক কম্পিউটারের মূল নকশা <strong>'অ্যানালিটিক্যাল ইঞ্জিন'</strong> তৈরি করেন। এতে ডেটা ইনপুট, মিল (প্রসেসর), স্টোর (মেমোরি) ও আউটপুট প্রিন্টারের ব্যবস্থা ছিল। কবি বায়রনের কন্যা লেডি অগাস্টা অ্যাডা লাভলেস এতে প্রথম প্রোগ্রাম তৈরি করেন।</p>
+<h2 class="htbd-heading" id="timeline-table">৬. কম্পিউটারের ঐতিহাসিক আবিষ্কারের প্রামাণ্য টাইমলাইন ছক</h2>
+<div class="htbd-table-wrapper">
+<table class="htbd-table">
+<thead>
+<tr>
+<th>সাল</th>
+<th>যন্ত্রের নাম</th>
+<th>আবিষ্কারকের নাম</th>
+<th>প্রধান বৈশিষ্ট্য ও অবদান</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>২৪০০ খ্রি.পূ.</td>
+<td>এবাকাস (Abacus)</td>
+<td>ব্যবিলনীয় সভ্যতা</td>
+<td>পৃথিবীর প্রাচীনতম যান্ত্রিক গণনাকারী ফ্রেম</td>
+</tr>
+<tr>
+<td>১৬৪২</td>
+<td>প্যাসকেলাইন</td>
+<td>ব্লেইজ প্যাসকেল</td>
+<td>গিয়ারযুক্ত প্রথম মেকানিক্যাল যোগ-বিয়োগের যন্ত্র</td>
+</tr>
+<tr>
+<td>১৮৩৩</td>
+<td>অ্যানালিটিক্যাল ইঞ্জিন</td>
+<td>চার্লস ব্যাবেজ</td>
+<td>আধুনিক কম্পিউটারের স্থাপত্য (ইনপুট, মেমোরি, সিপিইউ)</td>
+</tr>
+<tr>
+<td>১৮৯০</td>
+<td>ট্যাবুলেটিং মেশিন</td>
+<td>হারম্যান হলেরিথ</td>
+<td>পাঞ্চ কার্ড ভিত্তিক মার্কিন আদমশুমারি যন্ত্র (IBM-এর সূচনা)</td>
+</tr>
+<tr>
+<td>১৯৪৬</td>
+<td>এনিয়াক (ENIAC)</td>
+<td>মকলে ও একার্ট</td>
+<td>১৮,০০০ ভ্যাকুয়াম টিউব বিশিষ্ট প্রথম পূর্ণাঙ্গ ডিজিটাল কম্পিউটার</td>
+</tr>
+<tr>
+<td>১৯৪৭</td>
+<td>ট্রানজিস্টর</td>
+<td>বার্ডিন, ব্রাটেন ও শকলে</td>
+<td>কম্পিউটারের আকার ছোট ও গতি লক্ষগুণ বৃদ্ধির বিপ্লব</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="htbd-heading" id="transistor-revolution">৫.১ ট্রানজিস্টর ও সিলিকন ভ্যালির উত্থান</h2>
+<p>১৯৪৭ সালের ডিসেম্বরে বেল টেলিফোন ল্যাবরেটরিতে জন বার্ডিন, ওয়াল্টার ব্রাটেন এবং উইলিয়াম শকলে কর্তৃক ট্রানজিস্টর আবিষ্কার মানব ইতিহাসের অন্যতম শ্রেষ্ঠ প্রযুক্তিগত বিপ্লব। ভ্যাকুয়াম টিউবের চেয়ে ট্রানজিস্টর ছিল শতগুণ ছোট, অধিক টেকসই এবং বিদ্যুৎ সাশ্রয়ী। এই আবিষ্কারের জন্য তাঁদের ১৯৫৬ সালে পদার্থবিজ্ঞানে নোবেল পুরস্কার প্রদান করা হয়।</p>
+<p>পরবর্তীতে ক্যালিফোর্নিয়ার সান ফ্রান্সিসকো উপসাগরীয় অঞ্চলে সিলিকন চিপ নির্মাতা প্রতিষ্ঠানগুলোর অভাবনীয় বিকাশের মাধ্যমে গড়ে ওঠে আজকের বিশ্বখ্যাত 'সিলিকন ভ্যালি' (Silicon Valley), যা আধুনিক কম্পিউটার শিল্পের বিশ্বরাজধানী।</p>
+<h2 class="htbd-heading" id="exam-prep">৭. বিসিএস ও চাকরির পরীক্ষার মডেল প্রশ্নোত্তর</h2>
+<p><strong>প্রশ্ন: কম্পিউটারের বাণিজ্যিক রূপদানকারী প্রতিষ্ঠান আইবিএম (IBM)-এর প্রতিষ্ঠাতা কে?</strong><br/>
+<strong>উত্তর:</strong> হারম্যান হলেরিথ (১৮৯০ সালের ট্যাবুলেটিং মেশিন কোম্পানি পরবর্তীতে ১৯২৪ সালে IBM নাম ধারণ করে)।</p>
+<p><strong>প্রশ্ন: পাঞ্চ কার্ডের জনক কে?</strong><br/>
+<strong>উত্তর:</strong> জোসেফ মেরি জ্যাকার্ড (তাঁতের নকশায়) ও হারম্যান হলেরিথ (গণনায়)।</p>
+<p><strong>প্রশ্ন: আধুনিক কম্পিউটারের মস্তিষ্ক (CPU) প্রথম কে উদ্ভাবন করেন?</strong><br/>
+<strong>উত্তর:</strong> ১৯৭১ সালে টেড হফ, ফেডেরিকো ফ্যাগিন ও স্ট্যান মজরের নেতৃত্বে ইনটেল দল প্রথম একক চিপ মাইক্রোপ্রসেসর Intel 4004 তৈরি করে।</p>
+<p><strong>প্রশ্ন: বাইনারি কোডের প্রবক্তা কে ছিলেন?</strong><br/>
+<strong>উত্তর:</strong> জার্মান দার্শনিক ও গণিতবিদ গটফ্রিড ভন লাইবনিজ ১৬৭৯ সালে দ্বিমিক বা বাইনারি পদ্ধতির পূর্ণাঙ্গ রূপরেখা উপস্থাপন করেন।</p>
+<h2 class="htbd-heading" id="faqs">৮. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+<div style="margin-top: 15px;">
+<p><strong>প্রশ্ন ১: এনিয়াক (ENIAC) কম্পিউটারের ওজন কত ছিল?</strong><br/>
+    উত্তর: এনিয়াকের ওজন ছিল প্রায় ৩০ টন এবং এটি চালাতে প্রায় ১৫০ কিলোওয়াট বিদ্যুৎ প্রয়োজন হতো।</p>
+</div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "কম্পিউটারের জনক কে?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "১৮৩৩ সালে আধুনিক কম্পিউটারের স্থাপত্য নকশা প্রণয়নের জন্য ব্রিটিশ গণিতবিদ চার্লস ব্যাবেজকে কম্পিউটারের জনক বলা হয়।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "প্রথম ডিজিটাল কম্পিউটারের নাম কী?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "১৯৪৬ সালে পেনসিলভানিয়া বিশ্ববিদ্যালয়ে নির্মিত ENIAC (Electronic Numerical Integrator and Computer)।"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
+

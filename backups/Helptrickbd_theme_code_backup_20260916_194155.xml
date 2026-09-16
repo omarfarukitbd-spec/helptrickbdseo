@@ -1493,52 +1493,11 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
     letter-spacing: 0.5px;
   }
   
-  /* 6. Post Body Typography, Lists & Readability */
-  .post-body p,
-  .entry-content p {
+  /* 6. Post Body Typography and Readability */
+  .post-body p {
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #202124 !important;
-    margin-bottom: 18px !important;
-  }
-
-  .post-body ol, 
-  .post-body ul,
-  .entry-content ol,
-  .entry-content ul {
-    margin: 18px 0 24px 0 !important;
-    padding-left: 28px !important;
-  }
-
-  .post-body ol li, 
-  .post-body ul li,
-  .entry-content ol li,
-  .entry-content ul li {
-    font-size: 17.5px !important;
-    line-height: 1.85 !important;
-    color: #24292f !important;
-    margin-bottom: 14px !important;
-    padding-bottom: 4px !important;
-  }
-
-  /* Distinct Question & Answer spacing inside lists */
-  .post-body ol li strong,
-  .post-body ul li strong,
-  .entry-content ol li strong,
-  .entry-content ul li strong {
-    display: inline-block !important;
-    margin-bottom: 5px !important;
-    color: #0f172a !important;
-    font-size: 18px !important;
-  }
-
-  .post-body ol li em,
-  .post-body ul li em,
-  .entry-content ol li em,
-  .entry-content ul li em {
-    font-style: normal !important;
-    color: #0369a1 !important;
-    font-weight: 600 !important;
   }
 
   /* 7. Table Responsive & Mobile Overflow Protection */

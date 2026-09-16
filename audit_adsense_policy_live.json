@@ -1,42 +1,10 @@
 {
   "total_posts": 78,
-  "clean_count": 67,
-  "critical_count": 1,
+  "clean_count": 68,
+  "critical_count": 0,
   "warning_count": 10,
-  "critical_posts": [
-    {
-      "url": "https://www.helptrickbd.com/2026/01/what-does-women-participation-in-politics-mean.html",
-      "title": "What Does Women Participation Politics Mean",
-      "status_code": 0,
-      "error": "HTTPSConnectionPool(host='www.helptrickbd.com', port=443): Read timed out. (read timeout=12)",
-      "is_clean": false,
-      "violations": [],
-      "word_count": 0
-    }
-  ],
+  "critical_posts": [],
   "warning_posts": [
-    {
-      "url": "https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html",
-      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)",
-      "status_code": 200,
-      "error": null,
-      "is_clean": true,
-      "violations": [
-        {
-          "category": "LOW_VALUE_CONTENT",
-          "severity": "WARNING",
-          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 452 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
-          "matches": [
-            [
-              "452 words",
-              "আর্টিকেলের পরিধি খুব ছোট"
-            ]
-          ],
-          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
-        }
-      ],
-      "word_count": 452
-    },
     {
       "url": "https://www.helptrickbd.com/2026/01/nari-andolon-ostitto-rokhar-lorai.html",
       "title": "রাষ্ট্র, সমাজ ও নারী: আন্দোলনের প্রেক্ষাপট, অধিকার ও অস্তিত্ব রক্ষার লড়াই (২০২৬)",
@@ -60,6 +28,28 @@
       "word_count": 512
     },
     {
+      "url": "https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html",
+      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 452 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
+          "matches": [
+            [
+              "452 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
+            ]
+          ],
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
+        }
+      ],
+      "word_count": 452
+    },
+    {
       "url": "https://www.helptrickbd.com/2026/01/goals-and-objectives-of-womens-decade.html",
       "title": "নারী দশকের লক্ষ্য ও উদ্দেশ্য: বিশ্ব নারী দশকের পটভূমি",
       "status_code": 200,
@@ -80,6 +70,32 @@
         }
       ],
       "word_count": 413
+    },
+    {
+      "url": "https://www.helptrickbd.com/2025/12/what-is-violence-against-women-definition-impact.html",
+      "title": "নারী নির্যাতন কী? সংজ্ঞা, কারণ ও প্রভাব",
+      "status_code": 200,
+      "error": null,
+      "is_clean": true,
+      "violations": [
+        {
+          "category": "SENSITIVE_OR_ADULT",
+          "severity": "HIGH",
+          "description": "সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)",
+          "matches": [
+            [
+              "যৌন",
+              "িত্তিক নির্যাতন। যেমন: দৈহিক, যৌন বা মানসিক ক্ষতি বা যন্ত্রণা, "
+            ],
+            [
+              "যৌন",
+              "যাতন সাধারণত শারীরিক, মানসিক, যৌন এবং অর্থনৈতিক—এই চার প্রকারের"
+            ]
+          ],
+          "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
+        }
+      ],
+      "word_count": 557
     },
     {
       "url": "https://www.helptrickbd.com/2026/01/what-is-patriarchy-definition-characteristics-impact.html",
@@ -112,30 +128,26 @@
       "word_count": 539
     },
     {
-      "url": "https://www.helptrickbd.com/2025/12/what-is-violence-against-women-definition-impact.html",
-      "title": "নারী নির্যাতন কী? সংজ্ঞা, কারণ ও প্রভাব",
+      "url": "https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html",
+      "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
       "status_code": 200,
       "error": null,
       "is_clean": true,
       "violations": [
         {
-          "category": "SENSITIVE_OR_ADULT",
-          "severity": "HIGH",
-          "description": "সংবেদনশীল বা প্রাপ্তবয়স্ক অনুপযুক্ত শব্দ (Family-Safe Violation)",
+          "category": "LOW_VALUE_CONTENT",
+          "severity": "WARNING",
+          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 455 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
           "matches": [
             [
-              "যৌন",
-              "িত্তিক নির্যাতন। যেমন: দৈহিক, যৌন বা মানসিক ক্ষতি বা যন্ত্রণা, "
-            ],
-            [
-              "যৌন",
-              "যাতন সাধারণত শারীরিক, মানসিক, যৌন এবং অর্থনৈতিক—এই চার প্রকারের"
+              "455 words",
+              "আর্টিকেলের পরিধি খুব ছোট"
             ]
           ],
-          "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
+          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
         }
       ],
-      "word_count": 557
+      "word_count": 455
     },
     {
       "url": "https://www.helptrickbd.com/2025/12/imam-ghazali-contribution-political-thought.html",
@@ -160,28 +172,6 @@
       "word_count": 711
     },
     {
-      "url": "https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html",
-      "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
-      "status_code": 200,
-      "error": null,
-      "is_clean": true,
-      "violations": [
-        {
-          "category": "LOW_VALUE_CONTENT",
-          "severity": "WARNING",
-          "description": "লো-ভ্যালু কন্টেন্ট ঝুঁকি (মাত্র 455 শব্দ)। গুগল এডসেন্স অনুমোদনের জন্য ন্যূনতম ৮০০+ শব্দ প্রয়োজন।",
-          "matches": [
-            [
-              "455 words",
-              "আর্টিকেলের পরিধি খুব ছোট"
-            ]
-          ],
-          "alternative": "আর্টিকেলে আরও সাব-হেডিং, বিশ্লেষণ ও মডেল প্রশ্নোত্তর যুক্ত করে ১,০০০+ শব্দে রূপান্তর করুন।"
-        }
-      ],
-      "word_count": 455
-    },
-    {
       "url": "https://www.helptrickbd.com/2025/12/computer-generations-features-part3.html",
       "title": "কম্পিউটারের প্রজন্ম: ১ম থেকে ৫ম প্রজন্মের প্রযুক্তিগত তুলনা ও বৈশিষ্ট্য (পার্ট-৩)",
       "status_code": 200,
@@ -199,17 +189,17 @@
             ],
             [
               "চটি",
-              "েড সার্কিট (IC) ও ওএস 👉 ৬. পাঁচটি প্রজন্মের পূর্ণাঙ্গ তুলনামূলক"
+              "েটেড সার্কিট (IC) ও ওএস ৬. পাঁচটি প্রজন্মের পূর্ণাঙ্গ তুলনামূলক"
             ],
             [
               "চটি",
-              " কোয়ান্টাম কম্পিউটিং 👉 ৬. পাঁচটি প্রজন্মের পূর্ণাঙ্গ তুলনামূলক"
+              " ও কোয়ান্টাম কম্পিউটিং ৬. পাঁচটি প্রজন্মের পূর্ণাঙ্গ তুলনামূলক"
             ]
           ],
           "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
         }
       ],
-      "word_count": 578
+      "word_count": 570
     },
     {
       "url": "https://www.helptrickbd.com/2025/07/what-is-statesmanship.html",
@@ -231,7 +221,7 @@
           "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
         }
       ],
-      "word_count": 1052
+      "word_count": 1044
     },
     {
       "url": "https://www.helptrickbd.com/2025/07/recent-political-thought-suggestion-2024.html",
@@ -253,7 +243,7 @@
           "alternative": "শুদ্ধ অ্যাকাডেমিক ও তথ্যনির্ভর ভাষা"
         }
       ],
-      "word_count": 579
+      "word_count": 506
     }
   ]
 }

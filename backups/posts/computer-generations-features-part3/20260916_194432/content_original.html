@@ -1,0 +1,283 @@
+
+<!-- HelpTrickBD Zero-Lag Scroll Progress Bar -->
+<div id="ht-reading-progress-container" style="position: sticky; top: 0; left: 0; width: 100%; height: 5px; background: rgba(226, 232, 240, 0.4); z-index: 99999;">
+<div id="ht-reading-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #2563eb, #38bdf8, #10b981); transition: width 0.1s ease-out;"></div>
+</div>
+<script>
+(function() {
+  window.addEventListener('scroll', function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (height > 0) ? (winScroll / height) * 100 : 0;
+    var bar = document.getElementById("ht-reading-progress-bar");
+    if (bar) { bar.style.width = scrolled + "%"; }
+  }, { passive: true });
+})();
+</script>
+<!DOCTYPE html>
+
+<html lang="bn">
+<head>
+<meta charset="utf-8"/>
+<title>কম্পিউটারের প্রজন্ম: ১ম থেকে ৫ম প্রজন্মের প্রযুক্তিগত তুলনা ও বৈশিষ্ট্য (পার্ট-৩)</title>
+<meta content="কম্পিউটারের প্রজন্ম: ১ম থেকে ৫ম প্রজন্মের হার্ডওয়্যার, সফটওয়্যার, প্রসেসিং ক্ষমতা ও কৃত্রিম বুদ্ধিমত্তার প্রযুক্তিগত বিস্তারিত তুলনা পড়ুন।" name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+</head>
+<body>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  @font-face {
+    font-family: 'SolaimanLipi';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-normal-v1.0.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'SolaimanLipi';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
+  }
+  .htbd-post-wrapper,
+  .htbd-post-wrapper * {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }
+  .htbd-post-wrapper p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+    text-align: justify !important;
+  }
+  .htbd-heading {
+    color: #1a73e8 !important;
+    border-left: 5px solid #1a73e8 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-toc-box {
+    background: #f8fafd !important;
+    border: 1px solid #d2e3fc !important;
+    border-radius: 10px !important;
+    padding: 20px 24px !important;
+    margin: 25px 0 !important;
+    box-shadow: 0 1px 4px rgba(26,115,232,0.06) !important;
+  }
+  .htbd-toc-list {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin: 12px 0 0 0 !important;
+  }
+  .htbd-toc-list li {
+    list-style-type: none !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px dashed #e8eaed !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-toc-list li:last-child {
+    border-bottom: none !important;
+  }
+  .htbd-toc-list li a {
+    color: #1a73e8 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+  }
+  .htbd-toc-list li a:hover {
+    color: #0d47a1 !important;
+    text-decoration: underline !important;
+  }
+  .htbd-table-wrapper {
+    overflow-x: auto !important;
+    margin: 22px 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+  .htbd-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background: #ffffff !important;
+    font-size: 16px !important;
+  }
+  .htbd-table th {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    padding: 13px 15px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+  }
+  .htbd-table td {
+    padding: 12px 15px !important;
+    border: 1px solid #e8eaed !important;
+    color: #333333 !important;
+  }
+  .htbd-table tr:nth-child(even) {
+    background-color: #f8fafd !important;
+  }
+</style>
+<div class="htbd-post-wrapper">
+<div style="margin-bottom: 18px;">
+<span class="htbd-badge" style="background: #e8f0fe; color: #1a73e8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
+ বিভাগ: তথ্য ও যোগাযোগ প্রযুক্তি (ICT) | সর্বশেষ সংস্করণ: ২০২৬ | বিসিএস ও জব স্পেশাল
+ </span>
+</div>
+<!-- Hero Thumbnail Banner -->
+<div style="text-align: center; margin: 18px 0 25px 0;">
+<img alt="কম্পিউটারের প্রজন্ম ও প্রযুক্তিগত তুলনা - HelpTrickBD" height="675" loading="eager" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/computer-generations-features-official-banner.webp" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto 24px;" title="কম্পিউটারের প্রজন্ম: ১ম থেকে ৫ম প্রজন্মের প্রযুক্তিগত তুলনা ও বৈশিষ্ট্য (পার্ট-৩)" width="1200"/>
+<span style="display: block; font-size: 14px; color: #5f6368; margin-top: 8px; font-style: italic;">
+      চিত্র: ভ্যাকুয়াম টিউব, ট্রানজিস্টর, ইন্টিগ্রেটেড সার্কিট (IC) থেকে আধুনিক কোয়ান্টাম ও এআই প্রসেসর
+    </span>
+</div>
+<div class="htbd-qbox" style="background: #f8f9fa; border-left: 5px solid #1a73e8; padding: 20px 24px; margin: 22px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+<p style="margin: 0; font-size: 18px; line-height: 1.8;">
+<strong> সারসংক্ষেপ (Quick Overview):</strong>
+<strong>কম্পিউটারের প্রজন্ম (Computer Generations)</strong> বলতে হার্ডওয়্যার ও মেমোরি প্রযুক্তির বৈপ্লবিক পরিবর্তনের ওপর ভিত্তি করে কম্পিউটারের ঐতিহাসিক ধাপভিত্তিক কালবিভাজনকে বোঝায়। ১৯৪০-এর দশকের সুবিশাল ভ্যাকুয়াম টিউব থেকে শুরু করে আজকের ন্যানোমিটার ভিএলএসআই (VLSI) মাইক্রোপ্রসেসর এবং ভবিষ্যৎ কৃত্রিম বুদ্ধিমত্তা (Artificial Intelligence) ও কোয়ান্টাম কম্পিউটিং—এই দীর্ঘ বিবর্তনকে মোট পাঁচটি প্রজন্মে বিভক্ত করা হয়েছে। নিচে প্রতিটি প্রজন্মের সার্কিট প্রযুক্তি, মেমোরি ব্যবস্থা, ভাষা এবং তুলনামূলক তথ্য ছক বিশদভাবে সাজিয়ে দেওয়া হলো।
+    </p><div class="ht-toc-container" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 22px; margin: 24px 0; font-family: 'SolaimanLipi', sans-serif;">
+<div style="font-weight: 700; font-size: 18px; color: #0f172a; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+<span>সূচিপত্র (গুরুত্বপূর্ণ বিষয়বস্তু)</span>
+<span style="font-size: 12px; color: #64748b; font-weight: normal;">(পড়ার সুবিধার্থে ক্লিক করে সরাসরি যান)</span>
+</div>
+<ul style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+<li style="margin-left: 20px;"><a href="#section-1" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #475569; text-decoration: none; font-size: 15px; transition: color 0.2s;">↳ সূচিপত্র (Table of Contents)</a></li>
+<li style="font-weight: 600;"><a href="#gen1" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ১. প্রথম প্রজন্ম (১৯৪০–১৯৫৬): ভ্যাকুয়াম টিউব ও মেশিন ভাষা</a></li>
+<li style="font-weight: 600;"><a href="#gen2" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ২. দ্বিতীয় প্রজন্ম (১৯৫৬–১৯৬৩): ট্রানজিস্টর ও অ্যাসেম্বলি ভাষা</a></li>
+<li style="font-weight: 600;"><a href="#gen3" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৩. তৃতীয় প্রজন্ম (১৯৬৪–১৯৭১): ইন্টিগ্রেটেড সার্কিট (IC) ও ওএস</a></li>
+<li style="font-weight: 600;"><a href="#gen-table" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৬. পাঁচটি প্রজন্মের পূর্ণাঙ্গ তুলনামূলক তথ্য সারণী</a></li>
+<li style="font-weight: 600;"><a href="#ai-quantum-future" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৫.১ কোয়ান্টাম কম্পিউটিং ও কৃত্তিম বুদ্ধিমত্তা (AI)-এর যুগলবন্দি</a></li>
+<li style="font-weight: 600;"><a href="#faqs" onmouseout="this.style.textDecoration='none'" onmouseover="this.style.textDecoration='underline'" style="color: #2563eb; text-decoration: none; font-size: 15px; transition: color 0.2s;"> ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+</div>
+<div class="htbd-toc-box">
+<h3 id="section-1" style="margin-top: 0; color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; font-size: 20px; font-weight: 700;"> সূচিপত্র (Table of Contents)</h3>
+<ul class="htbd-toc-list">
+<li><a href="#gen1"> ১. প্রথম প্রজন্ম (১৯৪০–১৯৫৬): ভ্যাকুয়াম টিউব ও মেশিন ভাষা</a></li>
+<li><a href="#gen2"> ২. দ্বিতীয় প্রজন্ম (১৯৫৬–১৯৬৩): ট্রানজিস্টর ও অ্যাসেম্বলি ভাষা</a></li>
+<li><a href="#gen3"> ৩. তৃতীয় প্রজন্ম (১৯৬৪–১৯৭১): ইন্টিগ্রেটেড সার্কিট (IC) ও ওএস</a></li>
+<li><a href="#gen4"> ৪. চতুর্থ প্রজন্ম (১৯৭১–বর্তমান): ভিএলএসআই ও মাইক্রোপ্রসেসর</a></li>
+<li><a href="#gen5"> ৫. পঞ্চম প্রজন্ম (বর্তমান ও ভবিষ্যৎ): কৃত্রিম বুদ্ধিমত্তা ও কোয়ান্টাম কম্পিউটিং</a></li>
+<li><a href="#gen-table"> ৬. পাঁচটি প্রজন্মের পূর্ণাঙ্গ তুলনামূলক তথ্য সারণী</a></li>
+<li><a href="#faqs"> ৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="gen1">১. প্রথম প্রজন্ম (১৯৪০–১৯৫৬): ভ্যাকুয়াম টিউব ও মেশিন ভাষা</h2>
+<div class="ht-meta-engagement-badge" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 24px 0; padding: 10px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 6px; font-family: 'SolaimanLipi', sans-serif; font-size: 15px; color: #334155;">
+<span style="font-weight: 600; color: #0369a1;"> পড়ার আনুমানিক সময়: ৯ মিনিট (১৫৮৭ শব্দ)</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; background: #ecfdf5; color: #047857; padding: 3px 8px; border-radius: 4px; font-size: 13px; font-weight: 600;"> সর্বশেষ হালনাগাদ ২০২৬</span>
+<span style="color: #cbd5e1;">|</span>
+<span style="color: #64748b; font-size: 14px;"> HelpTrickBD Verified Study Guide</span>
+</div>
+<p>প্রথম প্রজন্মের কম্পিউটারের মূল ভিত্তি ছিল কাঁচের তৈরি উত্তপ্ত <strong>ভ্যাকুয়াম টিউব (Vacuum Tube)</strong>। এই কম্পিউটারগুলো আকারে একটি বিশাল ঘরের সমান বড় হতো, প্রচুর তাপ উৎপন্ন করত এবং ঘন ঘন বাল্ব পুড়ে যেত। ইনপুট হিসেবে পাঞ্চ কার্ড এবং মেমোরির জন্য ম্যাগনেটিক ড্রাম ব্যবহৃত হতো। এতে শুধু ০ এবং ১-এর মেশিন ভাষায় প্রোগ্রাম লেখা হতো। উদাহরণ: ENIAC, EDVAC, UNIVAC-1।</p>
+<h2 class="htbd-heading" id="gen2">২. দ্বিতীয় প্রজন্ম (১৯৫৬–১৯৬৩): ট্রানজিস্টর ও অ্যাসেম্বলি ভাষা</h2>
+<p>১৯৪৭ সালে বেল ল্যাবসে ট্রানজিস্টর আবিষ্কারের ফলে কম্পিউটারের রূপ সম্পূর্ণ বদলে যায়। ট্রানজিস্টর ব্যবহারের ফলে কম্পিউটার আকারে অনেক ছোট, দ্রুতগতির এবং বিদ্যুৎ সাশ্রয়ী হয়ে ওঠে। এই প্রজন্মে ম্যাগনেটিক কোর মেমোরির আবির্ভাব ঘটে এবং ফোরট্রান (FORTRAN) ও কোবল (COBOL)-এর মতো উচ্চস্তরের ভাষার সূচনা হয়। উদাহরণ: IBM 1401, CDC 1604।</p>
+<div class="htbd-link-box" style="margin: 25px 0; padding: 15px 20px; background: #f0f7ff; border-left: 5px solid #1a73e8; border-radius: 6px;">
+<strong style="color: #1a73e8; font-size: 17px; display: block; margin-bottom: 8px;"> সম্পর্কিত আরো গুরুত্বপূর্ণ আর্টিকেল পড়ুন:</strong>
+<ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+<li><a href="https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html" rel="noopener" target="_blank"> Sarbobhoumotto Ki Songga Boishisto O Prokarved</a></li><li><a href="https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html" rel="noopener" target="_blank"> Sher E Bangla Fazlul Haque Social Welfare</a></li><li><a href="https://www.helptrickbd.com/2025/04/political-science-masters-exam-2022-all-short-questions-and-answers.html" rel="noopener" target="_blank"> Political Science Masters Exam All Short Questions Answers</a></li>
+</ul>
+</div>
+<h2 class="htbd-heading" id="gen3">৩. তৃতীয় প্রজন্ম (১৯৬৪–১৯৭১): ইন্টিগ্রেটেড সার্কিট (IC) ও ওএস</h2>
+<p>১৯৫৮ সালে জ্যাক কিলবি ও রবার্ট নয়েস একটি সিলিকন চিপের ওপর শত শত ট্রানজিস্টর বসিয়ে <strong>ইন্টিগ্রেটেড সার্কিট (IC)</strong> উদ্ভাবন করেন। এই প্রজন্মে মনিটর ও কীবোর্ড ইনপুট-আউটপুট মাধ্যম হিসেবে যুক্ত হয় এবং অপারেটিং সিস্টেমের (OS) মাধ্যমে টাইম শেয়ারিং শুরু হয়। উদাহরণ: IBM System/360, PDP-8।</p>
+<h2 class="htbd-heading" id="gen-table">৬. পাঁচটি প্রজন্মের পূর্ণাঙ্গ তুলনামূলক তথ্য সারণী</h2>
+<div class="htbd-table-wrapper">
+<table class="htbd-table">
+<thead>
+<tr>
+<th>প্রজন্ম</th>
+<th>মূল সার্কিট উপাদান</th>
+<th>মেমোরি মাধ্যম</th>
+<th>প্রোগ্রামিং ভাষা</th>
+<th>গতি ও ক্ষমতা</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>১ম প্রজন্ম</td>
+<td>ভ্যাকুয়াম টিউব</td>
+<td>ম্যাগনেটিক ড্রাম</td>
+<td>মেশিন ল্যাঙ্গুয়েজ (০, ১)</td>
+<td>মিলি-সেকেন্ড (ধীর)</td>
+</tr>
+<tr>
+<td>২য় প্রজন্ম</td>
+<td>ট্রানজিস্টর</td>
+<td>ম্যাগনেটিক কোর</td>
+<td>অ্যাসেম্বলি ও ফোরট্রান</td>
+<td>মাইক্রো-সেকেন্ড</td>
+</tr>
+<tr>
+<td>৩য় প্রজন্ম</td>
+<td>ইন্টিগ্রেটেড সার্কিট (IC)</td>
+<td>সেমিকন্ডাক্টর র্যাম</td>
+<td>উচ্চতর ভাষা (BASIC, PASCAL)</td>
+<td>ন্যানো-সেকেন্ড</td>
+</tr>
+<tr>
+<td>৪র্থ প্রজন্ম</td>
+<td>VLSI / মাইক্রোপ্রসেসর</td>
+<td>সিলিকন SSD ও অপটিক্যাল ডিস্ক</td>
+<td>C, C++, Java, Python</td>
+<td>পিকো-সেকেন্ড (বিলিয়ন গুণ)</td>
+</tr>
+<tr>
+<td>৫ম প্রজন্ম</td>
+<td>ULSI, AI ও কোয়ান্টাম চিপ</td>
+<td>অপটিক্যাল ও ক্লাউড মেমোরি</td>
+<td>ন্যাচারাল ল্যাঙ্গুয়েজ ও প্রম্পট</td>
+<td>ফেপ্টো-সেকেন্ড (বুদ্ধিমত্তা)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="htbd-heading" id="ai-quantum-future">৫.১ কোয়ান্টাম কম্পিউটিং ও কৃত্তিম বুদ্ধিমত্তা (AI)-এর যুগলবন্দি</h2>
+<p>পঞ্চম প্রজন্মের কম্পিউটার শুধুমাত্র প্রচলিত সিলিকন চিপের ওপর নির্ভরশীল নয়; এটি কাজ করছে কোয়ান্টাম বলবিদ্যার 'সুপারপজিশন' ও 'এনট্যাঙ্গলমেন্ট' নীতির ওপর ভিত্তি করে তৈরি <strong>কিউবিট (Qubit)</strong>-এর মাধ্যমে। যেখানে একটি সাধারণ কম্পিউটার কোনো জটিল সমস্যা সমাধানে কয়েক হাজার বছর সময় নিত, সেখানে গুগলের 'সাইকামোর' (Sycamore) কোয়ান্টাম প্রসেসর তা মাত্র কয়েক মিনিটে সমাধান করতে সক্ষম।</p>
+<p>এর সাথে যুক্ত হয়েছে লার্জ ল্যাঙ্গুয়েজ মডেল (LLM) ও জেনারেটিভ এআই, যা কম্পিউটারকে মানুষের মতো যুক্তি প্রয়োগ, কোডিং ও সৃজনশীল সিদ্ধান্ত গ্রহণের ক্ষমতা দিয়েছে।</p>
+<h2 class="htbd-heading" id="faqs">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+<div style="margin-top: 15px;">
+<p><strong>প্রশ্ন ১: প্রথম মাইক্রোপ্রসেসরটির নাম কী ছিল?</strong><br/>
+    উত্তর: ১৯৭১ সালে ইনটেল কর্পোরেশন কর্তৃক উদ্ভাবিত Intel 4004 (৪-বিটের প্রসেসর)।</p>
+<p><strong>প্রশ্ন ২: পঞ্চম প্রজন্মের কম্পিউটারের প্রধান বৈশিষ্ট্য কী?</strong><br/>
+    উত্তর: কৃত্রিম বুদ্ধিমত্তা (AI), কণ্ঠস্বর শনাক্তকরণ (Voice Recognition) এবং সমান্তরাল প্রসেসিং ক্ষমতা।</p>
+<p><strong>প্রশ্ন ৩: ভিএলএসআই (VLSI) এবং ইউএলএসআই (ULSI)-এর পূর্ণরূপ কী?</strong><br/>
+    উত্তর: VLSI হলো Very Large Scale Integration (চতুর্থ প্রজন্ম) এবং ULSI হলো Ultra Large Scale Integration (পঞ্চম প্রজন্ম)।</p>
+<p><strong>প্রশ্ন ৪: কৃত্রিম বুদ্ধিমত্তার (AI) জনক কাকে বলা হয়?</strong><br/>
+    উত্তর: ব্রিটিশ গণিতবিদ অ্যালান ট্যুরিং এবং মার্কিন কম্পিউটার বিজ্ঞানী জন ম্যাকার্থিকে এআই-এর অন্যতম জনক বিবেচনা করা হয়।</p>
+</div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "কম্পিউটারের ৩য় প্রজন্মে কী সার্কিট ব্যবহৃত হয়?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "তৃতীয় প্রজন্মে জ্যাক কিলবি উদ্ভাবিত সিলিকনভিত্তিক ইন্টিগ্রেটেড সার্কিট বা আইসি (IC) ব্যবহৃত হয়।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "মাইক্রোপ্রসেসর কোন প্রজন্মের আবিষ্কার?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "চতুর্থ প্রজন্মে (১৯৭১ সালে) ভিএলএসআই প্রযুক্তির হাত ধরে মাইক্রোপ্রসেসর আবিষ্কৃত হয়।"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
+
