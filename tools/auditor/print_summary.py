@@ -16,7 +16,8 @@ for i, p in enumerate(d["duplicate_toc"], 1):
 
 print("\n=== 5 THIN POSTS (< 600 WORDS) ===")
 for i, p in enumerate(d["thin_posts"], 1):
-    print(f"{i}. [{p['words']} words] {p['title']}")
+    print(f"{i}. [{p['id']}] ({p['words']} words) {p['title']}")
+    print(f"   URL: {p['url']}")
 
 print("\n=== 4 MISSING BANNER POSTS ===")
 for i, p in enumerate(d["missing_banner"], 1):
