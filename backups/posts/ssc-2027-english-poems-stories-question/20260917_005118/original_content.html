@@ -1,0 +1,370 @@
+<style>
+  .htbd-academic-container,
+  .htbd-academic-container * {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }
+  .htbd-academic-container p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+  }
+  .htbd-academic-heading {
+    color: #0c2340 !important;
+    border-left: 5px solid #d4af37 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-subheading {
+    color: #1e3a8a !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-top: 26px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-overview-box {
+    background: #f8fafd !important;
+    border: 1px solid #dbeafe !important;
+    border-left: 5px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 24px 0 !important;
+    box-shadow: 0 2px 6px rgba(12,35,64,0.06) !important;
+  }
+  .htbd-overview-box p {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #1e293b !important;
+  }
+  .htbd-toc-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 4px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 20px 24px !important;
+    margin: 28px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+  }
+  .htbd-toc-card .toc-title {
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0 0 14px 0;
+    color: #0c2340;
+  }
+  .htbd-toc-card ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+    list-style-type: none !important;
+  }
+  .htbd-toc-card ul li {
+    margin-bottom: 8px !important;
+    font-size: 17px !important;
+    padding-left: 6px !important;
+  }
+  .htbd-toc-card ul li a {
+    color: #0b2046 !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-academic-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 16.5px !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-academic-table thead tr {
+    background: #0c2340 !important;
+    color: #fff !important;
+  }
+  .htbd-academic-table th {
+    padding: 13px 16px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #1e293b !important;
+    vertical-align: top !important;
+    line-height: 1.65 !important;
+  }
+  .htbd-academic-table tbody tr:nth-child(even) {
+    background: #f8fafc !important;
+  }
+  .htbd-academic-table tbody tr:hover {
+    background: #eef2ff !important;
+  }
+  .htbd-tip-box {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-tip-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #14532d !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-warning-box {
+    background: #fffbeb !important;
+    border: 1px solid #fde68a !important;
+    border-left: 5px solid #d97706 !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-warning-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #78350f !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-faq-item {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 18px 0 !important;
+  }
+  .htbd-faq-item:last-child {
+    border-bottom: none !important;
+  }
+  .htbd-series-nav {
+    background: linear-gradient(135deg, #0c2340 0%, #1e3a8a 100%) !important;
+    border-radius: 10px !important;
+    padding: 24px 28px !important;
+    margin: 32px 0 !important;
+    color: #fff !important;
+  }
+  .htbd-series-nav .nav-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 0 16px 0 !important;
+    color: #fbbf24 !important;
+  }
+  .htbd-series-nav ul {
+    margin: 0 !important;
+    padding-left: 18px !important;
+    list-style: none !important;
+  }
+  .htbd-series-nav ul li {
+    margin-bottom: 8px !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+  .htbd-series-nav ul li a {
+    color: #bfdbfe !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-series-nav ul li.current-post {
+    color: #fde68a !important;
+    font-weight: 700 !important;
+  }
+  .htbd-hero-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.10) !important;
+    display: block !important;
+    margin: 0 0 20px 0 !important;
+  }
+</style>
+<div class="htbd-academic-container">
+
+  <figure style="margin: 0 0 20px 0;">
+    <img class="htbd-hero-img" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_04_poems_stories.webp" alt="SSC 2027 English Poems and Stories Question Answer Guide" title="SSC 2027 English Poems and Stories Question Answer Guide" width="1200" height="675" loading="eager" />
+    <figcaption style="font-size: 14px; color: #64748b; text-align: center; margin-top: 6px;">SSC 2027 English Poems & Stories — Part 04 of the Study Silo Series</figcaption>
+  </figure>
+
+  <div class="htbd-overview-box">
+    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্রে <strong>প্রশ্ন ৮</strong> (কবিতা থেকে প্রশ্নোত্তর) ও <strong>প্রশ্ন ৯</strong> (গল্প থেকে প্রশ্নোত্তর) থেকে মোট <strong>২০ নম্বর</strong> আসে। প্রতিটি প্রশ্নে ৮টির মধ্যে ৫টির উত্তর দিতে হয়। EFT বইয়ের কবিতা ও গল্পগুলো ভালোভাবে পড়লে এই ২০ নম্বরে নিশ্চিত পূর্ণ নম্বর পাওয়া সম্ভব। (Q8 from Poems and Q9 from Stories — 20 marks in total, answer any 5 out of 8 each.)</p>
+  </div>
+
+<!--more-->
+
+  <div class="htbd-toc-card">
+    <p class="toc-title">বিষয়সূচি (Table of Contents)</p>
+    <ul>
+      <li><a href="#marks-table">১. নম্বর বণ্টন ও প্রশ্নের ধরন</a></li>
+      <li><a href="#poem-list">২. গুরুত্বপূর্ণ কবিতা তালিকা (Important Poems for Q8)</a></li>
+      <li><a href="#story-list">৩. গুরুত্বপূর্ণ গল্প তালিকা (Important Stories for Q9)</a></li>
+      <li><a href="#answer-tips">৪. কবিতা ও গল্পের উত্তর লেখার কৌশল</a></li>
+      <li><a href="#model-answers">৫. নমুনা প্রশ্নোত্তর (Model Q/A)</a></li>
+      <li><a href="#faq">৬. সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+    </ul>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="marks-table">১. নম্বর বণ্টন (Marks Distribution — Q8 & Q9)</h2>
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>প্রশ্ন</th><th>উৎস</th><th>নির্দেশনা</th><th>নম্বর</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Q8</strong></td><td>EFT পাঠ্যবইয়ের কবিতা (Poems)</td><td>৮টির মধ্যে যেকোনো ৫টির উত্তর দিতে হবে</td><td><strong>2 × 5 = 10</strong></td></tr>
+        <tr><td><strong>Q9</strong></td><td>EFT পাঠ্যবইয়ের গল্প (Stories)</td><td>৮টির মধ্যে যেকোনো ৫টির উত্তর দিতে হবে</td><td><strong>2 × 5 = 10</strong></td></tr>
+        <tr><td colspan="3" style="text-align:right; font-weight:700; background:#f1f5f9;">মোট:</td><td style="font-weight:700; background:#f1f5f9; color:#0c2340;"><strong>20</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="htbd-tip-box">
+    <p><strong>গুরুত্বপূর্ণ পরামর্শ:</strong> Q8 ও Q9-এ ৮টির মধ্যে ৫টির উত্তর দিতে হয়। তাই যে ৫টি প্রশ্নের উত্তর ভালো জানেন, সেগুলো বেছে নিন। ৫টির বেশি উত্তর দিলে প্রথম ৫টিই নম্বরের জন্য গণনা হবে।</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="poem-list">২. গুরুত্বপূর্ণ কবিতা তালিকা (Important Poems for SSC 2027 Q8)</h2>
+  <p>EFT বইয়ের নিচের কবিতাগুলো SSC 2027-এর Q8-এ আসার সম্ভাবনা সবচেয়ে বেশি। প্রতিটি কবিতার বিষয়বস্তু, কবির নাম এবং মূল বার্তা জানা থাকলে সহজেই উত্তর দেওয়া যাবে।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>কবিতার নাম</th><th>কবির নাম</th><th>মূল বিষয়</th><th>গুরুত্ব</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>The Solitary Reaper</td><td>William Wordsworth</td><td>একাকী কৃষক বালিকার গান</td><td>অত্যন্ত গুরুত্বপূর্ণ</td></tr>
+        <tr><td>O Captain! My Captain!</td><td>Walt Whitman</td><td>আব্রাহাম লিংকনের প্রতি শোকগাথা</td><td>অত্যন্ত গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Daffodils (I Wandered Lonely as a Cloud)</td><td>William Wordsworth</td><td>প্রকৃতির সৌন্দর্য ও আনন্দ</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>The Road Not Taken</td><td>Robert Frost</td><td>জীবনে সিদ্ধান্ত গ্রহণ</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Stopping by Woods on a Snowy Evening</td><td>Robert Frost</td><td>কর্তব্যবোধ ও জীবনের দায়িত্ব</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>If —</td><td>Rudyard Kipling</td><td>সাফল্যের গুণাবলি ও আদর্শ মানুষ</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>The Tiger</td><td>William Blake</td><td>সৃষ্টিকর্তার শক্তি ও বাঘের ভয়াবহতা</td><td>মাঝারি গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Sonnet 18 (Shall I compare thee)</td><td>William Shakespeare</td><td>প্রেম ও সৌন্দর্যের অমরত্ব</td><td>মাঝারি গুরুত্বপূর্ণ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="story-list">৩. গুরুত্বপূর্ণ গল্প তালিকা (Important Stories for SSC 2027 Q9)</h2>
+  <p>EFT বইয়ের নিচের গল্পগুলো Q9-এ আসার সম্ভাবনা সবচেয়ে বেশি। প্রতিটি গল্পের চরিত্র, ঘটনাপ্রবাহ ও নৈতিক শিক্ষা (Moral) জানা থাকলে সহজেই উত্তর দেওয়া যাবে।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>গল্পের নাম</th><th>লেখকের নাম</th><th>মূল বিষয়</th><th>গুরুত্ব</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>The Gift of the Magi</td><td>O. Henry</td><td>প্রেম ও আত্মত্যাগ</td><td>অত্যন্ত গুরুত্বপূর্ণ</td></tr>
+        <tr><td>The Necklace</td><td>Guy de Maupassant</td><td>লোভ ও জীবনের বাস্তবতা</td><td>অত্যন্ত গুরুত্বপূর্ণ</td></tr>
+        <tr><td>The Last Leaf</td><td>O. Henry</td><td>আশা, বন্ধুত্ব ও আত্মত্যাগ</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>The Happy Prince</td><td>Oscar Wilde</td><td>পরোপকার ও ভালোবাসা</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>The Old Man and the Sea (excerpt)</td><td>Ernest Hemingway</td><td>সংগ্রাম ও অধ্যবসায়</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>The Selfish Giant</td><td>Oscar Wilde</td><td>স্বার্থপরতা ও ক্ষমা</td><td>মাঝারি গুরুত্বপূর্ণ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="answer-tips">৪. কবিতা ও গল্পের উত্তর লেখার কৌশল (Answer Writing Tips for Q8 & Q9)</h2>
+
+  <h3 class="htbd-academic-subheading">কবিতার উত্তর লেখার নিয়ম (How to Answer Poem Questions)</h3>
+  <p><strong>১. কবিতার বিষয়বস্তু জানুন:</strong> প্রতিটি কবিতার Central Theme, Imagery এবং কবির মূল বক্তব্য বুঝুন।</p>
+  <p><strong>২. কবির নাম ও Background:</strong> কবির সম্পর্কে সংক্ষিপ্ত পরিচয় জানুন — এটি উত্তরে অতিরিক্ত তথ্য যোগ করতে সাহায্য করে।</p>
+  <p><strong>৩. Literary Devices চিহ্নিত করুন:</strong> Simile, Metaphor, Personification, Alliteration — এগুলো কবিতার প্রশ্নে প্রায়ই জিজ্ঞাসা করা হয়।</p>
+  <p><strong>৪. সম্পূর্ণ বাক্যে উত্তর:</strong> কবিতার লাইন উদ্ধৃত করতে হলে Quotation Mark (" ") ব্যবহার করুন।</p>
+
+  <h3 class="htbd-academic-subheading">গল্পের উত্তর লেখার নিয়ম (How to Answer Story Questions)</h3>
+  <p><strong>১. Character ও Plot জানুন:</strong> প্রধান চরিত্র, তাদের সম্পর্ক এবং গল্পের ঘটনাপ্রবাহ মনে রাখুন।</p>
+  <p><strong>২. Moral বা Theme:</strong> গল্পের শেষে কী শিক্ষা পাওয়া যায় (Moral/Theme) — এটি প্রায়ই জিজ্ঞাসা করা হয়।</p>
+  <p><strong>৩. নিজের ভাষায় লিখুন:</strong> গল্প থেকে সরাসরি কপি না করে নিজের ভাষায় প্যারাফ্রেজ করুন।</p>
+  <p><strong>৪. প্রাসঙ্গিক উদ্ধৃতি:</strong> উত্তরে গল্প থেকে প্রাসঙ্গিক দৃষ্টান্ত উল্লেখ করলে নম্বর বাড়ে।</p>
+
+  <h2 class="htbd-academic-heading" id="model-answers">৫. নমুনা প্রশ্নোত্তর (Model Q/A for Poems & Stories)</h2>
+  <h3 class="htbd-academic-subheading">কবিতার নমুনা উত্তর — "The Road Not Taken" (Robert Frost)</h3>
+  <p><strong>Q: What is the central theme of the poem "The Road Not Taken"?</strong></p>
+  <p style="background:#f0fdf4; border:1px solid #bbf7d0; padding:14px 18px; border-radius:8px; color:#14532d; font-size:16.5px; line-height:1.8;"><strong>Model Answer:</strong> The central theme of Robert Frost's poem "The Road Not Taken" is the significance of individual choices in life. The speaker comes to a fork in the road and must choose one path. The poem suggests that every choice we make in life shapes our future. The speaker chose the less-traveled road, representing unconventional choices. The poem teaches us that we must take responsibility for our decisions and accept the outcomes with dignity.</p>
+
+  <h3 class="htbd-academic-subheading">গল্পের নমুনা উত্তর — "The Gift of the Magi" (O. Henry)</h3>
+  <p><strong>Q: What is the moral of the story "The Gift of the Magi"?</strong></p>
+  <p style="background:#f0fdf4; border:1px solid #bbf7d0; padding:14px 18px; border-radius:8px; color:#14532d; font-size:16.5px; line-height:1.8;"><strong>Model Answer:</strong> The moral of "The Gift of the Magi" by O. Henry is that true love and selfless sacrifice are the greatest gifts one can give. Della sold her beautiful hair and Jim sold his watch to buy gifts for each other. Although the gifts became useless, the story shows that the spirit of giving and love matters more than material possessions. Selfless love always triumphs over poverty and difficulty.</p>
+
+  <h2 class="htbd-academic-heading" id="faq">৬. সচরাচর জিজ্ঞাসা (FAQ)</h2>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 1: Q8 ও Q9-এ কি কবিতা ও গল্পের বাইরে থেকে প্রশ্ন আসতে পারে? (Can Q8 & Q9 come from outside the EFT textbook?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">না, SSC পরীক্ষায় Q8 (কবিতা) ও Q9 (গল্প) সবসময় EFT পাঠ্যবইয়ের নির্ধারিত কবিতা ও গল্প থেকেই আসে। পাঠ্যবইয়ের বাইরে থেকে প্রশ্ন আসে না।</p>
+  </div>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 2: ৮টির মধ্যে ৫টির বেশি উত্তর দিলে কি সমস্যা হবে? (What if I answer more than 5 out of 8?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">হ্যাঁ, ৫টির বেশি উত্তর দিলে পরীক্ষক প্রথম ৫টির উত্তরই মূল্যায়ন করবেন। তাই ভালো জানা ৫টি বেছে নিন — অতিরিক্ত লেখার সময় নষ্ট করবেন না।</p>
+  </div>
+
+  
+  <h2 class="htbd-academic-heading" id="poem-analysis">৭. গুরুত্বপূর্ণ কবিতার বিস্তারিত বিশ্লেষণ (Detailed Poem Analysis for SSC 2027)</h2>
+  <p>SSC 2027 পরীক্ষার জন্য সবচেয়ে গুরুত্বপূর্ণ কবিতাগুলোর মূল বিষয়, কবির উদ্দেশ্য ও সম্ভাব্য প্রশ্নের ধরন নিচে বিশ্লেষণ করা হলো। এই তথ্যগুলো পরীক্ষার উত্তর লেখায় সরাসরি কাজে আসবে।</p>
+
+  <h3 class="htbd-academic-subheading">The Road Not Taken — Robert Frost (বিস্তারিত বিশ্লেষণ)</h3>
+  <p>এই বিখ্যাত কবিতায় Robert Frost জীবনের এক চৌরাস্তায় দাঁড়িয়ে পথ বেছে নেওয়ার অভিজ্ঞতা বর্ণনা করেছেন। কবি দুটি পথের মধ্যে কম-জনবহুল পথটি বেছে নেন এবং পরে বলেন এই সিদ্ধান্তই তার জীবনে পার্থক্য এনেছে।</p>
+  <p><strong>Central Theme:</strong> Life's choices and their consequences. প্রতিটি মানুষকে জীবনে গুরুত্বপূর্ণ সিদ্ধান্ত নিতে হয় এবং সেই সিদ্ধান্ত ভবিষ্যৎ নির্ধারণ করে।</p>
+  <p><strong>Key Lines to Remember:</strong> "Two roads diverged in a wood, and I — I took the one less travelled by, And that has made all the difference."</p>
+  <p><strong>Probable Questions:</strong> What does the "road" symbolize in this poem? What is the poet's dilemma? What does "the road not taken" represent?</p>
+
+  <h3 class="htbd-academic-subheading">O Captain! My Captain! — Walt Whitman (বিস্তারিত বিশ্লেষণ)</h3>
+  <p>এই শোকগাথা কবিতাটি মার্কিন প্রেসিডেন্ট আব্রাহাম লিংকনের মৃত্যুতে Walt Whitman রচনা করেন। আমেরিকার গৃহযুদ্ধ শেষ হওয়ার পরই লিংকনকে গুলি করে হত্যা করা হয়। "Captain" হলো লিংকনের রূপক, আর "Ship" হলো আমেরিকার রূপক।</p>
+  <p><strong>Central Theme:</strong> Grief and tribute to a great leader. একজন মহান নেতার মৃত্যুতে জাতির শোক এবং তার অবদানের প্রতি শ্রদ্ধাজ্ঞাপন।</p>
+  <p><strong>Key Lines to Remember:</strong> "O Captain! My Captain! our fearful trip is done, The ship has weather'd every rack, the prize we sought is won."</p>
+  <p><strong>Probable Questions:</strong> Who is the Captain in this poem? What does the ship represent? Why is the poem considered an elegy?</p>
+
+  <h2 class="htbd-academic-heading" id="story-analysis">৮. গুরুত্বপূর্ণ গল্পের বিস্তারিত বিশ্লেষণ (Detailed Story Analysis for SSC 2027)</h2>
+
+  <h3 class="htbd-academic-subheading">The Gift of the Magi — O. Henry (বিস্তারিত বিশ্লেষণ)</h3>
+  <p>O. Henry-র এই বিখ্যাত ছোটগল্পে Jim ও Della — দুজন দরিদ্র কিন্তু পরস্পর ভালোবাসায় আবদ্ধ দম্পতির কথা আছে। বড়দিনে একে অপরকে উপহার দেওয়ার জন্য Della তার সুন্দর চুল বিক্রি করে Jim-এর ঘড়ির জন্য চেইন কেনেন, আর Jim তার মূল্যবান ঘড়ি বিক্রি করে Della-র চুলের জন্য comb কেনেন।</p>
+  <p><strong>Characters:</strong> Jim (দরিদ্র কিন্তু প্রেমময় স্বামী), Della (আত্মত্যাগী ও ভালোবাসাময় স্ত্রী)।</p>
+  <p><strong>Central Theme:</strong> True love and selfless sacrifice are the greatest gifts one can offer.</p>
+  <p><strong>Moral:</strong> Sacrificial love is more valuable than any material gift. প্রেমের জন্য আত্মত্যাগই সবচেয়ে বড় উপহার।</p>
+  <p><strong>Probable Questions:</strong> What gifts did Jim and Della buy for each other? What is the irony in the story? What is the moral of the story?</p>
+
+  <h3 class="htbd-academic-subheading">The Last Leaf — O. Henry (বিস্তারিত বিশ্লেষণ)</h3>
+  <p>এই গল্পে Johnsy নামের একজন তরুণ শিল্পী নিউমোনিয়ায় আক্রান্ত হন এবং বিশ্বাস করেন যে জানালার বাইরের গাছের শেষ পাতাটি ঝরে গেলে তিনিও মারা যাবেন। প্রতিবেশী বৃদ্ধ শিল্পী Behrman তীব্র শীতের রাতে ঝড়ের মধ্যে দেওয়ালে একটি নকল পাতা এঁকে দেন যা কখনো ঝরে না। Johnsy সুস্থ হন, কিন্তু Behrman নিউমোনিয়ায় মারা যান।</p>
+  <p><strong>Characters:</strong> Johnsy (অসুস্থ শিল্পী), Sue (বন্ধু), Behrman (বৃদ্ধ শিল্পী)।</p>
+  <p><strong>Central Theme:</strong> Hope, friendship, and selfless sacrifice can save a life.</p>
+  <p><strong>Moral:</strong> True friendship and hope can overcome even death. সত্যিকারের বন্ধুত্ব ও আশা জীবন বাঁচাতে পারে।</p>
+
+  <h2 class="htbd-academic-heading" id="writing-mastery">৯. পূর্ণ নম্বর পাওয়ার চূড়ান্ত কৌশল (Final Strategy for Full Marks in Q8 & Q9)</h2>
+  <p>Q8 ও Q9-এ মোট ২০ নম্বর — এটি পুরো পরীক্ষার ২০%। এই অংশে ভালো করলে সামগ্রিক ফলাফল উল্লেখযোগ্যভাবে উন্নত হয়।</p>
+  <p><strong>কবিতার প্রশ্নে (Q8):</strong> উত্তরে কবির নাম, কবিতার Central Theme এবং প্রাসঙ্গিক Line উদ্ধৃত করুন। Literary Device (Metaphor, Symbolism, Irony) উল্লেখ করলে নম্বর বাড়ে।</p>
+  <p><strong>গল্পের প্রশ্নে (Q9):</strong> উত্তরে Character-এর নাম, মূল ঘটনা ও Moral বা Theme উল্লেখ করুন। উত্তর সম্পূর্ণ বাক্যে ও নিজের ভাষায় লিখুন — গল্প হুবহু লিখবেন না।</p>
+  <p><strong>সময় ব্যবস্থাপনা:</strong> Q8-এর ৫টি উত্তরের জন্য ১৫ মিনিট এবং Q9-এর ৫টি উত্তরের জন্য ১৫ মিনিট বরাদ্দ রাখুন। প্রতিটি উত্তর ৩ মিনিটে শেষ করার লক্ষ্য রাখুন।</p>
+
+  <div class="htbd-tip-box">
+    <p><strong>চূড়ান্ত পরামর্শ:</strong> EFT বইয়ের প্রতিটি কবিতা পড়ার সময় একটি নোটবুকে কবির নাম, কবিতার বিষয়, Central Theme, Key Lines এবং Literary Devices লিখে রাখুন। পরীক্ষার আগের রাতে এই নোট পড়লে Q8-এ পূর্ণ নম্বর পাওয়া সহজ হবে।</p>
+  </div>
+
+  <div class="htbd-series-nav">
+    <p class="nav-title">এসএসসি ২০২৭ ইংরেজি ১ম পত্র স্টাডি সিলো সিরিজ (SSC 2027 English Study Silo Series)</p>
+    <ul>
+      <li><strong>পিলার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">এসএসসি ২০২৭ ইংরেজি ১ম পত্র — সম্পূর্ণ সাজেশন ও মানবণ্টন (Pillar Post)</a></li>
+<li><strong>Part 01:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html">সিন প্যাসেজ সাজেশন (Seen Passage MCQ, Q/A & Gap Fill)</a></li>
+<li><strong>Part 02:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary.html">আনসিন প্যাসেজ ও সামারি (Unseen Passage & Summary Writing)</a></li>
+<li><strong>Part 03:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange.html">ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ (Sentence Matching & Re-arranging)</a></li>
+<li class="current-post">Part 04: কবিতা ও গল্প প্রশ্নোত্তর (Poems & Stories Q/A Guide) (এই পোস্ট)</li>
+<li><strong>Part 05:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story.html">রাইটিং পার্ট — Story & Dialogue (Completing Story & Dialogue Writing)</a></li>
+
+    </ul>
+  </div>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question.html"},
+  "headline": "এসএসসি ২০২৭ কবিতা ও গল্প প্রশ্নোত্তর সম্পূর্ণ গাইড (SSC 2027 English Poems and Stories Question Answer Model Notes Q8 & Q9)",
+  "description": "SSC 2027 English 1st Paper কবিতা (Q8) ও গল্প (Q9) থেকে প্রশ্নোত্তর — মোট ২০ নম্বরের সম্পূর্ণ সাজেশন, গুরুত্বপূর্ণ কবিতা ও গল্পের তালিকা এবং মডেল উত্তর।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_04_poems_stories.webp",
+  "author": {"@type": "Person", "name": "Faruk Sir"},
+  "publisher": {"@type": "Organization", "name": "HelpTrickBD"},
+  "datePublished": "2026-09-17T01:30:00+06:00"
+}
+</script>
