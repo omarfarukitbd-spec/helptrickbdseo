@@ -117,9 +117,9 @@ CATEGORY_CONFIGS = {
 def get_browser_binary():
     """Finds Chrome or Edge executable on Windows."""
     candidates = [
-        r"C:\Program Files\Google\Chrome\Application\chrome.exe",
         r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
         r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
+        r"C:\Program Files\Google\Chrome\Application\chrome.exe",
     ]
     for c in candidates:
         if os.path.exists(c):
@@ -346,11 +346,14 @@ def generate_official_bg_banner(
     browser_bin = get_browser_binary()
     file_url = "file:///" + os.path.abspath(temp_html).replace("\\", "/")
 
+    import tempfile
+    user_data_dir = os.path.join(tempfile.gettempdir(), "edge_browser_tmp")
     cmd = [
         browser_bin,
         "--headless=new",
         "--disable-gpu",
         "--hide-scrollbars",
+        f"--user-data-dir={user_data_dir}",
         "--force-device-scale-factor=1",
         "--window-size=1200,675",
         f"--screenshot={out_png}",
