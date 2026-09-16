@@ -93,6 +93,8 @@
   .entery-category-fly .post-snip *,
   .entery-category-fly .post-author,
   .entery-category-fly .post-date,
+  .block-section.item0 .entry-title,
+  .block-section.item0 .entry-title a,
   .hall-section.item0 .entry-title,
   .hall-section.item0 .entry-title a,
   .featured-box.item0 .entry-title,
@@ -107,6 +109,8 @@
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9) !important;
   }
 
+  .block-section.item0 .entry-title,
+  .block-section.item0 .entry-title a,
   .hall-section.item0 .entry-title,
   .hall-section.item0 .entry-title a,
   .video-section.item0 .entry-title,
@@ -237,38 +241,28 @@
     visibility: visible !important;
   }
 
-  /* 12. Homepage Category Block (block1) - Move Title Below Image & 100% Full Uncropped Banner */
+  /* 12. Homepage Category Block (block1) - Full 16:9 Image Render & Overlay Preserved Same to Same */
   .block-section .block-img {
-    height: auto !important;
-    min-height: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    background: var(--bg-cards, #ffffff) !important;
-    border-radius: 8px !important;
-    overflow: hidden !important;
-    box-shadow: var(--shadow-light, 0 1px 4px rgba(0,0,0,0.06)) !important;
-  }
-
-  /* Force 16:9 container so 100% of banner is visible without zooming or cropping */
-  .block-section .block-img .post-filter-link {
     position: relative !important;
     width: 100% !important;
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .block-section .block-img .post-filter-link {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
     display: block !important;
     overflow: hidden !important;
   }
 
-  /* Remove dark gradient overlay over the image */
-  .block-section .block-img .post-filter-link:before,
-  .block-section .block-img .background-layer:before {
-    display: none !important;
-    background: none !important;
-  }
-
-  /* Show 100% of the image without zoom */
+  /* Show 100% of the image in full 16:9 frame with zero cropping or zoom */
   .block-section .block-img img.snip-thumbnail {
-    position: relative !important;
+    position: absolute !important;
     top: 0 !important;
     left: 0 !important;
     transform: none !important;
@@ -277,71 +271,40 @@
     aspect-ratio: 16 / 9 !important;
     object-fit: cover !important;
     display: block !important;
-    border-radius: 8px 8px 0 0 !important;
-    filter: none !important;
+    border-radius: 8px !important;
   }
 
-  /* Move title, badge, author and date into the clean space below the image */
+  /* Keep title, category badge, author and date inside the card overlay (same to same) */
   .block-section .block-img .entery-category-fly {
-    position: static !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    z-index: 11 !important;
     width: 100% !important;
-    padding: 16px 18px 18px 18px !important;
     box-sizing: border-box !important;
-    background: var(--bg-cards, #ffffff) !important;
+    padding: 12px 16px 14px 16px !important;
+    background: linear-gradient(to top, rgba(4, 12, 62, 0.95) 0%, rgba(4, 12, 62, 0.65) 60%, transparent 100%) !important;
   }
 
-  /* Prominent Dark Title Below Image */
   .block-section.item0 .entry-title,
-  .block-section.item0 .entry-title a,
-  .block-section .entery-category-fly .entry-title,
-  .block-section .entery-category-fly .entry-title a {
-    color: var(--theme-text-color, #1a1a1a) !important;
-    text-shadow: none !important;
-    font-size: 19px !important;
-    line-height: 1.45 !important;
+  .block-section.item0 .entry-title a {
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+    font-size: 20px !important;
     font-weight: 700 !important;
-    margin: 8px 0 10px 0 !important;
-    display: block !important;
+    line-height: 1.4 !important;
   }
 
-  .block-section.item0 .entry-title a:hover,
-  .block-section .entery-category-fly .entry-title a:hover {
-    color: #2563eb !important;
-  }
-
-  /* High-Contrast Category Tag Below Image */
-  .block-section .entery-category-fly .post-tag {
-    display: inline-block !important;
-    background: #e8f0fe !important;
-    color: #1a73e8 !important;
-    font-size: 11.5px !important;
-    font-weight: 700 !important;
-    padding: 3px 10px !important;
-    border-radius: 4px !important;
-    text-shadow: none !important;
-  }
-
-  /* Clean Metadata Below Image */
   .block-section .entery-category-fly .post-snip,
   .block-section .entery-category-fly .post-snip *,
   .block-section .entery-category-fly .post-author,
   .block-section .entery-category-fly .post-date {
-    color: #64748b !important;
-    text-shadow: none !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85) !important;
     font-size: 13px !important;
-    font-weight: 500 !important;
   }
 
-  .block-section .entery-category-fly .post-author-image {
-    width: 24px !important;
-    height: 24px !important;
-    border-radius: 50% !important;
-    margin-right: 6px !important;
-    vertical-align: middle !important;
-    display: inline-block !important;
-  }
-
-  /* Right Side List Box (block-box) - Remove ugly dashed border & clean dividers */
+  /* Right Side List Box (block-box) - Clean dividers & remove dashed border */
   .block-box.fl {
     border: none !important;
     box-shadow: var(--shadow-light, 0 1px 4px rgba(0,0,0,0.06)) !important;
