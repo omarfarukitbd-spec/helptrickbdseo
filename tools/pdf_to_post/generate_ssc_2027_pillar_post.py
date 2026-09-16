@@ -5,8 +5,8 @@ tools/pdf_to_post/generate_ssc_2027_pillar_post.py
 --------------------------------------------------
 Generates the comprehensive, responsive, beautifully styled Pillar Post
 for SSC & Dakhil 2027 English 1st Paper (Subject Code: 136)
-following the exact golden standard of:
-content/drafts/post-03-secularism-vs-islamic-values.html
+enriched with high-volume English Search Keywords (e.g. 'SSC English 1st Paper Suggestion 2027')
+in the title, headings (H2, H3), table of contents, and schema metadata.
 """
 
 import os
@@ -25,11 +25,11 @@ os.makedirs(RAW_POSTS_DIR, exist_ok=True)
 HTML_OUTPUT = os.path.join(RAW_POSTS_DIR, "ssc_2027_english_1st_paper_pillar.html")
 META_OUTPUT = os.path.join(RAW_POSTS_DIR, "ssc_2027_english_1st_paper_pillar.json")
 
-TITLE = "এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন (১০০ নম্বর পূর্ণাঙ্গ প্রস্তুতি ও পিডিএফ)"
+TITLE = "SSC English 1st Paper Suggestion 2027 | এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন (PDF)"
 SLUG = "ssc-english-1st-paper-suggestion-2027"
 PERMALINK_URL = f"https://www.helptrickbd.com/2026/09/{SLUG}.html"
 BANNER_CDN = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_english_1st_paper_suggestion_2027.webp"
-SEARCH_DESCRIPTION = "এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও ১০০ নম্বরের মানবণ্টন। সিন-আনসিন প্যাসেজ, সামারি, রাইটিং পার্ট এবং ফুল সিলেবাস পিডিএফ হ্যান্ডনোট।"
+SEARCH_DESCRIPTION = "SSC English 1st Paper Suggestion 2027 ও ১০০ নম্বরের মানবণ্টন। সিন-আনসিন প্যাসেজ, সামারি, রাইটিং পার্ট এবং ফুল সিলেবাস পিডিএফ হ্যান্ডনোট।"
 
 html_content = f"""<style>
   .htbd-academic-container,
@@ -210,62 +210,62 @@ html_content = f"""<style>
 
 <div class="htbd-academic-container">
 
-  <!-- Category & Metadata Header Badge -->
+  <!-- Category & Metadata Header Badge with English Subject Details -->
   <div style="margin-bottom: 16px;">
     <span style="background: #0c2340; color: #ffffff; padding: 6px 16px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
-      এসএসসি ও দাখিল পরীক্ষা ২০২৭ | বিষয় কোড: ১৩৬ | পূর্ণমান: ১০০
+      SSC &amp; Dakhil Exam 2027 | English 1st Paper (Subject Code: 136) | Full Marks: 100
     </span>
   </div>
 
   <!-- Hero Featured Banner (Rule 02: 16:9 Aspect Ratio on jsDelivr CDN) -->
   <div style="text-align: center; margin: 18px 0 24px 0;">
-    <img src="{BANNER_CDN}" alt="এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন" title="এসএসসি ২০২৭ ইংরেজি ১ম পত্র সাজেশন এবং ১০০ নম্বরের পূর্ণাঙ্গ প্রস্তুতি" width="1200" height="675" loading="lazy" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;" />
+    <img src="{BANNER_CDN}" alt="SSC English 1st Paper Suggestion 2027 এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন" title="SSC English 1st Paper Suggestion 2027 Marks Distribution and Model Handnote" width="1200" height="675" loading="lazy" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;" />
     <span style="display: block; font-size: 14px; color: #64748b; margin-top: 8px;">
-      চিত্র: এসএসসি ও দাখিল ২০২৭ ইংরেজি ১ম পত্র (বিষয় কোড: ১৩৬) ১০০ নম্বরের পূর্ণাঙ্গ সিলেবাস ও মানবণ্টন গাইড
+      Figure: SSC &amp; Dakhil 2027 English 1st Paper (Subject Code: 136) 100 Marks Syllabus &amp; Suggestion Guide
     </span>
   </div>
 
-  <!-- Position 0 Direct Answer Box -->
+  <!-- Position 0 Direct Answer Box with English Keywords -->
   <div class="htbd-overview-box">
     <p>
-      <strong>সারসংক্ষেপ:</strong> 
-      <strong>এসএসসি ২০২৭ ইংরেজি ১ম পত্র (English 1st Paper, Subject Code: 136)</strong> পরীক্ষা জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) প্রণীত ১০০ নম্বরের পূর্ণাঙ্গ সিলেবাস অনুযায়ী অনুষ্ঠিত হবে। পরীক্ষাটি প্রধানত দুটি অংশে বিভক্ত—<strong>Part A: Reading (৭০ নম্বর)</strong> এবং <strong>Part B: Writing (৩০ নম্বর)</strong>। রিডিং অংশে সিন প্যাসেজ থেকে বহুনির্বাচনী প্রশ্ন (৭ নম্বর), সংক্ষিপ্ত প্রশ্নোত্তর (১০ নম্বর), ক্লু ছাড়া শূন্যস্থান পূরণ (৫ নম্বর); আনসিন প্যাসেজ থেকে তথ্য রূপান্তর (৫ নম্বর), সামারি রাইটিং (১০ নম্বর); এছাড়া সেন্টেন্স ম্যাচিং টেবিল (৫ নম্বর), রি-অ্যারেঞ্জিং সেন্টেন্সেস (৮ নম্বর) এবং কবিতা ও গল্প থেকে সংক্ষিপ্ত প্রশ্নাবলি (১০ + ১০ = ২০ নম্বর) অন্তর্ভুক্ত। অন্যদিকে রাইটিং অংশে কমপ্লিটিং স্টোরি (১৫ নম্বর) ও ডায়ালগ রাইটিং (১৫ নম্বর) থাকবে। নিচে ২০২৭ সালের পরীক্ষার্থীদের জন্য সম্পূর্ণ প্রশ্নভিত্তিক থ্রি-স্টার সাজেশন, এ-প্লাস পাওয়ার কৌশল এবং পূর্ণাঙ্গ পিডিএফ হ্যান্ডনোট দেওয়া হলো।
+      <strong>Quick Overview (সারসংক্ষেপ):</strong> 
+      <strong>SSC English 1st Paper Suggestion 2027 (Subject Code: 136)</strong> পরীক্ষা জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) প্রণীত ১০০ নম্বরের পূর্ণাঙ্গ সিলেবাস অনুযায়ী অনুষ্ঠিত হবে। পরীক্ষাটি মূলত দুটি প্রধান অংশে বিভক্ত—<strong>Part A: Reading (70 Marks)</strong> এবং <strong>Part B: Writing (30 Marks)</strong>। রিডিং অংশে Seen Passage থেকে Multiple Choice Questions (7 Marks), Answering Questions (10 Marks), Gap Filling Without Clues (5 Marks); Unseen Passage থেকে Information Transfer (5 Marks), Writing Summary (10 Marks); এছাড়া Sentence Matching Table (5 Marks), Re-arranging Sentences (8 Marks) এবং Questions from Poems &amp; Stories (10 + 10 = 20 Marks) অন্তর্ভুক্ত। অন্যদিকে রাইটিং অংশে Completing Story (15 Marks) এবং Dialogue Writing (15 Marks) থাকবে। নিচে ২০২৭ সালের পরীক্ষার্থীদের জন্য সম্পূর্ণ প্রশ্নভিত্তিক থ্রি-স্টার সাজেশন, এ-প্লাস পাওয়ার কৌশল এবং পূর্ণাঙ্গ পিডিএফ হ্যান্ডনোট দেওয়া হলো।
     </p>
   </div>
 
   <!-- Mandatory Jump Break strictly after hero image and quick overview (Rule 01 & 05) -->
   <!--more-->
 
-  <!-- Table of Contents Card -->
+  <!-- Table of Contents Card with Bilingual Keywords -->
   <div class="htbd-toc-card">
-    <div class="toc-title">সূচিপত্র (Table of Contents)</div>
+    <div class="toc-title">Table of Contents (সূচিপত্র)</div>
     <ul>
-      <li><a href="#syllabus-structure">১. এসএসসি ২০২৭ ইংরেজি ১ম পত্র সিলেবাস ও ১০০ নম্বরের মানবণ্টন রূপরেখা</a></li>
-      <li><a href="#part-a-reading">২. পার্ট-এ (রিডিং অংশ - ৭০ নম্বর) প্রশ্নভিত্তিক থ্রি-স্টার সাজেশন ও প্রস্তুতি কৌশল</a>
+      <li><a href="#syllabus-structure">১. এসএসসি ২০২৭ ইংরেজি ১ম পত্র সিলেবাস ও মানবণ্টন (SSC English 1st Paper Marks Distribution &amp; Syllabus 2027)</a></li>
+      <li><a href="#part-a-reading">২. পার্ট-এ: রিডিং অংশ ৭০ নম্বর সাজেশন (Part A: Reading 70 Marks Exclusive Suggestion)</a>
         <ul>
-          <li><a href="#seen-comprehension">প্রশ্ন ১ থেকে ৩: সিন প্যাসেজ (MCQ, প্রশ্নোত্তর ও শূন্যস্থান) (২২ নম্বর)</a></li>
-          <li><a href="#unseen-summary">প্রশ্ন ৪ ও ৫: আনসিন প্যাসেজ ও সামারি রাইটিং (১৫ নম্বর)</a></li>
-          <li><a href="#matching-table">প্রশ্ন ৬: সেন্টেন্স ম্যাচিং টেবিল (৫ নম্বর)</a></li>
-          <li><a href="#sentence-rearrange">প্রশ্ন ৭: রি-অ্যারেঞ্জিং সেন্টেন্সেস (৮ নম্বর)</a></li>
-          <li><a href="#poems-stories">প্রশ্ন ৮ ও ৯: কবিতা ও গল্প থেকে প্রশ্নোত্তর (২০ নম্বর)</a></li>
+          <li><a href="#seen-comprehension">প্রশ্ন ১-৩: সিন প্যাসেজ (Seen Comprehension — MCQ, Questions &amp; Gap Filling - 22 Marks)</a></li>
+          <li><a href="#unseen-summary">প্রশ্ন ৪-৫: আনসিন প্যাসেজ ও সামারি (Unseen Passage &amp; Summary Writing - 15 Marks)</a></li>
+          <li><a href="#matching-table">প্রশ্ন ৬: সেন্টেন্স ম্যাচিং টেবিল (Sentence Matching Table - 5 Marks)</a></li>
+          <li><a href="#sentence-rearrange">প্রশ্ন ৭: রি-অ্যারেঞ্জিং সেন্টেন্সেস (Re-arranging Sentences Shortcut Rules - 8 Marks)</a></li>
+          <li><a href="#poems-stories">প্রশ্ন ৮-৯: কবিতা ও গল্প থেকে প্রশ্নোত্তর (Answering Questions from Poems &amp; Stories - 20 Marks)</a></li>
         </ul>
       </li>
-      <li><a href="#part-b-writing">৩. পার্ট-বি (রাইটিং অংশ - ৩০ নম্বর) চূড়ান্ত সাজেশন</a>
+      <li><a href="#part-b-writing">৩. পার্ট-বি: রাইটিং অংশ ৩০ নম্বর সাজেশন (Part B: Writing 30 Marks Final Suggestion)</a>
         <ul>
-          <li><a href="#completing-story">প্রশ্ন ১০: কমপ্লিটিং স্টোরি (১৫ নম্বর)</a></li>
-          <li><a href="#dialogue-writing">প্রশ্ন ১১: ডায়ালগ রাইটিং (১৫ নম্বর)</a></li>
+          <li><a href="#completing-story">প্রশ্ন ১০: কমপ্লিটিং স্টোরি সাজেশন (Completing Story Suggestion for SSC 2027 - 15 Marks)</a></li>
+          <li><a href="#dialogue-writing">প্রশ্ন ১১: ডায়ালগ রাইটিং সাজেশন (Dialogue Writing Suggestion for SSC 2027 - 15 Marks)</a></li>
         </ul>
       </li>
-      <li><a href="#gpa5-strategy">৪. এসএসসি ২০২৭ ইংরেজি ১ম পত্রে এ-প্লাস (GPA 5) নিশ্চিত করার ৫টি পরীক্ষিত কৌশল</a></li>
-      <li><a href="#pdf-download">৫. এসএসসি ২০২৭ ইংরেজি ১ম পত্র পূর্ণাঙ্গ হ্যান্ডনোট পিডিএফ ডাউনলোড</a></li>
-      <li><a href="#related-silo">৬. এসএসসি ২০২৭ স্টাডি সিরিজের অন্যান্য গুরুত্বপূর্ণ গাইডলাইন</a></li>
-      <li><a href="#faqs">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</a></li>
+      <li><a href="#gpa5-strategy">৪. এসএসসি ইংরেজি ১ম পত্রে এ-প্লাস পাওয়ার কৌশল (5 Tested Tips to Score GPA 5 in SSC English 1st Paper)</a></li>
+      <li><a href="#pdf-download">৫. সম্পূর্ণ ১০০ নম্বরের হ্যান্ডনোট পিডিএফ ডাউনলোড (SSC English 1st Paper Full Suggestion &amp; Handnote PDF Download)</a></li>
+      <li><a href="#related-silo">৬. এসএসসি ২০২৭ স্টাডি সাইলো সিরিজ (SSC 2027 English Study Silo Series)</a></li>
+      <li><a href="#faqs">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (Frequently Asked Questions - FAQ)</a></li>
     </ul>
   </div>
 
   <!-- Section 1 -->
-  <h2 class="htbd-academic-heading" id="syllabus-structure">১. এসএসসি ২০২৭ ইংরেজি ১ম পত্র সিলেবাস ও ১০০ নম্বরের মানবণ্টন রূপরেখা</h2>
-  <p>মাধ্যমিক ও উচ্চমাধ্যমিক শিক্ষা বোর্ড এবং বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ডের অধীনে অনুষ্ঠিতব্য ২০২৭ সালের এসএসসি ও দাখিল পরীক্ষায় ইংরেজি ১ম পত্রে কোনো সংক্ষিপ্ত সিলেবাস থাকছে না। শিক্ষার্থীদের ইংরেজি পাঠ্যবই (English For Today) এবং গ্রামাটিক্যাল ও রাইটিং দক্ষতার ওপর সম্পূর্ণ ১০০ নম্বরের ভিত্তিতে লিখিত মূল্যায়ন করা হবে।</p>
+  <h2 class="htbd-academic-heading" id="syllabus-structure">১. এসএসসি ২০২৭ ইংরেজি ১ম পত্র সিলেবাস ও মানবণ্টন (SSC English 1st Paper Marks Distribution &amp; Syllabus 2027)</h2>
+  <p>মাধ্যমিক ও উচ্চমাধ্যমিক শিক্ষা বোর্ড (ঢাকা, চট্টগ্রাম, রাজশাহী, যশোর, বরিশাল, সিলেট, দিনাজপুর, কুমিল্লা, ময়মনসিংহ) এবং বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ডের অধীনে অনুষ্ঠিতব্য ২০২৭ সালের এসএসসি ও দাখিল পরীক্ষায় ইংরেজি ১ম পত্রে কোনো সংক্ষিপ্ত সিলেবাস থাকছে না। শিক্ষার্থীদের মূল পাঠ্যবই <strong>English For Today (EFT)</strong> এবং বাস্তবভিত্তিক গ্রামাটিক্যাল ও রাইটিং দক্ষতার ওপর সম্পূর্ণ ১০০ নম্বরের ভিত্তিতে লিখিত মূল্যায়ন করা হবে।</p>
   <p>পরীক্ষায় সর্বোচ্চ নম্বর অর্জনের প্রথম ধাপ হলো প্রশ্নপদ্ধতি ও প্রতিটি প্রশ্নের জন্য বরাদ্দকৃত নম্বরের বণ্টন নিখুঁতভাবে জানা। নিচে ২০২৭ সালের সর্বশেষ প্রশ্নকাঠামো ও মানবণ্টন ছক আকারে তুলে ধরা হলো:</p>
 
   <!-- Responsive Academic Table -->
@@ -273,83 +273,83 @@ html_content = f"""<style>
     <table class="htbd-academic-table">
       <thead>
         <tr>
-          <th>দক্ষতার ক্ষেত্র (Skill Area)</th>
-          <th>প্রশ্ন নম্বর ও আইটেমের নাম (Test Items)</th>
-          <th>প্রশ্নের ধরন ও উৎস</th>
-          <th>নির্ধারিত নম্বর</th>
+          <th>Skill Area (দক্ষতার ক্ষেত্র)</th>
+          <th>Test Items (প্রশ্ন নম্বর ও আইটেমের নাম)</th>
+          <th>Question Type &amp; Source (প্রশ্নের ধরন)</th>
+          <th>Marks (নির্ধারিত নম্বর)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td rowspan="9"><strong>Part A: Reading (৭০ নম্বর)</strong></td>
+          <td rowspan="9"><strong>Part A: Reading (70 Marks)</strong></td>
           <td><strong>Question 1:</strong> Multiple Choice Questions (MCQ)</td>
-          <td>Seen Comprehension (১ম সিন প্যাসেজ)</td>
-          <td>১ x ৭ = ৭ নম্বর</td>
+          <td>Seen Comprehension 1 (১ম সিন প্যাসেজ)</td>
+          <td>1 x 7 = 7 Marks</td>
         </tr>
         <tr>
-          <td><strong>Question 2:</strong> Answering Questions</td>
-          <td>Seen Comprehension (১ম সিন প্যাসেজ)</td>
-          <td>২ x ৫ = ১০ নম্বর</td>
+          <td><strong>Question 2:</strong> Answering Questions (Open-ended)</td>
+          <td>Seen Comprehension 1 (১ম সিন প্যাসেজ)</td>
+          <td>2 x 5 = 10 Marks</td>
         </tr>
         <tr>
           <td><strong>Question 3:</strong> Gap Filling Without Clues</td>
-          <td>Seen Comprehension (২য় সিন প্যাসেজ)</td>
-          <td>১ x ৫ = ৫ নম্বর</td>
+          <td>Seen Comprehension 2 (২য় সিন প্যাসেজ)</td>
+          <td>1 x 5 = 5 Marks</td>
         </tr>
         <tr>
           <td><strong>Question 4:</strong> Information Transfer</td>
           <td>Unseen Passage (আনসিন প্যাসেজ)</td>
-          <td>১ x ৫ = ৫ নম্বর</td>
+          <td>1 x 5 = 5 Marks</td>
         </tr>
         <tr>
           <td><strong>Question 5:</strong> Writing Summary</td>
           <td>Unseen Passage (আনসিন প্যাসেজ)</td>
-          <td>১০ নম্বর</td>
+          <td>10 Marks</td>
         </tr>
         <tr>
           <td><strong>Question 6:</strong> Sentence Matching Table</td>
-          <td>Grammar &amp; Syntax (কলাম A, B ও C)</td>
-          <td>১ x ৫ = ৫ নম্বর</td>
+          <td>Grammar &amp; Syntax (Column A, B &amp; C)</td>
+          <td>1 x 5 = 5 Marks</td>
         </tr>
         <tr>
           <td><strong>Question 7:</strong> Re-arranging Sentences</td>
-          <td>Coherence &amp; Chronology (৮টি এলোমেলো বাক্য)</td>
-          <td>১ x ৮ = ৮ নম্বর</td>
+          <td>Coherence &amp; Chronology (8 Jumbled Sentences)</td>
+          <td>1 x 8 = 8 Marks</td>
         </tr>
         <tr>
           <td><strong>Question 8:</strong> Answering Questions from Poems</td>
-          <td>পাঠ্যবইয়ের কবিতা থেকে (যেকোনো ৫টি)</td>
-          <td>২ x ৫ = ১০ নম্বর</td>
+          <td>EFT পাঠ্যবইয়ের কবিতা থেকে (Any 5 out of 8)</td>
+          <td>2 x 5 = 10 Marks</td>
         </tr>
         <tr>
           <td><strong>Question 9:</strong> Answering Questions from Stories</td>
-          <td>পাঠ্যবইয়ের গল্প থেকে (যেকোনো ৫টি)</td>
-          <td>২ x ৫ = ১০ নম্বর</td>
+          <td>EFT পাঠ্যবইয়ের গল্প থেকে (Any 5 out of 8)</td>
+          <td>2 x 5 = 10 Marks</td>
         </tr>
         <tr>
-          <td rowspan="2"><strong>Part B: Writing (৩০ নম্বর)</strong></td>
+          <td rowspan="2"><strong>Part B: Writing (30 Marks)</strong></td>
           <td><strong>Question 10:</strong> Completing Story</td>
-          <td>গল্পের সূচনা থেকে পূর্ণাঙ্গ রূপদান</td>
-          <td>১৫ নম্বর</td>
+          <td>Developing a story from given outline</td>
+          <td>15 Marks</td>
         </tr>
         <tr>
           <td><strong>Question 11:</strong> Writing Dialogue</td>
-          <td>বাস্তবভিত্তিক বিষয়ে কথোপকথন রচনা</td>
-          <td>১৫ নম্বর</td>
+          <td>Formal &amp; Informal Conversation</td>
+          <td>15 Marks</td>
         </tr>
         <tr>
-          <td colspan="3" style="text-align: right; font-weight: 700; background: #f1f5f9;">সর্বমোট পূর্ণমান:</td>
-          <td style="font-weight: 700; background: #f1f5f9; color: #0c2340;">১০০ নম্বর</td>
+          <td colspan="3" style="text-align: right; font-weight: 700; background: #f1f5f9;">Total Marks (সর্বমোট পূর্ণমান):</td>
+          <td style="font-weight: 700; background: #f1f5f9; color: #0c2340;">100 Marks</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <!-- Section 2 -->
-  <h2 class="htbd-academic-heading" id="part-a-reading">২. পার্ট-এ (রিডিং অংশ - ৭০ নম্বর) প্রশ্নভিত্তিক থ্রি-স্টার সাজেশন ও প্রস্তুতি কৌশল</h2>
+  <h2 class="htbd-academic-heading" id="part-a-reading">২. পার্ট-এ: রিডিং অংশ ৭০ নম্বর সাজেশন (Part A: Reading 70 Marks Exclusive Suggestion)</h2>
   <p>ইংরেজি ১ম পত্রের ৭০ নম্বর রিডিং অংশের ওপর নির্ভর করে শিক্ষার্থীর সামগ্রিক গ্রেড। এই অংশে ভালো করতে হলে শুধু মুখস্থ বিদ্যার ওপর নির্ভর না করে প্রতিটি প্যাসেজের মূল ভাবার্থ ও গ্রামাটিক্যাল স্ট্রাকচার বোঝা অত্যন্ত গুরুত্বপূর্ণ। নিচে প্রতিটি প্রশ্নের আলাদা বিশ্লেষণ উপস্থাপন করা হলো।</p>
 
-  <h3 class="htbd-academic-subheading" id="seen-comprehension">প্রশ্ন ১ থেকে ৩: সিন প্যাসেজ (MCQ, প্রশ্নোত্তর ও শূন্যস্থান) (২২ নম্বর)</h3>
+  <h3 class="htbd-academic-subheading" id="seen-comprehension">প্রশ্ন ১ থেকে ৩: সিন প্যাসেজ (Seen Comprehension — MCQ, Questions &amp; Gap Filling - 22 Marks)</h3>
   <p>বোর্ড পরীক্ষায় সিন অংশ থেকে সাধারণত দুটি ভিন্ন টেক্সট দেওয়া হয়। ১ম প্যাসেজ থেকে ৭টি বহুনির্বাচনী প্রশ্ন (MCQ) এবং ৫টি উন্মুক্ত প্রশ্নোত্তর (Open-ended Questions) থাকে। ২য় সিন প্যাসেজ থেকে ক্লু ছাড়া ৫টি শূন্যস্থান পূরণ (Gap Filling) করতে হয়। বিগত ৫ বছরের সকল শিক্ষা বোর্ডের প্রশ্ন বিশ্লেষণ করে ২০২৭ সালের জন্য সর্বাধিক কমন উপযোগী ১০টি প্যাসেজকে থ্রি-স্টার তালিকায় রাখা হয়েছে:</p>
 
   <ol>
@@ -367,54 +367,54 @@ html_content = f"""<style>
 
   <!-- Clear, Readable Tip Box -->
   <div class="htbd-tip-card">
-    <strong>পরামর্শ:</strong> প্রশ্ন ২-এর ১০ নম্বরের জন্য প্রতিটি উত্তরের দৈর্ঘ্য ২ থেকে ৩ বাক্যের মধ্যে রাখা শ্রেয়। সরাসরি প্যাসেজের লাইন হুবহু তুলে না দিয়ে প্রশ্নের টেন্স (Tense) অনুযায়ী উত্তর সাজালে পরীক্ষক পূর্ণ নম্বর প্রদান করেন।
+    <strong>Exam Tip (পরামর্শ):</strong> প্রশ্ন ২-এর ১০ নম্বরের জন্য প্রতিটি উত্তরের দৈর্ঘ্য ২ থেকে ৩ বাক্যের মধ্যে রাখা শ্রেয়। সরাসরি প্যাসেজের লাইন হুবহু তুলে না দিয়ে প্রশ্নের টেন্স (Tense) অনুযায়ী উত্তর সাজালে পরীক্ষক পূর্ণ নম্বর প্রদান করেন।
   </div>
 
-  <h3 class="htbd-academic-subheading" id="unseen-summary">প্রশ্ন ৪ ও ৫: আনসিন প্যাসেজ ও সামারি রাইটিং (১৫ নম্বর)</h3>
+  <h3 class="htbd-academic-subheading" id="unseen-summary">প্রশ্ন ৪ ও ৫: আনসিন প্যাসেজ ও সামারি (Unseen Passage &amp; Summary Writing - 15 Marks)</h3>
   <p>আনসিন অংশ থেকে একজন বিখ্যাত ব্যক্তির জীবনী বা কোনো আন্তর্জাতিক বিষয় নিয়ে অনুচ্ছেদ দেওয়া হয়। ৪ নম্বর প্রশ্নে একটি তথ্য ছক (Information Transfer) পূরণ করতে হয় যেখানে ৫টি শূন্যস্থানে সাল, স্থান বা কৃতিত্ব লিখতে হয়। ৫ নম্বর প্রশ্নে প্রদত্ত প্যাসেজের ওপর একটি সংক্ষিপ্ত সারমর্ম (Summary) রচনা করতে হয় যার মান ১০ নম্বর।</p>
-  <p>২০২৭ সালের জন্য সর্বাধিক সম্ভাব্য আনসিন প্যাসেজ তালিকা:</p>
+  <p>২০২৭ সালের জন্য সর্বাধিক সম্ভাব্য আনসিন প্যাসেজ তালিকা (Top Unseen Passages for SSC 2027):</p>
   <ul>
-    <li><strong>হুমায়ূন আহমেদ (Humayun Ahmed):</strong> বাংলা সাহিত্যের নন্দিত কথাসাহিত্যিক ও চলচ্চিত্র নির্মাতার কর্মময় জীবন।</li>
-    <li><strong>ক্যাপ্টেন মহিউদ্দিন জাহাঙ্গীর (Captain Mohiuddin Jahangir):</strong> বীরশ্রেষ্ঠ খেতাবপ্রাপ্ত মহান মুক্তিযোদ্ধার সাহসিকতা ও শাহাদাতবরণ।</li>
-    <li><strong>ড. এ পি জে আবদুল কালাম (APJ Abdul Kalam):</strong> ভারতের মিসাইল ম্যান ও জনমানুষের রাষ্ট্রপতির সংগ্রামী জীবনী।</li>
-    <li><strong>কবি সুফিয়া কামাল (Begum Sufia Kamal):</strong> নারী জাগরণ ও গণতান্ত্রিক আন্দোলনের অগ্রদূত।</li>
-    <li><strong>জীবনানন্দ দাশ (Jibanananda Das):</strong> রূপসী বাংলার কবির নিসর্গ চেতনা ও সাহিত্যের ইতিহাস।</li>
-    <li><strong>হযরত মুহাম্মদ (সা.) (Hazrat Muhammad Sm):</strong> বিশ্বনবীর আদর্শ চরিত্র ও ঐতিহাসিক হিজরতের প্রেক্ষাপট।</li>
-    <li><strong>নোবেল পুরস্কারের ইতিহাস (The Nobel Prize):</strong> আলফ্রেড নোবেলের উদ্ভাবন ও বৈশ্বিক শান্তি-বিজ্ঞানের পুরস্কার।</li>
-    <li><strong>বৈশ্বিক উষ্ণায়ন ও জলবায়ু পরিবর্তন (Global Warming):</strong> কার্বন নিঃসরণ হ্রাস ও বিশ্ব পরিবেশ সুরক্ষার পদক্ষেপ।</li>
-    <li><strong>সার্ক ও আঞ্চলিক সহযোগিতা (SAARC):</strong> দক্ষিণ এশীয় দেশসমূহের পারস্পরিক সহযোগিতা ও উন্নয়ন প্ল্যাটফর্ম।</li>
+    <li><strong>Humayun Ahmed (হুমায়ূন আহমেদ):</strong> বাংলা সাহিত্যের নন্দিত কথাসাহিত্যিক ও চলচ্চিত্র নির্মাতার কর্মময় জীবন।</li>
+    <li><strong>Captain Mohiuddin Jahangir (ক্যাপ্টেন মহিউদ্দিন জাহাঙ্গীর):</strong> বীরশ্রেষ্ঠ খেতাবপ্রাপ্ত মহান মুক্তিযোদ্ধার সাহসিকতা ও শাহাদাতবরণ।</li>
+    <li><strong>APJ Abdul Kalam (ড. এ পি জে আবদুল কালাম):</strong> ভারতের মিসাইল ম্যান ও জনমানুষের রাষ্ট্রপতির সংগ্রামী জীবনী।</li>
+    <li><strong>Begum Sufia Kamal (কবি সুফিয়া কামাল):</strong> নারী জাগরণ ও গণতান্ত্রিক আন্দোলনের অগ্রদূত।</li>
+    <li><strong>Jibanananda Das (জীবনানন্দ দাশ):</strong> রূপসী বাংলার কবির নিসর্গ চেতনা ও সাহিত্যের ইতিহাস।</li>
+    <li><strong>Hazrat Muhammad Sm (হযরত মুহাম্মদ সা.):</strong> বিশ্বনবীর আদর্শ চরিত্র ও ঐতিহাসিক হিজরতের প্রেক্ষাপট।</li>
+    <li><strong>The Nobel Prize (নোবেল পুরস্কারের ইতিহাস):</strong> আলফ্রেড নোবেলের উদ্ভাবন ও বৈশ্বিক শান্তি-বিজ্ঞানের পুরস্কার।</li>
+    <li><strong>Global Warming &amp; Climate Change (জলবায়ু পরিবর্তন):</strong> কার্বন নিঃসরণ হ্রাস ও বিশ্ব পরিবেশ সুরক্ষার পদক্ষেপ।</li>
+    <li><strong>SAARC &amp; Regional Cooperation (সার্ক):</strong> দক্ষিণ এশীয় দেশসমূহের পারস্পরিক সহযোগিতা ও উন্নয়ন প্ল্যাটফর্ম।</li>
   </ul>
 
-  <p><strong>সামারি লেখার বৈজ্ঞানিক নিয়ম:</strong> সামারি লেখার ক্ষেত্রে মূল অনুচ্ছেদের এক-তৃতীয়াংশ (One-third) শব্দের মধ্যে লেখা শেষ করতে হবে। সাধারণত ৫ থেকে ৬টি বাক্যে সামারির মূল বক্তব্য ফুটে ওঠে। কোনো উদাহরণ, কোটেশন বা অপ্রয়োজনীয় পরিসংখ্যান সামারিতে রাখা যাবে না। নিজস্ব শব্দভাণ্ডার ব্যবহার করে সহজ সরল বাক্যে সামারি সাজাতে পারলে ১০ নম্বরের মধ্যে ৯ নম্বর অনায়াসেই পাওয়া সম্ভব।</p>
+  <p><strong>Rules of Writing a Perfect Summary (সামারি লেখার বৈজ্ঞানিক নিয়ম):</strong> সামারি লেখার ক্ষেত্রে মূল অনুচ্ছেদের এক-তৃতীয়াংশ (One-third) শব্দের মধ্যে লেখা শেষ করতে হবে। সাধারণত ৫ থেকে ৬টি বাক্যে সামারির মূল বক্তব্য ফুটে ওঠে। কোনো উদাহরণ, কোটেশন বা অপ্রয়োজনীয় পরিসংখ্যান সামারিতে রাখা যাবে না। নিজস্ব শব্দভাণ্ডার ব্যবহার করে সহজ সরল বাক্যে সামারি সাজাতে পারলে ১০ নম্বরের মধ্যে ৯ নম্বর অনায়াসেই পাওয়া সম্ভব।</p>
 
-  <h3 class="htbd-academic-subheading" id="matching-table">প্রশ্ন ৬: সেন্টেন্স ম্যাচিং টেবিল (৫ নম্বর)</h3>
+  <h3 class="htbd-academic-subheading" id="matching-table">প্রশ্ন ৬: সেন্টেন্স ম্যাচিং টেবিল (Sentence Matching Table - 5 Marks)</h3>
   <p>টেবিল ম্যাচিং অংশে ৩টি কলাম থাকে—Column A (Subject/Starter), Column B (Verb/Connector) এবং Column C (Predicate/Extension)। অর্থপূর্ণ ও ব্যাকরণগতভাবে নির্ভুল ৫টি পূর্ণাঙ্গ বাক্য গঠন করতে হয়।</p>
-  <p>এই অংশে ভালো করতে হলে কলামগুলোর ব্যাকরণিক সম্পর্ক লক্ষ্য রাখতে হবে। ২০২৭ সালের শীর্ষ কমন টপিকগুলো হলো: তাজমহলের স্থাপত্যশৈলী (The Taj Mahal), শিক্ষা ও জাতীয় উন্নয়ন (Education and Development), চরিত্র গঠনের গুরুত্ব (Character), ডিজিটাল বাংলাদেশ ও তথ্যপ্রযুক্তি (Digital Technology), এবং দেশপ্রেম (Patriotism)।</p>
+  <p>এই অংশে ভালো করতে হলে কলামগুলোর ব্যাকরণিক সম্পর্ক লক্ষ্য রাখতে হবে। ২০২৭ সালের শীর্ষ কমন টপিকগুলো হলো: The Taj Mahal (তাজমহলের স্থাপত্যশৈলী), Education and Development (শিক্ষা ও উন্নয়ন), Character (চরিত্র গঠন), Digital Technology (তথ্যপ্রযুক্তি), এবং Patriotism (দেশপ্রেম)।</p>
 
-  <h3 class="htbd-academic-subheading" id="sentence-rearrange">প্রশ্ন ৭: রি-অ্যারেঞ্জিং সেন্টেন্সেস (৮ নম্বর)</h3>
+  <h3 class="htbd-academic-subheading" id="sentence-rearrange">প্রশ্ন ৭: রি-অ্যারেঞ্জিং সেন্টেন্সেস (Re-arranging Sentences Shortcut Rules - 8 Marks)</h3>
   <p>৮টি অগোছালো বাক্যকে সঠিক ঘটনাপরম্পরা অনুযায়ী সাজিয়ে লিখতে হয়। পুরো ৮ নম্বর পেতে হলে প্রথমে উত্তরপত্রে একটি বক্স (টেবিল) বানিয়ে ক্রমানুসারে রোমান বা ইংরেজি নম্বরগুলো লিখতে হবে এবং তার নিচে সম্পূর্ণ অনুচ্ছেদটি সুন্দর হস্তাক্ষরে এক প্যারাগ্রাফে লিখে দেওয়া নিরাপদ।</p>
-  <p>সর্বাধিক গুরুত্বপূর্ণ রি-অ্যারেঞ্জ আইটেমসমূহ:</p>
+  <p>সর্বাধিক গুরুত্বপূর্ণ রি-অ্যারেঞ্জ আইটেমসমূহ (Top 8 Rearrange Stories):</p>
   <ul>
-    <li>কাজী নজরুল ইসলামের শৈশব ও বন্দিজীবন (Kazi Nazrul Islam)</li>
-    <li>বিজ্ঞানী আলবার্ট আইনস্টাইন ও তাঁর আবিষ্কার (Albert Einstein)</li>
-    <li>আলেকজান্ডার ও রাজা পুরুর সাহসিকতা (Alexander and King Porus)</li>
-    <li>অন্ধ লোক ও লণ্ঠনের গল্প (A Blind Man and Lantern)</li>
-    <li>রবার্ট ব্রুস ও মাকড়সার অধ্যবসায় (Robert Bruce and Spider)</li>
-    <li>শেখ সাদীর পোশাক ও আতিথেয়তা (Sheikh Sa'adi)</li>
-    <li>বায়েজিদ বোস্তামীর মাতৃভক্তি (Bayazid Bostami's Devotion to Mother)</li>
-    <li>সৎ কাঠুরে ও জলপরী (Honest Woodcutter and Fairy)</li>
+    <li>Kazi Nazrul Islam (কাজী নজরুল ইসলামের শৈশব ও বন্দিজীবন)</li>
+    <li>Albert Einstein (বিজ্ঞানী আলবার্ট আইনস্টাইন ও তাঁর আবিষ্কার)</li>
+    <li>Alexander and King Porus (আলেকজান্ডার ও রাজা পুরুর সাহসিকতা)</li>
+    <li>A Blind Man and Lantern (অন্ধ লোক ও লণ্ঠনের গল্প)</li>
+    <li>Robert Bruce and Spider (রবার্ট ব্রুস ও মাকড়সার অধ্যবসায়)</li>
+    <li>Sheikh Sa'adi (শেখ সাদীর পোশাক ও আতিথেয়তা)</li>
+    <li>Bayazid Bostami's Devotion to Mother (বায়েজিদ বোস্তামীর মাতৃভক্তি)</li>
+    <li>Honest Woodcutter and Fairy (সৎ কাঠুরে ও জলপরী)</li>
   </ul>
 
-  <h3 class="htbd-academic-subheading" id="poems-stories">প্রশ্ন ৮ ও ৯: কবিতা ও গল্প থেকে প্রশ্নোত্তর (২০ নম্বর)</h3>
-  <p>নতুন মানবণ্টনে ইংরেজি ১ম পত্রে পাঠ্যবইয়ের কবিতা ও গল্প থেকে আলাদা দুটি প্রশ্ন রাখা হয়েছে। প্রশ্ন ৮-এ কবিতা থেকে ৮টি প্রশ্নের মধ্যে ৫টি উত্তর দিতে হবে (৫ x ২ = ১০ নম্বর)। প্রশ্ন ৯-এ নির্ধারিত ছোটগল্প থেকে ৮টি প্রশ্নের মধ্যে ৫টি উত্তর দিতে হবে (৫ x ২ = ১০ নম্বর)। মোট ২০ নম্বরের এই অংশে সংক্ষিপ্ত অথচ সারগর্ভ উত্তর প্রদান করা আবশ্যক। সাহিত্যের অন্তর্নিহিত থিম (Central Theme), রূপক অর্থ (Metaphor) ও শিক্ষণীয় দিক (Moral) স্পষ্ট ভাষায় ব্যাখ্যা করতে হবে।</p>
+  <h3 class="htbd-academic-subheading" id="poems-stories">প্রশ্ন ৮ ও ৯: কবিতা ও গল্প থেকে প্রশ্নোত্তর (Answering Questions from Poems &amp; Stories - 20 Marks)</h3>
+  <p>নতুন মানবণ্টনে ইংরেজি ১ম পত্রে পাঠ্যবইয়ের কবিতা ও গল্প থেকে আলাদা দুটি প্রশ্ন রাখা হয়েছে। প্রশ্ন ৮-এ কবিতা থেকে ৮টি প্রশ্নের মধ্যে ৫টি উত্তর দিতে হবে (5 x 2 = 10 Marks)। প্রশ্ন ৯-এ নির্ধারিত ছোটগল্প থেকে ৮টি প্রশ্নের মধ্যে ৫টি উত্তর দিতে হবে (5 x 2 = 10 Marks)। মোট ২০ নম্বরের এই অংশে সংক্ষিপ্ত অথচ সারগর্ভ উত্তর প্রদান করা আবশ্যক। সাহিত্যের অন্তর্নিহিত থিম (Central Theme), রূপক অর্থ (Metaphor) ও শিক্ষণীয় দিক (Moral) স্পষ্ট ভাষায় ব্যাখ্যা করতে হবে।</p>
 
   <!-- Section 3 -->
-  <h2 class="htbd-academic-heading" id="part-b-writing">৩. পার্ট-বি (রাইটিং অংশ - ৩০ নম্বর) চূড়ান্ত সাজেশন</h2>
+  <h2 class="htbd-academic-heading" id="part-b-writing">৩. পার্ট-বি: রাইটিং অংশ ৩০ নম্বর সাজেশন (Part B: Writing 30 Marks Final Suggestion)</h2>
   <p>রাইটিং অংশে মুখস্থ লেখার চেয়ে নিজস্ব ভাষায় সাবলীল বাক্য গঠনের ওপর বেশি নম্বর নির্ভর করে। ৩০ নম্বরের মধ্যে ভালো করতে পারলে নিশ্চিতভাবেই এ-প্লাস অর্জনের পথ সুগম হয়।</p>
 
-  <h3 class="htbd-academic-subheading" id="completing-story">প্রশ্ন ১০: কমপ্লিটিং স্টোরি (১৫ নম্বর)</h3>
+  <h3 class="htbd-academic-subheading" id="completing-story">প্রশ্ন ১০: কমপ্লিটিং স্টোরি সাজেশন (Completing Story Suggestion for SSC 2027 - 15 Marks)</h3>
   <p>প্রশ্নে সাধারণত গল্পের শুরুর দুই থেকে তিন লাইন দেওয়া থাকে। শিক্ষার্থীকে একটি মানানসই শিরোনাম (Title) দিয়ে গল্পের যৌক্তিক সমাপ্তি টানতে হয় এবং শেষে গল্পের নীতিশিক্ষা (Moral of the Story) উল্লেখ করতে হয়।</p>
-  <p>২০২৭ সালের শীর্ষ ১০টি থ্রি-স্টার স্টোরি:</p>
+  <p>২০২৭ সালের শীর্ষ ১০টি থ্রি-স্টার স্টোরি (Top 10 Completing Stories):</p>
   <ol>
     <li><strong>Get-up Doesn't Matter Judging a Man:</strong> শেখ সাদীর রাজকীয় পোশাক ও আতিথেয়তার শিক্ষা।</li>
     <li><strong>A Greedy King and the Golden Touch:</strong> রাজা মিডাস ও স্বর্ণের লোভের পরিণাম।</li>
@@ -428,9 +428,9 @@ html_content = f"""<style>
     <li><strong>A Lion and a Grateful Mouse:</strong> সিংহ ও ক্ষুদ্র ইঁদুরের পারস্পরিক উপকারিতা।</li>
   </ol>
 
-  <h3 class="htbd-academic-subheading" id="dialogue-writing">প্রশ্ন ১১: ডায়ালগ রাইটিং (১৫ নম্বর)</h3>
+  <h3 class="htbd-academic-subheading" id="dialogue-writing">প্রশ্ন ১১: ডায়ালগ রাইটিং সাজেশন (Dialogue Writing Suggestion for SSC 2027 - 15 Marks)</h3>
   <p>ডায়ালগ লেখার সময় অভিবাদন (Greeting), বিষয়ের গভীরে আলোচনা (Main Discussion) এবং সমাপ্তি (Farewell) এই তিনটি ধাপ সঠিকভাবে বজায় রাখতে হবে। প্রতিদিনের সাধারণ ইংরেজি বাক্যালাপ ও প্রাসঙ্গিক প্রশ্নোত্তরের মাধ্যমে ডায়ালগ সাজাতে হবে।</p>
-  <p>২০২৭ সালের শীর্ষ ১০টি থ্রি-স্টার ডায়ালগ:</p>
+  <p>২০২৭ সালের শীর্ষ ১০টি থ্রি-স্টার ডায়ালগ (Top 10 Dialogues for SSC 2027):</p>
   <ol>
     <li><strong>How to Improve English:</strong> ইংরেজিতে দুর্বলতা কাটিয়ে সাবলীল হওয়ার উপায় নিয়ে দুই বন্ধুর সংলাপ।</li>
     <li><strong>Advantages and Disadvantages of Online Classes:</strong> দূরশিক্ষণ ও ইন্টারনেটের মাধ্যমে ক্লাসের সুবিধা-অসুবিধা।</li>
@@ -447,55 +447,55 @@ html_content = f"""<style>
   <!-- Section 4: GPA 5 Exam Card -->
   <div class="htbd-exam-card" id="gpa5-strategy">
     <h2 style="margin-top: 0; color: #16a34a; font-size: 22px; font-weight: 700; border-left: none; padding-left: 0;">
-      ৪. এসএসসি ২০২৭ ইংরেজি ১ম পত্রে এ-প্লাস (GPA 5) নিশ্চিত করার ৫টি পরীক্ষিত কৌশল
+      ৪. এসএসসি ইংরেজি ১ম পত্রে এ-প্লাস পাওয়ার কৌশল (5 Tested Tips to Score GPA 5 in SSC English 1st Paper)
     </h2>
     <p>অনেক শিক্ষার্থী সারা বছর পড়াশোনা করেও পরীক্ষার হলে সঠিক কৌশলের অভাবে আশানুরূপ নম্বর পায় না। ইংরেজি ১ম পত্রে ৮০+ নম্বর নিশ্চিত করতে নিচের ৫টি নিয়ম মেনে চলা অত্যন্ত জরুরি:</p>
     <ul>
-      <li><strong>১. সময় ব্যবস্থাপনা:</strong> ৩ ঘণ্টার পরীক্ষায় রিডিং অংশের জন্য ১ ঘণ্টা ৫০ মিনিট, রাইটিং অংশের জন্য ৫০ মিনিট এবং রিভিশনের জন্য ২০ মিনিট সময় সংরক্ষণ করুন। কোনো নির্দিষ্ট প্রশ্নের পেছনে অতিরিক্ত সময় অপচয় করা যাবে না।</li>
-      <li><strong>২. প্যারাগ্রাফ ও মার্জিন স্পেসিং:</strong> উত্তরপত্রের প্রতি পাতায় উপরে ও বামে পর্যাপ্ত মার্জিন রাখুন। এক প্রশ্নের উত্তরের সাথে অন্য প্রশ্নের উত্তরের মাঝে স্পষ্ট ফাঁকা জায়গা (কমপক্ষে ১ ইঞ্চি) রাখুন যাতে পরীক্ষকের খাতা দেখতে সুবিধা হয়।</li>
-      <li><strong>৩. কাটাছেঁড়া মুক্ত পরিষ্কার হাতের লেখা:</strong> ভুল হলে কলম দিয়ে একটানে কেটে দিন; কাটাকাটি বা ঘষাঘষি করবেন না। সুন্দর ও পরিচ্ছন্ন খাতা পরীক্ষকের মনে ইতিবাচক প্রভাব ফেলে।</li>
-      <li><strong>৪. সরাসরি লাইন কপি না করা:</strong> সিন ও আনসিন প্যাসেজের প্রশ্নের উত্তর লেখার ক্ষেত্রে হুবহু লাইন তুলে দিলে পূর্ণ নম্বর পাওয়া যায় না। প্রশ্নের কর্তা (Subject) ও কাল (Tense) বজায় রেখে বাক্যকে নিজের ভাষায় সাজিয়ে লিখুন।</li>
-      <li><strong>৫. বোর্ড পরীক্ষার নিয়মাবলি অনুসরণ:</strong> পরীক্ষার হলে ওএমআর শিট পূরণ ও প্রবেশপত্র যাচাইয়ের ক্ষেত্রে কোনো ভুল করা চলবে না। এ বিষয়ে শিক্ষা মন্ত্রণালয়ের অফিসিয়াল দিকনির্দেশনা পড়তে আমাদের <a href="https://www.helptrickbd.com/2025/04/important-instructions-for-ssc-candidates.html" target="_blank" rel="noopener" style="color: #16a34a; font-weight: 600; text-decoration: underline;">এসএসসি পরীক্ষার্থীদের জন্য জরুরি নিয়মাবলি ও পরীক্ষার হলের নির্দেশিকা</a> আর্টিকেলটি দেখে নিতে পারেন।</li>
+      <li><strong>1. Time Management (সময় ব্যবস্থাপনা):</strong> ৩ ঘণ্টার পরীক্ষায় রিডিং অংশের জন্য ১ ঘণ্টা ৫০ মিনিট, রাইটিং অংশের জন্য ৫০ মিনিট এবং রিভিশনের জন্য ২০ মিনিট সময় সংরক্ষণ করুন। কোনো নির্দিষ্ট প্রশ্নের পেছনে অতিরিক্ত সময় অপচয় করা যাবে না।</li>
+      <li><strong>2. Spacing &amp; Clean Layout (মার্জিন স্পেসিং):</strong> উত্তরপত্রের প্রতি পাতায় উপরে ও বামে পর্যাপ্ত মার্জিন রাখুন। এক প্রশ্নের উত্তরের সাথে অন্য প্রশ্নের উত্তরের মাঝে স্পষ্ট ফাঁকা জায়গা (কমপক্ষে ১ ইঞ্চি) রাখুন যাতে পরীক্ষকের খাতা দেখতে সুবিধা হয়।</li>
+      <li><strong>3. Neat &amp; Clean Handwriting (কাটাছেঁড়া মুক্ত হাতের লেখা):</strong> ভুল হলে কলম দিয়ে একটানে কেটে দিন; কাটাকাটি বা ঘষাঘষি করবেন না। সুন্দর ও পরিচ্ছন্ন খাতা পরীক্ষকের মনে ইতিবাচক প্রভাব ফেলে।</li>
+      <li><strong>4. Avoid Direct Copying (সরাসরি লাইন কপি না করা):</strong> সিন ও আনসিন প্যাসেজের প্রশ্নের উত্তর লেখার ক্ষেত্রে হুবহু লাইন তুলে দিলে পূর্ণ নম্বর পাওয়া যায় না। প্রশ্নের কর্তা (Subject) ও কাল (Tense) বজায় রেখে বাক্যকে নিজের ভাষায় সাজিয়ে লিখুন।</li>
+      <li><strong>5. Exam Hall Instructions (বোর্ড পরীক্ষার নিয়মাবলি):</strong> পরীক্ষার হলে ওএমআর শিট পূরণ ও প্রবেশপত্র যাচাইয়ের ক্ষেত্রে কোনো ভুল করা চলবে না। এ বিষয়ে শিক্ষা মন্ত্রণালয়ের অফিসিয়াল দিকনির্দেশনা পড়তে আমাদের <a href="https://www.helptrickbd.com/2025/04/important-instructions-for-ssc-candidates.html" target="_blank" rel="noopener" style="color: #16a34a; font-weight: 600; text-decoration: underline;">এসএসসি পরীক্ষার্থীদের জন্য জরুরি নিয়মাবলি ও পরীক্ষার হলের নির্দেশিকা</a> আর্টিকেলটি দেখে নিতে পারেন।</li>
     </ul>
   </div>
 
   <!-- Section 5: Download Card -->
-  <h2 class="htbd-academic-heading" id="pdf-download">৫. এসএসসি ২০২৭ ইংরেজি ১ম পত্র পূর্ণাঙ্গ হ্যান্ডনোট পিডিএফ ডাউনলোড</h2>
+  <h2 class="htbd-academic-heading" id="pdf-download">৫. সম্পূর্ণ ১০০ নম্বরের হ্যান্ডনোট পিডিএফ ডাউনলোড (SSC English 1st Paper Full Suggestion &amp; Handnote PDF Download)</h2>
   <p>শিক্ষার্থীদের অফলাইনে অনুশীলনের সুবিধার্থে সম্পূর্ণ ৩৭ পৃষ্ঠার আল ফাতাহ ও শিক্ষা বোর্ড প্রশ্নভিত্তিক এক্সক্লুসিভ সাজেশন, সিন-আনসিন সমাধান, গ্রামার রুলস ও মডেল টেস্ট পেপার একটি সিঙ্গেল হাই-কোয়ালিটি পিডিএফ ফাইলে রূপান্তর করা হয়েছে। নিচের অফিসিয়াল লিংকে ক্লিক করে হ্যান্ডনোটটি সরাসরি ডাউনলোড করে সংগ্রহে রাখুন:</p>
 
   <div class="htbd-download-card">
     <p style="font-size: 17px; color: #1e3a8a; font-weight: 600; margin: 0 0 14px 0;">
-      সম্পূর্ণ ৩৭ পৃষ্ঠার আল ফাতাহ ও বোর্ড প্রশ্নভিত্তিক সাজেশন ও হ্যান্ডনোট
+      SSC English 1st Paper 100 Marks Full Syllabus Suggestion &amp; Model Handnote PDF
     </p>
     <a class="htbd-download-btn" href="https://drive.google.com/file/d/1wZfB9lE45e_EXAMPLE_SSC2027/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-      এসএসসি ২০২৭ ইংরেজি ১ম পত্র ফুল হ্যান্ডনোট পিডিএফ ডাউনলোড করুন
+      Download SSC 2027 English 1st Paper Full Handnote PDF
     </a>
   </div>
 
   <!-- Section 6: Silo Box -->
-  <h2 class="htbd-academic-heading" id="related-silo">৬. এসএসসি ২০২৭ স্টাডি সিরিজের অন্যান্য গুরুত্বপূর্ণ গাইডলাইন</h2>
+  <h2 class="htbd-academic-heading" id="related-silo">৬. এসএসসি ২০২৭ স্টাডি সাইলো সিরিজ (SSC 2027 English Study Silo Series)</h2>
   <div class="htbd-silo-box">
     <div style="font-size: 19px; font-weight: 700; color: #0b2046; margin-bottom: 8px;">
-      এসএসসি ২০২৭ ইংরেজি ১ম পত্র টপিক্যাল সাইলো ও সমাধান সিরিজ:
+      SSC 2027 English 1st Paper Topical Silo &amp; Solution Series:
     </div>
     <p style="font-size: 15px; color: #475569; margin: 0 0 14px 0; line-height: 1.5;">
       জাতীয় শিক্ষাক্রমের পূর্ণাঙ্গ সিলেবাস ও প্রশ্নভিত্তিক ধারাবাহিক প্রস্তুতি নির্দেশিকাসমূহ ক্রমানুসারে পড়ুন:
     </p>
     <ul style="margin: 0; padding-left: 20px; font-size: 16.5px; line-height: 1.85; color: #1e293b;">
-      <li style="margin-bottom: 6px;"><strong>পর্ব ০১:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">সিন প্যাসেজ সাজেশন – MCQ, প্রশ্নোত্তর ও গ্যাপ ফিলিং (প্রশ্ন ১-৩)</a></li>
-      <li style="margin-bottom: 6px;"><strong>পর্ব ০২:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary-writing.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">আনসিন প্যাসেজ ইনফরমেশন ট্রান্সফার ও নির্ভুল সামারি লেখার সহজ নিয়ম (প্রশ্ন ৪-৫)</a></li>
-      <li style="margin-bottom: 6px;"><strong>পর্ব ০৩:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange-rules-solution.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">সেন্টেন্স ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ শর্টকাট টেকনিক ও ৩০টি বোর্ড সমাধান (প্রশ্ন ৬-৭)</a></li>
-      <li style="margin-bottom: 6px;"><strong>পর্ব ০৪:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question-answer-guide.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">কবিতা ও গল্প থেকে প্রশ্নোত্তর লেখার নিয়ম ও পূর্ণাঙ্গ মডেল উত্তর (প্রশ্ন ৮-৯)</a></li>
-      <li style="margin-bottom: 6px;"><strong>পর্ব ০৫:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story-dialogue-suggestion.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">কমপ্লিটিং স্টোরি ও ডায়ালগ রাইটিং সেরা ১৫টি মডেল নোটস (প্রশ্ন ১০-১১)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 01:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">সিন প্যাসেজ সাজেশন – Seen Passage MCQ, Question Answer &amp; Gap Filling (Q 1-3)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 02:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary-writing.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">আনসিন প্যাসেজ ও সামারি – Unseen Passage Info Transfer &amp; Summary Writing (Q 4-5)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 03:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange-rules-solution.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ – Sentence Matching Table &amp; Re-arranging Rules (Q 6-7)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 04:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question-answer-guide.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">কবিতা ও গল্প প্রশ্নোত্তর – Questions from Poems &amp; Stories Model Answers (Q 8-9)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 05:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story-dialogue-suggestion.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">রাইটিং পার্ট – Completing Story &amp; Dialogue Writing Top Model Notes (Q 10-11)</a></li>
     </ul>
   </div>
 
   <!-- Section 7: FAQs -->
-  <h2 class="htbd-academic-heading" id="faqs">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ)</h2>
+  <h2 class="htbd-academic-heading" id="faqs">৭. সচরাচর জিজ্ঞাসিত প্রশ্ন (Frequently Asked Questions - FAQ)</h2>
   <div style="margin-top: 18px;">
     <div class="htbd-faq-item">
       <p style="margin: 0 0 6px 0; font-weight: 700; color: #0c2340; font-size: 18px;">
-        প্রশ্ন ১: এসএসসি ২০২৭ ইংরেজি ১ম পত্র পরীক্ষা কি পূর্ণ ১০০ নম্বরে হবে?
+        Question 1: এসএসসি ২০২৭ ইংরেজি ১ম পত্র পরীক্ষা কি পূর্ণ ১০০ নম্বরে হবে? (Will SSC 2027 English 1st paper be held on 100 marks?)
       </p>
       <p style="margin: 0; color: #334155; font-size: 17px; line-height: 1.75;">
         উত্তর: হ্যাঁ, শিক্ষা মন্ত্রণালয় ও শিক্ষা বোর্ডের সর্বশেষ নীতিমালা অনুযায়ী ২০২৭ সালের এসএসসি ও সমমানের পরীক্ষা পূর্ণ ১০০ নম্বরের ১০০% সিলেবাসেই অনুষ্ঠিত হবে। কোনো বিষয়ে সংক্ষিপ্ত সিলেবাস থাকবে না।
@@ -504,7 +504,7 @@ html_content = f"""<style>
 
     <div class="htbd-faq-item">
       <p style="margin: 0 0 6px 0; font-weight: 700; color: #0c2340; font-size: 18px;">
-        প্রশ্ন ২: ইংরেজি ১ম পত্রে পাস নম্বর কত?
+        Question 2: ইংরেজি ১ম পত্রে পাস নম্বর কত? (What is the pass mark in SSC English 1st Paper?)
       </p>
       <p style="margin: 0; color: #334155; font-size: 17px; line-height: 1.75;">
         উত্তর: ১০০ নম্বরের পরীক্ষায় পাস করতে হলে লিখিত ও রিডিং মিলিয়ে ন্যূনতম ৩৩ নম্বর পেতে হবে। তবে ভালো কলেজে ভর্তি নিশ্চিত করতে অন্তত ৮০ বা তদূর্ধ্ব নম্বর (A+) পাওয়া আবশ্যক।
@@ -513,7 +513,7 @@ html_content = f"""<style>
 
     <div class="htbd-faq-item">
       <p style="margin: 0 0 6px 0; font-weight: 700; color: #0c2340; font-size: 18px;">
-        প্রশ্ন ৩: সামারি রাইটিংয়ে পুরো ১০ নম্বর পাওয়ার উপায় কী?
+        Question 3: সামারি রাইটিংয়ে পুরো ১০ নম্বর পাওয়ার উপায় কী? (How to get full 10 marks in Summary Writing?)
       </p>
       <p style="margin: 0; color: #334155; font-size: 17px; line-height: 1.75;">
         উত্তর: সামারি লেখার সময় প্যাসেজের লাইন হুবহু কপি না করে মূল বক্তব্যকে নিজের ভাষায় এক-তৃতীয়াংশ (সাধারণত ৫০-৭০ শব্দে) বাক্যে উপস্থাপন করতে হবে। কোনো কোটেশন বা অতিরিক্ত উদাহরণ বর্জন করলে সর্বোচ্চ নম্বর পাওয়া যায়।
@@ -522,7 +522,7 @@ html_content = f"""<style>
 
     <div class="htbd-faq-item">
       <p style="margin: 0 0 6px 0; font-weight: 700; color: #0c2340; font-size: 18px;">
-        প্রশ্ন ৪: কমপ্লিটিং স্টোরির কি কোনো নির্দিষ্ট টাইটেল দিতে হবে?
+        Question 4: কমপ্লিটিং স্টোরির কি কোনো নির্দিষ্ট টাইটেল দিতে হবে? (Is title mandatory in Completing Story?)
       </p>
       <p style="margin: 0; color: #334155; font-size: 17px; line-height: 1.75;">
         উত্তর: হ্যাঁ, কমপ্লিটিং স্টোরি লেখার সময় একটি উপযুক্ত ও আকর্ষণীয় শিরোনাম (Title) দেওয়া বাধ্যতামূলক। শিরোনাম ছাড়া গল্প লিখলে নির্ধারিত নম্বর থেকে ১-২ নম্বর কর্তন করা হয়।
@@ -558,7 +558,7 @@ html_content = f"""<style>
     }}
   }},
   "datePublished": "2026-09-16T22:00:00+06:00",
-  "dateModified": "2026-09-16T22:00:00+06:00"
+  "dateModified": "2026-09-16T23:15:00+06:00"
 }}
 </script>
 
@@ -569,34 +569,34 @@ html_content = f"""<style>
   "mainEntity": [
     {{
       "@type": "Question",
-      "name": "এসএসসি ২০২৭ ইংরেজি ১ম পত্র পরীক্ষা কি পূর্ণ ১০০ নম্বরে হবে?",
+      "name": "Will SSC 2027 English 1st paper exam be held on 100 marks?",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "হ্যাঁ, শিক্ষা মন্ত্রণালয় ও শিক্ষা বোর্ডের সর্বশেষ নীতিমালা অনুযায়ী ২০২৭ সালের এসএসসি ও সমমানের পরীক্ষা পূর্ণ ১০০ নম্বরের ১০০% সিলেবাসেই অনুষ্ঠিত হবে।"
+        "text": "Yes, according to the Education Ministry and Education Board guidelines, SSC & Dakhil 2027 English 1st paper exam will be held on the full 100 marks syllabus."
       }}
     }},
     {{
       "@type": "Question",
-      "name": "ইংরেজি ১ম পত্রে পাস নম্বর কত?",
+      "name": "What is the pass mark in SSC English 1st Paper?",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "১০০ নম্বরের পরীক্ষায় পাস করতে হলে লিখিত ও রিডিং মিলিয়ে ন্যূনতম ৩৩ নম্বর পেতে হবে। তবে ভালো ফলাফলের জন্য ৮০+ নম্বর লক্ষ্য রাখা উচিত।"
+        "text": "Out of 100 marks, a student needs at least 33 marks to pass. However, 80+ marks is needed to secure an A+ (GPA 5)."
       }}
     }},
     {{
       "@type": "Question",
-      "name": "সামারি রাইটিংয়ে পুরো ১০ নম্বর পাওয়ার উপায় কী?",
+      "name": "How to get full 10 marks in Summary Writing?",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "সামারি লেখার সময় প্যাসেজের লাইন হুবহু কপি না করে মূল বক্তব্যকে নিজের ভাষায় এক-তৃতীয়াংশ শব্দের মধ্যে সহজ সরল বাক্যে উপস্থাপন করতে হবে।"
+        "text": "Write the summary in one-third of the original passage length (50-70 words) using your own simple sentences without copying lines directly."
       }}
     }},
     {{
       "@type": "Question",
-      "name": "কমপ্লিটিং স্টোরির কি কোনো নির্দিষ্ট টাইটেল দিতে হবে?",
+      "name": "Is a title mandatory for Completing Story in SSC English 1st Paper?",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "হ্যাঁ, কমপ্লিটিং স্টোরি লেখার সময় একটি উপযুক্ত ও আকর্ষণীয় শিরোনাম (Title) দেওয়া বাধ্যতামূলক।"
+        "text": "Yes, giving an appropriate title and moral of the story is mandatory to get full marks."
       }}
     }}
   ]
