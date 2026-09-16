@@ -34,7 +34,8 @@ def check_rules():
         "04_LABEL_TAXONOMY_GOVERNANCE.md",
         "05_MULTI_PC_SYNC_PROTOCOL.md",
         "06_COMMUNICATION_AND_REPORTING_PROTOCOL.md",
-        "07_POST_BACKUP_AND_RESTORE_PROTOCOL.md"
+        "07_POST_BACKUP_AND_RESTORE_PROTOCOL.md",
+        "08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md"
     ]
     all_ok = True
     for r in expected_rules:

@@ -25,6 +25,7 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 6. **[05_MULTI_PC_SYNC_PROTOCOL.md](file:///.agents/rules/05_MULTI_PC_SYNC_PROTOCOL.md)**: Git Pull Strictly Manual (User Instruction Only), Post-Task Auto-Push (`git push origin main`), Secrets safety.
 7. **[06_COMMUNICATION_AND_REPORTING_PROTOCOL.md](file:///.agents/rules/06_COMMUNICATION_AND_REPORTING_PROTOCOL.md)**: Mandatory Live Bengali Reporting & 100% Bengali Artifacts (Plans, Walkthroughs & Audits).
 8. **[07_POST_BACKUP_AND_RESTORE_PROTOCOL.md](file:///.agents/rules/07_POST_BACKUP_AND_RESTORE_PROTOCOL.md)**: Mandatory Pre-Edit Full Post Backup & Rollback Protocol (Original HTML, Image Manifest, Labels & Metadata).
+9. **[08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md](file:///.agents/rules/08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md)**: Mandatory Inquisitive Clarification Gate (Zero guesswork on short prompts), Lightning-Fast Execution Once Clear, and Zero Sycophancy (Challenge mistakes with facts, policy & reality; Never blindly agree).
 
 ### 🛡️ Automated Quality Gatekeeper Tools:
 - **Pre-Flight Post Validator (Quality Gatekeeper):**
@@ -112,6 +113,16 @@ Every revived or new article MUST strictly adhere to:
       * *তুলনামূলক ও তথ্য সারণী (`.htbd-academic-table`):* নেভি হেডার (`#0c2340`), সাদা টেক্সট, অল্টারনেটিং রো (`#f8fafc`), সূক্ষ্ম বর্ডার (`#e2e8f0`) এবং মোবাইল স্ক্রোল র‍্যাপার।
       * *পরামর্শ/সতর্কতা বক্স (`.htbd-exam-card` / `.htbd-tip-card`):* শান্ত ব্যাকগ্রাউন্ড (যেমন হালকা সবুজ `#f0fdf4` বা হালকা অ্যাম্বার `#fefce8`), সূক্ষ্ম বর্ডার এবং ১০০% স্পষ্ট পঠনযোগ্য ডার্ক টেক্সট (কোনো ডার্ক-অন-ডার্ক রঙের ত্রুটি ছাড়া)।
       * *ডাউনলোড কার্ড ও সিরিজ বক্স:* মার্জিত বাটন ও সাইলো লিংক বক্স।
+23. **Inquisitive Discovery Gate & Rapid Execution (অস্পষ্টতায় অনুমান সম্পূর্ণ নিষিদ্ধ — প্রশ্ন করে স্পষ্টতা অর্জন ও বিদ্যুৎগতির ডেলিভারি):**
+    - ইউজার ব্যস্ততার কারণে অনেক সময় সংক্ষিপ্ত বা অসম্পূর্ণ প্রম্পট দেবেন।
+    - কোনো এজেন্ট কখনোই নিজের থেকে মনগড়া ধারণা বা শর্টকাট অনুমান নিয়ে কাজ শুরু করবে না।
+    - ডিজাইন, ব্যাকগ্রাউন্ড টেমপ্লেট, লেবেল, কিংবা টার্গেট অডিয়েন্স নিয়ে ১% সন্দেহ থাকলেও ইউজারকে সুনির্দিষ্ট প্রশ্ন (Clarifying Questions) করে শতভাগ পরিষ্কার হতে হবে।
+    - রিকোয়ারমেন্ট স্পষ্ট হওয়ামাত্র আর কোনো ট্রায়াল-অ্যান্ড-এরর বা সময় অপচয় না করে সরাসরি বিদ্যুৎগতিতে নির্ভুল রেজাল্ট ডেলিভারি দিতে হবে।
+24. **Zero Sycophancy & Fact-Grounded Defense (ইউজারের ভুল থাকলে হাঁ-তে হাঁ মেলানো সম্পূর্ণ নিষিদ্ধ — বাস্তব তথ্য ও ফ্যাক্ট দিয়ে পথ দেখানো):**
+    - চাটুকার চ্যাটবটের মতো ইউজারের যেকোনো কথায় অন্ধের মতো "হাঁ তে হাঁ" মেলানো সম্পূর্ণ নিষিদ্ধ।
+    - ইউজার মানুষ, তাই অনিচ্ছাকৃতভাবে এমন নির্দেশ দিতে পারেন যা এসইও, কোর ওয়েব ভাইটালস বা গুগল অ্যাডসেন্স পলিসির ক্ষতি করতে পারে।
+    - এজেন্টের অলঙ্ঘনীয় দায়িত্ব হলো অন্ধের মতো সম্মতি না দিয়ে বাস্তব তথ্য (Facts), অ্যালগরিদম পলিসি ও টেকনিক্যাল বাস্তবতা তুলে ধরে ইউজারকে বিনয়ের সাথে চ্যালেঞ্জ করা, সঠিক বিকল্প পথ দেখানো এবং প্রশ্ন করে সঠিক সিদ্ধান্ত নেওয়া।
+
 
 ---
 
