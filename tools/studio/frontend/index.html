@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpTrickBD Autonomous Publishing Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Hind+Siliguri:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="studio-header">
+    <div class="header-container">
+      <div class="brand-area">
+        <span class="brand-logo">HelpTrickBD</span>
+        <span class="studio-tag">Autonomous Publishing Studio</span>
+      </div>
+      <div class="system-status" id="systemStatus">
+        <span class="status-pill status-online"><span class="dot"></span> Blogger API Connected</span>
+        <span class="status-pill status-online"><span class="dot"></span> Google Indexing API Ready</span>
+        <span class="status-pill status-online"><span class="dot"></span> Official Thumbnail Engine Active</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="studio-main">
+    
+    <!-- Top Step Bar -->
+    <div class="workflow-steps">
+      <div class="step active" id="stepIndicator1">
+        <span class="step-num">১</span>
+        <span class="step-label">ইনপুট ও বিশ্লেষণ</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step" id="stepIndicator2">
+        <span class="step-num">২</span>
+        <span class="step-label">সাইলো ব্লুপ্রিন্ট ও ব্যানার</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step" id="stepIndicator3">
+        <span class="step-num">৩</span>
+        <span class="step-label">রিভিউ ও লাইভ পাবলিশ</span>
+      </div>
+    </div>
+
+    <!-- Step 1: Input Panel -->
+    <section class="studio-card" id="step1Card">
+      <div class="card-header">
+        <h2>📄 ধাপ ০১: টপিক, সিলেবাস বা পিডিএফ ইনপুট</h2>
+        <p class="subtitle">আপনার পিডিএফ ফাইলটি এখানে ড্র্যাগ-অ্যান্ড-ড্রপ করুন অথবা টপিকের বিবরণ লিখুন:</p>
+      </div>
+
+      <div class="input-grid">
+        <!-- PDF Dropzone -->
+        <div class="dropzone-area" id="pdfDropzone">
+          <div class="dropzone-icon">📥</div>
+          <h3>পিডিএফ ড্র্যাগ করে এখানে ছাড়ুন</h3>
+          <p>অথবা ফাইল ব্রাউজ করতে এখানে ক্লিক করুন (PDF Plumber Auto-Scan)</p>
+          <input type="file" id="pdfFileInput" accept=".pdf" style="display: none;">
+          <div class="file-info" id="fileInfo" style="display:none;"></div>
+        </div>
+
+        <!-- Text Input Form -->
+        <div class="form-area">
+          <div class="form-group">
+            <label for="postTitle">মূল বিষয় বা আর্টিকেলের শিরোনাম (Main Title):</label>
+            <input type="text" id="postTitle" placeholder="যেমন: এসএসসি ২০২৭ ইংরেজি ১ম পত্র পূর্ণাঙ্গ প্রস্তুতি গাইড ও চূড়ান্ত সাজেশন">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="postCategory">ক্যাটাগরি (Category):</label>
+              <select id="postCategory">
+                <option value="Education">Education (এসএসসি / দাখিল / এইচএসসি)</option>
+                <option value="Job Study">Job Study (বিসিএস / চাকরি প্রস্তুতি)</option>
+                <option value="Islamic">Islamic Article (ইসলামিক প্রবন্ধ)</option>
+                <option value="Tech">Tech / ICT Guide (আইসিটি ও প্রযুক্তি)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="siloPartsCount">সাইলো পার্ট সংখ্যা (Adaptive):</label>
+              <select id="siloPartsCount">
+                <option value="auto">স্বয়ংক্রিয় (পিডিএফ অনুযায়ী ৩–৫ পার্ট)</option>
+                <option value="3">৩ পার্ট সিরিজ</option>
+                <option value="4">৪ পার্ট সিরিজ</option>
+                <option value="5">৫ পার্ট সিরিজ (স্ট্যান্ডার্ড)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-large" id="btnAnalyze">
+            ⚡ স্মার্ট সাইলো প্ল্যান ও ব্লুপ্রিন্ট তৈরি করুন
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 2: Silo Blueprint & Thumbnails (Hidden initially) -->
+    <section class="studio-card" id="step2Card" style="display:none;">
+      <div class="card-header">
+        <div class="title-with-actions">
+          <h2>🏛️ ধাপ ০২: প্রস্তাবিত সাইলো সিরিজ ও অফিশিয়াল ব্যানার</h2>
+          <button class="btn btn-secondary btn-sm" id="btnBackToStep1">← ইনপুট পরিবর্তন করুন</button>
+        </div>
+        <p class="subtitle">সিস্টেম স্বয়ংক্রিয়ভাবে বিষয়বস্তু বিশ্লেষণ করে পিলার হাব এবং সহযোগী পার্টসমূহ সাজিয়েছে:</p>
+      </div>
+
+      <!-- Pillar Post Banner & Card -->
+      <div class="pillar-box" id="pillarBox">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Silo Parts Grid -->
+      <h3 class="section-subheading">সহযোগী সাইলো পোস্টসমূহ (Silo Parts):</h3>
+      <div class="silo-grid" id="siloGrid">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="step-action-bar">
+        <button class="btn btn-primary btn-large" id="btnProceedToPreview">
+          👁️ আর্টিকেলের ড্রাফট প্রিভিউ ও কোয়ালিটি অডিট দেখুন →
+        </button>
+      </div>
+    </section>
+
+    <!-- Step 3: Preview & Approval Gate (Hidden initially) -->
+    <section class="studio-card" id="step3Card" style="display:none;">
+      <div class="card-header">
+        <div class="title-with-actions">
+          <h2>🛡️ ধাপ ০৩: আর্টিকেল রিভিউ ও লাইভ পাবলিশ কন্ট্রোল</h2>
+          <button class="btn btn-secondary btn-sm" id="btnBackToStep2">← ব্লুপ্রিন্ট এডিট</button>
+        </div>
+        <p class="subtitle">প্রি-ফ্লাইট কোয়ালিটি পাস হওয়া পোস্টগুলো দেখুন এবং এক ক্লিকে লাইভ পাবলিশ করুন:</p>
+      </div>
+
+      <!-- Quality Metrics Bar -->
+      <div class="metrics-bar">
+        <div class="metric-item">
+          <span class="metric-label">শব্দ সংখ্যা (Word Count):</span>
+          <span class="metric-value badge-success" id="metricWordCount">২,৪৫০+ শব্দ (PASSED)</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">টাইপোগ্রাফি (Font):</span>
+          <span class="metric-value badge-success">SolaimanLipi (@font-face)</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">স্কিমা মাইক্রোডাটা:</span>
+          <span class="metric-value badge-success">FAQPage & BlogPosting JSON-LD</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">ইমোজি অডিট:</span>
+          <span class="metric-value badge-success">১০০% মার্জিত (০ ইমোজি)</span>
+        </div>
+      </div>
+
+      <!-- Search Description One-Click Copy Card -->
+      <div class="search-desc-card">
+        <div class="desc-info">
+          <strong>গুগল সার্চ ডেসক্রিপশন (Search Description — ১৪০ অক্ষর):</strong>
+          <p id="searchDescText" class="desc-text"></p>
+        </div>
+        <button class="btn btn-secondary btn-sm" id="btnCopySearchDesc">
+          📋 Copy Description
+        </button>
+      </div>
+
+      <!-- Live Article HTML Viewer -->
+      <div class="preview-container">
+        <div class="preview-header">
+          <span>পোস্টের লাইভ রিডার প্রিভিউ (Live Preview):</span>
+        </div>
+        <div class="preview-body" id="articlePreviewBody">
+          <!-- Article Rendered Here -->
+        </div>
+      </div>
+
+      <!-- Publishing Controls -->
+      <div class="publish-controls">
+        <div class="toggle-control">
+          <label class="switch">
+            <input type="checkbox" id="toggleLivePublish" checked>
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label" id="toggleStatusLabel">সরাসরি লাইভ পাবলিশ (Live Published)</span>
+        </div>
+
+        <button class="btn btn-success btn-large" id="btnApproveAndPublish">
+          🚀 Approve & Publish to Blogger (১-ক্লিক)
+        </button>
+      </div>
+
+      <!-- Final Result Box -->
+      <div class="result-box" id="resultBox" style="display:none;">
+        <h3>🎉 সফলভাবে সম্পন্ন হয়েছে!</h3>
+        <div id="liveResultContent"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="studio-footer">
+    <p>HelpTrickBD Autonomous Publishing Studio • Fully Bound to Agent Constitution Rules 00–08 • Helptrickbd.com</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
