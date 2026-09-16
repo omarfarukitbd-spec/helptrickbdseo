@@ -1,0 +1,160 @@
+<style>
+@font-face {
+  font-family: 'SolaimanLipi';
+  src: url('https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/fonts/SolaimanLipi.woff2') format('woff2');
+  font-display: swap;
+}
+.htbd-academic-post {
+  font-family: 'SolaimanLipi', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  color: #1e293b;
+}
+.htbd-hero-img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+}
+.htbd-academic-heading {
+  color: #0c2340;
+  font-size: 22px;
+  font-weight: 700;
+  border-left: 5px solid #0284c7;
+  padding-left: 14px;
+  margin: 34px 0 16px 0;
+}
+.htbd-academic-subheading {
+  color: #1e3a8a;
+  font-size: 19px;
+  font-weight: 600;
+  margin: 22px 0 10px 0;
+}
+.htbd-overview-box {
+  background: #f8fafd;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #0c2340;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0 24px 0;
+}
+.htbd-academic-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 16px;
+}
+.htbd-academic-table th {
+  background: #0c2340;
+  color: #ffffff;
+  padding: 12px 16px;
+  text-align: left;
+}
+.htbd-academic-table td {
+  border: 1px solid #e2e8f0;
+  padding: 11px 16px;
+}
+.htbd-academic-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+.htbd-tip-card {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #16a34a;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 22px 0;
+}
+.htbd-faq-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+</style>
+
+<div class="htbd-academic-post">
+
+  <!-- Featured Hero Banner (Rule 02 & Rule 09) -->
+  <img src="{{ banner_url }}" alt="{{ banner_alt }}" title="{{ title }}" class="htbd-hero-img" loading="eager" width="1200" height="675" />
+
+  <!-- Position 0 Answer Box (Rule 01 & Rule 18) -->
+  <div class="htbd-overview-box">
+    <p style="margin: 0; font-size: 18px; font-weight: 700; color: #0c2340; margin-bottom: 6px;">সারসংক্ষেপ (Quick Overview):</p>
+    <p style="margin: 0; color: #334155; font-size: 16px; line-height: 1.75;">{{ quick_overview }}</p>
+  </div>
+
+  <p style="font-size: 17px; color: #334155; margin-bottom: 20px;">{{ intro_paragraph }}</p>
+
+  <!--more-->
+
+  <!-- Section 1: Syllabus & Marks Distribution -->
+  <h2 class="htbd-academic-heading">{{ section1_title }}</h2>
+  <p>{{ section1_content }}</p>
+
+  <div style="overflow-x: auto;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr>
+          <th>ক্রম</th>
+          <th>বিষয় / প্রশ্নের ধরন</th>
+          <th>মোট নম্বর</th>
+          <th>প্রস্তুতির মূল কৌশল</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ marks_table_rows }}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 2: In-Depth Question & Solution Guide -->
+  <h2 class="htbd-academic-heading">{{ section2_title }}</h2>
+  <p>{{ section2_content }}</p>
+
+  <div class="htbd-tip-card">
+    <p style="margin: 0 0 6px 0; font-weight: 700; color: #15803d; font-size: 17px;">পরীক্ষার্থীদের জন্য বিশেষ নির্দেশনা:</p>
+    <p style="margin: 0; color: #1e293b; font-size: 16px; line-height: 1.75;">{{ tip_card_text }}</p>
+  </div>
+
+  <!-- Section 3: High-Yield Practice Models -->
+  <h2 class="htbd-academic-heading">{{ section3_title }}</h2>
+  <div style="font-size: 16px; line-height: 1.85;">
+    {{ practice_models_html }}
+  </div>
+
+  <!-- Section 4: Frequently Asked Questions (FAQ) -->
+  <h2 class="htbd-academic-heading">সাধারণ জিজ্ঞাসা ও প্রশ্নোত্তর (Frequently Asked Questions)</h2>
+  {{ faq_items_html }}
+
+  <!-- Silo Navigation Box -->
+  {{ silo_nav_box_html }}
+
+</div>
+
+<!-- JSON-LD Microdata -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "{{ post_url }}"},
+  "headline": "{{ title }}",
+  "description": "{{ meta_desc }}",
+  "image": "{{ banner_url }}",
+  "author": {"@type": "Person", "name": "Faruk Sir"},
+  "publisher": {"@type": "Organization", "name": "HelpTrickBD"},
+  "datePublished": "2026-09-17T02:00:00+06:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ faq_schema_json }}
+  ]
+}
+</script>
