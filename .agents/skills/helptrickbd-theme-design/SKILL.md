@@ -264,20 +264,96 @@ Before publishing any post, verify against this theme checklist:
 4. Alerts use `.alert-message.success / .warning / .passed / .error`.
 5. In-body images have `loading="lazy"`, `decoding="async"`, and `max-width: 100%`.
 6. Zero emojis; vector icons used where necessary.
-7. **Zero Embedded `<style>` Bloat**: Rely 100% on the theme's native CSS inheritance. Never inject `@font-face`, `.htbd-post-wrapper`, or redundant table/heading CSS.
-8. **Zero Colorful Glitz**: No neon colors, loud rainbow borders, or heavy shadows. Keep all design clean, calm, high-contrast, and comfortable for extended reading.
-9. Table of contents uses native `<strike>#title=(সূচিপত্র) (toc)</strike>` or `.tociki-pro`.
+7. **Post-Level Responsive Styling Architecture**: Posts can include self-contained, responsive `<style>` blocks (reference: `secularism-vs-islamic-values-in.html`) with `.htbd-academic-heading`, `.htbd-academic-subheading`, `.htbd-overview-box`, `.htbd-academic-table`, `.htbd-exam-card`, `.htbd-toc-card`, and `.htbd-silo-box`.
+8. **Zero Colorful Glitz**: No neon colors, loud rainbow borders, or dark-on-dark contrast bugs. Keep all design clean, calm, high-contrast, and comfortable for extended reading.
 
 ---
 
-## 🚫 9. Zero-Bloat Policy & Theme Native Markup Reference
+## 🏛️ 9. Proven Post Styling Architecture (Golden Reference Standard)
 
-| Component | DO NOT Use (Banned Bloat) | USE INSTEAD (Theme Native) |
-| :--- | :--- | :--- |
-| **Typography** | In-post `@font-face`, `.htbd-post-wrapper` | Plain `<p>`, `<span>`, `<strong>` (Theme inherits SolaimanLipi globally) |
-| **Headings** | `.htbd-heading` with custom thick blue border | Standard `<h2>`, `<h3>`, `<h4>` (Theme formats with 600-weight & slate accents) |
-| **Table of Contents** | Custom 30-line CSS `.htbd-toc-box` | Native `<strike>#title=(সূচিপত্র) (toc)</strike>` or `<div class="tociki-pro">...</div>` |
-| **Tables** | Custom `.htbd-table` with heavy styling | Standard semantic `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>` (Theme auto-wraps & styles) |
-| **Alert / Notes** | Injected custom styled cards | Native `.alert-message.passed` / `.warning` / `.success` |
-| **Code Blocks** | Custom code wrappers | Native `<pre class="code-box">code<button class="tune">Copy Now</button><input id="showlink" readonly type="text" value="code"/></pre>` |
-| **Exceptions** | Loud gradients, neon colors, heavy shadows | If a custom widget (e.g. series navigation) is needed, use minimal inline CSS with `#e2e8f0` borders and `#ffffff` card surface. |
+As seen in `secularism-vs-islamic-values-in.html`, every authoritative post uses this responsive, self-contained architecture:
+
+```html
+<style>
+  .htbd-academic-heading {
+    color: #0c2340 !important;
+    border-left: 5px solid #d4af37 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-subheading {
+    color: #1e3a8a !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-top: 26px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-overview-box {
+    background: #f8fafd !important;
+    border: 1px solid #dbeafe !important;
+    border-left: 5px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 24px 0 !important;
+    box-shadow: 0 2px 6px rgba(12,35,64,0.06) !important;
+  }
+  .htbd-toc-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 4px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 20px 24px !important;
+    margin: 24px 0 !important;
+  }
+  .htbd-academic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .htbd-academic-table th {
+    background-color: #0c2340;
+    color: #ffffff;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 700;
+    border: 1px solid #1e3a8a;
+  }
+  .htbd-academic-table td {
+    padding: 13px 16px;
+    border: 1px solid #e2e8f0;
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: #334155;
+  }
+  .htbd-academic-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  .htbd-exam-card {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 30px 0 !important;
+  }
+  .htbd-silo-box {
+    margin: 34px 0;
+    padding: 22px 24px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #0b2046;
+    border-radius: 8px;
+  }
+</style>
+```

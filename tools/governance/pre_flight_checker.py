@@ -101,21 +101,13 @@ class PreFlightChecker:
             self.passed.append("Typography: English article, SolaimanLipi not required (PASSED)")
 
     def check_theme_native_css_and_bloat(self):
-        """Rule 22: Theme Native CSS Primacy & Zero-Bloat Minimalist Post Styling"""
-        # 1. Check for redundant in-post @font-face or .htbd-post-wrapper bloat
-        has_redundant_font_import = '@font-face' in self.raw_html and 'solaiman' in self.raw_html.lower()
-        has_post_wrapper = '.htbd-post-wrapper' in self.raw_html
-        if has_redundant_font_import or has_post_wrapper:
-            self.warnings.append("Theme CSS Bloat: Post contains redundant in-post @font-face or .htbd-post-wrapper. Rule 22 mandates relying on the theme's native CSS classes instead.")
-        else:
-            self.passed.append("Theme CSS: Zero in-post font/wrapper bloat, cleanly inherits theme defaults (PASSED)")
-
-        # 2. Check for garish/rainbow styling
+        """Rule 22: Post-Level Responsive Styling Standard (Clean, Minimalist & Reading Comfort)"""
+        # Check for garish/rainbow styling
         has_rainbow = bool(re.search(r'linear-gradient\s*\([^)]*(#ff00|rgb\(255,\s*0|magenta|cyan)', self.raw_html, re.IGNORECASE))
         if has_rainbow:
-            self.errors.append("Theme Styling: CRITICAL! Garish or neon rainbow gradients detected. Rule 22 strictly bans overly colorful elements for reading comfort.")
+            self.errors.append("Theme Styling: CRITICAL! Garish or neon rainbow gradients detected. Garish colors strictly banned.")
         else:
-            self.passed.append("Theme Styling: Minimalist, clean and calm palette adhering to Rule 22 (PASSED)")
+            self.passed.append("Theme Styling: Minimalist, clean and calm palette verified (PASSED)")
 
     def check_featured_image(self):
         """Rule 02: Every article MUST have at least one featured <img> tag (prevents gray camera placeholder)"""
