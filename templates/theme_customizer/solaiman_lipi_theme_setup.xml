@@ -246,6 +246,17 @@ Setup Instructions:
     margin-top: 6px;
     font-style: italic;
   }
+
+  /* 11. Homepage Hero LCP Thumbnail Visibility Permanent Fix */
+  .snip-thumbnail.lcp-hero-thumb,
+  img.lcp-hero-thumb,
+  .snip-thumbnail[loading='eager'],
+  .snip-thumbnail[fetchpriority='high'],
+  .post-filter.post-0 .snip-thumbnail {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 /*]]>*/
 </style>
 <!-- [END] HelpTrickBD SolaimanLipi Global Typography & Bold Layout -->
+
