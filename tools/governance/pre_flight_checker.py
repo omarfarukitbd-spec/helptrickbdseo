@@ -279,6 +279,18 @@ class PreFlightChecker:
         else:
             self.passed.append("Share Box: No redundant custom share boxes detected, theme native share preserved (PASSED)")
 
+    def check_search_description(self):
+        """Rule 20: Mandatory Search Description optimal length check (Max 150 chars for Blogger)"""
+        meta_desc = self.metadata.get('search_description') or self.metadata.get('meta_description', '')
+        if meta_desc:
+            char_len = len(meta_desc)
+            if char_len > 150:
+                self.warnings.append(f"Search Description: Length is {char_len} chars. Blogger strictly limits Search Description to 150 chars! Recommended length: 120-148 chars.")
+            else:
+                self.passed.append(f"Search Description: Optimal length ({char_len}/150 chars) verified (PASSED)")
+        else:
+            self.warnings.append("Search Description: Not explicitly defined in metadata. Must be delivered in report for manual Blogger input.")
+
     def run_all(self):
         self.check_word_count()
         self.check_jump_break()
@@ -290,6 +302,7 @@ class PreFlightChecker:
         self.check_title_and_slug()
         self.check_zero_emojis()
         self.check_no_redundant_share_box()
+        self.check_search_description()
         
         return len(self.errors) == 0
 
