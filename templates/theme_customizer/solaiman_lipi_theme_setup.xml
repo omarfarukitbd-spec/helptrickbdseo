@@ -3,10 +3,12 @@
 HelpTrickBD - Sitewide SolaimanLipi Typography, Bold Titles & Full Width Engine
 ================================================================================
 Benefits:
-1. All post titles display bold, enlarged (17.5px), and high contrast like minibd.com.
-2. Featured post overlay titles stay crisp white (#ffffff) with high contrast.
-3. Sidebar popular posts are bold and easily legible.
-4. Clean CDATA block prevents Blogger XML encoding issues.
+1. Pure English comments - zero non-ASCII or Bengali characters in theme XML.
+2. Single post H1 headline restored to full prominent size (28px desktop, 23px mobile).
+3. "YOU MAY LIKE" related post titles under thumbnails restored to clear, readable size (15.5px).
+4. Featured overlay titles on dark cards remain crisp white (#ffffff) with high contrast.
+5. SolaimanLipi font applied sitewide for clean Bengali conjunct rendering.
+6. Clean CDATA block prevents Blogger XML encoding errors.
 
 Setup Instructions:
 1. Go to Blogger Dashboard: https://www.blogger.com/blog/themes/1975983966532887960
@@ -41,7 +43,7 @@ Setup Instructions:
     src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
   }
 
-  /* 1. Apply SolaimanLipi Sitewide */
+  /* 1. Apply SolaimanLipi Font Family Sitewide */
   html, body, 
   .post-body, 
   .post-title, 
@@ -86,7 +88,7 @@ Setup Instructions:
     color: var(--theme-text-color, #1a1a1a) !important;
   }
 
-  /* 2.2. Homepage & Category Grid Post Titles (Clean, Bold, Natural) */
+  /* 2.2. Homepage & Category Grid Post Titles */
   .post-filter .entry-title, 
   .post-filter .entry-title a,
   .raw-box .entry-title,
@@ -99,7 +101,7 @@ Setup Instructions:
     color: #1a1a1a !important;
   }
 
-  /* 3. Featured Image Overlay Titles & Metadata (Must Be 100% Crisp White) */
+  /* 3. Featured Image Overlay Titles & Metadata (Crisp White on Dark Cards) */
   .entery-category-fly,
   .entery-category-fly .entry-title,
   .entery-category-fly .entry-title a,
@@ -154,7 +156,7 @@ Setup Instructions:
     line-height: 1.4 !important;
   }
 
-  /* 5. High-Contrast Bold Category Badges */
+  /* 5. Category Badges */
   .entery-category a,
   .post-filter .entery-category a,
   .sidebar .PopularPosts .entery-category a {
@@ -163,14 +165,14 @@ Setup Instructions:
     letter-spacing: 0.5px;
   }
   
-    /* 6. Post Body Typography and Readability */
+  /* 6. Post Body Typography and Readability */
   .post-body p {
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #202124 !important;
   }
 
-  /* 7. Table Responsive & Mobile Overflow Protection (গ) */
+  /* 7. Table Responsive & Mobile Overflow Protection */
   .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -192,7 +194,7 @@ Setup Instructions:
     }
   }
 
-    /* Font-Display Swap Override for FontAwesome */
+  /* 8. FontAwesome Font-Display Swap Override */
   @font-face {
     font-family: 'Font Awesome 6 Free';
     font-display: swap;
@@ -202,7 +204,7 @@ Setup Instructions:
     font-display: swap;
   }
 
-    /* Header Logo Responsive Dimensions (Mobile 98x40) */
+  /* 9. Header Logo Responsive Dimensions */
   #darkroom1 {
     max-height: 42px;
     width: auto;
@@ -215,7 +217,7 @@ Setup Instructions:
     }
   }
 
-  /* 7. Image Cumulative Layout Shift (CLS) Prevention (চ) */
+  /* 10. Image Cumulative Layout Shift (CLS) Prevention */
   .post-body img {
     max-width: 100% !important;
     height: auto !important;
