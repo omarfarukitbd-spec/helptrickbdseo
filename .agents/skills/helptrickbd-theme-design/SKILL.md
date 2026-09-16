@@ -264,4 +264,20 @@ Before publishing any post, verify against this theme checklist:
 4. Alerts use `.alert-message.success / .warning / .passed / .error`.
 5. In-body images have `loading="lazy"`, `decoding="async"`, and `max-width: 100%`.
 6. Zero emojis; vector icons used where necessary.
-7. Font relies on the theme's native `SolaimanLipi` inheritance.
+7. **Zero Embedded `<style>` Bloat**: Rely 100% on the theme's native CSS inheritance. Never inject `@font-face`, `.htbd-post-wrapper`, or redundant table/heading CSS.
+8. **Zero Colorful Glitz**: No neon colors, loud rainbow borders, or heavy shadows. Keep all design clean, calm, high-contrast, and comfortable for extended reading.
+9. Table of contents uses native `<strike>#title=(সূচিপত্র) (toc)</strike>` or `.tociki-pro`.
+
+---
+
+## 🚫 9. Zero-Bloat Policy & Theme Native Markup Reference
+
+| Component | DO NOT Use (Banned Bloat) | USE INSTEAD (Theme Native) |
+| :--- | :--- | :--- |
+| **Typography** | In-post `@font-face`, `.htbd-post-wrapper` | Plain `<p>`, `<span>`, `<strong>` (Theme inherits SolaimanLipi globally) |
+| **Headings** | `.htbd-heading` with custom thick blue border | Standard `<h2>`, `<h3>`, `<h4>` (Theme formats with 600-weight & slate accents) |
+| **Table of Contents** | Custom 30-line CSS `.htbd-toc-box` | Native `<strike>#title=(সূচিপত্র) (toc)</strike>` or `<div class="tociki-pro">...</div>` |
+| **Tables** | Custom `.htbd-table` with heavy styling | Standard semantic `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>` (Theme auto-wraps & styles) |
+| **Alert / Notes** | Injected custom styled cards | Native `.alert-message.passed` / `.warning` / `.success` |
+| **Code Blocks** | Custom code wrappers | Native `<pre class="code-box">code<button class="tune">Copy Now</button><input id="showlink" readonly type="text" value="code"/></pre>` |
+| **Exceptions** | Loud gradients, neon colors, heavy shadows | If a custom widget (e.g. series navigation) is needed, use minimal inline CSS with `#e2e8f0` borders and `#ffffff` card surface. |

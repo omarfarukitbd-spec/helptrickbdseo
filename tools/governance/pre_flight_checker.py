@@ -93,17 +93,29 @@ class PreFlightChecker:
             self.errors.append("Jump Break: <!--more--> tag is MISSING from the post!")
 
     def check_typography(self):
-        """Rule 01: SolaimanLipi font styling for Bengali content"""
-        has_solaiman = 'SolaimanLipi' in self.raw_html or 'solaiman-lipi' in self.raw_html.lower()
+        """Rule 01 & Rule 22: SolaimanLipi font styling (enforced globally by theme)"""
         has_bangla_chars = bool(re.search(r'[\u0980-\u09FF]', self.raw_html))
-        
         if has_bangla_chars:
-            if has_solaiman:
-                self.passed.append("Typography: SolaimanLipi font rule applied (PASSED)")
-            else:
-                self.warnings.append("Typography: SolaimanLipi font styling not explicitly defined in post style")
+            self.passed.append("Typography: Standard Bengali content, inherits theme's global SolaimanLipi typography (PASSED)")
         else:
             self.passed.append("Typography: English article, SolaimanLipi not required (PASSED)")
+
+    def check_theme_native_css_and_bloat(self):
+        """Rule 22: Theme Native CSS Primacy & Zero-Bloat Minimalist Post Styling"""
+        # 1. Check for redundant in-post @font-face or .htbd-post-wrapper bloat
+        has_redundant_font_import = '@font-face' in self.raw_html and 'solaiman' in self.raw_html.lower()
+        has_post_wrapper = '.htbd-post-wrapper' in self.raw_html
+        if has_redundant_font_import or has_post_wrapper:
+            self.warnings.append("Theme CSS Bloat: Post contains redundant in-post @font-face or .htbd-post-wrapper. Rule 22 mandates relying on the theme's native CSS classes instead.")
+        else:
+            self.passed.append("Theme CSS: Zero in-post font/wrapper bloat, cleanly inherits theme defaults (PASSED)")
+
+        # 2. Check for garish/rainbow styling
+        has_rainbow = bool(re.search(r'linear-gradient\s*\([^)]*(#ff00|rgb\(255,\s*0|magenta|cyan)', self.raw_html, re.IGNORECASE))
+        if has_rainbow:
+            self.errors.append("Theme Styling: CRITICAL! Garish or neon rainbow gradients detected. Rule 22 strictly bans overly colorful elements for reading comfort.")
+        else:
+            self.passed.append("Theme Styling: Minimalist, clean and calm palette adhering to Rule 22 (PASSED)")
 
     def check_featured_image(self):
         """Rule 02: Every article MUST have at least one featured <img> tag (prevents gray camera placeholder)"""
@@ -302,6 +314,7 @@ class PreFlightChecker:
         self.check_title_and_slug()
         self.check_zero_emojis()
         self.check_no_redundant_share_box()
+        self.check_theme_native_css_and_bloat()
         self.check_search_description()
         
         return len(self.errors) == 0
