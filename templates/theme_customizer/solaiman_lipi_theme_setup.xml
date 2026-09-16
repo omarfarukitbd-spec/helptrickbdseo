@@ -54,16 +54,46 @@ Setup Instructions:
     font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
   }
 
-  /* 2. Bold and Enlarged Post Titles on Home and Archive Pages */
-  .entry-title, 
-  .entry-title a, 
+  /* 2. Restore Single Post H1 Title to Full Prominent Headline Size */
+  .item-post .post-inner-area h1.entry-title,
+  .item-post h1.entry-title,
+  h1.entry-title {
+    font-size: 28px !important;
+    line-height: 1.45 !important;
+    font-weight: 700 !important;
+    color: var(--theme-text-color, #1a1a1a) !important;
+    margin-bottom: 16px !important;
+  }
+  @media screen and (max-width: 768px) {
+    .item-post .post-inner-area h1.entry-title,
+    .item-post h1.entry-title,
+    h1.entry-title {
+      font-size: 23px !important;
+      line-height: 1.4 !important;
+    }
+  }
+
+  /* 2.1. Restore Clean & Readable Titles in Related Posts (YOU MAY LIKE) Under Thumbnails */
+  .related-runs .entry-title,
+  .related-runs .entry-title a,
+  .Super-related .entry-title,
+  .Super-related .entry-title a,
+  .related-box .entry-title,
+  .related-box .entry-title a {
+    font-size: 15.5px !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+    color: var(--theme-text-color, #1a1a1a) !important;
+  }
+
+  /* 2.2. Homepage & Category Grid Post Titles (Clean, Bold, Natural) */
   .post-filter .entry-title, 
   .post-filter .entry-title a,
   .raw-box .entry-title,
   .raw-box .entry-title a,
   .block-step .entry-title,
   .block-step .entry-title a {
-    font-size: 17.5px !important;
+    font-size: 17px !important;
     font-weight: 700 !important;
     line-height: 1.45 !important;
     color: #1a1a1a !important;
