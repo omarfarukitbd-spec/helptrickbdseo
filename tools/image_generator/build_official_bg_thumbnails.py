@@ -13,11 +13,11 @@ using the user's authentic templates from 'Thumbnail BG/' folder:
 - bg_5.png -> ICT Guide (Cloud Computing, Computer Virus)
 
 Enforces:
-1. Mandatory usage of official 'Thumbnail BG/' background images
-2. 100% Zero-Emoji policy (zero tofu boxes)
-3. Chromium HarfBuzz text-shaping engine for 100% flawless Bengali conjuncts
-4. Strict Rule 8 Bilingual Governance (100% English for English posts, 100% Bengali for Bengali posts)
-5. 10–20 KB Ultra-WebP Core Web Vitals compression
+1. Zero Black Shape/Card: Typography placed directly on authentic background canvas.
+2. Centered layout with colors matching the background's accent palette.
+3. Safe Bounds (y <= 550) so text never collides with side decorative waves.
+4. Chromium HarfBuzz text-shaping engine for 100% flawless Bengali conjuncts.
+5. 10–20 KB Ultra-WebP Core Web Vitals compression.
 """
 
 import os
@@ -44,73 +44,109 @@ FONT_PATH = os.path.join(PROJECT_ROOT, "assets", "fonts", "HindSiliguri-Bold.ttf
 os.makedirs(POSTS_DIR, exist_ok=True)
 os.makedirs(THUMBS_DIR, exist_ok=True)
 
-# Category configurations with tailored frosted cards and colors
+# Category configurations matching each background's authentic palette
 CATEGORY_CONFIGS = {
     "Job Study Article": {
         "bg": "bg_4.png",
         "badge_bg": "#064e3b",
         "badge_border": "#f59e0b",
         "badge_color": "#ffffff",
-        "card_bg": "rgba(10, 24, 20, 0.88)",
-        "card_border": "rgba(245, 158, 11, 0.5)",
-        "accent": "#fbbf24",
-        "pill_bg": "rgba(255, 255, 255, 0.12)",
-        "pill_border": "rgba(255, 255, 255, 0.25)"
+        "title_color": "#064e3b",
+        "tag_bg": "#f0fdf4",
+        "tag_border": "#bbf7d0",
+        "tag_color": "#15803d",
+        "subtitle_color": "#334155",
+        "pill_bg": "#ffffff",
+        "pill_border": "#cbd5e1",
+        "pill_color": "#064e3b",
+        "pill_accent_bg": "#064e3b",
+        "pill_accent_color": "#ffffff",
+        "footer_highlight": "#15803d"
     },
     "ICT Guide": {
         "bg": "bg_5.png",
         "badge_bg": "#0f172a",
-        "badge_border": "#38bdf8",
+        "badge_border": "#0284c7",
         "badge_color": "#ffffff",
-        "card_bg": "rgba(11, 19, 38, 0.88)",
-        "card_border": "rgba(56, 189, 248, 0.45)",
-        "accent": "#38bdf8",
-        "pill_bg": "rgba(56, 189, 248, 0.12)",
-        "pill_border": "rgba(56, 189, 248, 0.35)"
+        "title_color": "#0f172a",
+        "tag_bg": "#f0f9ff",
+        "tag_border": "#bae6fd",
+        "tag_color": "#0369a1",
+        "subtitle_color": "#334155",
+        "pill_bg": "#ffffff",
+        "pill_border": "#cbd5e1",
+        "pill_color": "#0f172a",
+        "pill_accent_bg": "#0284c7",
+        "pill_accent_color": "#ffffff",
+        "footer_highlight": "#0369a1"
     },
     "Political Science": {
         "bg": "bg_2.png",
-        "badge_bg": "#0c2340",
-        "badge_border": "#d4af37",
+        "badge_bg": "#0b2046",
+        "badge_border": "#f59e0b",
         "badge_color": "#ffffff",
-        "card_bg": "rgba(10, 18, 32, 0.88)",
-        "card_border": "rgba(212, 175, 55, 0.5)",
-        "accent": "#f3ba2f",
-        "pill_bg": "rgba(255, 255, 255, 0.12)",
-        "pill_border": "rgba(255, 255, 255, 0.25)"
+        "title_color": "#0b2046",
+        "tag_bg": "#fffbeb",
+        "tag_border": "#fde68a",
+        "tag_color": "#b45309",
+        "subtitle_color": "#334155",
+        "pill_bg": "#ffffff",
+        "pill_border": "#cbd5e1",
+        "pill_color": "#0b2046",
+        "pill_accent_bg": "#0b2046",
+        "pill_accent_color": "#ffffff",
+        "footer_highlight": "#b45309"
     },
     "Education Guide": {
         "bg": "bg_3.png",
         "badge_bg": "#024a4d",
         "badge_border": "#20b2aa",
         "badge_color": "#ffffff",
-        "card_bg": "rgba(8, 28, 30, 0.88)",
-        "card_border": "rgba(32, 178, 170, 0.45)",
-        "accent": "#2dd4bf",
-        "pill_bg": "rgba(255, 255, 255, 0.12)",
-        "pill_border": "rgba(255, 255, 255, 0.25)"
+        "title_color": "#024a4d",
+        "tag_bg": "#f0fdfa",
+        "tag_border": "#99f6e4",
+        "tag_color": "#0f766e",
+        "subtitle_color": "#334155",
+        "pill_bg": "#ffffff",
+        "pill_border": "#cbd5e1",
+        "pill_color": "#024a4d",
+        "pill_accent_bg": "#024a4d",
+        "pill_accent_color": "#ffffff",
+        "footer_highlight": "#0f766e"
     },
     "Islamic Article": {
         "bg": "bg.png",
         "badge_bg": "#064e3b",
         "badge_border": "#eab308",
         "badge_color": "#ffffff",
-        "card_bg": "rgba(8, 28, 18, 0.88)",
-        "card_border": "rgba(234, 179, 8, 0.5)",
-        "accent": "#facc15",
-        "pill_bg": "rgba(255, 255, 255, 0.12)",
-        "pill_border": "rgba(255, 255, 255, 0.25)"
+        "title_color": "#064e3b",
+        "tag_bg": "#fefce8",
+        "tag_border": "#fef08a",
+        "tag_color": "#a16207",
+        "subtitle_color": "#334155",
+        "pill_bg": "#ffffff",
+        "pill_border": "#cbd5e1",
+        "pill_color": "#064e3b",
+        "pill_accent_bg": "#064e3b",
+        "pill_accent_color": "#ffffff",
+        "footer_highlight": "#a16207"
     },
     "Class 6": {
         "bg": "bg_1.png",
         "badge_bg": "#1e1b4b",
         "badge_border": "#f59e0b",
         "badge_color": "#ffffff",
-        "card_bg": "rgba(15, 23, 42, 0.88)",
-        "card_border": "rgba(99, 102, 241, 0.45)",
-        "accent": "#fbbf24",
-        "pill_bg": "rgba(255, 255, 255, 0.12)",
-        "pill_border": "rgba(255, 255, 255, 0.25)"
+        "title_color": "#1e1b4b",
+        "tag_bg": "#eef2ff",
+        "tag_border": "#c7d2fe",
+        "tag_color": "#4338ca",
+        "subtitle_color": "#334155",
+        "pill_bg": "#ffffff",
+        "pill_border": "#cbd5e1",
+        "pill_color": "#1e1b4b",
+        "pill_accent_bg": "#1e1b4b",
+        "pill_accent_color": "#ffffff",
+        "footer_highlight": "#4338ca"
     }
 }
 
@@ -141,7 +177,7 @@ def render_banner_html(
     features: list,
     is_english: bool
 ) -> str:
-    """Creates pixel-perfect 1200x675 HTML card composited on official Thumbnail BG/."""
+    """Creates clean, centered banner without any dark overlay box."""
     bg_url = "file:///" + os.path.join(BG_DIR, bg_file).replace("\\", "/")
     font_url = "file:///" + FONT_PATH.replace("\\", "/")
 
@@ -151,17 +187,22 @@ def render_banner_html(
     clean_feats = [strip_emojis(f) for f in features]
 
     if is_english:
-        footer_left = "© HelpTrickBD Smart Education Platform | All Rights Reserved 2026"
+        footer_brand = "HelpTrickBD Smart Education Platform"
         footer_right = "100% Syllabus & Exam Preparation Guide"
+        tag_text = "Special Academic Handnote 2026"
         body_font = "'Segoe UI', Roboto, -apple-system, sans-serif"
     else:
-        footer_left = "© HelpTrickBD স্মার্ট এডুকেশন প্ল্যাটফর্ম | সর্বস্বত্ব সংরক্ষিত ২০২৬"
-        footer_right = "১০০% সিলেবাস ও পরীক্ষা সহায়ক"
+        footer_brand = "HelpTrickBD স্মার্ট এডুকেশন প্ল্যাটফর্ম"
+        footer_right = "১০০% সিলেবাস ও পরীক্ষা সহায়ক হ্যান্ডনোট"
+        tag_text = "জাতীয় বিশ্ববিদ্যালয় মাস্টার্স শেষ পর্ব ২০২৬"
         body_font = "'HindSiliguri', 'SolaimanLipi', sans-serif"
 
-    pills_html = "".join([
-        f'<div class="pill">{f}</div>' for f in clean_feats
-    ])
+    # Build pills (last pill is accent)
+    pills_html = ""
+    for idx, f in enumerate(clean_feats):
+        is_last = (idx == len(clean_feats) - 1)
+        accent_cls = " accent" if is_last else ""
+        pills_html += f'<div class="pill{accent_cls}">{f}</div>'
 
     return f"""<!DOCTYPE html>
 <html>
@@ -191,122 +232,150 @@ body {{
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 44px 56px;
+  justify-content: flex-start;
+  padding: 38px 70px 0 70px;
 }}
+
+/* Top Brand & Category Header */
 .top-bar {{
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: 28px;
 }}
 .brand-badge {{
-  background: rgba(255, 255, 255, 0.95);
-  color: #0f172a;
-  font-size: 21px;
+  background: #ffffff;
+  color: {theme["title_color"]};
+  font-size: 19px;
   font-weight: 700;
-  padding: 10px 24px;
-  border-radius: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  padding: 8px 22px;
+  border-radius: 20px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   letter-spacing: 0.3px;
 }}
 .category-badge {{
   background: {theme["badge_bg"]};
   color: {theme["badge_color"]};
   border: 2px solid {theme["badge_border"]};
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 700;
-  padding: 10px 24px;
-  border-radius: 24px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-}}
-.main-card {{
-  width: 100%;
-  height: 440px;
-  background: {theme["card_bg"]};
-  border: 2px solid {theme["card_border"]};
+  padding: 8px 24px;
   border-radius: 20px;
-  padding: 38px 44px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}}
+
+/* Center Content Container - Zero Box/Card Overlay */
+.center-container {{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
 }}
-.card-content {{
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}}
-h1 {{
-  margin: 0;
-  font-size: 48px;
-  line-height: 1.25;
-  color: #ffffff;
+
+.topic-tag {{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: {theme["tag_bg"]};
+  border: 1.5px solid {theme["tag_border"]};
+  color: {theme["tag_color"]};
+  font-size: 20px;
   font-weight: 700;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+  padding: 6px 22px;
+  border-radius: 16px;
+  margin-bottom: 14px;
 }}
-.subtitle {{
-  margin: 0;
-  font-size: 25px;
-  line-height: 1.35;
-  color: #bae6fd;
-  font-weight: 400;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
+h1.banner-title {{
+  margin: 0 0 14px 0;
+  font-size: 47px;
+  line-height: 1.25;
+  color: {theme["title_color"]};
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  letter-spacing: -0.3px;
 }}
-.pills-container {{
+
+p.banner-subtitle {{
+  margin: 0 0 26px 0;
+  font-size: 23px;
+  line-height: 1.4;
+  color: {theme["subtitle_color"]};
+  font-weight: 600;
+  max-width: 860px;
+}}
+
+/* Feature Badges */
+.pills-row {{
   display: flex;
-  gap: 14px;
+  gap: 12px;
+  justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 22px;
 }}
 .pill {{
   background: {theme["pill_bg"]};
   border: 1.5px solid {theme["pill_border"]};
-  color: #ffffff;
-  font-size: 19px;
-  font-weight: 600;
-  padding: 9px 20px;
+  color: {theme["pill_color"]};
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 18px;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }}
-.footer-bar {{
+.pill.accent {{
+  background: {theme["pill_accent_bg"]};
+  border-color: {theme["pill_accent_bg"]};
+  color: {theme["pill_accent_color"]};
+}}
+
+/* Subtle Note in Pure White Safe Area */
+.safe-note {{
+  color: #475569;
+  font-size: 16px;
+  font-weight: 600;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  font-size: 17px;
+  gap: 12px;
 }}
-.footer-left {{
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
+.safe-note .sep {{
+  color: #cbd5e1;
 }}
-.footer-right {{
-  color: {theme["accent"]};
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+.safe-note .highlight {{
+  color: {theme["footer_highlight"]};
   font-weight: 700;
 }}
 </style>
 </head>
 <body>
+
 <div class="top-bar">
   <div class="brand-badge">HelpTrickBD | helptrickbd.com</div>
   <div class="category-badge">{clean_cat}</div>
 </div>
 
-<div class="main-card">
-  <div class="card-content">
-    <h1>{clean_title}</h1>
-    <p class="subtitle">{clean_sub}</p>
-  </div>
-  <div class="pills-container">
+<div class="center-container">
+  <div class="topic-tag">{tag_text}</div>
+  <h1 class="banner-title">{clean_title}</h1>
+  <p class="banner-subtitle">{clean_sub}</p>
+  
+  <div class="pills-row">
     {pills_html}
+  </div>
+
+  <div class="safe-note">
+    <span>© {footer_brand}</span>
+    <span class="sep">•</span>
+    <span class="highlight">{footer_right}</span>
   </div>
 </div>
 
-<div class="footer-bar">
-  <div class="footer-left">{footer_left}</div>
-  <div class="footer-right">{footer_right}</div>
-</div>
 </body>
 </html>"""
 
@@ -377,67 +446,5 @@ def generate_official_bg_banner(
     shutil.copy2(out_jpg, os.path.join(THUMBS_DIR, f"{base_name}.jpg"))
 
     size_kb = os.path.getsize(out_webp) / 1024.0
-    print(f"  [✔] Generated on {bg_file}: {base_name}.webp ({size_kb:.1f} KB)")
+    print(f"  [✔] Generated clean centered banner on {bg_file}: {base_name}.webp ({size_kb:.1f} KB)")
     return out_webp
-
-def build_all():
-    print("=" * 75)
-    print("🎨 COMPILING ALL BANNERS ON AUTHENTIC 'Thumbnail BG/' TEMPLATES")
-    print("=" * 75)
-
-    # 1. Primary Teacher Viva -> bg_4.png (Job Study)
-    generate_official_bg_banner(
-        filename="primary-teacher-viva-guide-banner.png",
-        category_key="Job Study Article",
-        badge_label="চাকরির প্রস্তুতি",
-        title="সরকারি প্রাথমিক শিক্ষক নিয়োগ ও ভাইভা প্রস্তুতি গাইডলাইন",
-        subtitle="ড্রেস কোড, সাধারণ জিজ্ঞাসা ও আত্মবিশ্বাসী ভাইভা সহায়িকা",
-        features=["ভাইভা বোর্ডের প্রস্তুতি", "পোশাক ও ড্রেস কোড", "কমন প্রশ্নাবলি", "সংস্করণ ২০২৬"]
-    )
-
-    # 2. BCS Preliminary Marks -> bg_4.png (Job Study)
-    generate_official_bg_banner(
-        filename="bcs-preliminary-marks-booklist-banner.png",
-        category_key="Job Study Article",
-        badge_label="বিসিএস প্রস্তুতি",
-        title="বিসিএস প্রিলিমিনারি ২০০ নম্বরের বিষয়ভিত্তিক মানবণ্টন ও বুক লিস্ট",
-        subtitle="প্রথমবারে পাসের সেরা প্রস্তুতি ও বিষয়ভিত্তিক বই তালিকা",
-        features=["২০০ নম্বরের সিলেবাস", "বিষয়ভিত্তিক মানবণ্টন", "সেরা রেফারেন্স বই", "সংস্করণ ২০২৬"]
-    )
-
-    # 3. Cloud Computing Guide -> bg_5.png (ICT Guide)
-    generate_official_bg_banner(
-        filename="cloud-computing-guide-banner.png",
-        category_key="ICT Guide",
-        badge_label="ক্লাউড ও আইসিটি",
-        title="ক্লাউড কম্পিউটিং কি? প্রকারভেদ, সুবিধা ও বাস্তব ব্যবহার",
-        subtitle="IaaS, PaaS ও SaaS মডেলের তুলনামূলক সহজ পাঠ্যপুস্তক গাইড",
-        features=["ক্লাউড সার্ভিস মডেল", "প্রাইভেট ও পাবলিক ক্লাউড", "এডব্লিউএস ও গুগল ড্রাইভ", "সংস্করণ ২০২৬"]
-    )
-
-    # 4. Computer Virus & Cyber Security -> bg_5.png (ICT Guide)
-    generate_official_bg_banner(
-        filename="computer-virus-cyber-security-banner.png",
-        category_key="ICT Guide",
-        badge_label="আইসিটি ও নিরাপত্তা",
-        title="কম্পিউটার ভাইরাস ও সাইবার নিরাপত্তা গাইডলাইন",
-        subtitle="ম্যালওয়্যার, র‍্যানসমওয়্যার ও ফিশিং থেকে পিসি ও ডাটা সুরক্ষার উপায়",
-        features=["ভাইরাস বনাম ম্যালওয়্যার", "টু-ফ্যাক্টর নিরাপত্তা", "ডাটা ব্যাকআপ টিপস", "সংস্করণ ২০২৬"]
-    )
-
-    # 5. HASON RAJA CLASS 6 ENGLISH GUIDE -> bg_1.png (School & Fallback - 100% English!)
-    generate_official_bg_banner(
-        filename="hason-raja-class6-english-guide-banner.png",
-        category_key="Class 6",
-        badge_label="Class 6 English",
-        title="Hason Raja Was Born in 1854 | Class 6 English Seen Comprehension",
-        subtitle="Textbook Passage, Bengali Translation, Word Meanings & Model Questions",
-        features=["Seen Comprehension", "Passage Analysis", "Vocabulary & Synonyms", "Model Q&A 2026"]
-    )
-
-    print("\n" + "=" * 75)
-    print("🎉 ALL 5 BANNERS COMPILED ON OFFICIAL 'Thumbnail BG/' TEMPLATES WITH HARFBUZZ SHAPING!")
-    print("=" * 75)
-
-if __name__ == "__main__":
-    build_all()
