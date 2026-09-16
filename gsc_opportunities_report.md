@@ -1,5 +1,5 @@
 # Helptrickbd Google Search Console Opportunity Report
-**Generated Date:** 2026-09-16 13:28 UTC
+**Generated Date:** 2026-09-16 14:03 UTC
 
 > এই রিপোর্টে গুগলের পেজ ২-এ থাকা লো-হ্যাংগিং কি-ওয়ার্ড এবং যে পোস্টগুলোর CTR কম রয়েছে, সেগুলোকে দ্রুত গুগল ১ম পেজে নিয়ে আসার কর্মপরিকল্পনা দেওয়া হলো।
 
