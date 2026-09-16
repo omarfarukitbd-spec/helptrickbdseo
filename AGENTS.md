@@ -98,6 +98,7 @@ Every revived or new article MUST strictly adhere to:
 15. **Mandatory Pre-Edit Full Post Backup & Label Protection (সম্পাদনার পূর্বে বাধ্যতামূলক পূর্ণাঙ্গ ব্যাকআপ ও লেবেল সংরক্ষণ):** ব্লগারে বিদ্যমান বা পুরনো কোনো পোস্ট সম্পাদনা (Edit) বা আপডেট (Update) করার পূর্বে বাধ্যতামূলকভাবে সেই পোস্টের আসল এইচটিএমএল কোড, ইমেজ লিঙ্ক, ক্যাটাগরি লেবেল এবং মেটাডাটা `backups/posts/<slug>/<timestamp>/` ফোল্ডারে ব্যাকআপ রাখতে হবে। পোস্টের পূর্বের লেবেল কোনো অবস্থাতেই হারিয়ে যাওয়া বা মুছে ফেলা যাবে না।
 16. **Zero Over-Engineered Styling & Simplicity Mandate (অতিরঞ্জিত কোড বর্জন — সিম্পলিসিটি ও মার্জিত ভেক্টর আইকন):** পোস্ট বা থিমের জন্য কোনো ধরণের অতিরঞ্জিত (Over-the-top / Garish), অতিরিক্ত রঙিন, ভারী শ্যাডো বা জটিল সিএসএস কোড লেখা সম্পূর্ণ নিষিদ্ধ যা থিমের নিজস্ব রেসপনসিভ লেআউটকে নষ্ট করে। শিশুদের মতো চটুল ইমোজির বদলে প্রয়োজনে অত্যন্ত পরিমিতভাবে প্রফেশনাল ভেক্টর আইকন (SVG/FontAwesome) ব্যবহার করতে হবে এবং পোস্টের উপস্থাপন সবসময় সহজ, পরিষ্কার ও পাঠযোগ্য (Simple & Minimalist) রাখতে হবে।
 17. **Topic Silo Internal Linking Governance (টপিকাল সাইলো ইন্টারনাল লিঙ্কিং ও অমিল পোস্ট বর্জন নীতিমালা):** কোনো বিষয়ের বা সিলেবাসের খুব কাছাকাছি প্রাসঙ্গিক লাইভ পোস্ট থাকলেই কেবল সেখানে ইন-টেক্সট কনটেক্সচুয়াল ও সিলেবাস সিরিজ সাইলো ইন্টারনাল লিঙ্কিং কার্যকর হবে। কিন্তু যদি কাছাকাছি বা প্রাসঙ্গিক কোনো পোস্ট না থাকে, তবে কোনো অবস্থাতেই অমিল, ভিন্ন ক্যাটাগরি বা অপ্রাসঙ্গিক পোস্টের লিংক জোর করে ঢুকানো সম্পূর্ণ নিষিদ্ধ; সেক্ষেত্রে সিস্টেম স্বয়ংক্রিয়ভাবে লিঙ্কিং **সম্পূর্ণ স্কিপ (Skip)** করবে।
+18. **Anti-Cannibalization & Duplicate Content Guard (ডুপ্লিকেট টপিক ও ক্যানিব্যালাইজেশন প্রতিরোধ নীতিমালা):** ইউজার কোনো পিডিএফ (PDF) বা প্রশ্নের তালিকা দিলে, নতুন পোস্ট তৈরির পূর্বে সাইটের সমস্ত লাইভ পোস্টের (`all_live_posts_catalog.json`) সাথে প্রস্তাবিত বিষয়ের মিল স্ক্যান করতে হবে (`python tools/governance/topic_cannibalization_guard.py`)। কোনো বিষয়ের ওপর ইতিমধ্যে সাইটে বিস্তারিত পোস্ট থাকলে ইউজারকে লাইভ পোস্টের টাইটেল ও ইউআরএল সহ সাথে সাথে জানাতে হবে এবং সেই টপিকটি নতুন করে পোস্ট করা থেকে **সম্পূর্ণ বিরত (Skip)** থাকতে হবে। শুধুমাত্র সাইটে অনুপস্থিত নতুন ও অনুত্তরিত বিষয়গুলো নিয়েই নতুন পোস্ট রচনা করা যাবে।
 
 ---
 
@@ -169,6 +170,12 @@ pip install -r requirements.txt
 - **Master Unified Publishing & SEO Pipeline (The Central Engine):**
   ```bash
   python tools/pipeline/master_publisher_pipeline.py --html <FILE> --post-id <ID> --url <LIVE_URL> --auto-compress --check-links --publish --index
+  ```
+- **Topic Cannibalization & Duplicate Guard (PDF/Topic Pre-Scan):**
+  ```bash
+  python tools/governance/topic_cannibalization_guard.py --topics "<TOPIC_1>" "<TOPIC_2>"
+  # অথবা ফাইল/পিডিএফ মোড:
+  python tools/governance/topic_cannibalization_guard.py --pdf <PATH_TO_PDF>
   ```
 - **Keyword Cannibalization Auditor & Resolver:**
   ```bash
