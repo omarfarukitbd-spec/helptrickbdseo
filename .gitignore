@@ -55,3 +55,4 @@ lighthouse_report.json
 *.sw?
 .DS_Store
 Thumbs.db
+scratch/

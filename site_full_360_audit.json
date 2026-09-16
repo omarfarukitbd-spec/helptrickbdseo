@@ -1,32 +1,7 @@
 {
   "total_posts": 88,
   "duplicate_toc": [],
-  "thin_posts": [
-    {
-      "id": "3708406842330148411",
-      "title": "বিসিএস প্রিলিমিনারি ২০০ নম্বরের বিষয়ভিত্তিক মানবণ্টন ও প্রথমবারে পাসের পূর্ণাঙ্গ বুক লিস্ট",
-      "url": "https://www.helptrickbd.com/2026/09/bcs-preliminary-marks-distribution_01436475916.html",
-      "words": 391
-    },
-    {
-      "id": "5695213693308965635",
-      "title": "ক্লাউড কম্পিউটিং কি? প্রকারভেদ, বাস্তব সুবিধা ও শীর্ষ প্ল্যাটফর্মের সহজ ব্যাখ্যা",
-      "url": "https://www.helptrickbd.com/2026/09/cloud-computing-types-benefits-guide.html",
-      "words": 461
-    },
-    {
-      "id": "3998042912898607308",
-      "title": "কম্পিউটার ভাইরাস ও সাইবার নিরাপত্তা: ম্যালওয়্যার থেকে ডাটা সুরক্ষার সেরা উপায় (২০২৬)",
-      "url": "https://www.helptrickbd.com/2026/09/computer-virus-cyber-security-guide-2026.html",
-      "words": 531
-    },
-    {
-      "id": "4176960177069689710",
-      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)",
-      "url": "https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html",
-      "words": 587
-    }
-  ],
+  "thin_posts": [],
   "medium_posts": [
     {
       "id": "6772129085481882661",
@@ -385,6 +360,30 @@
       "words": 1760
     },
     {
+      "id": "3708406842330148411",
+      "title": "বিসিএস প্রিলিমিনারি ২০০ নম্বরের বিষয়ভিত্তিক মানবণ্টন ও প্রথমবারে পাসের পূর্ণাঙ্গ বুক লিস্ট",
+      "url": "https://www.helptrickbd.com/2026/09/bcs-preliminary-marks-distribution_01436475916.html",
+      "words": 1495
+    },
+    {
+      "id": "5695213693308965635",
+      "title": "ক্লাউড কম্পিউটিং কি? প্রকারভেদ, বাস্তব সুবিধা ও শীর্ষ প্ল্যাটফর্মের সহজ ব্যাখ্যা",
+      "url": "https://www.helptrickbd.com/2026/09/cloud-computing-types-benefits-guide.html",
+      "words": 1167
+    },
+    {
+      "id": "3998042912898607308",
+      "title": "কম্পিউটার ভাইরাস ও সাইবার নিরাপত্তা: ম্যালওয়্যার থেকে ডাটা সুরক্ষার সেরা উপায় (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/computer-virus-cyber-security-guide-2026.html",
+      "words": 1162
+    },
+    {
+      "id": "4176960177069689710",
+      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html",
+      "words": 1300
+    },
+    {
       "id": "5364340333482211270",
       "title": "১০০টি অর্থনীতির গুরত্বপূর্ণ সংক্ষিপ্ত প্রশ্নোত্তর",
       "url": "https://www.helptrickbd.com/2025/12/100-important-economics-short-questions-answers.html",
@@ -581,12 +580,6 @@
       "title": "কল্যাণরাষ্ট্র কী? কল্যাণরাষ্ট্রের বৈশিষ্ট্য ও কার্যাবলী",
       "url": "https://www.helptrickbd.com/2026/01/kollyan-rastro-ki-boishisto-o-karjaboli.html",
       "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFJP1ya4ewU"
-    },
-    {
-      "id": "4176960177069689710",
-      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)",
-      "url": "https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXPyCsuoUmz"
     },
     {
       "id": "5551927583161982000",
@@ -835,7 +828,7 @@
       "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdYBIUFwPUT"
     }
   ],
-  "official_banner_count": 38,
+  "official_banner_count": 39,
   "posts_summary": [
     {
       "id": "1476323207884168710",
@@ -928,7 +921,7 @@
       "labels": [
         "Job Study Article"
       ],
-      "words": 391,
+      "words": 1495,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -940,7 +933,7 @@
       "labels": [
         "ICT Guide"
       ],
-      "words": 461,
+      "words": 1167,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -952,7 +945,7 @@
       "labels": [
         "ICT Guide"
       ],
-      "words": 531,
+      "words": 1162,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1012,10 +1005,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 587,
+      "words": 1300,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "179336939989858201",
