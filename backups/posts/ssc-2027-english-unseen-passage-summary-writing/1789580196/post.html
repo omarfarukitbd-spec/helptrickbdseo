@@ -1,0 +1,405 @@
+<style>
+  .htbd-academic-container,
+  .htbd-academic-container * {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }
+  .htbd-academic-container p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+  }
+  .htbd-academic-heading {
+    color: #0c2340 !important;
+    border-left: 5px solid #d4af37 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-subheading {
+    color: #1e3a8a !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-top: 26px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-overview-box {
+    background: #f8fafd !important;
+    border: 1px solid #dbeafe !important;
+    border-left: 5px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 24px 0 !important;
+    box-shadow: 0 2px 6px rgba(12,35,64,0.06) !important;
+  }
+  .htbd-overview-box p {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #1e293b !important;
+  }
+  .htbd-toc-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 4px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 20px 24px !important;
+    margin: 28px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+  }
+  .htbd-toc-card .toc-title {
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0 0 14px 0;
+    color: #0c2340;
+  }
+  .htbd-toc-card ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+    list-style-type: none !important;
+  }
+  .htbd-toc-card ul li {
+    margin-bottom: 8px !important;
+    font-size: 17px !important;
+    padding-left: 6px !important;
+  }
+  .htbd-toc-card ul li a {
+    color: #0b2046 !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-academic-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 16.5px !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-academic-table thead tr {
+    background: #0c2340 !important;
+    color: #fff !important;
+  }
+  .htbd-academic-table th {
+    padding: 13px 16px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #1e293b !important;
+    vertical-align: top !important;
+    line-height: 1.65 !important;
+  }
+  .htbd-academic-table tbody tr:nth-child(even) {
+    background: #f8fafc !important;
+  }
+  .htbd-academic-table tbody tr:hover {
+    background: #eef2ff !important;
+  }
+  .htbd-tip-box {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-tip-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #14532d !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-warning-box {
+    background: #fffbeb !important;
+    border: 1px solid #fde68a !important;
+    border-left: 5px solid #d97706 !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-warning-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #78350f !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-faq-item {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 18px 0 !important;
+  }
+  .htbd-faq-item:last-child {
+    border-bottom: none !important;
+  }
+  .htbd-series-nav {
+    background: linear-gradient(135deg, #0c2340 0%, #1e3a8a 100%) !important;
+    border-radius: 10px !important;
+    padding: 24px 28px !important;
+    margin: 32px 0 !important;
+    color: #fff !important;
+  }
+  .htbd-series-nav .nav-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 0 16px 0 !important;
+    color: #fbbf24 !important;
+  }
+  .htbd-series-nav ul {
+    margin: 0 !important;
+    padding-left: 18px !important;
+    list-style: none !important;
+  }
+  .htbd-series-nav ul li {
+    margin-bottom: 8px !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+  .htbd-series-nav ul li a {
+    color: #bfdbfe !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-series-nav ul li.current-post {
+    color: #fde68a !important;
+    font-weight: 700 !important;
+  }
+  .htbd-hero-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.10) !important;
+    display: block !important;
+    margin: 0 0 20px 0 !important;
+  }
+</style>
+<div class="htbd-academic-container">
+
+  <figure style="margin: 0 0 20px 0;">
+    <img class="htbd-hero-img" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_02_unseen_summary.webp" alt="SSC 2027 English Unseen Passage and Summary Writing Guide" title="SSC 2027 English Unseen Passage and Summary Writing Guide" width="1200" height="675" loading="eager" />
+    <figcaption style="font-size: 14px; color: #64748b; text-align: center; margin-top: 6px;">SSC 2027 English 1st Paper Unseen Passage & Summary Writing — Part 02 of the Study Silo Series</figcaption>
+  </figure>
+
+  <div class="htbd-overview-box">
+    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্রে <strong>প্রশ্ন ৪ ও ৫</strong> Unseen (অপরিচিত) Passage থেকে আসে এবং মোট <strong>১৫ নম্বর</strong> বরাদ্দ। Information Transfer (৫ নম্বর) ও Summary Writing (১০ নম্বর) — এই দুটিতে কৌশলী প্রস্তুতি থাকলে পূর্ণ নম্বর পাওয়া সম্ভব। (SSC 2027 Questions 4 and 5 come from an Unseen Passage for a total of 15 marks.)</p>
+  </div>
+
+<!--more-->
+
+  <div class="htbd-toc-card">
+    <p class="toc-title">বিষয়সূচি (Table of Contents)</p>
+    <ul>
+      <li><a href="#unseen-marks">১. আনসিন প্যাসেজ: নম্বর বণ্টন ও প্রশ্নের ধরন</a></li>
+      <li><a href="#info-transfer">২. প্রশ্ন ৪: Information Transfer — সম্পূর্ণ নিয়মাবলি (Q4 Guide)</a></li>
+      <li><a href="#summary-guide">৩. প্রশ্ন ৫: Summary Writing — সম্পূর্ণ নির্দেশিকা (Q5 Guide)</a></li>
+      <li><a href="#summary-steps">৪. Summary লেখার ধাপে ধাপে পদ্ধতি (Step-by-Step Method)</a></li>
+      <li><a href="#model-summary">৫. নমুনা Summary (Model Summary Answer)</a></li>
+      <li><a href="#faq">৬. সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+    </ul>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="unseen-marks">১. আনসিন প্যাসেজ: নম্বর বণ্টন (Unseen Passage Marks Distribution)</h2>
+  <p>Unseen Passage মানে পরীক্ষার হলে প্রথমবার দেখা অনুচ্ছেদ — এটি পাঠ্যবই থেকে আসে না। তাই এই অংশে পূর্ব প্রস্তুতির চেয়ে পড়ার দক্ষতা ও কৌশলই মূল চাবিকাঠি।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>প্রশ্ন</th><th>প্রশ্নের ধরন</th><th>নম্বর</th><th>মূল দক্ষতা</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Q4</strong></td><td>Information Transfer (Chart/Table পূরণ)</td><td><strong>1 × 5 = 5</strong></td><td>তথ্য সংগ্রহ ও সঠিক ঘরে বসানো</td></tr>
+        <tr><td><strong>Q5</strong></td><td>Summary Writing (এক-তৃতীয়াংশে)</td><td><strong>10</strong></td><td>মূলভাব বোঝা ও সংক্ষিপ্তকরণ</td></tr>
+        <tr><td colspan="2" style="text-align:right; font-weight:700; background:#f1f5f9;">মোট:</td><td style="font-weight:700; background:#f1f5f9; color:#0c2340;"><strong>15</strong></td><td style="background:#f1f5f9;"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="info-transfer">২. প্রশ্ন ৪: Information Transfer — সম্পূর্ণ নিয়মাবলি (Q4 Information Transfer Guide)</h2>
+  <p>প্রশ্ন ৪-এ Unseen Passage পড়ে একটি Table, Chart বা Flow Chart পূরণ করতে হয়। প্যাসেজের তথ্য সঠিক ঘরে বসানোই মূল কাজ।</p>
+
+  <h3 class="htbd-academic-subheading">Information Transfer-এ সর্বোচ্চ নম্বর পাওয়ার কৌশল</h3>
+  <p><strong>১. Table/Chart আগে দেখুন:</strong> Passage পড়ার আগে Chart বা Table-এর ঘরগুলো দেখুন — কী ধরনের তথ্য চাওয়া হচ্ছে তা বুঝুন।</p>
+  <p><strong>২. Skim করুন:</strong> পুরো Passage দ্রুত একবার চোখ বুলিয়ে মূল বিষয় ধরুন।</p>
+  <p><strong>৩. তথ্য চিহ্নিত করুন:</strong> Passage-এ Table-এর প্রতিটি ঘরের সাথে মিলে যায় এমন তথ্য পেন্সিল দিয়ে আন্ডারলাইন করুন।</p>
+  <p><strong>৪. সংক্ষিপ্ত উত্তর:</strong> Information Transfer-এ সম্পূর্ণ বাক্য লেখার দরকার নেই — Key phrase বা word-ই যথেষ্ট।</p>
+  <p><strong>৫. বানান যাচাই:</strong> Passage থেকে সরাসরি শব্দ নেওয়া হলে বানান ভুলের সম্ভাবনা কমে। সঠিক বানান নিশ্চিত করুন।</p>
+
+  <div class="htbd-tip-box">
+    <p><strong>পরামর্শ:</strong> Information Transfer-এ Chart-এর প্রতিটি ঘরের heading ভালো করে পড়ুন। ঘরের heading-ই বলে দেয় কী ধরনের তথ্য সেখানে যাবে — সংখ্যা, নাম, তারিখ, বা বিবরণ।</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="summary-guide">৩. প্রশ্ন ৫: Summary Writing — সম্পূর্ণ নির্দেশিকা (Q5 Summary Writing Full Guide)</h2>
+  <p>Summary Writing হলো SSC English 1st Paper-এর সবচেয়ে মূল্যবান প্রশ্ন — একটিমাত্র প্রশ্নে ১০ নম্বর। এখানে Unseen Passage-এর মূলভাব সংক্ষেপে নিজের ভাষায় লিখতে হয়।</p>
+
+  <h3 class="htbd-academic-subheading">Summary-র মানদণ্ড (Marking Criteria for Summary Writing)</h3>
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>মানদণ্ড</th><th>নম্বর</th><th>বিবরণ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Content (মূলভাব ধরা)</td><td>5</td><td>সব গুরুত্বপূর্ণ point অন্তর্ভুক্ত আছে কিনা</td></tr>
+        <tr><td>Language (ভাষার মান)</td><td>3</td><td>Grammar, Spelling, Vocabulary সঠিকতা</td></tr>
+        <tr><td>Length (দৈর্ঘ্য)</td><td>2</td><td>মূল Passage-এর এক-তৃতীয়াংশ (সাধারণত ৫০-৭০ শব্দ)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="summary-steps">৪. Summary লেখার ধাপে ধাপে পদ্ধতি (Step-by-Step Summary Writing Method)</h2>
+
+  <p><strong>ধাপ ১ — Passage পড়ুন:</strong> পুরো Passage মনোযোগ দিয়ে পড়ুন এবং প্রধান বিষয় (Main Idea) চিহ্নিত করুন।</p>
+  <p><strong>ধাপ ২ — Key Points চিহ্নিত করুন:</strong> প্রতিটি প্যারাগ্রাফের একটি করে মূল বক্তব্য (Key Point) আন্ডারলাইন করুন।</p>
+  <p><strong>ধাপ ৩ — রাফ draft লিখুন:</strong> Passage না দেখে Key Points থেকে মনে মনে বা রাফে Summary লিখুন।</p>
+  <p><strong>ধাপ ৪ — শব্দ গণনা করুন:</strong> Passage-এর মোট শব্দের এক-তৃতীয়াংশ শব্দে Summary লিখুন।</p>
+  <p><strong>ধাপ ৫ — Quotation বর্জন করুন:</strong> Passage থেকে সরাসরি line কপি করা যাবে না — নিজের ভাষায় (Paraphrase) লিখতে হবে।</p>
+  <p><strong>ধাপ ৬ — শিরোনাম দিন:</strong> Summary-র শুরুতে "Summary:" বা "The passage is about..." দিয়ে শুরু করুন।</p>
+
+  <div class="htbd-warning-box">
+    <p><strong>সতর্কতা:</strong> Passage থেকে হুবহু বাক্য কপি করলে নম্বর পাওয়া যায় না। Summary সবসময় নিজের ভাষায় (own words / paraphrase) লিখতে হবে।</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="model-summary">৫. নমুনা Summary (Model Summary Answer)</h2>
+  <p>নিচে একটি নমুনা Unseen Passage এবং তার আদর্শ Summary দেওয়া হলো:</p>
+
+  <h3 class="htbd-academic-subheading">নমুনা Passage (Sample Unseen Passage)</h3>
+  <p style="background:#f8fafc; border-left:4px solid #94a3b8; padding:16px 20px; border-radius:6px; font-style:italic; color:#334155;">Trees are very important for our existence. They give us oxygen, food, shelter and medicine. Trees help control climate by absorbing carbon dioxide from the air. They also prevent soil erosion by holding soil together with their roots. Many animals and birds depend on trees for their home and food. Without trees, our planet would become a lifeless desert. That is why we must protect trees and plant more of them to save our environment.</p>
+  <p style="color:#64748b; font-size:15px;">[মোট: প্রায় ৮৫ শব্দ — Summary হবে প্রায় ২৮-৩০ শব্দে]</p>
+
+  <h3 class="htbd-academic-subheading">আদর্শ Summary (Model Answer)</h3>
+  <p style="background:#f0fdf4; border:1px solid #bbf7d0; padding:16px 20px; border-radius:8px; color:#14532d; font-style:italic;">Trees are essential for life as they provide oxygen, food, shelter and medicine. They control climate, prevent soil erosion and support wildlife. Since trees are vital for our environment, we must protect and plant more of them.</p>
+  <p style="color:#64748b; font-size:15px;">[মোট: ৩২ শব্দ — মূল Passage-এর এক-তৃতীয়াংশের মধ্যে]</p>
+
+  <h2 class="htbd-academic-heading" id="faq">৬. সচরাচর জিজ্ঞাসা (FAQ)</h2>
+
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 1: Summary কত শব্দে লিখতে হয়? (How many words should a summary be?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">সাধারণত মূল Passage-এর এক-তৃতীয়াংশ শব্দে Summary লিখতে হয়। SSC পরীক্ষায় Passage সাধারণত ১৫০-২০০ শব্দের হয়, তাই Summary হবে ৫০-৭০ শব্দের মধ্যে।</p>
+  </div>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 2: Summary-তে কি Title দিতে হয়? (Should I give a title in the Summary?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">SSC পরীক্ষায় Summary-র জন্য আলাদা Title দেওয়া বাধ্যতামূলক নয়। তবে "Summary:" বা "The passage is about..." দিয়ে শুরু করলে উত্তর গোছানো দেখায় এবং নম্বর পাওয়ার সম্ভাবনা বাড়ে।</p>
+  </div>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 3: Information Transfer-এ কি সম্পূর্ণ বাক্য লিখতে হয়? (Do I need to write full sentences in Q4?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">না, Information Transfer-এ সম্পূর্ণ বাক্যের প্রয়োজন নেই। Key word বা phrase দিয়ে উত্তর দেওয়া যায়। তবে নাম, তারিখ বা সংখ্যার ক্ষেত্রে সঠিকতা নিশ্চিত করুন।</p>
+  </div>
+
+  
+  <h2 class="htbd-academic-heading" id="practice-passages">৭. আনসিন প্যাসেজ প্র্যাকটিস গাইড (Unseen Passage Practice Strategy for SSC 2027)</h2>
+  <p>Unseen Passage-এ ভালো করার জন্য শুধু পরীক্ষার দিনের দক্ষতাই যথেষ্ট নয়। নিয়মিত বিভিন্ন বিষয়ের Passage পড়ার অভ্যাস গড়ে তুলতে হবে। নিচে কার্যকর অনুশীলন কৌশল দেওয়া হলো।</p>
+
+  <h3 class="htbd-academic-subheading">দৈনিক পড়ার অভ্যাস (Daily Reading Habit)</h3>
+  <p>প্রতিদিন ইংরেজি পত্রিকার (The Daily Star, The Business Standard) যেকোনো একটি সংবাদ বা Feature Article পড়ুন। প্রতিটি অনুচ্ছেদ পড়ার পর নিজেকে প্রশ্ন করুন — "এই প্যারাগ্রাফের মূল বিষয় কী?" এই অভ্যাস Unseen Passage-এ দ্রুত মূলভাব ধরার ক্ষমতা তৈরি করে।</p>
+  <p>বিষয়ভিত্তিক Passage-এর জন্য নিচের বিষয়গুলোতে বিশেষ মনোযোগ দিন, কারণ SSC পরীক্ষায় এই বিষয়গুলো থেকেই Unseen Passage বেশি আসে:</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>বিষয় (Topic)</th><th>কেন গুরুত্বপূর্ণ</th><th>পড়ার উৎস</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>পরিবেশ ও জলবায়ু পরিবর্তন</td><td>SSC-তে বারবার আসে</td><td>The Daily Star Environment Section</td></tr>
+        <tr><td>স্বাস্থ্য ও পুষ্টি</td><td>Information Transfer-এ উপযুক্ত</td><td>WHO বাংলাদেশ, স্বাস্থ্য অধিদপ্তর</td></tr>
+        <tr><td>বিজ্ঞান ও প্রযুক্তি</td><td>আধুনিক প্রশ্নপত্রে বাড়ছে</td><td>Science Magazines, BBC Science</td></tr>
+        <tr><td>সমাজ ও সংস্কৃতি</td><td>Opinion-based প্রশ্নে আসে</td><td>Star Weekend Magazine</td></tr>
+        <tr><td>ইতিহাস ও ঐতিহ্য</td><td>Bangladesh-specific passage</td><td>Bangladesh History books</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="htbd-academic-subheading">Information Transfer-এর ধরন ও নমুনা (Types of Information Transfer Charts)</h3>
+  <p>SSC পরীক্ষায় Information Transfer-এ সাধারণত চার ধরনের Chart বা Table আসে। প্রতিটি ধরনের সাথে পরিচিত থাকলে Q4-এ সর্বোচ্চ ৫ নম্বর পাওয়া সহজ হয়।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>Chart-এর ধরন</th><th>উদাহরণ</th><th>কী পূরণ করতে হয়</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Flow Chart (ক্রমানুসারী ছক)</td><td>একটি প্রক্রিয়ার ধাপ</td><td>পদক্ষেপের নাম বা বিবরণ</td></tr>
+        <tr><td>Comparison Table (তুলনামূলক ছক)</td><td>দুটি বিষয়ের তুলনা</td><td>বৈশিষ্ট্য, সুবিধা-অসুবিধা</td></tr>
+        <tr><td>Timeline (সময়রেখা)</td><td>ঐতিহাসিক ঘটনার ক্রম</td><td>তারিখ বা সালের বিবরণ</td></tr>
+        <tr><td>Category Table (শ্রেণিবিভাগ ছক)</td><td>বিভিন্ন শ্রেণির তথ্য</td><td>নাম, পরিমাণ, বৈশিষ্ট্য</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="htbd-academic-subheading">Summary Writing-এ সাধারণ ভুলগুলো (Common Mistakes in Summary Writing)</h3>
+  <p>বাংলাদেশের SSC পরীক্ষার্থীরা Summary Writing-এ যেসব সাধারণ ভুল করেন, সেগুলো এড়িয়ে চললে নম্বর উল্লেখযোগ্যভাবে বাড়ানো সম্ভব:</p>
+  <p><strong>ভুল ১ — হুবহু কপি করা:</strong> অনেকে Passage থেকে পুরো বাক্য তুলে দেন। এটি Summary নয়, এটি Copying। পরীক্ষকরা এতে নম্বর কাটেন। সবসময় নিজের ভাষায় (Paraphrase) লিখুন।</p>
+  <p><strong>ভুল ২ — অতিরিক্ত লম্বা Summary:</strong> Summary-র দৈর্ঘ্য যদি মূল Passage-এর অর্ধেক বা বেশি হয়, তাহলে Length নম্বর কাটা যায়। এক-তৃতীয়াংশের মধ্যে রাখুন।</p>
+  <p><strong>ভুল ৩ — শুধু একটি প্যারাগ্রাফের বিষয় নেওয়া:</strong> Summary-তে Passage-এর সব প্রধান বিষয় (Main Points) অন্তর্ভুক্ত করতে হয়। একটি প্যারাগ্রাফের উপর focus করলে বাকি Content নম্বর কাটা যাবে।</p>
+  <p><strong>ভুল ৪ — নিজের মতামত যোগ করা:</strong> Summary-তে কখনো নিজের মতামত (My opinion is..., I think...) দেওয়া যাবে না। শুধু Passage-এর বক্তব্য নিজের ভাষায় বলুন।</p>
+  <p><strong>ভুল ৫ — উদাহরণ অন্তর্ভুক্ত করা:</strong> Passage-এ দেওয়া উদাহরণগুলো Summary-তে আনার দরকার নেই। শুধু মূল তথ্য ও বক্তব্য লিখুন।</p>
+
+  <div class="htbd-tip-box">
+    <p><strong>চূড়ান্ত পরামর্শ:</strong> পরীক্ষায় Unseen Passage পড়ার জন্য প্রথম ২ মিনিট ব্যয় করুন। Q4 (Information Transfer) ও Q5 (Summary) একই Passage থেকে আসে — তাই একসাথে পড়লে সময় বাঁচে এবং উভয় প্রশ্নেই ভালো করা যায়।</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="exam-tips">৮. পরীক্ষার হলে সময় ব্যবস্থাপনা (Exam Hall Time Management for Reading Section)</h2>
+  <p>এসএসসি ইংরেজি পরীক্ষায় মোট সময় ৩ ঘন্টা। Reading Section (Part A — ৭০ নম্বর) এবং Writing Section (Part B — ৩০ নম্বর)-এ সুষমভাবে সময় ভাগ করতে হবে।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>সেকশন</th><th>প্রশ্ন</th><th>প্রস্তাবিত সময়</th><th>কৌশল</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Seen Passage পড়া</td><td>Q1, Q2, Q3</td><td>৩০ মিনিট</td><td>Q2 সবার আগে করুন</td></tr>
+        <tr><td>Unseen Passage পড়া</td><td>Q4, Q5</td><td>৩০ মিনিট</td><td>Passage একবার পুরো পড়ুন</td></tr>
+        <tr><td>Matching + Rearranging</td><td>Q6, Q7</td><td>২০ মিনিট</td><td>নিশ্চিত উত্তর আগে</td></tr>
+        <tr><td>Poems + Stories</td><td>Q8, Q9</td><td>৩০ মিনিট</td><td>সহজ ৫টি বেছে নিন</td></tr>
+        <tr><td>Writing (Story + Dialogue)</td><td>Q10, Q11</td><td>৪৫ মিনিট</td><td>Draft করে নিন</td></tr>
+        <tr><td>Revision</td><td>সব</td><td>৫ মিনিট</td><td>বানান ও নাম যাচাই</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="htbd-series-nav">
+    <p class="nav-title">এসএসসি ২০২৭ ইংরেজি ১ম পত্র স্টাডি সিলো সিরিজ (SSC 2027 English Study Silo Series)</p>
+    <ul>
+      <li><strong>পিলার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">এসএসসি ২০২৭ ইংরেজি ১ম পত্র — সম্পূর্ণ সাজেশন ও মানবণ্টন (Pillar Post)</a></li>
+<li><strong>Part 01:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html">সিন প্যাসেজ সাজেশন (Seen Passage MCQ, Q/A & Gap Fill)</a></li>
+<li class="current-post">Part 02: আনসিন প্যাসেজ ও সামারি (Unseen Passage & Summary Writing) (এই পোস্ট)</li>
+<li><strong>Part 03:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange-rules-solution.html">ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ (Sentence Matching & Re-arranging)</a></li>
+<li><strong>Part 04:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question-answer-guide.html">কবিতা ও গল্প প্রশ্নোত্তর (Poems & Stories Q/A Guide)</a></li>
+<li><strong>Part 05:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story-dialogue-suggestion.html">রাইটিং পার্ট — Story & Dialogue (Completing Story & Dialogue Writing)</a></li>
+
+    </ul>
+  </div>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary-writing.html"},
+  "headline": "এসএসসি ২০২৭ আনসিন প্যাসেজ ও সামারি রাইটিং সম্পূর্ণ গাইড (SSC 2027 English Unseen Passage Information Transfer & Summary Writing)",
+  "description": "SSC 2027 English 1st Paper Unseen Passage ও Summary Writing সম্পূর্ণ গাইড। Information Transfer (Q4) ও Summary Writing (Q5) — মোট ১৫ নম্বরের পূর্ণ প্রস্তুতি।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_02_unseen_summary.webp",
+  "author": {"@type": "Person", "name": "Faruk Sir"},
+  "publisher": {"@type": "Organization", "name": "HelpTrickBD"},
+  "datePublished": "2026-09-17T00:30:00+06:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How many words should an SSC English summary be?", "acceptedAnswer": {"@type": "Answer", "text": "The summary should be one-third of the original passage length, typically 50-70 words for SSC exam."}},
+    {"@type": "Question", "name": "Do I need full sentences in Information Transfer Q4?", "acceptedAnswer": {"@type": "Answer", "text": "No, key words or phrases are sufficient for Information Transfer. Ensure accuracy of names, dates and numbers."}}
+  ]
+}
+</script>

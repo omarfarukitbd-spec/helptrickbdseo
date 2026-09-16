@@ -1,0 +1,405 @@
+<style>
+  .htbd-academic-container,
+  .htbd-academic-container * {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }
+  .htbd-academic-container p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+  }
+  .htbd-academic-heading {
+    color: #0c2340 !important;
+    border-left: 5px solid #d4af37 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-subheading {
+    color: #1e3a8a !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-top: 26px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-overview-box {
+    background: #f8fafd !important;
+    border: 1px solid #dbeafe !important;
+    border-left: 5px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 24px 0 !important;
+    box-shadow: 0 2px 6px rgba(12,35,64,0.06) !important;
+  }
+  .htbd-overview-box p {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #1e293b !important;
+  }
+  .htbd-toc-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 4px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 20px 24px !important;
+    margin: 28px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+  }
+  .htbd-toc-card .toc-title {
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0 0 14px 0;
+    color: #0c2340;
+  }
+  .htbd-toc-card ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+    list-style-type: none !important;
+  }
+  .htbd-toc-card ul li {
+    margin-bottom: 8px !important;
+    font-size: 17px !important;
+    padding-left: 6px !important;
+  }
+  .htbd-toc-card ul li a {
+    color: #0b2046 !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-academic-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 16.5px !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-academic-table thead tr {
+    background: #0c2340 !important;
+    color: #fff !important;
+  }
+  .htbd-academic-table th {
+    padding: 13px 16px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #1e293b !important;
+    vertical-align: top !important;
+    line-height: 1.65 !important;
+  }
+  .htbd-academic-table tbody tr:nth-child(even) {
+    background: #f8fafc !important;
+  }
+  .htbd-academic-table tbody tr:hover {
+    background: #eef2ff !important;
+  }
+  .htbd-tip-box {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-tip-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #14532d !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-warning-box {
+    background: #fffbeb !important;
+    border: 1px solid #fde68a !important;
+    border-left: 5px solid #d97706 !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-warning-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #78350f !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-faq-item {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 18px 0 !important;
+  }
+  .htbd-faq-item:last-child {
+    border-bottom: none !important;
+  }
+  .htbd-series-nav {
+    background: linear-gradient(135deg, #0c2340 0%, #1e3a8a 100%) !important;
+    border-radius: 10px !important;
+    padding: 24px 28px !important;
+    margin: 32px 0 !important;
+    color: #fff !important;
+  }
+  .htbd-series-nav .nav-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 0 16px 0 !important;
+    color: #fbbf24 !important;
+  }
+  .htbd-series-nav ul {
+    margin: 0 !important;
+    padding-left: 18px !important;
+    list-style: none !important;
+  }
+  .htbd-series-nav ul li {
+    margin-bottom: 8px !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+  .htbd-series-nav ul li a {
+    color: #bfdbfe !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-series-nav ul li.current-post {
+    color: #fde68a !important;
+    font-weight: 700 !important;
+  }
+  .htbd-hero-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.10) !important;
+    display: block !important;
+    margin: 0 0 20px 0 !important;
+  }
+</style>
+<div class="htbd-academic-container">
+
+  <figure style="margin: 0 0 20px 0;">
+    <img class="htbd-hero-img" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_03_matching_rearrange.webp" alt="SSC 2027 English Sentence Matching Table and Re-arranging Sentences Guide" title="SSC 2027 English Sentence Matching Table and Re-arranging Sentences Guide" width="1200" height="675" loading="eager" />
+    <figcaption style="font-size: 14px; color: #64748b; text-align: center; margin-top: 6px;">SSC 2027 Sentence Matching Table & Re-arranging — Part 03 of the Study Silo Series</figcaption>
+  </figure>
+
+  <div class="htbd-overview-box">
+    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্রে <strong>প্রশ্ন ৬</strong> (Sentence Matching Table) ও <strong>প্রশ্ন ৭</strong> (Re-arranging Sentences) থেকে মোট <strong>১৩ নম্বর</strong> আসে। এই দুটি প্রশ্নে Grammar ও Syntax-এর জ্ঞান প্রয়োজন। সঠিক কৌশল জানলে এই ১৩ নম্বরে পূর্ণ নম্বর পাওয়া সহজ। (Q6 Matching Table carries 5 marks and Q7 Re-arranging carries 8 marks — total 13 marks.)</p>
+  </div>
+
+<!--more-->
+
+  <div class="htbd-toc-card">
+    <p class="toc-title">বিষয়সূচি (Table of Contents)</p>
+    <ul>
+      <li><a href="#marks-table">১. নম্বর বণ্টন ও প্রশ্নের বিবরণ</a></li>
+      <li><a href="#matching-guide">২. প্রশ্ন ৬: Sentence Matching Table — নিয়মাবলি (Q6 Guide)</a></li>
+      <li><a href="#rearranging-guide">৩. প্রশ্ন ৭: Re-arranging Sentences — নিয়মাবলি (Q7 Guide)</a></li>
+      <li><a href="#grammar-tips">৪. Connectives ও Coherence-এর গুরুত্বপূর্ণ নিয়ম</a></li>
+      <li><a href="#model-answers">৫. নমুনা সমাধান (Model Answers)</a></li>
+      <li><a href="#faq">৬. সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+    </ul>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="marks-table">১. নম্বর বণ্টন (Marks Distribution — Q6 & Q7)</h2>
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>প্রশ্ন</th><th>প্রশ্নের ধরন</th><th>বিবরণ</th><th>নম্বর</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Q6</strong></td><td>Sentence Matching Table</td><td>Column A, B এবং C — বাক্যের অংশ মেলাতে হবে</td><td><strong>1 × 5 = 5</strong></td></tr>
+        <tr><td><strong>Q7</strong></td><td>Re-arranging Sentences</td><td>৮টি এলোমেলো বাক্য সঠিক ক্রমে সাজাতে হবে</td><td><strong>1 × 8 = 8</strong></td></tr>
+        <tr><td colspan="3" style="text-align:right; font-weight:700; background:#f1f5f9;">মোট:</td><td style="font-weight:700; background:#f1f5f9; color:#0c2340;"><strong>13</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="matching-guide">২. প্রশ্ন ৬: Sentence Matching Table — সম্পূর্ণ নিয়মাবলি (Q6 Sentence Matching Guide)</h2>
+  <p>Q6-এ তিনটি Column (A, B, C) থাকে। Column A-তে বাক্যের শুরু, Column B ও C-তে বাক্যের মাঝের ও শেষের অংশ দেওয়া থাকে। সঠিকভাবে মিলিয়ে সম্পূর্ণ অর্থবোধক বাক্য তৈরি করতে হয়।</p>
+
+  <h3 class="htbd-academic-subheading">Sentence Matching-এ সর্বোচ্চ নম্বর পাওয়ার কৌশল</h3>
+  <p><strong>১. Grammatical Clues অনুসরণ করুন:</strong> Column A-তে Subject দেখে Column B-তে সঠিক Verb খুঁজুন। Subject-Verb Agreement মেনে চলুন।</p>
+  <p><strong>২. Meaning-based matching:</strong> শুধু Grammar নয়, বাক্যের অর্থও মেলাতে হবে। সম্পূর্ণ বাক্যটি কি বাস্তবে অর্থবোধক?</p>
+  <p><strong>৩. একটি option একবারই:</strong> প্রতিটি Column-এর option একবারই ব্যবহার করা যাবে — পুনরাবৃত্তি নয়।</p>
+  <p><strong>৪. Process of elimination:</strong> নিশ্চিত মিল আগে করুন, এরপর বাকিগুলো থেকে উত্তর বের করুন।</p>
+  <p><strong>৫. উত্তর লেখার ফরম্যাট:</strong> সম্পূর্ণ মিলিয়ে বাক্যটি লিখুন — শুধু অক্ষর বা নম্বর লিখলে নম্বর নাও পেতে পারেন।</p>
+
+  <div class="htbd-tip-box">
+    <p><strong>পরামর্শ:</strong> Connectives (because, although, so that, in order to, however, therefore) শেখা Q6-এর জন্য অত্যন্ত গুরুত্বপূর্ণ। এগুলো Column B বা C-তে থাকলে বাক্যের logical flow বুঝতে সাহায্য করে।</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="rearranging-guide">৩. প্রশ্ন ৭: Re-arranging Sentences — সম্পূর্ণ নির্দেশিকা (Q7 Re-arranging Guide)</h2>
+  <p>Q7-এ ৮টি এলোমেলো (Jumbled) বাক্য দেওয়া থাকে। এগুলো সঠিক Chronological ও Logical Order-এ সাজিয়ে একটি অর্থবোধক অনুচ্ছেদ তৈরি করতে হয়। প্রতিটি সঠিক বাক্যের জন্য ১ নম্বর।</p>
+
+  <h3 class="htbd-academic-subheading">Re-arranging Sentences-এর কার্যকর কৌশল</h3>
+  <p><strong>১. Topic Sentence খুঁজুন:</strong> যে বাক্যটি পুরো অনুচ্ছেদের বিষয় পরিচয় করিয়ে দেয়, সেটিই প্রথম বাক্য (Topic Sentence)।</p>
+  <p><strong>২. Pronoun Reference লক্ষ করুন:</strong> "He, She, They, It, This, These" — এই pronounগুলো আগের বাক্যে কোনো Noun-এর পরে আসে। Pronoun থাকলে বাক্যটি কখনো প্রথম হবে না।</p>
+  <p><strong>৩. Time Connectives খুঁজুন:</strong> "First, Then, After that, Finally, Next, Later" — এগুলো বাক্যের ক্রম নির্ধারণ করতে সাহায্য করে।</p>
+  <p><strong>৪. Concluding Sentence চিহ্নিত করুন:</strong> "Therefore, Thus, In conclusion, Finally, As a result" দিয়ে শুরু হওয়া বাক্য সাধারণত শেষে আসে।</p>
+  <p><strong>৫. Linking Words লক্ষ করুন:</strong> "However, Moreover, Furthermore, On the other hand" — এই Linking Words দিয়ে বাক্যের logical flow বোঝা যায়।</p>
+  <p><strong>৬. উত্তর লেখার ফরম্যাট:</strong> সাজানো বাক্যগুলো ক্রম অনুযায়ী সম্পূর্ণভাবে লিখুন। শুধু অক্ষর দিলে অনেক ক্ষেত্রে নম্বর পাওয়া যায় না।</p>
+
+  <h2 class="htbd-academic-heading" id="grammar-tips">৪. Connectives ও Coherence-এর গুরুত্বপূর্ণ নিয়ম (Key Grammar Tips)</h2>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>Connective Type</th><th>উদাহরণ (Examples)</th><th>ব্যবহার</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Addition</td><td>and, also, moreover, furthermore, besides</td><td>দুটি বক্তব্য যোগ করতে</td></tr>
+        <tr><td>Contrast</td><td>but, however, although, yet, on the other hand</td><td>বিপরীত বক্তব্যে</td></tr>
+        <tr><td>Cause &amp; Effect</td><td>because, so, therefore, as a result, thus</td><td>কারণ ও ফলাফল বোঝাতে</td></tr>
+        <tr><td>Time Sequence</td><td>first, then, after that, next, finally, later</td><td>ঘটনার ক্রম বোঝাতে</td></tr>
+        <tr><td>Purpose</td><td>in order to, so that, to, for the purpose of</td><td>উদ্দেশ্য বোঝাতে</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="model-answers">৫. নমুনা সমাধান (Model Answers)</h2>
+  <h3 class="htbd-academic-subheading">Q7 Re-arranging নমুনা (Sample Re-arranging)</h3>
+  <p><strong>এলোমেলো বাক্যসমূহ:</strong></p>
+  <p style="background:#f8fafc; border-left:4px solid #94a3b8; padding:14px 18px; border-radius:6px; font-size:16px; line-height:1.9;">
+  (a) He also exercises every morning to stay healthy.<br>
+  (b) Finally, he goes to bed early at night.<br>
+  (c) Rahim is a very disciplined student.<br>
+  (d) After school, he helps his mother in household chores.<br>
+  (e) He wakes up early in the morning and studies for two hours.<br>
+  (f) Then he has breakfast and goes to school on time.<br>
+  (g) In the afternoon, he revises his lessons.<br>
+  (h) Because of his good habits, he always gets good results.
+  </p>
+  <p><strong>সঠিক ক্রম (Correct Order):</strong> c → e → a → f → d → g → h → b</p>
+  <p style="background:#f0fdf4; border:1px solid #bbf7d0; padding:14px 18px; border-radius:8px; color:#14532d; font-size:16px; line-height:1.9;">
+  Rahim is a very disciplined student. He wakes up early in the morning and studies for two hours. He also exercises every morning to stay healthy. Then he has breakfast and goes to school on time. After school, he helps his mother in household chores. In the afternoon, he revises his lessons. Because of his good habits, he always gets good results. Finally, he goes to bed early at night.
+  </p>
+
+  <h2 class="htbd-academic-heading" id="faq">৬. সচরাচর জিজ্ঞাসা (FAQ)</h2>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 1: Q7-এ কি সম্পূর্ণ বাক্য লিখতে হবে? (Must I write full sentences in Q7?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">হ্যাঁ, Re-arranging Sentences-এ সাজানো বাক্যগুলো সম্পূর্ণভাবে লেখা উচিত। শুধু ক্রম (a, b, c) লিখলে অনেক পরীক্ষক নম্বর দেন না।</p>
+  </div>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 2: Matching Table-এ একই Option দুইবার ব্যবহার করা যাবে কি? (Can I use the same option twice in Q6?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">না, Sentence Matching Table-এ প্রতিটি Option শুধুমাত্র একবার ব্যবহার করা যাবে। প্রতিটি বাক্যের জন্য আলাদা আলাদা Option মেলাতে হবে।</p>
+  </div>
+
+  
+  <h2 class="htbd-academic-heading" id="grammar-deep">৭. Grammar Foundation for Q6 & Q7 — গভীর ব্যাকরণ জ্ঞান</h2>
+  <p>Q6 (Sentence Matching) ও Q7 (Re-arranging Sentences) — উভয় প্রশ্নেই English Grammar-এর গভীর জ্ঞান প্রয়োজন। শুধু কৌশল নয়, নিচের ব্যাকরণিক নিয়মগুলো আয়ত্ত করলে উভয় প্রশ্নে পূর্ণ নম্বর নিশ্চিত করা যায়।</p>
+
+  <h3 class="htbd-academic-subheading">Clause ও Phrase — পার্থক্য ও ব্যবহার (Clauses and Phrases)</h3>
+  <p>Sentence Matching-এ Column A, B, C-এর অংশগুলো সাধারণত Independent Clause ও Dependent Clause হয়। Independent Clause নিজে একটি সম্পূর্ণ বাক্য তৈরি করতে পারে, কিন্তু Dependent Clause একা অর্থবোধক হয় না।</p>
+  <p>উদাহরণ — <em>"Although he was tired"</em> একটি Dependent Clause, এটি একা বাক্য নয়। এর সাথে <em>"he continued to study"</em> যোগ করলে সম্পূর্ণ বাক্য হয়।</p>
+  <p>Matching Table-এ Dependent Clause খুঁজে পেলেই বুঝবেন এটি Column B বা C-তে আছে এবং Column A-তে এর সাথে মানানসই Independent Clause খুঁজতে হবে।</p>
+
+  <h3 class="htbd-academic-subheading">Subject-Verb Agreement — ম্যাচিং-এর মূল চাবিকাঠি</h3>
+  <p>Sentence Matching-এ Subject ও Verb-এর মিল সবচেয়ে গুরুত্বপূর্ণ। নিচের নিয়মগুলো মনে রাখলে Column B থেকে সঠিক Verb phrase বেছে নেওয়া সহজ হবে।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>Subject Type</th><th>Verb Form</th><th>উদাহরণ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Singular Subject (He, She, It, The boy)</td><td>Singular Verb (is, was, has, does)</td><td>The boy is playing.</td></tr>
+        <tr><td>Plural Subject (They, Students, The books)</td><td>Plural Verb (are, were, have, do)</td><td>The books are on the table.</td></tr>
+        <tr><td>I</td><td>am, was, have, do</td><td>I am a student.</td></tr>
+        <tr><td>You</td><td>are, were, have, do</td><td>You are my friend.</td></tr>
+        <tr><td>Uncountable Noun (water, rice, information)</td><td>Singular Verb</td><td>Water is essential.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="htbd-academic-subheading">Discourse Markers — Re-arranging-এর সেরা হাতিয়ার</h3>
+  <p>Re-arranging Sentences (Q7)-এ Discourse Markers সবচেয়ে গুরুত্বপূর্ণ ভূমিকা রাখে। এগুলো বাক্যের মধ্যে Logical Flow তৈরি করে এবং ক্রম নির্ধারণে সাহায্য করে।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>Position</th><th>Discourse Markers</th><th>ব্যবহারের উদাহরণ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>শুরুতে (Opening)</td><td>Once, Long ago, One day, At first, In the beginning</td><td>"Once there was a wise king."</td></tr>
+        <tr><td>মাঝে (Middle — Addition)</td><td>Moreover, Furthermore, In addition, Besides, Also</td><td>"Moreover, he was very kind."</td></tr>
+        <tr><td>মাঝে (Middle — Contrast)</td><td>However, But, Nevertheless, On the contrary, Yet</td><td>"However, his health was poor."</td></tr>
+        <tr><td>মাঝে (Middle — Cause)</td><td>Because, As, Since, Due to, Owing to</td><td>"Since he worked hard, he succeeded."</td></tr>
+        <tr><td>শেষে (Concluding)</td><td>Finally, At last, In the end, Therefore, Thus, As a result</td><td>"Finally, he became successful."</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="practice-exercises">৮. অনুশীলন উদাহরণ (Practice Exercises for Q6 & Q7)</h2>
+  <p>পরীক্ষায় ভালো করতে হলে নিয়মিত Q6 ও Q7-এর অনুশীলন করতে হবে। নিচে একটি পূর্ণ অনুশীলনী দেওয়া হলো:</p>
+
+  <h3 class="htbd-academic-subheading">অনুশীলন ১ — Sentence Matching Table (Q6 Practice)</h3>
+  <p>নিচের Column A, B, C মিলিয়ে সম্পূর্ণ বাক্য তৈরি করুন:</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>Column A (Subject / Beginning)</th><th>Column B (Middle / Verb Phrase)</th><th>Column C (End / Purpose or Result)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>(i) We should plant trees</td><td>(a) is essential for good health</td><td>(I) to protect the environment</td></tr>
+        <tr><td>(ii) Regular exercise</td><td>(b) affects our daily life</td><td>(II) and reduces stress</td></tr>
+        <tr><td>(iii) The internet</td><td>(c) should be conserved</td><td>(III) for future generations</td></tr>
+        <tr><td>(iv) Water resources</td><td>(d) must be studied properly</td><td>(IV) to get good results</td></tr>
+        <tr><td>(v) Every subject</td><td>(e) helps us communicate</td><td>(V) with the whole world</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>উত্তর (Answers):</strong></p>
+  <p style="background:#f0fdf4; border:1px solid #bbf7d0; padding:14px 18px; border-radius:8px; color:#14532d; font-size:16px; line-height:1.9;">
+  (i) + (a) + (I): We should plant trees to protect the environment.<br>
+  (ii) + (a) + (II): Regular exercise is essential for good health and reduces stress.<br>
+  (iii) + (e) + (V): The internet helps us communicate with the whole world.<br>
+  (iv) + (c) + (III): Water resources should be conserved for future generations.<br>
+  (v) + (d) + (IV): Every subject must be studied properly to get good results.
+  </p>
+
+  <h2 class="htbd-academic-heading" id="checklist">৯. পরীক্ষার আগে Checklist (Pre-Exam Checklist for Q6 & Q7)</h2>
+  <p>পরীক্ষার হলে Q6 ও Q7 শুরু করার আগে নিচের checklist মনে রাখুন:</p>
+  <p><strong>Q6 Sentence Matching:</strong> প্রতিটি Column ভালো করে পড়েছি। Grammar Agreement যাচাই করেছি। Meaning-based logic মিলিয়েছি। প্রতিটি Option একবারই ব্যবহার করেছি। সম্পূর্ণ বাক্য লিখেছি।</p>
+  <p><strong>Q7 Re-arranging:</strong> Topic Sentence চিহ্নিত করেছি। Pronoun Reference দেখেছি। Time Connectives ও Discourse Markers অনুসরণ করেছি। Concluding Sentence সবশেষে দিয়েছি। সম্পূর্ণ বাক্য লিখেছি।</p>
+
+  <div class="htbd-warning-box">
+    <p><strong>সতর্কতা:</strong> Q7-এ সাজানো বাক্যগুলোর ক্রম লেখার সময় শুধু (a, b, c) অক্ষর না লিখে সম্পূর্ণ বাক্য লিখুন। অনেক পরীক্ষক শুধু অক্ষরের উত্তর গ্রহণ করেন না।</p>
+  </div>
+
+  <div class="htbd-series-nav">
+    <p class="nav-title">এসএসসি ২০২৭ ইংরেজি ১ম পত্র স্টাডি সিলো সিরিজ (SSC 2027 English Study Silo Series)</p>
+    <ul>
+      <li><strong>পিলার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">এসএসসি ২০২৭ ইংরেজি ১ম পত্র — সম্পূর্ণ সাজেশন ও মানবণ্টন (Pillar Post)</a></li>
+<li><strong>Part 01:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html">সিন প্যাসেজ সাজেশন (Seen Passage MCQ, Q/A & Gap Fill)</a></li>
+<li><strong>Part 02:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary-writing.html">আনসিন প্যাসেজ ও সামারি (Unseen Passage & Summary Writing)</a></li>
+<li class="current-post">Part 03: ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ (Sentence Matching & Re-arranging) (এই পোস্ট)</li>
+<li><strong>Part 04:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question-answer-guide.html">কবিতা ও গল্প প্রশ্নোত্তর (Poems & Stories Q/A Guide)</a></li>
+<li><strong>Part 05:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story-dialogue-suggestion.html">রাইটিং পার্ট — Story & Dialogue (Completing Story & Dialogue Writing)</a></li>
+
+    </ul>
+  </div>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange-rules-solution.html"},
+  "headline": "এসএসসি ২০২৭ ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ সম্পূর্ণ সমাধান (SSC 2027 English Sentence Matching Table & Re-arranging Sentences Rules & Tips)",
+  "description": "SSC 2027 English 1st Paper Sentence Matching Table (Q6) ও Re-arranging Sentences (Q7) — মোট ১৩ নম্বরের সম্পূর্ণ নিয়মাবলি, কৌশল ও মডেল সমাধান।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_03_matching_rearrange.webp",
+  "author": {"@type": "Person", "name": "Faruk Sir"},
+  "publisher": {"@type": "Organization", "name": "HelpTrickBD"},
+  "datePublished": "2026-09-17T01:00:00+06:00"
+}
+</script>

@@ -1,0 +1,363 @@
+<style>
+  .htbd-academic-container,
+  .htbd-academic-container * {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }
+  .htbd-academic-container p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+  }
+  .htbd-academic-heading {
+    color: #0c2340 !important;
+    border-left: 5px solid #d4af37 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-subheading {
+    color: #1e3a8a !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-top: 26px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-overview-box {
+    background: #f8fafd !important;
+    border: 1px solid #dbeafe !important;
+    border-left: 5px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 24px 0 !important;
+    box-shadow: 0 2px 6px rgba(12,35,64,0.06) !important;
+  }
+  .htbd-overview-box p {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #1e293b !important;
+  }
+  .htbd-toc-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 4px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 20px 24px !important;
+    margin: 28px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+  }
+  .htbd-toc-card .toc-title {
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0 0 14px 0;
+    color: #0c2340;
+  }
+  .htbd-toc-card ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+    list-style-type: none !important;
+  }
+  .htbd-toc-card ul li {
+    margin-bottom: 8px !important;
+    font-size: 17px !important;
+    padding-left: 6px !important;
+  }
+  .htbd-toc-card ul li a {
+    color: #0b2046 !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-academic-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 16.5px !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-academic-table thead tr {
+    background: #0c2340 !important;
+    color: #fff !important;
+  }
+  .htbd-academic-table th {
+    padding: 13px 16px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #1e293b !important;
+    vertical-align: top !important;
+    line-height: 1.65 !important;
+  }
+  .htbd-academic-table tbody tr:nth-child(even) {
+    background: #f8fafc !important;
+  }
+  .htbd-academic-table tbody tr:hover {
+    background: #eef2ff !important;
+  }
+  .htbd-tip-box {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-tip-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #14532d !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-warning-box {
+    background: #fffbeb !important;
+    border: 1px solid #fde68a !important;
+    border-left: 5px solid #d97706 !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-warning-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #78350f !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-faq-item {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 18px 0 !important;
+  }
+  .htbd-faq-item:last-child {
+    border-bottom: none !important;
+  }
+  .htbd-series-nav {
+    background: linear-gradient(135deg, #0c2340 0%, #1e3a8a 100%) !important;
+    border-radius: 10px !important;
+    padding: 24px 28px !important;
+    margin: 32px 0 !important;
+    color: #fff !important;
+  }
+  .htbd-series-nav .nav-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 0 16px 0 !important;
+    color: #fbbf24 !important;
+  }
+  .htbd-series-nav ul {
+    margin: 0 !important;
+    padding-left: 18px !important;
+    list-style: none !important;
+  }
+  .htbd-series-nav ul li {
+    margin-bottom: 8px !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+  .htbd-series-nav ul li a {
+    color: #bfdbfe !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-series-nav ul li.current-post {
+    color: #fde68a !important;
+    font-weight: 700 !important;
+  }
+  .htbd-hero-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.10) !important;
+    display: block !important;
+    margin: 0 0 20px 0 !important;
+  }
+</style>
+<div class="htbd-academic-container">
+
+  <figure style="margin: 0 0 20px 0;">
+    <img class="htbd-hero-img" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_05_story_dialogue.webp" alt="SSC 2027 English Completing Story and Dialogue Writing Final Suggestion" title="SSC 2027 English Completing Story and Dialogue Writing Final Suggestion" width="1200" height="675" loading="eager" />
+    <figcaption style="font-size: 14px; color: #64748b; text-align: center; margin-top: 6px;">SSC 2027 Writing Part: Completing Story & Dialogue Writing — Part 05 of the Study Silo Series</figcaption>
+  </figure>
+
+  <div class="htbd-overview-box">
+    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্রের Part B (Writing) অংশে <strong>প্রশ্ন ১০</strong> (Completing Story — ১৫ নম্বর) ও <strong>প্রশ্ন ১১</strong> (Dialogue Writing — ১৫ নম্বর) থেকে মোট <strong>৩০ নম্বর</strong> আসে। এটি সম্পূর্ণ পরীক্ষার ৩০%। সঠিক নিয়মে লিখলে এই ৩০ নম্বরে উচ্চ নম্বর পাওয়া সম্ভব। (Part B Writing carries 30 marks — 15 for Completing Story (Q10) and 15 for Dialogue Writing (Q11).)</p>
+  </div>
+
+<!--more-->
+
+  <div class="htbd-toc-card">
+    <p class="toc-title">বিষয়সূচি (Table of Contents)</p>
+    <ul>
+      <li><a href="#marks-table">১. নম্বর বণ্টন ও Writing Part-এর গুরুত্ব</a></li>
+      <li><a href="#story-guide">২. প্রশ্ন ১০: Completing Story — সম্পূর্ণ নিয়মাবলি (Q10 Guide)</a></li>
+      <li><a href="#story-elements">৩. ভালো গল্পের উপাদানসমূহ (Elements of a Good Story)</a></li>
+      <li><a href="#dialogue-guide">৪. প্রশ্ন ১১: Dialogue Writing — সম্পূর্ণ নিয়মাবলি (Q11 Guide)</a></li>
+      <li><a href="#model-story">৫. নমুনা গল্প (Model Completing Story)</a></li>
+      <li><a href="#model-dialogue">৬. নমুনা ডায়ালগ (Model Dialogue Writing)</a></li>
+      <li><a href="#faq">৭. সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+    </ul>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="marks-table">১. নম্বর বণ্টন (Marks Distribution — Part B Writing)</h2>
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>প্রশ্ন</th><th>প্রশ্নের ধরন</th><th>নম্বর বণ্টন</th><th>মোট নম্বর</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Q10</strong></td><td>Completing Story (গল্প সম্পন্ন করা)</td><td>Content (5) + Language (5) + Title &amp; Moral (5)</td><td><strong>15</strong></td></tr>
+        <tr><td><strong>Q11</strong></td><td>Dialogue Writing (কথোপকথন লেখা)</td><td>Content (5) + Language (5) + Format (5)</td><td><strong>15</strong></td></tr>
+        <tr><td colspan="3" style="text-align:right; font-weight:700; background:#f1f5f9;">মোট Part B:</td><td style="font-weight:700; background:#f1f5f9; color:#0c2340;"><strong>30</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="story-guide">২. প্রশ্ন ১০: Completing Story — সম্পূর্ণ নিয়মাবলি (Q10 Completing Story Full Guide)</h2>
+  <p>Q10-এ গল্পের শুরু (outline) দেওয়া থাকে — সেটি পড়ে গল্পটি সম্পন্ন করতে হয়। গল্পে অবশ্যই একটি Title ও শেষে একটি Moral (নৈতিক শিক্ষা) থাকতে হবে।</p>
+
+  <h3 class="htbd-academic-subheading">Completing Story লেখার ধাপ (Step-by-Step Method)</h3>
+  <p><strong>ধাপ ১ — Outline পড়ুন:</strong> দেওয়া outline মনোযোগ দিয়ে পড়ুন এবং গল্পের সম্ভাব্য দিক নির্ধারণ করুন।</p>
+  <p><strong>ধাপ ২ — Title নির্বাচন করুন:</strong> গল্পের বিষয়বস্তু থেকে একটি সংক্ষিপ্ত, আকর্ষণীয় ও প্রাসঙ্গিক Title দিন।</p>
+  <p><strong>ধাপ ৩ — Beginning:</strong> Outline-এর দেওয়া শুরুটি অবিকল লিখুন, এরপর গল্পের মূল ঘটনা শুরু করুন।</p>
+  <p><strong>ধাপ ৪ — Rising Action:</strong> গল্পে সমস্যা বা দ্বন্দ্ব তৈরি করুন — এটিই গল্পকে আকর্ষণীয় করে।</p>
+  <p><strong>ধাপ ৫ — Climax:</strong> সমস্যার সর্বোচ্চ বিন্দুতে পৌঁছান।</p>
+  <p><strong>ধাপ ৬ — Resolution &amp; Moral:</strong> সমস্যার সমাধান করুন এবং শেষে Moral লিখুন।</p>
+
+  <h2 class="htbd-academic-heading" id="story-elements">৩. ভালো গল্পের উপাদানসমূহ (Elements of a Good Story)</h2>
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>উপাদান (Element)</th><th>বিবরণ</th><th>উদাহরণ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Title (শিরোনাম)</strong></td><td>সংক্ষিপ্ত, আকর্ষণীয় ও প্রাসঙ্গিক</td><td>"The Honest Woodcutter", "A Friend in Need"</td></tr>
+        <tr><td><strong>Setting (স্থান-কাল)</strong></td><td>গল্পের সময় ও স্থান উল্লেখ</td><td>"Once upon a time, in a small village..."</td></tr>
+        <tr><td><strong>Characters (চরিত্র)</strong></td><td>প্রধান ও গৌণ চরিত্র পরিচয়</td><td>নাম, পরিচয় ও বৈশিষ্ট্য</td></tr>
+        <tr><td><strong>Conflict (দ্বন্দ্ব)</strong></td><td>গল্পের মূল সমস্যা বা চ্যালেঞ্জ</td><td>প্রকৃতির সাথে, মানুষের সাথে বা নিজের সাথে</td></tr>
+        <tr><td><strong>Climax (চরম মুহূর্ত)</strong></td><td>সমস্যার সর্বোচ্চ বিন্দু</td><td>সংকটের মুহূর্ত</td></tr>
+        <tr><td><strong>Resolution (সমাধান)</strong></td><td>সমস্যার সমাধান</td><td>ইতিবাচক বা শিক্ষামূলক সমাপ্তি</td></tr>
+        <tr><td><strong>Moral (নৈতিক শিক্ষা)</strong></td><td>গল্পের শেষে শিক্ষামূলক বার্তা</td><td>"Moral: Honesty is the best policy."</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="htbd-tip-box">
+    <p><strong>পরামর্শ:</strong> গল্পে Paragraphing ব্যবহার করুন — শুরু, মাঝ ও শেষ আলাদা প্যারাগ্রাফে লিখুন। Moral সবসময় শেষ লাইনে আলাদাভাবে লিখুন: "Moral: ..."</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="dialogue-guide">৪. প্রশ্ন ১১: Dialogue Writing — সম্পূর্ণ নির্দেশিকা (Q11 Dialogue Writing Full Guide)</h2>
+  <p>Q11-এ দুটি চরিত্রের মধ্যে কথোপকথন (Dialogue) লিখতে হয়। একটি Topic দেওয়া থাকে এবং সেই বিষয়ে স্বাভাবিক, প্রাকৃতিক কথোপকথন লিখতে হয়।</p>
+
+  <h3 class="htbd-academic-subheading">Dialogue Writing-এর নিয়মাবলি (Rules for Writing Dialogue)</h3>
+  <p><strong>১. Format সঠিক রাখুন:</strong> প্রতিটি বক্তার নাম লেখার পর কোলন (:) দিন, তারপর Dialogue লিখুন।</p>
+  <p><strong>২. Quotation Marks:</strong> Dialogue সবসময় Quotation Mark (" ")-এর মধ্যে লিখুন।</p>
+  <p><strong>৩. স্বাভাবিক ভাষা:</strong> কথোপকথন স্বাভাবিক, Colloquial ভাষায় লিখুন — বইয়ের formal language নয়।</p>
+  <p><strong>৪. দৈর্ঘ্য:</strong> সাধারণত ১০-১২টি exchange (উভয় দিক মিলিয়ে ২০-২৪ লাইন) লিখলে ভালো নম্বর পাওয়া যায়।</p>
+  <p><strong>৫. Topic Relevance:</strong> Dialogue-এ দেওয়া Topic বা বিষয়ের সাথে প্রাসঙ্গিক তথ্য অন্তর্ভুক্ত করুন।</p>
+  <p><strong>৬. Opening &amp; Closing:</strong> Greeting দিয়ে শুরু এবং বিদায় জানিয়ে শেষ করুন।</p>
+
+  <h3 class="htbd-academic-subheading">গুরুত্বপূর্ণ Dialogue Topics (Important Topics for Q11)</h3>
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>ক্যাটাগরি</th><th>সম্ভাব্য Topic</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>শিক্ষা ও পড়াশোনা</td><td>Importance of Education, Exam Preparation, Future Career</td></tr>
+        <tr><td>স্বাস্থ্য ও পরিবেশ</td><td>Tree Plantation, Environmental Pollution, Good Health Habits</td></tr>
+        <tr><td>সামাজিক সচেতনতা</td><td>Early Marriage, Drug Abuse, Road Safety, Gender Equality</td></tr>
+        <tr><td>প্রযুক্তি</td><td>Social Media, Internet Use, Mobile Phone Benefits &amp; Dangers</td></tr>
+        <tr><td>দৈনন্দিন জীবন</td><td>Favourite Book, Hobby, Memorable Day, Future Plan</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="model-story">৫. নমুনা গল্প (Model Completing Story)</h2>
+  <h3 class="htbd-academic-subheading">Outline: Once there was a thirsty crow. It was flying here and there in search of water...</h3>
+  <p style="background:#f0fdf4; border:1px solid #bbf7d0; padding:18px 22px; border-radius:8px; color:#14532d; font-size:16.5px; line-height:1.9;">
+  <strong>Title: The Clever Crow and the Pitcher</strong><br><br>
+  Once there was a thirsty crow. It was flying here and there in search of water. After a long search, it found a pitcher with a little water at the bottom. The crow tried to drink the water, but its beak could not reach it.<br><br>
+  The crow did not give up. It thought of a clever plan. It started dropping small stones one by one into the pitcher. As the stones were added, the water level began to rise slowly. The crow continued until the water rose close to the top of the pitcher.<br><br>
+  Finally, the crow was able to drink the water and satisfy its thirst. It flew away happily, having solved the problem with its intelligence and patience.<br><br>
+  <strong>Moral: Where there is a will, there is a way.</strong>
+  </p>
+
+  <h2 class="htbd-academic-heading" id="model-dialogue">৬. নমুনা ডায়ালগ (Model Dialogue Writing)</h2>
+  <h3 class="htbd-academic-subheading">Topic: A dialogue between two friends about the importance of reading books</h3>
+  <p style="background:#f0fdf4; border:1px solid #bbf7d0; padding:18px 22px; border-radius:8px; color:#14532d; font-size:16.5px; line-height:1.9;">
+  <strong>Rahim:</strong> "Good morning, Karim! You seem to be reading a book. What book is that?"<br>
+  <strong>Karim:</strong> "Good morning, Rahim! I'm reading 'The Diary of a Young Girl' by Anne Frank. It's a wonderful book."<br>
+  <strong>Rahim:</strong> "That's great! But I find reading books boring. I prefer watching videos on YouTube."<br>
+  <strong>Karim:</strong> "I understand, but books have something that videos can't give. They improve our imagination and language skills."<br>
+  <strong>Rahim:</strong> "Really? Can you explain how reading helps?"<br>
+  <strong>Karim:</strong> "Of course! Reading expands our vocabulary, sharpens our thinking, and reduces stress. It also helps us in exams."<br>
+  <strong>Rahim:</strong> "I never thought of it that way. Which book do you suggest I start with?"<br>
+  <strong>Karim:</strong> "Start with something light and interesting — maybe a story book or an adventure novel. Once you start, you'll enjoy it."<br>
+  <strong>Rahim:</strong> "That sounds good. I'll try 'Robinson Crusoe'. Can you lend it to me?"<br>
+  <strong>Karim:</strong> "Sure! I have it at home. I'll bring it tomorrow. Happy reading, Rahim!"<br>
+  <strong>Rahim:</strong> "Thank you, Karim. See you tomorrow!"
+  </p>
+
+  <h2 class="htbd-academic-heading" id="faq">৭. সচরাচর জিজ্ঞাসা (FAQ)</h2>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 1: Completing Story-তে কি Title বাধ্যতামূলক? (Is a Title mandatory in Completing Story?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">হ্যাঁ, Completing Story-তে Title দেওয়া বাধ্যতামূলক। Title ছাড়া গল্প লিখলে নম্বর কাটা যায়। Title সবসময় গল্পের আগে আন্ডারলাইন করে লিখুন।</p>
+  </div>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 2: Dialogue-এ কতগুলো exchange লিখতে হবে? (How many exchanges in Dialogue Writing?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">সাধারণত ১০-১২টি exchange (প্রতিটি চরিত্র ৫-৬ বার বলবে) লিখলে পূর্ণ নম্বর পাওয়া যায়। কম লিখলে Content নম্বর কমে যায়।</p>
+  </div>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 3: গল্পে Moral কোথায় লিখব? (Where should the Moral be written?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">Moral সবসময় গল্পের সবশেষে আলাদা লাইনে লিখতে হবে। Format: "Moral: [নৈতিক শিক্ষা]" — যেমন: "Moral: Honesty is the best policy."</p>
+  </div>
+
+  <div class="htbd-series-nav">
+    <p class="nav-title">এসএসসি ২০২৭ ইংরেজি ১ম পত্র স্টাডি সিলো সিরিজ (SSC 2027 English Study Silo Series)</p>
+    <ul>
+      <li><strong>পিলার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">এসএসসি ২০২৭ ইংরেজি ১ম পত্র — সম্পূর্ণ সাজেশন ও মানবণ্টন (Pillar Post)</a></li>
+<li><strong>Part 01:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html">সিন প্যাসেজ সাজেশন (Seen Passage MCQ, Q/A & Gap Fill)</a></li>
+<li><strong>Part 02:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary-writing.html">আনসিন প্যাসেজ ও সামারি (Unseen Passage & Summary Writing)</a></li>
+<li><strong>Part 03:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange-rules-solution.html">ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ (Sentence Matching & Re-arranging)</a></li>
+<li><strong>Part 04:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question-answer-guide.html">কবিতা ও গল্প প্রশ্নোত্তর (Poems & Stories Q/A Guide)</a></li>
+<li class="current-post">Part 05: রাইটিং পার্ট — Story & Dialogue (Completing Story & Dialogue Writing) (এই পোস্ট)</li>
+
+    </ul>
+  </div>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story-dialogue-suggestion.html"},
+  "headline": "এসএসসি ২০২৭ কমপ্লিটিং স্টোরি ও ডায়ালগ রাইটিং সাজেশন (SSC 2027 English Completing Story & Dialogue Writing Final Suggestion Q10 & Q11)",
+  "description": "SSC 2027 English 1st Paper Writing Part — Completing Story (Q10, 15 নম্বর) ও Dialogue Writing (Q11, 15 নম্বর) সম্পূর্ণ সাজেশন, মডেল উত্তর ও লেখার নিয়মাবলি।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_05_story_dialogue.webp",
+  "author": {"@type": "Person", "name": "Faruk Sir"},
+  "publisher": {"@type": "Organization", "name": "HelpTrickBD"},
+  "datePublished": "2026-09-17T02:00:00+06:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is a Title mandatory in SSC English Completing Story?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, a Title is mandatory in Completing Story. Writing without a title will result in mark deductions. Always underline the title."}},
+    {"@type": "Question", "name": "Where should the Moral be written in Completing Story?", "acceptedAnswer": {"@type": "Answer", "text": "The Moral should always be written at the very end of the story in a separate line: Moral: [moral lesson]."}}
+  ]
+}
+</script>

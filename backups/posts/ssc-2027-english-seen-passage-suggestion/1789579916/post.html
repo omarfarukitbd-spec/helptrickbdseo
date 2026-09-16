@@ -1,0 +1,402 @@
+<style>
+  .htbd-academic-container,
+  .htbd-academic-container * {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+  }
+  .htbd-academic-container p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+  }
+  .htbd-academic-heading {
+    color: #0c2340 !important;
+    border-left: 5px solid #d4af37 !important;
+    border-bottom: none !important;
+    padding-left: 14px !important;
+    margin-top: 38px !important;
+    margin-bottom: 16px !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-subheading {
+    color: #1e3a8a !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-top: 26px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-overview-box {
+    background: #f8fafd !important;
+    border: 1px solid #dbeafe !important;
+    border-left: 5px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 24px 0 !important;
+    box-shadow: 0 2px 6px rgba(12,35,64,0.06) !important;
+  }
+  .htbd-overview-box p {
+    margin: 0 !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #1e293b !important;
+  }
+  .htbd-toc-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 4px solid #0c2340 !important;
+    border-radius: 8px !important;
+    padding: 20px 24px !important;
+    margin: 28px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+  }
+  .htbd-toc-card .toc-title {
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0 0 14px 0;
+    color: #0c2340;
+  }
+  .htbd-toc-card ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+    list-style-type: none !important;
+  }
+  .htbd-toc-card ul li {
+    margin-bottom: 8px !important;
+    font-size: 17px !important;
+    padding-left: 6px !important;
+  }
+  .htbd-toc-card ul li a {
+    color: #0b2046 !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-academic-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 16.5px !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-academic-table thead tr {
+    background: #0c2340 !important;
+    color: #fff !important;
+  }
+  .htbd-academic-table th {
+    padding: 13px 16px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .htbd-academic-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #1e293b !important;
+    vertical-align: top !important;
+    line-height: 1.65 !important;
+  }
+  .htbd-academic-table tbody tr:nth-child(even) {
+    background: #f8fafc !important;
+  }
+  .htbd-academic-table tbody tr:hover {
+    background: #eef2ff !important;
+  }
+  .htbd-tip-box {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-tip-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #14532d !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-warning-box {
+    background: #fffbeb !important;
+    border: 1px solid #fde68a !important;
+    border-left: 5px solid #d97706 !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+  }
+  .htbd-warning-box p {
+    margin: 0 !important;
+    font-size: 17px !important;
+    color: #78350f !important;
+    line-height: 1.75 !important;
+  }
+  .htbd-faq-item {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 18px 0 !important;
+  }
+  .htbd-faq-item:last-child {
+    border-bottom: none !important;
+  }
+  .htbd-series-nav {
+    background: linear-gradient(135deg, #0c2340 0%, #1e3a8a 100%) !important;
+    border-radius: 10px !important;
+    padding: 24px 28px !important;
+    margin: 32px 0 !important;
+    color: #fff !important;
+  }
+  .htbd-series-nav .nav-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 0 16px 0 !important;
+    color: #fbbf24 !important;
+  }
+  .htbd-series-nav ul {
+    margin: 0 !important;
+    padding-left: 18px !important;
+    list-style: none !important;
+  }
+  .htbd-series-nav ul li {
+    margin-bottom: 8px !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+  .htbd-series-nav ul li a {
+    color: #bfdbfe !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+  }
+  .htbd-series-nav ul li.current-post {
+    color: #fde68a !important;
+    font-weight: 700 !important;
+  }
+  .htbd-hero-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.10) !important;
+    display: block !important;
+    margin: 0 0 20px 0 !important;
+  }
+</style>
+<div class="htbd-academic-container">
+
+  <figure style="margin: 0 0 20px 0;">
+    <img class="htbd-hero-img" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_01_seen_passage.webp" alt="SSC 2027 English Seen Passage Suggestion — MCQ, Question Answer and Gap Filling Guide" title="SSC 2027 English Seen Passage Suggestion — MCQ, Question Answer and Gap Filling Guide" width="1200" height="675" loading="eager" />
+    <figcaption style="font-size: 14px; color: #64748b; text-align: center; margin-top: 6px;">SSC 2027 English 1st Paper Seen Passage — Part 01 of the Study Silo Series</figcaption>
+  </figure>
+
+  <div class="htbd-overview-box">
+    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্রে <strong>প্রশ্ন ১, ২ ও ৩</strong> — এই তিনটি প্রশ্ন সিন (পাঠ্যবইয়ের) প্যাসেজ থেকে আসে এবং মোট <strong>২২ নম্বর</strong> বরাদ্দ থাকে। MCQ (৭ নম্বর), Open-Ended Q/A (১০ নম্বর) এবং Gap Filling (৫ নম্বর) — এই তিনটিতে দক্ষতা অর্জন করলে পরীক্ষায় নিশ্চিত ভালো ফলাফল করা সম্ভব। (SSC 2027 English 1st Paper Seen Passage covers Questions 1, 2 & 3 for a total of 22 marks.)</p>
+  </div>
+
+<!--more-->
+
+  <div class="htbd-toc-card">
+    <p class="toc-title">বিষয়সূচি (Table of Contents)</p>
+    <ul>
+      <li><a href="#seen-marks">১. সিন প্যাসেজ: নম্বর বণ্টন ও প্রশ্নের ধরন</a></li>
+      <li><a href="#mcq-guide">২. প্রশ্ন ১: MCQ সমাধানের কৌশল (Q1 MCQ Solving Strategy)</a></li>
+      <li><a href="#qa-guide">৩. প্রশ্ন ২: প্রশ্নোত্তর লেখার নিয়ম (Q2 Open-Ended Answer Writing)</a></li>
+      <li><a href="#gap-fill-guide">৪. প্রশ্ন ৩: Gap Filling Without Clues — সম্পূর্ণ নির্দেশিকা</a></li>
+      <li><a href="#important-passages">৫. গুরুত্বপূর্ণ সিন প্যাসেজ তালিকা (Important EFT Seen Passages)</a></li>
+      <li><a href="#model-answer">৬. নমুনা সমাধান (Model Answer)</a></li>
+      <li><a href="#faq">৭. সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+    </ul>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="seen-marks">১. সিন প্যাসেজ: নম্বর বণ্টন ও প্রশ্নের ধরন (Seen Passage Marks Distribution)</h2>
+  <p>এসএসসি ২০২৭ পরীক্ষায় Part A (Reading) অংশে দুটি সিন প্যাসেজ থাকে — প্যাসেজ ১ থেকে প্রশ্ন ১ ও ২ এবং প্যাসেজ ২ থেকে প্রশ্ন ৩ আসে। Seen Passage মানে পাঠ্যবই <strong>English For Today (EFT)</strong> থেকে নেওয়া পরিচিত অনুচ্ছেদ, যা পরীক্ষার আগেই শিক্ষার্থী পড়ে যায়।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr>
+          <th>প্রশ্ন নম্বর</th>
+          <th>প্রশ্নের ধরন (Question Type)</th>
+          <th>উৎস (Source)</th>
+          <th>নম্বর (Marks)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>প্রশ্ন ১ (Q1)</strong></td>
+          <td>Multiple Choice Questions (MCQ)</td>
+          <td>Seen Passage 1 (১ম সিন প্যাসেজ)</td>
+          <td><strong>1 × 7 = 7 নম্বর</strong></td>
+        </tr>
+        <tr>
+          <td><strong>প্রশ্ন ২ (Q2)</strong></td>
+          <td>Answering Questions (Open-Ended)</td>
+          <td>Seen Passage 1 (১ম সিন প্যাসেজ)</td>
+          <td><strong>2 × 5 = 10 নম্বর</strong></td>
+        </tr>
+        <tr>
+          <td><strong>প্রশ্ন ৩ (Q3)</strong></td>
+          <td>Gap Filling Without Clues</td>
+          <td>Seen Passage 2 (২য় সিন প্যাসেজ)</td>
+          <td><strong>1 × 5 = 5 নম্বর</strong></td>
+        </tr>
+        <tr>
+          <td colspan="3" style="text-align:right; font-weight:700; background:#f1f5f9;">মোট (Total):</td>
+          <td style="font-weight:700; background:#f1f5f9; color:#0c2340;"><strong>22 নম্বর</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="mcq-guide">২. প্রশ্ন ১: MCQ সমাধানের কৌশল (Q1 MCQ Solving Strategy for Seen Passage)</h2>
+  <p>প্রশ্ন ১-এ ১ম সিন প্যাসেজ থেকে ৭টি MCQ আসে। প্রতিটি প্রশ্নের সঠিক উত্তরের জন্য ১ নম্বর এবং ভুল উত্তরের জন্য কোনো নম্বর কাটা যায় না। তাই সবগুলো প্রশ্নের উত্তর দেওয়া উচিত।</p>
+
+  <h3 class="htbd-academic-subheading">MCQ-তে সর্বোচ্চ নম্বর পাওয়ার কার্যকর কৌশল</h3>
+  <p><strong>১. প্যাসেজ আগে পড়ুন:</strong> MCQ-র বিকল্পগুলো দেখার আগে পুরো প্যাসেজটি মনোযোগ দিয়ে পড়ুন এবং মূলভাব বোঝার চেষ্টা করুন।</p>
+  <p><strong>২. কী-ওয়ার্ড খুঁজুন:</strong> প্রতিটি প্রশ্নে থাকা গুরুত্বপূর্ণ শব্দ (keyword) প্যাসেজে চিহ্নিত করুন।</p>
+  <p><strong>৩. Distractor চিনুন:</strong> পরীক্ষায় অনেক বিকল্প প্রায় সঠিক মনে হয় — এগুলোকে Distractor বলে। প্যাসেজের সাথে সরাসরি মিলিয়ে সঠিক উত্তর বেছে নিন।</p>
+  <p><strong>৪. দুটি সম্ভাব্য উত্তর হলে:</strong> যে বিকল্পটি প্যাসেজের ভাষার সবচেয়ে কাছাকাছি, সেটি বেছে নিন।</p>
+  <p><strong>৫. অনুমান নয়, প্যাসেজ থেকে খুঁজুন:</strong> নিজের সাধারণ জ্ঞান বা অনুমানের উপর নির্ভর না করে সবসময় প্যাসেজ থেকে প্রমাণ খুঁজুন।</p>
+
+  <div class="htbd-tip-box">
+    <p><strong>পরামর্শ (Tip):</strong> MCQ-তে সাধারণত vocabulary, main idea, inference, and reference questions আসে। EFT বইয়ের প্রতিটি ইউনিটের Comprehension Questions ভালোভাবে অনুশীলন করলে MCQ-তে সহজেই পূর্ণ নম্বর পাওয়া যায়।</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="qa-guide">৩. প্রশ্ন ২: প্রশ্নোত্তর লেখার নিয়ম (Q2 Open-Ended Answering Questions)</h2>
+  <p>প্রশ্ন ২-এ ১ম সিন প্যাসেজ থেকে ৫টি Open-Ended প্রশ্নের উত্তর লিখতে হয়। প্রতিটি উত্তরের জন্য সর্বোচ্চ ২ নম্বর।</p>
+
+  <h3 class="htbd-academic-subheading">নম্বর পাওয়ার কাঠামো (Marking Criteria)</h3>
+  <p>পরীক্ষকরা সাধারণত দুটি বিষয়ের উপর নম্বর দেন: <strong>(১) তথ্যের সঠিকতা</strong> এবং <strong>(২) ভাষার মানের স্বচ্ছতা।</strong> একটিতে ১ করে মোট ২ নম্বর।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>উত্তরের মান</th><th>নম্বর</th><th>বিবরণ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>সম্পূর্ণ সঠিক তথ্য + সঠিক ভাষা</td><td>2/2</td><td>প্যাসেজ থেকে সঠিক তথ্য + নিজের ভাষায় লেখা</td></tr>
+        <tr><td>সঠিক তথ্য + আংশিক ভুল ভাষা</td><td>1.5/2</td><td>তথ্য সঠিক কিন্তু grammar-এ সামান্য ত্রুটি</td></tr>
+        <tr><td>আংশিক সঠিক / অসম্পূর্ণ উত্তর</td><td>1/2</td><td>মূল পয়েন্ট অনুপস্থিত</td></tr>
+        <tr><td>ভুল বা প্রাসঙ্গিক নয়</td><td>0/2</td><td>প্যাসেজের সাথে কোনো সম্পর্ক নেই</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="htbd-academic-subheading">উত্তর লেখার সঠিক পদ্ধতি (Answer Writing Method)</h3>
+  <p><strong>ধাপ ১:</strong> প্রশ্নটি মনোযোগ দিয়ে পড়ুন এবং Wh-word চিহ্নিত করুন (What, Why, How, When, Who)।</p>
+  <p><strong>ধাপ ২:</strong> প্যাসেজে সংশ্লিষ্ট অংশ খুঁজুন।</p>
+  <p><strong>ধাপ ৩:</strong> উত্তর <strong>সম্পূর্ণ বাক্যে</strong> লিখুন — হ্যাঁ/না বা এক শব্দে উত্তর দেবেন না।</p>
+  <p><strong>ধাপ ৪:</strong> প্যাসেজ হুবহু কপি না করে নিজের ভাষায় প্যারাফ্রেজ করুন।</p>
+  <p><strong>ধাপ ৫:</strong> উত্তর ২-৩ বাক্যের মধ্যে সীমাবদ্ধ রাখুন — অপ্রাসঙ্গিক তথ্য যোগ করবেন না।</p>
+
+  <div class="htbd-warning-box">
+    <p><strong>সতর্কতা:</strong> প্যাসেজ হুবহু কপি করলে নম্বর কাটা যায়। উত্তর সবসময় নিজের ভাষায় (own words/paraphrase) লিখতে হবে।</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="gap-fill-guide">৪. প্রশ্ন ৩: Gap Filling Without Clues — সম্পূর্ণ নির্দেশিকা (Q3 Gap Filling)</h2>
+  <p>প্রশ্ন ৩-এ ২য় সিন প্যাসেজ থেকে ৫টি শূন্যস্থান পূরণ করতে হয় — কোনো word bank বা clue দেওয়া থাকে না। প্রতিটি সঠিক উত্তরের জন্য ১ নম্বর।</p>
+
+  <h3 class="htbd-academic-subheading">Gap Filling Without Clues — কৌশল ও নিয়মাবলি</h3>
+  <p><strong>১. প্রসঙ্গ বুঝুন (Context Understanding):</strong> শূন্যস্থানের আগে ও পরের বাক্য পড়ে বুঝুন কী ধরনের শব্দ দরকার — Noun, Verb, Adjective, Adverb নাকি Preposition।</p>
+  <p><strong>২. Grammatical Agreement:</strong> Subject-Verb Agreement মেনে শব্দ বসান। Singular Subject হলে Singular Verb।</p>
+  <p><strong>৩. Tense সামঞ্জস্য:</strong> পুরো প্যাসেজের Tense লক্ষ করুন এবং সেই অনুযায়ী ক্রিয়ার সঠিক রূপ বসান।</p>
+  <p><strong>৪. পাঠ্যবই থেকে শব্দ:</strong> উত্তর সাধারণত সংশ্লিষ্ট EFT ইউনিটের ভেতর থেকেই আসে। প্যাসেজের বাকি অংশে উত্তর লুকিয়ে থাকতে পারে।</p>
+  <p><strong>৫. Collocations:</strong> কিছু শব্দ জোড়ায় আসে (যেমন: make a decision, pay attention) — এগুলো মনে রাখলে Gap Fill সহজ হয়।</p>
+
+  <div class="htbd-tip-box">
+    <p><strong>পরামর্শ:</strong> EFT বইয়ের প্রতিটি ইউনিট পড়ার সময় নতুন শব্দের অর্থ, ব্যবহার ও collocations একটি নোটবুকে লিখে রাখুন। Gap Fill-এর জন্য এটি সবচেয়ে কার্যকর প্রস্তুতি পদ্ধতি।</p>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="important-passages">৫. গুরুত্বপূর্ণ সিন প্যাসেজ তালিকা (Important EFT Seen Passage List for SSC 2027)</h2>
+  <p>English For Today (EFT) বইয়ের নিচের ইউনিটগুলো SSC 2027-এর সিন প্যাসেজ হিসেবে আসার সম্ভাবনা সবচেয়ে বেশি। এই প্যাসেজগুলো বারবার পড়লে MCQ, Q/A এবং Gap Fill — তিনটিতেই ভালো করা সম্ভব।</p>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
+    <table class="htbd-academic-table">
+      <thead>
+        <tr><th>ইউনিট ও পাঠ</th><th>বিষয় (Topic)</th><th>গুরুত্ব</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Unit 1, Lesson 1</td><td>Our Beautiful Motherland</td><td>অত্যন্ত গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Unit 2, Lesson 1</td><td>Liberation War of Bangladesh</td><td>অত্যন্ত গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Unit 4, Lesson 1</td><td>Computer and Internet</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Unit 5, Lesson 1</td><td>Food and Nutrition</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Unit 7, Lesson 1</td><td>Environment and Climate Change</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Unit 9, Lesson 1</td><td>Health and Hygiene</td><td>গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Unit 11, Lesson 1</td><td>Gender Equality and Rights</td><td>মাঝারি গুরুত্বপূর্ণ</td></tr>
+        <tr><td>Unit 12, Lesson 1</td><td>Sports and Recreation</td><td>মাঝারি গুরুত্বপূর্ণ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="htbd-academic-heading" id="model-answer">৬. নমুনা সমাধান (Seen Passage Model Answer Example)</h2>
+  <p>নিচে একটি সাধারণ সিন প্যাসেজ এবং তার MCQ ও Q/A-র নমুনা উত্তর দেওয়া হলো, যা পরীক্ষার উত্তরের ধরন বুঝতে সাহায্য করবে।</p>
+
+  <h3 class="htbd-academic-subheading">নমুনা প্যাসেজ (Sample Seen Passage)</h3>
+  <p style="background:#f8fafc; border-left:4px solid #94a3b8; padding:16px 20px; border-radius:6px; font-style:italic; color:#334155;">Bangladesh is a small but beautiful country. It has a rich history and culture. The Liberation War of 1971 is the most important chapter in its history. Millions of people sacrificed their lives for the independence of Bangladesh. The rivers, forests and natural beauty of this country attract people from all over the world. The national language of Bangladesh is Bengali, which is the mother tongue of more than 250 million people worldwide.</p>
+
+  <h3 class="htbd-academic-subheading">MCQ উত্তরের ধরন (Q1 Sample MCQ)</h3>
+  <p><strong>Q: Bangladesh is described as —</strong><br>
+  (a) large and beautiful &nbsp; (b) small but beautiful &nbsp; (c) small and poor &nbsp; (d) rich and large</p>
+  <p><strong>উত্তর: (b) small but beautiful</strong> — কারণ প্যাসেজের প্রথম বাক্যে সরাসরি বলা হয়েছে "Bangladesh is a small but beautiful country."</p>
+
+  <h3 class="htbd-academic-subheading">Q/A উত্তরের নমুনা (Q2 Sample Answer)</h3>
+  <p><strong>Q: Why is the Liberation War of 1971 important in Bangladesh's history?</strong></p>
+  <p><strong>উত্তর:</strong> The Liberation War of 1971 is the most important chapter in Bangladesh's history because millions of people sacrificed their lives to achieve the country's independence. It is the foundation of Bangladesh's identity as an independent nation.</p>
+
+  <h2 class="htbd-academic-heading" id="faq">৭. সচরাচর জিজ্ঞাসা (Frequently Asked Questions — FAQ)</h2>
+
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 1: Seen Passage কি পাঠ্যবই থেকেই আসে? (Does Seen Passage come from the textbook?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">হ্যাঁ, SSC পরীক্ষায় Seen Passage সবসময় English For Today (EFT) পাঠ্যবইয়ের নির্ধারিত ইউনিট ও পাঠ থেকে আসে। তাই পাঠ্যবই ভালোভাবে পড়লে সিন প্যাসেজে পূর্ণ নম্বর পাওয়া সম্ভব।</p>
+  </div>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 2: Gap Filling-এ ভুল হলে কি নম্বর কাটা যায়? (Is there negative marking for wrong Gap Fill answer?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">না, SSC পরীক্ষায় Gap Filling বা অন্য কোনো Written প্রশ্নে ভুল উত্তরের জন্য নেগেটিভ মার্কিং নেই। তাই সবসময় উত্তর দেওয়ার চেষ্টা করবেন।</p>
+  </div>
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 3: Q2-এর উত্তর কত শব্দে লিখতে হয়? (How long should Q2 answers be?)</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">Q2-এর প্রতিটি উত্তর সাধারণত ২-৩টি সম্পূর্ণ বাক্যে (৩০-৫০ শব্দ) লেখাই যথেষ্ট। অতিরিক্ত লেখার প্রয়োজন নেই — সঠিক তথ্য ও স্পষ্ট ভাষাই মূল বিষয়।</p>
+  </div>
+
+  <div class="htbd-series-nav">
+    <p class="nav-title">এসএসসি ২০২৭ ইংরেজি ১ম পত্র স্টাডি সিলো সিরিজ (SSC 2027 English Study Silo Series)</p>
+    <ul>
+      <li><strong>পিলার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">এসএসসি ২০২৭ ইংরেজি ১ম পত্র — সম্পূর্ণ সাজেশন ও মানবণ্টন (Pillar Post)</a></li>
+<li class="current-post">Part 01: সিন প্যাসেজ সাজেশন (Seen Passage MCQ, Q/A & Gap Fill) (এই পোস্ট)</li>
+<li><strong>Part 02:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary-writing.html">আনসিন প্যাসেজ ও সামারি (Unseen Passage & Summary Writing)</a></li>
+<li><strong>Part 03:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange-rules-solution.html">ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ (Sentence Matching & Re-arranging)</a></li>
+<li><strong>Part 04:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question-answer-guide.html">কবিতা ও গল্প প্রশ্নোত্তর (Poems & Stories Q/A Guide)</a></li>
+<li><strong>Part 05:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story-dialogue-suggestion.html">রাইটিং পার্ট — Story & Dialogue (Completing Story & Dialogue Writing)</a></li>
+
+    </ul>
+  </div>
+
+</div>
+
+<!-- Schema: BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html"},
+  "headline": "এসএসসি ২০২৭ ইংরেজি ১ম পত্র সিন প্যাসেজ সাজেশন (SSC 2027 English Seen Passage MCQ, Question Answer & Gap Filling Complete Guide)",
+  "description": "SSC 2027 English 1st Paper Seen Passage সম্পূর্ণ গাইড। MCQ (Q1), প্রশ্নোত্তর (Q2) ও Gap Filling (Q3) — মোট ২২ নম্বরের পূর্ণাঙ্গ প্রস্তুতি ও মডেল সমাধান।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_2027_silo_01_seen_passage.webp",
+  "author": {"@type": "Person", "name": "Faruk Sir", "url": "https://www.helptrickbd.com/p/about-us.html"},
+  "publisher": {"@type": "Organization", "name": "HelpTrickBD", "logo": {"@type": "ImageObject", "url": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/logo.png"}},
+  "datePublished": "2026-09-17T00:00:00+06:00"
+}
+</script>
+<!-- Schema: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Does Seen Passage come from the textbook in SSC?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Seen Passage always comes from the English For Today (EFT) textbook units in SSC exam."}},
+    {"@type": "Question", "name": "Is there negative marking for wrong Gap Fill answer in SSC?", "acceptedAnswer": {"@type": "Answer", "text": "No, there is no negative marking for wrong written answers including Gap Filling in SSC exam. Always attempt all questions."}},
+    {"@type": "Question", "name": "How long should Q2 answers be in SSC English 1st Paper?", "acceptedAnswer": {"@type": "Answer", "text": "Q2 answers should be 2-3 complete sentences (30-50 words). Focus on correct information and clear language."}}
+  ]
+}
+</script>
