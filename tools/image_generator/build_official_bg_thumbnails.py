@@ -175,7 +175,8 @@ def render_banner_html(
     title: str,
     subtitle: str,
     features: list,
-    is_english: bool
+    is_english: bool,
+    custom_tag_text: str = None
 ) -> str:
     """Creates clean, centered banner without any dark overlay box."""
     bg_url = "file:///" + os.path.join(BG_DIR, bg_file).replace("\\", "/")
@@ -189,12 +190,12 @@ def render_banner_html(
     if is_english:
         footer_brand = "HelpTrickBD Smart Education Platform"
         footer_right = "100% Syllabus & Exam Preparation Guide"
-        tag_text = "Special Academic Handnote 2026"
+        tag_text = custom_tag_text or "Special Academic Handnote 2026"
         body_font = "'Segoe UI', Roboto, -apple-system, sans-serif"
     else:
         footer_brand = "HelpTrickBD স্মার্ট এডুকেশন প্ল্যাটফর্ম"
         footer_right = "১০০% সিলেবাস ও পরীক্ষা সহায়ক হ্যান্ডনোট"
-        tag_text = "জাতীয় বিশ্ববিদ্যালয় মাস্টার্স শেষ পর্ব ২০২৬"
+        tag_text = custom_tag_text or "জাতীয় বিশ্ববিদ্যালয় মাস্টার্স শেষ পর্ব ২০২৬"
         body_font = "'HindSiliguri', 'SolaimanLipi', sans-serif"
 
     # Build pills (last pill is accent)
@@ -385,7 +386,8 @@ def generate_official_bg_banner(
     badge_label: str,
     title: str,
     subtitle: str,
-    features: list
+    features: list,
+    custom_tag_text: str = None
 ):
     theme = CATEGORY_CONFIGS.get(category_key, CATEGORY_CONFIGS["Job Study Article"])
     bg_file = theme["bg"]
@@ -400,7 +402,8 @@ def generate_official_bg_banner(
         title=title,
         subtitle=subtitle,
         features=features,
-        is_english=is_english
+        is_english=is_english,
+        custom_tag_text=custom_tag_text
     )
 
     temp_html = os.path.join(PROJECT_ROOT, f"temp_{filename}.html")
