@@ -49,16 +49,22 @@ sequenceDiagram
 
 ---
 
-## 📡 3. Google Search Console & Indexing API Submission
-1. **Instant URL Submission**:
+## 📡 3. Google Search Console, Indexing API & Real-Time WebSub Hub Submission
+1. **Instant URL Submission (Google Indexing API)**:
    - Within 60 seconds of updating or publishing any post, call Google Indexing API:
      ```bash
-     python tools/indexer/ping_all_revived.py --url <LIVE_URL>
+     python tools/indexer/index_now.py --url <LIVE_URL>
      ```
    - Target notification type: `URL_UPDATED`.
-2. **Indexing Log Maintenance**:
+2. **Mandatory Real-Time Google WebSub (PubSubHubbub) Hub Pinger (রিয়েল-টাইম ফিড পুশ)**:
+   > [!IMPORTANT]
+   > **গুগল রিয়েল-টাইম ফিড রিডার কল**: যেকোনো নতুন পোস্ট পাবলিশ কিংবা পুরাতন পোস্ট আপডেট করার পর বাধ্যতামূলকভাবে নিচের কমান্ডটি একবার চালাতে হবে। এটি গুগলের অফিসিয়াল সেন্ট্রাল হাবে (`pubsubhubbub.appspot.com`) এবং Superfeedr হাবে তাৎক্ষণিক `HTTP 204` পুশ সিগন্যাল পাঠিয়ে গুগলবটের রিয়েল-টাইম ফিড রিডারকে সেকেন্ডের মধ্যে সাইটে ডেকে আনে:
+   ```bash
+   python tools/indexer/pubsub_hub_pinger.py
+   ```
+3. **Indexing Log Maintenance**:
    - Record the submitted URL, timestamp, and HTTP response code into `tools/indexer/all_fixed_urls.txt`.
-3. **Live Verification**:
+4. **Live Verification**:
    - Run an automated HTTP GET check against the live URL to confirm:
      * HTTP 200 OK status.
      * Correct canonical link header.
