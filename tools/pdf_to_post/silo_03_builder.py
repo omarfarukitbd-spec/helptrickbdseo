@@ -53,9 +53,18 @@ def build_post():
     url = f"{BLOG_BASE}/{slug}.html"
     series_nav = get_series_nav("Part 03")
 
-    # Render 32 Matching Tables HTML
+    # 1. Render 32 Matching Tables HTML & Master Index
+    matching_index_rows = ""
     matching_html = ""
     for item in MATCHING_TABLES_32:
+        m_id = f"match-{item['id']:02d}"
+        matching_index_rows += f"""<tr>
+          <td style="text-align:center; font-weight:700;">{item['id']:02d}</td>
+          <td><a href="#{m_id}" style="color:#0c2340; font-weight:600; text-decoration:none;">{item['title']}</a></td>
+          <td style="font-size:14px; color:#64748b;">{item['board']}</td>
+          <td style="text-align:center;"><a href="#{m_id}" class="htbd-jump-pill">সমাধান দেখুন</a></td>
+        </tr>\n"""
+
         rows_tr = ""
         for i in range(5):
             ca = item["col_a"][i] if i < len(item["col_a"]) else ""
@@ -66,8 +75,11 @@ def build_post():
         sentences_li = "".join([f"<li>{s}</li>" for s in item["sentences"]])
         key_p = f"<p style='margin:4px 0 8px 0; color:#15803d; font-weight:700;'>ম্যাচিং সূত্র (Key): {item.get('key', 'See sentences below')}</p>" if item.get("key") else ""
 
-        matching_html += f"""<div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #0c2340; border-radius:8px; padding:18px 22px; margin-bottom:26px; box-shadow:0 2px 5px rgba(0,0,0,0.04);">
-          <h3 style="margin:0 0 6px 0; color:#0c2340; font-size:18.5px; font-weight:700;">ট্যাবিল {item['id']}: {item['title']}</h3>
+        matching_html += f"""<div id="{m_id}" class="htbd-qa-card" style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #0c2340; border-radius:8px; padding:20px 22px; margin-bottom:26px; box-shadow:0 2px 5px rgba(0,0,0,0.04); scroll-margin-top:80px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:8px;">
+            <h3 style="margin:0; color:#0c2340; font-size:18.5px; font-weight:700;">টেবিল {item['id']:02d}: {item['title']}</h3>
+            <a href="#matching-index" class="htbd-back-btn" title="উপরে ম্যাচিং সূচিতে ফিরে যান">↑ ম্যাচিং সূচি</a>
+          </div>
           <p style="margin:0 0 12px 0; font-size:14px; color:#64748b;"><strong>বোর্ড রেফারেন্স:</strong> {item['board']}</p>
           <div style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin-bottom:14px;">
             <table class="htbd-academic-table" style="margin:0;">
@@ -76,20 +88,55 @@ def build_post():
             </table>
           </div>
           {key_p}
-          <div style="background:#f8fafc; border-left:3px solid #16a34a; padding:10px 16px; border-radius:4px;">
-            <p style="margin:0 0 4px 0; font-weight:700; color:#166534; font-size:15px;">সঠিক ৫টি বাক্য (Complete Meaningful Sentences):</p>
+          <div style="background:#f8fafc; border-left:3px solid #16a34a; padding:12px 16px; border-radius:4px; margin-bottom:12px;">
+            <p style="margin:0 0 6px 0; font-weight:700; color:#166534; font-size:15px;">সঠিক ৫টি বাক্য (Complete Meaningful Sentences):</p>
             <ol style="margin:0; padding-left:20px; font-size:15.5px; line-height:1.75; color:#1e293b;">
               {sentences_li}
             </ol>
           </div>
+          <div style="text-align:right;">
+            <a href="#matching-index" class="htbd-back-text-link">↑ উপরে ম্যাচিং সূচিতে ফিরুন</a>
+          </div>
         </div>\n"""
 
-    # Render 36 Re-arrange Items HTML
+    matching_master_index = f"""<div id="matching-index" class="htbd-master-index-card">
+      <h3 style="margin:0 0 8px 0; color:#0c2340; font-size:19px; font-weight:700;">৩২টি সেন্টেন্স ম্যাচিং টেবিল কুইক ইনডেক্স ও সমাধান জাম্প-লিংক (Quick Navigation)</h3>
+      <p style="margin:0 0 16px 0; font-size:15px; color:#475569;">নিচের যেকোনো টেবিলের শিরোনাম বা "সমাধান দেখুন" বাটনে ক্লিক করে সরাসরি তার প্রশ্ন ও পূর্ণাঙ্গ উত্তরে জাম্প করুন:</p>
+      <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+        <table class="htbd-academic-table" style="font-size:15px; margin:0;">
+          <thead>
+            <tr>
+              <th style="width:50px; text-align:center;">নং</th>
+              <th>টেবিল শিরোনাম ও মূল বিষয় (Topic)</th>
+              <th>বোর্ড রেফারেন্স (Board Reference)</th>
+              <th style="width:140px; text-align:center;">সরাসরি সমাধান</th>
+            </tr>
+          </thead>
+          <tbody>
+            {matching_index_rows}
+          </tbody>
+        </table>
+      </div>
+    </div>"""
+
+    # 2. Render 36 Re-arrange Items HTML & Master Index
+    rearrange_index_rows = ""
     rearrange_html = ""
     for item in REARRANGE_ITEMS_36:
+        r_id = f"rearrange-{item['id']:02d}"
+        rearrange_index_rows += f"""<tr>
+          <td style="text-align:center; font-weight:700;">{item['id']:02d}</td>
+          <td><a href="#{r_id}" style="color:#0369a1; font-weight:600; text-decoration:none;">{item['title']}</a></td>
+          <td style="font-size:14px; color:#64748b;">{item['board']}</td>
+          <td style="text-align:center;"><a href="#{r_id}" class="htbd-jump-pill" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">সিকোয়েন্স দেখুন</a></td>
+        </tr>\n"""
+
         jumbled_li = "".join([f"<li><strong>({k})</strong> {v}</li>" for k, v in item["sentences"].items()])
-        rearrange_html += f"""<div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #0369a1; border-radius:8px; padding:18px 22px; margin-bottom:26px; box-shadow:0 2px 5px rgba(0,0,0,0.04);">
-          <h3 style="margin:0 0 6px 0; color:#0369a1; font-size:18.5px; font-weight:700;">রি-অ্যারেঞ্জ {item['id']}: {item['title']}</h3>
+        rearrange_html += f"""<div id="{r_id}" class="htbd-qa-card" style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #0369a1; border-radius:8px; padding:20px 22px; margin-bottom:26px; box-shadow:0 2px 5px rgba(0,0,0,0.04); scroll-margin-top:80px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:8px;">
+            <h3 style="margin:0; color:#0369a1; font-size:18.5px; font-weight:700;">রি-অ্যারেঞ্জ {item['id']:02d}: {item['title']}</h3>
+            <a href="#rearrange-index" class="htbd-back-btn" title="উপরে রি-অ্যারেঞ্জ সূচিতে ফিরে যান">↑ রি-অ্যারেঞ্জ সূচি</a>
+          </div>
           <p style="margin:0 0 12px 0; font-size:14px; color:#64748b;"><strong>উৎস ও বোর্ড:</strong> {item['board']}</p>
           <p style="margin:0 0 6px 0; font-weight:600; color:#334155;">এলোমেলো ৮টি বাক্য (Jumbled Sentences a-h):</p>
           <ul style="list-style:none; padding-left:0; margin:0 0 14px 0; font-size:15px; line-height:1.7; color:#475569;">
@@ -98,11 +145,66 @@ def build_post():
           <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:6px; margin-bottom:12px;">
             <p style="margin:0; color:#166534; font-weight:700; font-size:15px;">ধারাবাহিক ক্রম (Sequence Key): <span style="font-family:monospace; font-size:16px;">{item['key']}</span></p>
           </div>
-          <div style="background:#f8fafc; border-left:3px solid #0284c7; padding:12px 16px; border-radius:4px;">
+          <div style="background:#f8fafc; border-left:3px solid #0284c7; padding:12px 16px; border-radius:4px; margin-bottom:12px;">
             <p style="margin:0 0 4px 0; font-weight:700; color:#0369a1; font-size:15px;">সাজানো পূর্ণাঙ্গ অনুচ্ছেদ (Coherent Paragraph):</p>
             <p style="margin:0; font-size:16px; line-height:1.8; color:#1e293b;">{item['paragraph']}</p>
           </div>
+          <div style="text-align:right;">
+            <a href="#rearrange-index" class="htbd-back-text-link">↑ উপরে রি-অ্যারেঞ্জ সূচিতে ফিরুন</a>
+          </div>
         </div>\n"""
+
+    rearrange_master_index = f"""<div id="rearrange-index" class="htbd-master-index-card">
+      <h3 style="margin:0 0 8px 0; color:#0369a1; font-size:19px; font-weight:700;">৩৬টি রি-অ্যারেঞ্জিং অনুচ্ছেদ কুইক ইনডেক্স ও সিকোয়েন্স জাম্প-লিংক (Quick Navigation)</h3>
+      <p style="margin:0 0 16px 0; font-size:15px; color:#475569;">নিচের যেকোনো গল্পের শিরোনাম বা "সিকোয়েন্স দেখুন" বাটনে ক্লিক করে সরাসরি তার ৮টি এলোমেলো বাক্য, সমাধান কি এবং পূর্ণাঙ্গ প্যারাগ্রাফে জাম্প করুন:</p>
+      <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+        <table class="htbd-academic-table" style="font-size:15px; margin:0;">
+          <thead>
+            <tr>
+              <th style="width:50px; text-align:center;">নং</th>
+              <th>গল্প / চরিত্র / মূল বিষয় (Topic)</th>
+              <th>বোর্ড ও প্রেক্ষাপট (Board Reference)</th>
+              <th style="width:140px; text-align:center;">সরাসরি সমাধান</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rearrange_index_rows}
+          </tbody>
+        </table>
+      </div>
+    </div>"""
+
+    # 3. Build Rich Schema.org FAQPage JSON-LD for Google Rich Results
+    schema_questions = [
+        {"@type": "Question", "name": "Is writing full sentences required in Q6 Matching Table?", "acceptedAnswer": {"@type": "Answer", "text": "Writing the code formula along with the full sentence ensures you receive full credit without ambiguity."}},
+        {"@type": "Question", "name": "Should I write both sequence table and coherent paragraph in Q7 Re-arrange?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, drawing the sequence box followed by the coherent written paragraph is the standard board presentation."}},
+        {"@type": "Question", "name": "What happens if one sentence order is mixed up in re-arrange?", "acceptedAnswer": {"@type": "Answer", "text": "Each correctly positioned sentence earns 1 mark, so you do not lose all 8 marks for a single displacement."}}
+    ]
+
+    for item in MATCHING_TABLES_32[:10]:
+        ans_text = " ".join([f"{idx+1}. {s}" for idx, s in enumerate(item['sentences'])])
+        schema_questions.append({
+            "@type": "Question",
+            "name": f"SSC English Sentence Matching Table: {item['title']} ({item['board']})",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f"Matching Formula: {item.get('key', '')}. Solution: {ans_text}"
+            }
+        })
+
+    for item in REARRANGE_ITEMS_36[:10]:
+        schema_questions.append({
+            "@type": "Question",
+            "name": f"SSC English Rearrange Story: {item['title']} ({item['board']})",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f"Sequence Key: {item['key']}. Solved Paragraph: {item['paragraph']}"
+            }
+        })
+
+    faq_script = f"""<script type="application/ld+json">
+{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": schema_questions}, ensure_ascii=False, indent=2)}
+</script>"""
 
     # Render Dakhil 2026 Matching Rows
     dakhil_match_rows = ""
@@ -274,6 +376,68 @@ def build_post():
     display: block !important;
     margin: 0 0 20px 0 !important;
   }}
+  html {{
+    scroll-behavior: smooth !important;
+  }}
+  .htbd-jump-pill {{
+    display: inline-block !important;
+    background: #f1f5f9 !important;
+    color: #0c2340 !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 4px 10px !important;
+    border-radius: 16px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease-in-out !important;
+    white-space: nowrap !important;
+  }}
+  .htbd-jump-pill:hover {{
+    background: #0c2340 !important;
+    color: #ffffff !important;
+    border-color: #0c2340 !important;
+    box-shadow: 0 2px 6px rgba(12,35,64,0.18) !important;
+  }}
+  .htbd-back-btn {{
+    display: inline-block !important;
+    font-size: 12.5px !important;
+    color: #64748b !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 4px !important;
+    padding: 3px 8px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+  }}
+  .htbd-back-btn:hover {{
+    color: #0c2340 !important;
+    border-color: #94a3b8 !important;
+    background: #ffffff !important;
+  }}
+  .htbd-back-text-link {{
+    display: inline-block !important;
+    font-size: 13.5px !important;
+    color: #0284c7 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }}
+  .htbd-back-text-link:hover {{
+    text-decoration: underline !important;
+    color: #0369a1 !important;
+  }}
+  .htbd-qa-card:target {{
+    border-left-color: #d4af37 !important;
+    background: #fffdf5 !important;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.25), 0 4px 14px rgba(0,0,0,0.08) !important;
+    transition: all 0.3s ease-in-out !important;
+  }}
+  .htbd-master-index-card {{
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 18px 20px !important;
+    margin: 20px 0 28px 0 !important;
+  }}
 </style>
 
 <div class="htbd-academic-container">
@@ -358,10 +522,12 @@ def build_post():
 
   <h2 class="htbd-academic-heading" id="all-matching">৪. ৩২টি পূর্ণাঙ্গ ম্যাচিং টেবিল ও সমাধান (All 32 Matching Tables for SSC 2027)</h2>
   <p>নিচে জাতীয় শিক্ষাক্রমের পূর্ণাঙ্গ পাঠ্য ও বিগত বোর্ড পরীক্ষার ৩২টি ৩-কলাম ম্যাচিং টেবিল এবং প্রতিটি টেবিলের সঠিক ৫টি বাক্য সমাধানসহ দেওয়া হলো:</p>
+  {matching_master_index}
   {matching_html}
 
   <h2 class="htbd-academic-heading" id="all-rearrange">৫. ৩৬টি পূর্ণাঙ্গ রি-অ্যারেঞ্জিং অনুচ্ছেদ ও সিকোয়েন্স কি (All 36 Re-arrange Items for SSC 2027)</h2>
   <p>নিচে এসএসসি ও দাখিল ২০২৭-এর জন্য ৩৬টি গুরুত্বপূর্ণ ঐতিহাসিক, রূপকথা ও শিক্ষণীয় গল্পের রি-অ্যারেঞ্জিং জ্যাম্বলড বাক্য, সিকোয়েন্স কি এবং পূর্ণাঙ্গ সাজানো অনুচ্ছেদ দেওয়া হলো:</p>
+  {rearrange_master_index}
   {rearrange_html}
 
   <h2 class="htbd-academic-heading" id="model-dakhil">৬. মডেল পরীক্ষা ০১: দাখিল ২০২৬ বোর্ড প্রশ্ন ও সমাধান (Michael Madhusudan & Beggar)</h2>
@@ -456,17 +622,7 @@ def build_post():
   "dateModified": "2026-09-17T02:00:00+06:00"
 }}
 </script>
-<script type="application/ld+json">
-{{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {{"@type": "Question", "name": "Is writing full sentences required in Q6 Matching Table?", "acceptedAnswer": {{"@type": "Answer", "text": "Writing the code formula along with the full sentence ensures you receive full credit without ambiguity."}}}},
-    {{"@type": "Question", "name": "Should I write both sequence table and coherent paragraph in Q7 Re-arrange?", "acceptedAnswer": {{"@type": "Answer", "text": "Yes, drawing the sequence box followed by the coherent written paragraph is the standard board presentation."}}}},
-    {{"@type": "Question", "name": "What happens if one sentence order is mixed up in re-arrange?", "acceptedAnswer": {{"@type": "Answer", "text": "Each correctly positioned sentence earns 1 mark, so you do not lose all 8 marks for a single displacement."}}}}
-  ]
-}}
-</script>
+{faq_script}
 """
     meta = {
         "title": title,
