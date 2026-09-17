@@ -159,7 +159,7 @@ The Blogger theme’s base XML and dynamic tags belong to Google LLC. All custom
 <Variable name="body.text.color" description="Body Text Color" hideEditor="true" type="color" default="#6d6d6d" value="#6d6d6d"/>
 <Variable name="body.title.color" description="Comments Color" hideEditor="true" type="color" default="#1f2937" value="#1f2937"/>
 <Variable name="body.link.color" description="Body Link Color" hideEditor="true" type="color" default="#6d6d6d" value="#6d6d6d"/>
-<Variable name="body.action.font.large" description="Comments Font 2" hideEditor="true" type="font" default="normal 700 14px Arial, sans-serif" value="normal 700 14px Arial, sans-serif"/>
+<Variable name="body.action.font.large" description="Comments Font 2" hideEditor="true" type="font" default="normal 700 14px Arial, sans-serif !important" value="normal 700 14px, Arial, sans-serif !important"/>
 */
 /*-- Google Raleway Font Family --*/
 @font-face{font-family:'Raleway';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v26/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLDr4fIA9c.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
@@ -1492,486 +1492,71 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   }
 
   /* ==========================================================================
-     HelpTrickBD Universal Dark Mode Post Contrast & Inversion Engine (Master v3.0)
-     100% Coverage across all 94 Live Posts:
-     - Overrides all 1,328 light-background containers, cards & boxes
-     - Overrides all 1,595 inline dark-text elements (p, span, td, headings, a)
-     - Overrides all 819 post-embedded <style> tags & high-specificity rules
-     - Adapts all tables, zebra rows, FAQs, badges, code & reading progress bar
+     HelpTrickBD Universal Dark Mode Post Contrast & Inversion Engine
+     Fixes: Callouts, TOC, Summary boxes, Badges, Tables, Headings & Inline Styles
      ========================================================================== */
-
-  /* 1. Base Post Body & General Text Contrast */
   .dark .post-body,
-  .dark .entry-content,
-  body.dark .post-body,
-  #mainContent.dark .post-body,
-  #mainContent.dark .post-body .htbd-post-wrapper {
+  .dark .entry-content {
     color: #cbd5e1 !important;
   }
 
-  /* 2. All Headings inside Posts (Crisp Pure White) */
   .dark .post-body h1,
   .dark .post-body h2,
   .dark .post-body h3,
   .dark .post-body h4,
   .dark .post-body h5,
-  .dark .post-body h6,
-  .dark .post-body .htbd-heading,
-  .dark .post-body .htbd-academic-heading,
-  .dark .post-body .htbd-academic-subheading,
-  .dark .post-body h1[style*="color"],
-  .dark .post-body h2[style*="color"],
-  .dark .post-body h3[style*="color"],
-  .dark .post-body h4[style*="color"],
-  body.dark .post-body h1,
-  body.dark .post-body h2,
-  body.dark .post-body h3,
-  body.dark .post-body h4,
-  body.dark .post-body .htbd-heading,
-  #mainContent.dark .post-body h1,
-  #mainContent.dark .post-body h2,
-  #mainContent.dark .post-body h3,
-  #mainContent.dark .post-body h4,
-  #mainContent.dark .post-body h5,
-  #mainContent.dark .post-body h6,
-  #mainContent.dark .post-body .htbd-heading,
-  #mainContent.dark .post-body .htbd-academic-heading,
-  #mainContent.dark .post-body .htbd-academic-subheading {
+  .dark .post-body h6 {
     color: #ffffff !important;
   }
 
-  /* 3. All Paragraphs, Lists & Normal Content (Readable Light Slate) */
   .dark .post-body p,
-  .dark .post-body li,
-  .dark .post-body .htbd-post-wrapper p,
-  .dark .post-body p[style*="color"],
-  .dark .post-body li[style*="color"],
-  body.dark .post-body p,
-  body.dark .post-body li,
-  #mainContent.dark .post-body p,
-  #mainContent.dark .post-body li,
-  #mainContent.dark .post-body .htbd-post-wrapper p,
-  #mainContent.dark .post-body p[style*="color"],
-  #mainContent.dark .post-body li[style*="color"] {
+  .dark .post-body li {
     color: #cbd5e1 !important;
   }
 
-  /* 4. Strong, Bold & Emphasis Elements */
   .dark .post-body strong,
-  .dark .post-body b,
-  .dark .post-body strong[style*="color"],
-  .dark .post-body b[style*="color"],
-  body.dark .post-body strong,
-  body.dark .post-body b,
-  #mainContent.dark .post-body strong,
-  #mainContent.dark .post-body b,
-  #mainContent.dark .post-body strong[style*="color"],
-  #mainContent.dark .post-body b[style*="color"] {
+  .dark .post-body b {
     color: #ffffff !important;
   }
 
-  /* 5. In-body Spans, Divs, Small & Fonts with hardcoded dark text */
-  .dark .post-body span[style*="color: #"],
-  .dark .post-body span[style*="color:#"],
-  .dark .post-body span[style*="color: rgb"],
-  .dark .post-body div[style*="color: #"],
-  .dark .post-body div[style*="color:#"],
-  .dark .post-body font,
-  #mainContent.dark .post-body span[style*="color: #"],
-  #mainContent.dark .post-body span[style*="color:#"],
-  #mainContent.dark .post-body span[style*="color: rgb"],
-  #mainContent.dark .post-body div[style*="color: #"],
-  #mainContent.dark .post-body div[style*="color:#"],
-  #mainContent.dark .post-body font {
-    color: #cbd5e1 !important;
-  }
-
-  /* 6. Universal Dark Mode Container & Box Inversion (All 1,328 Light Boxes) */
-  .dark .post-body .htbd-toc-box,
-  .dark .post-body .htbd-toc-card,
-  .dark .post-body .ht-toc-container,
-  .dark .post-body .tociki-pro,
-  .dark .post-body .tociki-inner,
-  .dark .post-body .htbd-qbox,
-  .dark .post-body .htbd-link-box,
-  .dark .post-body .htbd-highlight-box,
-  .dark .post-body .htbd-overview-box,
-  .dark .post-body .htbd-quote-box,
-  .dark .post-body .htbd-note-box,
-  .dark .post-body .htbd-tip-box,
-  .dark .post-body .htbd-tip-card,
-  .dark .post-body .htbd-warning-box,
-  .dark .post-body .htbd-hadith-box,
-  .dark .post-body .htbd-draft-box,
-  .dark .post-body .htbd-silo-box,
-  .dark .post-body .htbd-academic-container,
-  .dark .post-body .htbd-qa-card,
-  .dark .post-body .htbd-exam-card,
-  .dark .post-body .htbd-download-card,
-  .dark .post-body .htbd-lyrics-card,
-  .dark .post-body .htbd-master-index-card,
-  .dark .post-body .htbd-passage-box,
-  .dark .post-body .htbd-devotional,
-  .dark .post-body .htbd-tutorial-step-card,
-  .dark .post-body .htbd-series-nav,
-  .dark .post-body .answer-box,
-  .dark .post-body .calc-box,
-  .dark .post-body .calendar-info-box,
-  .dark .post-body .expert-box,
-  .dark .post-body .highlight-box,
-  .dark .post-body .internal-link-box,
-  .dark .post-body .read-also-box,
-  .dark .post-body .cta-box,
-  .dark .post-body .series-box,
-  .dark .post-body .ht-bagdhara-wrapper,
-  .dark .post-body .bagdhara-col,
-  .dark .post-body .ht-meta-engagement-badge,
-  .dark .post-body .htbd-custom-404-container,
-  .dark .post-body [class*="toc-box"],
-  .dark .post-body [class*="toc-card"],
-  .dark .post-body [class*="toc-container"],
-  .dark .post-body [class*="-card"],
-  .dark .post-body [class*="-box"],
-  .dark .post-body [id*="toc"],
+  /* Automatically adapt all inline light background containers into clean dark cards */
   .dark .post-body div[style*="background"],
   .dark .post-body section[style*="background"],
-  .dark .post-body aside[style*="background"],
-  .dark .post-body nav[style*="background"],
-  .dark .post-body p[style*="background"],
-  .dark .post-body blockquote[style*="background"],
-  body.dark .post-body .htbd-toc-box,
-  body.dark .post-body .ht-toc-container,
-  body.dark .post-body .htbd-qa-card,
-  body.dark .post-body [class*="toc"],
-  #mainContent.dark .post-body .htbd-toc-box,
-  #mainContent.dark .post-body .htbd-toc-card,
-  #mainContent.dark .post-body .ht-toc-container,
-  #mainContent.dark .post-body .tociki-pro,
-  #mainContent.dark .post-body .htbd-qbox,
-  #mainContent.dark .post-body .htbd-link-box,
-  #mainContent.dark .post-body .htbd-highlight-box,
-  #mainContent.dark .post-body .htbd-overview-box,
-  #mainContent.dark .post-body .htbd-note-box,
-  #mainContent.dark .post-body .htbd-tip-box,
-  #mainContent.dark .post-body .htbd-warning-box,
-  #mainContent.dark .post-body .htbd-qa-card,
-  #mainContent.dark .post-body .htbd-series-nav,
-  #mainContent.dark .post-body .htbd-silo-box,
-  #mainContent.dark .post-body .answer-box,
-  #mainContent.dark .post-body .expert-box,
-  #mainContent.dark .post-body .calc-box,
-  #mainContent.dark .post-body .calendar-info-box,
-  #mainContent.dark .post-body .highlight-box,
-  #mainContent.dark .post-body .internal-link-box,
-  #mainContent.dark .post-body .ht-bagdhara-wrapper,
-  #mainContent.dark .post-body .htbd-tutorial-step-card,
-  #mainContent.dark .post-body [class*="toc"],
-  #mainContent.dark .post-body [class*="-card"],
-  #mainContent.dark .post-body [class*="-box"],
-  #mainContent.dark .post-body div[style*="background"],
-  #mainContent.dark .post-body section[style*="background"],
-  #mainContent.dark .post-body p[style*="background"],
-  #mainContent.dark .post-body blockquote[style*="background"] {
+  .dark .post-body .htbd-qbox,
+  .dark .post-body .htbd-link-box,
+  .dark .post-body .ht-meta-engagement-badge,
+  .dark .post-body .ht-toc-container,
+  .dark .post-body .htbd-custom-404-container {
     background: #1e293b !important;
-    border: 1px solid #334155 !important;
     border-color: #334155 !important;
     color: #f1f5f9 !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3) !important;
   }
 
-  /* 7. Text & Child Elements inside all Inverted Boxes */
-  .dark .post-body .htbd-toc-box *,
-  .dark .post-body .ht-toc-container *,
-  .dark .post-body .htbd-qa-card *,
-  .dark .post-body .htbd-qbox *,
-  .dark .post-body .htbd-link-box *,
-  .dark .post-body .htbd-highlight-box *,
-  .dark .post-body .htbd-overview-box *,
-  .dark .post-body .htbd-note-box *,
-  .dark .post-body .htbd-tip-box *,
-  .dark .post-body .htbd-series-nav *,
-  .dark .post-body .internal-link-box *,
-  .dark .post-body .answer-box *,
-  .dark .post-body .expert-box *,
-  .dark .post-body .calc-box *,
-  .dark .post-body .calendar-info-box *,
-  .dark .post-body [class*="toc"] *,
-  .dark .post-body [class*="-card"] *,
-  .dark .post-body [class*="-box"] *,
   .dark .post-body div[style*="background"] *,
-  .dark .post-body section[style*="background"] *,
-  body.dark .post-body .htbd-toc-box *,
-  body.dark .post-body [class*="toc"] *,
-  #mainContent.dark .post-body .htbd-toc-box *,
-  #mainContent.dark .post-body .ht-toc-container *,
-  #mainContent.dark .post-body .htbd-qa-card *,
-  #mainContent.dark .post-body [class*="toc"] *,
-  #mainContent.dark .post-body [class*="-card"] *,
-  #mainContent.dark .post-body [class*="-box"] * {
+  .dark .post-body .ht-meta-engagement-badge *,
+  .dark .post-body .ht-toc-container * {
     color: #f1f5f9 !important;
   }
 
-  /* 8. Headings & Titles inside Inverted Boxes (Crisp White + Slate Divider) */
-  .dark .post-body .htbd-toc-box h1,
-  .dark .post-body .htbd-toc-box h2,
-  .dark .post-body .htbd-toc-box h3,
-  .dark .post-body .htbd-toc-box h4,
-  .dark .post-body .ht-toc-container div,
-  .dark .post-body .tociki-title-text,
-  .dark .post-body .toc-title,
-  .dark .post-body .calendar-title,
-  .dark .post-body [class*="toc"] h1,
-  .dark .post-body [class*="toc"] h2,
-  .dark .post-body [class*="toc"] h3,
-  .dark .post-body [class*="toc"] h4,
-  .dark .post-body [class*="toc"] [class*="title"],
-  .dark .post-body .htbd-qbox h1,
-  .dark .post-body .htbd-qbox h2,
-  .dark .post-body .htbd-qbox h3,
-  .dark .post-body .htbd-qa-card h3,
-  .dark .post-body .htbd-qa-card h4,
-  .dark .post-body .htbd-link-box strong,
-  .dark .post-body .internal-link-box strong,
-  .dark .post-body div[style*="background"] h1,
-  .dark .post-body div[style*="background"] h2,
-  .dark .post-body div[style*="background"] h3,
-  body.dark .post-body .htbd-toc-box h3,
-  body.dark .post-body [class*="toc"] h3,
-  #mainContent.dark .post-body .htbd-toc-box h3,
-  #mainContent.dark .post-body .ht-toc-container div,
-  #mainContent.dark .post-body .htbd-qa-card h3,
-  #mainContent.dark .post-body .htbd-qa-card h4,
-  #mainContent.dark .post-body [class*="toc"] h3 {
-    color: #ffffff !important;
-    border-bottom: 2px solid #334155 !important;
-    border-bottom-color: #334155 !important;
-  }
-
-  /* 9. Dashed Separators in Lists & TOCs */
-  .dark .post-body .htbd-toc-list li,
-  .dark .post-body [class*="toc"] li,
-  .dark .post-body [id*="toc"] li,
-  body.dark .post-body .htbd-toc-list li,
-  #mainContent.dark .post-body .htbd-toc-list li,
-  #mainContent.dark .post-body [class*="toc"] li {
-    border-bottom: 1px dashed #334155 !important;
-    border-color: #334155 !important;
-    color: #cbd5e1 !important;
-  }
-  .dark .post-body .htbd-toc-list li:last-child,
-  .dark .post-body [class*="toc"] li:last-child {
-    border-bottom: none !important;
-  }
-
-  /* 10. Links inside TOC, Callouts & Body (Vibrant Sky Blue #38bdf8) */
-  .dark .post-body a,
-  .dark .post-body .htbd-toc-box a,
-  .dark .post-body .htbd-toc-list li a,
-  .dark .post-body .ht-toc-container a,
-  .dark .post-body .tociki-pro a,
-  .dark .post-body [class*="toc"] a,
-  .dark .post-body [id*="toc"] a,
-  .dark .post-body .htbd-link-box a,
-  .dark .post-body .internal-link-box a,
-  .dark .post-body .htbd-qa-card a,
-  .dark .post-body a[style*="color"],
   .dark .post-body div[style*="background"] a,
-  .dark .post-body section[style*="background"] a,
-  body.dark .post-body .htbd-toc-box a,
-  body.dark .post-body [class*="toc"] a,
-  #mainContent.dark .post-body a,
-  #mainContent.dark .post-body a[style*="color"],
-  #mainContent.dark .post-body .htbd-toc-box a,
-  #mainContent.dark .post-body .htbd-toc-list li a,
-  #mainContent.dark .post-body .ht-toc-container a,
-  #mainContent.dark .post-body [class*="toc"] a,
-  #mainContent.dark .post-body .htbd-link-box a,
-  #mainContent.dark .post-body .internal-link-box a,
-  #mainContent.dark .post-body .htbd-qa-card a {
-    color: #38bdf8 !important;
-  }
-  .dark .post-body a:hover,
-  .dark .post-body .htbd-toc-box a:hover,
-  .dark .post-body .htbd-toc-list li a:hover,
-  .dark .post-body .ht-toc-container a:hover,
-  .dark .post-body [class*="toc"] a:hover,
-  .dark .post-body .htbd-link-box a:hover,
-  .dark .post-body .internal-link-box a:hover,
-  .dark .post-body .htbd-qa-card a:hover,
-  .dark .post-body div[style*="background"] a:hover,
-  #mainContent.dark .post-body a:hover,
-  #mainContent.dark .post-body .htbd-toc-box a:hover,
-  #mainContent.dark .post-body .htbd-toc-list li a:hover {
-    color: #7dd3fc !important;
-  }
-
-  /* 11. Subtitles, Notes and Helper Labels */
-  .dark .post-body .ht-toc-container span[style*="color: #64748b"],
-  .dark .post-body [class*="toc"] span[style*="color: #64748b"],
-  .dark .post-body .htbd-toc-box span,
-  .dark .post-body [class*="toc"] span,
-  .dark .post-body .expert-text,
-  .dark .post-body .cta-text {
-    color: #94a3b8 !important;
-  }
-
-  /* 12. Badges, Chips & Meta Spans in Dark Mode */
-  .dark .post-body span[style*="background"],
-  .dark .post-body .ht-meta-engagement-badge span[style*="background"],
-  .dark .post-body .htbd-badge,
-  .dark .post-body .badge,
-  .dark .post-body .htbd-jump-pill,
-  body.dark .post-body span[style*="background"],
-  #mainContent.dark .post-body span[style*="background"],
-  #mainContent.dark .post-body .htbd-badge,
-  #mainContent.dark .post-body .badge,
-  #mainContent.dark .post-body .htbd-jump-pill {
-    background: rgba(15, 23, 42, 0.7) !important;
-    border: 1px solid #334155 !important;
+  .dark .post-body .ht-toc-container a {
     color: #38bdf8 !important;
   }
 
-  /* Green Version & Update Badges in Dark Mode */
-  .dark .post-body span[style*="#ecfdf5"],
-  .dark .post-body span[style*="#047857"],
-  .dark .post-body span[style*="16a34a"],
-  #mainContent.dark .post-body span[style*="#ecfdf5"] {
-    background: rgba(16, 185, 129, 0.18) !important;
-    border: 1px solid rgba(16, 185, 129, 0.4) !important;
-    color: #34d399 !important;
-  }
-
-  /* Blue Notice Badges in Dark Mode */
-  .dark .post-body span[style*="#e8f0fe"],
-  .dark .post-body span[style*="#1a73e8"],
-  .dark .post-body span[style*="#0284c7"],
-  #mainContent.dark .post-body span[style*="#e8f0fe"] {
-    background: rgba(2, 132, 199, 0.2) !important;
-    border: 1px solid rgba(2, 132, 199, 0.4) !important;
-    color: #38bdf8 !important;
-  }
-
-  /* 13. Tables inside posts (Header, zebra-striping, borders & cells) */
-  .dark .post-body table,
-  .dark .post-body .htbd-table,
-  .dark .post-body .htbd-academic-table,
-  .dark .post-body .post-table,
-  .dark .post-body table[style*="background"],
-  body.dark .post-body table,
-  #mainContent.dark .post-body table,
-  #mainContent.dark .post-body .htbd-table,
-  #mainContent.dark .post-body .htbd-academic-table {
+  /* Tables inside posts */
+  .dark .post-body table {
     background: #1e293b !important;
     border-color: #334155 !important;
   }
-  .dark .post-body table th,
-  .dark .post-body .htbd-table th,
-  .dark .post-body .htbd-academic-table th,
-  body.dark .post-body table th,
-  #mainContent.dark .post-body table th,
-  #mainContent.dark .post-body .htbd-table th {
+  .dark .post-body table th {
     background: #0f172a !important;
     color: #38bdf8 !important;
     border-color: #334155 !important;
   }
-  .dark .post-body table td,
-  .dark .post-body .htbd-table td,
-  .dark .post-body .htbd-academic-table td,
-  .dark .post-body td[style*="background"],
-  .dark .post-body td[style*="color"],
-  body.dark .post-body table td,
-  #mainContent.dark .post-body table td,
-  #mainContent.dark .post-body .htbd-table td {
+  .dark .post-body table td {
     background: #1e293b !important;
     color: #cbd5e1 !important;
     border-color: #334155 !important;
-  }
-  .dark .post-body table tr,
-  .dark .post-body table tr:nth-child(even),
-  .dark .post-body table tr:nth-child(odd),
-  .dark .post-body .htbd-table tr:nth-child(even),
-  .dark .post-body tr[style*="background"],
-  body.dark .post-body table tr,
-  body.dark .post-body table tr:nth-child(even),
-  #mainContent.dark .post-body table tr,
-  #mainContent.dark .post-body table tr:nth-child(even),
-  #mainContent.dark .post-body .htbd-table tr:nth-child(even) {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
-  }
-  .dark .post-body table tr:nth-child(even) td,
-  body.dark .post-body table tr:nth-child(even) td,
-  #mainContent.dark .post-body table tr:nth-child(even) td {
-    background-color: #1e293b !important;
-  }
-  .dark .post-body table td strong,
-  .dark .post-body .htbd-table td strong,
-  body.dark .post-body table td strong,
-  #mainContent.dark .post-body table td strong {
-    color: #ffffff !important;
-  }
-
-  /* 14. FAQ Accordion & Items in Dark Mode */
-  .dark .post-body .htbd-faq-item,
-  .dark .post-body .faq-item,
-  body.dark .post-body .htbd-faq-item,
-  #mainContent.dark .post-body .htbd-faq-item,
-  #mainContent.dark .post-body .faq-item {
-    border-bottom-color: #334155 !important;
-    background: transparent !important;
-  }
-  .dark .post-body .htbd-faq-q,
-  .dark .post-body .faq-question,
-  body.dark .post-body .htbd-faq-q,
-  #mainContent.dark .post-body .htbd-faq-q,
-  #mainContent.dark .post-body .faq-question {
-    color: #38bdf8 !important;
-  }
-  .dark .post-body .htbd-faq-a,
-  .dark .post-body .faq-answer,
-  body.dark .post-body .htbd-faq-a,
-  #mainContent.dark .post-body .htbd-faq-a,
-  #mainContent.dark .post-body .faq-answer {
-    color: #cbd5e1 !important;
-  }
-
-  /* 15. Code Blocks, Pre, Blockquotes & Alerts */
-  .dark .post-body pre,
-  .dark .post-body code,
-  .dark .post-body pre.code-box,
-  #mainContent.dark .post-body pre,
-  #mainContent.dark .post-body code {
-    background: #0f172a !important;
-    border-color: #334155 !important;
-    color: #f1f5f9 !important;
-  }
-  .dark .post-body blockquote,
-  #mainContent.dark .post-body blockquote {
-    background: #1e293b !important;
-    border-left-color: #38bdf8 !important;
-    color: #cbd5e1 !important;
-  }
-  .dark .post-body .alert-message,
-  .dark .post-body .alert-info,
-  .dark .post-body .alert-success,
-  .dark .post-body .alert-warning,
-  .dark .post-body .alert-error,
-  #mainContent.dark .post-body .alert-message {
-    background: #1e293b !important;
-    border-color: #334155 !important;
-    color: #f1f5f9 !important;
-  }
-
-  /* 16. Reading Progress Bar & Image Captions */
-  .dark #ht-reading-progress-container,
-  body.dark #ht-reading-progress-container,
-  #mainContent.dark #ht-reading-progress-container {
-    background: rgba(30, 41, 59, 0.7) !important;
-  }
-  .dark .post-body figcaption,
-  .dark .post-body span[style*="font-style: italic"],
-  #mainContent.dark .post-body figcaption {
-    color: #94a3b8 !important;
   }
 
   /* 3. Featured Image Overlay Titles & Metadata (Crisp White on Dark Cards) */
@@ -2468,7 +2053,7 @@ disqusShortname = "templateiki";
             <div class='copy-section'>
                 <span class='title'><data:messages.copy/> <data:messages.postLink/></span>
                 <div class='copy-post'>
-                    <input expr:value='data:blog.url.canonical' id='showlink' readonly='readonly'/><button expr:aria-label='data:messages.copy'><data:messages.copy/></button>
+                    <input expr:value='data:blog.url.canonical' id='showlink' readonly='readonly'/><button aria-expr:aria-label='data:messages.copy'><data:messages.copy/></button>
                     <div class='messageDone' id='messageDone'/>
                 </div>
             </div>

@@ -283,6 +283,32 @@ class PreFlightChecker:
         else:
             self.passed.append("Share Box: No redundant custom share boxes detected, theme native share preserved (PASSED)")
 
+    def check_bi_modal_dark_light_css(self):
+        """Rule 01 (Sec 10): Mandatory Bi-Modal (Light & Dark) CSS & Styling Compliance"""
+        styles = self.soup.find_all('style')
+        for idx, style in enumerate(styles):
+            style_content = style.get_text()
+            has_bg_or_color = bool(re.search(r'(background|background-color|color)\s*:', style_content, re.IGNORECASE))
+            has_dark_rule = bool(re.search(r'(\.dark|#mainContent\.dark|\[data-theme="dark"\])', style_content))
+            
+            if has_bg_or_color and not has_dark_rule:
+                self.errors.append(f"Bi-Modal Styling: CRITICAL! Embedded <style> tag #{idx+1} defines background/color but lacks mandatory .dark mode overrides! All post CSS must look perfect in both Light and Dark mode.")
+                return
+
+        suspicious_inline = 0
+        for tag in self.soup.find_all(['div', 'section', 'article', 'aside', 'p', 'table', 'blockquote']):
+            style_attr = tag.get('style', '')
+            if style_attr:
+                is_light_bg = bool(re.search(r'background(-color)?\s*:\s*(#ffffff|#fff|white|#f8fafc|#f1f5f9|#f3f4f6|#f9fafb|#fafafa|#e2e8f0)', style_attr, re.IGNORECASE))
+                is_dark_txt = bool(re.search(r'(^|;\s*)color\s*:\s*(#000|#000000|black|#111|#1e293b|#333|#222|#1f2937)', style_attr, re.IGNORECASE))
+                if is_light_bg and is_dark_txt:
+                    suspicious_inline += 1
+
+        if suspicious_inline > 3:
+            self.warnings.append(f"Bi-Modal Styling: Detected {suspicious_inline} elements with hardcoded light-bg inline styles. Ensure they have matching .dark overrides or use classes.")
+        else:
+            self.passed.append("Bi-Modal Styling: Light & Dark mode dual compatibility verified (PASSED)")
+
     def check_search_description(self):
         """Rule 20: Mandatory Search Description optimal length check (Max 150 chars for Blogger)"""
         meta_desc = self.metadata.get('search_description') or self.metadata.get('meta_description', '')
@@ -307,6 +333,7 @@ class PreFlightChecker:
         self.check_zero_emojis()
         self.check_no_redundant_share_box()
         self.check_theme_native_css_and_bloat()
+        self.check_bi_modal_dark_light_css()
         self.check_search_description()
         
         return len(self.errors) == 0

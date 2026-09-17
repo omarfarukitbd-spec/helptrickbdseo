@@ -355,5 +355,68 @@ As seen in `secularism-vs-islamic-values-in.html`, every authoritative post uses
     border-left: 4px solid #0b2046;
     border-radius: 8px;
   }
+
+  /* MANDATORY BI-MODAL DARK MODE ADAPTATION */
+  .dark .htbd-academic-heading,
+  #mainContent.dark .htbd-academic-heading {
+    color: #ffffff !important;
+    border-left-color: #38bdf8 !important;
+  }
+  .dark .htbd-academic-subheading,
+  #mainContent.dark .htbd-academic-subheading {
+    color: #38bdf8 !important;
+  }
+  .dark .htbd-overview-box,
+  .dark .htbd-toc-card,
+  .dark .htbd-exam-card,
+  .dark .htbd-silo-box,
+  #mainContent.dark .htbd-overview-box,
+  #mainContent.dark .htbd-toc-card,
+  #mainContent.dark .htbd-exam-card,
+  #mainContent.dark .htbd-silo-box {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+  }
+  .dark .htbd-overview-box *,
+  .dark .htbd-toc-card *,
+  .dark .htbd-exam-card *,
+  .dark .htbd-silo-box *,
+  #mainContent.dark .htbd-overview-box *,
+  #mainContent.dark .htbd-toc-card *,
+  #mainContent.dark .htbd-exam-card *,
+  #mainContent.dark .htbd-silo-box * {
+    color: inherit !important;
+  }
+  .dark .htbd-overview-box a,
+  .dark .htbd-toc-card a,
+  .dark .htbd-silo-box a,
+  #mainContent.dark .htbd-overview-box a,
+  #mainContent.dark .htbd-toc-card a,
+  #mainContent.dark .htbd-silo-box a {
+    color: #38bdf8 !important;
+  }
+  .dark .htbd-academic-table,
+  #mainContent.dark .htbd-academic-table {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-academic-table th,
+  #mainContent.dark .htbd-academic-table th {
+    background-color: #0f172a !important;
+    color: #38bdf8 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-academic-table td,
+  #mainContent.dark .htbd-academic-table td {
+    background: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-academic-table tr:nth-child(even),
+  #mainContent.dark .htbd-academic-table tr:nth-child(even) {
+    background-color: #1e293b !important;
+  }
 </style>
 ```
