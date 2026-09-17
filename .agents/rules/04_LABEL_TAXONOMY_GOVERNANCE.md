@@ -37,3 +37,15 @@ Helptrickbd.com maintains established thematic pillars. Every article must belon
    - Never assign an arbitrary, one-off keyword as a label (e.g., `Dhaka Board 2026` or `Sonali Seba Online`). These are internal keywords, NOT top-level categories. Use internal anchor links and meta tags for specific keywords instead.
 3. **Menu Navigation Sync**:
    - Any category linked in the main header navigation menu of the website MUST lead to an active label page displaying multiple high-value posts.
+
+---
+
+## 🎯 4. Crawl Budget & Search Console Label Limit (সর্বোচ্চ ১–২টি লেবেল নীতি)
+> [!IMPORTANT]
+> **Crawl Budget & Indexing Governance**: গুগলের [Crawl Budget Guidelines](https://developers.google.com/search/docs/crawling-indexing/large-site-managing-crawl-budget) অনুযায়ী অতিরিক্ত ট্যাগ/ক্যাটাগরি গুগলের ক্রল বাজেট নষ্ট করে। ব্লগারে প্রতিবার নতুন লেবেল দিলে একটি করে পাতলা আর্কাইভ পেজ তৈরি হয়, যা সার্চ কনসোলে "Crawled - currently not indexed" সমস্যা বাড়িয়ে তোলে।
+
+1. **Maximum 1–2 Labels Per Post**:
+   - প্রতিটি পোস্টে **সর্বোচ্চ ১ থেকে ২টি অনুমোদিত লেবেল** ব্যবহার করতে হবে।
+   - একটি পোস্টে ৪–৮টি লেবেল দেওয়া সম্পূর্ণ নিষিদ্ধ।
+2. **Tag Cloud / Archive Spam Prevention**:
+   - কোনো সাধারণ কি-ওয়ার্ডকে হুট করে লেবেল বানানো যাবে না। শুধুমাত্র উপরে উল্লেখিত অনুমোদিত কোর ক্লাস্টার থেকেই লেবেল নির্বাচন করতে হবে।

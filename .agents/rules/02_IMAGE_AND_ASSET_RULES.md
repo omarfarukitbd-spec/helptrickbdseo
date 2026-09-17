@@ -66,13 +66,20 @@
 
 ---
 
-## ⚙️ 3. WebP Compression & Core Web Vitals (১০–২০ KB কম্প্রেশন)
+## ⚙️ 3. WebP Compression & Core Web Vitals (মোবাইল LCP ও কম্প্রেশন স্ট্যান্ডার্ড)
 1. **Compression Pipeline**:
    - Every PNG/JPG asset must be compressed using `tools/image_optimizer/webp_compressor.py`.
-   - WebP quality setting: 75–82% with sharp YUV and smart subsampling to maintain crisp Bengali text while keeping file size under 20 KB.
-2. **Lazy Loading & Responsive Attributes**:
-   - All in-body images must include `loading="lazy"` and `decoding="async"`.
-   - Include explicit `width="1200"` and `height="675"` (or proportional aspect ratios) to prevent Cumulative Layout Shift (CLS).
+   - WebP quality setting: 75–82% with sharp YUV and smart subsampling to maintain crisp Bengali text while keeping file size under 20–25 KB.
+2. **Hero Image vs In-Body Image Loading Architecture (Google web.dev LCP Standard)**:
+   > [!IMPORTANT]
+   > **Mobile LCP Golden Rule**: পেজের প্রথম ছবি বা হিরো থাম্বনেইলটিই হলো ব্রাউজারের Largest Contentful Paint (LCP) এলিমেন্ট। গুগলের অফিশিয়াল ডেভেলপার ডকুমেন্টেশন ([web.dev/optimize-lcp](https://web.dev/optimize-lcp/)) অনুযায়ী, হিরো ইমেজে ভুলেও `loading="lazy"` দেওয়া যাবে না।
+   - **Hero Image (পোস্টের প্রথম ব্যানার/থাম্বনেইল):**
+     * **বাধ্যতামূলক অ্যাট্রিবিউট:** `loading="eager" fetchpriority="high" decoding="async"`
+     * **কঠোর নিষেধাজ্ঞা:** হিরো ইমেজে `loading="lazy"` সম্পূর্ণরূপে নিষিদ্ধ। এটি দিলে মোবাইলে ২.৫ সেকেন্ডের বেশি LCP বিলম্ব ঘটে এবং সার্চ কনসোলে এরর আসে।
+     * **CLS প্রতিরোধ:** লেআউট শিফট রোধ করতে অবশ্যই সুনির্দিষ্ট ডাইমেনশন `width="1200" height="675"` এবং রেসপনসিভ সিএসএস ব্যবহার করতে হবে।
+   - **In-Body Images (পোস্ট বডির ভেতরের বাকি সব ছবি):**
+     * বডির সব ছবিতে বাধ্যতামূলকভাবে `loading="lazy" decoding="async"` থাকতে হবে যাতে ব্যান্ডউইথ সাশ্রয় হয় এবং ইনিশিয়াল পেজ স্পিড সুপারফাস্ট থাকে।
+     * প্রতিটি ছবিতে প্রাসঙ্গিক বাংলা কি-ওয়ার্ড সমৃদ্ধ `alt` এবং `title` ট্যাগ বাধ্যতামূলক।
 
 ---
 
