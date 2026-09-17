@@ -1,11 +1,12 @@
 <!--
 ================================================================================
-HelpTrickBD - 105 URL Universal Smart 301 Redirection & 404 Error Fix Engine
+HelpTrickBD - Google Search Central Compliant 1:1 Redirection & Custom 404 Engine
 ================================================================================
 Benefits:
-1. Universal Extension Matching: Redirects whether the URL has .html, lacks .html, or has trailing slashes.
-2. Clean Layout: Hides the default English '404 There\'s nothing here!' text so only the branded Bengali box shows.
-3. Zero Sitewide Overhead: Runs exclusively on 404 pages via data:view.isError.
+1. 100% Google Compliant: Only redirects URLs with direct 1:1 equivalent live content (Zero Soft 404s).
+2. Helpful Custom 404: Genuinely deleted posts cleanly show the branded Bengali 404 page with search bar.
+3. Clean Aesthetics: Hides default theme English '404 There's nothing here!' text.
+4. Zero Sitewide Overhead: Executes only on 404 pages via data:view.isError.
 ================================================================================
 -->
 <b:if cond='data:view.isError'>
@@ -24,113 +25,18 @@ Benefits:
 <script type='text/javascript'>
 //<![CDATA[
 (function() {
-  var redirectMap = {
-  "/2022/09/Correct-rules-for-ablution.html": "/",
-  "/2022/09/Tree-Plantation.html": "/",
-  "/2022/10/cloze-test-without-clues-for-jsc-ssc.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2022/11/paragraph-importance-of-reading.html": "/",
-  "/2022/12/What-is-the-caliphate-movement.html": "/",
-  "/2022/12/kishor-golpo-akkel-selami.html": "/",
-  "/2023/01/Politics-indeveloping-countries-controls-the-economy.html": "/search/label/Economics",
-  "/2023/01/What-is-the-land-tenure-system.html": "/",
-  "/2023/01/current-affairs-2023-pdf-download.html": "/",
-  "/2023/02/Class-7-Science-chapter-1.html": "/search/label/Education",
-  "/2023/02/Class-seven-History-and-social-science-Exercise-book-pdf.html": "/search/label/Education",
-  "/2023/03/class-6-and-7-new-curriculum-implementation-notice.html": "/search/label/Education",
-  "/2023/05/Class-4-Half-Yearly-Exam-Suggestions-2023-pdf.html": "/search/label/Education",
-  "/2023/06/Class-7-Digital-Technology-Ga-Doler-Kaj-Solution.html": "/search/label/Education",
-  "/2023/10/Class-7-annual-summative-assessment-routine-2023.html": "/search/label/Education",
-  "/2023/10/how-to-deliver-presentations.html": "/",
-  "/2023/11/cyber-sequrity-helpdesk.html": "/",
-  "/2023/11/how-to-make-victory-day-greeting-cards.html": "/",
-  "/2023/12/top-10-tips-for-healthy-winter-skin.html": "/",
-  "/2024/01/class-": "/search/label/Education",
-  "/2024/01/class-6-science-investigative-study-guide.html": "/search/label/Education",
-  "/2024/01/jahangirnagar-university-admission-2024.html": "/",
-  "/2024/01/national-assembly-election-result-2024.html": "/",
-  "/2024/02/articles-of-constitution-of-bangladesh.html": "/",
-  "/2024/09/blog-post_284.html": "/",
-  "/2024/09/blog-post_759.html": "/",
-  "/2024/09/class-6-annual-summative-assessment-2024.html": "/search/label/Education",
-  "/2024/09/class-7-annual-exam-guide-book-2024-pdf.html": "/search/label/Education",
-  "/2024/09/class-7-arts-and-culture-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-7-english-annual-exam-guide-pdf-2024.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2024/09/class-7-health-protection--annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-7-history-and-digital-technology-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-7-history-and-social-science-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-7-islamic-studies-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-7-jibon-o-jibika--annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-7-math-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-8-art-and-culture-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-8-bangla-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-8-digital-technology-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-8-english-annual-exam-guide-pdf-2024.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2024/09/class-8-history-and-social-science-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-8-jibon-o-jibika-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/09/class-8-science-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/10/class-6-annual-exam-2024-final-preparation-guide.html": "/search/label/Education",
-  "/2024/10/class-7-annual-exam-2024-final-preparation-guide-book-pdf.html": "/search/label/Education",
-  "/2024/10/class-7-english-annual-exam-sample-question-1.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2024/10/class-8-annual-exam-2024-final-preparation-guide-book-pdf.html": "/search/label/Education",
-  "/2024/10/class-8-art-and-culture-annual-exam-final-guide-2024.html": "/search/label/Education",
-  "/2024/10/class-8-health-protection-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/10/class-8-islamic-studies-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/10/class-9-annual-exam-2024-final-preparation-guide-book-pdf.html": "/search/label/Education",
-  "/2024/10/class-9-bangla-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/10/class-9-digital-technology-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/10/class-9-english-annual-exam-guide-pdf.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2024/10/class-9-health-protection-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/10/class-9-hinduism-studies-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/10/class-9-history-and-social-science-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/10/class-9-jibon-o-jibika-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/10/class-9-math-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/10/class-9-science-annual-exam-guide-pdf-2024.html": "/search/label/Education",
-  "/2024/11/class-5-math-guide-2024.html": "/search/label/Education",
-  "/2024/11/class-9-arts-and-culture-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/11/class-9-islamic-studies-annual-exam-guide-pdf.html": "/search/label/Education",
-  "/2024/12/class-7-math-panjeree-guide-2024-for-final-preparation.html": "/search/label/Education",
-  "/2024/12/class-8-math-panjeree-guide-2024-for-final-preparation.html": "/search/label/Education",
-  "/2024/12/class-9-history-and-social-science-panjeree-guide-for-annual-exam-2024.html": "/search/label/Education",
-  "/2024/12/class-9-math-panjeree-guide-2024-for-final-preparation.html": "/search/label/Education",
-  "/2025/01/class-1-new-text-book-2025.html": "/search/label/Education",
-  "/2025/01/class-2-new-text-book-2025.html": "/search/label/Education",
-  "/2025/01/class-3-new-text-book-2025.html": "/search/label/Education",
-  "/2025/01/class-6-new-text-book-2025-pdf.html": "/search/label/Education",
-  "/2025/01/class-7-new-text-book-2025-pdf.html": "/search/label/Education",
-  "/2025/01/class-8-agriculture-guide-2025-pdf.html": "/search/label/Education",
-  "/2025/01/class-9-10-bangla-1st-2nd-paper-guide-2025-pdf.html": "/search/label/Education",
-  "/2025/01/class-9-10-chemistry-guide-2025-pdf.html": "/search/label/Education",
-  "/2025/01/class-9-10-english-1st-2nd-paper-guide-2025.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2025/01/class-9-10-islamic-studies-guide-pdf-2025.html": "/search/label/Education",
-  "/2025/01/class-9-10-math-guide-2025.html": "/search/label/Education",
-  "/2025/01/class-9-new-text-book-2025-pdf.html": "/search/label/Education",
-  "/2025/01/megamenu/recent": "/",
-  "/2025/01/nctb-dakhil-class-6-textbook-2025-pdf.html": "/search/label/Dakhil%20Suggestion",
-  "/2025/01/nctb-dakhil-class-9-10-textbook-2025-pdf.html": "/search/label/Dakhil%20Suggestion",
-  "/2025/01/nctb-ibtedayi-class-1-textbook-2025-pdf.html": "/search/label/Education",
-  "/2025/01/ssc-exam-2026-short-syllabus-pdf.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2025/02/megamenu/recent": "/",
-  "/2025/03/class-8-agriculture-2025-guide-pdf.html": "/search/label/Education",
-  "/2025/03/class-8-physical-education-2025-guide.html": "/search/label/Education",
-  "/2025/03/megamenu/recent": "/",
-  "/2025/04/class-6-english-1st-paper-guide-book-2025-pdf.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2025/04/class-6-english-2nd-paper-guide-book-2025-pdf.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
-  "/2025/04/class-6-math-guide-2025-pdf.html": "/search/label/Education",
-  "/2025/04/megamenu/recent": "/",
-  "/2025/12/dakhil26-aqaid-fiqh-test-exam-suggestion-solution.html": "/search/label/Dakhil%20Suggestion",
-  "/2025/12/dakhil26-islamic-history-test-exam-suggestion.html": "/search/label/Dakhil%20Suggestion",
-  "/2025/12/dakhil26-quran-majid-final-suggestion-test-exam-preparation.html": "/search/label/Dakhil%20Suggestion",
-  "/2026/01/megamenu/recent": "/",
-  "/>": "/",
-  "/blogger_img_proxy": "/",
-  "/default": "/",
-  "/maxresdefault": "/",
-  "/p/svg-resources.html": "/",
-  "/s220": "/",
-  "/w55-h55-p-k-no-nu": "/",
-  "/w72-h": "/",
-  "/w72-h72-p-k-no-nu": "/"
-};
+  // Only valid 1:1 equivalent direct post replacements (Google Search Central Compliant)
+  var directRedirects = {
+    "/2022/10/cloze-test-without-clues-for-jsc-ssc.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+    "/2024/09/class-7-english-annual-exam-guide-pdf-2024.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+    "/2024/09/class-8-english-annual-exam-guide-pdf-2024.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+    "/2024/10/class-7-english-annual-exam-sample-question-1.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+    "/2024/10/class-9-english-annual-exam-guide-pdf.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+    "/2025/01/class-9-10-english-1st-2nd-paper-guide-2025.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+    "/2025/01/ssc-exam-2026-short-syllabus-pdf.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+    "/2025/04/class-6-english-1st-paper-guide-book-2025-pdf.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+    "/2025/04/class-6-english-2nd-paper-guide-book-2025-pdf.html": "/2026/09/ssc-english-1st-paper-suggestion-2027.html"
+  };
 
   var rawPath = window.location.pathname;
   var cleanPath = rawPath.replace(/\/+$/, '');
@@ -139,14 +45,12 @@ Benefits:
 
   var decodedClean = decodeURIComponent(cleanPath);
   var decodedWithHtml = decodeURIComponent(pathWithHtml);
-  var decodedWithoutHtml = decodeURIComponent(pathWithoutHtml);
 
-  var target = redirectMap[cleanPath] ||
-               redirectMap[pathWithHtml] ||
-               redirectMap[pathWithoutHtml] ||
-               redirectMap[decodedClean] ||
-               redirectMap[decodedWithHtml] ||
-               redirectMap[decodedWithoutHtml];
+  var target = directRedirects[cleanPath] ||
+               directRedirects[pathWithHtml] ||
+               directRedirects[pathWithoutHtml] ||
+               directRedirects[decodedClean] ||
+               directRedirects[decodedWithHtml];
 
   if (target) {
     window.location.replace(target);
