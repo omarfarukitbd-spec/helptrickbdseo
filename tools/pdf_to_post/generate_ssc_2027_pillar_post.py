@@ -225,14 +225,11 @@ html_content = f"""<style>
     </span>
   </div>
 
-  <!-- Position 0 Direct Answer Box with English Keywords -->
+  <!-- Position 0 Direct Answer Box with Naturally Integrated English & Bengali Keywords -->
   <div class="htbd-overview-box">
     <p>
       <strong>Quick Overview (সারসংক্ষেপ):</strong> 
-      <strong>SSC English 1st Paper Suggestion 2027 (Subject Code: 136)</strong> পরীক্ষা জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) প্রণীত ১০০ নম্বরের পূর্ণাঙ্গ সিলেবাস অনুযায়ী অনুষ্ঠিত হবে। পরীক্ষাটি মূলত দুটি প্রধান অংশে বিভক্ত—<strong>Part A: Reading (70 Marks)</strong> এবং <strong>Part B: Writing (30 Marks)</strong>। রিডিং অংশে Seen Passage থেকে Multiple Choice Questions (7 Marks), Answering Questions (10 Marks), Gap Filling Without Clues (5 Marks); Unseen Passage থেকে Information Transfer (5 Marks), Writing Summary (10 Marks); এছাড়া Sentence Matching Table (5 Marks), Re-arranging Sentences (8 Marks) এবং Questions from Poems &amp; Stories (10 + 10 = 20 Marks) অন্তর্ভুক্ত। অন্যদিকে রাইটিং অংশে Completing Story (15 Marks) এবং Dialogue Writing (15 Marks) থাকবে। নিচে ২০২৭ সালের পরীক্ষার্থীদের জন্য সম্পূর্ণ প্রশ্নভিত্তিক থ্রি-স্টার সাজেশন, এ-প্লাস পাওয়ার কৌশল এবং পূর্ণাঙ্গ পিডিএফ হ্যান্ডনোট দেওয়া হলো।
-    </p>
-    <p style="margin-top: 12px !important; font-size: 15px !important; background: #e0f2fe; padding: 8px 12px; border-radius: 6px; color: #0369a1; line-height: 1.6;">
-      <strong>টার্গেট সার্চ কিওয়ার্ড (Target Keywords):</strong> SSC English 1st Paper Suggestion 2027, SSC 2027 English 1st Paper Syllabus, Class 10 English 1st Paper Model Question, SSC English Marks Distribution 2027
+      বাংলাদেশ শিক্ষা বোর্ড ও জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) অনুমোদিত নতুন কারিকুলাম অনুসারে <strong>SSC English 1st Paper Suggestion 2027 (Subject Code: 136)</strong> পরীক্ষা ১০০ নম্বরের পূর্ণাঙ্গ সিলেবাসে অনুষ্ঠিত হতে যাচ্ছে। ঢাকা, রাজশাহী, চট্টগ্রাম, কুমিল্লাসহ সকল সাধারণ শিক্ষা বোর্ড এবং বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ডের দাখিল পরীক্ষার্থীদের জন্য এই গাইডটিতে <strong>SSC 2027 English 1st Paper Syllabus and Marks Distribution</strong> পুঙ্খানুপুঙ্খভাবে বিশ্লেষণ করা হয়েছে। পরীক্ষাটি মূলত দুটি প্রধান বিভাগে বিভক্ত—<strong>Part A: Reading (70 Marks)</strong> এবং <strong>Part B: Writing (30 Marks)</strong>। এখানে অন্তর্ভুক্ত রয়েছে পাঠ্যবই English For Today-এর Seen Comprehension (MCQ, Questions, Gap Filling), Unseen Passage &amp; Summary Writing, Sentence Matching Table, Re-arranging Sentences, সাহিত্য অংশের Poems ও Stories এবং রাইটিং অংশের Completing Story ও Dialogue Writing। পরীক্ষায় শতভাগ কমন ও এ-প্লাস (A+) নিশ্চিত করতে নিচে প্রতিটি প্রশ্নের জন্য নির্ভরযোগ্য মডেল প্রশ্ন ও পূর্ণাঙ্গ হ্যান্ডনোট সাজিয়ে দেওয়া হলো।
     </p>
   </div>
 
@@ -533,17 +530,6 @@ html_content = f"""<style>
     </div>
   </div>
 
-  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px 24px; margin: 30px 0 20px 0;">
-    <h3 style="margin: 0 0 10px 0; font-size: 19px; color: #0c2340; font-weight: 700;">সম্পর্কিত সার্চ টার্মস ও টপিকস (Related Search Keywords)</h3>
-    <p style="margin: 0 0 12px 0; font-size: 15px; color: #64748b;">শিক্ষার্থীরা গুগলে এই পরীক্ষার প্রস্তুতি সম্পর্কিত তথ্য খুঁজতে সাধারণত যেসব কি-ওয়ার্ড ব্যবহার করে থাকে:</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC English 1st Paper Suggestion 2027</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC 2027 English 1st Paper Model Question</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Class 10 English First Paper Syllabus and Marks Distribution</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Dhaka Board SSC English 1st Paper Question 2027</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Dakhil English 1st Paper Final Suggestion PDF</span>
-    </div>
-  </div>
 
 </div>
 

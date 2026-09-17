@@ -49,7 +49,7 @@ def get_series_nav(current_part):
 def build_post():
     slug = "ssc-2027-english-completing-story"
     title = "SSC 2027 English Completing Story & Dialogue Suggestion | এসএসসি স্টোরি ও ডায়ালগ রাইটিং"
-    meta_desc = "SSC 2027 English Completing Story & Dialogue Suggestion। রাইটিং পার্ট (Q10 ও Q11) এর ৩৪টি গুরুত্বপূর্ণ স্টোরি ও ৩২টি ডায়ালগের পূর্ণাঙ্গ তালিকা এবং মডেল সমাধান।"
+    meta_desc = "SSC 2027 English Completing Story & Dialogue Suggestion। রাইটিং পার্ট (Q10 ও Q11) এর শীর্ষ গল্প ও ডায়ালগ তালিকা এবং বোর্ড মডেল সমাধান।"
     banner_url = f"{CDN_BASE}/ssc_2027_silo_05_story_dialogue.webp?v=2"
     banner_alt = "SSC 2027 English Completing Story and Dialogue Writing Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
@@ -258,8 +258,7 @@ def build_post():
 
   <div class="htbd-overview-box">
     <p style="margin: 0 0 10px 0; font-size: 16px; color: #1e3a8a; font-weight: 700;">টপিক ও ফোকাস: SSC 2027 English Completing Story &amp; Dialogue Suggestion (Questions 10, 11)</p>
-    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্রের সর্ববৃহৎ রচনামূলক অংশ হলো <strong>রাইটিং টেস্ট (Writing Test — প্রশ্ন ১০ ও ১১)</strong>। এতে মোট <strong>২৫ নম্বর</strong> নির্ধারিত—প্রশ্ন ১০-এ প্রম্পট দেখে পূর্ণাঙ্গ গল্প তৈরি (Completing Story - ১৫ নম্বর) এবং প্রশ্ন ১১-এ বাস্তবসম্মত সংলাপ রচনা (Dialogue Writing - ১০ নম্বর)। নিচে জাতীয় পাঠ্যক্রমের ৩৪টি শীর্ষ গল্প, ৩২টি ডায়ালগ এবং বোর্ড ও এক্সক্লুসিভ মডেল টেস্টের ১০টি পূর্ণাঙ্গ সমাধান উপস্থাপিত হলো।</p>
-    <p style="margin: 12px 0 0 0; font-size: 15px; background: #e0f2fe; padding: 8px 12px; border-radius: 6px; color: #0369a1; line-height: 1.6;"><strong>টার্গেট সার্চ কিওয়ার্ড (Target Keywords):</strong> SSC Completing Story Suggestion 2027, SSC Dialogue Writing Suggestion, Class 10 English Writing Part, SSC Story with Title and Moral</p>
+    <p>পরীক্ষায় সর্বোচ্চ নম্বর অর্জনের মূল চাবিকাঠি হলো ফ্রি-হ্যান্ড রাইটিং বা রচনামূলক অংশ। এই <strong>SSC 2027 English Completing Story &amp; Dialogue Suggestion</strong> গাইডে মোট <strong>২৫ নম্বর</strong>-এর পূর্ণাঙ্গ দিকনির্দেশনা দেওয়া হয়েছে। এর মধ্যে রয়েছে <strong>Question 10: Completing Story with Title and Moral (15 Marks)</strong> এবং <strong>Question 11: Dialogue Writing (10 Marks)</strong>। গল্প লেখার ক্ষেত্রে সঠিক টাইটেল নির্ধারণ, প্লট ডেভেলপমেন্ট ও নীতিকথা উপস্থাপন এবং ডায়ালগ রচনার ক্ষেত্রে প্রমিত অভিবাদন ও প্রাসঙ্গিক প্রশ্নোত্তরের সঠিক ফরম্যাটসহ ৩৪টি ক্লাসিক গল্প ও ৩২টি শীর্ষ ডায়ালগের সম্পূর্ণ তালিকা ও নমুনা সমাধান এখানে তুলে ধরা হলো।</p>
   </div>
 
 <!--more-->
@@ -442,17 +441,7 @@ def build_post():
     <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: হ্যাঁ, প্রশ্নপত্রে যে প্রম্পট দেওয়া থাকে, সেই অংশটুকু উত্তরপত্রে প্রথমে তুলে তারপর গল্পের স্বাভাবিক সমাপ্তি পর্যন্ত নিজস্ব বাক্য যোগ করতে হবে।</p>
   </div>
 
-  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px 24px; margin: 30px 0 20px 0;">
-    <h3 style="margin: 0 0 10px 0; font-size: 19px; color: #0c2340; font-weight: 700;">সম্পর্কিত সার্চ টার্মস ও টপিকস (Related Search Keywords)</h3>
-    <p style="margin: 0 0 12px 0; font-size: 15px; color: #64748b;">শিক্ষার্থীরা গুগলে এই অধ্যায়ের তথ্য খুঁজতে সাধারণত যেসব কি-ওয়ার্ড ব্যবহার করে থাকে:</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Completing Story Suggestion 2027 All Board</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Dialogue Writing Suggestion and Format</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Class 10 Completing Story with Title and Moral</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Important Dialogue Writing for SSC 2027 Exam</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC English 1st Paper Writing Part 30 Marks</span>
-    </div>
-  </div>
+
 
   {series_nav}
 

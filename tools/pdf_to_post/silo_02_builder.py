@@ -45,7 +45,7 @@ def get_series_nav(current_part):
 def build_post():
     slug = "ssc-2027-english-unseen-passage-summary"
     title = "SSC 2027 English Unseen Passage & Summary Suggestion | এসএসসি আনসিন প্যাসেজ ও সামারি রাইটিং"
-    meta_desc = "SSC 2027 English Unseen Passage & Summary Writing Suggestion। Information Transfer (Q4) ও Summary Writing (Q5) এর ৪১টি সেরা প্যাসেজ এবং পূর্ণাঙ্গ মডেল সমাধান।"
+    meta_desc = "SSC 2027 English Unseen Passage Suggestion। Information Transfer (Q4) ও Summary Writing (Q5) এর ৪১টি সেরা প্যাসেজ এবং পূর্ণাঙ্গ মডেল সমাধান।"
     banner_url = f"{CDN_BASE}/ssc_2027_silo_02_unseen_summary.webp?v=2"
     banner_alt = "SSC 2027 English Unseen Passage Information Transfer and Summary Writing Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
@@ -248,8 +248,7 @@ def build_post():
 
   <div class="htbd-overview-box">
     <p style="margin: 0 0 10px 0; font-size: 16px; color: #1e3a8a; font-weight: 700;">টপিক ও ফোকাস: SSC 2027 English Unseen Passage &amp; Summary Suggestion (Questions 4, 5)</p>
-    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্র পরীক্ষায় <strong>প্রশ্ন ৪ ও ৫</strong> একটি পাঠ্যবই-বহির্ভূত আনসিন প্যাসেজ (Unseen Passage) থেকে আসে এবং এতে মোট <strong>১৫ নম্বর</strong> নির্ধারিত থাকে। এর মধ্যে Q4-এ থাকে ৫ নম্বরের ইনফরমেশন ট্রান্সফার গ্রিড (Information Transfer) এবং Q5-এ থাকে ১০ নম্বরের সামারি রাইটিং (Summary Writing)। নিচে ৪১টি গুরুত্বপূর্ণ আনসিন বিষয়ের স্টারভিত্তিক তালিকা এবং ৩টি পূর্ণাঙ্গ মডেল টেস্ট প্রশ্ন ও উত্তরসহ প্রদান করা হলো।</p>
-    <p style="margin: 12px 0 0 0; font-size: 15px; background: #e0f2fe; padding: 8px 12px; border-radius: 6px; color: #0369a1; line-height: 1.6;"><strong>টার্গেট সার্চ কিওয়ার্ড (Target Keywords):</strong> SSC 2027 English Unseen Passage Suggestion, SSC Summary Writing Rules 2027, Class 10 Information Transfer, SSC English 1st Paper Unseen Passage</p>
+    <p>বোর্ড পরীক্ষায় শিক্ষার্থীদের ফ্রি-হ্যান্ড রিডিং ও সিন্থেসিস দক্ষতা যাচাইয়ে <strong>SSC 2027 English Unseen Passage Suggestion</strong> পর্বটি অত্যন্ত গুরুত্বপূর্ণ। এই অংশে পাঠ্যবই-বহির্ভূত আনসিন প্যাসেজ থেকে মোট <strong>১৫ নম্বর</strong> বরাদ্দ থাকে—যার মধ্যে <strong>Question 4: Information Transfer (5 Marks)</strong> এবং <strong>Question 5: Summary Writing (10 Marks)</strong> অন্তর্ভুক্ত। ঐতিহাসিক ব্যক্তিত্ব, গুরুত্বপূর্ণ জাতীয় দিবস ও আন্তর্জাতিক ঘটনাবলী সম্পর্কিত ৪১টি নির্বাচিত আনসিন বিষয়ের তালিকা, সামারিতে পূর্ণ ১০/১০ অর্জনের প্যারাফ্রেজিং নিয়ম এবং পূর্ণাঙ্গ সমাধানসহ মডেল টেস্ট নিচে সাজিয়ে দেওয়া হলো।</p>
   </div>
 
 <!--more-->
@@ -408,17 +407,7 @@ def build_post():
     <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: কখনোই না। হুবহু লাইন তুললে পরীক্ষক নম্বর কমিয়ে দেন। তথ্য ঠিক রেখে সমার্থক শব্দ ও নিজস্ব বাক্য গঠনে প্যারাফ্রেজ করে লিখলেই সর্বোচ্চ নম্বর পাওয়া সম্ভব।</p>
   </div>
 
-  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px 24px; margin: 30px 0 20px 0;">
-    <h3 style="margin: 0 0 10px 0; font-size: 19px; color: #0c2340; font-weight: 700;">সম্পর্কিত সার্চ টার্মস ও টপিকস (Related Search Keywords)</h3>
-    <p style="margin: 0 0 12px 0; font-size: 15px; color: #64748b;">শিক্ষার্থীরা গুগলে এই অধ্যায়ের তথ্য খুঁজতে সাধারণত যেসব কি-ওয়ার্ড ব্যবহার করে থাকে:</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC 2027 English Unseen Passage Suggestion</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Summary Writing Rules and Format 2027</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Information Transfer Q4 Important Biography List</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Class 10 English 1st Paper Unseen Passage All Board</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">How to Write Summary in SSC English 1st Paper</span>
-    </div>
-  </div>
+
 
   {series_nav}
 

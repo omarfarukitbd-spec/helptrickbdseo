@@ -285,8 +285,7 @@ def build_post():
 
   <div class="htbd-overview-box">
     <p style="margin: 0 0 10px 0; font-size: 16px; color: #1e3a8a; font-weight: 700;">টপিক ও ফোকাস: SSC 2027 English Matching &amp; Rearrange Suggestion (Questions 6, 7)</p>
-    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্র পরীক্ষায় ব্যাকরণিক দক্ষতা ও যৌক্তিক অনুচ্ছেদ বিন্যাসের জন্য <strong>প্রশ্ন ৬ ও ৭</strong> অত্যন্ত গুরুত্বপূর্ণ। এতে মোট <strong>১৩ নম্বর</strong> বরাদ্দ থাকে—প্রশ্ন ৬-এ তিনটি কলাম মিলিয়ে ৫টি অর্থপূর্ণ বাক্য তৈরি (Sentence Matching Table - ৫ নম্বর) এবং প্রশ্ন ৭-এ এলোমেলো ৮টি বাক্যকে যৌক্তিকভাবে সাজিয়ে অনুচ্ছেদ তৈরি (Re-arranging Sentences - ৮ নম্বর)। নিচে জাতীয় পাঠ্যক্রম ও বিগত বোর্ড পরীক্ষার পূর্ণাঙ্গ ৩২টি ম্যাচিং টেবিল এবং ৩৬টি রি-অ্যারেঞ্জিং সমাধানসহ উপস্থাপিত হলো।</p>
-    <p style="margin: 12px 0 0 0; font-size: 15px; background: #e0f2fe; padding: 8px 12px; border-radius: 6px; color: #0369a1; line-height: 1.6;"><strong>টার্গেট সার্চ কিওয়ার্ড (Target Keywords):</strong> SSC 2027 English Matching Suggestion, SSC Rearrange Suggestion All Board, Sentence Matching Table Q6, Class 10 Rearranging Story Solution</p>
+    <p>যৌক্তিক বাক্যগঠন ও ব্যাকরণিক সামঞ্জস্য যাচাইয়ের ক্ষেত্রে <strong>SSC 2027 English Matching &amp; Rearrange Suggestion</strong> পরীক্ষায় শিক্ষার্থীদের পূর্ণ নম্বর পাওয়ার অন্যতম সেরা সুযোগ তৈরি করে। এই অংশে মোট <strong>১৩ নম্বর</strong> বরাদ্দ রয়েছে—<strong>Question 6: Sentence Matching Table (5 Marks)</strong> যেখানে ৩টি কলাম থেকে ৫টি অর্থপূর্ণ বাক্য সাজাতে হয়, এবং <strong>Question 7: Re-arranging Sentences (8 Marks)</strong> যেখানে একটি এলোমেলো ঐতিহাসিক ঘটনা বা শিক্ষণীয় গল্পকে সঠিক ক্রমানুসারে সাজাতে হয়। সকল শিক্ষা বোর্ডের বিগত বছরের প্রশ্ন বিশ্লেষণ করে ৩২টি নিশ্চিত ম্যাচিং টেবিল ও ৩৬টি শীর্ষ রি-অ্যারেঞ্জিং অনুচ্ছেদের সঠিক সিকোয়েন্স ছক নিচে বিস্তারিত দেওয়া হলো।</p>
   </div>
 
 <!--more-->
@@ -437,17 +436,7 @@ def build_post():
     <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: না, পুরো নম্বর কাটা যায় না। প্রতি সঠিক অবস্থানের জন্য আলাদা ১ নম্বর থাকে। তবে মাঝের কোনো বাক্য ভুল স্থানে বসলে তার পরের ধারাবাহিকতা নষ্ট হওয়ার ঝুঁকি থাকে, তাই মনোযোগ দিয়ে প্রথম থেকে শেষ পর্যন্ত যাচাই করা জরুরি।</p>
   </div>
 
-  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px 24px; margin: 30px 0 20px 0;">
-    <h3 style="margin: 0 0 10px 0; font-size: 19px; color: #0c2340; font-weight: 700;">সম্পর্কিত সার্চ টার্মস ও টপিকস (Related Search Keywords)</h3>
-    <p style="margin: 0 0 12px 0; font-size: 15px; color: #64748b;">শিক্ষার্থীরা গুগলে এই অধ্যায়ের তথ্য খুঁজতে সাধারণত যেসব কি-ওয়ার্ড ব্যবহার করে থাকে:</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Rearrange Suggestion 2027 All Board</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Sentence Matching Table Question 6 Solution</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Class 10 English Rearranging Sentences with Answers</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC English 1st Paper Rearrange Rules and Format</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Dhaka Board Rajshahi Board SSC Rearrange Question</span>
-    </div>
-  </div>
+
 
   {series_nav}
 

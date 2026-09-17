@@ -44,7 +44,7 @@ def get_series_nav(current_part):
 def build_post():
     slug = "ssc-2027-english-seen-passage-suggestion"
     title = "SSC 2027 English Seen Passage Suggestion | এসএসসি সিন প্যাসেজ MCQ ও প্রশ্নোত্তর (100% Common)"
-    meta_desc = "SSC 2027 English Seen Passage Suggestion ও সমাধান। পাঠ্যবই EFT-এর ৩৩টি সিন প্যাসেজ, MCQ (Q1), প্রশ্নোত্তর (Q2) ও Gap Filling (Q3) এর পূর্ণাঙ্গ বোর্ড প্রস্তুতি।"
+    meta_desc = "SSC 2027 English Seen Passage Suggestion ও সমাধান। EFT-এর সিন প্যাসেজ, MCQ (Q1), প্রশ্নোত্তর (Q2) ও Gap Filling (Q3) এর পূর্ণাঙ্গ বোর্ড প্রস্তুতি।"
     banner_url = f"{CDN_BASE}/ssc_2027_silo_01_seen_passage.webp?v=2"
     banner_alt = "SSC 2027 English Seen Passage Suggestion — MCQ, Question Answer and Gap Filling Guide"
     url = f"{BLOG_BASE}/{slug}.html"
@@ -261,8 +261,7 @@ def build_post():
 
   <div class="htbd-overview-box">
     <p style="margin: 0 0 10px 0; font-size: 16px; color: #1e3a8a; font-weight: 700;">টপিক ও ফোকাস: SSC 2027 English Seen Passage Suggestion (Questions 1, 2, 3)</p>
-    <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্রে <strong>প্রশ্ন ১, ২ ও ৩</strong> — এই তিনটি প্রশ্ন পাঠ্যবই <em>English For Today (EFT)</em> এর সিন প্যাসেজ থেকে আসে এবং এতে মোট <strong>২২ নম্বর</strong> বরাদ্দ থাকে। এর মধ্যে Q1-এ ৭টি MCQ (৭ নম্বর), Q2-এ ৫টি ওপেন-এন্ডেড প্রশ্নোত্তর (১০ নম্বর) এবং Q3-এ ৫টি ক্লু-হীন গ্যাপ ফিলিং (৫ নম্বর) অন্তর্ভুক্ত। নিচে পাঠ্যবইয়ের ৩৩টি প্যাসেজের স্টারভিত্তিক চূড়ান্ত তালিকা এবং ২টি সম্পূর্ণ মডেল টেস্ট সমাধানসহ উপস্থাপন করা হলো।</p>
-    <p style="margin: 12px 0 0 0; font-size: 15px; background: #e0f2fe; padding: 8px 12px; border-radius: 6px; color: #0369a1; line-height: 1.6;"><strong>টার্গেট সার্চ কিওয়ার্ড (Target Keywords):</strong> SSC 2027 English Seen Passage Suggestion, SSC Seen Passage Question Answer, Class 10 Seen Comprehension MCQ, SSC English 1st Paper Suggestion 2027</p>
+    <p>মাধ্যমিক ও উচ্চমাধ্যমিক শিক্ষা বোর্ডের নতুন কারিকুলাম অনুসারে <strong>SSC 2027 English Seen Passage Suggestion</strong> পর্বে শিক্ষার্থীদের পাঠ্যবই <em>English For Today (EFT)</em> থেকে প্রথম তিনটি প্রশ্ন সমাধান করতে হয়। এই অংশে মোট <strong>২২ নম্বর</strong> বরাদ্দ থাকে—যার মধ্যে <strong>Question 1: Multiple Choice Questions (MCQ - 7 Marks)</strong>, <strong>Question 2: Open-Ended Question Answer (10 Marks)</strong> এবং <strong>Question 3: Gap Filling Without Clues (5 Marks)</strong> অন্তর্ভুক্ত। ঢাকা, চট্টগ্রাম, রাজশাহীসহ সকল শিক্ষা বোর্ডের বিগত ৫ বছরের বোর্ড প্রশ্ন বিশ্লেষণ করে এখানে পাঠ্যবইয়ের ৩৩টি গুরুত্বপূর্ণ সিন প্যাসেজের ৩-স্টার সুপার সাজেশন, হুবহু বোর্ড প্রশ্নের মডেল টেস্ট এবং শতভাগ কমন পাওয়ার টেকনিক্যাল টিপস তুলে ধরা হলো।</p>
   </div>
 
 <!--more-->
@@ -413,17 +412,7 @@ def build_post():
     <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: সবসময় অপশন ও উত্তর উভয়ই লিখুন, যেমন: (a) (ii) Carbon dioxide। এতে পরীক্ষকের খাতা দেখতে সুবিধা হয়।</p>
   </div>
 
-  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px 24px; margin: 30px 0 20px 0;">
-    <h3 style="margin: 0 0 10px 0; font-size: 19px; color: #0c2340; font-weight: 700;">সম্পর্কিত সার্চ টার্মস ও টপিকস (Related Search Keywords)</h3>
-    <p style="margin: 0 0 12px 0; font-size: 15px; color: #64748b;">শিক্ষার্থীরা গুগলে এই অধ্যায়ের তথ্য খুঁজতে সাধারণত যেসব কি-ওয়ার্ড ব্যবহার করে থাকে:</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC 2027 English Seen Passage Suggestion</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Seen Passage Question Answer 2027</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Class 10 English 1st Paper Unit Lesson Suggestion</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">All Education Board Seen Passage Common List</span>
-      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">EFT Class 9 10 Seen Comprehension MCQ Q1 Q2 Q3</span>
-    </div>
-  </div>
+
 
   {series_nav}
 
