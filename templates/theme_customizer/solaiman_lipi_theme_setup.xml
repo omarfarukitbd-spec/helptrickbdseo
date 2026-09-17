@@ -88,7 +88,7 @@ Setup Instructions:
     color: var(--theme-text-color, #1a1a1a) !important;
   }
 
-  /* 2.2. Homepage & Category Grid Post Titles */
+  /* 2.2. Homepage & Category Grid Post Titles (Color inherits theme variables for flawless Light/Dark mode) */
   .post-filter .entry-title, 
   .post-filter .entry-title a,
   .raw-box .entry-title,
@@ -98,7 +98,17 @@ Setup Instructions:
     font-size: 17px !important;
     font-weight: 700 !important;
     line-height: 1.45 !important;
-    color: #1a1a1a !important;
+    color: var(--theme-text-color, inherit) !important;
+  }
+
+  /* Dark Mode Universal High-Contrast Post Title Fix */
+  .dark .entry-title,
+  .dark .entry-title a,
+  .dark .post-filter .entry-title,
+  .dark .post-filter .entry-title a,
+  .dark .raw-box .entry-title a,
+  .dark .block-step .entry-title a {
+    color: #ffffff !important;
   }
 
   /* 3. Featured Image Overlay Titles & Metadata (Crisp White on Dark Cards) */
