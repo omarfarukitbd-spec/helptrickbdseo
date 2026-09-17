@@ -115,6 +115,75 @@ Setup Instructions:
     color: #ffffff !important;
   }
 
+  /* ==========================================================================
+     HelpTrickBD Universal Dark Mode Post Contrast & Inversion Engine
+     Fixes: Callouts, TOC, Summary boxes, Badges, Tables, Headings & Inline Styles
+     ========================================================================== */
+  .dark .post-body,
+  .dark .entry-content {
+    color: #cbd5e1 !important;
+  }
+
+  .dark .post-body h1,
+  .dark .post-body h2,
+  .dark .post-body h3,
+  .dark .post-body h4,
+  .dark .post-body h5,
+  .dark .post-body h6 {
+    color: #ffffff !important;
+  }
+
+  .dark .post-body p,
+  .dark .post-body li {
+    color: #cbd5e1 !important;
+  }
+
+  .dark .post-body strong,
+  .dark .post-body b {
+    color: #ffffff !important;
+  }
+
+  /* Automatically adapt all inline light background containers into clean dark cards */
+  .dark .post-body div[style*="background"],
+  .dark .post-body section[style*="background"],
+  .dark .post-body .htbd-qbox,
+  .dark .post-body .htbd-link-box,
+  .dark .post-body .ht-meta-engagement-badge,
+  .dark .post-body .ht-toc-container,
+  .dark .post-body .htbd-custom-404-container {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+  }
+
+  .dark .post-body div[style*="background"] *,
+  .dark .post-body .ht-meta-engagement-badge *,
+  .dark .post-body .ht-toc-container * {
+    color: #f1f5f9 !important;
+  }
+
+  .dark .post-body div[style*="background"] a,
+  .dark .post-body .ht-toc-container a {
+    color: #38bdf8 !important;
+  }
+
+  /* Tables inside posts */
+  .dark .post-body table {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+  }
+  .dark .post-body table th {
+    background: #0f172a !important;
+    color: #38bdf8 !important;
+    border-color: #334155 !important;
+  }
+  .dark .post-body table td {
+    background: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #334155 !important;
+  }
+
+
   /* 3. Featured Image Overlay Titles & Metadata (Crisp White on Dark Cards) */
   .entery-category-fly,
   .entery-category-fly .entry-title,
@@ -377,6 +446,7 @@ Benefits:
 </script>
 </b:if>
 <!-- [END] HelpTrickBD Smart 301 Redirection Engine -->
+
 
 <b:include name='theme-head'/>
 <b:if cond='!data:view.isLayoutMode'>
