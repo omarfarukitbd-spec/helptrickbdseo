@@ -1519,34 +1519,182 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
     color: #ffffff !important;
   }
 
-  /* Automatically adapt all inline light background containers into clean dark cards */
-  .dark .post-body div[style*="background"],
-  .dark .post-body section[style*="background"],
+  /* ==========================================================================
+     HelpTrickBD Universal Dark Mode Container & Box Inversion Engine
+     Inverts: TOC Boxes, Cards, QBoxes, Callouts, Badges, Tables, FAQs & Progress Bar
+     ========================================================================== */
+  .dark .post-body .htbd-toc-box,
+  .dark .post-body .htbd-toc-card,
+  .dark .post-body .ht-toc-container,
+  .dark .post-body .tociki-pro,
+  .dark .post-body .tociki-inner,
   .dark .post-body .htbd-qbox,
   .dark .post-body .htbd-link-box,
+  .dark .post-body .htbd-highlight-box,
+  .dark .post-body .htbd-overview-box,
+  .dark .post-body .htbd-quote-box,
+  .dark .post-body .htbd-note-box,
+  .dark .post-body .htbd-tip-box,
+  .dark .post-body .htbd-tip-card,
+  .dark .post-body .htbd-warning-box,
+  .dark .post-body .htbd-hadith-box,
+  .dark .post-body .htbd-draft-box,
+  .dark .post-body .htbd-silo-box,
+  .dark .post-body .htbd-academic-container,
+  .dark .post-body .htbd-qa-card,
+  .dark .post-body .htbd-exam-card,
+  .dark .post-body .htbd-download-card,
+  .dark .post-body .htbd-lyrics-card,
+  .dark .post-body .htbd-master-index-card,
+  .dark .post-body .htbd-passage-box,
+  .dark .post-body .htbd-devotional,
+  .dark .post-body .htbd-tutorial-step-card,
   .dark .post-body .ht-meta-engagement-badge,
-  .dark .post-body .ht-toc-container,
-  .dark .post-body .htbd-custom-404-container {
+  .dark .post-body .htbd-custom-404-container,
+  .dark .post-body [class*="toc-box"],
+  .dark .post-body [class*="toc-card"],
+  .dark .post-body [class*="toc-container"],
+  .dark .post-body [id*="toc"],
+  .dark .post-body div[style*="background"],
+  .dark .post-body section[style*="background"],
+  .dark .post-body aside[style*="background"],
+  .dark .post-body nav[style*="background"],
+  body.dark .post-body .htbd-toc-box,
+  body.dark .post-body .ht-toc-container,
+  body.dark .post-body [class*="toc"],
+  #mainContent.dark .post-body .htbd-toc-box,
+  #mainContent.dark .post-body .htbd-toc-card,
+  #mainContent.dark .post-body .ht-toc-container,
+  #mainContent.dark .post-body .tociki-pro,
+  #mainContent.dark .post-body .htbd-qbox,
+  #mainContent.dark .post-body .htbd-link-box,
+  #mainContent.dark .post-body .htbd-highlight-box,
+  #mainContent.dark .post-body .htbd-note-box,
+  #mainContent.dark .post-body .htbd-tip-box,
+  #mainContent.dark .post-body .htbd-warning-box,
+  #mainContent.dark .post-body .htbd-tutorial-step-card,
+  #mainContent.dark .post-body [class*="toc"],
+  #mainContent.dark .post-body div[style*="background"],
+  #mainContent.dark .post-body section[style*="background"] {
     background: #1e293b !important;
+    border: 1px solid #334155 !important;
     border-color: #334155 !important;
     color: #f1f5f9 !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3) !important;
   }
 
+  /* Text & Elements inside all dark inverted boxes */
+  .dark .post-body .htbd-toc-box *,
+  .dark .post-body .ht-toc-container *,
+  .dark .post-body [class*="toc"] *,
+  .dark .post-body [id*="toc"] *,
+  .dark .post-body .htbd-qbox *,
+  .dark .post-body .htbd-link-box *,
+  .dark .post-body .htbd-highlight-box *,
+  .dark .post-body .htbd-note-box *,
+  .dark .post-body .htbd-tip-box *,
+  .dark .post-body .htbd-tutorial-step-card *,
   .dark .post-body div[style*="background"] *,
-  .dark .post-body .ht-meta-engagement-badge *,
-  .dark .post-body .ht-toc-container * {
+  .dark .post-body section[style*="background"] *,
+  body.dark .post-body .htbd-toc-box *,
+  body.dark .post-body [class*="toc"] *,
+  #mainContent.dark .post-body .htbd-toc-box *,
+  #mainContent.dark .post-body .ht-toc-container *,
+  #mainContent.dark .post-body [class*="toc"] * {
     color: #f1f5f9 !important;
   }
 
+  /* Headings & TOC Titles inside Boxes (Crisp White + Slate Divider) */
+  .dark .post-body .htbd-toc-box h1,
+  .dark .post-body .htbd-toc-box h2,
+  .dark .post-body .htbd-toc-box h3,
+  .dark .post-body .htbd-toc-box h4,
+  .dark .post-body .ht-toc-container div,
+  .dark .post-body .tociki-title-text,
+  .dark .post-body .toc-title,
+  .dark .post-body [class*="toc"] h1,
+  .dark .post-body [class*="toc"] h2,
+  .dark .post-body [class*="toc"] h3,
+  .dark .post-body [class*="toc"] h4,
+  .dark .post-body [class*="toc"] [class*="title"],
+  .dark .post-body .htbd-qbox h1,
+  .dark .post-body .htbd-qbox h2,
+  .dark .post-body .htbd-qbox h3,
+  .dark .post-body .htbd-link-box strong,
+  .dark .post-body div[style*="background"] h1,
+  .dark .post-body div[style*="background"] h2,
+  .dark .post-body div[style*="background"] h3,
+  body.dark .post-body .htbd-toc-box h3,
+  body.dark .post-body [class*="toc"] h3,
+  #mainContent.dark .post-body .htbd-toc-box h3,
+  #mainContent.dark .post-body .ht-toc-container div,
+  #mainContent.dark .post-body [class*="toc"] h3 {
+    color: #ffffff !important;
+    border-bottom: 2px solid #334155 !important;
+    border-bottom-color: #334155 !important;
+  }
+
+  /* Dashed List Separators in TOC */
+  .dark .post-body .htbd-toc-list li,
+  .dark .post-body [class*="toc"] li,
+  .dark .post-body [id*="toc"] li,
+  body.dark .post-body .htbd-toc-list li,
+  #mainContent.dark .post-body .htbd-toc-list li,
+  #mainContent.dark .post-body [class*="toc"] li {
+    border-bottom: 1px dashed #334155 !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .post-body .htbd-toc-list li:last-child,
+  .dark .post-body [class*="toc"] li:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Links inside TOC, Callouts & Boxes (Sky Blue High Contrast) */
+  .dark .post-body .htbd-toc-box a,
+  .dark .post-body .htbd-toc-list li a,
+  .dark .post-body .ht-toc-container a,
+  .dark .post-body .tociki-pro a,
+  .dark .post-body [class*="toc"] a,
+  .dark .post-body [id*="toc"] a,
+  .dark .post-body .htbd-link-box a,
   .dark .post-body div[style*="background"] a,
-  .dark .post-body .ht-toc-container a {
+  .dark .post-body section[style*="background"] a,
+  body.dark .post-body .htbd-toc-box a,
+  body.dark .post-body [class*="toc"] a,
+  #mainContent.dark .post-body .htbd-toc-box a,
+  #mainContent.dark .post-body .htbd-toc-list li a,
+  #mainContent.dark .post-body .ht-toc-container a,
+  #mainContent.dark .post-body [class*="toc"] a,
+  #mainContent.dark .post-body .htbd-link-box a {
     color: #38bdf8 !important;
+  }
+  .dark .post-body .htbd-toc-box a:hover,
+  .dark .post-body .htbd-toc-list li a:hover,
+  .dark .post-body .ht-toc-container a:hover,
+  .dark .post-body [class*="toc"] a:hover,
+  .dark .post-body .htbd-link-box a:hover,
+  .dark .post-body div[style*="background"] a:hover,
+  #mainContent.dark .post-body .htbd-toc-box a:hover,
+  #mainContent.dark .post-body .htbd-toc-list li a:hover {
+    color: #7dd3fc !important;
+  }
+
+  /* Subtitles, notes and helper labels inside TOC/Boxes */
+  .dark .post-body .ht-toc-container span[style*="color: #64748b"],
+  .dark .post-body [class*="toc"] span[style*="color: #64748b"],
+  .dark .post-body .htbd-toc-box span,
+  .dark .post-body [class*="toc"] span {
+    color: #94a3b8 !important;
   }
 
   /* Badges, Chips & Meta Spans in Dark Mode */
   .dark .post-body span[style*="background"],
   .dark .post-body .ht-meta-engagement-badge span[style*="background"],
-  .dark .post-body .htbd-badge {
+  .dark .post-body .htbd-badge,
+  body.dark .post-body span[style*="background"],
+  #mainContent.dark .post-body span[style*="background"],
+  #mainContent.dark .post-body .htbd-badge {
     background: rgba(15, 23, 42, 0.7) !important;
     border: 1px solid #334155 !important;
     color: #38bdf8 !important;
@@ -1555,7 +1703,8 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   /* Green Version & Update Badges in Dark Mode */
   .dark .post-body span[style*="#ecfdf5"],
   .dark .post-body span[style*="#047857"],
-  .dark .post-body span[style*="16a34a"] {
+  .dark .post-body span[style*="16a34a"],
+  #mainContent.dark .post-body span[style*="#ecfdf5"] {
     background: rgba(16, 185, 129, 0.18) !important;
     border: 1px solid rgba(16, 185, 129, 0.4) !important;
     color: #34d399 !important;
@@ -1564,26 +1713,80 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   /* Blue Notice Badges in Dark Mode */
   .dark .post-body span[style*="#e8f0fe"],
   .dark .post-body span[style*="#1a73e8"],
-  .dark .post-body span[style*="#0284c7"] {
+  .dark .post-body span[style*="#0284c7"],
+  #mainContent.dark .post-body span[style*="#e8f0fe"] {
     background: rgba(2, 132, 199, 0.2) !important;
     border: 1px solid rgba(2, 132, 199, 0.4) !important;
     color: #38bdf8 !important;
   }
 
-  /* Tables inside posts */
-  .dark .post-body table {
+  /* Tables inside posts (Header, zebra-striping, and borders) */
+  .dark .post-body table,
+  body.dark .post-body table,
+  #mainContent.dark .post-body table {
     background: #1e293b !important;
     border-color: #334155 !important;
   }
-  .dark .post-body table th {
+  .dark .post-body table th,
+  body.dark .post-body table th,
+  #mainContent.dark .post-body table th {
     background: #0f172a !important;
     color: #38bdf8 !important;
     border-color: #334155 !important;
   }
-  .dark .post-body table td {
+  .dark .post-body table td,
+  .dark .post-body .htbd-table td,
+  body.dark .post-body table td,
+  #mainContent.dark .post-body table td,
+  #mainContent.dark .post-body .htbd-table td {
     background: #1e293b !important;
     color: #cbd5e1 !important;
     border-color: #334155 !important;
+  }
+  .dark .post-body table tr,
+  .dark .post-body table tr:nth-child(even),
+  .dark .post-body table tr:nth-child(odd),
+  .dark .post-body .htbd-table tr:nth-child(even),
+  body.dark .post-body table tr,
+  body.dark .post-body table tr:nth-child(even),
+  #mainContent.dark .post-body table tr:nth-child(even),
+  #mainContent.dark .post-body .htbd-table tr:nth-child(even) {
+    background-color: #1e293b !important;
+  }
+  .dark .post-body table tr:nth-child(even) td,
+  body.dark .post-body table tr:nth-child(even) td,
+  #mainContent.dark .post-body table tr:nth-child(even) td {
+    background-color: #1e293b !important;
+  }
+  .dark .post-body table td strong,
+  .dark .post-body .htbd-table td strong,
+  body.dark .post-body table td strong,
+  #mainContent.dark .post-body table td strong {
+    color: #ffffff !important;
+  }
+
+  /* FAQ Accordion & Items in Dark Mode */
+  .dark .post-body .htbd-faq-item,
+  body.dark .post-body .htbd-faq-item,
+  #mainContent.dark .post-body .htbd-faq-item {
+    border-bottom-color: #334155 !important;
+  }
+  .dark .post-body .htbd-faq-q,
+  body.dark .post-body .htbd-faq-q,
+  #mainContent.dark .post-body .htbd-faq-q {
+    color: #38bdf8 !important;
+  }
+  .dark .post-body .htbd-faq-a,
+  body.dark .post-body .htbd-faq-a,
+  #mainContent.dark .post-body .htbd-faq-a {
+    color: #cbd5e1 !important;
+  }
+
+  /* Zero-Lag Reading Progress Bar in Dark Mode */
+  .dark #ht-reading-progress-container,
+  body.dark #ht-reading-progress-container,
+  #mainContent.dark #ht-reading-progress-container {
+    background: rgba(30, 41, 59, 0.7) !important;
   }
 
   /* 3. Featured Image Overlay Titles & Metadata (Crisp White on Dark Cards) */
