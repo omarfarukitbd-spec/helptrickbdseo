@@ -79,9 +79,20 @@ def update_all_silo_posts():
         print("[ERROR] Could not authenticate with Blogger API v3.")
         sys.exit(1)
 
-    updated_urls = []
+    import argparse
+    parser = argparse.ArgumentParser(description="Update SSC 2027 Silo Posts")
+    parser.add_argument("--part", type=str, help="Specific part to update, e.g., 'Part 05' or 'all'")
+    args, _ = parser.parse_known_args()
 
-    for cfg in SILO_POSTS_CONFIG:
+    configs_to_run = SILO_POSTS_CONFIG
+    if args.part and args.part.lower() != "all":
+        configs_to_run = [c for c in SILO_POSTS_CONFIG if args.part.lower() in c["part"].lower()]
+        if not configs_to_run:
+            print(f"[ERROR] No configuration found matching part: '{args.part}'")
+            return
+
+    updated_urls = []
+    for cfg in configs_to_run:
         part = cfg["part"]
         post_id = cfg["post_id"]
         html_path = cfg["html_path"]
