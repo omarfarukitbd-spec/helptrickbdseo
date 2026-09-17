@@ -26,6 +26,7 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 7. **[06_COMMUNICATION_AND_REPORTING_PROTOCOL.md](file:///.agents/rules/06_COMMUNICATION_AND_REPORTING_PROTOCOL.md)**: Mandatory Live Bengali Reporting & 100% Bengali Artifacts (Plans, Walkthroughs & Audits).
 8. **[07_POST_BACKUP_AND_RESTORE_PROTOCOL.md](file:///.agents/rules/07_POST_BACKUP_AND_RESTORE_PROTOCOL.md)**: Mandatory Pre-Edit Full Post Backup & Rollback Protocol (Original HTML, Image Manifest, Labels & Metadata).
 9. **[08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md](file:///.agents/rules/08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md)**: Mandatory Inquisitive Clarification Gate (Zero guesswork on short prompts), Lightning-Fast Execution Once Clear, and Zero Sycophancy (Challenge mistakes with facts, policy & reality; Never blindly agree).
+10. **[09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md](file:///.agents/rules/09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md)**: Mandatory Single Theme Source of Truth (Zero separate snippet files; all edits directly inside `Helptrickbd theme code.xml`; zero code duplication; dark mode post contrast & callout inversion engine).
 
 ### 🛡️ Automated Quality Gatekeeper Tools:
 - **Pre-Flight Post Validator (Quality Gatekeeper):**
@@ -45,7 +46,7 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 ### A. Typography & Fonts:
 - **Default Font:** `SolaimanLipi` (applied cleanly via CSS `@font-face` from Ekushey CDN / jsDelivr).
 - **Reason:** Hind Siliguri had broken conjunct/glyph rendering issues (e.g., numeral ১ and specific Bengali ligatures had distorted spacing). SolaimanLipi renders standard Bengali newspaper-grade typography across all modern browsers and mobile viewports.
-- **Theme Setup File:** [`templates/theme_customizer/solaiman_lipi_theme_setup.xml`](file:///templates/theme_customizer/solaiman_lipi_theme_setup.xml).
+- **Master Theme File:** [`Helptrickbd theme code.xml`](file:///Helptrickbd%20theme%20code.xml) (Single source of truth).
 
 ### B. Content & Article Architecture Standard:
 Every revived or new article MUST strictly adhere to:
