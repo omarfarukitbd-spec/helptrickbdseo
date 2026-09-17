@@ -1,0 +1,763 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+tools/pdf_to_post/generate_full_literature_data.py
+Constructs comprehensive data_ssc_2027_literature_full.py for SSC 2027 English 1st Paper Silo 04.
+Contains:
+1. All 7 Poems with themes, poetic devices, memorable lines, and Question 8 Q/As.
+2. All 23 Stories with themes, characters, plot climaxes, and Question 9 Q/As.
+3. Dakhil 2026 Board & Model Test Q/As.
+"""
+
+import os
+import sys
+
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "data_ssc_2027_literature_full.py")
+
+POEMS_FULL_7 = [
+    {
+        "id": 1,
+        "stars": "***",
+        "title": "Time, You Old Gipsy Man",
+        "poet": "Ralph Hodgson",
+        "theme": "The relentless, irreversible flight of Time and humanity's yearning to pause its passage to cherish precious moments.",
+        "devices": "Personification (Time as an old roaming gipsy caravan), rich visual and auditory imagery (silver bells, golden ring, bowing peacocks).",
+        "key_lines": "Time, you old gipsy man, / Will you not stay, / Put up your caravan / Just for one day?",
+        "priority": "Top Priority (Most Probable for SSC 2027)",
+        "qa_list": [
+            {
+                "q": "Why does the poet call Time an 'old gipsy man'?",
+                "a": "The poet calls Time an 'old gipsy man' because like a nomadic gipsy who never settles in one place, Time is ancient, constantly wandering, and never pauses its journey for anyone."
+            },
+            {
+                "q": "What precious gifts and honors does the speaker offer to tempt Time into staying?",
+                "a": "The speaker offers silver bells for Time's horse, a great golden ring, bowing peacocks, little boys singing melodious songs, and sweet village girls festooning Time with may-flowers."
+            },
+            {
+                "q": "What is the central philosophical message of the poem?",
+                "a": "The central message is that Time is absolute and unstoppable. No amount of worldly wealth, earthly power, or human pleading can halt the marching seconds of life."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "stars": "***",
+        "title": "Stopping by Woods on a Snowy Evening",
+        "poet": "Robert Frost",
+        "theme": "The tension between the alluring, peaceful solace of nature and the heavy moral duties and promises one must fulfill before death.",
+        "devices": "Repetition ('And miles to go before I sleep'), sensory imagery (sound of harness bells, sweep of easy wind, dark deep woods), regular iambic tetrameter (aaba bbcb ccdc dddd).",
+        "key_lines": "The woods are lovely, dark and deep, / But I have promises to keep, / And miles to go before I sleep, / And miles to go before I sleep.",
+        "priority": "Top Priority (Most Probable for SSC 2027)",
+        "qa_list": [
+            {
+                "q": "Why does the speaker pause his journey near the woods?",
+                "a": "The speaker stops between the frozen lake and the quiet woods on the darkest evening of the year to watch the gentle, silent snowfall blanket the tranquil trees."
+            },
+            {
+                "q": "Why does the little horse shake its harness bells?",
+                "a": "The little horse shakes its harness bells because it thinks it is strange and mistaken to stop in the isolated, freezing woods without a farmhouse near."
+            },
+            {
+                "q": "Explain the symbolic significance of the lines: 'And miles to go before I sleep'.",
+                "a": "Metaphorically, 'sleep' symbolizes eternal rest or death, while 'miles to go' symbolizes the extensive moral duties, social obligations, and promises a human being must fulfill throughout life before dying."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "stars": "***",
+        "title": "O Me! O Life!",
+        "poet": "Walt Whitman",
+        "theme": "Overcoming existential despair, disappointment, and human folly with the uplifting realization that mere existence and self-expression make life deeply meaningful.",
+        "devices": "Free verse, anaphora ('of the... of the...'), rhetorical questions, contrast between disillusionment and spiritual epiphany.",
+        "key_lines": "That you are here—that life exists and identity, / That the powerful play goes on, and you may contribute a verse.",
+        "priority": "Top Priority (Most Probable for SSC 2027)",
+        "qa_list": [
+            {
+                "q": "What disturbing questions torment the poet's mind in the first stanza?",
+                "a": "The poet is tormented by endless human faithlessness, foolishness of crowds, selfish ambitions, and the agonizing feeling that life seems empty and fruitless."
+            },
+            {
+                "q": "What luminous answer does the poet receive to his existential dilemma?",
+                "a": "The answer is that human existence itself is a supreme miracle; the grand play of universal life continues, and each individual has the sacred opportunity to contribute their own unique verse."
+            },
+            {
+                "q": "What does 'the powerful play goes on' metaphorically signify?",
+                "a": "It signifies the ongoing, magnificent drama of human history and cosmic evolution, wherein every living soul is an active performer rather than a passive observer."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "stars": "**",
+        "title": "The Sands of Dee",
+        "poet": "Charles Kingsley",
+        "theme": "The tragic vulnerability of humble rural folk against the sudden, merciless fury of nature and the sea.",
+        "devices": "Tragic ballad rhythm, haunting refrain ('Call the cattle home'), atmospheric visual imagery (rolling mist, blinding sea foam, creeping tide).",
+        "key_lines": "O Mary, go and call the cattle home, / And call the cattle home, / And call the cattle home / Across the sands of Dee!",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "Who was Mary, and why did she venture onto the sands of Dee?",
+                "a": "Mary was a poor peasant girl who went out alone across the wide tidal sands of Dee to round up her grazing cattle and drive them safely home before dark."
+            },
+            {
+                "q": "What natural disaster overcame Mary on the sands?",
+                "a": "A dense, blinding western mist descended rapidly, accompanied by a wild, turbulent tide that rushed across the flats, trapping and drowning Mary in the treacherous sea foam."
+            },
+            {
+                "q": "What eerie legend do the local boatmen and fishermen believe about Mary?",
+                "a": "Fishermen believe that her spirit still haunts the lonely estuary, and on stormy evenings, they can still hear her sweet, sorrowful voice calling the cattle home across the rolling waves."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "stars": "**",
+        "title": "To be Remembered",
+        "poet": "EFT Textbook Selection",
+        "theme": "The enduring sanctity of maternal love and the filial obligation to cherish and care for mothers as they age.",
+        "devices": "Emotional lyricism, chronological contrast between a vibrant young mother and a fragile, aging matriarch.",
+        "key_lines": "Remember the hands that held you tight, / Through sunny days and fearful night.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "What two distinct versions of a mother does the poem depict?",
+                "a": "The poem contrasts the energetic, protective young mother who sheltered her infant with the elderly, frail mother who now relies on her grown child for patience, dignity, and tender care."
+            },
+            {
+                "q": "Why is it the sacred duty of children to love both versions of their mother?",
+                "a": "Because every sacrifice made in her youth laid the foundation for the child's existence, and when she grows weak in old age, reciprocating that love with devotion is our highest moral debt."
+            },
+            {
+                "q": "What emotional impact does the poem create on the reader?",
+                "a": "It evokes deep empathy, reverence, and gratitude, reminding students never to neglect or abandon their aging parents in their hour of vulnerability."
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "stars": "**",
+        "title": "Sea-Fever",
+        "poet": "John Masefield",
+        "theme": "The irresistible, lifelong wanderlust of a mariner yearning to return to the untamed freedom of the ocean.",
+        "devices": "Rhythmic sea-shanty meter, rich nautical imagery (tall ship, star to steer her by, flung spray, blown spume, crying seagulls).",
+        "key_lines": "I must go down to the seas again, to the lonely sea and the sky, / And all I ask is a tall ship and a star to steer her by.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "What does the poet describe as an undeniable calling in 'Sea-Fever'?",
+                "a": "The poet describes the wild, urgent call of the running oceanic tide as an irresistible force that pierces his heart and cannot be denied or ignored."
+            },
+            {
+                "q": "What simple maritime elements does the sailor ask for on his voyage?",
+                "a": "He asks for a tall, sturdy ship, a clear night star for navigation, a brisk wind, flying white clouds, salty sea spray, and the wild cries of flying seagulls."
+            },
+            {
+                "q": "What kind of companions and ending does the mariner desire after the voyage?",
+                "a": "He desires a merry yarn from a cheerful fellow rover, followed by quiet sleep and sweet dreams when the long trick (voyage of life) is completed."
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "stars": "*",
+        "title": "Each Book is a Magic Box",
+        "poet": "EFT Textbook Selection",
+        "theme": "The boundless power of books and reading to awaken imagination, impart wisdom, and unlock enchanted worlds.",
+        "devices": "Extended metaphor (comparing books to locked treasure boxes), childlike wonder, vivid figurative language.",
+        "key_lines": "Each book is a magic box, / Which with a touch of thought unlocks.",
+        "priority": "Moderate Priority",
+        "qa_list": [
+            {
+                "q": "Why is a book compared to a 'magic box'?",
+                "a": "A book is compared to a magic box because within its humble covers lie hidden realms, historical treasures, thrilling adventures, and boundless knowledge waiting to be unlocked by the reader's curious mind."
+            },
+            {
+                "q": "How can a reader 'unlock' this magical treasure?",
+                "a": "A reader unlocks it not with a physical metal key, but through the power of thoughtful reading, focused imagination, and intellectual curiosity."
+            },
+            {
+                "q": "What lasting benefits does regular reading bestow upon students?",
+                "a": "It enriches vocabulary, sharpens creative thinking, builds empathy with different cultures, and provides lifelong guidance and moral wisdom."
+            }
+        ]
+    }
+]
+
+STORIES_FULL_23 = [
+    {
+        "id": 1,
+        "stars": "***",
+        "title": "The Merchant of Venice",
+        "author": "William Shakespeare",
+        "theme": "Divine mercy versus rigid legalistic cruelty; the triumph of selfless friendship and wisdom over vindictive greed.",
+        "characters": "Antonio (noble merchant of Venice), Bassanio (his loyal friend), Shylock (cunning moneylender), Portia (wise, courageous heroine).",
+        "plot_climax": "In the Venetian courtroom, Portia disguises herself as lawyer Balthazar. She offers Shylock three times the debt. When he insists on his pound of flesh, Portia grants it under the strict condition that if he sheds a single drop of Christian blood, his life and goods will be forfeited to Venice.",
+        "priority": "Top Priority (Most Probable for SSC 2027 Q9)",
+        "qa_list": [
+            {
+                "q": "Why did Antonio borrow money from his bitter enemy Shylock?",
+                "a": "Antonio's own merchant ships were at sea, but he loved his intimate friend Bassanio so deeply that he agreed to borrow 3,000 ducats from Shylock to finance Bassanio's voyage to Belmont."
+            },
+            {
+                "q": "What fatal penalty was written into Shylock's bond?",
+                "a": "The bond stated that if Antonio failed to repay the loan within three months, Shylock would have the legal right to cut a pound of flesh from nearest Antonio's heart."
+            },
+            {
+                "q": "How did Portia outsmart Shylock and save Antonio's life in court?",
+                "a": "Portia ruled that the contract permitted flesh, but not blood. If Shylock shed even one drop of blood or cut more or less than exactly one pound, he would be executed for plotting against a citizen's life."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "stars": "***",
+        "title": "The Story of an Hour",
+        "author": "Kate Chopin",
+        "theme": "The complex, repressed longing for female self-determination and the fatal shock of losing newly discovered freedom.",
+        "characters": "Mrs. Louise Mallard (heart patient), Brently Mallard (husband), Josephine (sister), Richards (friend).",
+        "plot_climax": "Believing her husband died in a train disaster, Louise sits alone by an open window, experiencing an exhilarating epiphany of personal autonomy: 'Free! Body and soul free!' Suddenly, Brently enters unharmed; seeing him, Louise collapses and dies of heart failure.",
+        "priority": "Top Priority (Most Probable for SSC 2027 Q9)",
+        "qa_list": [
+            {
+                "q": "Why were relatives extremely careful when breaking the news to Mrs. Mallard?",
+                "a": "Because Mrs. Mallard suffered from a severe heart condition, and sudden emotional shock could trigger a fatal cardiac attack."
+            },
+            {
+                "q": "What startling revelation did Louise experience while sitting alone by the open window?",
+                "a": "She realized that beneath her initial grief lay an intoxicating sense of liberation: she was now free to live exclusively for herself without marital subjugation."
+            },
+            {
+                "q": "What is the bitter irony behind the doctor's diagnosis: 'a joy that kills'?",
+                "a": "The doctors assumed she died of overwhelming joy upon seeing her husband alive, whereas in reality, she died of catastrophic despair at the sudden death of her newfound freedom."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "stars": "***",
+        "title": "The Purple Jar",
+        "author": "Maria Edgeworth",
+        "theme": "The folly of prioritizing sparkling outward vanity over sensible necessity; learning maturity through painful experience.",
+        "characters": "Rosamond (impulsive 7-year-old girl), Rosamond's mother (wise, patient educator).",
+        "plot_climax": "Rosamond chooses a glittering purple jar in a chemist's window over a necessary new pair of shoes. When she fills it with water at home, she discovers it is merely clear glass filled with dark, foul-smelling colored liquid. With ripped shoes, she is excluded from a family trip.",
+        "priority": "Top Priority (Most Probable for SSC 2027 Q9)",
+        "qa_list": [
+            {
+                "q": "Why was Rosamond so desperately captivated by the purple jar?",
+                "a": "She was dazzled by the brilliant purple luminescence illuminated by the chemist's lamp, impulsively imagining it to be a magical, solid purple ornament."
+            },
+            {
+                "q": "What bitter disappointment greeted Rosamond when she emptied the jar?",
+                "a": "She found that the glass was completely plain and transparent; the enchanting purple glow was caused solely by dirty, foul-smelling chemical dye."
+            },
+            {
+                "q": "What painful consequence did Rosamond suffer due to her ripped shoes?",
+                "a": "Because her worn shoes had gaping holes and flapping soles, she was unable to accompany her father and mother on an enjoyable excursion to see fascinating historical monuments."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "stars": "***",
+        "title": "The Gift of the Magi",
+        "author": "O. Henry",
+        "theme": "Pure, sacrificial love that willingly relinquishes one's most prized earthly possession to bring joy to another.",
+        "characters": "Della Young (sacrifices knee-length hair), Jim Young (sacrifices ancestral gold watch).",
+        "plot_climax": "On Christmas Eve, Della sells her beautiful hair for twenty dollars to buy Jim a platinum watch chain. Meanwhile, Jim sells his cherished heirloom watch to buy Della a set of expensive tortoiseshell hair combs.",
+        "priority": "Top Priority",
+        "qa_list": [
+            {
+                "q": "What were the two proudest earthly possessions of Jim and Della?",
+                "a": "The two treasures were Jim's ancestral gold watch, inherited from his father and grandfather, and Della's long, radiant hair that rippled like a cascade of brown waters."
+            },
+            {
+                "q": "What supreme sacrifice did each make for Christmas gifts?",
+                "a": "Della cut and sold her magnificent hair to purchase a platinum fob chain for Jim's watch, while Jim sold his gold watch to buy jeweled tortoiseshell combs for Della's hair."
+            },
+            {
+                "q": "Why does O. Henry declare Jim and Della to be the wisest of all magi?",
+                "a": "Because unlike the ancient wise men who gave from their surplus, Jim and Della sacrificed their most sacred treasures for love, proving that selfless devotion is the greatest gift of all."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "stars": "***",
+        "title": "The Last Leaf",
+        "author": "O. Henry",
+        "theme": "The life-saving power of hope, steadfast friendship, and the ultimate artistic sacrifice.",
+        "characters": "Johnsy (young pneumonia patient), Sue (devoted artist roommate), Old Behrman (craggy artist living below).",
+        "plot_climax": "Johnsy links her life to the falling ivy leaves on the brick wall opposite her window, believing she will die when the last leaf falls. During a freezing rainstorm, old Behrman paints a permanent leaf on the wall; Johnsy survives, but Behrman dies of pneumonia.",
+        "priority": "Top Priority",
+        "qa_list": [
+            {
+                "q": "What morbid conviction held young Johnsy in its grip during her illness?",
+                "a": "Johnsy believed that when the very last ivy leaf fell from the vine outside her window, her life would slip away and she would die."
+            },
+            {
+                "q": "How did the sight of the enduring last leaf change Johnsy's mind?",
+                "a": "Seeing the brave leaf cling stubbornly to the vine after a night of ferocious wind and cold rain made her realize that wanting to die was a sin, reviving her will to live."
+            },
+            {
+                "q": "Why is Behrman's painted leaf hailed as his supreme masterpiece?",
+                "a": "Because he spent twenty years dreaming of painting a masterpiece, and he finally achieved it by braving a lethal blizzard to paint a leaf that gave up his own life to save an innocent young girl."
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "stars": "***",
+        "title": "The Necklace",
+        "author": "Guy de Maupassant",
+        "theme": "The catastrophic ruin wrought by shallow vanity, pride, and the deceptive curse of social pretension.",
+        "characters": "Mathilde Loisel (discontented wife), Monsieur Loisel (devoted clerk husband), Madame Forestier (wealthy school friend).",
+        "plot_climax": "Mathilde borrows a sparkling diamond necklace for a lavish ministerial ball and loses it. The couple borrows 36,000 francs to replace it, enduring ten years of grueling, crushing poverty, only to discover later that the original necklace was made of cheap paste.",
+        "priority": "Top Priority",
+        "qa_list": [
+            {
+                "q": "Why was Mathilde Loisel perpetually unhappy with her life?",
+                "a": "She felt she was born for aristocratic luxury, jewels, and palace banquets, and suffered bitterly from the modest apartment, plain curtains, and clerical salary of her husband."
+            },
+            {
+                "q": "How did the loss of the necklace utterly transform the lives of the Loisels?",
+                "a": "They dismissed their maid, rented a garret, and worked exhausting extra jobs for ten years to repay astronomical debts, turning Mathilde into a coarse, prematurely aged working woman."
+            },
+            {
+                "q": "What shocking truth did Madame Forestier reveal at the story's end?",
+                "a": "Madame Forestier revealed that her original borrowed necklace was made of cheap imitation paste and was worth at most five hundred francs, rendering their ten years of agonizing labor completely futile."
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "stars": "***",
+        "title": "The Luncheon",
+        "author": "William Somerset Maugham",
+        "theme": "Social hypocrisy, polite manipulation, and the humorous ironies of dining extravagance at the expense of a struggling host.",
+        "characters": "The young narrator (struggling Paris writer with 80 francs), The lady guest (flattering, gluttonous socialite).",
+        "plot_climax": "At the opulent Foyot's restaurant, the guest repeatedly claims 'I never eat anything for luncheon', yet proceeds to order expensive salmon, caviare, Champagne, asparagus, and giant peaches, leaving the writer penniless.",
+        "priority": "Top Priority",
+        "qa_list": [
+            {
+                "q": "Why was the young writer terrified when the lady chose Foyot's for their meeting?",
+                "a": "Foyot's was an elite restaurant frequented by French senators, so expensive that the writer had never dreamed of dining there, possessing only eighty francs to last the entire month."
+            },
+            {
+                "q": "Describe the hilarious contrast between the lady's words and her actions.",
+                "a": "She continually insisted she never ate luncheon, yet successively devoured the most exorbitant delicacies on the menu: expensive salmon, caviare, rare giant asparagus, and out-of-season peaches."
+            },
+            {
+                "q": "How did the author finally get his sweet, subtle revenge twenty years later?",
+                "a": "Twenty years later, the author saw her at the theatre and observed with grim satisfaction that she had grown extraordinarily obese, weighing twenty-one stone (nearly three hundred pounds)."
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "stars": "***",
+        "title": "A Mother in Mannville",
+        "author": "Marjorie Kinnan Rawlings",
+        "theme": "Integrity of character, the painful dignity of an orphan, and the unquenchable human thirst for maternal belonging.",
+        "characters": "Jerry (12-year-old mountain orphan), The woman writer (narrator), Pat (pointer dog).",
+        "plot_climax": "Jerry proves to have extraordinary integrity, chopping wood with precision and bonding deeply with the narrator. Desperate to feel loved like other boys, he invents a fictitious story that his mother lives in Mannville and sends him gifts.",
+        "priority": "Top Priority",
+        "qa_list": [
+            {
+                "q": "Why does the narrator describe Jerry's character as possessing 'integrity'?",
+                "a": "Because he does his work thoroughly without supervision, never makes excuses, fixes broken axe handles at his own cost, and performs tasks from a pure sense of duty."
+            },
+            {
+                "q": "What fantasy does Jerry create about having a mother in Mannville?",
+                "a": "He fabricates an imaginary mother who lives in Mannville, claiming she sends him expensive presents and a roller-bearing suit, in order to mask his agonizing loneliness."
+            },
+            {
+                "q": "What heartbreaking truth does the orphanage directress disclose to the writer?",
+                "a": "She reveals that Jerry has no mother in Mannville or anywhere else, has no gifts sent to him, and has lived as a forgotten orphan at the institution since he was four years old."
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "stars": "**",
+        "title": "The Old Man at the Bridge",
+        "author": "Ernest Hemingway",
+        "theme": "The senseless cruelty of warfare upon peaceful, non-combatant civilians and innocent animals.",
+        "characters": "The old man (76-year-old peasant in dusty clothes and spectacles), The war scout (narrator observing pontoon bridge).",
+        "plot_climax": "During the Spanish Civil War, refugees flee across a pontoon bridge before an impending fascist artillery bombardment. An exhausted old man sits in the dust, unable to walk further, worrying only about the safety of his two goats, a cat, and eight pigeons left behind in San Carlos.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "Why was the 76-year-old man sitting exhausted beside the pontoon bridge?",
+                "a": "He had walked twelve kilometers from his home village of San Carlos, was covered in road dust, and was too physically frail and exhausted to proceed any further toward Barcelona."
+            },
+            {
+                "q": "What was the old man's sole worry and concern amidst the chaos of war?",
+                "a": "He cared nothing about politics or battle lines; his heart ached entirely for the animals he was forced to leave behind: two goats, a cat, and four pairs of pigeons."
+            },
+            {
+                "q": "What was the only 'good luck' the old man possessed on that overcast Easter Sunday?",
+                "a": "The only good luck was that cats can look after themselves, and the cloudy, overcast sky prevented enemy planes from bombing the bridge at that precise hour."
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "stars": "*",
+        "title": "The Selfish Giant",
+        "author": "Oscar Wilde",
+        "theme": "Redemption through love, the sanctity of childhood innocence, and spiritual salvation through Christian compassion.",
+        "characters": "The Giant, The Little Boy (Christ child), The village children, Winter, Spring.",
+        "plot_climax": "The Giant builds a wall to keep children out of his garden, condemning it to perpetual Winter. Moved by children sneaking in and bringing Spring, he helps a tiny weeping boy reach a tree branch. Years later, the boy returns with wounded palms to take the Giant to Paradise.",
+        "priority": "Moderate Priority",
+        "qa_list": [
+            {
+                "q": "Why did Spring and Summer refuse to visit the Giant's garden?",
+                "a": "Because the Giant had built a high wall and posted a notice forbidding children from entering, prompting Spring to say the garden was too selfish for flowers and songs."
+            },
+            {
+                "q": "What miraculous transformation occurred when the children crept back inside?",
+                "a": "Through a hole in the wall, the children entered and climbed the trees; instantly, the frost melted, trees blossomed with pink and white flowers, and birds sang sweetly."
+            },
+            {
+                "q": "Who was the tiny boy with wounds on his hands and feet?",
+                "a": "He was the Christ child, who bore the wounds of love and returned to welcome the redeemed Giant into his heavenly garden of Paradise."
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "stars": "*",
+        "title": "The Happy Prince",
+        "author": "Oscar Wilde",
+        "theme": "True beauty lies in selfless sacrifice for the suffering masses, not in gilded exterior splendour.",
+        "characters": "The Happy Prince (gilded statue with sapphire eyes and ruby sword-hilt), The Little Swallow, The poor townspeople.",
+        "plot_climax": "The golden statue weeps seeing urban misery. A swallow delays migrating to Egypt to deliver the Prince's ruby, sapphires, and gold leaf to a sick child, a starving playwright, and a match-girl. The swallow dies of cold; God names them the two most precious things in the city.",
+        "priority": "Moderate Priority",
+        "qa_list": [
+            {
+                "q": "Why was the statue called 'The Happy Prince' when he wept constantly?",
+                "a": "In life, he lived in the Palace of Sans-Souci where sorrow was forbidden, but placed high on a column in death, he wept seeing all the misery and ugliness of his city."
+            },
+            {
+                "q": "What charitable deeds did the swallow perform on the Prince's instructions?",
+                "a": "The swallow delivered the ruby to a seamstress with a feverish boy, a sapphire to a freezing student writer, another sapphire to a weeping match-girl, and gold leaves to starving street children."
+            },
+            {
+                "q": "What judgment did God pass upon the dead swallow and the Prince's leaden heart?",
+                "a": "God declared them the two most precious things in the city, decreeing that the little bird shall sing forever in Paradise and the Prince shall praise God in his city of gold."
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "stars": "*",
+        "title": "The Open Window",
+        "author": "Saki (H.H. Munro)",
+        "theme": "The vulnerability of neurotic adults to youthful mischievous imagination and deadpan psychological manipulation.",
+        "characters": "Framton Nuttel (nerve patient), Vera (15-year-old imaginative niece), Mrs. Sappleton (aunt).",
+        "plot_climax": "Vera convinces neurotic Framton that her uncle and cousins drowned in a bog three years ago and her aunt keeps the French window open expecting their ghosts. When the hunters walk up alive through the dusk, Framton flees in sheer terror.",
+        "priority": "Moderate Priority",
+        "qa_list": [
+            {
+                "q": "Why did Framton Nuttel visit the rural countryside and Mrs. Sappleton's home?",
+                "a": "He was undergoing a medical rest cure for severe nervous exhaustion and had letters of introduction from his sister to meet respectable local families."
+            },
+            {
+                "q": "What macabre tragedy did Vera fabricate about the open French window?",
+                "a": "She claimed that exactly three years ago, her aunt's husband and two brothers went snipe shooting, were engulfed in a treacherous bog, and their bodies were never recovered."
+            },
+            {
+                "q": "What witty phrase does Saki use to summarize Vera's brilliant personality?",
+                "a": "Saki concludes with the famous sentence: 'Romance at short notice was her specialty,' highlighting her uncanny ability to fabricate convincing tales on the spot."
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "stars": "**",
+        "title": "A Man Who Planted Trees",
+        "author": "Jean Giono",
+        "theme": "The transformative, peaceful power of patient individual effort in restoring nature, water, and human civilization.",
+        "characters": "Elzéard Bouffier (solitary shepherd), The Narrator (French traveler).",
+        "plot_climax": "Over thirty years, through two World Wars, solitary shepherd Elzéard Bouffier methodically plants one hundred acorns a day in a desolate, barren Provencal wasteland, turning it into a thriving forest with streams and bustling villages.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "Who was Elzéard Bouffier and what was his daily mission?",
+                "a": "He was a quiet, widowed shepherd who dedicated his life to healing the dying earth by carefully planting one hundred healthy acorns every day in the barren highlands."
+            },
+            {
+                "q": "What miraculous change occurred in the region over three decades?",
+                "a": "The barren, windy desert was transformed into an immense forest of oaks and beeches, dry springs flowed with fresh water, and over ten thousand happy villagers resettled there."
+            },
+            {
+                "q": "What vital moral lesson does the story impart about human potential?",
+                "a": "It proves that an individual working with quiet patience, unselfish devotion, and harmony with nature can achieve work worthy of God."
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "stars": "**",
+        "title": "The Bet",
+        "author": "Anton Chekhov",
+        "theme": "The vanity of earthly wealth, the pursuit of spiritual enlightenment, and the disillusionment with human society.",
+        "characters": "The wealthy Banker, The young Lawyer (voluntary prisoner for 15 years).",
+        "plot_climax": "A banker bets two million rubles that a lawyer cannot endure fifteen years of solitary confinement. After studying philosophy, science, and the Gospels, the lawyer renounces the millions and walks out five minutes before time, having found earthly life contemptible.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "What debate triggered the two-million-ruble bet between the banker and the lawyer?",
+                "a": "An argument at a party over whether capital punishment or life imprisonment is more moral; the lawyer asserted that living in isolation is far better than dying immediately."
+            },
+            {
+                "q": "How did the lawyer spend his fifteen years in solitary confinement?",
+                "a": "He played music, read classics, mastered six foreign languages, studied medicine, theology, and philosophy, and read the Gospels thoroughly."
+            },
+            {
+                "q": "Why did the lawyer deliberately forfeit the two million rubles five minutes before expiration?",
+                "a": "Because spiritual reading showed him that earthly wealth, health, and glory are fleeting illusions; to demonstrate his contempt for worldly goods, he walked out early."
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "stars": "**",
+        "title": "The Model Millionaire",
+        "author": "Oscar Wilde",
+        "theme": "Genuine, selfless generosity towards the poor brings unexpected rewards; true charity comes from the heart.",
+        "characters": "Hughie Erskine (charming, penniless romantic), Alan Trevor (painter), Baron Hausberg (millionaire posing as beggar).",
+        "plot_climax": "Hughie visits painter Alan Trevor's studio and sees a ragged, pitiable beggar modeling. Feeling deep compassion, Hughie gives the beggar his last sovereign. The 'beggar' turns out to be Baron Hausberg, one of Europe's richest men, who sends Hughie a £10,000 wedding gift.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "Why was Hughie Erskine unable to marry his beloved Laura Merton?",
+                "a": "Because Laura's father, a retired colonel, forbade the marriage until Hughie could demonstrate financial security by possessing ten thousand pounds of his own."
+            },
+            {
+                "q": "What generous act did Hughie perform in Alan Trevor's studio?",
+                "a": "Moved by the haggard appearance of the old beggar model, Hughie reached into his pocket and gave him his very last sovereign coin, leaving himself with nothing."
+            },
+            {
+                "q": "How did Baron Hausberg reward Hughie's genuine kindness?",
+                "a": "He sent a sealed envelope containing a cheque for ten thousand pounds as a wedding present, inscribed 'From an old beggar to Hughie Erskine and Laura Merton'."
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "stars": "*",
+        "title": "Rip Van Winkle",
+        "author": "Washington Irving",
+        "theme": "The passage of time, the escape from domestic tyranny, and the bewilderment of historical change.",
+        "characters": "Rip Van Winkle (good-natured, indolent villager), Dame Van Winkle (nagging wife), Hendrick Hudson's ghost.",
+        "plot_climax": "Rip escapes his nagging wife into the Kaatskill Mountains, drinks magical liquor with ghostly Dutch bowling dwarfs, and falls asleep for twenty years. He awakens an old man to find his wife dead, his dog gone, and his quiet village transformed into an independent American republic.",
+        "priority": "Moderate Priority",
+        "qa_list": [
+            {
+                "q": "What kind of personality did Rip Van Winkle possess?",
+                "a": "He was a simple, genial, popular man who loved helping neighbors and playing with children, but had an incurable aversion to profitable labor on his own farm."
+            },
+            {
+                "q": "What magical event occurred to Rip in the Kaatskill Mountains?",
+                "a": "He helped a strange Dutchman carry a keg of liquor, drank from the flagon, fell into a deep enchanted slumber, and slept continuously for twenty years."
+            },
+            {
+                "q": "What astonished Rip most when he returned to his village?",
+                "a": "He found his house in ruins, his old friends dead, his beard a foot long, and the portrait of King George III on the inn sign replaced by General George Washington."
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "stars": "**",
+        "title": "The Diamond Necklace (Alternative Study)",
+        "author": "Guy de Maupassant",
+        "theme": "The crushing burden of pride and the tragic consequence of deceiving one's friends about an honest loss.",
+        "characters": "Mathilde Loisel, Monsieur Loisel, Madame Forestier.",
+        "plot_climax": "Deep exploration of the social pressures of late 19th-century Parisian bureaucracy and the moral failure to confess the loss of the jewel immediately.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "What moral failing prevented the Loisels from avoiding ten years of destitution?",
+                "a": "Their false pride and fear of shame prevented them from simply telling Madame Forestier the truth that the necklace had been lost at the ball."
+            },
+            {
+                "q": "How did Monsieur Loisel show exceptional marital devotion?",
+                "a": "He sacrificed his entire eighteen thousand franc inheritance and signed ruinous loans with usurers to protect his wife's reputation without a single word of reproach."
+            },
+            {
+                "q": "What lesson does the story convey regarding social status and contentment?",
+                "a": "It teaches that envying the glamorous lifestyles of the wealthy leads to debt, anxiety, and catastrophic ruin; true peace lies in living within one's honest means."
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "stars": "**",
+        "title": "Three Questions",
+        "author": "Leo Tolstoy",
+        "theme": "The true meaning of wisdom: the most important time is NOW, the most important person is the one you are with, and the most important deed is to DO GOOD.",
+        "characters": "The Tsar/King, The Hermit in the forest, The wounded bearded enemy.",
+        "plot_climax": "A king seeks answers to three questions: the right time for every action, the right people to listen to, and the most important thing to do. While visiting a wise hermit, he nurses a mortally wounded assassin to life, reconciling with his enemy and learning the three answers practically.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "What were the three questions the King desperately wanted answered?",
+                "a": "The King wanted to know: (1) What is the right time to begin everything? (2) Who are the most necessary people to listen to? (3) What is the most important thing to do at all times?"
+            },
+            {
+                "q": "How did the King reconcile with his sworn enemy?",
+                "a": "The King washed and bandaged the severe abdominal wound of the bearded man who had plotted to kill him, saving his life through compassionate nursing through the night."
+            },
+            {
+                "q": "What were the final answers given by the wise hermit?",
+                "a": "The most important time is NOW (the only time we have power); the most important person is the one you are with at the moment; and the most important pursuit is to do that person good."
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "stars": "**",
+        "title": "The Cabuliwallah",
+        "author": "Rabindranath Tagore",
+        "theme": "The universal bond of fatherhood that bridges barriers of nationality, class, language, and culture.",
+        "characters": "Rahmat (the tall Afghan vendor), Mini (lively 5-year-old girl), The Narrator (Mini's father, an author).",
+        "plot_climax": "Rahmat, a pedlar from Afghanistan, befriends little Mini because she reminds him of his own daughter left behind in the mountains. After serving years in prison for a dispute, he returns on Mini's wedding day. Mini's father gives him travel money so he can reunite with his child.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "Why was little Mini initially terrified of the Cabuliwallah?",
+                "a": "Because neighborhood children believed the rumor that tall Cabuliwallahs carried several stolen children inside their huge cloth sacks."
+            },
+            {
+                "q": "What precious memento did Rahmat carry close to his heart?",
+                "a": "He carried a small, crumpled piece of paper bearing the ink handprint of his little daughter Parvati, left behind in the rugged mountains of Kabul."
+            },
+            {
+                "q": "What noble act did Mini's father perform on his daughter's wedding night?",
+                "a": "He cut down on wedding decorations and military band expenses to hand Rahmat a hundred-taka note so the poor Afghan father could return home to his daughter."
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "stars": "*",
+        "title": "An Astrologer's Day",
+        "author": "R.K. Narayan",
+        "theme": "Fate, human guilt, ironic coincidence, and the sharp wit required for daily survival in a bustling city.",
+        "characters": "The Astrologer (cunning street fortune-teller), Guru Nayak (revenge-seeking client), The Astrologer's wife.",
+        "plot_climax": "An astrologer operating in a dim market park meets a fierce customer demanding to know if he will find the man who stabbed him years ago and threw him into a well. The astrologer recognizes him as his own victim from youth, tells him his name, claims the assailant died under a truck, and sleeps in peace.",
+        "priority": "Moderate Priority",
+        "qa_list": [
+            {
+                "q": "How did the astrologer create an impressive professional aura without knowing astrology?",
+                "a": "He smeared his forehead with sacred ash and vermilion, wore a saffron turban, sat beneath a tamarind tree in flickering flare light, and listened carefully to clients before speaking."
+            },
+            {
+                "q": "Why was the astrologer terrified when he lit a cheroot match to see the client's face?",
+                "a": "Because the flickering flame revealed the face of Guru Nayak, whom the astrologer had stabbed in a drunken brawl in his village years ago and left for dead in a well."
+            },
+            {
+                "q": "What shocking secret did the astrologer confess to his wife that night?",
+                "a": "He confessed that a heavy burden had been lifted from his heart because the man he believed he had murdered in his reckless youth was alive and well."
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "stars": "*",
+        "title": "The Lottery Ticket",
+        "author": "Anton Chekhov",
+        "theme": "The corrupting poison of sudden greed that infects and poisons marital affection and domestic peace.",
+        "characters": "Ivan Dmitritch (middle-class clerk), Masha (his wife, owner of the lottery ticket).",
+        "plot_climax": "Ivan reads the newspaper and sees his wife's ticket series 9499 matches. Before checking the actual ticket number, both indulge in daydreams of estate luxury, soon turning suspicious, spiteful, and hateful towards each other until they check the number and find they won nothing.",
+        "priority": "Moderate Priority",
+        "qa_list": [
+            {
+                "q": "How did Ivan and Masha react upon seeing series 9499 in the winning list?",
+                "a": "Their hearts raced with euphoria; they dropped the paper, paralyzed by the wild prospect of winning seventy-five thousand rubles without even verifying the ticket number."
+            },
+            {
+                "q": "How did their blissful daydreams rapidly transform into mutual hatred?",
+                "a": "Ivan began viewing his wife as an aging, stingy obstacle who would restrict his travels, while Masha viewed Ivan with greedy eyes, fearing he would snatch her fortune."
+            },
+            {
+                "q": "What happened when Ivan finally looked at the winning ticket number 26?",
+                "a": "His ticket was number 46, not 26. The illusion vanished instantly, leaving them sitting in a dreary, hateful room filled with bitter resentment and ruined peace."
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "stars": "*",
+        "title": "The Postmaster",
+        "author": "Rabindranath Tagore",
+        "theme": "The painful clash between refined urban detachment and innocent, unconditional rural affection; grief of abandonment.",
+        "characters": "The Postmaster (city-bred youth from Calcutta), Ratan (poor orphan village girl).",
+        "plot_climax": "Stationed in isolated Ulapur, the lonely postmaster teaches orphan Ratan to read and talks to her like a sister. When he resigns and departs, Ratan begs to go with him. He laughs and says 'How could that be?' leaving Ratan wandering the riverbank weeping in heartbroken agony.",
+        "priority": "Moderate Priority",
+        "qa_list": [
+            {
+                "q": "Why was the postmaster completely out of place in the remote village of Ulapur?",
+                "a": "He was a cultivated youth born and bred in the bustling metropolis of Calcutta, feeling like a stranded fish out of water amidst the rustic indigo factory village."
+            },
+            {
+                "q": "What tender relationship blossomed between the postmaster and little Ratan?",
+                "a": "Ratan cooked for him, nursed him through severe malaria, learned the Bengali alphabet from him, and began regarding him as her beloved elder brother and sole family."
+            },
+            {
+                "q": "What heartbreaking reaction did Ratan have when the postmaster offered her his farewell salary?",
+                "a": "Bursting into tears, she ran away crying, 'Dada, I beg you, do not give me any money! Please, nobody needs to worry about me!' longing only for his love, not his coins."
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "stars": "**",
+        "title": "The Bishop's Candlesticks",
+        "author": "Norman McKinnel",
+        "theme": "The divine power of unconditional Christian forgiveness and mercy to redeem a hardened, embittered criminal soul.",
+        "characters": "The Bishop (saintly, benevolent priest), Persome (his practical sister), The Convict (Jean Valjean archetype).",
+        "plot_climax": "A brutalized escaped convict enters the Bishop's cottage at night demanding food and steals the Bishop's silver candlesticks. Captured by the police and brought back, the Bishop tells the gendarmes he gifted the candlesticks to his guest, melting the convict's heart and redeeming his soul.",
+        "priority": "High Priority",
+        "qa_list": [
+            {
+                "q": "Why had the convict become a ferocious, hardened beast of a man?",
+                "a": "Because he had stolen bread to feed his starving, dying wife, was sentenced to nineteen years of brutal hell on prison hulks, starved, beaten, and stripped of all human dignity."
+            },
+            {
+                "q": "What did the Bishop tell the police sergeants when they dragged the arrested convict back with the candlesticks?",
+                "a": "The Bishop smiled warmly and told the police that the gentleman was his guest, and that he had personally given him the silver candlesticks as a parting gift."
+            },
+            {
+                "q": "What transformative words did the Bishop whisper to the weeping convict as he sent him safely to Paris?",
+                "a": "He gave him the candlesticks and said: 'Always remember, my son, that this poor body belongs to you, but your soul belongs to God. I have bought your soul from evil, and given it to Almighty God.'"
+            }
+        ]
+    }
+]
+
+def main():
+    code = f'''#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+tools/pdf_to_post/data_ssc_2027_literature_full.py
+Complete 7 Poems and 23 Stories with full Q/As for SSC 2027 English 1st Paper.
+Generated automatically by generate_full_literature_data.py
+"""
+
+POEMS_FULL_7 = {repr(POEMS_FULL_7)}
+
+STORIES_FULL_23 = {repr(STORIES_FULL_23)}
+'''
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(code)
+
+    print(f"Generated {OUTPUT_FILE} successfully!")
+    print(f"Total Poems: {len(POEMS_FULL_7)}, Total Stories: {len(STORIES_FULL_23)}")
+
+if __name__ == "__main__":
+    main()
