@@ -1522,22 +1522,58 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   /* Automatically adapt all inline light background containers into clean dark cards */
   .dark .post-body div[style*="background"],
   .dark .post-body section[style*="background"],
+  .dark .post-body blockquote,
   .dark .post-body .htbd-qbox,
   .dark .post-body .htbd-link-box,
+  .dark .post-body .internal-link-box,
+  .dark .post-body .read-also-box,
   .dark .post-body .htbd-toc-box,
   .dark .post-body .ht-toc-container,
   .dark .post-body .htbd-toc-card,
   .dark .post-body .htbd-overview-box,
+  .dark .post-body .htbd-passage-box,
+  .dark .post-body .htbd-highlight-box,
+  .dark .post-body .highlight-box,
+  .dark .post-body .highlight,
   .dark .post-body .htbd-qa-card,
+  .dark .post-body .qa-card,
   .dark .post-body .htbd-master-index-card,
   .dark .post-body .htbd-silo-box,
   .dark .post-body .htbd-series-nav,
   .dark .post-body .htbd-exam-card,
   .dark .post-body .htbd-tip-card,
+  .dark .post-body .htbd-tip-box,
   .dark .post-body .htbd-download-card,
   .dark .post-body .htbd-faq-item,
+  .dark .post-body .htbd-faq-wrap,
+  .dark .post-body .htbd-note-box,
+  .dark .post-body .htbd-warning-box,
+  .dark .post-body .htbd-draft-box,
+  .dark .post-body .htbd-quote-box,
+  .dark .post-body .quote-box,
+  .dark .post-body .htbd-arabic-verse,
+  .dark .post-body .htbd-hadith-box,
+  .dark .post-body .htbd-eng-sec,
+  .dark .post-body .english-section,
+  .dark .post-body .htbd-tutorial-step-card,
+  .dark .post-body .intro-box,
+  .dark .post-body .post-conclusion,
+  .dark .post-body .takeaway-box,
+  .dark .post-body .expert-box,
+  .dark .post-body .cta-box,
+  .dark .post-body .season-card,
+  .dark .post-body .calc-box,
+  .dark .post-body .calendar-info-box,
   .dark .post-body .ht-meta-engagement-badge,
-  .dark .post-body .htbd-custom-404-container {
+  .dark .post-body .htbd-custom-404-container,
+  body.dark .post-body div[style*="background"],
+  body.dark .post-body .htbd-passage-box,
+  body.dark .post-body .htbd-highlight-box,
+  body.dark .post-body .htbd-faq-wrap,
+  #mainContent.dark .post-body div[style*="background"],
+  #mainContent.dark .post-body .htbd-passage-box,
+  #mainContent.dark .post-body .htbd-highlight-box,
+  #mainContent.dark .post-body .htbd-faq-wrap {
     background: #1e293b !important;
     border: 1px solid #334155 !important;
     border-color: #334155 !important;
@@ -1545,19 +1581,90 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   }
 
   .dark .post-body div[style*="background"] *,
+  .dark .post-body blockquote *,
   .dark .post-body .htbd-toc-box *,
   .dark .post-body .ht-toc-container *,
   .dark .post-body .htbd-toc-card *,
   .dark .post-body .htbd-overview-box *,
+  .dark .post-body .htbd-passage-box *,
+  .dark .post-body .htbd-passage-box p,
+  .dark .post-body .htbd-passage-box em,
+  .dark .post-body .htbd-highlight-box *,
+  .dark .post-body .highlight-box *,
   .dark .post-body .htbd-qa-card *,
+  .dark .post-body .qa-card *,
   .dark .post-body .htbd-master-index-card *,
   .dark .post-body .htbd-silo-box *,
   .dark .post-body .htbd-series-nav *,
   .dark .post-body .htbd-exam-card *,
   .dark .post-body .htbd-tip-card *,
+  .dark .post-body .htbd-tip-box *,
   .dark .post-body .htbd-download-card *,
-  .dark .post-body .htbd-faq-item * {
+  .dark .post-body .htbd-faq-item *,
+  .dark .post-body .htbd-faq-wrap *,
+  .dark .post-body .htbd-note-box *,
+  .dark .post-body .htbd-warning-box *,
+  .dark .post-body .htbd-draft-box *,
+  .dark .post-body .htbd-quote-box *,
+  .dark .post-body .htbd-arabic-verse *,
+  .dark .post-body .htbd-hadith-box *,
+  .dark .post-body .htbd-eng-sec *,
+  .dark .post-body .htbd-tutorial-step-card *,
+  .dark .post-body .intro-box *,
+  .dark .post-body .post-conclusion *,
+  .dark .post-body .takeaway-box *,
+  .dark .post-body .expert-box *,
+  .dark .post-body .cta-box *,
+  .dark .post-body .season-card *,
+  .dark .post-body .calc-box *,
+  .dark .post-body .calendar-info-box * {
     color: #cbd5e1 !important;
+  }
+
+  /* Specific Passage & Italic Contrast in Dark Mode (Screenshot 1 Fix) */
+  .dark .post-body .htbd-passage-box em,
+  .dark .post-body .htbd-passage-box p,
+  body.dark .post-body .htbd-passage-box em,
+  body.dark .post-body .htbd-passage-box p,
+  #mainContent.dark .post-body .htbd-passage-box em,
+  #mainContent.dark .post-body .htbd-passage-box p {
+    color: #f1f5f9 !important;
+    font-style: italic !important;
+  }
+
+  /* Specific FAQ Wrap Contrast in Dark Mode (Screenshot 3 Fix) */
+  .dark .post-body .htbd-faq-wrap,
+  body.dark .post-body .htbd-faq-wrap,
+  #mainContent.dark .post-body .htbd-faq-wrap {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+  }
+  .dark .post-body .htbd-faq-wrap h2,
+  .dark .post-body .htbd-faq-wrap h3,
+  .dark .post-body .htbd-faq-wrap div h3,
+  body.dark .post-body .htbd-faq-wrap h2,
+  body.dark .post-body .htbd-faq-wrap h3,
+  body.dark .post-body .htbd-faq-wrap div h3,
+  #mainContent.dark .post-body .htbd-faq-wrap h2,
+  #mainContent.dark .post-body .htbd-faq-wrap h3,
+  #mainContent.dark .post-body .htbd-faq-wrap div h3 {
+    color: #38bdf8 !important;
+    border-bottom-color: #334155 !important;
+  }
+  .dark .post-body .htbd-faq-wrap div[style*="border-bottom"] {
+    border-bottom-color: #334155 !important;
+  }
+  .dark .post-body .htbd-faq-wrap div,
+  .dark .post-body .htbd-faq-wrap div[style*="color"] {
+    color: #cbd5e1 !important;
+  }
+  .dark .post-body .htbd-faq-q {
+    color: #38bdf8 !important;
+  }
+  .dark .post-body .htbd-faq-a {
+    background: #0f172a !important;
+    color: #cbd5e1 !important;
+    border-left-color: #38bdf8 !important;
   }
 
   /* Headings & Titles inside Cards */
@@ -1568,7 +1675,8 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   .dark .post-body .htbd-qa-card h3,
   .dark .post-body .htbd-master-index-card h3,
   .dark .post-body .htbd-series-nav .nav-title,
-  .dark .post-body .htbd-faq-item p:first-child {
+  .dark .post-body .htbd-faq-item p:first-child,
+  .dark .post-body .htbd-highlight-box strong {
     color: #ffffff !important;
     border-bottom-color: #334155 !important;
   }
@@ -1591,7 +1699,11 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   .dark .post-body table td a,
   .dark .post-body .htbd-academic-table td a,
   .dark .post-body .htbd-table td a,
-  .dark .post-body a[style*="color"] {
+  .dark .post-body a[style*="color"],
+  body.dark .post-body a,
+  body.dark .post-body table td a,
+  #mainContent.dark .post-body a,
+  #mainContent.dark .post-body table td a {
     color: #38bdf8 !important;
   }
   .dark .post-body a:hover,
