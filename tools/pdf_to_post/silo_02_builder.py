@@ -21,12 +21,12 @@ LABELS = ["SSC Suggestion", "Education", "Dakhil Suggestion"]
 
 def get_series_nav(current_part):
     posts = [
-        ("পিলার হাব", "এসএসসি ২০২৭ ইংরেজি ১ম পত্র — সম্পূর্ণ সাজেশন ও মানবণ্টন (Pillar Post)", f"{BLOG_BASE}/ssc-english-1st-paper-suggestion-2027.html"),
-        ("Part 01", "সিন প্যাসেজ সাজেশন (Seen Passage MCQ, Q/A & Gap Fill)", f"{BLOG_BASE}/ssc-2027-english-seen-passage-suggestion.html"),
-        ("Part 02", "আনসিন প্যাসেজ ও সামারি (Unseen Passage & Summary Writing)", f"{BLOG_BASE}/ssc-2027-english-unseen-passage-summary.html"),
-        ("Part 03", "ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ (Sentence Matching & Re-arranging)", f"{BLOG_BASE}/ssc-2027-english-matching-rearrange.html"),
-        ("Part 04", "কবিতা ও গল্প প্রশ্নোত্তর (Poems & Stories Q/A Guide)", f"{BLOG_BASE}/ssc-2027-english-poems-stories-question.html"),
-        ("Part 05", "রাইটিং পার্ট — Story & Dialogue (Completing Story & Dialogue Writing)", f"{BLOG_BASE}/ssc-2027-english-completing-story.html"),
+        ("পিলার হাব", "SSC English 1st Paper Suggestion 2027 (মাস্টার হাব ও মানবণ্টন)", f"{BLOG_BASE}/ssc-english-1st-paper-suggestion-2027.html"),
+        ("Part 01", "SSC 2027 English Seen Passage Suggestion (সিন প্যাসেজ MCQ ও প্রশ্নোত্তর)", f"{BLOG_BASE}/ssc-2027-english-seen-passage-suggestion.html"),
+        ("Part 02", "SSC 2027 English Unseen Passage & Summary Suggestion (আনসিন ও সামারি)", f"{BLOG_BASE}/ssc-2027-english-unseen-passage-summary.html"),
+        ("Part 03", "SSC 2027 English Matching & Rearrange Suggestion (ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ)", f"{BLOG_BASE}/ssc-2027-english-matching-rearrange.html"),
+        ("Part 04", "SSC 2027 English Poems & Stories Suggestion (কবিতা ও গল্প প্রশ্নোত্তর)", f"{BLOG_BASE}/ssc-2027-english-poems-stories-question.html"),
+        ("Part 05", "SSC 2027 English Completing Story & Dialogue Suggestion (স্টোরি ও ডায়ালগ)", f"{BLOG_BASE}/ssc-2027-english-completing-story.html"),
     ]
     items_html = ""
     for label, title, url in posts:
@@ -44,8 +44,8 @@ def get_series_nav(current_part):
 
 def build_post():
     slug = "ssc-2027-english-unseen-passage-summary"
-    title = "এসএসসি ২০২৭ ইংরেজি ১ম পত্র আনসিন প্যাসেজ ও সামারি রাইটিং গাইড (SSC 2027 English Unseen Passage, Information Transfer & Summary Writing Complete Guide)"
-    meta_desc = "SSC 2027 English 1st Paper Unseen Passage ও Summary Writing গাইড। Information Transfer (Q4) ও Summary (Q5) এর ৪১টি প্যাসেজ এবং ৩টি মডেল সমাধান।"
+    title = "SSC 2027 English Unseen Passage & Summary Suggestion | এসএসসি আনসিন প্যাসেজ ও সামারি রাইটিং"
+    meta_desc = "SSC 2027 English Unseen Passage & Summary Writing Suggestion। Information Transfer (Q4) ও Summary Writing (Q5) এর ৪১টি সেরা প্যাসেজ এবং পূর্ণাঙ্গ মডেল সমাধান।"
     banner_url = f"{CDN_BASE}/ssc_2027_silo_02_unseen_summary.webp"
     banner_alt = "SSC 2027 English Unseen Passage Information Transfer and Summary Writing Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
@@ -247,7 +247,9 @@ def build_post():
   </figure>
 
   <div class="htbd-overview-box">
+    <p style="margin: 0 0 10px 0; font-size: 16px; color: #1e3a8a; font-weight: 700;">টপিক ও ফোকাস: SSC 2027 English Unseen Passage &amp; Summary Suggestion (Questions 4, 5)</p>
     <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্র পরীক্ষায় <strong>প্রশ্ন ৪ ও ৫</strong> একটি পাঠ্যবই-বহির্ভূত আনসিন প্যাসেজ (Unseen Passage) থেকে আসে এবং এতে মোট <strong>১৫ নম্বর</strong> নির্ধারিত থাকে। এর মধ্যে Q4-এ থাকে ৫ নম্বরের ইনফরমেশন ট্রান্সফার গ্রিড (Information Transfer) এবং Q5-এ থাকে ১০ নম্বরের সামারি রাইটিং (Summary Writing)। নিচে ৪১টি গুরুত্বপূর্ণ আনসিন বিষয়ের স্টারভিত্তিক তালিকা এবং ৩টি পূর্ণাঙ্গ মডেল টেস্ট প্রশ্ন ও উত্তরসহ প্রদান করা হলো।</p>
+    <p style="margin: 12px 0 0 0; font-size: 15px; background: #e0f2fe; padding: 8px 12px; border-radius: 6px; color: #0369a1; line-height: 1.6;"><strong>টার্গেট সার্চ কিওয়ার্ড (Target Keywords):</strong> SSC 2027 English Unseen Passage Suggestion, SSC Summary Writing Rules 2027, Class 10 Information Transfer, SSC English 1st Paper Unseen Passage</p>
   </div>
 
 <!--more-->
@@ -404,6 +406,18 @@ def build_post():
   <div class="htbd-faq-item">
     <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 3: সামারিতে কি মূল প্যাসেজের লাইন হুবহু লেখা যাবে?</p>
     <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: কখনোই না। হুবহু লাইন তুললে পরীক্ষক নম্বর কমিয়ে দেন। তথ্য ঠিক রেখে সমার্থক শব্দ ও নিজস্ব বাক্য গঠনে প্যারাফ্রেজ করে লিখলেই সর্বোচ্চ নম্বর পাওয়া সম্ভব।</p>
+  </div>
+
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px 24px; margin: 30px 0 20px 0;">
+    <h3 style="margin: 0 0 10px 0; font-size: 19px; color: #0c2340; font-weight: 700;">সম্পর্কিত সার্চ টার্মস ও টপিকস (Related Search Keywords)</h3>
+    <p style="margin: 0 0 12px 0; font-size: 15px; color: #64748b;">শিক্ষার্থীরা গুগলে এই অধ্যায়ের তথ্য খুঁজতে সাধারণত যেসব কি-ওয়ার্ড ব্যবহার করে থাকে:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC 2027 English Unseen Passage Suggestion</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Summary Writing Rules and Format 2027</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Information Transfer Q4 Important Biography List</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Class 10 English 1st Paper Unseen Passage All Board</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">How to Write Summary in SSC English 1st Paper</span>
+    </div>
   </div>
 
   {series_nav}

@@ -32,6 +32,12 @@ from tools.backup_manager.post_backup_manager import create_post_backup
 
 SILO_POSTS_CONFIG = [
     {
+        "part": "Pillar Hub",
+        "post_id": "5652005814898036993",
+        "html_path": os.path.join(PROJECT_ROOT, "scratch", "raw_posts", "ssc_2027_english_1st_paper_pillar.html"),
+        "meta_path": os.path.join(PROJECT_ROOT, "scratch", "raw_posts", "ssc_2027_english_1st_paper_pillar.json"),
+    },
+    {
         "part": "Part 01",
         "post_id": "6338741433469034454",
         "html_path": os.path.join(PROJECT_ROOT, "scratch", "raw_posts", "ssc_2027_silo_01_seen_passage.html"),
@@ -106,19 +112,19 @@ def update_all_silo_posts():
         print(f"  [*] Fetching live post for safety backup...")
         try:
             live_post = service.posts().get(blogId=BLOG_ID, postId=post_id).execute()
-            backup_res = create_post_backup(live_post, reason="clean_design_and_official_banner")
+            backup_res = create_post_backup(live_post, reason="seo_title_and_lsi_update")
             print(f"  [✔] Pre-edit backup secured: {backup_res.get('backup_dir')}")
         except Exception as e_bak:
             print(f"  [!] Backup note: {e_bak}")
 
-        # 3. Patch post content, preserving original live title and labels
+        # 3. Patch post content and update to the SEO-optimized front-loaded title
         patch_body = {
-            "title": live_post.get("title", meta["title"]),
+            "title": meta["title"],
             "content": new_content,
             "labels": meta["labels"]
         }
 
-        print("  [*] Updating live Blogger post with clean design & official banner...")
+        print("  [*] Updating live Blogger post with front-loaded title & LSI keywords...")
         updated = service.posts().patch(blogId=BLOG_ID, postId=post_id, body=patch_body).execute()
         live_url = updated.get("url")
         print(f"  [✔] {part} Updated Successfully!")

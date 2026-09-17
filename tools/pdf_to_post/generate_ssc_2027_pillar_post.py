@@ -231,6 +231,9 @@ html_content = f"""<style>
       <strong>Quick Overview (সারসংক্ষেপ):</strong> 
       <strong>SSC English 1st Paper Suggestion 2027 (Subject Code: 136)</strong> পরীক্ষা জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) প্রণীত ১০০ নম্বরের পূর্ণাঙ্গ সিলেবাস অনুযায়ী অনুষ্ঠিত হবে। পরীক্ষাটি মূলত দুটি প্রধান অংশে বিভক্ত—<strong>Part A: Reading (70 Marks)</strong> এবং <strong>Part B: Writing (30 Marks)</strong>। রিডিং অংশে Seen Passage থেকে Multiple Choice Questions (7 Marks), Answering Questions (10 Marks), Gap Filling Without Clues (5 Marks); Unseen Passage থেকে Information Transfer (5 Marks), Writing Summary (10 Marks); এছাড়া Sentence Matching Table (5 Marks), Re-arranging Sentences (8 Marks) এবং Questions from Poems &amp; Stories (10 + 10 = 20 Marks) অন্তর্ভুক্ত। অন্যদিকে রাইটিং অংশে Completing Story (15 Marks) এবং Dialogue Writing (15 Marks) থাকবে। নিচে ২০২৭ সালের পরীক্ষার্থীদের জন্য সম্পূর্ণ প্রশ্নভিত্তিক থ্রি-স্টার সাজেশন, এ-প্লাস পাওয়ার কৌশল এবং পূর্ণাঙ্গ পিডিএফ হ্যান্ডনোট দেওয়া হলো।
     </p>
+    <p style="margin-top: 12px !important; font-size: 15px !important; background: #e0f2fe; padding: 8px 12px; border-radius: 6px; color: #0369a1; line-height: 1.6;">
+      <strong>টার্গেট সার্চ কিওয়ার্ড (Target Keywords):</strong> SSC English 1st Paper Suggestion 2027, SSC 2027 English 1st Paper Syllabus, Class 10 English 1st Paper Model Question, SSC English Marks Distribution 2027
+    </p>
   </div>
 
   <!-- Mandatory Jump Break strictly after hero image and quick overview (Rule 01 & 05) -->
@@ -527,6 +530,18 @@ html_content = f"""<style>
       <p style="margin: 0; color: #334155; font-size: 17px; line-height: 1.75;">
         উত্তর: হ্যাঁ, কমপ্লিটিং স্টোরি লেখার সময় একটি উপযুক্ত ও আকর্ষণীয় শিরোনাম (Title) দেওয়া বাধ্যতামূলক। শিরোনাম ছাড়া গল্প লিখলে নির্ধারিত নম্বর থেকে ১-২ নম্বর কর্তন করা হয়।
       </p>
+    </div>
+  </div>
+
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px 24px; margin: 30px 0 20px 0;">
+    <h3 style="margin: 0 0 10px 0; font-size: 19px; color: #0c2340; font-weight: 700;">সম্পর্কিত সার্চ টার্মস ও টপিকস (Related Search Keywords)</h3>
+    <p style="margin: 0 0 12px 0; font-size: 15px; color: #64748b;">শিক্ষার্থীরা গুগলে এই পরীক্ষার প্রস্তুতি সম্পর্কিত তথ্য খুঁজতে সাধারণত যেসব কি-ওয়ার্ড ব্যবহার করে থাকে:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC English 1st Paper Suggestion 2027</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC 2027 English 1st Paper Model Question</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Class 10 English First Paper Syllabus and Marks Distribution</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Dhaka Board SSC English 1st Paper Question 2027</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Dakhil English 1st Paper Final Suggestion PDF</span>
     </div>
   </div>
 

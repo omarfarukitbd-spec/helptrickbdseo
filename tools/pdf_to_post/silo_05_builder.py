@@ -25,12 +25,12 @@ LABELS = ["SSC Suggestion", "Education", "Dakhil Suggestion"]
 
 def get_series_nav(current_part):
     posts = [
-        ("পিলার হাব", "এসএসসি ২০২৭ ইংরেজি ১ম পত্র — সম্পূর্ণ সাজেশন ও মানবণ্টন (Pillar Post)", f"{BLOG_BASE}/ssc-english-1st-paper-suggestion-2027.html"),
-        ("Part 01", "সিন প্যাসেজ সাজেশন (Seen Passage MCQ, Q/A & Gap Fill)", f"{BLOG_BASE}/ssc-2027-english-seen-passage-suggestion.html"),
-        ("Part 02", "আনসিন প্যাসেজ ও সামারি (Unseen Passage & Summary Writing)", f"{BLOG_BASE}/ssc-2027-english-unseen-passage-summary.html"),
-        ("Part 03", "ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ (Sentence Matching & Re-arranging)", f"{BLOG_BASE}/ssc-2027-english-matching-rearrange.html"),
-        ("Part 04", "কবিতা ও গল্প প্রশ্নোত্তর (Poems & Stories Q/A Guide)", f"{BLOG_BASE}/ssc-2027-english-poems-stories-question.html"),
-        ("Part 05", "রাইটিং পার্ট — Story & Dialogue (Completing Story & Dialogue Writing)", f"{BLOG_BASE}/ssc-2027-english-completing-story.html"),
+        ("পিলার হাব", "SSC English 1st Paper Suggestion 2027 (মাস্টার হাব ও মানবণ্টন)", f"{BLOG_BASE}/ssc-english-1st-paper-suggestion-2027.html"),
+        ("Part 01", "SSC 2027 English Seen Passage Suggestion (সিন প্যাসেজ MCQ ও প্রশ্নোত্তর)", f"{BLOG_BASE}/ssc-2027-english-seen-passage-suggestion.html"),
+        ("Part 02", "SSC 2027 English Unseen Passage & Summary Suggestion (আনসিন ও সামারি)", f"{BLOG_BASE}/ssc-2027-english-unseen-passage-summary.html"),
+        ("Part 03", "SSC 2027 English Matching & Rearrange Suggestion (ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ)", f"{BLOG_BASE}/ssc-2027-english-matching-rearrange.html"),
+        ("Part 04", "SSC 2027 English Poems & Stories Suggestion (কবিতা ও গল্প প্রশ্নোত্তর)", f"{BLOG_BASE}/ssc-2027-english-poems-stories-question.html"),
+        ("Part 05", "SSC 2027 English Completing Story & Dialogue Suggestion (স্টোরি ও ডায়ালগ)", f"{BLOG_BASE}/ssc-2027-english-completing-story.html"),
     ]
     items_html = ""
     for label, title, url in posts:
@@ -48,8 +48,8 @@ def get_series_nav(current_part):
 
 def build_post():
     slug = "ssc-2027-english-completing-story"
-    title = "এসএসসি ২০২৭ ইংরেজি ১ম পত্র Completing Story ও Dialogue Writing গাইড (SSC 2027 English Writing Part: Story & Dialogue Complete Guide)"
-    meta_desc = "SSC 2027 English 1st Paper Writing গাইড। Completing Story (Q10) ও Dialogue Writing (Q11) এর ৩৪টি স্টোরি, ৩২টি ডায়ালগ এবং ১০টি পূর্ণাঙ্গ মডেল সমাধান।"
+    title = "SSC 2027 English Completing Story & Dialogue Suggestion | এসএসসি স্টোরি ও ডায়ালগ রাইটিং"
+    meta_desc = "SSC 2027 English Completing Story & Dialogue Suggestion। রাইটিং পার্ট (Q10 ও Q11) এর ৩৪টি গুরুত্বপূর্ণ স্টোরি ও ৩২টি ডায়ালগের পূর্ণাঙ্গ তালিকা এবং মডেল সমাধান।"
     banner_url = f"{CDN_BASE}/ssc_2027_silo_05_story_dialogue.webp"
     banner_alt = "SSC 2027 English Completing Story and Dialogue Writing Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
@@ -257,7 +257,9 @@ def build_post():
   </figure>
 
   <div class="htbd-overview-box">
+    <p style="margin: 0 0 10px 0; font-size: 16px; color: #1e3a8a; font-weight: 700;">টপিক ও ফোকাস: SSC 2027 English Completing Story &amp; Dialogue Suggestion (Questions 10, 11)</p>
     <p>এসএসসি ২০২৭ ইংরেজি ১ম পত্রের সর্ববৃহৎ রচনামূলক অংশ হলো <strong>রাইটিং টেস্ট (Writing Test — প্রশ্ন ১০ ও ১১)</strong>। এতে মোট <strong>২৫ নম্বর</strong> নির্ধারিত—প্রশ্ন ১০-এ প্রম্পট দেখে পূর্ণাঙ্গ গল্প তৈরি (Completing Story - ১৫ নম্বর) এবং প্রশ্ন ১১-এ বাস্তবসম্মত সংলাপ রচনা (Dialogue Writing - ১০ নম্বর)। নিচে জাতীয় পাঠ্যক্রমের ৩৪টি শীর্ষ গল্প, ৩২টি ডায়ালগ এবং বোর্ড ও এক্সক্লুসিভ মডেল টেস্টের ১০টি পূর্ণাঙ্গ সমাধান উপস্থাপিত হলো।</p>
+    <p style="margin: 12px 0 0 0; font-size: 15px; background: #e0f2fe; padding: 8px 12px; border-radius: 6px; color: #0369a1; line-height: 1.6;"><strong>টার্গেট সার্চ কিওয়ার্ড (Target Keywords):</strong> SSC Completing Story Suggestion 2027, SSC Dialogue Writing Suggestion, Class 10 English Writing Part, SSC Story with Title and Moral</p>
   </div>
 
 <!--more-->
@@ -438,6 +440,18 @@ def build_post():
   <div class="htbd-faq-item">
     <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 3: প্রম্পটের বাক্যগুলো কি উত্তরপত্রে লিখতে হবে?</p>
     <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: হ্যাঁ, প্রশ্নপত্রে যে প্রম্পট দেওয়া থাকে, সেই অংশটুকু উত্তরপত্রে প্রথমে তুলে তারপর গল্পের স্বাভাবিক সমাপ্তি পর্যন্ত নিজস্ব বাক্য যোগ করতে হবে।</p>
+  </div>
+
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px 24px; margin: 30px 0 20px 0;">
+    <h3 style="margin: 0 0 10px 0; font-size: 19px; color: #0c2340; font-weight: 700;">সম্পর্কিত সার্চ টার্মস ও টপিকস (Related Search Keywords)</h3>
+    <p style="margin: 0 0 12px 0; font-size: 15px; color: #64748b;">শিক্ষার্থীরা গুগলে এই অধ্যায়ের তথ্য খুঁজতে সাধারণত যেসব কি-ওয়ার্ড ব্যবহার করে থাকে:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Completing Story Suggestion 2027 All Board</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC Dialogue Writing Suggestion and Format</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Class 10 Completing Story with Title and Moral</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">Important Dialogue Writing for SSC 2027 Exam</span>
+      <span style="background: #ffffff; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 5px 12px; border-radius: 20px; font-size: 14.5px; font-weight: 500;">SSC English 1st Paper Writing Part 30 Marks</span>
+    </div>
   </div>
 
   {series_nav}
