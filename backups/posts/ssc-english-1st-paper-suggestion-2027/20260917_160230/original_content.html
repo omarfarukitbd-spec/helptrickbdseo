@@ -1,48 +1,15 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-tools/pdf_to_post/generate_ssc_2027_pillar_post.py
---------------------------------------------------
-Generates the comprehensive, responsive, beautifully styled Pillar Post
-for SSC & Dakhil 2027 English 1st Paper (Subject Code: 136)
-enriched with high-volume English Search Keywords (e.g. 'SSC English 1st Paper Suggestion 2027')
-in the title, headings (H2, H3), table of contents, and schema metadata.
-"""
-
-import os
-import sys
-import json
-
-if sys.platform == 'win32':
-    import io
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
-
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-RAW_POSTS_DIR = os.path.join(PROJECT_ROOT, "scratch", "raw_posts")
-os.makedirs(RAW_POSTS_DIR, exist_ok=True)
-
-HTML_OUTPUT = os.path.join(RAW_POSTS_DIR, "ssc_2027_english_1st_paper_pillar.html")
-META_OUTPUT = os.path.join(RAW_POSTS_DIR, "ssc_2027_english_1st_paper_pillar.json")
-
-TITLE = "SSC English 1st Paper Suggestion 2027 | এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন (PDF)"
-SLUG = "ssc-english-1st-paper-suggestion-2027"
-PERMALINK_URL = f"https://www.helptrickbd.com/2026/09/{SLUG}.html"
-BANNER_CDN = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_english_1st_paper_suggestion_2027.webp?v=2"
-SEARCH_DESCRIPTION = "SSC English 1st Paper Suggestion 2027 ও ১০০ নম্বরের মানবণ্টন। সিন-আনসিন প্যাসেজ, সামারি, রাইটিং পার্ট এবং ফুল সিলেবাস পিডিএফ হ্যান্ডনোট।"
-
-html_content = f"""<style>
+<style>
   .htbd-academic-container,
-  .htbd-academic-container * {{
+  .htbd-academic-container * {
     font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
-  }}
-  .htbd-academic-container p {{
+  }
+  .htbd-academic-container p {
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #202124 !important;
     margin: 16px 0 !important;
-  }}
-  .htbd-academic-heading {{
+  }
+  .htbd-academic-heading {
     color: #0c2340 !important;
     border-left: 5px solid #d4af37 !important;
     border-bottom: none !important;
@@ -52,16 +19,16 @@ html_content = f"""<style>
     font-size: 24px !important;
     font-weight: 700 !important;
     line-height: 1.4 !important;
-  }}
-  .htbd-academic-subheading {{
+  }
+  .htbd-academic-subheading {
     color: #1e3a8a !important;
     font-size: 20px !important;
     font-weight: 600 !important;
     margin-top: 26px !important;
     margin-bottom: 12px !important;
     line-height: 1.4 !important;
-  }}
-  .htbd-overview-box {{
+  }
+  .htbd-overview-box {
     background: #f8fafd !important;
     border: 1px solid #dbeafe !important;
     border-left: 5px solid #0c2340 !important;
@@ -69,14 +36,14 @@ html_content = f"""<style>
     padding: 22px 26px !important;
     margin: 24px 0 !important;
     box-shadow: 0 2px 6px rgba(12,35,64,0.06) !important;
-  }}
-  .htbd-overview-box p {{
+  }
+  .htbd-overview-box p {
     margin: 0 !important;
     font-size: 18px !important;
     line-height: 1.85 !important;
     color: #1e293b !important;
-  }}
-  .htbd-toc-card {{
+  }
+  .htbd-toc-card {
     background: #f8fafc !important;
     border: 1px solid #e2e8f0 !important;
     border-left: 4px solid #0c2340 !important;
@@ -84,42 +51,42 @@ html_content = f"""<style>
     padding: 20px 24px !important;
     margin: 28px 0 !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
-  }}
-  .htbd-toc-card .toc-title {{
+  }
+  .htbd-toc-card .toc-title {
     font-weight: 700;
     font-size: 19px;
     margin: 0 0 14px 0;
     color: #0c2340;
-  }}
-  .htbd-toc-card ul {{
+  }
+  .htbd-toc-card ul {
     margin: 0 !important;
     padding-left: 20px !important;
     list-style-type: none !important;
-  }}
-  .htbd-toc-card ul li {{
+  }
+  .htbd-toc-card ul li {
     margin-bottom: 8px !important;
     line-height: 1.7 !important;
-  }}
-  .htbd-toc-card ul li a {{
+  }
+  .htbd-toc-card ul li a {
     color: #1e3a8a !important;
     text-decoration: none !important;
     font-size: 16.5px !important;
     font-weight: 500 !important;
     transition: color 0.2s ease !important;
-  }}
-  .htbd-toc-card ul li a:hover {{
+  }
+  .htbd-toc-card ul li a:hover {
     color: #0284c7 !important;
     text-decoration: underline !important;
-  }}
-  .htbd-toc-card ul ul {{
+  }
+  .htbd-toc-card ul ul {
     padding-left: 20px !important;
     margin-top: 6px !important;
-  }}
-  .htbd-toc-card ul ul li a {{
+  }
+  .htbd-toc-card ul ul li a {
     color: #475569 !important;
     font-size: 15.5px !important;
-  }}
-  .htbd-academic-table {{
+  }
+  .htbd-academic-table {
     width: 100%;
     border-collapse: collapse;
     margin: 24px 0;
@@ -127,8 +94,8 @@ html_content = f"""<style>
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     border-radius: 6px;
     overflow: hidden;
-  }}
-  .htbd-academic-table th {{
+  }
+  .htbd-academic-table th {
     background-color: #0c2340;
     color: #ffffff !important;
     padding: 14px 16px;
@@ -136,26 +103,26 @@ html_content = f"""<style>
     font-size: 17px;
     font-weight: 700;
     border: 1px solid #1e3a8a;
-  }}
-  .htbd-academic-table td {{
+  }
+  .htbd-academic-table td {
     padding: 13px 16px;
     border: 1px solid #e2e8f0;
     font-size: 16.5px;
     line-height: 1.7;
     color: #334155;
-  }}
-  .htbd-academic-table tr:nth-child(even) {{
+  }
+  .htbd-academic-table tr:nth-child(even) {
     background-color: #f8fafc;
-  }}
-  .htbd-exam-card {{
+  }
+  .htbd-exam-card {
     background: #f0fdf4 !important;
     border: 1px solid #bbf7d0 !important;
     border-left: 5px solid #16a34a !important;
     border-radius: 8px !important;
     padding: 22px 26px !important;
     margin: 30px 0 !important;
-  }}
-  .htbd-tip-card {{
+  }
+  .htbd-tip-card {
     background: #fefce8 !important;
     border: 1px solid #fef08a !important;
     border-left: 5px solid #eab308 !important;
@@ -165,16 +132,16 @@ html_content = f"""<style>
     color: #713f12 !important;
     font-size: 17px !important;
     line-height: 1.8 !important;
-  }}
-  .htbd-download-card {{
+  }
+  .htbd-download-card {
     background: #f0f7ff !important;
     border: 1px solid #bfdbfe !important;
     border-radius: 10px !important;
     padding: 26px 20px !important;
     text-align: center !important;
     margin: 32px 0 !important;
-  }}
-  .htbd-download-btn {{
+  }
+  .htbd-download-btn {
     display: inline-block !important;
     background: #0c2340 !important;
     color: #ffffff !important;
@@ -185,27 +152,27 @@ html_content = f"""<style>
     text-decoration: none !important;
     box-shadow: 0 4px 12px rgba(12,35,64,0.2) !important;
     transition: background 0.2s ease, transform 0.1s ease !important;
-  }}
-  .htbd-download-btn:hover {{
+  }
+  .htbd-download-btn:hover {
     background: #1e3a8a !important;
     color: #ffffff !important;
     transform: translateY(-1px) !important;
-  }}
-  .htbd-silo-box {{
+  }
+  .htbd-silo-box {
     margin: 34px 0 !important;
     padding: 22px 26px !important;
     background: #f8fafc !important;
     border: 1px solid #e2e8f0 !important;
     border-left: 4px solid #0b2046 !important;
     border-radius: 8px !important;
-  }}
-  .htbd-faq-item {{
+  }
+  .htbd-faq-item {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     padding: 18px 22px;
     margin-bottom: 16px;
-  }}
+  }
 </style>
 
 <div class="htbd-academic-container">
@@ -219,7 +186,7 @@ html_content = f"""<style>
 
   <!-- Hero Featured Banner (Rule 02: 16:9 Aspect Ratio on jsDelivr CDN) -->
   <div style="text-align: center; margin: 18px 0 24px 0;">
-    <img src="{BANNER_CDN}" alt="SSC English 1st Paper Suggestion 2027 এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন" title="SSC English 1st Paper Suggestion 2027 Marks Distribution and Model Handnote" width="1200" height="675" loading="lazy" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;" />
+    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_english_1st_paper_suggestion_2027.webp?v=2" alt="SSC English 1st Paper Suggestion 2027 এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন" title="SSC English 1st Paper Suggestion 2027 Marks Distribution and Model Handnote" width="1200" height="675" loading="lazy" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;" />
     <span style="display: block; font-size: 14px; color: #64748b; margin-top: 8px;">
       Figure: SSC &amp; Dakhil 2027 English 1st Paper (Subject Code: 136) 100 Marks Syllabus &amp; Suggestion Guide
     </span>
@@ -464,14 +431,11 @@ html_content = f"""<style>
   <p>শিক্ষার্থীদের অফলাইনে অনুশীলনের সুবিধার্থে সম্পূর্ণ ৩৭ পৃষ্ঠার আল ফাতাহ ও শিক্ষা বোর্ড প্রশ্নভিত্তিক এক্সক্লুসিভ সাজেশন, সিন-আনসিন সমাধান, গ্রামার রুলস ও মডেল টেস্ট পেপার একটি সিঙ্গেল হাই-কোয়ালিটি পিডিএফ ফাইলে রূপান্তর করা হয়েছে। নিচের অফিসিয়াল লিংকে ক্লিক করে হ্যান্ডনোটটি সরাসরি ডাউনলোড করে সংগ্রহে রাখুন:</p>
 
   <div class="htbd-download-card">
-    <p style="font-size: 17px; color: #1e3a8a; font-weight: 600; margin: 0 0 10px 0;">
-      SSC English 1st Paper 100 Marks Full Syllabus Suggestion &amp; Model Handnote
+    <p style="font-size: 17px; color: #1e3a8a; font-weight: 600; margin: 0 0 14px 0;">
+      SSC English 1st Paper 100 Marks Full Syllabus Suggestion &amp; Model Handnote PDF
     </p>
-    <p style="margin: 0 0 14px 0; font-size: 15px; color: #475569;">
-      সম্পূর্ণ ১০০ নম্বরের প্রতিটি প্রশ্ন আইটেমের ব্যাখ্যা ও মডেল সমাধান অনলাইনে পড়তে নিচের অধ্যায়ভিত্তিক সাইলো পোস্টগুলোতে প্রবেশ করুন:
-    </p>
-    <a class="htbd-download-btn" href="#related-silo">
-      সাইলো অধ্যায়ভিত্তিক সম্পূর্ণ হ্যান্ডনোট পড়ুন
+    <a class="htbd-download-btn" href="https://drive.google.com/file/d/1wZfB9lE45e_EXAMPLE_SSC2027/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+      Download SSC 2027 English 1st Paper Full Handnote PDF
     </a>
   </div>
 
@@ -482,14 +446,14 @@ html_content = f"""<style>
       SSC 2027 English 1st Paper Topical Silo &amp; Solution Series:
     </div>
     <p style="font-size: 15px; color: #475569; margin: 0 0 14px 0; line-height: 1.5;">
-      জাতীয় শিক্ষাক্রমের পূর্ণাঙ্গ সিলেবাস ও প্রশ্নভিত্তিক ধারাবাহিক প্রস্তুতি নির্দেশিকাসমূহ ক্রমানুসারে পড়ুন:
+      জাতীয় শিক্ষাক্রমের পূর্ণাঙ্গ সিলেবাস ও প্রশ্নভিত্তিক ধারাবাহিক প্রস্তুতি নির্দেশিকাসমূহ ক্রমানুসারে পড়ুন:
     </p>
     <ul style="margin: 0; padding-left: 20px; font-size: 16.5px; line-height: 1.85; color: #1e293b;">
       <li style="margin-bottom: 6px;"><strong>Part 01:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">সিন প্যাসেজ সাজেশন – Seen Passage MCQ, Question Answer &amp; Gap Filling (Q 1-3)</a></li>
-      <li style="margin-bottom: 6px;"><strong>Part 02:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">আনসিন প্যাসেজ ও সামারি – Unseen Passage Info Transfer &amp; Summary Writing (Q 4-5)</a></li>
-      <li style="margin-bottom: 6px;"><strong>Part 03:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ – Sentence Matching Table &amp; Re-arranging Rules (Q 6-7)</a></li>
-      <li style="margin-bottom: 6px;"><strong>Part 04:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">কবিতা ও গল্প প্রশ্নোত্তর – Questions from Poems &amp; Stories Model Answers (Q 8-9)</a></li>
-      <li style="margin-bottom: 6px;"><strong>Part 05:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">রাইটিং পার্ট – Completing Story &amp; Dialogue Writing Top Model Notes (Q 10-11)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 02:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary-writing.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">আনসিন প্যাসেজ ও সামারি – Unseen Passage Info Transfer &amp; Summary Writing (Q 4-5)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 03:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange-rules-solution.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">ম্যাচিং টেবিল ও রি-অ্যারেঞ্জ – Sentence Matching Table &amp; Re-arranging Rules (Q 6-7)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 04:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question-answer-guide.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">কবিতা ও গল্প প্রশ্নোত্তর – Questions from Poems &amp; Stories Model Answers (Q 8-9)</a></li>
+      <li style="margin-bottom: 6px;"><strong>Part 05:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story-dialogue-suggestion.html" style="color: #0b2046; font-weight: 600; text-decoration: underline;">রাইটিং পার্ট – Completing Story &amp; Dialogue Writing Top Model Notes (Q 10-11)</a></li>
     </ul>
   </div>
 
@@ -538,91 +502,71 @@ html_content = f"""<style>
 
 <!-- Schema.org Microdata: BlogPosting & FAQPage JSON-LD -->
 <script type="application/ld+json">
-{{
+{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "mainEntityOfPage": {{
+  "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{PERMALINK_URL}"
-  }},
-  "headline": "{TITLE}",
-  "description": "{SEARCH_DESCRIPTION}",
-  "image": "{BANNER_CDN}",
-  "author": {{
+    "@id": "https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html"
+  },
+  "headline": "SSC English 1st Paper Suggestion 2027 | এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন (PDF)",
+  "description": "SSC English 1st Paper Suggestion 2027 ও ১০০ নম্বরের মানবণ্টন। সিন-আনসিন প্যাসেজ, সামারি, রাইটিং পার্ট এবং ফুল সিলেবাস পিডিএফ হ্যান্ডনোট।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_english_1st_paper_suggestion_2027.webp?v=2",
+  "author": {
     "@type": "Person",
     "name": "Faruk Sir",
     "url": "https://www.helptrickbd.com/p/about-us.html"
-  }},
-  "publisher": {{
+  },
+  "publisher": {
     "@type": "Organization",
     "name": "HelpTrickBD",
-    "logo": {{
+    "logo": {
       "@type": "ImageObject",
       "url": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/logo.png"
-    }}
-  }},
+    }
+  },
   "datePublished": "2026-09-16T22:00:00+06:00",
   "dateModified": "2026-09-16T23:15:00+06:00"
-}}
+}
 </script>
 
 <script type="application/ld+json">
-{{
+{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {{
+    {
       "@type": "Question",
       "name": "Will SSC 2027 English 1st paper exam be held on 100 marks?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, according to the Education Ministry and Education Board guidelines, SSC & Dakhil 2027 English 1st paper exam will be held on the full 100 marks syllabus."
-      }}
-    }},
-    {{
+      }
+    },
+    {
       "@type": "Question",
       "name": "What is the pass mark in SSC English 1st Paper?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Out of 100 marks, a student needs at least 33 marks to pass. However, 80+ marks is needed to secure an A+ (GPA 5)."
-      }}
-    }},
-    {{
+      }
+    },
+    {
       "@type": "Question",
       "name": "How to get full 10 marks in Summary Writing?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Write the summary in one-third of the original passage length (50-70 words) using your own simple sentences without copying lines directly."
-      }}
-    }},
-    {{
+      }
+    },
+    {
       "@type": "Question",
       "name": "Is a title mandatory for Completing Story in SSC English 1st Paper?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, giving an appropriate title and moral of the story is mandatory to get full marks."
-      }}
-    }}
+      }
+    }
   ]
-}}
-</script>
-"""
-
-metadata = {
-    "title": TITLE,
-    "slug": SLUG,
-    "custom_url": PERMALINK_URL,
-    "url": PERMALINK_URL,
-    "labels": ["SSC Suggestion", "Education", "Dakhil Suggestion"],
-    "search_description": SEARCH_DESCRIPTION,
-    "meta_description": SEARCH_DESCRIPTION
 }
-
-with open(HTML_OUTPUT, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-with open(META_OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(metadata, f, ensure_ascii=False, indent=2)
-
-print(f"Generated HTML: {HTML_OUTPUT}")
-print(f"Generated Meta: {META_OUTPUT}")
+</script>
