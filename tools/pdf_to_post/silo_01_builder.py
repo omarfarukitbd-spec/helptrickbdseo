@@ -4,12 +4,20 @@
 tools/pdf_to_post/silo_01_builder.py
 -------------------------------------
 Generates Silo Post 01: Seen Passage (Q1-3)
-Includes all 33 Seen Passages + Dakhil 2026 Model + Exclusive Model Test.
+Includes:
+- Master Seen Index (#seen-index) with 33 Passages + Jump Links
+- 33 Comprehensive Solution Cards (#seen-01 to #seen-33) with Passage Excerpt,
+  Question 1 MCQs, Question 2 Open Q/As, Question 3 Gap Filling, and Vocabulary Notes
+- Interactive :target golden glow highlight (#d4af37)
+- Dakhil 2026 Model Test & Solution (Zahir Raihan)
+- Exclusive Model Test & Solution (Climate Change)
+- Schema.org FAQPage & BlogPosting
+- Zero-Emoji Policy strictly enforced
 """
 
 import json
+from data_ssc_2027_seen_full import SEEN_PASSAGES_FULL_33
 from data_ssc_2027_seen import (
-    SEEN_PASSAGES_33,
     DAKHIL_2026_SEEN_MODEL as DAKHIL_2026_SEEN,
     EXCLUSIVE_MODEL_TEST_SEEN as MODEL_TEST_SEEN
 )
@@ -41,28 +49,106 @@ def get_series_nav(current_part):
     </ul>
   </div>"""
 
+def render_gap_answers(ans_dict):
+    items = [f"<strong>({k})</strong> {v}" for k, v in ans_dict.items()]
+    return " &nbsp;|&nbsp; ".join(items)
+
+def render_mcqs_html(mcqs_list):
+    res = ""
+    romans = ["(i)", "(ii)", "(iii)", "(iv)", "(v)", "(vi)", "(vii)"]
+    letters = ["(a)", "(b)", "(c)", "(d)"]
+    for idx, m in enumerate(mcqs_list):
+        r_num = romans[idx] if idx < len(romans) else f"({idx+1})"
+        opts_html = " ".join([f"<span>{letters[i]} {opt}</span>" for i, opt in enumerate(m["opts"])])
+        res += f"""<div style="margin-bottom:12px; background:#f8fafc; padding:10px 14px; border-radius:6px;">
+          <p style="margin:0 0 6px 0; font-weight:600; color:#0f172a;">{r_num} {m['q']}</p>
+          <p style="margin:0; font-size:15px; color:#334155; display:flex; flex-wrap:wrap; gap:16px;">{opts_html}</p>
+          <p style="margin:5px 0 0 0; color:#15803d; font-size:14.5px; font-weight:600;">সঠিক উত্তর: {m['ans']}</p>
+        </div>\n"""
+    return res
+
+def render_open_qas_html(qas_list):
+    res = ""
+    letters = ["(a)", "(b)", "(c)", "(d)", "(e)"]
+    for idx, qa in enumerate(qas_list):
+        lbl = letters[idx] if idx < len(letters) else f"({idx+1})"
+        res += f"""<div style="margin-bottom:12px; background:#f8fafc; padding:12px 16px; border-radius:6px; border-left:4px solid #0c2340;">
+          <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340;">{lbl} {qa['q']}</p>
+          <p style="margin:0; color:#1e293b; font-size:15.5px; line-height:1.7;"><strong>উত্তর:</strong> {qa['a']}</p>
+        </div>\n"""
+    return res
+
 def build_post():
     slug = "ssc-2027-english-seen-passage-suggestion"
     title = "SSC 2027 English Seen Passage Suggestion | এসএসসি সিন প্যাসেজ MCQ ও প্রশ্নোত্তর (100% Common)"
-    meta_desc = "SSC 2027 English Seen Passage Suggestion ও সমাধান। EFT-এর সিন প্যাসেজ, MCQ (Q1), প্রশ্নোত্তর (Q2) ও Gap Filling (Q3) এর পূর্ণাঙ্গ বোর্ড প্রস্তুতি।"
+    meta_desc = "SSC 2027 English Seen Passage Suggestion। EFT-এর ৩৩টি সিন প্যাসেজ, MCQ (Q1), প্রশ্নোত্তর (Q2) ও Gap Filling (Q3) এর পূর্ণাঙ্গ বোর্ড সমাধান।"
     banner_url = f"{CDN_BASE}/ssc_2027_silo_01_seen_passage.webp?v=2"
     banner_alt = "SSC 2027 English Seen Passage Suggestion — MCQ, Question Answer and Gap Filling Guide"
     url = f"{BLOG_BASE}/{slug}.html"
     series_nav = get_series_nav("Part 01")
 
-    # Render 33 passages table rows
-    passages_rows = ""
-    for p in SEEN_PASSAGES_33:
-        star_color = "#b91c1c" if p["stars"] == "***" else ("#c2410c" if p["stars"] == "**" else "#4b5563")
-        passages_rows += f"""<tr>
-          <td style="text-align:center; font-weight:700;">{p['id']}</td>
-          <td style="text-align:center; font-weight:700; color:{star_color}; font-size:18px;">{p['stars']}</td>
-          <td><strong>{p['title']}</strong></td>
-          <td style="text-align:center;">{p['unit']}, {p['lesson']} (p. {p['page_pdf']})</td>
-          <td>{p['boards']}</td>
+    # 1. Render 33 Passages Master Index & Solution Cards
+    seen_index_rows = ""
+    seen_cards_html = ""
+
+    for item in SEEN_PASSAGES_FULL_33:
+        s_id = item["slug_id"]
+        star_color = "#b91c1c" if item["stars"] == "***" else ("#c2410c" if item["stars"] == "**" else "#4b5563")
+
+        # Master Table Row
+        seen_index_rows += f"""<tr>
+          <td style="text-align:center; font-weight:700;">{item['id']:02d}</td>
+          <td style="text-align:center; font-weight:700; color:{star_color}; font-size:16px;">{item['stars']}</td>
+          <td><a href="#{s_id}" style="color:#0369a1; font-weight:600; text-decoration:none;">{item['title']}</a><br><span style="font-size:13px; color:#64748b;">{item['theme']}</span></td>
+          <td style="text-align:center; font-size:13.5px; color:#475569;">{item['unit_lesson']}</td>
+          <td style="font-size:13px; color:#64748b;">{item['boards']}</td>
+          <td style="text-align:center;"><a href="#{s_id}" class="htbd-jump-pill">অনুশীলন ও সমাধান দেখুন</a></td>
         </tr>\n"""
 
-    # Render Dakhil 2026 MCQs
+        # Card components
+        mcqs_html = render_mcqs_html(item["mcqs"])
+        qas_html = render_open_qas_html(item["open_qas"])
+        gap_ans_html = render_gap_answers(item["gap_fill"]["answers"])
+
+        seen_cards_html += f"""<div id="{s_id}" class="htbd-qa-card" style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #0c2340; border-radius:8px; padding:22px 24px; margin-bottom:30px; box-shadow:0 2px 6px rgba(0,0,0,0.04); scroll-margin-top:80px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:8px;">
+            <h3 style="margin:0; color:#0c2340; font-size:18.5px; font-weight:700;">Seen Passage {item['id']:02d}: {item['title']}</h3>
+            <a href="#seen-index" class="htbd-back-btn" title="উপরে সিন প্যাসেজ সূচিতে ফিরে যান">↑ সিন প্যাসেজ সূচি</a>
+          </div>
+          <p style="margin:0 0 12px 0; font-size:14px; color:#64748b;"><strong>ইউনিট ও লেসন:</strong> {item['unit_lesson']} &bull; <strong>বিষয়বস্তু:</strong> {item['theme']} &bull; <strong>রেটিং:</strong> <span style="color:{star_color}; font-weight:700;">{item['stars']}</span> &bull; <strong style="color:{star_color};">{item['priority']}</strong> &bull; <strong>বোর্ড:</strong> {item['boards']}</p>
+          
+          <div style="background:#f8fafc; border-left:3px solid #0284c7; padding:14px 18px; border-radius:4px; margin-bottom:16px;">
+            <p style="margin:0 0 6px 0; font-weight:700; color:#0369a1; font-size:14.5px;">সিন প্যাসেজ মূল অনুচ্ছেদ (EFT Text Excerpt):</p>
+            <p style="margin:0; font-style:italic; line-height:1.8; color:#334155; font-size:16px;">"{item['passage']}"</p>
+          </div>
+
+          <div style="background:#ffffff; border:1px solid #e2e8f0; padding:16px 20px; border-radius:6px; margin-bottom:16px;">
+            <p style="margin:0 0 10px 0; font-weight:700; color:#0c2340; font-size:15.5px;">Question 1: Choose the correct answer from the following alternatives (MCQ - 3 Model Questions)</p>
+            {mcqs_html}
+          </div>
+
+          <div style="background:#ffffff; border:1px solid #e2e8f0; padding:16px 20px; border-radius:6px; margin-bottom:16px;">
+            <p style="margin:0 0 10px 0; font-weight:700; color:#0c2340; font-size:15.5px;">Question 2: Answer the following questions based on the passage (Open-Ended - 2 Questions)</p>
+            {qas_html}
+          </div>
+
+          <div style="background:#fdfefe; border:1px solid #dbeafe; border-left:4px solid #0284c7; padding:16px 20px; border-radius:6px; margin-bottom:14px;">
+            <p style="margin:0 0 8px 0; font-weight:700; color:#0284c7; font-size:15.5px;">Question 3: Fill in each gap with a suitable word based on the passage (Gap Filling Without Clues - 5 Marks)</p>
+            <p style="margin:0 0 10px 0; font-size:15.5px; line-height:1.8; color:#1e293b;">{item['gap_fill']['sentence']}</p>
+            <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:4px; color:#14532d; font-size:14.5px;">
+              <strong>সঠিক উত্তর (Answer Key):</strong> {gap_ans_html}
+            </div>
+          </div>
+
+          <p style="margin:10px 0 0 0; font-size:13.5px; color:#64748b; border-top:1px dashed #cbd5e1; padding-top:8px;">
+            <strong>গুরুত্বপূর্ণ শব্দার্থ ও সমার্থক শব্দ (Key Vocabulary &amp; Synonyms):</strong> {item['vocab_notes']}
+          </p>
+          <div style="text-align:right; margin-top:10px;">
+            <a href="#seen-index" class="htbd-back-text-link">↑ সিন প্যাসেজ সূচিতে ফিরে যান</a>
+          </div>
+        </div>\n"""
+
+    # 2. Render Dakhil 2026 MCQs
     dakhil_mcqs = ""
     for m in DAKHIL_2026_SEEN["mcq_questions"]:
         opts = " ".join([f"<span>{opt}</span>" for opt in m["options"]])
@@ -72,7 +158,7 @@ def build_post():
           <p style="margin:4px 0 0 0; color:#15803d; font-size:15px; font-weight:600;">সঠিক উত্তর: {m['answer']}</p>
         </div>\n"""
 
-    # Render Dakhil 2026 Q/A
+    # 3. Render Dakhil 2026 Q/A
     dakhil_qas = ""
     for q in DAKHIL_2026_SEEN["open_questions"]:
         dakhil_qas += f"""<div style="margin-bottom:14px; background:#f8fafc; padding:12px 16px; border-radius:6px; border-left:4px solid #0c2340;">
@@ -80,10 +166,10 @@ def build_post():
           <p style="margin:0; color:#1e293b; font-size:16px; line-height:1.7;"><strong>উত্তর:</strong> {q['answer']}</p>
         </div>\n"""
 
-    # Render Dakhil 2026 Gap Fill
+    # 4. Render Dakhil 2026 Gap Fill
     dakhil_gaps = " ".join([f"<strong>({k})</strong> {v}" for k, v in DAKHIL_2026_SEEN["gap_fill"]["answers"].items()])
 
-    # Render Model Test MCQs
+    # 5. Render Model Test MCQs
     model_mcqs = ""
     for m in MODEL_TEST_SEEN["mcq_questions"]:
         opts = " ".join([f"<span>{opt}</span>" for opt in m["options"]])
@@ -93,7 +179,7 @@ def build_post():
           <p style="margin:4px 0 0 0; color:#15803d; font-size:15px; font-weight:600;">সঠিক উত্তর: {m['answer']}</p>
         </div>\n"""
 
-    # Render Model Test Q/A
+    # 6. Render Model Test Q/A
     model_qas = ""
     for q in MODEL_TEST_SEEN["open_questions"]:
         model_qas += f"""<div style="margin-bottom:14px; background:#f8fafc; padding:12px 16px; border-radius:6px; border-left:4px solid #0c2340;">
@@ -101,10 +187,13 @@ def build_post():
           <p style="margin:0; color:#1e293b; font-size:16px; line-height:1.7;"><strong>উত্তর:</strong> {q['answer']}</p>
         </div>\n"""
 
-    # Render Model Test Gap Fill
+    # 7. Render Model Test Gap Fill
     model_gaps = " ".join([f"<strong>({k})</strong> {v}" for k, v in MODEL_TEST_SEEN["gap_fill"]["answers"].items()])
 
     html = f"""<style>
+  html {{
+    scroll-behavior: smooth;
+  }}
   .htbd-academic-container {{
     font-family: 'SolaimanLipi', Arial, sans-serif !important;
     font-size: 17.5px !important;
@@ -176,18 +265,77 @@ def build_post():
     background: #0c2340 !important;
     color: #ffffff !important;
     padding: 12px 14px !important;
-    font-size: 16px !important;
+    font-size: 15.5px !important;
     border: 1px solid #0c2340 !important;
     text-align: left !important;
   }}
   .htbd-academic-table td {{
     padding: 10px 14px !important;
     border: 1px solid #e2e8f0 !important;
-    font-size: 15.5px !important;
+    font-size: 15px !important;
     vertical-align: middle !important;
   }}
   .htbd-academic-table tr:nth-child(even) {{
     background: #f8fafc !important;
+  }}
+  .htbd-jump-pill {{
+    display: inline-block;
+    padding: 5px 12px;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }}
+  .htbd-jump-pill:hover {{
+    background: #16a34a;
+    color: #ffffff !important;
+    border-color: #16a34a;
+  }}
+  .htbd-back-btn {{
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+  }}
+  .htbd-back-btn:hover {{
+    background: #e2e8f0;
+    color: #0f172a;
+  }}
+  .htbd-back-text-link {{
+    font-size: 14px;
+    font-weight: 600;
+    color: #0284c7;
+    text-decoration: none;
+  }}
+  .htbd-back-text-link:hover {{
+    text-decoration: underline;
+  }}
+  .htbd-master-index-card {{
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #0c2340;
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin: 28px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }}
+  .htbd-qa-card {{
+    transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  }}
+  .htbd-qa-card:target {{
+    border-left-color: #d4af37 !important;
+    background: #fffdf5 !important;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.25) !important;
   }}
   .htbd-faq-item {{
     background: #ffffff !important;
@@ -261,7 +409,7 @@ def build_post():
 
   <div class="htbd-overview-box">
     <p style="margin: 0 0 10px 0; font-size: 16px; color: #1e3a8a; font-weight: 700;">টপিক ও ফোকাস: SSC 2027 English Seen Passage Suggestion (Questions 1, 2, 3)</p>
-    <p>মাধ্যমিক ও উচ্চমাধ্যমিক শিক্ষা বোর্ডের নতুন কারিকুলাম অনুসারে <strong>SSC 2027 English Seen Passage Suggestion</strong> পর্বে শিক্ষার্থীদের পাঠ্যবই <em>English For Today (EFT)</em> থেকে প্রথম তিনটি প্রশ্ন সমাধান করতে হয়। এই অংশে মোট <strong>২২ নম্বর</strong> বরাদ্দ থাকে—যার মধ্যে <strong>Question 1: Multiple Choice Questions (MCQ - 7 Marks)</strong>, <strong>Question 2: Open-Ended Question Answer (10 Marks)</strong> এবং <strong>Question 3: Gap Filling Without Clues (5 Marks)</strong> অন্তর্ভুক্ত। ঢাকা, চট্টগ্রাম, রাজশাহীসহ সকল শিক্ষা বোর্ডের বিগত ৫ বছরের বোর্ড প্রশ্ন বিশ্লেষণ করে এখানে পাঠ্যবইয়ের ৩৩টি গুরুত্বপূর্ণ সিন প্যাসেজের ৩-স্টার সুপার সাজেশন, হুবহু বোর্ড প্রশ্নের মডেল টেস্ট এবং শতভাগ কমন পাওয়ার টেকনিক্যাল টিপস তুলে ধরা হলো।</p>
+    <p>মাধ্যমিক ও উচ্চমাধ্যমিক শিক্ষা বোর্ডের নতুন কারিকুলাম অনুসারে <strong>SSC 2027 English Seen Passage Suggestion</strong> পর্বে শিক্ষার্থীদের পাঠ্যবই <em>English For Today (EFT)</em> থেকে প্রথম তিনটি প্রশ্ন সমাধান করতে হয়। এই অংশে মোট <strong>২২ নম্বর</strong> বরাদ্দ থাকে—যার মধ্যে <strong>Question 1: Multiple Choice Questions (MCQ - 7 Marks)</strong>, <strong>Question 2: Open-Ended Question Answer (10 Marks)</strong> এবং <strong>Question 3: Gap Filling Without Clues (5 Marks)</strong> অন্তর্ভুক্ত। ঢাকা, চট্টগ্রাম, রাজশাহীসহ সকল শিক্ষা বোর্ডের বিগত ৫ বছরের বোর্ড প্রশ্ন বিশ্লেষণ করে এখানে পাঠ্যবইয়ের ৩৩টি গুরুত্বপূর্ণ সিন প্যাসেজের ৩-স্টার সুপার সাজেশন, জাম্প-লিংক মাস্টার সূচি, হুবহু বোর্ড প্রশ্নের মডেল টেস্ট এবং শতভাগ কমন পাওয়ার টেকনিক্যাল টিপস তুলে ধরা হলো।</p>
   </div>
 
 <!--more-->
@@ -270,13 +418,14 @@ def build_post():
     <p class="toc-title">বিষয়সূচি (Table of Contents)</p>
     <ul>
       <li><a href="#seen-marks">১. সিন প্যাসেজ: নম্বর বণ্টন ও প্রশ্নকাঠামো (Marks Distribution)</a></li>
-      <li><a href="#important-passages">২. পাঠ্যবইয়ের ৩৩টি সিন প্যাসেজ তালিকা (All 33 Seen Passages)</a></li>
+      <li><a href="#seen-index">২. পাঠ্যবইয়ের ৩৩টি সিন প্যাসেজ মাস্টার সূচি ও জাম্প আর্কিটেকচার (Master Index)</a></li>
       <li><a href="#mcq-guide">৩. প্রশ্ন ১: MCQ সমাধানের ব্যাকরণ ও টেক্সচুয়াল কৌশল (Q1 Guide)</a></li>
       <li><a href="#qa-guide">৪. প্রশ্ন ২: Open-Ended প্রশ্নে পূর্ণ ১০/১০ পাওয়ার নিয়ম (Q2 Guide)</a></li>
       <li><a href="#gap-fill-guide">৫. প্রশ্ন ৩: Gap Filling Without Clues সমাধানের ৫টি কৌশল (Q3 Guide)</a></li>
-      <li><a href="#model-dakhil">৬. মডেল পরীক্ষা ০১: দাখিল ২০২৬ বোর্ড প্রশ্ন ও পূর্ণাঙ্গ সমাধান (Zahir Raihan)</a></li>
-      <li><a href="#model-exclusive">৭. মডেল পরীক্ষা ০২: এক্সক্লুসিভ মডেল টেস্ট ও পূর্ণাঙ্গ সমাধান (Climate Change)</a></li>
-      <li><a href="#faq">৮. সচরাচর জিজ্ঞাসা (FAQ)</a></li>
+      <li><a href="#seen-solutions">৬. ৩৩টি সিন প্যাসেজ: পূর্ণাঙ্গ টেক্সট, MCQ, প্রশ্নোত্তর ও গ্যাপ ফিলিং সমাধান (All 33 Solution Cards)</a></li>
+      <li><a href="#model-dakhil">৭. মডেল পরীক্ষা ০১: দাখিল ২০২৬ বোর্ড প্রশ্ন ও পূর্ণাঙ্গ সমাধান (Zahir Raihan)</a></li>
+      <li><a href="#model-exclusive">৮. মডেল পরীক্ষা ০২: এক্সক্লুসিভ মডেল টেস্ট ও পূর্ণাঙ্গ সমাধান (Climate Change)</a></li>
+      <li><a href="#faq">৯. সচরাচর জিজ্ঞাসা (FAQ)</a></li>
     </ul>
   </div>
 
@@ -320,8 +469,8 @@ def build_post():
     </table>
   </div>
 
-  <h2 class="htbd-academic-heading" id="important-passages">২. পাঠ্যবইয়ের ৩৩টি সিন প্যাসেজ তালিকা (All 33 Seen Passages for SSC 2027)</h2>
-  <p>নিচে ২০২৭ সালের এসএসসি ও দাখিল পরীক্ষার্থীদের জন্য পাঠ্যবইয়ের ৩৩টি সিন প্যাসেজ গুরুত্ব অনুযায়ী ৩-স্টার (সর্বাধিক সম্ভাব্য), ২-স্টার ও ১-স্টার ক্যাটাগরিতে বোর্ড রেফারেন্সসহ সাজানো হলো:</p>
+  <h2 class="htbd-academic-heading" id="seen-index">২. পাঠ্যবইয়ের ৩৩টি সিন প্যাসেজ মাস্টার সূচি ও জাম্প আর্কিটেকচার (Master Index)</h2>
+  <p>নিচে ২০২৭ সালের এসএসসি ও দাখিল পরীক্ষার্থীদের জন্য পাঠ্যবইয়ের ৩৩টি সিন প্যাসেজ গুরুত্ব অনুযায়ী ৩-স্টার (সর্বাধিক সম্ভাব্য), ২-স্টার ও ১-স্টার ক্যাটাগরিতে বোর্ড রেফারেন্সসহ সাজানো হলো। যেকোনো প্যাসেজের নামের ওপর অথবা ডানের সবুজ পিল বাটনে ক্লিক করে সরাসরি সংশ্লিষ্ট প্যাসেজের টেক্সট, MCQ, প্রশ্নোত্তর ও গ্যাপ ফিলিং অনুশীলনীতে চলে যান:</p>
 
   <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 22px 0;">
     <table class="htbd-academic-table">
@@ -329,13 +478,14 @@ def build_post():
         <tr>
           <th style="width:6%;">ক্র.</th>
           <th style="width:8%; text-align:center;">স্টার</th>
-          <th style="width:40%;">প্যাসেজের শিরোনাম ও টেক্সট স্নিপেট</th>
-          <th style="width:20%; text-align:center;">ইউনিট ও লেসন</th>
-          <th style="width:26%;">বিগত বোর্ড পরীক্ষা</th>
+          <th style="width:36%;">প্যাসেজের শিরোনাম ও বিষয়বস্তু</th>
+          <th style="width:16%; text-align:center;">ইউনিট ও লেসন</th>
+          <th style="width:18%;">বিগত বোর্ড পরীক্ষা</th>
+          <th style="width:16%; text-align:center;">অনুশীলনী লিঙ্ক</th>
         </tr>
       </thead>
       <tbody>
-        {passages_rows}
+        {seen_index_rows}
       </tbody>
     </table>
   </div>
@@ -364,7 +514,12 @@ def build_post():
     <li>একই শূন্যস্থানে একাধিক প্রাসঙ্গিক সমার্থক শব্দ গ্রহণযোগ্য, তবে বানান শতভাগ নির্ভুল হতে হবে।</li>
   </ul>
 
-  <h2 class="htbd-academic-heading" id="model-dakhil">৬. মডেল পরীক্ষা ০১: দাখিল ২০২৬ বোর্ড প্রশ্ন ও পূর্ণাঙ্গ সমাধান (Zahir Raihan)</h2>
+  <h2 class="htbd-academic-heading" id="seen-solutions">৬. ৩৩টি সিন প্যাসেজ: পূর্ণাঙ্গ টেক্সট, MCQ, প্রশ্নোত্তর ও গ্যাপ ফিলিং সমাধান (All 33 Solution Cards)</h2>
+  <p>নিচে ৩৩টি সিন প্যাসেজের প্রতিটি অধ্যায়ের পাঠ্যবইয়ের নির্বাচিত অনুচ্ছেদ, প্রশ্ন ১-এর মডেল MCQ, প্রশ্ন ২-এর অ্যানালিটিক্যাল প্রশ্নোত্তর এবং প্রশ্ন ৩-এর গ্যাপ ফিলিং মডেল এক্সারসাইজ ও সঠিক উত্তর দেওয়া হলো। প্রতিটি কার্ডের উপরে ও নিচে সিন প্যাসেজ সূচিতে ফিরে যাওয়ার বাটন সংযুক্ত রয়েছে:</p>
+
+  {seen_cards_html}
+
+  <h2 class="htbd-academic-heading" id="model-dakhil">৭. মডেল পরীক্ষা ০১: দাখিল ২০২৬ বোর্ড প্রশ্ন ও পূর্ণাঙ্গ সমাধান (Zahir Raihan)</h2>
   <p style="background:#f1f5f9; padding:16px 20px; border-radius:6px; font-style:italic; line-height:1.8;">
     "{DAKHIL_2026_SEEN['passage']}"
   </p>
@@ -381,7 +536,7 @@ def build_post():
     <strong>সঠিক উত্তর:</strong> {dakhil_gaps}
   </p>
 
-  <h2 class="htbd-academic-heading" id="model-exclusive">৭. মডেল পরীক্ষা ০২: এক্সক্লুসিভ মডেল টেস্ট ও পূর্ণাঙ্গ সমাধান (Climate Change)</h2>
+  <h2 class="htbd-academic-heading" id="model-exclusive">৮. মডেল পরীক্ষা ০২: এক্সক্লুসিভ মডেল টেস্ট ও পূর্ণাঙ্গ সমাধান (Climate Change)</h2>
   <p style="background:#f1f5f9; padding:16px 20px; border-radius:6px; font-style:italic; line-height:1.8;">
     "{MODEL_TEST_SEEN['passage']}"
   </p>
@@ -398,21 +553,23 @@ def build_post():
     <strong>সঠিক উত্তর:</strong> {model_gaps}
   </p>
 
-  <h2 class="htbd-academic-heading" id="faq">৮. সচরাচর জিজ্ঞাসা (FAQ)</h2>
+  <h2 class="htbd-academic-heading" id="faq">৯. সচরাচর জিজ্ঞাসা (FAQ)</h2>
   <div class="htbd-faq-item">
-    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 1: সিন প্যাসেজ থেকে কি হুবহু লাইন তুলে উত্তর দেওয়া যাবে?</p>
-    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: না, হুবহু লাইন তুলে দিলে পরীক্ষক পূর্ণ নম্বর কাটেন। প্যাসেজ থেকে তথ্য নিয়ে নিজের বাক্য গঠনে উত্তর সাজাতে হবে।</p>
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">প্রশ্ন ১: এসএসসি ২০২৭ ইংরেজি ১ম পত্রে সিন প্যাসেজে কত নম্বর বরাদ্দ থাকে?</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: সিন প্যাসেজ থেকে মোট ২২ নম্বর বরাদ্দ থাকে—প্রশ্ন ১ (MCQ - ৭ নম্বর), প্রশ্ন ২ (Open-Ended প্রশ্নোত্তর - ১০ নম্বর) এবং প্রশ্ন ৩ (Gap Filling Without Clues - ৫ নম্বর)।</p>
   </div>
   <div class="htbd-faq-item">
-    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 2: Gap Filling-এ কি পুরো বাক্য তুলে লিখতে হবে?</p>
-    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: শুধু ক্রমিক নম্বর দিয়ে (a), (b), (c), (d), (e) এর উত্তর লিখলেই চলে। তবে পুরো বাক্য তুলে আন্ডারলাইন করে লিখলে খাতার মান আরও ভালো দেখায়।</p>
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">প্রশ্ন ২: সিন প্যাসেজ থেকে কি হুবহু লাইন তুলে উত্তর দেওয়া যাবে?</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: না, হুবহু লাইন তুলে দিলে পরীক্ষক নম্বর কমিয়ে দেন। প্যাসেজ থেকে মূল তথ্য সংগ্রহ করে নিজের ভাষায় বাক্য গঠন করে উত্তর লিখতে হবে।</p>
   </div>
   <div class="htbd-faq-item">
-    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">Question 3: MCQ-তে কি শুধু অপশন নম্বর নাকি উত্তরসহ লিখতে হবে?</p>
-    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: সবসময় অপশন ও উত্তর উভয়ই লিখুন, যেমন: (a) (ii) Carbon dioxide। এতে পরীক্ষকের খাতা দেখতে সুবিধা হয়।</p>
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">প্রশ্ন ৩: Gap Filling Without Clues-এ কি পুরো বাক্য লিখতে হবে?</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: শুধু ক্রমিক নম্বর দিয়ে (a), (b), (c), (d), (e) এর সঠিক শব্দ লিখলেই চলে। তবে পুরো বাক্য তুলে শূন্যস্থানের নিচে দাগ দিয়ে লিখলে খাতার মান আকর্ষণীয় হয়।</p>
   </div>
-
-
+  <div class="htbd-faq-item">
+    <p style="margin:0 0 6px 0; font-weight:700; color:#0c2340; font-size:18px;">প্রশ্ন ৪: MCQ-তে সর্বোচ্চ নম্বর নিশ্চিত করার উপায় কী?</p>
+    <p style="margin:0; color:#334155; font-size:17px; line-height:1.75;">উত্তর: শব্দার্থ ও সিনোনিম-অ্যান্টোনিম প্যাসেজের কনটেক্সট অনুসারে যাচাই করতে হবে। খাতায় লেখার সময় অপশন নম্বর ও সঠিক উত্তর উভয়ই লিখবেন (যেমন: (a) (ii) Carbon dioxide)।</p>
+  </div>
 
   {series_nav}
 
@@ -437,9 +594,10 @@ def build_post():
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {{"@type": "Question", "name": "Should I copy sentences directly from the seen passage in Q2?", "acceptedAnswer": {{"@type": "Answer", "text": "No, copying sentences directly will lead to mark deductions. Always extract information and write in your own words with proper tense."}}}},
-    {{"@type": "Question", "name": "Do I need to write full sentences in Q3 Gap Filling?", "acceptedAnswer": {{"@type": "Answer", "text": "Writing just the answers beside (a) through (e) is acceptable, but writing full sentences with the filled word underlined is considered best practice."}}}},
-    {{"@type": "Question", "name": "How to answer MCQ in Q1?", "acceptedAnswer": {{"@type": "Answer", "text": "Always write both the Roman numeral option and the text answer, e.g., (a) (ii) Carbon dioxide."}}}}
+    {{"@type": "Question", "name": "How is marks distributed in SSC 2027 English 1st Paper Seen Passage?", "acceptedAnswer": {{"@type": "Answer", "text": "Total 22 marks are allocated: Question 1 Multiple Choice Questions (7 marks), Question 2 Open-Ended Answering Questions (10 marks), and Question 3 Gap Filling Without Clues (5 marks)."}}}},
+    {{"@type": "Question", "name": "Should I copy sentences directly from the seen passage in Q2?", "acceptedAnswer": {{"@type": "Answer", "text": "No, copying sentences directly will lead to mark deductions. Always extract information and write in your own words with proper grammatical tense."}}}},
+    {{"@type": "Question", "name": "Do I need to write full sentences in Q3 Gap Filling Without Clues?", "acceptedAnswer": {{"@type": "Answer", "text": "Writing just the answers beside (a) through (e) is acceptable, but writing full sentences with the filled word underlined is considered best practice."}}}},
+    {{"@type": "Question", "name": "How to answer MCQ questions in Q1 properly?", "acceptedAnswer": {{"@type": "Answer", "text": "Always write both the Roman numeral or option letter and the exact text answer, e.g., (a) (ii) Carbon dioxide, to make evaluation clear for examiners."}}}}
   ]
 }}
 </script>
