@@ -1543,6 +1543,33 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
     color: #38bdf8 !important;
   }
 
+  /* Badges, Chips & Meta Spans in Dark Mode */
+  .dark .post-body span[style*="background"],
+  .dark .post-body .ht-meta-engagement-badge span[style*="background"],
+  .dark .post-body .htbd-badge {
+    background: rgba(15, 23, 42, 0.7) !important;
+    border: 1px solid #334155 !important;
+    color: #38bdf8 !important;
+  }
+
+  /* Green Version & Update Badges in Dark Mode */
+  .dark .post-body span[style*="#ecfdf5"],
+  .dark .post-body span[style*="#047857"],
+  .dark .post-body span[style*="16a34a"] {
+    background: rgba(16, 185, 129, 0.18) !important;
+    border: 1px solid rgba(16, 185, 129, 0.4) !important;
+    color: #34d399 !important;
+  }
+
+  /* Blue Notice Badges in Dark Mode */
+  .dark .post-body span[style*="#e8f0fe"],
+  .dark .post-body span[style*="#1a73e8"],
+  .dark .post-body span[style*="#0284c7"] {
+    background: rgba(2, 132, 199, 0.2) !important;
+    border: 1px solid rgba(2, 132, 199, 0.4) !important;
+    color: #38bdf8 !important;
+  }
+
   /* Tables inside posts */
   .dark .post-body table {
     background: #1e293b !important;
