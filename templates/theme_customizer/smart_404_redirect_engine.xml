@@ -1,14 +1,26 @@
 <!--
 ================================================================================
-HelpTrickBD - 105 URL Smart 301 Redirection & 404 Error Fix Engine
+HelpTrickBD - 105 URL Universal Smart 301 Redirection & 404 Error Fix Engine
 ================================================================================
-Instructions:
-1. Go to Blogger Dashboard -> Theme -> click dropdown next to Customize -> Edit HTML.
-2. Find <head> and paste this code immediately below <head> (or right after SolaimanLipi setup).
-3. Click the Save icon (floppy disk).
+Benefits:
+1. Universal Extension Matching: Redirects whether the URL has .html, lacks .html, or has trailing slashes.
+2. Clean Layout: Hides the default English '404 There\'s nothing here!' text so only the branded Bengali box shows.
+3. Zero Sitewide Overhead: Runs exclusively on 404 pages via data:view.isError.
 ================================================================================
 -->
 <b:if cond='data:view.isError'>
+<style type='text/css'>
+/*<![CDATA[*/
+  .errorPage > h3,
+  .errorPage > h4,
+  .errorPage > a.homepage {
+    display: none !important;
+  }
+  .errorPage {
+    padding: 20px 10px !important;
+  }
+/*]]>*/
+</style>
 <script type='text/javascript'>
 //<![CDATA[
 (function() {
@@ -120,15 +132,21 @@ Instructions:
   "/w72-h72-p-k-no-nu": "/"
 };
 
-  var currentPath = window.location.pathname;
-  var decodedPath = decodeURIComponent(currentPath);
+  var rawPath = window.location.pathname;
+  var cleanPath = rawPath.replace(/\/+$/, '');
+  var pathWithHtml = cleanPath.endsWith('.html') ? cleanPath : cleanPath + '.html';
+  var pathWithoutHtml = cleanPath.endsWith('.html') ? cleanPath.slice(0, -5) : cleanPath;
 
-  var target = redirectMap[currentPath] || redirectMap[decodedPath];
+  var decodedClean = decodeURIComponent(cleanPath);
+  var decodedWithHtml = decodeURIComponent(pathWithHtml);
+  var decodedWithoutHtml = decodeURIComponent(pathWithoutHtml);
 
-  if (!target && currentPath.endsWith('/') && currentPath.length > 1) {
-    var noSlash = currentPath.slice(0, -1);
-    target = redirectMap[noSlash] || redirectMap[decodeURIComponent(noSlash)];
-  }
+  var target = redirectMap[cleanPath] ||
+               redirectMap[pathWithHtml] ||
+               redirectMap[pathWithoutHtml] ||
+               redirectMap[decodedClean] ||
+               redirectMap[decodedWithHtml] ||
+               redirectMap[decodedWithoutHtml];
 
   if (target) {
     window.location.replace(target);
