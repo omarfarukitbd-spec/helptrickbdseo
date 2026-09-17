@@ -1524,23 +1524,54 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   .dark .post-body section[style*="background"],
   .dark .post-body .htbd-qbox,
   .dark .post-body .htbd-link-box,
-  .dark .post-body .ht-meta-engagement-badge,
+  .dark .post-body .htbd-toc-box,
   .dark .post-body .ht-toc-container,
+  .dark .post-body .ht-meta-engagement-badge,
   .dark .post-body .htbd-custom-404-container {
     background: #1e293b !important;
+    border: 1px solid #334155 !important;
     border-color: #334155 !important;
     color: #f1f5f9 !important;
   }
 
   .dark .post-body div[style*="background"] *,
-  .dark .post-body .ht-meta-engagement-badge *,
+  .dark .post-body .htbd-toc-box *,
   .dark .post-body .ht-toc-container * {
     color: #f1f5f9 !important;
   }
 
+  .dark .post-body .htbd-toc-box h3,
+  .dark .post-body .ht-toc-container div {
+    color: #ffffff !important;
+    border-bottom: 2px solid #334155 !important;
+  }
+  .dark .post-body .htbd-toc-list li {
+    border-bottom: 1px dashed #334155 !important;
+  }
+
   .dark .post-body div[style*="background"] a,
+  .dark .post-body .htbd-toc-box a,
+  .dark .post-body .htbd-toc-list li a,
   .dark .post-body .ht-toc-container a {
     color: #38bdf8 !important;
+  }
+
+  /* Meta Engagement Badges (Time, Date Pill & Study Guide) */
+  .dark .post-body .ht-meta-engagement-badge {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-left: 4px solid #0284c7 !important;
+  }
+  .dark .post-body .ht-meta-engagement-badge span {
+    color: #94a3b8 !important;
+  }
+  .dark .post-body .ht-meta-engagement-badge span[style*="color: #0369a1"] {
+    color: #38bdf8 !important;
+  }
+  .dark .post-body .ht-meta-engagement-badge span[style*="background"] {
+    background: rgba(16, 185, 129, 0.2) !important;
+    border: 1px solid rgba(16, 185, 129, 0.4) !important;
+    color: #34d399 !important;
   }
 
   /* Tables inside posts */
