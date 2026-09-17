@@ -248,4 +248,7 @@ The following 3 files must be placed locally in the project:
 5. **Strict Multi-PC Sync Protocol (বাসা ও অফিস পিসি নিরবচ্ছিন্ন সিঙ্ক নিয়ম):**
    - **প্রতিটি কাজের শুরুতে (Pre-task Check):** যেকোনো নতুন টাস্ক বা প্রম্পটের শুরুতে `git fetch origin` করে দেখতে হবে অন্য পিসি (বাসার পিসি বা অফিস ল্যাপটপ) থেকে কোনো নতুন কমিট এসেছে কিনা। নতুন আপডেট থাকলে তা `git pull --rebase origin main` দিয়ে সাথে সাথে লোকাল প্রজেক্টে যুক্ত করে নিতে হবে।
    - **প্রতিটি কাজের শেষে (Post-task Auto-Push):** যেকোনো কাজ সম্পন্ন হওয়ামাত্র সমস্ত নতুন কোড, রিপোর্ট, আর্টিকেল বা অ্যাসেট স্বয়ংক্রিয়ভাবে `git add`, `git commit` এবং `git push origin main` করে দিতে হবে, যাতে অন্য পিসিতে বসার সাথে সাথেই সব কাজ সম্পূর্ণ আপ-টু-ডেট পাওয়া যায়।
+6. **Search Console Daily Improvement Trigger Protocol (সার্চ কনসোল দৈনিক ট্র্যাকিং নিয়ম):**
+   - ইউজার চ্যাটে `"search console er ajker update ki"`, `"আজকের সার্চ কনসোল আপডেট কী"`, বা `"update ber koro"` বলা মাত্র কোনো কালক্ষেপণ না করে সাথে সাথে `python tools/analytics/track_gsc_improvements.py` স্ক্রিপ্ট রান করবে এবং ১৭ সেপ্টেম্বর ২০২৬ তারিখের বেসলাইনের সাথে তুলনা করে অগ্রগতি রিপোর্ট বাংলায় উপস্থাপন করবে।
+
 
