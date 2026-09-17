@@ -48,7 +48,7 @@ def build_post():
     slug = "ssc-2027-english-poems-stories-question"
     title = "SSC 2027 English Poems & Stories Suggestion | এসএসসি ইংরেজি কবিতা ও গল্প প্রশ্নোত্তর (Q8-9)"
     meta_desc = "SSC 2027 English Poems & Stories Suggestion। প্রশ্ন ৮ ও ৯ (কবিতা ও গল্প) এর ৭টি কবিতা, ২৩টি গল্প এবং দাখিল ও মডেল টেস্টের ৩২টি পূর্ণাঙ্গ প্রশ্নোত্তর।"
-    banner_url = f"{CDN_BASE}/ssc_2027_silo_04_poems_stories.webp"
+    banner_url = f"{CDN_BASE}/ssc_2027_silo_04_poems_stories.webp?v=2"
     banner_alt = "SSC 2027 English Poems and Stories Question Answer Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
     series_nav = get_series_nav("Part 04")

@@ -28,7 +28,7 @@ META_OUTPUT = os.path.join(RAW_POSTS_DIR, "ssc_2027_english_1st_paper_pillar.jso
 TITLE = "SSC English 1st Paper Suggestion 2027 | এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন (PDF)"
 SLUG = "ssc-english-1st-paper-suggestion-2027"
 PERMALINK_URL = f"https://www.helptrickbd.com/2026/09/{SLUG}.html"
-BANNER_CDN = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_english_1st_paper_suggestion_2027.webp"
+BANNER_CDN = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_english_1st_paper_suggestion_2027.webp?v=2"
 SEARCH_DESCRIPTION = "SSC English 1st Paper Suggestion 2027 ও ১০০ নম্বরের মানবণ্টন। সিন-আনসিন প্যাসেজ, সামারি, রাইটিং পার্ট এবং ফুল সিলেবাস পিডিএফ হ্যান্ডনোট।"
 
 html_content = f"""<style>

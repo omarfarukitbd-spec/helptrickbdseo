@@ -48,7 +48,7 @@ def build_post():
     slug = "ssc-2027-english-matching-rearrange"
     title = "SSC 2027 English Matching & Rearrange Suggestion | এসএসসি টেবিল ম্যাচিং ও রি-অ্যারেঞ্জিং"
     meta_desc = "SSC 2027 English Matching & Rearrange Suggestion। Q6 ও Q7 এর ৩২টি বোর্ড স্ট্যান্ডার্ড ম্যাচিং টেবিল এবং ৩৬টি রি-অ্যারেঞ্জিং গল্পের সাজানো সঠিক সমাধান।"
-    banner_url = f"{CDN_BASE}/ssc_2027_silo_03_matching_rearrange.webp"
+    banner_url = f"{CDN_BASE}/ssc_2027_silo_03_matching_rearrange.webp?v=2"
     banner_alt = "SSC 2027 English Sentence Matching Table and Rearranging Sentences Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
     series_nav = get_series_nav("Part 03")

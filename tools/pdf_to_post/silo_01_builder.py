@@ -45,7 +45,7 @@ def build_post():
     slug = "ssc-2027-english-seen-passage-suggestion"
     title = "SSC 2027 English Seen Passage Suggestion | এসএসসি সিন প্যাসেজ MCQ ও প্রশ্নোত্তর (100% Common)"
     meta_desc = "SSC 2027 English Seen Passage Suggestion ও সমাধান। পাঠ্যবই EFT-এর ৩৩টি সিন প্যাসেজ, MCQ (Q1), প্রশ্নোত্তর (Q2) ও Gap Filling (Q3) এর পূর্ণাঙ্গ বোর্ড প্রস্তুতি।"
-    banner_url = f"{CDN_BASE}/ssc_2027_silo_01_seen_passage.webp"
+    banner_url = f"{CDN_BASE}/ssc_2027_silo_01_seen_passage.webp?v=2"
     banner_alt = "SSC 2027 English Seen Passage Suggestion — MCQ, Question Answer and Gap Filling Guide"
     url = f"{BLOG_BASE}/{slug}.html"
     series_nav = get_series_nav("Part 01")

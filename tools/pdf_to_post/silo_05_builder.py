@@ -50,7 +50,7 @@ def build_post():
     slug = "ssc-2027-english-completing-story"
     title = "SSC 2027 English Completing Story & Dialogue Suggestion | এসএসসি স্টোরি ও ডায়ালগ রাইটিং"
     meta_desc = "SSC 2027 English Completing Story & Dialogue Suggestion। রাইটিং পার্ট (Q10 ও Q11) এর ৩৪টি গুরুত্বপূর্ণ স্টোরি ও ৩২টি ডায়ালগের পূর্ণাঙ্গ তালিকা এবং মডেল সমাধান।"
-    banner_url = f"{CDN_BASE}/ssc_2027_silo_05_story_dialogue.webp"
+    banner_url = f"{CDN_BASE}/ssc_2027_silo_05_story_dialogue.webp?v=2"
     banner_alt = "SSC 2027 English Completing Story and Dialogue Writing Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
     series_nav = get_series_nav("Part 05")
