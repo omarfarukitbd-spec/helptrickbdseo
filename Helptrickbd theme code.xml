@@ -159,7 +159,7 @@ The Blogger theme’s base XML and dynamic tags belong to Google LLC. All custom
 <Variable name="body.text.color" description="Body Text Color" hideEditor="true" type="color" default="#6d6d6d" value="#6d6d6d"/>
 <Variable name="body.title.color" description="Comments Color" hideEditor="true" type="color" default="#1f2937" value="#1f2937"/>
 <Variable name="body.link.color" description="Body Link Color" hideEditor="true" type="color" default="#6d6d6d" value="#6d6d6d"/>
-<Variable name="body.action.font.large" description="Comments Font 2" hideEditor="true" type="font" default="normal 700 14px Arial, sans-serif !important" value="normal 700 14px, Arial, sans-serif !important"/>
+<Variable name="body.action.font.large" description="Comments Font 2" hideEditor="true" type="font" default="normal 700 14px Arial, sans-serif" value="normal 700 14px Arial, sans-serif"/>
 */
 /*-- Google Raleway Font Family --*/
 @font-face{font-family:'Raleway';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v26/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLDr4fIA9c.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
@@ -2468,7 +2468,7 @@ disqusShortname = "templateiki";
             <div class='copy-section'>
                 <span class='title'><data:messages.copy/> <data:messages.postLink/></span>
                 <div class='copy-post'>
-                    <input expr:value='data:blog.url.canonical' id='showlink' readonly='readonly'/><button aria-expr:aria-label='data:messages.copy'><data:messages.copy/></button>
+                    <input expr:value='data:blog.url.canonical' id='showlink' readonly='readonly'/><button expr:aria-label='data:messages.copy'><data:messages.copy/></button>
                     <div class='messageDone' id='messageDone'/>
                 </div>
             </div>
