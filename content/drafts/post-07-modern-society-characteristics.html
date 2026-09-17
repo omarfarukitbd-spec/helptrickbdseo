@@ -99,6 +99,67 @@
     font-style: italic;
     color: #78350f !important;
   }
+
+  /* Dark Mode Overrides for Perfect Academic Contrast */
+  .dark .htbd-academic-container, body.dark .htbd-academic-container {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-academic-container p, body.dark .htbd-academic-container p {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-academic-heading, body.dark .htbd-academic-heading {
+    color: #ffffff !important;
+    border-left: 5px solid #38bdf8 !important;
+  }
+  .dark .htbd-academic-subheading, body.dark .htbd-academic-subheading {
+    color: #38bdf8 !important;
+  }
+  .dark .htbd-overview-box, body.dark .htbd-overview-box {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    border-left-color: #38bdf8 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-overview-box strong, body.dark .htbd-overview-box strong {
+    color: #ffffff !important;
+  }
+  .dark .htbd-academic-table, body.dark .htbd-academic-table {
+    background: #1e293b !important;
+  }
+  .dark .htbd-academic-table th, body.dark .htbd-academic-table th {
+    background-color: #0f172a !important;
+    color: #38bdf8 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-academic-table td, body.dark .htbd-academic-table td {
+    background-color: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-academic-table tr:nth-child(even), body.dark .htbd-academic-table tr:nth-child(even) {
+    background-color: #1e293b !important;
+  }
+  .dark .htbd-exam-card, body.dark .htbd-exam-card {
+    background: #064e3b !important;
+    border: 1px solid #059669 !important;
+    border-left: 5px solid #10b981 !important;
+    color: #ecfdf5 !important;
+  }
+  .dark .htbd-exam-card *, body.dark .htbd-exam-card * {
+    color: #ecfdf5 !important;
+  }
+  .dark .htbd-quote-box, body.dark .htbd-quote-box {
+    background: #451a03 !important;
+    border-left: 5px solid #f59e0b !important;
+    color: #fef3c7 !important;
+  }
+  .dark .htbd-quote-box *, body.dark .htbd-quote-box * {
+    color: #fef3c7 !important;
+  }
+  .dark .htbd-hero-img, body.dark .htbd-hero-img {
+    border: 1px solid #334155 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+  }
 </style>
 
 <div class="htbd-academic-container">
@@ -116,8 +177,8 @@
          alt="আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট" 
          title="আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ"
          width="1200" height="675"
-         loading="lazy"
-         style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;"/>
+         loading="eager" fetchpriority="high" decoding="async"
+         class="htbd-hero-img" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;"/>
     <span style="display: block; font-size: 14px; color: #64748b; margin-top: 8px;">
       চিত্র: আধুনিক সমাজের প্রাতিষ্ঠানিক রূপরেখা, বিজ্ঞানমনস্কতা ও শিল্পোত্তর সভ্যতার বহুমুখী বৈশিষ্ট্য
     </span>
@@ -230,7 +291,7 @@
 
   <!-- Section 4: Topic Silo Interlinking -->
   <h2 class="htbd-academic-heading">৪. আধুনিক সমাজের প্রেক্ষাপট ও আধুনিকীকরণের অপরিহার্য বাহন</h2>
-  <p>একটি সনাতন সমাজ থেকে আধুনিক সমাজে উত্তরণের এই সামগ্রিক রূপান্তর প্রক্রিয়াকেই রাষ্ট্রবিজ্ঞান ও সমাজবিজ্ঞানে 'আধুনিকীকরণ' (Modernization) বলা হয়। সনাতন ও আধুনিক সমাজের তুলনামূলক বৈসাদৃশ্য নিবিড়ভাবে বুঝতে আমাদের হ্যান্ডনোট <a href="https://www.helptrickbd.com/2026/09/differences-between-traditional-and-modern-society.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">সনাতন সমাজ ও আধুনিক সমাজের মধ্যে পার্থক্য</a> পড়ুন। একই সাথে আধুনিক সমাজ বিনির্মাণে কোন কোন মাধ্যম প্রধান চালিকাশক্তি হিসেবে কাজ করে, তা বিশদভাবে জানতে পরবর্তী পোস্ট <a href="https://www.helptrickbd.com/2026/09/meaning-and-agents-of-modernization-notes.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ</a> অধ্যয়ন করুন।</p>
+  <p>একটি সনাতন সমাজ থেকে আধুনিক সমাজে উত্তরণের এই সামগ্রিক রূপান্তর প্রক্রিয়াকেই রাষ্ট্রবিজ্ঞান ও সমাজবিজ্ঞানে 'আধুনিকীকরণ' (Modernization) বলা হয়। সনাতন ও আধুনিক সমাজের তুলনামূলক বৈসাদৃশ্য নিবিড়ভাবে বুঝতে আমাদের হ্যান্ডনোট <a href="https://www.helptrickbd.com/2026/09/traditional-vs-modern-society.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">সনাতন সমাজ ও আধুনিক সমাজের মধ্যে পার্থক্য</a> পড়ুন। একই সাথে আধুনিক সমাজ বিনির্মাণে কোন কোন মাধ্যম প্রধান চালিকাশক্তি হিসেবে কাজ করে, তা বিশদভাবে জানতে পরবর্তী পোস্ট <a href="https://www.helptrickbd.com/2026/09/meaning-and-agents-of-modernization.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ</a> অধ্যয়ন করুন।</p>
 
   <!-- Section 5: Master's Exam Special Section -->
   <div class="htbd-exam-card">
@@ -265,7 +326,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.helptrickbd.com/2026/09/characteristics-of-modern-society-lecture-notes.html"
+    "@id": "https://www.helptrickbd.com/2026/09/characteristics-of-modern-society.html"
   },
   "headline": "আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
   "description": "আধুনিক সমাজের সংজ্ঞা, ১২টি প্রধান বৈশিষ্ট্য, সুযোগ ও সংকট এবং জাতীয় বিশ্ববিদ্যালয়ের মাস্টার্স শেষ পর্ব রাষ্ট্রবিজ্ঞান পরীক্ষার জন্য পূর্ণাঙ্গ মডেল উত্তর।",

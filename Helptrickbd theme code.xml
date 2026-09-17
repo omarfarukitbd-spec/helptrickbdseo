@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.3.0' expr:class='data:blog.languageDirection' expr:dir='data:blog.languageDirection' expr:lang='data:blog.localeUnderscoreDelimited' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
+<!-- Google Core Web Vitals LCP Accelerator & CDN Preconnect -->
+<link rel='preconnect' href='https://cdn.jsdelivr.net' crossorigin='anonymous'/>
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net'/>
+<link rel='preconnect' href='https://blogger.googleusercontent.com'/>
+<link rel='dns-prefetch' href='//blogger.googleusercontent.com'/>
 <b:include name='theme-head'/>
 
 <!-- HelpTrickBD Google Search Central Compliant 1:1 Redirection & Custom 404 Engine -->
@@ -1770,6 +1775,65 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
   .dark .post-body table td[style*="background"] {
     background: #1e293b !important;
     color: #ffffff !important;
+  }
+
+  /* Academic & Study Guide Elements in Dark Mode */
+  .dark .post-body .htbd-academic-container,
+  .dark .post-body .htbd-academic-container * {
+    color: #cbd5e1;
+  }
+  .dark .post-body .htbd-academic-container p {
+    color: #cbd5e1 !important;
+  }
+  .dark .post-body .htbd-academic-heading {
+    color: #ffffff !important;
+    border-left: 5px solid #38bdf8 !important;
+  }
+  .dark .post-body .htbd-academic-subheading {
+    color: #38bdf8 !important;
+  }
+  .dark .post-body .htbd-exam-card {
+    background: #064e3b !important;
+    border: 1px solid #059669 !important;
+    border-left: 5px solid #10b981 !important;
+    color: #ecfdf5 !important;
+  }
+  .dark .post-body .htbd-exam-card * {
+    color: #ecfdf5 !important;
+  }
+  .dark .post-body .htbd-quote-box {
+    background: #451a03 !important;
+    border-left: 5px solid #f59e0b !important;
+    color: #fef3c7 !important;
+  }
+  .dark .post-body .htbd-quote-box * {
+    color: #fef3c7 !important;
+  }
+
+  /* Official Post Hero Banner / Thumbnail Styling (Light & Dark Mode) */
+  .htbd-hero-img,
+  .post-body .htbd-hero-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px !important;
+    margin: 18px auto 24px auto !important;
+    display: block !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  }
+  .htbd-hero-img:hover,
+  .post-body .htbd-hero-img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14) !important;
+  }
+  .dark .post-body .htbd-hero-img,
+  .dark .htbd-hero-img,
+  body.dark .post-body .htbd-hero-img {
+    border: 1px solid #334155 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
   }
 
   /* 3. Featured Image Overlay Titles & Metadata (Crisp White on Dark Cards) */

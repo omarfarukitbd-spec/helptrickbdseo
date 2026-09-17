@@ -99,6 +99,67 @@
     font-style: italic;
     color: #78350f !important;
   }
+
+  /* Dark Mode Overrides for Perfect Academic Contrast */
+  .dark .htbd-academic-container, body.dark .htbd-academic-container {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-academic-container p, body.dark .htbd-academic-container p {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-academic-heading, body.dark .htbd-academic-heading {
+    color: #ffffff !important;
+    border-left: 5px solid #38bdf8 !important;
+  }
+  .dark .htbd-academic-subheading, body.dark .htbd-academic-subheading {
+    color: #38bdf8 !important;
+  }
+  .dark .htbd-overview-box, body.dark .htbd-overview-box {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    border-left-color: #38bdf8 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-overview-box strong, body.dark .htbd-overview-box strong {
+    color: #ffffff !important;
+  }
+  .dark .htbd-academic-table, body.dark .htbd-academic-table {
+    background: #1e293b !important;
+  }
+  .dark .htbd-academic-table th, body.dark .htbd-academic-table th {
+    background-color: #0f172a !important;
+    color: #38bdf8 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-academic-table td, body.dark .htbd-academic-table td {
+    background-color: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-academic-table tr:nth-child(even), body.dark .htbd-academic-table tr:nth-child(even) {
+    background-color: #1e293b !important;
+  }
+  .dark .htbd-exam-card, body.dark .htbd-exam-card {
+    background: #064e3b !important;
+    border: 1px solid #059669 !important;
+    border-left: 5px solid #10b981 !important;
+    color: #ecfdf5 !important;
+  }
+  .dark .htbd-exam-card *, body.dark .htbd-exam-card * {
+    color: #ecfdf5 !important;
+  }
+  .dark .htbd-quote-box, body.dark .htbd-quote-box {
+    background: #451a03 !important;
+    border-left: 5px solid #f59e0b !important;
+    color: #fef3c7 !important;
+  }
+  .dark .htbd-quote-box *, body.dark .htbd-quote-box * {
+    color: #fef3c7 !important;
+  }
+  .dark .htbd-hero-img, body.dark .htbd-hero-img {
+    border: 1px solid #334155 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+  }
 </style>
 
 <div class="htbd-academic-container">
@@ -116,8 +177,8 @@
          alt="আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ মাস্টার্স হ্যান্ডনোট" 
          title="আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ"
          width="1200" height="675"
-         loading="lazy"
-         style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;"/>
+         loading="eager" fetchpriority="high" decoding="async"
+         class="htbd-hero-img" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); display: block; margin: 0 auto;"/>
     <span style="display: block; font-size: 14px; color: #64748b; margin-top: 8px;">
       চিত্র: আধুনিকীকরণের সমাজতাত্ত্বিক প্রক্রিয়া এবং রূপান্তরের প্রধান বাহন ও অনুঘটকসমূহ
     </span>
@@ -236,12 +297,12 @@
 
   <!-- Section 4: Topic Silo Interlinking -->
   <h2 class="htbd-academic-heading">৪. আধুনিকীকরণের বাহন এবং রাজনৈতিক আধুনিকায়ন বনাম উন্নয়নের বিতর্ক</h2>
-  <p>আধুনিকীকরণের এই সামগ্রিক প্রক্রিয়ার মধ্যে সবচেয়ে সংবেদনশীল ক্ষেত্রটি হলো রাজনীতি। আধুনিকায়ন যখন দ্রুত গতিতে ঘটে কিন্তু রাজনৈতিক প্রতিষ্ঠানগুলো দুর্বল থাকে, তখন সেখানে গভীর সংকট দেখা দেয়। আধুনিক সমাজ ব্যবস্থার পূর্ণাঙ্গ বৈশিষ্ট্য জানতে পড়ুন <a href="https://www.helptrickbd.com/2026/09/characteristics-of-modern-society-lecture-notes.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ</a>।</p>
+  <p>আধুনিকীকরণের এই সামগ্রিক প্রক্রিয়ার মধ্যে সবচেয়ে সংবেদনশীল ক্ষেত্রটি হলো রাজনীতি। আধুনিকায়ন যখন দ্রুত গতিতে ঘটে কিন্তু রাজনৈতিক প্রতিষ্ঠানগুলো দুর্বল থাকে, তখন সেখানে গভীর সংকট দেখা দেয়। আধুনিক সমাজ ব্যবস্থার পূর্ণাঙ্গ বৈশিষ্ট্য জানতে পড়ুন <a href="https://www.helptrickbd.com/2026/09/characteristics-of-modern-society.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ</a>।</p>
 
   <h3 class="htbd-academic-subheading">উন্নয়নশীল বিশ্বে আধুনিকীকরণের সংকট ও বাংলাদেশের বাস্তবতা</h3>
   <p>বাংলাদেশসহ দক্ষিণ এশিয়ার দেশগুলোতে আধুনিকীকরণ এক অভাবনীয় রূপান্তরমূলক পরিবর্তনের সূচনা করেছে। বিগত কয়েক দশকে পোশাক শিল্পের বিস্তার, রেমিট্যান্স প্রবাহ, যোগাযোগ অবকাঠামোর আধুনিকায়ন (যেমন—পদ্মা সেতু, বঙ্গবন্ধু কর্ণফুলী টানেল, ঢাকা মেট্রোরেল) এবং দেশব্যাপী ইন্টারনেট সংযোগ গ্রামের প্রত্যন্ত অঞ্চলেও আধুনিকতার বার্তা পৌঁছে দিয়েছে। তবে এই বস্তুগত অগ্রগতির সাথে রাজনৈতিক প্রাতিষ্ঠানিকীকরণ এবং সামাজিক মূল্যবোধ সমান গতিতে এগোতে না পারায় সেখানে নানা প্রশাসনিক ও রাজনৈতিক সংকট দৃশ্যমান হয়েছে।</p>
 
-  <p>একই সাথে আধুনিকীকরণের সাথে রাজনৈতিক উন্নয়নের পার্থক্য কী এবং কীভাবে এই দুটি প্রত্যয় রাষ্ট্রবিজ্ঞানীদের মাঝে বিতর্ক সৃষ্টি করেছে, তা বিস্তারিত জানতে পরবর্তী হ্যান্ডনোট <a href="https://www.helptrickbd.com/2026/09/political-modernization-vs-political-development.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">রাজনৈতিক আধুনিকীকরণ ও রাজনৈতিক উন্নয়নের মধ্যে পার্থক্য</a> অধ্যয়ন করুন।</p>
+  <p>একই সাথে আধুনিকীকরণের সাথে রাজনৈতিক উন্নয়নের পার্থক্য কী এবং কীভাবে এই দুটি প্রত্যয় রাষ্ট্রবিজ্ঞানীদের মাঝে বিতর্ক সৃষ্টি করেছে, তা বিস্তারিত জানতে পরবর্তী হ্যান্ডনোট <a href="https://www.helptrickbd.com/2026/09/political-modernization-vs-political.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">রাজনৈতিক আধুনিকীকরণ ও রাজনৈতিক উন্নয়নের মধ্যে পার্থক্য</a> অধ্যয়ন করুন।</p>
 
   <!-- Section 5: Master's Exam Special Section -->
   <div class="htbd-exam-card">
@@ -282,7 +343,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.helptrickbd.com/2026/09/meaning-and-agents-of-modernization-notes.html"
+    "@id": "https://www.helptrickbd.com/2026/09/meaning-and-agents-of-modernization.html"
   },
   "headline": "আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
   "description": "আধুনিকীকরণের সংজ্ঞা, তাত্ত্বিক রূপরেখা, ৯টি প্রধান বাহন বা মাধ্যম এবং মাস্টার্স শেষ পর্ব রাষ্ট্রবিজ্ঞান পরীক্ষার জন্য পূর্ণাঙ্গ মডেল প্রশ্নোত্তর।",
