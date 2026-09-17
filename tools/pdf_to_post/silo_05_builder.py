@@ -50,7 +50,7 @@ def build_post():
     slug = "ssc-2027-english-completing-story"
     title = "এসএসসি ২০২৭ ইংরেজি ১ম পত্র Completing Story ও Dialogue Writing গাইড (SSC 2027 English Writing Part: Story & Dialogue Complete Guide)"
     meta_desc = "SSC 2027 English 1st Paper Writing গাইড। Completing Story (Q10) ও Dialogue Writing (Q11) এর ৩৪টি স্টোরি, ৩২টি ডায়ালগ এবং ১০টি পূর্ণাঙ্গ মডেল সমাধান।"
-    banner_url = f"{CDN_BASE}/ssc_2027_silo_05_writing.webp"
+    banner_url = f"{CDN_BASE}/ssc_2027_silo_05_story_dialogue.webp"
     banner_alt = "SSC 2027 English Completing Story and Dialogue Writing Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
     series_nav = get_series_nav("Part 05")

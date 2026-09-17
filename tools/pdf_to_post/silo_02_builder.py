@@ -46,7 +46,7 @@ def build_post():
     slug = "ssc-2027-english-unseen-passage-summary"
     title = "এসএসসি ২০২৭ ইংরেজি ১ম পত্র আনসিন প্যাসেজ ও সামারি রাইটিং গাইড (SSC 2027 English Unseen Passage, Information Transfer & Summary Writing Complete Guide)"
     meta_desc = "SSC 2027 English 1st Paper Unseen Passage ও Summary Writing গাইড। Information Transfer (Q4) ও Summary (Q5) এর ৪১টি প্যাসেজ এবং ৩টি মডেল সমাধান।"
-    banner_url = f"{CDN_BASE}/ssc_2027_silo_02_unseen_passage.webp"
+    banner_url = f"{CDN_BASE}/ssc_2027_silo_02_unseen_summary.webp"
     banner_alt = "SSC 2027 English Unseen Passage Information Transfer and Summary Writing Suggestion"
     url = f"{BLOG_BASE}/{slug}.html"
     series_nav = get_series_nav("Part 02")
