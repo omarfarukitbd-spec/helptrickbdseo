@@ -1,0 +1,75 @@
+{
+  "date": "2026-09-17",
+  "benchmark_name": "Latest Recorded Snapshot",
+  "period": "Last 3 months (June 19, 2026 - September 17, 2026)",
+  "domain": "helptrickbd.com",
+  "source": "Google Search Console Export & Live Audit",
+  "performance": {
+    "total_clicks": 3728,
+    "total_impressions": 125000,
+    "average_ctr_percent": 3.0,
+    "average_position": 6.1
+  },
+  "indexing": {
+    "total_indexed": 61,
+    "total_not_indexed": 311,
+    "reasons_not_indexed": {
+      "not_found_404": 111,
+      "crawled_currently_not_indexed": 72,
+      "alternate_page_with_proper_canonical": 55,
+      "discovered_currently_not_indexed": 32,
+      "excluded_by_noindex_tag": 18,
+      "page_with_redirect": 11,
+      "duplicate_without_user_selected_canonical": 7,
+      "blocked_by_robots_txt": 3,
+      "blocked_due_to_other_4xx_issue": 1,
+      "redirect_error": 1
+    }
+  },
+  "sitemaps": {
+    "sitemap_xml": {
+      "status": "Success",
+      "discovered_urls": 94,
+      "last_read": "2026-09-17"
+    },
+    "sitemap_pages_xml": {
+      "status": "Success",
+      "discovered_urls": 8,
+      "last_read": "2026-09-16"
+    },
+    "atom_xml": {
+      "status": "Success",
+      "discovered_urls": 73,
+      "last_read": "2026-09-16"
+    },
+    "total_discovered_urls_across_sitemaps": 175
+  },
+  "core_web_vitals": {
+    "mobile": {
+      "good_urls": 0,
+      "need_improvement_urls": 33,
+      "poor_urls": 0
+    },
+    "desktop": {
+      "good_urls": 0,
+      "need_improvement_urls": 0,
+      "poor_urls": 0
+    }
+  },
+  "crawl_stats_90d": {
+    "total_crawl_requests": 3172,
+    "host_www_requests": 2987,
+    "host_root_requests": 161,
+    "host_about_requests": 24,
+    "status_200_ok_ratio": 0.5095,
+    "status_302_redirect_ratio": 0.2015,
+    "status_404_not_found_ratio": 0.1390,
+    "status_301_redirect_ratio": 0.1034,
+    "status_4xx_other_ratio": 0.0271,
+    "status_304_cache_ratio": 0.0154,
+    "purpose_refresh_ratio": 0.9612,
+    "purpose_discovery_ratio": 0.0388,
+    "googlebot_smartphone_ratio": 0.6422,
+    "googlebot_desktop_ratio": 0.2207
+  }
+}
