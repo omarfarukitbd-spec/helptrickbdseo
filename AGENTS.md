@@ -27,6 +27,7 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 8. **[07_POST_BACKUP_AND_RESTORE_PROTOCOL.md](file:///.agents/rules/07_POST_BACKUP_AND_RESTORE_PROTOCOL.md)**: Mandatory Pre-Edit Full Post Backup & Rollback Protocol (Original HTML, Image Manifest, Labels & Metadata).
 9. **[08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md](file:///.agents/rules/08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md)**: Mandatory Inquisitive Clarification Gate (Zero guesswork on short prompts), Lightning-Fast Execution Once Clear, and Zero Sycophancy (Challenge mistakes with facts, policy & reality; Never blindly agree).
 10. **[09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md](file:///.agents/rules/09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md)**: Mandatory Single Theme Source of Truth (Zero separate snippet files; all edits directly inside `Helptrickbd theme code.xml`; zero code duplication; dark mode post contrast & callout inversion engine).
+11. **[10_PDF_INGESTION_AND_EXTRACTION_PROTOCOL.md](file:///.agents/rules/10_PDF_INGESTION_AND_EXTRACTION_PROTOCOL.md)**: Mandatory PDF Ingestion, Rapid Extraction & Editorial Correction Protocol (Zero manual page slicing/disk loops; auto-detect Born-Digital vs Scanned; PyMuPDF4LLM & In-Memory Vision Pipeline; mandatory Bengali conjunct/table editorial proofreading).
 
 ### 🛡️ Automated Quality Gatekeeper Tools:
 - **Pre-Flight Post Validator (Quality Gatekeeper):**
