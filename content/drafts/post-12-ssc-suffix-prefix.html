@@ -1,0 +1,1118 @@
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/fonts/solaiman_lipi.css" rel="stylesheet"/>
+
+<style>
+  .htbd-post-wrapper {
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+  }
+  .htbd-post-wrapper p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+    text-align: justify !important;
+  }
+  .htbd-heading {
+    color: #1a73e8 !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding-left: 14px !important;
+    margin-top: 36px !important;
+    margin-bottom: 16px !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-subheading {
+    color: #0c2340 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-top: 28px !important;
+    margin-bottom: 14px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .htbd-qbox {
+    background: #f8fafd !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding: 20px 24px !important;
+    margin: 22px 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-qbox p {
+    margin: 0 !important;
+    line-height: 1.8 !important;
+  }
+  .htbd-note-box {
+    background: #f8fafc !important;
+    border-left: 4px solid #0284c7 !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+    font-size: 17.5px !important;
+  }
+  .htbd-note-box p {
+    margin: 8px 0 !important;
+  }
+  .htbd-table-container {
+    overflow-x: auto !important;
+    margin: 20px 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  .htbd-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    text-align: left !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    padding: 12px 16px !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+  }
+  .htbd-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+  }
+  .htbd-table tr:nth-child(even) td {
+    background: #f8fafc !important;
+  }
+  .htbd-question-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 20px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+  }
+  .htbd-passage-content {
+    font-family: Arial, 'SolaimanLipi', sans-serif !important;
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+    color: #1e293b !important;
+    margin: 14px 0 !important;
+  }
+  .htbd-solution-card {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 6px !important;
+    padding: 20px 24px !important;
+    margin: 14px 0 28px 0 !important;
+  }
+  .htbd-solution-card h4 {
+    margin: 0 0 12px 0 !important;
+    color: #166534 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-answers-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+    gap: 8px 16px !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    margin-top: 10px !important;
+  }
+  .htbd-rule-note {
+    margin-top: 14px !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed #86efac !important;
+    font-size: 15px !important;
+    color: #15803d !important;
+    font-style: italic !important;
+    line-height: 1.6 !important;
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+  }
+  .htbd-exam-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 2px 10px !important;
+    border-radius: 14px !important;
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+    border: 1px solid #bae6fd !important;
+    letter-spacing: 0.2px !important;
+    vertical-align: middle !important;
+    margin-left: 8px !important;
+    font-family: Arial, sans-serif !important;
+  }
+  .htbd-internal-silo {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 18px 24px !important;
+    margin: 28px 0 !important;
+  }
+  .htbd-internal-silo h4 {
+    margin: 0 0 10px 0 !important;
+    color: #0f172a !important;
+    font-size: 18px !important;
+  }
+  .htbd-internal-silo ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+  }
+  .htbd-internal-silo li {
+    margin: 6px 0 !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-internal-silo a {
+    color: #1a73e8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+  .htbd-internal-silo a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Bi-Modal Dark Mode Support */
+  .dark .htbd-post-wrapper,
+  body.dark .htbd-post-wrapper,
+  #mainContent.dark .htbd-post-wrapper {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-post-wrapper p,
+  body.dark .htbd-post-wrapper p,
+  #mainContent.dark .htbd-post-wrapper p {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-heading,
+  body.dark .htbd-heading,
+  #mainContent.dark .htbd-heading {
+    color: #38bdf8 !important;
+    border-left-color: #0284c7 !important;
+  }
+  .dark .htbd-subheading,
+  body.dark .htbd-subheading,
+  #mainContent.dark .htbd-subheading {
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-qbox,
+  body.dark .htbd-qbox,
+  #mainContent.dark .htbd-qbox {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    border-left: 5px solid #0284c7 !important;
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-qbox strong,
+  body.dark .htbd-qbox strong,
+  #mainContent.dark .htbd-qbox strong {
+    color: #ffffff !important;
+  }
+  .dark .htbd-note-box,
+  body.dark .htbd-note-box,
+  #mainContent.dark .htbd-note-box {
+    background: #1e293b !important;
+    border-left-color: #0284c7 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table-container,
+  body.dark .htbd-table-container,
+  #mainContent.dark .htbd-table-container {
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table th,
+  body.dark .htbd-table th,
+  #mainContent.dark .htbd-table th {
+    background: #0f172a !important;
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table td,
+  body.dark .htbd-table td,
+  #mainContent.dark .htbd-table td {
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table tr:nth-child(even) td,
+  body.dark .htbd-table tr:nth-child(even) td,
+  #mainContent.dark .htbd-table tr:nth-child(even) td {
+    background: #1e293b !important;
+  }
+  .dark .htbd-question-card,
+  body.dark .htbd-question-card,
+  #mainContent.dark .htbd-question-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-passage-content,
+  body.dark .htbd-passage-content,
+  #mainContent.dark .htbd-passage-content {
+    color: #e2e8f0 !important;
+  }
+  .dark .htbd-solution-card,
+  body.dark .htbd-solution-card,
+  #mainContent.dark .htbd-solution-card {
+    background: #052e16 !important;
+    border-color: #14532d !important;
+    border-left-color: #22c55e !important;
+  }
+  .dark .htbd-solution-card h4,
+  body.dark .htbd-solution-card h4,
+  #mainContent.dark .htbd-solution-card h4 {
+    color: #86efac !important;
+  }
+  .dark .htbd-answers-grid,
+  body.dark .htbd-answers-grid,
+  #mainContent.dark .htbd-answers-grid {
+    color: #dcfce7 !important;
+  }
+  .dark .htbd-rule-note,
+  body.dark .htbd-rule-note,
+  #mainContent.dark .htbd-rule-note {
+    border-top-color: #14532d !important;
+    color: #a7f3d0 !important;
+  }
+  .dark .htbd-exam-badge,
+  body.dark .htbd-exam-badge,
+  #mainContent.dark .htbd-exam-badge {
+    background-color: #0c4a6e !important;
+    color: #7dd3fc !important;
+    border-color: #0284c7 !important;
+  }
+  .dark .htbd-internal-silo,
+  body.dark .htbd-internal-silo,
+  #mainContent.dark .htbd-internal-silo {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-internal-silo h4,
+  body.dark .htbd-internal-silo h4,
+  #mainContent.dark .htbd-internal-silo h4 {
+    color: #f1f5f9 !important;
+  }
+</style>
+
+<div class="htbd-post-wrapper">
+<figure style="margin: 0 0 25px 0; text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-suffix-and-prefix-rules-and-board-questions-with-answers.webp" 
+         alt="SSC English 2nd Paper Suffix and Prefix Suggestions with Answer" 
+         title="SSC English 2nd Paper Suffix and Prefix Suggestions with Answer | ১৫টি গোল্ডেন রুলস ও ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান" 
+         width="1200" height="675" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block;" 
+         loading="lazy" decoding="async" />
+    <figcaption style="font-size: 14px; color: #64748b; margin-top: 8px; font-style: italic;">এসএসসি ও দাখিল ইংরেজি ২য় পত্র: সাফিক্স ও প্রিফিক্স গোল্ডেন রুলস ও ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান সহায়িকা | HelpTrickBD</figcaption>
+</figure>
+
+<p>এসএসসি ও দাখিল ইংরেজি ২য় পত্র পরীক্ষায় ব্যাকরণ (Grammar) অংশের অত্যন্ত স্কোরিং এবং সহজ একটি প্রশ্ন হলো <strong>Suffix and Prefix (সাফিক্স ও প্রিফিক্স)</strong>। জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) অনুমোদিত প্রশ্নকাঠামোতে এটি ৬ নম্বর প্রশ্নে থাকে এবং পূর্ণমান হলো <strong>৫ নম্বর</strong> (০.৫ &times; ১০ = ৫ নম্বর: a থেকে j পর্যন্ত ১০টি শূন্যস্থান)। ইংরেজি শব্দভাণ্ডার (Vocabulary) গঠন এবং পার্টস অফ স্পিচের অবস্থানগত পরিবর্তনের কৌশল আয়ত্ত করলে এই অংশে পূর্ণ ৫-এ ৫ নম্বর অর্জন করা অত্যন্ত সহজ।</p>
+<!--more-->
+<div class="htbd-qbox">
+    <p><strong>সারসংক্ষেপ: এসএসসি সাফিক্স ও প্রিফিক্স প্রশ্নকাঠামো ও নম্বর অর্জনের টেকনিক</strong><br>
+    <strong>প্রশ্ন ক্রমিক ও মানবণ্টন:</strong> Question No. 6 — Suffixes and Prefixes (০.৫ &times; ১০ = ৫ নম্বর)।<br>
+    <strong>মূল ব্যাকরণিক তত্ত্ব:</strong> মূল শব্দের (Root word) পূর্বে কোনো বর্ণ বা বর্ণসমষ্টি যুক্ত হলে তাকে <strong>Prefix</strong> বলে (যেমন: un-, dis-, in-, im-, il-, ir-, mis-); আর মূল শব্দের শেষে যুক্ত হলে তাকে <strong>Suffix</strong> বলে (যেমন: -tion, -ment, -ful, -less, -ly, -ness)। অনেক ক্ষেত্রে একই সাথে প্রিফিক্স ও সাফিক্স উভয়ই যুক্ত হয় (যেমন: un-comfort-able = uncomfortable)।<br>
+    <strong>নম্বর পাওয়ার কৌশল:</strong> শূন্যস্থানের আগের ও পরের শব্দ দেখে পদটির (Parts of Speech) অবস্থান নিশ্চিত হতে হবে—সেটি কি Noun, Adjective, Verb নাকি Adverb হবে। অর্থ অনুযায়ী ইতিবাচক নাকি নেতিবাচক শব্দ বসবে তা বিবেচনা করে প্রিফিক্স/সাফিক্স নির্বাচন করতে হবে।</p>
+</div>
+
+<h2 class="htbd-heading">সাফিক্স ও প্রিফিক্সের ১৫টি অলঙ্ঘনীয় গোল্ডেন রুলস (Top 15 Golden Rules & Shortcut Tables)</h2>
+<p>বোর্ড পরীক্ষায় ভালো নম্বর নিশ্চিত করতে পার্টস অফ স্পিচ চেনার শর্টকাট অবস্থান টেবিলটি সবচেয়ে বেশি সাহায্য করবে:</p>
+
+<h3 class="htbd-subheading">১. পার্টস অফ স্পিচের অবস্থান ও সাফিক্স চেনার মাস্টার চার্ট (Parts of Speech Identification Matrix)</h3>
+<div class="htbd-table-container">
+    <table class="htbd-table">
+        <thead>
+            <tr>
+                <th>Target Part of Speech</th>
+                <th>Common Suffixes / Prefixes</th>
+                <th>Sentence Position (কখন বসবে)</th>
+                <th>Example Transformation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Noun</strong></td>
+                <td>-tion, -sion, -ment, -ness, -ance, -ence, -ity, -hood, -ship, -er, -or</td>
+                <td>Article ও Preposition-এর মাঝে; Possessive-এর পর; বাক্যের Subject বা Object হিসেবে</td>
+                <td>educate &rarr; <strong>education</strong>, kind &rarr; <strong>kindness</strong>, boy &rarr; <strong>boyhood</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Adjective</strong></td>
+                <td>-ful, -less, -able, -ible, -al, -ic, -ive, -ous, -ish, -y, -ed, -ing</td>
+                <td>Noun-এর ঠিক পূর্বে; Be-verb বা Linking verb-এর পরে</td>
+                <td>care &rarr; <strong>careful / careless</strong>, prosper &rarr; <strong>prosperous</strong>, comfort &rarr; <strong>comfortable</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Adverb</strong></td>
+                <td>-ly (Adjective + ly)</td>
+                <td>বাক্যের শুরুতে (কমার পূর্বে); Verb বা Adjective-কে মডিফাই করতে</td>
+                <td>sincere &rarr; <strong>sincerely</strong>, rapid &rarr; <strong>rapidly</strong>, fortunate &rarr; <strong>fortunately</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Verb</strong></td>
+                <td>en-, em- (Prefix); -en, -ify, -ize / -ise (Suffix)</td>
+                <td>Subject-এর পর; Modal Auxiliary বা 'to' (Infinitive)-এর পর</td>
+                <td>large &rarr; <strong>enlarge</strong>, power &rarr; <strong>empower</strong>, pure &rarr; <strong>purify</strong>, modern &rarr; <strong>modernize</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 class="htbd-subheading">২. বিপরীতার্থক ও নেতিবাচক প্রিফিক্স টেবিল (Negative Prefix Matrix)</h3>
+<div class="htbd-table-container">
+    <table class="htbd-table">
+        <thead>
+            <tr>
+                <th>Negative Prefix</th>
+                <th>Usage &amp; Meaning</th>
+                <th>Root Words</th>
+                <th>Negative Transformed Word</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>un-</strong></td>
+                <td>অ / না-বোধক সাধারণ বিপরীত শব্দ</td>
+                <td>happy, kind, known, conscious, fair</td>
+                <td><strong>unhappy, unkind, unknown, unconscious, unfair</strong></td>
+            </tr>
+            <tr>
+                <td><strong>dis-</strong></td>
+                <td>বিপরীত বা অভাব নির্দেশক</td>
+                <td>honest, agree, obey, like, order</td>
+                <td><strong>dishonest, disagree, disobey, dislike, disorder</strong></td>
+            </tr>
+            <tr>
+                <td><strong>im- / in-</strong></td>
+                <td>'p' ও 'm' দিয়ে শুরু শব্দের আগে 'im-' এবং অন্যদের আগে 'in-'</td>
+                <td>possible, moral, pure, active, direct</td>
+                <td><strong>impossible, immoral, impure, inactive, indirect</strong></td>
+            </tr>
+            <tr>
+                <td><strong>il- / ir-</strong></td>
+                <td>'l' দিয়ে শুরু হলে 'il-' এবং 'r' দিয়ে শুরু হলে 'ir-'</td>
+                <td>literate, legal, regular, responsible</td>
+                <td><strong>illiterate, illegal, irregular, irresponsible</strong></td>
+            </tr>
+            <tr>
+                <td><strong>mis-</strong></td>
+                <td>ভুল বা অনুচিত কাজ বোঝাতে</td>
+                <td>lead, take, conduct, fortune, judge</td>
+                <td><strong>mislead, mistake, misconduct, misfortune, misjudge</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="htbd-note-box">
+    <p><strong>বোর্ড পরীক্ষার ৩টি গোপন কৌশল ও সতর্কতা:</strong><br>
+    ১. <strong>ডাবল চেঞ্জ (Prefix + Suffix উভয়ই):</strong> অনেক সময় ব্র্যাকেটের শব্দকে শুধুমাত্র সাফিক্স বা প্রিফিক্স দিলে সঠিক অর্থ প্রকাশ পায় না, উভয়ই পরিবর্তন করতে হয়। যেমন: 'comfort' থেকে <em>uncomfortable</em>, 'fortune' থেকে <em>unfortunately</em>, 'literate' থেকে <em>illiteracy</em>।<br>
+    ২. <strong>বানান পরিবর্তনের প্রতি যত্নশীল হোন:</strong> কোনো Adjective-এর শেষে 'y' থাকলে সাফিক্স '-ly' বা '-ness' যোগ করার সময় 'y' উঠে 'i' হয় (যেমন: happy &rarr; <em>happily</em> / <em>happiness</em>, busy &rarr; <em>business</em>)।<br>
+    ৩. <strong>অর্থের সমন্বয় সাধন:</strong> পুরো প্যাসেজের মূল সুরটি পজিটিভ নাকি নেতিবাচক তা বিবেচনা করে শব্দ পরিবর্তন করতে হবে। যেমন: 'Water is being polluted' এর পর 'harm' থাকলে উত্তর হবে <em>harmful</em>, কিন্তু 'Protect trees from' থাকলে উত্তর হবে <em>destruction</em>।</p>
+</div>
+
+<h2 class="htbd-heading">বিগত বছরের শীর্ষ ২৫টি বোর্ড ও দাখিল প্রশ্ন এবং পূর্ণাঙ্গ সমাধান (Top 25 Board Questions with Answers)</h2>
+<p>নিচে ঢাকা, রাজশাহী, কুমিল্লা, চট্টগ্রাম, দিনাজপুর, বরিশাল, সিলেট এবং মাদ্রাসা বোর্ডের বিগত বছরের শীর্ষ ২৫টি প্যাসেজভিত্তিক প্রশ্ন ও উত্তরমালা সাজিয়ে দেওয়া হলো:</p>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 01: Dhaka Board 2026 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Clean Water and Environmental Pollution</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">The other name of water is life. Clean water is (a) — (dispense) for maintaining a healthy life. But water is being polluted (b) — (discriminate) in our country. Toxic wastes from mills and factories are (c) — (large) responsible for this environmental hazard. Farmers also use chemical fertilizers and (d) — (insect) in their lands. Rain washes away these chemicals into rivers and canals. Consequently, river water becomes (e) — (poison) and unfit for human consumption. We must take immediate (f) — (act) to prevent water pollution. Mass media can play an (g) — (effect) role in creating public awareness. Government should enforce strict laws against the (h) — (pollute) of water bodies. Let us build a (i) — (pollute) free environment for our future generation and ensure a (j) — (health) Bangladesh.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 01 (Dhaka Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> indispensable</div>
+        <div><strong>(b)</strong> Chemistry/indiscriminately</div>
+        <div><strong>(c)</strong> largely</div>
+        <div><strong>(d)</strong> insecticides</div>
+        <div><strong>(e)</strong> poisonous</div>
+        <div><strong>(f)</strong> action</div>
+        <div><strong>(g)</strong> effective</div>
+        <div><strong>(h)</strong> polluters / pollution</div>
+        <div><strong>(i)</strong> pollution-free</div>
+        <div><strong>(j)</strong> healthy</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) 'Clean water is' এর পর Adjective বসবে এবং নেতিবাচক প্রিফিক্স যোগ করে 'indispensable' (অপরিহার্য) হয়েছে। (b) ভার্ব 'polluted' কে মডিফাই করার জন্য Adverb 'indiscriminately' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 02: Rajshahi Board 2026 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Hazrat Muhammad (Sm) and Ideal Moral Character</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Hazrat Muhammad (Sm) is the last Prophet of Allah and the (a) — (lead) of all prophets. He is the greatest of men and teachers ever born on earth. Before his birth, Arabia was steeped in (b) — (beast), ignorance and superstition. The Arabs were wicked and they led (c) — (beast) lives. They were (d) — (worship) of many idols and were given to all kinds of vices. From his (e) — (boy) Muhammad (Sm) was thoughtful, honest and (f) — (truth). He was called Al-Amin for his (g) — (trust) and righteousness. He preached the message of Islam with extreme (h) — (patient) and perseverance. His noble teachings brought about a total (i) — (transform) of the Arab society. Even his enemies acknowledged his (j) — (great).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 02 (Rajshahi Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> leader</div>
+        <div><strong>(b)</strong> beastliness</div>
+        <div><strong>(c)</strong> beastly</div>
+        <div><strong>(d)</strong> worshippers</div>
+        <div><strong>(e)</strong> boyhood</div>
+        <div><strong>(f)</strong> truthful</div>
+        <div><strong>(g)</strong> trustworthiness</div>
+        <div><strong>(h)</strong> patience</div>
+        <div><strong>(i)</strong> transformation</div>
+        <div><strong>(j)</strong> greatness</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) Article 'the' এবং Preposition 'of' এর মাঝে Noun 'leader' বসেছে। (e) Possessive 'his' এর পর Noun 'boyhood' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 03: Cumilla Board 2026 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Significance of Tree Plantation</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Trees are (a) — (place) companions of mankind. They supply us with oxygen which is (b) — (absolute) necessary for our survival. Besides, trees provide us with fruits, timber and shade. But it is a matter of regret that people are cutting down trees (c) — (mind) for quick profit. As a result, our ecological balance is facing great (d) — (threat). If this trend of (e) — (forest) continues, our country will soon turn into a desert. Severe drought, flood and climate change are the direct (f) — (sequence) of deforestation. We must realize the (g) — (important) of afforestation. Government and NGOs should launch tree plantation (h) — (move) across the country. Let us take an oath to plant saplings (i) — (annual) and protect them from (j) — (destroy).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 03 (Cumilla Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> irreplaceable</div>
+        <div><strong>(b)</strong> absolutely</div>
+        <div><strong>(c)</strong> mindlessly</div>
+        <div><strong>(d)</strong> threat</div>
+        <div><strong>(e)</strong> deforestation</div>
+        <div><strong>(f)</strong> consequences</div>
+        <div><strong>(g)</strong> importance</div>
+        <div><strong>(h)</strong> movement</div>
+        <div><strong>(i)</strong> annually</div>
+        <div><strong>(j)</strong> destruction</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) Pre-nominal Adjective হিসেবে 'irreplaceable' (অপূরণীয়) প্রিফিক্স ও সাফিক্সসহ গঠিত হয়েছে। (c) ভার্ব 'cutting down' কে মডিফাই করতে Adverb 'mindlessly' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 04: Jashore Board 2026 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: The Wonder of Digital Bangladesh and Smart Nation</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">The vision of Smart Bangladesh means making smart citizens, smart economy and smart government. (a) — (technology) advancement has revolutionized our life. Now students can access global libraries (b) — (instant) through internet connectivity. Online education has minimized the (c) — (distant) between rural and urban learners. However, there are some (d) — (advantages) of digital technology if it is misused. Youngsters sometimes spend hours on social media (e) — (aim). This habit hampers their academic (f) — (perform). We should encourage our youth to become (g) — (create) innovators rather than passive consumers. Cyber security must also be strengthened to prevent (h) — (law) activities. With collective (i) — (commit), our nation can achieve (j) — (precedent) glory in the digital arena.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 04 (Jashore Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> Technological</div>
+        <div><strong>(b)</strong> instantly</div>
+        <div><strong>(c)</strong> distance</div>
+        <div><strong>(d)</strong> disadvantages</div>
+        <div><strong>(e)</strong> aimlessly</div>
+        <div><strong>(f)</strong> performance</div>
+        <div><strong>(g)</strong> creative</div>
+        <div><strong>(h)</strong> unlawful</div>
+        <div><strong>(i)</strong> commitment</div>
+        <div><strong>(j)</strong> unprecedented</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (d) অর্থগত কারণে নেতিবাচক প্রিফিক্স 'dis-' যোগ করে 'disadvantages' (অসুবিধাসমূহ) হয়েছে। (j) Noun 'glory' কে কোয়ালিফাই করতে Adjective 'unprecedented' (অভূতপূর্ব) বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 05: Chattogram Board 2026 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Patriotism and National Devotion</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Patriotism is a noble virtue. It inspires a person to work for the (a) — (better) of his motherland. A true patriot is (b) — (self) and ready to make the supreme sacrifice. On the contrary, an unpatriotic man is guided by narrow (c) — (person) interest. He does not hesitate to betray his countrymen for petty gains. People look down upon a traitor with utter (d) — (contempt) and disgust. His life ends in (e) — (miserable) and infamy. When he dies, nobody sheds tears for him. We should remember the heroic (f) — (free) fighters of 1971. Their selfless (g) — (devote) to Bangladesh will remain (h) — (fade) in our history. Let us imbibe their patriotic zeal and serve the nation (i) — (honest) and (j) — (sincere).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 05 (Chattogram Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> betterment</div>
+        <div><strong>(b)</strong> selfless</div>
+        <div><strong>(c)</strong> personal</div>
+        <div><strong>(d)</strong> contempt</div>
+        <div><strong>(e)</strong> misery</div>
+        <div><strong>(f)</strong> freedom</div>
+        <div><strong>(g)</strong> devotion</div>
+        <div><strong>(h)</strong> unfading</div>
+        <div><strong>(i)</strong> honestly</div>
+        <div><strong>(j)</strong> sincerely</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) 'self' থেকে সাফিক্স '-less' যোগ করে বিপরীতার্থক Adjective 'selfless' (নিঃস্বার্থ) হয়েছে। (h) ইতিহাস অম্লান থাকার অর্থে 'unfading' ব্যবহৃত হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 06: Dhaka Board 2025 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Early Rising and Physical Health</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Early rising is the habit of getting up from bed (a) — (early) in the morning. It is a very (b) — (benefit) habit for people of all ages. An early riser gets ample time to perform his daily (c) — (duty) smoothly. The morning air is cool, fresh and free from (d) — (pollute). Taking a morning walk invigorates both mind and body. It gives a person a cheerful (e) — (begin) of the day. On the other hand, a late riser is always in a hurry and suffers from physical (f) — (fit). His work remains (g) — (complete) and he cannot shine in life. Morning fresh air provides oxygen which improves our blood (h) — (circulate). So, we should form this habit from our (i) — (child) to lead a (j) — (peace) life.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 06 (Dhaka Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> early</div>
+        <div><strong>(b)</strong> beneficial</div>
+        <div><strong>(c)</strong> duties</div>
+        <div><strong>(d)</strong> pollution</div>
+        <div><strong>(e)</strong> beginning</div>
+        <div><strong>(f)</strong> unfitness</div>
+        <div><strong>(g)</strong> incomplete</div>
+        <div><strong>(h)</strong> circulation</div>
+        <div><strong>(i)</strong> childhood</div>
+        <div><strong>(j)</strong> peaceful</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) Noun 'habit' এর পূর্বে Adjective 'beneficial' বসেছে। (g) নেতিবাচক প্রিফিক্স 'in-' যোগ করে Adjective 'incomplete' (অসম্পূর্ণ) তৈরি হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 07: Sylhet Board 2025 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Travelling and Broadening of Mind</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Travelling has been popular with mankind from time (a) — (memorial). It is the romance of seeing the unseen and knowing the (b) — (known). A man never knows his own native land (c) — (complete) till he has visited other nations. A rational comparison with other cultures reveals the merits and (d) — (merits) of our own society. Travelling gives us first-hand (e) — (know) which books cannot provide. It removes narrowness and makes a person broad-minded and (f) — (sympathy). Ancient travellers faced great (g) — (hard) while travelling on foot or horseback. But modern modes of communication have made journeys (h) — (comfort) and swift. We should travel (i) — (frequent) to enrich our mental (j) — (horizon).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 07 (Sylhet Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> immemorial</div>
+        <div><strong>(b)</strong> unknown</div>
+        <div><strong>(c)</strong> completely</div>
+        <div><strong>(d)</strong> demerits</div>
+        <div><strong>(e)</strong> knowledge</div>
+        <div><strong>(f)</strong> sympathetic</div>
+        <div><strong>(g)</strong> hardships</div>
+        <div><strong>(h)</strong> comfortable</div>
+        <div><strong>(i)</strong> frequently</div>
+        <div><strong>(j)</strong> horizon</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) প্রবাদপ্রতিম বাক্যাংশ 'from time immemorial' (আবহমান কাল থেকে)। (d) 'merits' এর বিপরীত শব্দ হিসেবে প্রিফিক্স 'de-' যোগ করে 'demerits' হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 08: Barishal Board 2025 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Diligence and the Secret of Success</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Industry is the key to (a) — (prosper). An (b) — (industry) man can turn his misfortune into good luck. Nobody can achieve anything great without hard labor. Look at the developed nations of the world; they have reached the peak of development through sheer (c) — (persevere). An idle man, on the contrary, remains (d) — (luck) throughout his life. He blames his fate for his (e) — (fail). But fate never helps an (f) — (active) person. Work is worship, and hard work brings lasting (g) — (satisfy). Students must utilize their time (h) — (purpose). If you study (i) — (regular), failure will be (j) — (avoid) in your examination.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 08 (Barishal Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> prosperity</div>
+        <div><strong>(b)</strong> industrious</div>
+        <div><strong>(c)</strong> perseverance</div>
+        <div><strong>(d)</strong> unlucky</div>
+        <div><strong>(e)</strong> failure</div>
+        <div><strong>(f)</strong> inactive</div>
+        <div><strong>(g)</strong> satisfaction</div>
+        <div><strong>(h)</strong> purposefully</div>
+        <div><strong>(i)</strong> regularly</div>
+        <div><strong>(j)</strong> unavoidable</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) Preposition 'to' এর পর Noun 'prosperity' বসেছে। (j) 'avoid' থেকে প্রিফিক্স 'un-' এবং সাফিক্স '-able' যোগ করে Adjective 'unavoidable' (অনিবার্য) হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 09: Dinajpur Board 2025 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Good Manners and Social Etiquette</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Good manners form an (a) — (integral) part of education. A person with courteous behavior is admired (b) — (universal). He treats others with respect and (c) — (kind). Even a harsh critic is pacified by a (d) — (grace) word. On the other hand, an ill-mannered person is (e) — (popular) in society. His offensive words cause deep (f) — (please) to friends and relatives. Etiquette costs nothing but wins (g) — (price) love and affection. We should cultivate social etiquette from our (h) — (tender) childhood. Parents and teachers must give (i) — (guide) to children on proper conduct so that they grow up as (j) — (civil) human beings.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 09 (Dinajpur Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> integral</div>
+        <div><strong>(b)</strong> universally</div>
+        <div><strong>(c)</strong> kindness</div>
+        <div><strong>(d)</strong> graceful</div>
+        <div><strong>(e)</strong> unpopular</div>
+        <div><strong>(f)</strong> displeasure</div>
+        <div><strong>(g)</strong> priceless</div>
+        <div><strong>(h)</strong> tender</div>
+        <div><strong>(i)</strong> guidance</div>
+        <div><strong>(j)</strong> civilized</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (g) 'price' এর সাথে সাফিক্স '-less' যোগ হয়ে 'priceless' (অমূল্য) অর্থ প্রকাশ করেছে। (f) 'pleasure' এর পূর্বে প্রিফিক্স 'dis-' যোগ হয়ে 'displeasure' (অসন্তোষ) হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 10: Dakhil Board 2025 <span class="htbd-exam-badge">Dakhil Examination</span></h3>
+    <p><strong>টপিক: Haji Mohammad Mohsin and Benevolence</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Haji Mohammad Mohsin is famous for his (a) — (kind) and generosity. He was born in a (b) — (wealth) family in Hooghly. But he lived a very simple and (c) — (ostentatious) life. He did not marry and dedicated his life to social (d) — (work). He was deeply moved by the (e) — (suffer) of the poor and distressed people. During the great famine, he opened food kitchens to feed the hungry (f) — (mass). He set up a trust fund for the (g) — (educate) of poor Muslim students. His humanitarian deed earned him the title of (h) — (philanthropy). Even today his memory is cherished with profound (i) — (grateful). He is an (j) — (dying) star in the history of charity.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 10 (Dakhil Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> kindness</div>
+        <div><strong>(b)</strong> wealthy</div>
+        <div><strong>(c)</strong> unostentatious</div>
+        <div><strong>(d)</strong> work</div>
+        <div><strong>(e)</strong> suffering / sufferings</div>
+        <div><strong>(f)</strong> masses</div>
+        <div><strong>(g)</strong> education</div>
+        <div><strong>(h)</strong> philanthropist</div>
+        <div><strong>(i)</strong> gratitude</div>
+        <div><strong>(j)</strong> undying</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) সাদাসিধে ও অনাড়ম্বর বোঝাতে প্রিফিক্স 'un-' যোগে 'unostentatious' হয়েছে। (j) অবিনশ্বর তারকা বোঝাতে 'undying star' ব্যবহৃত হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 11: Dhaka Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Honesty and High Moral Integrity</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Honesty is a noble virtue. An honest person is (a) — (courage) and truthful. He never compromises with (b) — (honest) or falsehood. People place their implicit (c) — (trust) in him. Even his enemies cannot point a finger at his (d) — (pure) of character. In contrast, a dishonest man may become rich (e) — (night) by unlawful means. But his ill-gotten wealth brings him no (f) — (spirit) peace. His conscience torments him (g) — (cease). In the end, he faces disgrace and (h) — (punish). Therefore, we should instill the spirit of honesty into the minds of our children so that they never tread the path of (i) — (righteous). Remember, an honest life is (j) — (true) blessed.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 11 (Dhaka Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> courageous</div>
+        <div><strong>(b)</strong> dishonesty</div>
+        <div><strong>(c)</strong> trust</div>
+        <div><strong>(d)</strong> purity</div>
+        <div><strong>(e)</strong> overnight</div>
+        <div><strong>(f)</strong> spiritual</div>
+        <div><strong>(g)</strong> ceaselessly</div>
+        <div><strong>(h)</strong> punishment</div>
+        <div><strong>(i)</strong> unrighteousness</div>
+        <div><strong>(j)</strong> truly</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (g) ভার্ব 'torments' কে কোয়ালিফাই করতে সাফিক্স '-lessly' যোগ করে Adverb 'ceaselessly' (অবিরামভাবে) হয়েছে। (j) Adverb হিসেবে 'truly' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 12: Jashore Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Illiteracy as an Impediment to National Growth</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Illiteracy is a curse to our nation. An (a) — (literate) person cannot read or write. He is (b) — (aware) of modern science and technology. Consequently, he remains a burden on his family and society. He cannot take any (c) — (construct) initiative for his self-employment. The government has launched various programs for the (d) — (eradicate) of illiteracy. But government efforts alone are (e) — (sufficient). Educated citizens must come forward (f) — (voluntary) to educate the illiterate. We should remember that national (g) — (develop) is impossible without universal education. Female education should also be given special (h) — (prefer). Let us work together to make our country 100% (i) — (literacy) and (j) — (prosper).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 12 (Jashore Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> illiterate</div>
+        <div><strong>(b)</strong> unaware</div>
+        <div><strong>(c)</strong> constructive</div>
+        <div><strong>(d)</strong> eradication</div>
+        <div><strong>(e)</strong> insufficient</div>
+        <div><strong>(f)</strong> voluntarily</div>
+        <div><strong>(g)</strong> development</div>
+        <div><strong>(h)</strong> preference</div>
+        <div><strong>(i)</strong> literate</div>
+        <div><strong>(j)</strong> prosperous</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) 'il-' প্রিফিক্স যোগ করে 'illiterate' (নিরক্ষর)। (e) 'in-' প্রিফিক্স যোগ করে 'insufficient' (অপ্রতুল)। (i) ও (j) Adjective হিসেবে যথাক্রমে 'literate' ও 'prosperous' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 13: Barishal Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: The Power of Mobile Phone and Modern Telecom</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Mobile phone is an (a) — (wonder) invention of modern science. It has brought a great (b) — (evolve) in the field of telecommunication. Messages and information can be transmitted (c) — (instant) across the globe. Today mobile phone is not merely a calling device; it is a mini (d) — (compute). Through internet apps, it offers endless (e) — (entertain) and learning resources. But it has some (f) — (merit) as well. Teenagers are becoming (g) — (addict) to social media and mobile gaming. This causes severe mental (h) — (order) and weakens vision. Parents should monitor their children's mobile usage (i) — (careful) to avert its (j) — (harm) effects.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 13 (Barishal Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> wonderful</div>
+        <div><strong>(b)</strong> revolution</div>
+        <div><strong>(c)</strong> instantly</div>
+        <div><strong>(d)</strong> computer</div>
+        <div><strong>(e)</strong> entertainment</div>
+        <div><strong>(f)</strong> demerits</div>
+        <div><strong>(g)</strong> addicted</div>
+        <div><strong>(h)</strong> disorder</div>
+        <div><strong>(i)</strong> carefully</div>
+        <div><strong>(j)</strong> harmful</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (f) নেতিবাচক অর্থ বোঝাতে 'demerits' হয়েছে। (h) মানসিক বিশৃঙ্খলা বোঝাতে প্রিফিক্স 'dis-' যোগে 'disorder' হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 14: Dinajpur Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Books as Everlasting Companions</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Books are our best companions in solitude. They open the floodgates of (a) — (know) before our eyes. Reading books enriches our intellect and sharpens our mental (b) — (faculties). A good book is the lifeblood of a (c) — (master) spirit. When we read biographical works, we get (d) — (inspire) from the heroic deeds of great thinkers. Books never quarrel with us nor do they show any (e) — (friend) behavior. They are always (f) — (faith) to their readers. However, we should be (g) — (select) in choosing books. Obscene books can corrupt the (h) — (moral) of young minds. We should build school libraries (i) — (extensive) to promote reading habit among the (j) — (youth) generation.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 14 (Dinajpur Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> knowledge</div>
+        <div><strong>(b)</strong> faculties</div>
+        <div><strong>(c)</strong> master</div>
+        <div><strong>(d)</strong> inspiration</div>
+        <div><strong>(e)</strong> unfriendly</div>
+        <div><strong>(f)</strong> faithful</div>
+        <div><strong>(g)</strong> selective</div>
+        <div><strong>(h)</strong> morality</div>
+        <div><strong>(i)</strong> extensively</div>
+        <div><strong>(j)</strong> younger / youthful</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (e) নেতিবাচক প্রিফিক্স 'un-' যোগে 'unfriendly' (বন্ধুসুলভ নয় এমন) হয়েছে। (g) বি-ভার্ব 'should be' এর পর Adjective 'selective' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 15: Mymensingh Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Food Adulteration and Consumer Safety</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Food adulteration is one of the most (a) — (alarm) problems in Bangladesh. Greedy businessmen mix toxic chemicals with food items for quick (b) — (profit). Fruits are treated with formalin to prevent early (c) — (decay). Fish and vegetables are colored with (d) — (poison) industrial dyes. Consuming adulterated food causes fatal diseases like cancer and kidney (e) — (fail). This heinous act is completely (f) — (human) and unethical. The government must show zero tolerance against such (g) — (scrupulous) syndicates. Mobile courts should conduct raids (h) — (frequent) in wholesale markets. Stringent (i) — (punish) must be meted out to the culprits to ensure safe food for (j) — (every).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 15 (Mymensingh Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> alarming</div>
+        <div><strong>(b)</strong> profitability / profit</div>
+        <div><strong>(c)</strong> decay</div>
+        <div><strong>(d)</strong> poisonous</div>
+        <div><strong>(e)</strong> failure</div>
+        <div><strong>(f)</strong> inhuman</div>
+        <div><strong>(g)</strong> unscrupulous</div>
+        <div><strong>(h)</strong> frequently</div>
+        <div><strong>(i)</strong> punishment</div>
+        <div><strong>(j)</strong> everyone</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (g) নীতিহীন সিন্ডিকেট বোঝাতে প্রিফিক্স 'un-' যোগ করে 'unscrupulous' হয়েছে। (f) অমানবিক বোঝাতে 'inhuman' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 16: Cumilla Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Self-Reliance and National Prosperity</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Self-reliance means relying on one's own (a) — (capable) and labor. A self-reliant nation does not depend on foreign (b) — (assist) for its subsistence. Foreign aid often comes with stringent conditions that undermine national (c) — (sovereign). We should tap our domestic (d) — (source) to build a robust economy. Our agriculture has shown (e) — (remark) resilience in food production. Our industrial sector is also expanding (f) — (rapid). But we need skilled human resources to sustain this (g) — (grow). Technical and vocational education must be (h) — (courage) among youths. Self-employment projects will eradicate poverty (i) — (gradual) and make Bangladesh a truly (j) — (depend) nation.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 16 (Cumilla Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> capability / capabilities</div>
+        <div><strong>(b)</strong> assistance</div>
+        <div><strong>(c)</strong> sovereignty</div>
+        <div><strong>(d)</strong> resources</div>
+        <div><strong>(e)</strong> remarkable</div>
+        <div><strong>(f)</strong> rapidly</div>
+        <div><strong>(g)</strong> growth</div>
+        <div><strong>(h)</strong> encouraged</div>
+        <div><strong>(i)</strong> gradually</div>
+        <div><strong>(j)</strong> independent</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (h) ভার্ব তৈরি করতে প্রিফিক্স 'en-' যোগ করে Passive participle 'encouraged' (উৎসাহিত) হয়েছে। (j) স্বনির্ভর বোঝাতে প্রিফিক্স 'in-' যোগ করে 'independent' হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 17: Chattogram Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Deforestation and Global Climate Crisis</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Global warming is increasing (a) — (alarm) day by day. The carbon dioxide level in the atmosphere is rising due to reckless (b) — (forest). Trees absorb greenhouse gases and maintain environmental (c) — (stable). But forests are being cleared (d) — (merciless) to expand cities and croplands. As a consequence, glaciers in the polar regions are melting (e) — (rapid). Low-lying coastal countries like Bangladesh face the threat of severe (f) — (merge) under seawater. Frequent cyclones and tidal surges are causing heavy (g) — (lose) of lives and crops. To avert this global catastrophe, extensive tree plantation is (h) — (urgent) required. Every citizen should participate (i) — (enthusiastic) in the social afforestation (j) — (program).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 17 (Chattogram Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> alarmingly</div>
+        <div><strong>(b)</strong> deforestation</div>
+        <div><strong>(c)</strong> stability</div>
+        <div><strong>(d)</strong> mercilessly</div>
+        <div><strong>(e)</strong> rapidly</div>
+        <div><strong>(f)</strong> submergence / submersion</div>
+        <div><strong>(g)</strong> loss</div>
+        <div><strong>(h)</strong> urgently</div>
+        <div><strong>(i)</strong> enthusiastically</div>
+        <div><strong>(j)</strong> programs / programme</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) ও (d) ভার্বকে মডিফাই করতে সাফিক্স '-ly' যোগে যথাক্রমে 'alarmingly' ও 'mercilessly' হয়েছে। (f) জলমগ্ন হওয়া বোঝাতে 'submergence' ব্যবহৃত হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 18: Rajshahi Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Cleanliness and Sound Mind in Sound Body</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Cleanliness is considered next to (a) — (god). It is an essential virtue for leading a healthy and (b) — (dignity) life. Cleanliness of mind is as important as cleanliness of body. If we do not wear clean clothes, we become (c) — (suspect) to infectious skin diseases. Dirt and filth are the breeding grounds of (d) — (harm) germs. An unclean person is disliked by his (e) — (neighbor). Nobody likes to associate with a person having an (f) — (tidy) appearance. On the contrary, a clean person remains (g) — (cheer) and energetic. Religious scriptures also lay great (h) — (emphasize) on physical and spiritual purity. Let us practice cleanliness (i) — (habitual) and keep our surroundings (j) — (spot).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 18 (Rajshahi Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> godliness</div>
+        <div><strong>(b)</strong> dignified</div>
+        <div><strong>(c)</strong> susceptible</div>
+        <div><strong>(d)</strong> harmful</div>
+        <div><strong>(e)</strong> neighbors</div>
+        <div><strong>(f)</strong> untidy</div>
+        <div><strong>(g)</strong> cheerful</div>
+        <div><strong>(h)</strong> emphasis</div>
+        <div><strong>(i)</strong> habitually</div>
+        <div><strong>(j)</strong> spotless</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) বিখ্যাত প্রবাদ 'Cleanliness is next to godliness' (পবিত্রতা ধর্মের অঙ্গ)। (j) দাগহীন ও পরিচ্ছন্ন বোঝাতে সাফিক্স '-less' যোগে 'spotless' হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 19: Dakhil Board 2024 <span class="htbd-exam-badge">Dakhil Examination</span></h3>
+    <p><strong>টপিক: Truthfulness and Moral Greatness</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Truthfulness is the habit of speaking the truth (a) — (fear). It is the greatest moral virtue in human life. A truthful person is respected and honored (b) — (universal). He never tells a lie even when his life is in (c) — (jeopardize). On the other hand, a liar is despised by all. He has no (d) — (repute) in society. Nobody believes his words even when he speaks the truth. He leads an (e) — (honor) life. By speaking the truth, a person earns mental (f) — (serene). We should remember that truth always triumphs over (g) — (false). Even in the face of great adversity, we should remain (h) — (shake) in our devotion to truth. Let us make truthfulness the guiding (i) — (prince) of our life and earn divine (j) — (bless).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 19 (Dakhil Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> fearlessly</div>
+        <div><strong>(b)</strong> universally</div>
+        <div><strong>(c)</strong> jeopardy</div>
+        <div><strong>(d)</strong> reputation</div>
+        <div><strong>(e)</strong> dishonorable / ignoble</div>
+        <div><strong>(f)</strong> serenity</div>
+        <div><strong>(g)</strong> falsehood</div>
+        <div><strong>(h)</strong> unshakeable</div>
+        <div><strong>(i)</strong> principle</div>
+        <div><strong>(j)</strong> blessings</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) ভয়হীনভাবে বোঝাতে '-lessly' যোগে 'fearlessly'। (h) অবিচল বোঝাতে প্রিফিক্স 'un-' যোগে 'unshakeable' হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 20: Dhaka Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Perseverance and Great World Discoveries</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Perseverance is the secret of success in life. Those who work (a) — (patient) with firm determination never taste defeat. Thomas Alva Edison failed thousands of times before inventing the electric bulb. But his (b) — (tire) efforts ultimately brought (c) — (history) glory. If he had given up after early failures, the world would have remained (d) — (light). Columbus discovered America because of his (e) — (daunt) courage. Many great scientists sacrificed their personal (f) — (comfort) to make discoveries for the welfare of mankind. Failures should not cause (g) — (hearten); rather, they should serve as stepping stones to future (h) — (achieve). Cultivate perseverance from your (i) — (student) days to lead an (j) — (exemplar) life.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 20 (Dhaka Board 2020)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> patiently</div>
+        <div><strong>(b)</strong> untiring</div>
+        <div><strong>(c)</strong> historic</div>
+        <div><strong>(d)</strong> unlit / unlighted</div>
+        <div><strong>(e)</strong> undaunted</div>
+        <div><strong>(f)</strong> comforts</div>
+        <div><strong>(g)</strong> disheartenment</div>
+        <div><strong>(h)</strong> achievements</div>
+        <div><strong>(i)</strong> student</div>
+        <div><strong>(j)</strong> exemplary</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) অক্লান্ত বোঝাতে 'untiring' Adjective বসেছে। (g) হতাশা বোঝাতে প্রিফিক্স 'dis-' এবং সাফিক্স '-ment' যোগে 'disheartenment' হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 21: Chattogram Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Female Education and Women Empowerment</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Female education is an absolute (a) — (necessary) for our national progress. Half of our total population are women. No nation can prosper keeping half of its population in (b) — (dark). An educated mother plays a vital role in the proper (c) — (bring) of children. She teaches them good manners, morality and (d) — (discipline). Napoleon Bonaparte said, 'Give me an educated mother, and I will give you an (e) — (educate) nation.' In the past, girls were deprived of higher education due to social (f) — (prejudice). But now parents are showing greater (g) — (conscious). Women are working (h) — (side) with men in offices, banks and enterprises. Female empowerment has made our economy (i) — (vibrate) and (j) — (dynamism).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 21 (Chattogram Board 2020)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> necessity</div>
+        <div><strong>(b)</strong> darkness</div>
+        <div><strong>(c)</strong> upbringing</div>
+        <div><strong>(d)</strong> discipline</div>
+        <div><strong>(e)</strong> educated</div>
+        <div><strong>(f)</strong> prejudices</div>
+        <div><strong>(g)</strong> consciousness</div>
+        <div><strong>(h)</strong> side-by-side</div>
+        <div><strong>(i)</strong> vibrant</div>
+        <div><strong>(j)</strong> dynamic</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) সন্তান প্রতিপালন বোঝাতে প্রিফিক্স 'up-' যোগে 'upbringing' হয়েছে। (i) ও (j) সমজাতীয় Adjective হিসেবে যথাক্রমে 'vibrant' ও 'dynamic' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 22: Jashore Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Drug Addiction and Social Devastation</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Drug addiction has become a global menace. It affects the young generation (a) — (grave). Drugs create an (b) — (resist) craving in the addict. In order to manage money for drugs, youths resort to (c) — (crime) activities like snatching, stealing and robbery. Consequently, social peace is (d) — (serious) disrupted. Continuous drug taking damages vital organs like brain, liver and kidney. An addict loses all sense of (e) — (moral) and responsibility. He becomes an (f) — (bear) burden to his family. To save our youths from this fatal snare, effective anti-drug (g) — (campaign) must be launched. Law enforcement agencies should act (h) — (ruthless) against drug cartels. Rehabilitation centers should be set up for the medical (i) — (treat) of addicts to bring them back to (j) — (normal).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 22 (Jashore Board 2020)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> gravely</div>
+        <div><strong>(b)</strong> irresistible</div>
+        <div><strong>(c)</strong> criminal</div>
+        <div><strong>(d)</strong> seriously</div>
+        <div><strong>(e)</strong> morality</div>
+        <div><strong>(f)</strong> unbearable</div>
+        <div><strong>(g)</strong> campaigns</div>
+        <div><strong>(h)</strong> ruthlessly</div>
+        <div><strong>(i)</strong> treatment</div>
+        <div><strong>(j)</strong> normalcy / normality</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) অপ্রতিরোধ্য বোঝাতে প্রিফিক্স 'ir-' যোগে 'irresistible' হয়েছে। (f) অসহনীয় বোঝাতে প্রিফিক্স 'un-' যোগে 'unbearable' হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 23: Cumilla Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: The Magic of Science and Modern Amenities</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">We live in an age of science. Science has invented many wonderful gadgets for our (a) — (comfort) living. Electricity has removed darkness and made factory machines run (b) — (cease). Modern means of transport have shortened distance (c) — (miracle). Medical science has discovered remedies for many (d) — (cure) diseases. Even transplanting human heart has become (e) — (practice) possible. However, the abuse of scientific inventions has brought (f) — (told) miseries. Weapons of mass (g) — (destroy) pose an existential threat to human civilization. The misuse of internet is corrupting the minds of the (h) — (youth). Therefore, science should be utilized solely for the (i) — (peace) progress of mankind and not for our (j) — (annihilate).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 23 (Cumilla Board 2020)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> comfortable</div>
+        <div><strong>(b)</strong> ceaselessly</div>
+        <div><strong>(c)</strong> miraculously</div>
+        <div><strong>(d)</strong> incurable</div>
+        <div><strong>(e)</strong> practically</div>
+        <div><strong>(f)</strong> untold</div>
+        <div><strong>(g)</strong> destruction</div>
+        <div><strong>(h)</strong> youth / young</div>
+        <div><strong>(i)</strong> peaceful</div>
+        <div><strong>(j)</strong> annihilation</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (d) নিরাময় অযোগ্য বোঝাতে প্রিফিক্স 'in-' যোগে 'incurable' হয়েছে। (f) অবর্ণনীয় দুর্দশা বোঝাতে প্রিফিক্স 'un-' যোগে 'untold miseries' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 24: All Boards 2018 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>টপিক: Success through Labor and Devotion</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Hard labor is the cornerstone of all worldly (a) — (achieve). Without working hard, none can build an (b) — (affluence) career. An idle man merely dreams of riches, but his dreams remain (c) — (realize). He depends on others for his daily bread and lives a life of (d) — (depend). On the contrary, an industrious worker is (e) — (self) and cheerful. He earns an honest livelihood and sleeps (f) — (peace) at night. History shows that all great philosophers, statesmen and inventors were men of (g) — (exhaust) energy. They did not waste their precious moments in idle (h) — (gossip). Follow the footsteps of these noble personalities. Shun idleness (i) — (resolute) and devote yourself to (j) — (construct) labor.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 24 (All Boards 2018)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> achievements</div>
+        <div><strong>(b)</strong> affluent</div>
+        <div><strong>(c)</strong> unrealized</div>
+        <div><strong>(d)</strong> dependence</div>
+        <div><strong>(e)</strong> self-reliant</div>
+        <div><strong>(f)</strong> peacefully</div>
+        <div><strong>(g)</strong> inexhaustible</div>
+        <div><strong>(h)</strong> gossip</div>
+        <div><strong>(i)</strong> resolutely</div>
+        <div><strong>(j)</strong> constructive</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) অপূর্ণ বোঝাতে 'unrealized'। (g) অফুরন্ত বোঝাতে প্রিফিক্স 'in-' যোগে 'inexhaustible' Adjective হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 25: Dakhil Examination 2018 <span class="htbd-exam-badge">Dakhil Examination</span></h3>
+    <p><strong>টপিক: The Golden Role of Teachers in Nation Building</strong></p>
+    <p><em>Complete the text adding suffixes, prefixes or the both with the root words given in the parenthesis:</em> (0.5 &times; 10 = 5)</p>
+    <div class="htbd-passage-content">Teaching is the noblest (a) — (profess) in the world. A teacher is called the (b) — (arch) of a nation. He dispels the darkness of ignorance from students' minds and kindles the light of (c) — (enlighten). A good teacher does not limit himself to textbook (d) — (teach); he builds the moral character of his pupils. He acts as a guide, philosopher and (e) — (friend). He treats his learners (f) — (parent) and attends to their difficulties (g) — (sympathy). In return, society owes an (h) — (repayable) debt to the teaching community. We should show profound (i) — (revere) to our teachers and improve their socio-economic (j) — (stand).</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 25 (Dakhil Examination 2018)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> profession</div>
+        <div><strong>(b)</strong> architect</div>
+        <div><strong>(c)</strong> enlightenment</div>
+        <div><strong>(d)</strong> teaching</div>
+        <div><strong>(e)</strong> friend</div>
+        <div><strong>(f)</strong> parentally</div>
+        <div><strong>(g)</strong> sympathetically</div>
+        <div><strong>(h)</strong> irrepayable</div>
+        <div><strong>(i)</strong> reverence</div>
+        <div><strong>(j)</strong> standing / status</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) স্থপতি বোঝাতে 'architect'। (h) অপরিশোধ্য ঋণ বোঝাতে প্রিফিক্স 'ir-' যোগে 'irrepayable' Adjective বসেছে।</div>
+</div>
+
+<div class="htbd-internal-silo">
+    <h4>এসএসসি ও দাখিল ইংরেজি পূর্ণাঙ্গ প্রস্তুতি ও অন্যান্য সহায়িকা:</h4>
+    <ul>
+        <li><strong>ট্যাগ কোশ্চেন:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-tag-questions-rules-and-board-questions-with-answers.html">SSC English 2nd Paper Tag Questions Suggestions with Answer (১৫টি স্পেশাল রুলস ও ২৫টি শীর্ষ বোর্ড সমাধান)</a></li>
+        <li><strong>চেঞ্জিং সেন্টেন্সেস:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-changing-sentences-rules-and-board-questions-with-answers.html">SSC English 2nd Paper Changing Sentences Suggestions with Answer (১০ নম্বরের গোল্ডেন রুলস ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>রাইট ফর্ম অফ ভার্বস:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-right-form-of.html">SSC English 2nd Paper Right Form of Verbs Suggestions with Answer (১৫টি গোল্ডেন রুলস ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>সাবস্টিটিউশন টেবিল:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-substitution-table-with-answers.html">SSC Substitution Table with Answers (শীর্ষ ২৫টি বোর্ড প্রশ্ন সমাধান ও টেকনিক)</a></li>
+        <li><strong>ইংরেজি ১ম পত্র মাস্টার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">SSC English 1st Paper Suggestion 2027 (পূর্ণাঙ্গ সিলেবাস ও ১০০ নম্বরের মানবণ্টন)</a></li>
+    </ul>
+</div>
+
+<h2 class="htbd-heading">সাধারণ জিজ্ঞাসা ও উত্তর (Frequently Asked Questions - FAQ)</h2>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ১: Suffix এবং Prefix এর মধ্যে মূল পার্থক্য কী?</strong><br>
+    উত্তর: মূল শব্দের শুরুতে বর্ণ বা বর্ণসমষ্টি যোগ হলে তাকে Prefix বলে (যেমন: un- + happy = unhappy); আর মূল শব্দের শেষে যুক্ত হয়ে সাধারণত পার্টস অফ স্পিচ পরিবর্তন করলে তাকে Suffix বলে (যেমন: care + -ful = careful)।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ২: ব্র্যাকেটের শব্দকে কখন Noun-এ রূপান্তর করতে হয়?</strong><br>
+    উত্তর: Article ও Preposition-এর মাঝে, Possessive pronoun (my, our, his, her, their)-এর পর, এবং কোনো বাক্যের সাবজেক্ট বা অবজেক্টের স্থানে শূন্যস্থান থাকলে Noun ব্যবহার করতে হয়।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ৩: নেতিবাচক বা বিপরীত শব্দ গঠনের প্রধান প্রিফিক্সগুলো কী কী?</strong><br>
+    উত্তর: প্রধান নেতিবাচক প্রিফিক্সগুলো হলো: un- (unhappy), dis- (dishonest), in- (inactive), im- (impossible), il- (illiterate), ir- (irregular), mis- (misfortune), non- (non-stop), এবং anti- (anti-social)।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ৪: Suffix-Prefix এ কীভাবে Adverb তৈরি করতে হয়?</strong><br>
+    উত্তর: সাধারণত Adjective-এর শেষে সাফিক্স '-ly' যোগ করে Adverb গঠন করতে হয় (যেমন: sincere &rarr; sincerely, quick &rarr; quickly)। তবে Adjective-এর শেষে 'y' থাকলে 'y' উঠে 'i' বসে তারপর '-ly' যোগ হয় (যেমন: happy &rarr; happily)।</p>
+</div>
+</div>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.helptrickbd.com/2026/09/ssc-suffix-and-prefix-rules-and-board-questions-with-answers.html"
+  },
+  "headline": "SSC English 2nd Paper Suffix and Prefix Suggestions with Answer | ১৫টি গোল্ডেন রুলস ও ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান",
+  "description": "এসএসসি ও দাখিল ইংরেজি ২য় পত্র Suffix and Prefix: সাফিক্স-প্রিফিক্স রুলস, পার্টস অফ স্পিচ পরিবর্তন এবং ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-suffix-and-prefix-rules-and-board-questions-with-answers.webp",
+  "author": {
+    "@type": "Person",
+    "name": "HelpTrickBD Editorial Team",
+    "url": "https://www.helptrickbd.com/p/about-us.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.helptrickbd.com/favicon.ico"
+    }
+  },
+  "datePublished": "2026-09-19T01:00:00+06:00",
+  "dateModified": "2026-09-19T01:00:00+06:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between Suffix and Prefix in English grammar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Prefix is a letter or group of letters added before the root word to modify its meaning (e.g., un- + happy = unhappy). A Suffix is a letter or group of letters added after the root word, usually changing its part of speech (e.g., care + -ful = careful, slow + -ly = slowly)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to identify where a Noun should be used in Suffix-Prefix questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A noun is typically used: (1) After articles (a, an, the), (2) After prepositions (e.g., for education, in poverty), (3) After possessive adjectives (my, our, his, her, their, its), (4) As the subject or object of a sentence, and (5) After an adjective."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the common prefixes used to create negative or opposite words?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common negative prefixes include: un- (unhappy), dis- (dishonest), in- (inactive), im- (impossible), il- (illiterate), ir- (irregular), mis- (misfortune), non- (non-stop), and anti- (anti-social)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you form Adverbs in Suffix-Prefix questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adverbs are predominantly formed by adding the suffix '-ly' to an adjective (e.g., quick -> quickly, sincere -> sincerely, regular -> regularly, beautiful -> beautifully). If the adjective ends with 'y', replace 'y' with 'i' before adding '-ly' (e.g., easy -> easily, happy -> happily)."
+      }
+    }
+  ]
+}
+</script>

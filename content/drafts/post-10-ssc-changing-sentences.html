@@ -1,0 +1,1449 @@
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/fonts/solaiman_lipi.css" rel="stylesheet"/>
+
+<style>
+  .htbd-post-wrapper {
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+  }
+  .htbd-post-wrapper p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+    text-align: justify !important;
+  }
+  .htbd-heading {
+    color: #1a73e8 !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding-left: 14px !important;
+    margin-top: 36px !important;
+    margin-bottom: 16px !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-subheading {
+    color: #0c2340 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-top: 28px !important;
+    margin-bottom: 14px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .htbd-qbox {
+    background: #f8fafd !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding: 20px 24px !important;
+    margin: 22px 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-qbox p {
+    margin: 0 !important;
+    line-height: 1.8 !important;
+  }
+  .htbd-note-box {
+    background: #f8fafc !important;
+    border-left: 4px solid #0284c7 !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+    font-size: 17.5px !important;
+  }
+  .htbd-note-box p {
+    margin: 8px 0 !important;
+  }
+  .htbd-table-container {
+    overflow-x: auto !important;
+    margin: 20px 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  .htbd-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    text-align: left !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    padding: 12px 16px !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+  }
+  .htbd-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+  }
+  .htbd-table tr:nth-child(even) td {
+    background: #f8fafc !important;
+  }
+  .htbd-question-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 20px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+  }
+  .htbd-sentence-item {
+    margin: 10px 0 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 16.5px !important;
+    line-height: 1.7 !important;
+    color: #1e293b !important;
+  }
+  .htbd-sentence-item strong {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+  }
+  .htbd-sentence-item em {
+    color: #0369a1 !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    background: #f0f9ff !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+    margin-left: 6px !important;
+    font-size: 14.5px !important;
+  }
+  .htbd-solution-card {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 6px !important;
+    padding: 20px 24px !important;
+    margin: 14px 0 28px 0 !important;
+  }
+  .htbd-solution-card h4 {
+    margin: 0 0 12px 0 !important;
+    color: #166534 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-answers-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  .htbd-answers-list li {
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    color: #0f172a !important;
+    margin: 6px 0 !important;
+  }
+  .htbd-rule-note {
+    margin-top: 14px !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed #86efac !important;
+    font-size: 15px !important;
+    color: #15803d !important;
+    font-style: italic !important;
+    line-height: 1.6 !important;
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+  }
+  .htbd-exam-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 2px 10px !important;
+    border-radius: 14px !important;
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+    border: 1px solid #bae6fd !important;
+    letter-spacing: 0.2px !important;
+    vertical-align: middle !important;
+    margin-left: 8px !important;
+    font-family: Arial, sans-serif !important;
+  }
+  .htbd-internal-silo {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 18px 24px !important;
+    margin: 28px 0 !important;
+  }
+  .htbd-internal-silo h4 {
+    margin: 0 0 10px 0 !important;
+    color: #0f172a !important;
+    font-size: 18px !important;
+  }
+  .htbd-internal-silo ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+  }
+  .htbd-internal-silo li {
+    margin: 6px 0 !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-internal-silo a {
+    color: #1a73e8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+  .htbd-internal-silo a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Bi-Modal Dark Mode Support */
+  .dark .htbd-post-wrapper,
+  body.dark .htbd-post-wrapper,
+  #mainContent.dark .htbd-post-wrapper {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-post-wrapper p,
+  body.dark .htbd-post-wrapper p,
+  #mainContent.dark .htbd-post-wrapper p {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-heading,
+  body.dark .htbd-heading,
+  #mainContent.dark .htbd-heading {
+    color: #38bdf8 !important;
+    border-left-color: #0284c7 !important;
+  }
+  .dark .htbd-subheading,
+  body.dark .htbd-subheading,
+  #mainContent.dark .htbd-subheading {
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-qbox,
+  body.dark .htbd-qbox,
+  #mainContent.dark .htbd-qbox {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    border-left: 5px solid #0284c7 !important;
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-qbox strong,
+  body.dark .htbd-qbox strong,
+  #mainContent.dark .htbd-qbox strong {
+    color: #ffffff !important;
+  }
+  .dark .htbd-note-box,
+  body.dark .htbd-note-box,
+  #mainContent.dark .htbd-note-box {
+    background: #1e293b !important;
+    border-left-color: #0284c7 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table-container,
+  body.dark .htbd-table-container,
+  #mainContent.dark .htbd-table-container {
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table th,
+  body.dark .htbd-table th,
+  #mainContent.dark .htbd-table th {
+    background: #0f172a !important;
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table td,
+  body.dark .htbd-table td,
+  #mainContent.dark .htbd-table td {
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table tr:nth-child(even) td,
+  body.dark .htbd-table tr:nth-child(even) td,
+  #mainContent.dark .htbd-table tr:nth-child(even) td {
+    background: #1e293b !important;
+  }
+  .dark .htbd-question-card,
+  body.dark .htbd-question-card,
+  #mainContent.dark .htbd-question-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-sentence-item,
+  body.dark .htbd-sentence-item,
+  #mainContent.dark .htbd-sentence-item {
+    color: #e2e8f0 !important;
+  }
+  .dark .htbd-sentence-item strong,
+  body.dark .htbd-sentence-item strong,
+  #mainContent.dark .htbd-sentence-item strong {
+    color: #38bdf8 !important;
+  }
+  .dark .htbd-sentence-item em,
+  body.dark .htbd-sentence-item em,
+  #mainContent.dark .htbd-sentence-item em {
+    background: #0f172a !important;
+    color: #7dd3fc !important;
+  }
+  .dark .htbd-solution-card,
+  body.dark .htbd-solution-card,
+  #mainContent.dark .htbd-solution-card {
+    background: #052e16 !important;
+    border-color: #14532d !important;
+    border-left-color: #22c55e !important;
+  }
+  .dark .htbd-solution-card h4,
+  body.dark .htbd-solution-card h4,
+  #mainContent.dark .htbd-solution-card h4 {
+    color: #86efac !important;
+  }
+  .dark .htbd-answers-list li,
+  body.dark .htbd-answers-list li,
+  #mainContent.dark .htbd-answers-list li {
+    color: #dcfce7 !important;
+  }
+  .dark .htbd-rule-note,
+  body.dark .htbd-rule-note,
+  #mainContent.dark .htbd-rule-note {
+    border-top-color: #14532d !important;
+    color: #a7f3d0 !important;
+  }
+  .dark .htbd-exam-badge,
+  body.dark .htbd-exam-badge,
+  #mainContent.dark .htbd-exam-badge {
+    background-color: #0c4a6e !important;
+    color: #7dd3fc !important;
+    border-color: #0284c7 !important;
+  }
+  .dark .htbd-internal-silo,
+  body.dark .htbd-internal-silo,
+  #mainContent.dark .htbd-internal-silo {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-internal-silo h4,
+  body.dark .htbd-internal-silo h4,
+  #mainContent.dark .htbd-internal-silo h4 {
+    color: #f1f5f9 !important;
+  }
+</style>
+
+<div class="htbd-post-wrapper">
+<figure style="margin: 0 0 25px 0; text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-changing-sentences-rules-and-board-questions-with-answers.webp" 
+         alt="SSC English 2nd Paper Changing Sentences Suggestions with Answer" 
+         title="SSC English 2nd Paper Changing Sentences Suggestions with Answer | ১০ নম্বরের গোল্ডেন রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান" 
+         width="1200" height="675" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block;" 
+         loading="lazy" decoding="async" />
+    <figcaption style="font-size: 14px; color: #64748b; margin-top: 8px; font-style: italic;">এসএসসি ও দাখিল ইংরেজি ২য় পত্র: চেঞ্জিং সেন্টেন্সেস গোল্ডেন রুলস ও ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান সহায়িকা | HelpTrickBD</figcaption>
+</figure>
+
+<p>এসএসসি ও দাখিল ইংরেজি ২য় পত্র পরীক্ষায় ব্যাকরণ (Grammar) অংশের মধ্যে সবচেয়ে বেশি নম্বর বহনকারী এবং ফল নির্ধারণী টপিক হলো <strong>Changing Sentences (Transformation of Sentences)</strong>। জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) অনুমোদিত প্রশ্নকাঠামোতে এটি ৪ নম্বর প্রশ্নে থাকে এবং পূর্ণমান হলো <strong>১০ নম্বর</strong> (প্রতিটি ১ নম্বর করে মোট ১০টি বাক্য রূপান্তর: a থেকে j)। অনেক শিক্ষার্থী মনে করে বাক্য পরিবর্তন করা কঠিন; কিন্তু বাস্তবে Voice Change, Degree of Comparison, এবং অর্থ ও গঠন অনুসারে বাক্যের নির্দিষ্ট কিছু কৌশল আয়ত্ত করলে এই অংশে পূর্ণ ১০-এ ১০ নম্বর পাওয়া শতভাগ সম্ভব।</p>
+<!--more-->
+<div class="htbd-qbox">
+    <p><strong>সারসংক্ষেপ: এসএসসি চেঞ্জিং সেন্টেন্সেস প্রশ্নকাঠামো ও নম্বর অর্জনের চাবিকাঠি</strong><br>
+    <strong>প্রশ্ন ক্রমিক ও নম্বর:</strong> Question No. 4 — Changing Sentences (১ × ১০ = ১০ নম্বর)।<br>
+    <strong>অন্তর্ভুক্ত ব্যাকরণিক ক্ষেত্রসমূহ:</strong> (১) Voice Change (Active &amp; Passive), (২) Degree of Comparison (Positive, Comparative, Superlative), (৩) অর্থগত রূপান্তর (Affirmative, Negative, Assertive, Interrogative, Exclamatory, Imperative), (৪) গঠনগত রূপান্তর (Simple, Complex, Compound)।<br>
+    <strong>মূল সোনার নিয়ম (Golden Law):</strong> বাক্য রূপান্তরের সময় ব্যাকরণিক কাঠামো সম্পূর্ণ পরিবর্তিত হলেও বাক্যের <strong>মূল অর্থ কোনোভাবেই পরিবর্তন করা যাবে না</strong>। নিচে প্রয়োজনীয় শর্টকাট চার্ট এবং বিগত বছরের শীর্ষ ২৫টি বোর্ড পরীক্ষার নির্ভুল সমাধান দেওয়া হলো।</p>
+</div>
+
+<h2 class="htbd-heading">চেঞ্জিং সেন্টেন্সেসের মৌলিক ৪টি পিলার ও শর্টকাট রুলস (Top Golden Rules with Summary Tables)</h2>
+<p>বোর্ড পরীক্ষায় ভালো করতে হলে মুখস্থ করার চেয়ে রুলসের প্যাটার্ন ও টেবিল মনে রাখা অনেক বেশি কার্যকর। নিচে চারটি প্রধান বিভাগের প্রয়োজনীয় রুলস টেবিলসহ সংক্ষেপে উপস্থাপন করা হলো:</p>
+
+<h3 class="htbd-subheading">১. ভয়েস পরিবর্তনের টেন্সভিত্তিক অক্সিলিয়ারি ভার্ব টেবিল (Voice Change Auxiliary Chart)</h3>
+<div class="htbd-table-container">
+    <table class="htbd-table">
+        <thead>
+            <tr>
+                <th>Tense</th>
+                <th>Active Voice Structure</th>
+                <th>Passive Voice Auxiliary</th>
+                <th>Example (Active to Passive)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Present Indefinite</strong></td>
+                <td>V1 / s, es</td>
+                <td>am / is / are + V3</td>
+                <td>He writes a letter. &rarr; A letter is written by him.</td>
+            </tr>
+            <tr>
+                <td><strong>Present Continuous</strong></td>
+                <td>am / is / are + V-ing</td>
+                <td>am / is / are + being + V3</td>
+                <td>They are playing cricket. &rarr; Cricket is being played by them.</td>
+            </tr>
+            <tr>
+                <td><strong>Present Perfect</strong></td>
+                <td>have / has + V3</td>
+                <td>have / has + been + V3</td>
+                <td>She has drawn a picture. &rarr; A picture has been drawn by her.</td>
+            </tr>
+            <tr>
+                <td><strong>Past Indefinite</strong></td>
+                <td>V2</td>
+                <td>was / were + V3</td>
+                <td>The boy broke the glass. &rarr; The glass was broken by the boy.</td>
+            </tr>
+            <tr>
+                <td><strong>Past Continuous</strong></td>
+                <td>was / were + V-ing</td>
+                <td>was / were + being + V3</td>
+                <td>I was reading a book. &rarr; A book was being read by me.</td>
+            </tr>
+            <tr>
+                <td><strong>Modal Auxiliary</strong></td>
+                <td>can / could / may / must + V1</td>
+                <td>Modal + be + V3</td>
+                <td>We must respect teachers. &rarr; Teachers must be respected by us.</td>
+            </tr>
+            <tr>
+                <td><strong>Imperative Sentence</strong></td>
+                <td>V1 + Object</td>
+                <td>Let + Object + be + V3</td>
+                <td>Close the door. &rarr; Let the door be closed.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 class="htbd-subheading">২. ডিগ্রি অফ কম্প্যারিজনের দ্রুত রূপান্তর চার্ট (Degree Transformation Matrix)</h3>
+<div class="htbd-table-container">
+    <table class="htbd-table">
+        <thead>
+            <tr>
+                <th>Positive Degree Structure</th>
+                <th>Comparative Degree Structure</th>
+                <th>Superlative Degree Structure</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>No other</strong> + noun + as + adj + as + sub</td>
+                <td>Sub + verb + adj-er + <strong>than any other</strong> + noun</td>
+                <td>Sub + verb + <strong>the</strong> + adj-est + noun</td>
+            </tr>
+            <tr>
+                <td><strong>Very few</strong> + plural noun + as + adj + as + sub</td>
+                <td>Sub + verb + adj-er + <strong>than most other</strong> + plural noun</td>
+                <td>Sub + verb + <strong>one of the</strong> + adj-est + plural noun</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 class="htbd-subheading">৩. গঠনগত রূপান্তর: Simple, Complex ও Compound সংযোগকারী টেবিল</h3>
+<div class="htbd-table-container">
+    <table class="htbd-table">
+        <thead>
+            <tr>
+                <th>Pattern Meaning</th>
+                <th>Simple Structure</th>
+                <th>Complex Structure</th>
+                <th>Compound Structure</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>সময় / সময় নির্দেশ</strong></td>
+                <td>At the time of / In / When-verb-ing</td>
+                <td>When / As soon as + clause</td>
+                <td>Clause + <strong>and</strong> + clause</td>
+            </tr>
+            <tr>
+                <td><strong>কারণ ও ফলাফল</strong></td>
+                <td>Because of / Due to + possessive + noun/ing</td>
+                <td>Since / As / Because + clause</td>
+                <td>Clause + <strong>and so / therefore</strong> + clause</td>
+            </tr>
+            <tr>
+                <td><strong>শর্তবাচক (ইতিবাচক)</strong></td>
+                <td>By + verb-ing + main clause</td>
+                <td>If + clause (Affirmative)</td>
+                <td>Imperative clause + <strong>and</strong> + clause</td>
+            </tr>
+            <tr>
+                <td><strong>শর্তবাচক (নেতিবাচক)</strong></td>
+                <td>Without + verb-ing + main clause</td>
+                <td>If + not / Unless + clause</td>
+                <td>Imperative clause + <strong>or / otherwise</strong> + clause</td>
+            </tr>
+            <tr>
+                <td><strong>বিপরীত ভাব (Concession)</strong></td>
+                <td>In spite of / Despite + possessive + ing</td>
+                <td>Though / Although + clause</td>
+                <td>Clause + <strong>but / yet</strong> + clause</td>
+            </tr>
+            <tr>
+                <td><strong>উদ্দেশ্য (Purpose)</strong></td>
+                <td>In order to / To + V1</td>
+                <td>so that + sub + can/could + V1</td>
+                <td>Clause + <strong>and so wanted to</strong> + V1</td>
+            </tr>
+            <tr>
+                <td><strong>অতিরিক্ত / এতই যে</strong></td>
+                <td>too + adj + to + V1</td>
+                <td>so + adj + that + cannot/could not + V1</td>
+                <td>very + adj + <strong>and so cannot</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="htbd-note-box">
+    <p><strong>বোর্ড পরীক্ষার ৩টি ক্লাসিক ফাঁদ ও সতর্কতা:</strong><br>
+    ১. <strong>অর্থের পরিবর্তন এড়িয়ে চলুন:</strong> 'He is an honest man' কে Negative করার সময় 'He is not an honest man' লিখলে অর্থ উল্টো হয়ে যাবে। সঠিক উত্তর হবে: <em>'He is not a dishonest man.'</em><br>
+    ২. <strong>Active to Passive-এ প্রিপজিশনের ব্যতিক্রম:</strong> সকল ক্ষেত্রে 'by' বসে না। যেমন: Know এর পর <em>to</em>, Annoy/Surprise এর পর <em>at/with</em>, Contain এর পর <em>in</em>, Satisfy এর পর <em>with</em> বসে। (উদা: I know him &rarr; He is known to me.)<br>
+    ৩. <strong>Degree-তে বহুবচন নাউনের ব্যবহার:</strong> 'than most other' এবং 'one of the' এর পর অবশ্যই বহুবচন নাউন বসাতে হবে। যেমন: <em>'than most other boys'</em>, <em>'one of the greatest poets'</em>।</p>
+</div>
+
+<h2 class="htbd-heading">বিগত বছরের শীর্ষ ২৫টি বোর্ড ও দাখিল প্রশ্ন এবং পূর্ণাঙ্গ সমাধান (Top 25 Board Questions with Answers)</h2>
+<p>নিচে ঢাকা, রাজশাহী, কুমিল্লা, চট্টগ্রাম, দিনাজপুর, বরিশাল, সিলেট এবং মাদ্রাসা বোর্ডের বিগত বছরের শীর্ষ ২৫টি বোর্ড প্রশ্ন ও তাদের পূর্ণাঙ্গ উত্তরমালা সাজিয়ে দেওয়া হলো:</p>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 01: Dhaka Board 2025 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) The bee is one of the busiest insects. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(b) It leads a very active life. <em>(Exclamatory)</em></div>
+        <div class="htbd-sentence-item">(c) It flies from flower to flower to collect honey. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(d) In winter it remains idle but works hard in spring. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) It stores honey in the hive. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(f) It does not live on corrupt food. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(g) Honey collected by bees is sweet. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(h) Very few drinks are as nutritious as honey. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(i) We should follow the industrious life of a bee. <em>(Imperative)</em></div>
+        <div class="htbd-sentence-item">(j) By working hard like bees, we can prosper in life. <em>(Negative)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 01 (Dhaka Board 2025)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> The bee is busier than most other insects.</li>
+        <li><strong>(b)</strong> What an active life it leads!</li>
+        <li><strong>(c)</strong> It flies from flower to flower so that it can collect honey.</li>
+        <li><strong>(d)</strong> Despite remaining idle in winter, it works hard in spring.</li>
+        <li><strong>(e)</strong> Honey is stored in the hive by it.</li>
+        <li><strong>(f)</strong> It lives on fresh / uncorrupted food.</li>
+        <li><strong>(g)</strong> Honey which is collected by bees is sweet.</li>
+        <li><strong>(h)</strong> Honey is one of the most nutritious drinks.</li>
+        <li><strong>(i)</strong> Let us follow the industrious life of a bee.</li>
+        <li><strong>(j)</strong> Without working hard like bees, we cannot prosper in life.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (a) 'One of the' যুক্ত Superlative-কে Comparative করতে 'than most other' বসে। (d) 'but' যুক্ত Compound বাক্যকে Simple করতে 'In spite of / Despite + verb-ing' ব্যবহার করা হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 02: Sylhet Board 2025 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) A successful man is greatly respected by everyone. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(b) He works sincerely to reach his cherished goal. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(c) He never wastes his valuable time. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(d) He is stronger than any other person in his determination. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(e) Though he faces hurdles, he never loses hope. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(f) An idle man can never achieve success. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(g) We must labor hard to change our lot. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(h) What a disciplined life a successful man leads! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(i) Only the industrious can shine in life. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(j) Let us build our career through honesty and perseverance. <em>(Assertive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 02 (Sylhet Board 2025)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Everyone greatly respects a successful man.</li>
+        <li><strong>(b)</strong> He works sincerely so that he can reach his cherished goal.</li>
+        <li><strong>(c)</strong> He always utilizes his valuable time.</li>
+        <li><strong>(d)</strong> He is the strongest person in his determination.</li>
+        <li><strong>(e)</strong> He faces hurdles, but he never loses hope.</li>
+        <li><strong>(f)</strong> Can an idle man ever achieve success?</li>
+        <li><strong>(g)</strong> We cannot but labor hard to change our lot.</li>
+        <li><strong>(h)</strong> A successful man leads a very disciplined life.</li>
+        <li><strong>(i)</strong> None but the industrious can shine in life.</li>
+        <li><strong>(j)</strong> We should build our career through honesty and perseverance.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (g) 'Must' থাকলে Negative করার সময় 'Cannot but + V1' অথবা 'Cannot help + V-ing' ব্যবহার করতে হয়। (i) ব্যক্তি নির্দেশক 'Only' থাকলে বাক্যের শুরুতে 'None but' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 03: Barishal Board 2025 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Corruption is a great curse to our nation. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(b) It prevails everywhere in our society. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(c) No other social crime is as dangerous as corruption. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(d) Corrupt persons swallow public wealth greedily. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(e) Though the government takes strict steps, corruption does not stop. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(f) We must eliminate this social cancer at any cost. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(g) People who take bribes should be severely punished. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(h) How pitiful the condition of poor victims is! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(i) By creating public awareness, we can eradicate it. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(j) Stop corruption immediately to save the motherland. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 03 (Barishal Board 2025)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Corruption is not a small curse to our nation / Corruption is nothing but a great curse to our nation.</li>
+        <li><strong>(b)</strong> Doesn't it prevail everywhere in our society?</li>
+        <li><strong>(c)</strong> Corruption is more dangerous than any other social crime.</li>
+        <li><strong>(d)</strong> Public wealth is greedily swallowed by corrupt persons.</li>
+        <li><strong>(e)</strong> In spite of the government's taking strict steps, corruption does not stop.</li>
+        <li><strong>(f)</strong> We cannot help eliminating this social cancer at any cost.</li>
+        <li><strong>(g)</strong> Bribe-takers should be severely punished.</li>
+        <li><strong>(h)</strong> The condition of poor victims is very pitiful.</li>
+        <li><strong>(i)</strong> If we create public awareness, we can eradicate it.</li>
+        <li><strong>(j)</strong> Let corruption be stopped immediately to save the motherland.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (c) 'No other' যুক্ত Positive বাক্যকে Comparative করতে 'than any other' বসে। (j) Imperative বাক্যের Passive করতে 'Let + Object + be + V3' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 04: Dhaka Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Books are our best friends. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(b) They give us unalloyed joy. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(c) If we read books, we can enrich our knowledge. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(d) A good book is never a source of trouble. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(e) Very few habits are as noble as reading books. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(f) By reading books regularly, we can broaden our outlook. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(g) Books contain the wisdom of great minds. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(h) What a wonderful companion a good book is! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(i) Everyone should cultivate the habit of reading. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(j) Without reading books, none can gain true wisdom. <em>(Complex)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 04 (Dhaka Board 2024)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Books are better than any other friend.</li>
+        <li><strong>(b)</strong> We are given unalloyed joy by them.</li>
+        <li><strong>(c)</strong> By reading books, we can enrich our knowledge.</li>
+        <li><strong>(d)</strong> A good book is always a source of peace / happiness.</li>
+        <li><strong>(e)</strong> Reading books is one of the noblest habits.</li>
+        <li><strong>(f)</strong> Read books regularly and you can broaden your outlook.</li>
+        <li><strong>(g)</strong> Don't books contain the wisdom of great minds?</li>
+        <li><strong>(h)</strong> A good book is a very wonderful companion.</li>
+        <li><strong>(i)</strong> The habit of reading should be cultivated by everyone.</li>
+        <li><strong>(j)</strong> If one does not read books, one cannot gain true wisdom.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (c) 'If + Affirmative clause' কে Simple করতে 'By + gerund (Verb-ing)' ব্যবহার করতে হয়। (f) 'By + gerund' যুক্ত Simple বাক্যকে Compound করতে ইম্পারেটিভ বাক্য + and বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 05: Dinajpur Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) A journey by train is very pleasant. <em>(Exclamatory)</em></div>
+        <div class="htbd-sentence-item">(b) It is cheaper than most other journeys. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(c) As I got a seat beside the window, I enjoyed the scenery. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(d) The train was running at top speed. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(e) I saw lush green paddy fields dancing in the gentle breeze. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(f) The passengers were entertained by hawkers. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(g) We reached our destination when it was dusk. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(h) None could deny the thrill of the journey. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(i) The journey was so delightful that I could never forget it. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(j) Let us plan another train journey soon. <em>(Assertive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 05 (Dinajpur Board 2024)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> How pleasant a journey by train is!</li>
+        <li><strong>(b)</strong> Very few journeys are as cheap as it.</li>
+        <li><strong>(c)</strong> I got a seat beside the window and enjoyed the scenery.</li>
+        <li><strong>(d)</strong> Wasn't the train running at top speed?</li>
+        <li><strong>(e)</strong> I saw lush green paddy fields which were dancing in the gentle breeze.</li>
+        <li><strong>(f)</strong> Hawkers entertained the passengers.</li>
+        <li><strong>(g)</strong> We reached our destination at dusk.</li>
+        <li><strong>(h)</strong> Everyone admitted the thrill of the journey.</li>
+        <li><strong>(i)</strong> The journey was too delightful for me to ever forget.</li>
+        <li><strong>(j)</strong> We should plan another train journey soon.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (b) 'than most other' যুক্ত Comparative-কে Positive করতে বাক্যের শুরুতে 'Very few' এবং শেষে বহুবচন নাউন বসে। (g) সময়ের ক্লজ 'when it was dusk' এর বদলে Simple-এ সরাসরি 'at dusk' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 06: Cumilla Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Hard work is needed for success in life. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(b) A life without hard work is completely meaningless. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(c) An industrious boy shines in life. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(d) He is more respected than any other person. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(e) Though he works day and night, he never complains. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(f) Everybody loves a hardworking student. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(g) We should never avoid our daily duties. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(h) No other element is as essential as perseverance. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(i) By utilizing your time properly, you can score GPA 5. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(j) How inspiring the biography of great scholars is! <em>(Assertive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 06 (Cumilla Board 2024)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Isn't hard work needed for success in life?</li>
+        <li><strong>(b)</strong> A life without hard work is not meaningful at all.</li>
+        <li><strong>(c)</strong> A boy who is industrious shines in life.</li>
+        <li><strong>(d)</strong> He is the most respected person.</li>
+        <li><strong>(e)</strong> He works day and night, but he never complains.</li>
+        <li><strong>(f)</strong> There is nobody but loves a hardworking student / Nobody hates a hardworking student.</li>
+        <li><strong>(g)</strong> Our daily duties should never be avoided by us.</li>
+        <li><strong>(h)</strong> Perseverance is more essential than any other element.</li>
+        <li><strong>(i)</strong> By utilizing your time properly, you can score GPA 5. [Note: It is already Simple -> Compound: Utilize your time properly and you can score GPA 5.]</li>
+        <li><strong>(j)</strong> The biography of great scholars is very inspiring.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (f) 'Everybody' যুক্ত Affirmative বাক্যকে Negative করতে 'There is nobody but + verb' অথবা বিপরীত শব্দ ব্যবহার করা যায়।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 07: Rajshahi Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Trees are our most useful companions. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(b) They give us shade, fruits, and valuable oxygen. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(c) If we plant trees extensively, our ecology will be saved. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(d) Without trees, we cannot live on this planet. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(e) Indiscriminate cutting of trees causes natural disasters. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(f) Deforestation is more dangerous than any other threat. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(g) People must plant more saplings to avert climate crisis. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(h) What a disaster soil erosion brings to agricultural land! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(i) As trees absorb carbon dioxide, they maintain the atmosphere balance. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) Plant trees in all open spaces to keep the environment green. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 07 (Rajshahi Board 2024)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> No other companion of ours is as useful as trees.</li>
+        <li><strong>(b)</strong> We are given shade, fruits, and valuable oxygen by them.</li>
+        <li><strong>(c)</strong> By planting trees extensively, our ecology will be saved.</li>
+        <li><strong>(d)</strong> If we do not have trees, we cannot live on this planet.</li>
+        <li><strong>(e)</strong> Doesn't indiscriminate cutting of trees cause natural disasters?</li>
+        <li><strong>(f)</strong> Deforestation is the most dangerous threat.</li>
+        <li><strong>(g)</strong> People cannot but plant more saplings to avert climate crisis.</li>
+        <li><strong>(h)</strong> Soil erosion brings a great disaster to agricultural land.</li>
+        <li><strong>(i)</strong> Trees absorb carbon dioxide and maintain the atmosphere balance.</li>
+        <li><strong>(j)</strong> Let trees be planted in all open spaces to keep the environment green.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (a) 'Most useful' Superlative-কে Positive রূপান্তর করতে 'No other companion is as useful as' ব্যবহার করা হয়।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 08: Chattogram Board 2024 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) The freedom fighters are the greatest heroes of our nation. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(b) They fought bravely to liberate our motherland. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(c) Their sacrifices can never be forgotten. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(d) Though they suffered immensely, they did not surrender. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(e) Every citizen respects their unparalleled valor. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(f) Was their devotion to the country questionable? <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(g) They loved their country more than their own lives. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(h) We should honor the wounded freedom fighters properly. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(i) By cherishing their ideals, we can build Sonar Bangla. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) How gloriously our freedom fighters fought in 1971! <em>(Assertive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 08 (Chattogram Board 2024)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> The freedom fighters are greater than all other heroes of our nation.</li>
+        <li><strong>(b)</strong> They fought bravely so that they could liberate our motherland.</li>
+        <li><strong>(c)</strong> We can never forget their sacrifices.</li>
+        <li><strong>(d)</strong> They suffered immensely, but they did not surrender.</li>
+        <li><strong>(e)</strong> There is no citizen but respects their unparalleled valor.</li>
+        <li><strong>(f)</strong> Their devotion to the country was not questionable at all.</li>
+        <li><strong>(g)</strong> They did not love their own lives as much as they loved their country.</li>
+        <li><strong>(h)</strong> The wounded freedom fighters should be properly honored by us.</li>
+        <li><strong>(i)</strong> Cherish their ideals and we can build Sonar Bangla.</li>
+        <li><strong>(j)</strong> Our freedom fighters fought very gloriously in 1971.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (b) উদ্দেশ্য বোঝাতে 'In order to / to + V1' থাকলে Complex-এ 'so that + Subject + could + V1' বসে (Past Tense বলে 'could')।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 09: Dakhil Examination 2024 <span class="htbd-exam-badge">Dakhil Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Character is the most invaluable possession of a human being. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(b) A man of noble character is admired by all. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(c) He never deviates from the path of truth and justice. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(d) Since he is honest, everybody places trust in him. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) A dishonest man can never enjoy mental tranquility. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(f) Wealth without good character is totally useless. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(g) We must develop high moral values in our student life. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(h) How peacefully a pious person spends his days! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(i) Though he lives in penury, he never takes bribes. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) Follow the footsteps of great religious scholars. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 09 (Dakhil Examination 2024)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> No other possession of a human being is as invaluable as character.</li>
+        <li><strong>(b)</strong> All admire a man of noble character.</li>
+        <li><strong>(c)</strong> He always remains on the path of truth and justice.</li>
+        <li><strong>(d)</strong> Because of his honesty, everybody places trust in him.</li>
+        <li><strong>(e)</strong> Can a dishonest man ever enjoy mental tranquility?</li>
+        <li><strong>(f)</strong> Wealth without good character is not useful at all.</li>
+        <li><strong>(g)</strong> We cannot but develop high moral values in our student life.</li>
+        <li><strong>(h)</strong> A pious person spends his days very peacefully.</li>
+        <li><strong>(i)</strong> He lives in penury, but he never takes bribes.</li>
+        <li><strong>(j)</strong> Let the footsteps of great religious scholars be followed.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (d) 'Since/As/Because' যুক্ত কারণবাচক বাক্যকে Simple করতে 'Because of + possessive + noun' ব্যবহৃত হয়।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 10: Dakhil Examination 2023 <span class="htbd-exam-badge">Dakhil Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Health is the greatest wealth of a person. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(b) None but a healthy person can fully enjoy life. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(c) Isn't a sick person a burden to his family? <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(d) We must follow the rules of hygiene to stay fit. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(e) A morning walk keeps our body active and sound. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(f) If we take a balanced diet, we can prevent many diseases. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(g) Very few exercises are as beneficial as swimming. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(h) He woke up early in the morning and went out for a walk. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(i) What a sound health the village farmer possesses! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(j) Do not eat adulterated food to save your health. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 10 (Dakhil Examination 2023)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Health is greater than any other wealth of a person.</li>
+        <li><strong>(b)</strong> Only a healthy person can fully enjoy life.</li>
+        <li><strong>(c)</strong> A sick person is a burden to his family.</li>
+        <li><strong>(d)</strong> We cannot but follow the rules of hygiene to stay fit.</li>
+        <li><strong>(e)</strong> Our body is kept active and sound by a morning walk.</li>
+        <li><strong>(f)</strong> By taking a balanced diet, we can prevent many diseases.</li>
+        <li><strong>(g)</strong> Swimming is one of the most beneficial exercises.</li>
+        <li><strong>(h)</strong> Waking up early in the morning, he went out for a walk.</li>
+        <li><strong>(i)</strong> The village farmer possesses very sound health.</li>
+        <li><strong>(j)</strong> Let not adulterated food be eaten to save your health.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (b) 'None but' থাকলে Affirmative-এ 'Only' বসে। (j) Negative Imperative বাক্যের Passive রূপ 'Let not + Object + be + V3'।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 11: All Boards 2018 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Very few conquerors of the world were so great as Taimur. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(b) The province of a powerful prince was once attacked by young Taimur. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(c) Taimur's soldiers were all killed, but he disguised himself as a poor traveler. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(d) He was so hungry that he could hardly walk. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) He came to a poor old woman's courtyard. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(f) The old woman took pity on the hungry stranger. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(g) She quickly brought a dish of hot boiled rice. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(h) Taimur was too hungry to wait. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(i) He began to eat from the middle of the dish. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) The woman advised him with gentle motherly affection. <em>(Complex)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 11 (All Boards 2018)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Taimur was one of the greatest conquerors of the world.</li>
+        <li><strong>(b)</strong> Young Taimur once attacked the province of a powerful prince.</li>
+        <li><strong>(c)</strong> Though Taimur's soldiers were all killed, he disguised himself as a poor traveler.</li>
+        <li><strong>(d)</strong> He was too hungry to walk.</li>
+        <li><strong>(e)</strong> He came to a courtyard which belonged to a poor old woman.</li>
+        <li><strong>(f)</strong> Pity was taken on the hungry stranger by the old woman.</li>
+        <li><strong>(g)</strong> Didn't she quickly bring a dish of hot boiled rice?</li>
+        <li><strong>(h)</strong> Taimur was so hungry that he could not wait.</li>
+        <li><strong>(i)</strong> He took food and began to eat from the middle of the dish.</li>
+        <li><strong>(j)</strong> The woman advised him with affection which was gentle and motherly.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (d) 'so + adjective + that + cannot/could not' কে Simple করতে 'too + adj + to + V1' বসে। (h) ঠিক বিপরীতভাবে 'too...to' থাকলে Negative এ 'so...that + cannot/could not' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 12: Dhaka Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Patriotism is a noble virtue. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(b) It inspires a man to shed every drop of blood for his country. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(c) A patriot is honored more than an unpatriotic person. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(d) An unpatriotic man loves nothing except his selfish interests. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(e) He dies unwept, unhonored and unsung. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(f) We must love our motherland unconditionally. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(g) Who does not hate a traitor? <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(h) What a glorious death a martyr achieves on the battlefield! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(i) By working for the nation, we can show our genuine love. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) Let us salute our valiant martyrs with solemn reverence. <em>(Assertive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 12 (Dhaka Board 2020)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Isn't patriotism a noble virtue?</li>
+        <li><strong>(b)</strong> A man is inspired by it to shed every drop of blood for his country.</li>
+        <li><strong>(c)</strong> An unpatriotic person is not honored as much as a patriot.</li>
+        <li><strong>(d)</strong> An unpatriotic man loves only his selfish interests.</li>
+        <li><strong>(e)</strong> When he dies, he remains unwept, unhonored and unsung.</li>
+        <li><strong>(f)</strong> We cannot but love our motherland unconditionally.</li>
+        <li><strong>(g)</strong> Everybody hates a traitor.</li>
+        <li><strong>(h)</strong> A martyr achieves a very glorious death on the battlefield.</li>
+        <li><strong>(i)</strong> Work for the nation and we can show our genuine love.</li>
+        <li><strong>(j)</strong> We should salute our valiant martyrs with solemn reverence.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (g) 'Who does not + V1' ইন্টারোগেটিভ থাকলে Assertive-এ 'Everybody / Everyone + V(s/es)' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 13: Chattogram Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Internet has made the entire world a global village. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(b) It is one of the most powerful inventions of modern science. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(c) People of all ages use internet to gain knowledge. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(d) Though it has numerous advantages, it is not without demerits. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) Excessive use of internet ruins valuable study hours. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(f) Students should utilize it only for productive learning. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(g) Cyber crimes are increasing at an alarming speed. <em>(Exclamatory)</em></div>
+        <div class="htbd-sentence-item">(h) We must enforce strict cyber laws. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(i) If we use internet wisely, our life will be comfortable. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(j) Never visit harmful websites on social platforms. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 13 (Chattogram Board 2020)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> The entire world has been made a global village by internet.</li>
+        <li><strong>(b)</strong> Internet is more powerful than most other inventions of modern science.</li>
+        <li><strong>(c)</strong> People of all ages use internet so that they can gain knowledge.</li>
+        <li><strong>(d)</strong> In spite of having numerous advantages, it is not without demerits.</li>
+        <li><strong>(e)</strong> Doesn't excessive use of internet ruin valuable study hours?</li>
+        <li><strong>(f)</strong> Students should not utilize it for anything except productive learning.</li>
+        <li><strong>(g)</strong> How alarmingly cyber crimes are increasing!</li>
+        <li><strong>(h)</strong> Strict cyber laws must be enforced by us.</li>
+        <li><strong>(i)</strong> By using internet wisely, our life will be comfortable.</li>
+        <li><strong>(j)</strong> Let harmful websites never be visited on social platforms.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (a) Present Perfect Tense-এর Passive গঠন: 'Object + have/has been + V3 + by + Subject'।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 14: Cumilla Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Mobile phone is an essential tool in modern communication. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(b) It helps us connect with distant relatives instantly. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(c) Very few gadgets are so popular as mobile phone. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(d) Because of its affordability, even poor people can own it. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(e) We can perform banking transactions by using mobile apps. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(f) Overuse of smartphones damages eye vision. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(g) What a revolution smartphone technology has brought! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(h) A student must not waste his study time playing online games. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(i) Turn off mobile phones in classrooms and hospital wards. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(j) Though it radiates harmful rays, we cannot discard it. <em>(Simple)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 14 (Cumilla Board 2020)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Mobile phone is not an unessential tool in modern communication.</li>
+        <li><strong>(b)</strong> We are helped by it to connect with distant relatives instantly.</li>
+        <li><strong>(c)</strong> Mobile phone is one of the most popular gadgets.</li>
+        <li><strong>(d)</strong> It is affordable and so even poor people can own it.</li>
+        <li><strong>(e)</strong> We can perform banking transactions when we use mobile apps.</li>
+        <li><strong>(f)</strong> Doesn't overuse of smartphones damage eye vision?</li>
+        <li><strong>(g)</strong> Smartphone technology has brought a great revolution.</li>
+        <li><strong>(h)</strong> A student must abstain from wasting his study time playing online games.</li>
+        <li><strong>(i)</strong> Let mobile phones be turned off in classrooms and hospital wards.</li>
+        <li><strong>(j)</strong> In spite of radiating harmful rays, we cannot discard it.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (d) 'Because of' কারণ নির্দেশক Simple বাক্যকে Compound করতে 'and so / therefore' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 15: Jashore Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Water pollution is a serious hazard to public health. <em>(Exclamatory)</em></div>
+        <div class="htbd-sentence-item">(b) Industrial effluents pollute river water dangerously. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(c) Pure water is safer than any other drink. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(d) Since polluted water contains toxic chemicals, it causes waterborne diseases. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) We cannot survive on earth without drinking water. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(f) Waste disposal into rivers must be prevented by the authority. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(g) People who dump garbage into water bodies should be penalized. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(h) How filthy the water of Buriganga looks today! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(i) By installing modern waste treatment plants, industries can save rivers. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) Stop dumping municipal wastes into our water resources. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 15 (Jashore Board 2020)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> What a serious hazard to public health water pollution is!</li>
+        <li><strong>(b)</strong> River water is dangerously polluted by industrial effluents.</li>
+        <li><strong>(c)</strong> No other drink is as safe as pure water.</li>
+        <li><strong>(d)</strong> Containing toxic chemicals, polluted water causes waterborne diseases.</li>
+        <li><strong>(e)</strong> We can survive on earth only by drinking pure water.</li>
+        <li><strong>(f)</strong> The authority must prevent waste disposal into rivers.</li>
+        <li><strong>(g)</strong> People dumping garbage into water bodies should be penalized.</li>
+        <li><strong>(h)</strong> The water of Buriganga looks very filthy today.</li>
+        <li><strong>(i)</strong> Install modern waste treatment plants and industries can save rivers.</li>
+        <li><strong>(j)</strong> Let dumping municipal wastes into our water resources be stopped.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (g) রিলেটিভ প্রোনাউনযুক্ত Complex বাক্যকে Simple করার সময় প্রোনাউন ও অক্সিলিয়ারি বাদ দিয়ে সরাসরি 'V-ing' (Present Participle) ব্যবহার করা হয়।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 16: Rajshahi Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Honesty is the noblest virtue in human life. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(b) An honest man is loved and trusted by everybody. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(c) He never tells a lie even in adverse situations. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(d) Though an honest man may lead a poor life, his conscience is clean. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) Dishonesty brings nothing but permanent shame and downfall. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(f) Everybody hates a corrupt officer. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(g) By following honest principles, one can attain real dignity. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(h) What a serene peace of mind an honest person enjoys! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(i) We must teach our children moral lessons from childhood. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(j) Let honesty be practiced in every tier of society. <em>(Active)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 16 (Rajshahi Board 2020)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Honesty is nobler than any other virtue in human life.</li>
+        <li><strong>(b)</strong> Everybody loves and trusts an honest man.</li>
+        <li><strong>(c)</strong> He always speaks the truth even in adverse situations.</li>
+        <li><strong>(d)</strong> In spite of leading a poor life, an honest man's conscience is clean.</li>
+        <li><strong>(e)</strong> Dishonesty brings only permanent shame and downfall.</li>
+        <li><strong>(f)</strong> Who does not hate a corrupt officer? / Doesn't everybody hate a corrupt officer?</li>
+        <li><strong>(g)</strong> If one follows honest principles, one can attain real dignity.</li>
+        <li><strong>(h)</strong> An honest person enjoys a very serene peace of mind.</li>
+        <li><strong>(i)</strong> We cannot but teach our children moral lessons from childhood.</li>
+        <li><strong>(j)</strong> We should practice honesty in every tier of society.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (e) 'nothing but' বস্তু নির্দেশ করলে Affirmative করতে সরাসরি 'only' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 17: Dinajpur Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Cricket is one of the most exciting games in the world. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(b) People of all ages enjoy cricket matches enthusiastically. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(c) When a bowler takes a crucial wicket, spectators burst into joy. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(d) Test cricket is slower than Twenty20 cricket. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(e) Bangladesh team has defeated many powerful cricketing nations. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(f) What an extraordinary performance Shakib showed in the tournament! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(g) By practicing regularly in the net, a player can sharpen his skills. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(h) An undisciplined cricketer can never bring glory to his nation. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(i) Though the bowler tried his best, he could not stop the boundaries. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) Support our national cricket team unconditionally. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 17 (Dinajpur Board 2020)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Very few games in the world are as exciting as cricket.</li>
+        <li><strong>(b)</strong> Cricket matches are enthusiastically enjoyed by people of all ages.</li>
+        <li><strong>(c)</strong> At the time of a bowler's taking a crucial wicket, spectators burst into joy.</li>
+        <li><strong>(d)</strong> Twenty20 cricket is not as slow as Test cricket.</li>
+        <li><strong>(e)</strong> Hasn't Bangladesh team defeated many powerful cricketing nations?</li>
+        <li><strong>(f)</strong> Shakib showed a very extraordinary performance in the tournament.</li>
+        <li><strong>(g)</strong> Practice regularly in the net and a player can sharpen his skills.</li>
+        <li><strong>(h)</strong> An undisciplined cricketer always fails to bring glory to his nation.</li>
+        <li><strong>(i)</strong> The bowler tried his best, but he could not stop the boundaries.</li>
+        <li><strong>(j)</strong> Let our national cricket team be supported unconditionally.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (d) দুইটি সত্তার মাঝে তুলনামূলক Comparative বাক্যকে Negative Positive করতে পেছনের সাবজেক্টকে সামনে এনে 'is not as + positive degree + as' বসাতে হয়।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 18: Sylhet Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Early rising is a very wholesome habit. <em>(Exclamatory)</em></div>
+        <div class="htbd-sentence-item">(b) An early riser gets enough time to perform his daily work. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(c) Morning air is fresher than the air of any other time. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(d) If you wake up late, you will miss the morning fresh breeze. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) An early riser does not suffer from chronic lethargy. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(f) We should form the habit of early rising from early childhood. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(g) Can a late riser complete his assigned tasks smoothly? <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(h) By breathing clean morning oxygen, our lungs stay healthy. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(i) What a rejuvenating touch morning dew leaves on green grass! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(j) Wake up early in the morning to keep yourself fit. <em>(Compound)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 18 (Sylhet Board 2020)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> What a wholesome habit early rising is!</li>
+        <li><strong>(b)</strong> A person who rises early gets enough time to perform his daily work.</li>
+        <li><strong>(c)</strong> Morning air is the freshest of all air.</li>
+        <li><strong>(d)</strong> By waking up late, you will miss the morning fresh breeze. / In case of waking up late, you will miss the morning fresh breeze.</li>
+        <li><strong>(e)</strong> An early riser is free from chronic lethargy.</li>
+        <li><strong>(f)</strong> The habit of early rising should be formed from early childhood by us.</li>
+        <li><strong>(g)</strong> A late riser can never complete his assigned tasks smoothly.</li>
+        <li><strong>(h)</strong> Breathe clean morning oxygen and our lungs will stay healthy.</li>
+        <li><strong>(i)</strong> Morning dew leaves a very rejuvenating touch on green grass.</li>
+        <li><strong>(j)</strong> Wake up early in the morning and keep yourself fit.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (g) ইন্টারোগেটিভ বাক্যে প্রশ্নবাচক বা 'Can a late riser...?' নেতিবাচক অর্থ প্রকাশ করলে Assertive-এ 'can never' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 19: Mymensingh Board 2020 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Industry is the key to success in human endeavors. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(b) The industrious succeed, but the idle suffer in the long run. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(c) No other animal is as hardworking as the ant. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(d) Diligent students spend their study hours purposefully. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(e) Without working hard, none can build an affluent career. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(f) Did any nation prosper without hard labor? <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(g) How stubbornly an industrious person fights against misfortune! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(h) We must labor from dawn to dusk to develop Bangladesh. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(i) When a man works honestly, his conscience remains peaceful. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(j) Emulate the work ethics of prosperous nations. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 19 (Mymensingh Board 2020)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> It is industry which is the key to success in human endeavors.</li>
+        <li><strong>(b)</strong> Despite the success of the industrious, the idle suffer in the long run. / While the industrious succeed, the idle suffer.</li>
+        <li><strong>(c)</strong> The ant is more hardworking than any other animal.</li>
+        <li><strong>(d)</strong> Their study hours are purposefully spent by diligent students.</li>
+        <li><strong>(e)</strong> Only by working hard can one build an affluent career.</li>
+        <li><strong>(f)</strong> No nation ever prospered without hard labor.</li>
+        <li><strong>(g)</strong> An industrious person fights very stubbornly against misfortune.</li>
+        <li><strong>(h)</strong> We cannot help laboring from dawn to dusk to develop Bangladesh.</li>
+        <li><strong>(i)</strong> At the time of working honestly, a man's conscience remains peaceful.</li>
+        <li><strong>(j)</strong> Let the work ethics of prosperous nations be emulated.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (a) Simple বাক্যকে 'It is + Subject + relative pronoun (which/who)' দিয়ে সহজে Complex করা যায়।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 20: Dhaka Board 2019 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) A good student prepares his daily lessons sincerely. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(b) He is loved by his teachers and classmates. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(c) He is more regular than any other student in the class. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(d) He never gossips during class hours. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(e) Since he is attentive in the classroom, he grasps every topic easily. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(f) He obeys his parents and teachers unconditionally. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(g) What an exemplary discipline he maintains in the school! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(h) He avoids bad companions to protect his reputation. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(i) An idle student can never secure GPA 5. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(j) Let us inspire our children to be good students. <em>(Assertive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 20 (Dhaka Board 2019)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Doesn't a good student prepare his daily lessons sincerely?</li>
+        <li><strong>(b)</strong> His teachers and classmates love him.</li>
+        <li><strong>(c)</strong> No other student in the class is as regular as he.</li>
+        <li><strong>(d)</strong> He is always attentive during class hours.</li>
+        <li><strong>(e)</strong> He is attentive in the classroom and so he grasps every topic easily.</li>
+        <li><strong>(f)</strong> His parents and teachers are obeyed unconditionally by him.</li>
+        <li><strong>(g)</strong> He maintains a very exemplary discipline in the school.</li>
+        <li><strong>(h)</strong> He avoids bad companions so that he can protect his reputation.</li>
+        <li><strong>(i)</strong> Can an idle student ever secure GPA 5?</li>
+        <li><strong>(j)</strong> We should inspire our children to be good students.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (e) 'Since' যুক্ত কারণবাচক বাক্যকে Compound করতে দুটি ক্লজের মাঝে 'and so' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 21: Cumilla Board 2019 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) English is an international language. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(b) It is spoken all over the world. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(c) No other language is as widely used as English. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(d) If we learn English, we can communicate globally. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) Without knowing English, we cannot secure a good corporate job. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(f) Most higher education books are written in English. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(g) What a vital role English plays in international trade! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(h) We must practice English daily to attain fluency. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(i) As English is difficult, many students fear it. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) Learn English communicative skills from today. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 21 (Cumilla Board 2019)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Isn't English an international language?</li>
+        <li><strong>(b)</strong> People all over the world speak English.</li>
+        <li><strong>(c)</strong> English is the most widely used language.</li>
+        <li><strong>(d)</strong> By learning English, we can communicate globally.</li>
+        <li><strong>(e)</strong> By knowing English alone can we secure a good corporate job.</li>
+        <li><strong>(f)</strong> Authors write most higher education books in English.</li>
+        <li><strong>(g)</strong> English plays a very vital role in international trade.</li>
+        <li><strong>(h)</strong> We cannot but practice English daily to attain fluency.</li>
+        <li><strong>(i)</strong> English is difficult and so many students fear it.</li>
+        <li><strong>(j)</strong> Let English communicative skills be learned from today.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (b) যে বাক্যে প্যাসিভ এজেন্টের উল্লেখ থাকে না (যেমন 'It is spoken all over the world'), সেখানে স্বাভাবিক কর্তা হিসেবে 'People / We / They' ধরে অ্যাক্টিভ করতে হয়।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 22: Rajshahi Board 2019 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Student life is the golden period of human life. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(b) A student should build his moral foundation during this time. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(c) Very few phases of life are so carefree as student life. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(d) If a student wastes his valuable time, he will repent in the future. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(e) He must be mindful of his duties. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(f) How happily students spend their campus days together! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(g) By participating in co-curricular activities, they develop leadership. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(h) An insincere student can never shine in examinations. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(i) Though examinations create pressure, they evaluate merit. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(j) Prepare your lessons regularly to achieve academic brilliance. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 22 (Rajshahi Board 2019)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Student life is more golden than any other period of human life.</li>
+        <li><strong>(b)</strong> His moral foundation should be built during this time by a student.</li>
+        <li><strong>(c)</strong> Student life is one of the most carefree phases of life.</li>
+        <li><strong>(d)</strong> Let a student waste his valuable time and he will repent in the future. / A student wastes his time and he will repent.</li>
+        <li><strong>(e)</strong> He cannot but be mindful of his duties.</li>
+        <li><strong>(f)</strong> Students spend their campus days together very happily.</li>
+        <li><strong>(g)</strong> When they participate in co-curricular activities, they develop leadership.</li>
+        <li><strong>(h)</strong> An insincere student always fails in examinations.</li>
+        <li><strong>(i)</strong> In spite of examinations creating pressure, they evaluate merit.</li>
+        <li><strong>(j)</strong> Let your lessons be prepared regularly to achieve academic brilliance.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (i) 'Though/Although' যুক্ত ক্লজকে Simple রূপান্তর করতে 'In spite of / Despite + possessive + V-ing' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 23: Jashore Board 2019 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Illiteracy is a great impediment to our national progress. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(b) An illiterate person is compared to a blind man. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(c) He cannot contribute significantly to the country's development. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(d) No other problem is as acute as the curse of illiteracy. <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(e) Since education enlightens the mind, we must eradicate illiteracy. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(f) Government has taken massive programs to educate the mass. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(g) What a commendable role primary schools are playing! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(h) By spreading female education, our social condition can be upgraded. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(i) We must educate all citizens to turn them into human resources. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(j) Establish community learning centers in every remote village. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 23 (Jashore Board 2019)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Illiteracy is not a small impediment to our national progress.</li>
+        <li><strong>(b)</strong> People compare an illiterate person to a blind man.</li>
+        <li><strong>(c)</strong> Can he contribute significantly to the country's development?</li>
+        <li><strong>(d)</strong> The curse of illiteracy is more acute than any other problem.</li>
+        <li><strong>(e)</strong> Education enlightens the mind and so we must eradicate illiteracy.</li>
+        <li><strong>(f)</strong> Massive programs have been taken by the government to educate the mass.</li>
+        <li><strong>(g)</strong> Primary schools are playing a very commendable role.</li>
+        <li><strong>(h)</strong> If we spread female education, our social condition can be upgraded.</li>
+        <li><strong>(i)</strong> We cannot but educate all citizens to turn them into human resources.</li>
+        <li><strong>(j)</strong> Let community learning centers be established in every remote village.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (f) Present Perfect Passive: 'has taken' -> 'have been taken' (কারণ 'Massive programs' প্লুরাল)।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 24: Chattogram Board 2019 <span class="htbd-exam-badge">SSC Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Folk music is the spontaneous expression of rural life. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(b) People of all classes in Bangladesh love folk songs. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(c) Bhatiali is more popular than most other traditional songs. <em>(Superlative)</em></div>
+        <div class="htbd-sentence-item">(d) When a boatman sings Bhatiali in a river, listeners become spellbound. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) Modern pop music can never replace our authentic folk heritage. <em>(Affirmative)</em></div>
+        <div class="htbd-sentence-item">(f) What a soulful tune Lalon Geeti carries in its verses! <em>(Assertive)</em></div>
+        <div class="htbd-sentence-item">(g) Though western culture is spreading, our folk music retains its charm. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(h) We must preserve our indigenous musical instruments. <em>(Negative)</em></div>
+        <div class="htbd-sentence-item">(i) By patronizing rural folk singers, we can safeguard our cultural roots. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(j) Broadcast traditional baul songs on national television channels. <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 24 (Chattogram Board 2019)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Isn't folk music the spontaneous expression of rural life?</li>
+        <li><strong>(b)</strong> Folk songs are loved by people of all classes in Bangladesh.</li>
+        <li><strong>(c)</strong> Bhatiali is one of the most popular traditional songs.</li>
+        <li><strong>(d)</strong> At the time of a boatman's singing Bhatiali in a river, listeners become spellbound.</li>
+        <li><strong>(e)</strong> Modern pop music will always fail to replace our authentic folk heritage.</li>
+        <li><strong>(f)</strong> Lalon Geeti carries a very soulful tune in its verses.</li>
+        <li><strong>(g)</strong> Western culture is spreading, but our folk music retains its charm.</li>
+        <li><strong>(h)</strong> We cannot help preserving our indigenous musical instruments.</li>
+        <li><strong>(i)</strong> If we patronize rural folk singers, we can safeguard our cultural roots.</li>
+        <li><strong>(j)</strong> Let traditional baul songs be broadcast on national television channels.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (c) 'than most other' থাকলে Superlative-এ 'one of the + superlative degree' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 25: Dakhil Examination 2018 <span class="htbd-exam-badge">Dakhil Examination</span></h3>
+    <p><strong>Change the sentences according to directions:</strong> (1 &times; 10 = 10)</p>
+    <div style="margin-top: 12px;">
+        <div class="htbd-sentence-item">(a) Hazrat Omar (R) was one of the greatest caliphs of Islam. <em>(Positive)</em></div>
+        <div class="htbd-sentence-item">(b) He led a very simple and austere life. <em>(Exclamatory)</em></div>
+        <div class="htbd-sentence-item">(c) He roamed the streets at night to see the condition of his subjects. <em>(Complex)</em></div>
+        <div class="htbd-sentence-item">(d) He saw an old woman who was crying for food. <em>(Simple)</em></div>
+        <div class="htbd-sentence-item">(e) The caliph was moved by her heart-rending cries. <em>(Active)</em></div>
+        <div class="htbd-sentence-item">(f) He carried a sack of flour on his own back. <em>(Interrogative)</em></div>
+        <div class="htbd-sentence-item">(g) No other ruler in history was as just as Omar (R). <em>(Comparative)</em></div>
+        <div class="htbd-sentence-item">(h) People of his empire loved him unconditionally. <em>(Passive)</em></div>
+        <div class="htbd-sentence-item">(i) Though he possessed supreme authority, he never abused it. <em>(Compound)</em></div>
+        <div class="htbd-sentence-item">(j) Emulate the justice and humility of Hazrat Omar (R). <em>(Passive)</em></div>
+    </div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 25 (Dakhil Examination 2018)</h4>
+    <ul class="htbd-answers-list">
+        <li><strong>(a)</strong> Very few caliphs of Islam were as great as Hazrat Omar (R).</li>
+        <li><strong>(b)</strong> What a simple and austere life he led!</li>
+        <li><strong>(c)</strong> He roamed the streets at night so that he could see the condition of his subjects.</li>
+        <li><strong>(d)</strong> He saw an old woman crying for food.</li>
+        <li><strong>(e)</strong> Her heart-rending cries moved the caliph.</li>
+        <li><strong>(f)</strong> Didn't he carry a sack of flour on his own back?</li>
+        <li><strong>(g)</strong> Omar (R) was more just than any other ruler in history.</li>
+        <li><strong>(h)</strong> He was loved unconditionally by the people of his empire.</li>
+        <li><strong>(i)</strong> He possessed supreme authority, but he never abused it.</li>
+        <li><strong>(j)</strong> Let the justice and humility of Hazrat Omar (R) be emulated.</li>
+    </ul>
+    <div class="htbd-rule-note">নোট: (d) 'who was crying' রিলেটিভ ক্লজকে Simple এ 'crying for food' প্রেজেন্ট পার্টিসিপল বাক্যাংশে সংকুচিত করা হয়েছে।</div>
+</div>
+
+<div class="htbd-internal-silo">
+    <h4>এসএসসি ও দাখিল ইংরেজি পূর্ণাঙ্গ প্রস্তুতি ও অন্যান্য সহায়িকা:</h4>
+    <ul>
+        <li><strong>রাইট ফর্ম অফ ভার্বস:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-right-form-of.html">SSC English 2nd Paper Right Form of Verbs Suggestions with Answer (১৫টি গোল্ডেন রুলস ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>সাবস্টিটিউশন টেবিল:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-substitution-table-with-answers.html">SSC Substitution Table with Answers (শীর্ষ ২৫টি বোর্ড প্রশ্ন সমাধান ও টেকনিক)</a></li>
+        <li><strong>ইংরেজি ১ম পত্র মাস্টার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">SSC English 1st Paper Suggestion 2027 (পূর্ণাঙ্গ সিলেবাস ও ১০০ নম্বরের মানবণ্টন)</a></li>
+        <li><strong>১০০ নম্বরের মডেল টেস্ট:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-model-test-with.html">SSC English 1st Paper Exclusive Model Test (২টি পূর্ণাঙ্গ মডেল টেস্ট ও সমাধান)</a></li>
+    </ul>
+</div>
+
+<h2 class="htbd-heading">সাধারণ জিজ্ঞাসা ও উত্তর (Frequently Asked Questions - FAQ)</h2>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ১: Changing Sentences-এ বাক্য পরিবর্তনের সময় কী খেয়াল রাখতে হবে?</strong><br>
+    উত্তর: সবচেয়ে প্রধান নিয়ম হলো বাক্যের রূপ বা গঠন পরিবর্তন হবে কিন্তু মূল ভাব বা অর্থের কোনো পরিবর্তন হবে না (Without changing the meaning)।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ২: Affirmative বাক্যে 'Must' থাকলে Negative করার নিয়ম কী?</strong><br>
+    উত্তর: বাক্যে Must থাকলে তা পরিবর্তন করে 'cannot but + মূল ভার্ব' অথবা 'cannot help + verb-ing' বসাতে হয়। যেমন: You must do it &rarr; You cannot but do it.</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ৩: Simple থেকে Complex বাক্যে পরিবর্তনের সহজ কৌশল কী?</strong><br>
+    উত্তর: Simple বাক্যের ফ্রেজকে (By+ing, In spite of, Because of বা Participle) সাব-অর্ডিনেট ক্লজে রূপান্তরিত করতে হবে এবং উপযুক্ত কনজাংশন যেমন If, Since, As, When, Though ইত্যাদি ব্যবহার করতে হবে।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ৪: One of the যুক্ত Superlative বাক্যের Positive করার নিয়ম কী?</strong><br>
+    উত্তর: বাক্যের শুরুতে 'Very few' বসাতে হবে, এরপর বহুবচন নাউন, এরপর বহুবচন ভার্ব (যেমন are/were) এবং সবশেষে 'as + positive degree + as + subject' বসবে।</p>
+</div>
+</div>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.helptrickbd.com/2026/09/ssc-changing-sentences-rules-and-board-questions-with-answers.html"
+  },
+  "headline": "SSC English 2nd Paper Changing Sentences Suggestions with Answer | ১০ নম্বরের গোল্ডেন রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+  "description": "এসএসসি ও দাখিল ইংরেজি ২য় পত্র Changing Sentences: ভয়েস চেঞ্জ, ডিগ্রি ও গঠন রূপান্তরের গোল্ডেন রুলস এবং ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-changing-sentences-rules-and-board-questions-with-answers.webp",
+  "author": {
+    "@type": "Person",
+    "name": "HelpTrickBD Editorial Team",
+    "url": "https://www.helptrickbd.com/p/about-us.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.helptrickbd.com/favicon.ico"
+    }
+  },
+  "datePublished": "2026-09-19T01:00:00+06:00",
+  "dateModified": "2026-09-19T01:00:00+06:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the core rule of Changing Sentences in SSC English 2nd Paper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most fundamental rule of Changing Sentences (Transformation of Sentences) is that the grammatical structure of the sentence changes completely, but its original meaning must remain 100% intact and unchanged."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to change Affirmative sentences with 'Must' into Negative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To change an affirmative sentence having 'Must' into negative, replace 'must' with 'cannot but + base verb (V1)' or 'cannot help + verb-ing'. Example: We must obey our parents -> We cannot but obey our parents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to identify and convert Simple sentences into Complex sentences?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Simple sentence has one independent clause with one finite verb. To make it Complex, expand a phrase (like By+gerund, In spite of, or Participle) into a dependent sub-ordinate clause starting with conjunctions like Since, As, When, Though, Although, So that, or If."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the formula to convert Superlative with 'One of the' into Positive degree?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start the positive sentence with 'Very few' followed by the plural noun, use a plural verb, and frame the adjective with 'as/so + positive degree + as'. Example: Iron is one of the most useful metals -> Very few metals are as useful as iron."
+      }
+    }
+  ]
+}
+</script>
