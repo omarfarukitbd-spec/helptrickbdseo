@@ -110,12 +110,22 @@ class PreFlightChecker:
             self.passed.append("Theme Styling: Minimalist, clean and calm palette verified (PASSED)")
 
     def check_featured_image(self):
-        """Rule 02: Every article MUST have at least one featured <img> tag (prevents gray camera placeholder)"""
+        """Rule 02: Every article MUST have at least one featured <img> tag (prevents gray camera placeholder)
+        and it MUST be placed at Byte 0 / within first 1,000 chars (satisfies Blogger 8 KB scanner)."""
         imgs = self.soup.find_all('img')
         if not imgs:
             self.errors.append("Featured Image: CRITICAL! No <img> tag found in post HTML! Blogger will display gray camera placeholder!")
+            return
+            
+        first_img_idx = self.raw_html.find('<img')
+        if first_img_idx > 1000:
+            self.errors.append(
+                f"Featured Image Position: CRITICAL! First <img> is located at character index {first_img_idx} (> 1000). "
+                "It MUST be placed at the very beginning of the HTML (Byte 0 / before <style> blocks) "
+                "so Blogger's 8 KB backend thumbnail scanner immediately detects it and avoids [S] fallback icon!"
+            )
         else:
-            self.passed.append(f"Featured Image: Found {len(imgs)} image(s) in post HTML (PASSED)")
+            self.passed.append(f"Featured Image: Found {len(imgs)} image(s), hero image at index {first_img_idx} (< 1000 chars, instant Blogger thumbnail detection) (PASSED)")
 
     def check_image_sources(self):
         """Rule 02: Images must be CDN hosted, zero local filesystem leaks"""
