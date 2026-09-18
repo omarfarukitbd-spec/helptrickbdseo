@@ -3154,10 +3154,6 @@ disqusShortname = "templateiki";
         <b:widget id='LinkList5' locked='true' title='Top social' type='LinkList' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='sorting'>NONE</b:widget-setting>
-            <b:widget-setting name='text-3'>youtube</b:widget-setting>
-            <b:widget-setting name='link-3'>https://www.youtube.com/@helptrickbd</b:widget-setting>
-            <b:widget-setting name='text-2'>whatsapp</b:widget-setting>
-            <b:widget-setting name='link-2'>https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a</b:widget-setting>
             <b:widget-setting name='text-1'>telegram</b:widget-setting>
             <b:widget-setting name='link-1'>https://t.me/helptrickbd_official</b:widget-setting>
             <b:widget-setting name='text-0'>facebook</b:widget-setting>
@@ -4169,10 +4165,6 @@ disqusShortname = "templateiki";
         <b:widget id='LinkList77' locked='true' title='Social Plugin' type='LinkList' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='sorting'>NONE</b:widget-setting>
-            <b:widget-setting name='text-3'>whatsapp</b:widget-setting>
-            <b:widget-setting name='link-3'>https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a</b:widget-setting>
-            <b:widget-setting name='text-2'>telegram</b:widget-setting>
-            <b:widget-setting name='link-2'>https://t.me/helptrickbd_official</b:widget-setting>
             <b:widget-setting name='text-1'>youtube</b:widget-setting>
             <b:widget-setting name='link-1'>https://www.youtube.com/@helptrickbd</b:widget-setting>
             <b:widget-setting name='text-0'>facebook</b:widget-setting>
@@ -4463,14 +4455,10 @@ disqusShortname = "templateiki";
           <b:widget id='LinkList7' locked='true' title='Follow Us' type='LinkList' version='2' visible='false'>
             <b:widget-settings>
               <b:widget-setting name='sorting'>NONE</b:widget-setting>
-              <b:widget-setting name='text-3'>whatsapp</b:widget-setting>
-              <b:widget-setting name='link-3'>https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a</b:widget-setting>
-              <b:widget-setting name='text-2'>telegram</b:widget-setting>
-              <b:widget-setting name='link-2'>https://t.me/helptrickbd_official</b:widget-setting>
               <b:widget-setting name='text-1'>youtube</b:widget-setting>
               <b:widget-setting name='link-1'>https://www.youtube.com/@helptrickbd</b:widget-setting>
               <b:widget-setting name='text-0'>facebook</b:widget-setting>
-              <b:widget-setting name='link-0'>https://facebook.com/helptrickbd</b:widget-setting>
+              <b:widget-setting name='link-0'>/</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
             <b:include name='content'/>
