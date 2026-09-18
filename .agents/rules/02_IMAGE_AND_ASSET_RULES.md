@@ -24,6 +24,10 @@
      * `Thumbnail BG/bg_3.png` ➔ শিক্ষা গাইড ও নোটিশ (Education Guide)
      * `Thumbnail BG/bg_4.png` ➔ চাকরির প্রস্তুতি ও পরীক্ষা (Job Study Article — Primary Viva, BCS)
      * `Thumbnail BG/bg_5.png` ➔ তথ্যপ্রযুক্তি ও কম্পিউটার (ICT Guide — Cloud Computing, Computer Virus)
+     * `Thumbnail BG/bg_6.png` ➔ বিজ্ঞান ও প্রযুক্তি / জীববিজ্ঞান (Science, Tech & Biology)
+     * `Thumbnail BG/bg_7.png` ➔ এইচএসসি ও উচ্চমাধ্যমিক গাইড (HSC & College Guide)
+     * `Thumbnail BG/bg_8.png` ➔ আন্তর্জাতিক বিষয়াবলি ও বিশ্বরাজনীতি (International Affairs & Global Politics)
+     * `Thumbnail BG/bg_9.png` ➔ বিশ্ববিদ্যালয় ভর্তি পরীক্ষা ও মডেল টেস্ট (University Admission & Exam Prep)
 4. **HarfBuzz Engine for Flawless Bengali Conjuncts (যুক্তাক্ষর বিকৃতি রোধ)**:
    - উইন্ডোজে বেসিক PIL/FreeType বাংলা যুক্তাক্ষর সঠিকভাবে শেপ করতে পারে না (যেমন: `ক্লাউড` হয়ে যায় `ক্-লাউড`)।
    - তাই ব্যানার তৈরির জন্য সবসময় `tools/image_generator/build_official_bg_thumbnails.py` (Chromium HarfBuzz ইঞ্জিন) ব্যবহার করতে হবে, যা ১০০% নির্ভুল বাংলা যুক্তাক্ষর ও প্রফেশনাল টাইপোগ্রাফি নিশ্চিত করে।
