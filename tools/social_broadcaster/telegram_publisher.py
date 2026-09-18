@@ -53,10 +53,31 @@ class TelegramPublisher:
         except Exception as e:
             return {"success": False, "message": f"টেলিগ্রাম সংযোগ ব্যর্থ: {str(e)}"}
 
-    def publish_post(self, text: str, image_url: Optional[str] = None) -> Dict[str, Any]:
-        """Publishes post to Telegram channel with photo or text."""
+    def publish_post(
+        self,
+        text: str,
+        image_url: Optional[str] = None,
+        button_text: Optional[str] = None,
+        button_url: Optional[str] = None
+    ) -> Dict[str, Any]:
+        """Publishes post to Telegram channel with photo or text, and optional interactive URL button."""
         if not self.is_configured():
             return {"success": False, "message": "টেলিগ্রাম বট ক্রেডেনশিয়াল পাওয়া যায়নি।"}
+
+        # Build clean interactive Inline URL Button (Zero-Emoji compliant)
+        reply_markup = None
+        if button_url:
+            btn_title = button_text.strip() if button_text else "সম্পূর্ণ আর্টিকেল পড়তে এখানে ট্যাপ করুন"
+            reply_markup = {
+                "inline_keyboard": [
+                    [
+                        {
+                            "text": f"» {btn_title} «",
+                            "url": button_url.strip()
+                        }
+                    ]
+                ]
+            }
 
         # If image is available and caption is under 1024 chars, use sendPhoto
         if image_url and len(text) <= 1024:
@@ -67,6 +88,8 @@ class TelegramPublisher:
                 "caption": text,
                 "parse_mode": "HTML"
             }
+            if reply_markup:
+                payload["reply_markup"] = reply_markup
         else:
             # Fallback to sendMessage (supports up to 4096 chars)
             endpoint = f"{self.API_BASE}{self.bot_token}/sendMessage"
@@ -76,6 +99,8 @@ class TelegramPublisher:
                 "parse_mode": "HTML",
                 "disable_web_page_preview": False
             }
+            if reply_markup:
+                payload["reply_markup"] = reply_markup
 
         try:
             data_bytes = json.dumps(payload).encode("utf-8")

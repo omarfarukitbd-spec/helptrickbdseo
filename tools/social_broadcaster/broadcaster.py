@@ -221,16 +221,26 @@ def main():
     tg_cfg = config.get("telegram", {})
     if tg_cfg.get("enabled", True):
         tg_pub = TelegramPublisher(tg_cfg.get("bot_token", ""), tg_cfg.get("channel_id", ""))
-        tg_res = tg_pub.publish_post(generated["telegram"], hero_image)
+        tg_res = tg_pub.publish_post(
+            text=generated["telegram"],
+            image_url=hero_image,
+            button_text=generated.get("button_text"),
+            button_url=post_url
+        )
         print(f"[টেলিগ্রাম]: {tg_res['message']}")
     else:
         print("[টেলিগ্রাম]: নিষ্ক্রিয় করা রয়েছে।")
 
-    # 2. Facebook Page Broadcast
+    # 2. Facebook Page Broadcast (Link Preview Card Post)
     fb_cfg = config.get("facebook", {})
     if fb_cfg.get("enabled", True):
         fb_pub = FacebookPublisher(fb_cfg.get("page_id", ""), fb_cfg.get("page_access_token", ""))
-        fb_res = fb_pub.publish_post(generated["facebook"], post_url, hero_image)
+        fb_res = fb_pub.publish_post(
+            message=generated["facebook"],
+            link=post_url,
+            image_url=hero_image,
+            post_type="link"
+        )
         print(f"[ফেসবুক]: {fb_res['message']}")
     else:
         print("[ফেসবুক]: নিষ্ক্রিয় করা রয়েছে।")

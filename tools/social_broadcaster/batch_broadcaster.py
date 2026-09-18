@@ -150,22 +150,25 @@ def main():
             print("-" * 50)
             continue
 
-        # 1. Facebook Broadcast
+        # 1. Facebook Broadcast (Default: Clickable 16:9 Link Preview Card)
         if fb_cfg.get("enabled", True) and fb_pub.is_configured():
             fb_res = fb_pub.publish_post(
                 message=generated["facebook"],
                 link=post_url,
-                image_url=hero_image
+                image_url=hero_image,
+                post_type="link"
             )
             print(f"  [ফেসবুক]: {fb_res['message']}")
         else:
             print("  [ফেসবুক]: নিষ্ক্রিয় বা কনফিগার করা নেই।")
 
-        # 2. Telegram Broadcast
+        # 2. Telegram Broadcast (With interactive inline button & generous spacing)
         if tg_cfg.get("enabled", True) and tg_pub.is_configured():
             tg_res = tg_pub.publish_post(
                 text=generated["telegram"],
-                image_url=hero_image
+                image_url=hero_image,
+                button_text=generated.get("button_text"),
+                button_url=post_url
             )
             print(f"  [টেলিগ্রাম]: {tg_res['message']}")
         else:

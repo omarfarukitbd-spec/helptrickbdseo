@@ -97,103 +97,160 @@ class SocialCopyGenerator:
 
         return list(tags)[:5]
 
-    def extract_highlights(self, html_content: str) -> List[str]:
-        """Extracts 3-4 natural value highlights from post headings and text."""
+    def extract_unique_intro(self, html_content: str, title: str) -> str:
+        """Extracts an authentic, 100% unique introductory summary directly from the article's own text."""
+        if not html_content:
+            return f"{title} সম্পর্কিত বিস্তারিত ও সঠিক তথ্য নিয়ে প্রস্তুত করা হয়েছে এই বিশেষ গাইডলাইন।"
+
+        soup = BeautifulSoup(html_content, "html.parser")
+
+        # 1. First priority: Check for Position-0 Quick Summary box or blockquote
+        summary_box = (
+            soup.find("div", class_="quick-summary")
+            or soup.find("div", class_="p0-box")
+            or soup.find("div", class_="summary-card")
+            or soup.find("blockquote")
+        )
+        if summary_box:
+            raw_text = summary_box.get_text(" ", strip=True)
+            # Remove any boilerplate prefixes or emojis
+            clean_text = re.sub(r"^[📌\s]*সারসংক্ষেপ\s*[:\-\–]?\s*", "", raw_text).strip()
+            clean_text = re.sub(r"[\r\n\t]+", " ", clean_text)
+            if len(clean_text) >= 40:
+                # Take up to 2 sentences or 220 chars
+                sentences = re.split(r"([।\?\!])", clean_text)
+                if len(sentences) >= 2:
+                    return (sentences[0] + sentences[1]).strip()
+                return clean_text[:220].strip()
+
+        # 2. Second priority: Find first meaningful paragraph in post body
+        body = soup.find("div", class_="post-body") or soup
+        for p in body.find_all("p"):
+            txt = p.get_text(" ", strip=True)
+            txt = re.sub(r"[\r\n\t]+", " ", txt).strip()
+            # Skip short captions, jump breaks, photo credits, or TOC lines
+            if len(txt) < 50 or any(bad in txt.lower() for bad in ["photo credit", "ছবি:", "সূচিপত্র", "বিজ্ঞাপন", "read more"]):
+                continue
+            # Extract first 1-2 clean sentences
+            sentences = re.split(r"([।\?\!])", txt)
+            if len(sentences) >= 2:
+                first_part = (sentences[0] + sentences[1]).strip()
+                if len(first_part) >= 40:
+                    return first_part
+            return txt[:200].strip()
+
+        # 3. Fallback: Contextual unique intro based on title
+        return f"{title} সম্পর্কিত প্রয়োজনীয় সকল দিক ও গুরুত্বপূর্ণ তথ্যগুলো এই আর্টিকেলে বিশদভাবে তুলে ধরা হয়েছে।"
+
+    def extract_highlights(self, html_content: str, title: str = "") -> List[str]:
+        """Extracts 3-4 natural value highlights from post headings and bullet points."""
+        if not html_content:
+            return [
+                "বোর্ড পরীক্ষার মানদণ্ডে প্রতিটি অধ্যায়ের নির্ভুল মডেল বিশ্লেষণ",
+                "পরীক্ষার খাতায় সর্বোচ্চ নম্বর পাওয়ার কার্যকরী প্রেজেন্টেশন টেকনিক",
+                "সহজে রিভিশন দেওয়ার জন্য গুরুত্বপূর্ণ পয়েন্ট ও হ্যান্ডনোটস"
+            ]
+
         soup = BeautifulSoup(html_content, "html.parser")
         headings = []
         for h in soup.find_all(["h2", "h3"]):
             txt = h.get_text(strip=True)
-            # Remove numbering or punctuation
-            clean_txt = re.sub(r"^[০-৯0-9\.\:\-\s]+", "", txt).strip()
-            if clean_txt and len(clean_txt) > 8 and len(clean_txt) < 80:
-                if not any(skip in clean_txt.lower() for skip in ["সূচিপত্র", "সারসংক্ষেপ", "প্রশ্নোত্তর", "faq"]):
+            # Remove leading numbering, bullets, or punctuation
+            clean_txt = re.sub(r"^[০-৯0-9\.\:\-\s\–\—]+", "", txt).strip()
+            clean_txt = re.sub(r"[\r\n\t]+", " ", clean_txt)
+            if clean_txt and 8 < len(clean_txt) < 85:
+                if not any(skip in clean_txt.lower() for skip in ["সূচিপত্র", "সারসংক্ষেপ", "প্রশ্নোত্তর", "faq", "কমেন্ট"]):
                     headings.append(clean_txt)
 
         highlights = []
         for h in headings[:4]:
             highlights.append(h)
 
-        # Fallback if headings are missing or sparse
+        # Fallback if headings are missing or sparse: extract from strong tags or list items
+        if len(highlights) < 2:
+            for li in soup.find_all("li"):
+                li_txt = li.get_text(strip=True)
+                clean_li = re.sub(r"^[০-৯0-9\.\:\-\s]+", "", li_txt).strip()
+                if 12 < len(clean_li) < 80:
+                    highlights.append(clean_li)
+                    if len(highlights) >= 3:
+                        break
+
         if len(highlights) < 2:
             highlights = [
-                "বোর্ড পরীক্ষার মানদণ্ডে প্রতিটি অধ্যায়ের নির্ভুল মডেল বিশ্লেষণ",
-                "পরীক্ষার খাতায় সর্বোচ্চ নম্বর পাওয়ার কার্যকরী প্রেজেন্টেশন টেকনিক",
-                "সহজে রিভিশন দেওয়ার জন্য গুরুত্বপূর্ণ পয়েন্ট ও হ্যান্ডনোটস"
+                f"{title} সম্পর্কিত পুঙ্খানুপুঙ্খ তথ্য ও নিয়মাবলী",
+                "সঠিক পদ্ধতিতে প্রস্তুতি সম্পন্ন করার কার্যকরী দিকনির্দেশনা",
+                "প্রয়োজনীয় মডেল বিশ্লেষণ ও হ্যান্ডনোটস"
             ]
 
         return highlights[:4]
 
-    def generate_all(self, title: str, post_url: str, html_content: str, labels: Optional[List[str]] = None, hero_image: Optional[str] = None) -> Dict[str, str]:
-        """Generates tailored copy for Telegram, Facebook, and WhatsApp."""
+    def generate_all(
+        self,
+        title: str,
+        post_url: str,
+        html_content: str,
+        labels: Optional[List[str]] = None,
+        hero_image: Optional[str] = None
+    ) -> Dict[str, Any]:
+        """Generates 100% unique tailored copy for Telegram, Facebook, and WhatsApp without canned clichés."""
         labels = labels or []
         soup = BeautifulSoup(html_content, "html.parser")
         plain_text = soup.get_text(" ", strip=True)
 
         archetype = self.detect_archetype(title, labels, plain_text)
-        if archetype == "job":
-            hook = random.choice(self.JOB_HOOKS)
-        elif archetype == "tech":
-            hook = random.choice(self.TECH_HOOKS)
-        elif archetype == "academic":
-            hook = random.choice(self.ACADEMIC_HOOKS)
-        else:
-            hook = random.choice(self.GENERAL_HOOKS)
-
-        highlights = self.extract_highlights(html_content)
+        intro_summary = self.extract_unique_intro(html_content, title)
+        highlights = self.extract_highlights(html_content, title)
         hashtags = self.get_hashtags(title, labels)
         hashtag_str = " ".join(hashtags)
 
-        # Dynamic Call-To-Action based on archetype
+        # Dynamic Button & CTA text derived directly from post topic
         if archetype == "job":
-            cta_text = "নিয়োগ পরীক্ষার সঠিক প্রস্তুতি নিতে এবং সম্পূর্ণ তথ্য জানতে ভিজিট করুন:"
-            tg_cta = "সম্পূর্ণ চাকরির সার্কুলার ও গাইড দেখুন"
-            wa_cta = "সম্পূর্ণ তথ্য ও আবেদন নির্দেশিকা দেখতে লিংকে প্রবেশ করুন:"
+            btn_text = "সম্পূর্ণ নিয়োগ তথ্য ও গাইড পড়ুন"
+            cta_line = "সম্পূর্ণ চাকরির সার্কুলার ও আবেদন নির্দেশিকা দেখতে ভিজিট করুন:"
         elif archetype == "tech":
-            cta_text = "ধাপগুলো বিস্তারিতভাবে বুঝতে এবং সঠিকভাবে সম্পন্ন করতে সম্পূর্ণ গাইডটি দেখুন:"
-            tg_cta = "সম্পূর্ণ টিউটোরিয়াল ও স্টেপ গাইড পড়ুন"
-            wa_cta = "সম্পূর্ণ স্টেপ-বাই-স্টেপ টিউটোরিয়াল দেখতে লিংকে প্রবেশ করুন:"
+            btn_text = "সম্পূর্ণ স্টেপ-বাই-স্টেপ গাইড দেখুন"
+            cta_line = "ধাপগুলো বিস্তারিত দেখতে ও কাজ সম্পন্ন করতে প্রবেশ করুন:"
         elif archetype == "academic":
-            cta_text = "পরীক্ষার সর্বোচ্চ প্রস্তুতি নিশ্চিত করতে এবং পুরো নির্দেশিকা এক নজরে দেখতে ভিজিট করুন:"
-            tg_cta = "সম্পূর্ণ স্টাডি গাইড ও নোটস পড়ুন"
-            wa_cta = "সম্পূর্ণ নির্দেশিকা ও প্রয়োজনীয় ফাইল দেখতে লিংকে প্রবেশ করুন:"
+            btn_text = "সম্পূর্ণ স্টাডি গাইড ও হ্যান্ডনোটস পড়ুন"
+            cta_line = "সম্পূর্ণ স্টাডি গাইড ও মডেল প্রশ্নোত্তর বিস্তারিত পড়তে ভিজিট করুন:"
         else:
-            cta_text = "এই বিষয়ে আরও গভীর ও বিস্তারিত তথ্য জানতে সম্পূর্ণ আর্টিকেলটি ভিজিট করুন:"
-            tg_cta = "সম্পূর্ণ আর্টিকেল পড়ুন"
-            wa_cta = "সম্পূর্ণ বিবরণ ও মূল ভাবার্থ পড়তে লিংকে প্রবেশ করুন:"
+            btn_text = "সম্পূর্ণ আর্টিকেলটি পড়ুন"
+            cta_line = "বিস্তারিত তথ্য ও সম্পূর্ণ আর্টিকেল পড়তে প্রবেশ করুন:"
 
-        # 1. Telegram Copy (HTML markup)
+        # 1. Telegram Copy (HTML markup, generous line-spacing, unmissable link block)
         tg_bullets = "\n".join([f"• {item}" for item in highlights])
         telegram_text = (
             f"<b>{title}</b>\n\n"
-            f"{hook}\n\n"
-            f"<b>মূল বিষয়বস্তু ও বিশেষ অংশসমূহ:</b>\n"
-            f"{tg_bullets}\n\n"
-            f"{cta_text}\n"
-            f"<a href=\"{post_url}\">{tg_cta}</a>\n\n"
+            f"{intro_summary}\n\n"
+            f"<b>আর্টিকেলের উল্লেখযোগ্য বিষয়সমূহ:</b>\n"
+            f"{tg_bullets}\n\n\n"
+            f"<b>»» {cta_line}</b>\n\n"
+            f"<a href=\"{post_url}\"><b>{post_url}</b></a>\n\n\n"
             f"{hashtag_str}"
         )
 
-        # 2. Facebook Copy (Natural paragraphs, high engagement)
+        # 2. Facebook Copy (Natural, high-engagement, perfectly paired with clickable preview card)
         fb_bullets = "\n".join([f"- {item}" for item in highlights])
         facebook_text = (
             f"{title}\n\n"
-            f"{hook}\n\n"
-            f"কনটেন্টের মূল আকর্ষণ ও গুরুত্বপূর্ণ অংশসমূহ:\n"
+            f"{intro_summary}\n\n"
+            f"আর্টিকেলের প্রধান পয়েন্টসমূহ:\n"
             f"{fb_bullets}\n\n"
-            f"{cta_text}\n"
+            f"{cta_line}\n"
             f"{post_url}\n\n"
             f"{hashtag_str}"
         )
 
-        # 3. WhatsApp Copy (WhatsApp Markdown)
+        # 3. WhatsApp Copy (Clean Markdown)
         wa_bullets = "\n".join([f"• {item}" for item in highlights])
         whatsapp_text = (
             f"*{title}*\n\n"
-            f"{hook}\n\n"
-            f"*গুরুত্বপূর্ণ বিষয়সমূহ:*\n"
-            f"{wa_bullets}\n\n"
-            f"{wa_cta}\n"
-            f"{post_url}\n\n"
+            f"{intro_summary}\n\n"
+            f"*আর্টিকেলের উল্লেখযোগ্য বিষয়সমূহ:*\n"
+            f"{wa_bullets}\n\n\n"
+            f"*{cta_line}*\n"
+            f"{post_url}\n\n\n"
             f"{hashtag_str}"
         )
 
@@ -202,6 +259,9 @@ class SocialCopyGenerator:
             "post_url": post_url,
             "hero_image": hero_image or "",
             "archetype": archetype,
+            "intro_summary": intro_summary,
+            "highlights": highlights,
+            "button_text": btn_text,
             "telegram": telegram_text,
             "facebook": facebook_text,
             "whatsapp": whatsapp_text,

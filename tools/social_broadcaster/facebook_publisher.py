@@ -55,14 +55,27 @@ class FacebookPublisher:
         except Exception as e:
             return {"success": False, "message": f"ফেসবুক সংযোগ ব্যর্থ: {str(e)}"}
 
-    def publish_post(self, message: str, link: Optional[str] = None, image_url: Optional[str] = None) -> Dict[str, Any]:
-        """Publishes photo post or link feed post to Facebook Page."""
+    def publish_post(
+        self,
+        message: str,
+        link: Optional[str] = None,
+        image_url: Optional[str] = None,
+        post_type: str = "link"
+    ) -> Dict[str, Any]:
+        """Publishes clickable link preview post (default, max CTR) or photo post to Facebook Page."""
         if not self.is_configured():
             return {"success": False, "message": "ফেসবুক ক্রেডেনশিয়াল পাওয়া যায়নি।"}
 
         try:
-            # If hero image is present, post to /photos endpoint for highest reach
-            if image_url:
+            # Default "link": Creates official full-width clickable preview card where tapping the photo visits the website directly
+            if post_type == "link" and link:
+                endpoint = f"{self.GRAPH_BASE}/{self.GRAPH_VERSION}/{self.page_id}/feed"
+                data = {
+                    "message": message,
+                    "link": link,
+                    "access_token": self.page_access_token
+                }
+            elif image_url:
                 endpoint = f"{self.GRAPH_BASE}/{self.GRAPH_VERSION}/{self.page_id}/photos"
                 data = {
                     "url": image_url,
