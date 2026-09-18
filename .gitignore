@@ -35,6 +35,9 @@ login_link.txt
 *.key
 tokens.json
 indexing_history.log
+social_credentials.json
+*social_credentials*.json
+!tools/social_broadcaster/social_credentials.template.json
 
 # Build outputs & generated test reports
 dist/

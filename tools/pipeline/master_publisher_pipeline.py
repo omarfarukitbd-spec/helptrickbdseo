@@ -299,6 +299,29 @@ def run_pipeline(args):
         print("\n[Step 5/6] Blogger publishing skipped (use --publish --post-id <ID>).")
         print("[Step 6/6] Google Indexing skipped.")
 
+    # Step 7: Multi-Channel Social Broadcasting
+    if args.broadcast:
+        print("\n[Step 7/7] Initiating Multi-Channel Social Broadcasting...")
+        try:
+            import subprocess
+            broadcast_cmd = [
+                sys.executable,
+                os.path.join(os.path.dirname(__file__), "..", "social_broadcaster", "broadcaster.py"),
+                "--post-file", args.html
+            ]
+            if args.url:
+                broadcast_cmd.extend(["--post-url", args.url])
+            if args.title:
+                broadcast_cmd.extend(["--title", args.title])
+            if args.labels:
+                broadcast_cmd.extend(["--labels", args.labels])
+
+            subprocess.run(broadcast_cmd, check=False)
+        except Exception as e:
+            print(f"  • Social broadcasting warning: {e}")
+    else:
+        print("\n[Step 7/7] Social broadcasting skipped (use --broadcast to activate).")
+
     print("\n" + "=" * 70)
     print("PIPELINE EXECUTION COMPLETED")
     print("=" * 70)
@@ -319,6 +342,7 @@ def main():
     parser.add_argument("--slot-id", help="AdSense Slot ID")
     parser.add_argument("--publish", action="store_true", help="Publish directly to Blogger via Blogger API v3")
     parser.add_argument("--index", action="store_true", help="Submit to Google Indexing API after publishing")
+    parser.add_argument("--broadcast", action="store_true", help="Publish to Social Networks (Telegram, Facebook, WhatsApp)")
 
     args = parser.parse_args()
     run_pipeline(args)
