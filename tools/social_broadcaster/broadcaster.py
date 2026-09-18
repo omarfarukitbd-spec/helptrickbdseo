@@ -148,8 +148,9 @@ def main():
         print(f"টেলিগ্রাম স্ট্যাটাস: {tg_status['message']}")
 
         fb_pub = FacebookPublisher(
-            config.get("facebook", {}).get("page_id", ""),
-            config.get("facebook", {}).get("page_access_token", "")
+            page_id=config.get("facebook", {}).get("page_id", ""),
+            page_access_token=config.get("facebook", {}).get("page_access_token", ""),
+            make_webhook_url=config.get("facebook", {}).get("make_webhook_url", "")
         )
         fb_status = fb_pub.test_connection()
         print(f"ফেসবুক স্ট্যাটাস: {fb_status['message']}")
@@ -231,15 +232,20 @@ def main():
     else:
         print("[টেলিগ্রাম]: নিষ্ক্রিয় করা রয়েছে।")
 
-    # 2. Facebook Page Broadcast (Link Preview Card Post)
+    # 2. Facebook Page Broadcast (Link Preview Card Post via Make Verified Gateway)
     fb_cfg = config.get("facebook", {})
     if fb_cfg.get("enabled", True):
-        fb_pub = FacebookPublisher(fb_cfg.get("page_id", ""), fb_cfg.get("page_access_token", ""))
+        fb_pub = FacebookPublisher(
+            page_id=fb_cfg.get("page_id", ""),
+            page_access_token=fb_cfg.get("page_access_token", ""),
+            make_webhook_url=fb_cfg.get("make_webhook_url", "")
+        )
         fb_res = fb_pub.publish_post(
             message=generated["facebook"],
             link=post_url,
             image_url=hero_image,
-            post_type="link"
+            post_type="link",
+            title=title
         )
         print(f"[ফেসবুক]: {fb_res['message']}")
     else:

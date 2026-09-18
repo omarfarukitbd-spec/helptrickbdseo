@@ -91,7 +91,11 @@ def main():
     fb_cfg = config.get("facebook", {})
 
     tg_pub = TelegramPublisher(tg_cfg.get("bot_token", ""), tg_cfg.get("channel_id", ""))
-    fb_pub = FacebookPublisher(fb_cfg.get("page_id", ""), fb_cfg.get("page_access_token", ""))
+    fb_pub = FacebookPublisher(
+        page_id=fb_cfg.get("page_id", ""),
+        page_access_token=fb_cfg.get("page_access_token", ""),
+        make_webhook_url=fb_cfg.get("make_webhook_url", "")
+    )
 
     print("=" * 65)
     print(" হেল্পট্রিকবিডি ব্যাচ সোশ্যাল ব্রডকাস্টার (Facebook & Telegram)")
@@ -150,13 +154,14 @@ def main():
             print("-" * 50)
             continue
 
-        # 1. Facebook Broadcast (Default: Clickable 16:9 Link Preview Card)
+        # 1. Facebook Broadcast (Default: Clickable 16:9 Link Preview Card via Make Verified Gateway)
         if fb_cfg.get("enabled", True) and fb_pub.is_configured():
             fb_res = fb_pub.publish_post(
                 message=generated["facebook"],
                 link=post_url,
                 image_url=hero_image,
-                post_type="link"
+                post_type="link",
+                title=title
             )
             print(f"  [ফেসবুক]: {fb_res['message']}")
         else:
