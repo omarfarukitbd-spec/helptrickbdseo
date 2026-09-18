@@ -93,6 +93,31 @@ class FacebookPublisher:
                     "message": f"ফেসবুক পেজে সফলভাবে পোস্ট পাবলিশ হয়েছে (পোস্ট আইডি: {post_id})"
                 }
         except urllib.error.HTTPError as e:
+            # ফলব্যাক: যদি ফটো এন্ডপয়েন্ট কোনো কারণে ফেইল করে, তবে লিঙ্ক পোস্ট হিসেবে পাবলিশ নিশ্চিত করা হবে
+            if image_url and link:
+                try:
+                    feed_endpoint = f"{self.GRAPH_BASE}/{self.GRAPH_VERSION}/{self.page_id}/feed"
+                    feed_data = urllib.parse.urlencode({
+                        "message": message,
+                        "link": link,
+                        "access_token": self.page_access_token
+                    }).encode("utf-8")
+                    feed_req = urllib.request.Request(
+                        feed_endpoint,
+                        data=feed_data,
+                        headers={"User-Agent": "HelpTrickBD-Broadcaster/1.0"}
+                    )
+                    with urllib.request.urlopen(feed_req, timeout=20) as resp:
+                        res_data = json.loads(resp.read().decode("utf-8"))
+                        post_id = res_data.get("id")
+                        return {
+                            "success": True,
+                            "post_id": post_id,
+                            "message": f"ফেসবুক পেজে লিঙ্ক পোস্ট হিসেবে সফলভাবে পাবলিশ হয়েছে (পোস্ট আইডি: {post_id})"
+                        }
+                except Exception:
+                    pass
+
             err_msg = e.read().decode("utf-8") if e.fp else str(e)
             return {"success": False, "message": f"ফেসবুক পাবলিশ এইচটিটিপি ত্রুটি ({e.code}): {err_msg}"}
         except Exception as e:
