@@ -230,16 +230,16 @@ class SocialCopyGenerator:
             f"{hashtag_str}"
         )
 
-        # 2. Facebook Copy (Natural, high-engagement, perfectly paired with clickable preview card)
+        # 2. Facebook Copy (Natural, high-engagement, visible hashtags & clickable preview card)
         fb_bullets = "\n".join([f"- {item}" for item in highlights])
         facebook_text = (
             f"{title}\n\n"
+            f"{hashtag_str}\n\n"
             f"{intro_summary}\n\n"
             f"আর্টিকেলের প্রধান পয়েন্টসমূহ:\n"
             f"{fb_bullets}\n\n"
             f"{cta_line}\n"
-            f"{post_url}\n\n"
-            f"{hashtag_str}"
+            f"{post_url}"
         )
 
         # 3. WhatsApp Copy (Clean Markdown)
