@@ -189,19 +189,18 @@ def render_html_template(title, category, subtitle=None, lang=None):
     bg_file_path = os.path.join(BG_DIR, conf["bg_file"]).replace(os.sep, "/")
     logo_file_path = LOGO_PATH.replace(os.sep, "/")
 
-    # Language-sensitive labels and taglines
+    # Language-sensitive badge label and subtitle
     if lang == "en":
         badge_label = conf["badge_en"]
-        edition_label = "Latest Edition 2026"
-        tagline_1 = "Learn Smart"
-        tagline_2 = "Lead Future"
         default_sub = conf.get("default_sub_en", "Complete Study Guide & Examination Notes")
     else:
         badge_label = conf["badge_bn"]
-        edition_label = "সর্বশেষ সংস্করণ ২০২৬"
-        tagline_1 = "সঠিক জ্ঞান"
-        tagline_2 = "উজ্জ্বল ভবিষ্যৎ"
         default_sub = conf.get("default_sub_bn", "পূর্ণাঙ্গ লেকচার ও বিশেষ পরীক্ষার সহায়িকা")
+
+    # Universal English Footer Tagline across ALL posts and backgrounds (MANDATORY USER RULE)
+    tagline_1 = "Learn Smart"
+    tagline_2 = "Lead Future"
+    edition_label = "Latest Edition 2026"
 
     # Title size calculation based on character count
     title_len = len(title)
