@@ -84,6 +84,8 @@ def main():
     parser.add_argument("--single-index", type=int, default=None, help="নির্দিষ্ট একটি পোস্ট পাবলিশ করতে (১-২০)")
     parser.add_argument("--start-index", type=int, default=1, help="শুরুর পোস্ট ইনডেক্স (১-ভিত্তিক)")
     parser.add_argument("--end-index", type=int, default=None, help="শেষ পোস্ট ইনডেক্স (১-ভিত্তিক)")
+    parser.add_argument("--facebook-only", action="store_true", help="শুধুমাত্র ফেসবুক পেজে পাবলিশ করবে (টেলিগ্রাম বাদ)")
+    parser.add_argument("--telegram-only", action="store_true", help="শুধুমাত্র টেলিগ্রাম চ্যানেলে পাবলিশ করবে (ফেসবুক বাদ)")
     args = parser.parse_args()
 
     config = load_config()
@@ -155,7 +157,7 @@ def main():
             continue
 
         # 1. Facebook Broadcast (Default: Clickable 16:9 Link Preview Card via Make Verified Gateway)
-        if fb_cfg.get("enabled", True) and fb_pub.is_configured():
+        if not args.telegram_only and fb_cfg.get("enabled", True) and fb_pub.is_configured():
             fb_res = fb_pub.publish_post(
                 message=generated["facebook"],
                 link=post_url,
@@ -164,11 +166,11 @@ def main():
                 title=title
             )
             print(f"  [ফেসবুক]: {fb_res['message']}")
-        else:
+        elif not args.telegram_only:
             print("  [ফেসবুক]: নিষ্ক্রিয় বা কনফিগার করা নেই।")
 
         # 2. Telegram Broadcast (With interactive inline button & generous spacing)
-        if tg_cfg.get("enabled", True) and tg_pub.is_configured():
+        if not args.facebook_only and tg_cfg.get("enabled", True) and tg_pub.is_configured():
             tg_res = tg_pub.publish_post(
                 text=generated["telegram"],
                 image_url=hero_image,
@@ -176,7 +178,7 @@ def main():
                 button_url=post_url
             )
             print(f"  [টেলিগ্রাম]: {tg_res['message']}")
-        else:
+        elif not args.facebook_only:
             print("  [টেলিগ্রাম]: নিষ্ক্রিয় বা কনফিগার করা নেই।")
 
         print("-" * 50)
