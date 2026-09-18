@@ -1,0 +1,973 @@
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/fonts/solaiman_lipi.css" rel="stylesheet"/>
+
+<style>
+  .htbd-post-wrapper {
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+  }
+  .htbd-post-wrapper p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+    text-align: justify !important;
+  }
+  .htbd-heading {
+    color: #1a73e8 !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding-left: 14px !important;
+    margin-top: 36px !important;
+    margin-bottom: 16px !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-subheading {
+    color: #0c2340 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-top: 28px !important;
+    margin-bottom: 14px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .htbd-qbox {
+    background: #f8fafd !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding: 20px 24px !important;
+    margin: 22px 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-qbox p {
+    margin: 0 !important;
+    line-height: 1.8 !important;
+  }
+  .htbd-note-box {
+    background: #f8fafc !important;
+    border-left: 4px solid #0284c7 !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+    font-size: 17.5px !important;
+  }
+  .htbd-note-box p {
+    margin: 8px 0 !important;
+  }
+  .htbd-table-container {
+    overflow-x: auto !important;
+    margin: 20px 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  .htbd-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    text-align: left !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    padding: 12px 16px !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+  }
+  .htbd-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+  }
+  .htbd-table tr:nth-child(even) td {
+    background: #f8fafc !important;
+  }
+  .htbd-question-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 20px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+  }
+  .htbd-passage-content {
+    font-family: Arial, 'SolaimanLipi', sans-serif !important;
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+    color: #1e293b !important;
+    margin: 14px 0 !important;
+  }
+  .htbd-solution-card {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 6px !important;
+    padding: 20px 24px !important;
+    margin: 14px 0 28px 0 !important;
+  }
+  .htbd-solution-card h4 {
+    margin: 0 0 12px 0 !important;
+    color: #166534 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-answers-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+    gap: 8px 16px !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    margin-top: 10px !important;
+  }
+  .htbd-rule-note {
+    margin-top: 14px !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed #86efac !important;
+    font-size: 15px !important;
+    color: #15803d !important;
+    font-style: italic !important;
+    line-height: 1.6 !important;
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+  }
+  .htbd-exam-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 2px 10px !important;
+    border-radius: 14px !important;
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+    border: 1px solid #bae6fd !important;
+    letter-spacing: 0.2px !important;
+    vertical-align: middle !important;
+    margin-left: 8px !important;
+    font-family: Arial, sans-serif !important;
+  }
+  .htbd-internal-silo {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 18px 24px !important;
+    margin: 28px 0 !important;
+  }
+  .htbd-internal-silo h4 {
+    margin: 0 0 10px 0 !important;
+    color: #0f172a !important;
+    font-size: 18px !important;
+  }
+  .htbd-internal-silo ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+  }
+  .htbd-internal-silo li {
+    margin: 6px 0 !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-internal-silo a {
+    color: #1a73e8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+  .htbd-internal-silo a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Bi-Modal Dark Mode Support */
+  .dark .htbd-post-wrapper,
+  body.dark .htbd-post-wrapper,
+  #mainContent.dark .htbd-post-wrapper {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-post-wrapper p,
+  body.dark .htbd-post-wrapper p,
+  #mainContent.dark .htbd-post-wrapper p {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-heading,
+  body.dark .htbd-heading,
+  #mainContent.dark .htbd-heading {
+    color: #38bdf8 !important;
+    border-left-color: #0284c7 !important;
+  }
+  .dark .htbd-subheading,
+  body.dark .htbd-subheading,
+  #mainContent.dark .htbd-subheading {
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-qbox,
+  body.dark .htbd-qbox,
+  #mainContent.dark .htbd-qbox {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    border-left: 5px solid #0284c7 !important;
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-qbox strong,
+  body.dark .htbd-qbox strong,
+  #mainContent.dark .htbd-qbox strong {
+    color: #ffffff !important;
+  }
+  .dark .htbd-note-box,
+  body.dark .htbd-note-box,
+  #mainContent.dark .htbd-note-box {
+    background: #1e293b !important;
+    border-left-color: #0284c7 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table-container,
+  body.dark .htbd-table-container,
+  #mainContent.dark .htbd-table-container {
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table th,
+  body.dark .htbd-table th,
+  #mainContent.dark .htbd-table th {
+    background: #0f172a !important;
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table td,
+  body.dark .htbd-table td,
+  #mainContent.dark .htbd-table td {
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table tr:nth-child(even) td,
+  body.dark .htbd-table tr:nth-child(even) td,
+  #mainContent.dark .htbd-table tr:nth-child(even) td {
+    background: #1e293b !important;
+  }
+  .dark .htbd-question-card,
+  body.dark .htbd-question-card,
+  #mainContent.dark .htbd-question-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-passage-content,
+  body.dark .htbd-passage-content,
+  #mainContent.dark .htbd-passage-content {
+    color: #e2e8f0 !important;
+  }
+  .dark .htbd-solution-card,
+  body.dark .htbd-solution-card,
+  #mainContent.dark .htbd-solution-card {
+    background: #052e16 !important;
+    border-color: #14532d !important;
+    border-left-color: #22c55e !important;
+  }
+  .dark .htbd-solution-card h4,
+  body.dark .htbd-solution-card h4,
+  #mainContent.dark .htbd-solution-card h4 {
+    color: #86efac !important;
+  }
+  .dark .htbd-answers-grid,
+  body.dark .htbd-answers-grid,
+  #mainContent.dark .htbd-answers-grid {
+    color: #dcfce7 !important;
+  }
+  .dark .htbd-rule-note,
+  body.dark .htbd-rule-note,
+  #mainContent.dark .htbd-rule-note {
+    border-top-color: #14532d !important;
+    color: #a7f3d0 !important;
+  }
+  .dark .htbd-exam-badge,
+  body.dark .htbd-exam-badge,
+  #mainContent.dark .htbd-exam-badge {
+    background-color: #0c4a6e !important;
+    color: #7dd3fc !important;
+    border-color: #0284c7 !important;
+  }
+  .dark .htbd-internal-silo,
+  body.dark .htbd-internal-silo,
+  #mainContent.dark .htbd-internal-silo {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-internal-silo h4,
+  body.dark .htbd-internal-silo h4,
+  #mainContent.dark .htbd-internal-silo h4 {
+    color: #f1f5f9 !important;
+  }
+</style>
+
+<div class="htbd-post-wrapper">
+<figure style="margin: 0 0 25px 0; text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-english-2nd-paper-connectors-and-punctuation-suggestions.webp" 
+         alt="SSC English 2nd Paper Connectors and Punctuation Suggestions with Answer" 
+         title="SSC English 2nd Paper Connectors & Punctuation Suggestions with Answer | ১৫টি স্পেশাল রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান" 
+         width="1200" height="675" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block;" 
+         loading="lazy" decoding="async" />
+    <figcaption style="font-size: 14px; color: #64748b; margin-top: 8px; font-style: italic;">এসএসসি ও দাখিল ইংরেজি ২য় পত্র: কানেক্টরস ও বিরামচিহ্ন ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান সহায়িকা | HelpTrickBD</figcaption>
+</figure>
+
+<p>এসএসসি ও দাখিল ইংরেজি ২য় পত্র পরীক্ষায় ব্যাকরণ অংশের ভাবগত সামঞ্জস্য ও লেখার সৌন্দর্য নির্ধারণী দুটি প্রধান আইটেম হলো <strong>Sentence Connectors (Linking Words)</strong> এবং <strong>Punctuation &amp; Capitalization</strong>। বোর্ড প্রশ্নকাঠামো অনুযায়ী এগুলো ৮ ও ৯ নম্বর প্রশ্নে থাকে এবং সম্মিলিতভাবে পূর্ণমান <strong>১০ নম্বর</strong> (প্রতিটি ৫ নম্বর করে মোট ১০ নম্বর)। বাক্যের পূর্বাপর যৌক্তিক সম্পর্ক বজায় রেখে সঠিক কানেক্টর নির্বাচন এবং বিরামচিহ্ন ও ক্যাপিটাল অক্ষরের নির্ভুল ব্যবহার নিশ্চিত করতে পারলে এই অংশে পূর্ণ ১০-এ ১০ নম্বর পাওয়া শতভাগ সম্ভব।</p>
+<!--more-->
+<div class="htbd-qbox">
+    <p><strong>সারসংক্ষেপ: এসএসসি কানেক্টরস ও বিরামচিহ্ন মানবণ্টন ও কৌশল</strong><br>
+    <strong>প্রশ্ন কাঠামো ও নম্বর:</strong> Question No. 8 — Sentence Connectors (১ &times; ৫ = ৫ নম্বর বা ০.৫ &times; ১০ = ৫ নম্বর) এবং Question No. 9 — Punctuation &amp; Capitalization (১ &times; ৫ = ৫ নম্বর)।<br>
+    <strong>পরীক্ষার মূল রহস্য:</strong> কানেক্টরস ব্যবহারের ক্ষেত্রে দুটি বাক্যের মাঝে সম্পর্কটি কি বৈপরীত্য (However, On the contrary), কারণ ও ফলাফল (Therefore, As a result), অতিরিক্ত তথ্য (Moreover, Furthermore), নাকি উদাহরণ (For example)? তা বুঝতে হবে। আর বিরামচিহ্নের ক্ষেত্রে ডিরেক্ট স্পিচের কোটেশন মার্ক ("..."), কমা (,) ও প্রোপার নাউনের ক্যাপিটালাইজেশনে সতর্ক থাকতে হবে।<br>
+    <strong>নিচে শীর্ষ কানেক্টরস ফাংশন চার্ট এবং বিগত বছরের ২৫টি শীর্ষ বোর্ড প্রশ্ন ও পূর্ণাঙ্গ সমাধান দেওয়া হলো।</strong></p>
+</div>
+
+<h2 class="htbd-heading">কানেক্টরস ব্যবহারের ফাংশনভিত্তিক মাস্টার টেবিল (Sentence Connectors Function Matrix)</h2>
+<p>বাক্যের ভাব ও অর্থের সম্পর্ক অনুযায়ী উপযুক্ত কানেক্টর মনে রাখার সহায়ক চার্ট নিচে তুলে ধরা হলো:</p>
+
+<div class="htbd-table-container">
+    <table class="htbd-table">
+        <thead>
+            <tr>
+                <th>Logical Function</th>
+                <th>Common Connectors</th>
+                <th>বাংলা ভাবার্থ</th>
+                <th>Example in Sentence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Addition (অতিরিক্ত তথ্য)</strong></td>
+                <td>Moreover, Furthermore, In addition, Besides, Also</td>
+                <td>তাছাড়া, অধিকন্তু, এছাড়াও</td>
+                <td>He is brilliant. <strong>Moreover</strong>, he is honest.</td>
+            </tr>
+            <tr>
+                <td><strong>Contrast (বিপরীত ভাব)</strong></td>
+                <td>However, On the other hand, On the contrary, But, Yet</td>
+                <td>কিন্তু, পক্ষান্তরে, অথচ</td>
+                <td>He works hard. <strong>However</strong>, he failed.</td>
+            </tr>
+            <tr>
+                <td><strong>Cause &amp; Effect (কারণ ও ফল)</strong></td>
+                <td>Therefore, As a result, Consequently, So, Hence</td>
+                <td>অতএব, ফলশ্রুতিতে, সেই কারণে</td>
+                <td>He was sick. <strong>Consequently</strong>, he missed classes.</td>
+            </tr>
+            <tr>
+                <td><strong>Sequence (ধারাবাহিকতা)</strong></td>
+                <td>Firstly, Secondly, Then, Next, After that, Finally</td>
+                <td>প্রথমত, দ্বিতীয়ত, তারপর, অবশেষে</td>
+                <td><strong>First of all</strong>, take care of your health.</td>
+            </tr>
+            <tr>
+                <td><strong>Exemplification (উদাহরণ)</strong></td>
+                <td>For example, For instance, Such as, Namely</td>
+                <td>যেমন, উদাহরণস্বরূপ</td>
+                <td>He loves sports, <strong>for instance</strong>, football.</td>
+            </tr>
+            <tr>
+                <td><strong>Conclusion (উপসংহার)</strong></td>
+                <td>In short, In brief, To sum up, Above all</td>
+                <td>সংক্ষেপে, সর্বোপরি</td>
+                <td><strong>Above all</strong>, he is a true patriot.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="htbd-note-box">
+    <p><strong>বিরামচিহ্ন ও ক্যাপিটালাইজেশনের ৩টি অলঙ্ঘনীয় নিয়ম (Punctuation Rules):</strong><br>
+    ১. <strong>ডিরেক্ট স্পিচ ও উক্তি:</strong> বক্তার হুবহু বক্তব্য ইনভার্টেড কমা ("...") এর ভেতর থাকবে এবং কমার ভেতরের প্রথম অক্ষর অবশ্যই Capital হবে (উদা: He said, <em>"What a wonderful idea!"</em>)।<br>
+    ২. <strong>কমা ও প্রশ্নবোধক চিহ্নের অবস্থান:</strong> প্রশ্নবোধক (?) বা বিস্ময়সূচক (!) চিহ্ন ইনভার্টেড কমার ভেতরে বসবে।<br>
+    ৩. <strong>প্রোপার নাউন ও উপাধি:</strong> ব্যক্তি, স্থান, নদী, ধর্মীয় গ্রন্থ, আল্লাহ/ঈশ্বরের নাম এবং উপাধির প্রথম অক্ষর সর্বদা Capital Letter হবে (উদা: Hazrat Omar (R), The Quran, King Solomon)।</p>
+</div>
+
+<h2 class="htbd-heading">বিগত বছরের শীর্ষ ২৫টি বোর্ড ও দাখিল প্রশ্ন এবং পূর্ণাঙ্গ সমাধান (Top 25 Board Questions with Answers)</h2>
+<p>নিচে ঢাকা, রাজশাহী, কুমিল্লা, চট্টগ্রাম, দিনাজপুর, বরিশাল, সিলেট এবং মাদ্রাসা বোর্ডের বিগত বছরের ২৫টি শীর্ষ বোর্ড প্রশ্ন (১৫টি কানেক্টরস প্যাসেজ এবং ১০টি বিরামচিহ্ন প্যাসেজ) ও নিখুঁত উত্তরমালা সাজিয়ে দেওয়া হলো:</p>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 01: Dhaka Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Dowry System as a Curse in Society</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Dowry system is a curse (a) — our social life. This system has been prevailing in our society for a long time. (b) — it is an evil practice, it has not yet been stopped. (c) — it has taken a dangerous turn in recent times. (d) — a bridegroom's father demands a huge amount of money from the bride's father. (e) — the bride's family fails to meet the demand, the bride is tortured (f) — mentally (g) — physically. (h) — suicide or murder of newlywed brides is reported frequently. (i) — we should launch a massive campaign against this social evil. (j) — strict laws must be enacted and enforced without delay.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 01 (Dhaka Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> to / in</div>
+        <div><strong>(b)</strong> Though / Although</div>
+        <div><strong>(c)</strong> Rather / In fact</div>
+        <div><strong>(d)</strong> Nowadays / Generally</div>
+        <div><strong>(e)</strong> If / In case</div>
+        <div><strong>(f)</strong> both</div>
+        <div><strong>(g)</strong> and</div>
+        <div><strong>(h)</strong> Consequently / As a result</div>
+        <div><strong>(i)</strong> Therefore / So</div>
+        <div><strong>(j)</strong> Above all / Furthermore</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) বৈপরীত্য বোঝাতে 'Though/Although' বসেছে। (h) ফলাফল নির্দেশ করতে 'Consequently / As a result' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 02: Rajshahi Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Trees and Ecology in Modern World</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Trees are vital for our survival. (a) — they provide us with oxygen which is indispensable for our existence. (b) — they supply us with nutritious fruits and timber. (c) — trees protect our environment from floods, droughts and soil erosion. (d) — human beings are destroying forests recklessly. (e) — the global temperature is rising at an alarming rate. (f) — glaciers in the polar zones are melting. (g) — sea levels are rising, causing low-lying lands to submerge. (h) — we plant trees extensively, our planet will soon become unlivable. (i) — we should organize tree plantation programs every year. (j) — we must nurture the planted saplings with utmost care.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 02 (Rajshahi Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> Firstly / First of all</div>
+        <div><strong>(b)</strong> Secondly / Besides</div>
+        <div><strong>(c)</strong> Moreover / Furthermore</div>
+        <div><strong>(d)</strong> But / However</div>
+        <div><strong>(e)</strong> As a result / Consequently</div>
+        <div><strong>(f)</strong> In addition / Besides</div>
+        <div><strong>(g)</strong> Eventually / Thus</div>
+        <div><strong>(h)</strong> Unless</div>
+        <div><strong>(i)</strong> Therefore / So</div>
+        <div><strong>(j)</strong> At the same time / Furthermore</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a), (b), (c) পর্যায়ক্রমিক যুক্তি তুলে ধরতে 'Firstly, Secondly, Moreover' বসেছে। (h) নেতিবাচক শর্ত বোঝাতে 'Unless' ব্যবহৃত হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 03: Cumilla Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Global Warming and Greenhouse Effect</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Global warming is increasing day by day. (a) — our planet is becoming hotter. (b) — the emissions of greenhouse gases are responsible for this catastrophic change. (c) — human activities like industrialization and deforestation are releasing carbon dioxide into the air. (d) — trees which absorb carbon dioxide are being cut down. (e) — the natural balance of gases is disrupted. (f) — extreme weather events like hurricanes and heatwaves are becoming frequent. (g) — developing countries like Bangladesh are the worst victims. (h) — we reduce carbon emissions, the future will be bleak. (i) — we should switch to renewable energy sources like solar and wind power. (j) — international cooperation is imperative to combat this crisis.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 03 (Cumilla Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> Consequently / As a result</div>
+        <div><strong>(b)</strong> Mainly / Primarily</div>
+        <div><strong>(c)</strong> Especially / In fact</div>
+        <div><strong>(d)</strong> On the other hand / Moreover</div>
+        <div><strong>(e)</strong> Thus / So</div>
+        <div><strong>(f)</strong> Furthermore / In addition</div>
+        <div><strong>(g)</strong> Particularly / Specifically</div>
+        <div><strong>(h)</strong> Unless</div>
+        <div><strong>(i)</strong> Therefore / Hence</div>
+        <div><strong>(j)</strong> Above all / Finally</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (d) পরস্পরবিরোধী তথ্য যোগ করতে 'On the other hand' বসে। (j) চূড়ান্ত উপসংহার টানতে 'Above all / Finally' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 04: Jashore Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Good Manners and Social Harmony</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Good manners cost nothing (a) — bring high dividends. (b) — a well-mannered person is loved and respected by all. (c) — an ill-mannered person is despised by his acquaintances. (d) — he may possess immense wealth, he fails to win people's hearts. (e) — courteous words soothe an angry heart. (f) — words like 'please', 'thank you' and 'sorry' make social communication smooth. (g) — we should cultivate good manners from our childhood. (h) — parents and teachers should guide children in this regard. (i) — one must be polite in words (j) — gentle in deeds.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 04 (Jashore Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> but</div>
+        <div><strong>(b)</strong> In fact / Indeed</div>
+        <div><strong>(c)</strong> On the contrary / On the other hand</div>
+        <div><strong>(d)</strong> Though / Although</div>
+        <div><strong>(e)</strong> Moreover / Furthermore</div>
+        <div><strong>(f)</strong> For example / For instance</div>
+        <div><strong>(g)</strong> Therefore / So</div>
+        <div><strong>(h)</strong> In this respect / Besides</div>
+        <div><strong>(i)</strong> not only</div>
+        <div><strong>(j)</strong> but also</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) সম্পূর্ণ বিপরীত চরিত্র উপস্থাপন করতে 'On the contrary' বসে। (i) ও (j) কোরিলেটিভ কনজাংশন 'not only...but also' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 05: Chattogram Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: The Power of Mobile Phone and Internet</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Mobile phone has become an integral part of modern civilization. (a) — it facilitates instant communication with anyone across the globe. (b) — it provides access to internet information and banking services. (c) — it is not without some serious disadvantages. (d) — teenagers often get addicted to social media and online games. (e) — they waste their valuable study hours. (f) — their academic performance deteriorates sharply. (g) — radiation from smartphones causes eye strain and sleep disorders. (h) — parents should monitor their children's screen time. (i) — students should use smartphones exclusively for educational purposes. (j) — self-discipline is essential to derive genuine benefits from technology.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 05 (Chattogram Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> First of all / Firstly</div>
+        <div><strong>(b)</strong> Secondly / Besides</div>
+        <div><strong>(c)</strong> But / However</div>
+        <div><strong>(d)</strong> For instance / For example</div>
+        <div><strong>(e)</strong> Consequently / As a result</div>
+        <div><strong>(f)</strong> Eventually / In the end</div>
+        <div><strong>(g)</strong> Moreover / In addition</div>
+        <div><strong>(h)</strong> Therefore / Hence</div>
+        <div><strong>(i)</strong> Rather / Instead</div>
+        <div><strong>(j)</strong> Above all / In short</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) সুবিধার পর অসুবিধা তুলে ধরতে 'However / But' বসে। (d) উদাহরণ দিতে 'For instance' ব্যবহৃত হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 06: Barishal Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Diligence vs Idleness in Human Destiny</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Industry is the secret key to success. (a) — an industrious person turns his misfortune into prosperity through labor. (b) — an idle person wastes his precious moments in daydreaming. (c) — he suffers from acute poverty throughout his life. (d) — he blames his fate for his downfall. (e) — fate never favors an inactive person. (f) — Allah helps those who help themselves. (g) — all great scientists, philosophers and statesmen were hardworking. (h) — Thomas Alva Edison failed countless times before inventing the incandescent light bulb. (i) — we should shun idleness completely. (j) — we must dedicate ourselves to constructive work.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 06 (Barishal Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> In fact / Indeed</div>
+        <div><strong>(b)</strong> On the other hand / In contrast</div>
+        <div><strong>(c)</strong> Consequently / As a result</div>
+        <div><strong>(d)</strong> Furthermore / Besides</div>
+        <div><strong>(e)</strong> But / However</div>
+        <div><strong>(f)</strong> Truly speaking / It is said that</div>
+        <div><strong>(g)</strong> Historically / Indeed</div>
+        <div><strong>(h)</strong> For example / For instance</div>
+        <div><strong>(i)</strong> Therefore / So</div>
+        <div><strong>(j)</strong> Rather / Above all</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) দুই বিপরীত শ্রেণির তুলনা করতে 'On the other hand' বসে। (h) এডিসনের উদাহরণ দিতে 'For example' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 07: Sylhet Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Early Rising and Health Routine</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Early rising is a wholesome habit. (a) — it gives a person an early start to his daily work. (b) — an early riser gets ample time to perform his duties without rushing. (c) — he can enjoy the fresh, unpolluted morning air. (d) — morning breeze invigorates both body and mind. (e) — a late riser wakes up in a hurry. (f) — he finds his assigned tasks piled up before him. (g) — he suffers from constant anxiety and physical lethargy. (h) — you rise early, you can never enjoy the beauty of the dawn. (i) — we should form the habit of early rising from our student days. (j) — this single habit can change the course of our life.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 07 (Sylhet Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> Firstly / First of all</div>
+        <div><strong>(b)</strong> Secondly / Moreover</div>
+        <div><strong>(c)</strong> Besides / In addition</div>
+        <div><strong>(d)</strong> Indeed / Truly speaking</div>
+        <div><strong>(e)</strong> On the other hand / In contrast</div>
+        <div><strong>(f)</strong> Consequently / As a result</div>
+        <div><strong>(g)</strong> Eventually / Thus</div>
+        <div><strong>(h)</strong> Unless</div>
+        <div><strong>(i)</strong> Therefore / Hence</div>
+        <div><strong>(j)</strong> Undoubtedly / In fact</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (e) বিপরীত অবস্থা নির্দেশ করতে 'On the other hand'। (h) শর্তবাচক নেতিবাচক ক্লজে 'Unless' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 08: Dinajpur Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Food Adulteration Crisis in the Country</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Food adulteration has assumed an alarming proportion in our country. (a) — dishonest traders mix poisonous chemicals with daily food items. (b) — they treat fruits with formalin to prevent decay. (c) — toxic dyes are added to vegetables to make them look fresh. (d) — consumers are falling victim to deadly diseases like cancer and kidney failure. (e) — children are the worst sufferers of this menace. (f) — government mobile courts are conducting anti-adulteration drives. (g) — these drives are not sufficient to eradicate the problem. (h) — exemplary punishment must be meted out to unscrupulous syndicate members. (i) — consumers should be aware of adulterated items. (j) — a joint effort of law enforcers and the public can curb this menace.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 08 (Dinajpur Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> In fact / Nowadays</div>
+        <div><strong>(b)</strong> For example / For instance</div>
+        <div><strong>(c)</strong> Similarly / Furthermore</div>
+        <div><strong>(d)</strong> Consequently / As a result</div>
+        <div><strong>(e)</strong> Particularly / Especially</div>
+        <div><strong>(f)</strong> Although / Though</div>
+        <div><strong>(g)</strong> yet / still</div>
+        <div><strong>(h)</strong> Therefore / Hence</div>
+        <div><strong>(i)</strong> At the same time / Besides</div>
+        <div><strong>(j)</strong> Only then / In short</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (f) ও (g) বৈপরীত্যের জোড় 'Although...yet'। (j) সমাধান উপসংহার টানতে 'Only then / In short' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 09: Mymensingh Board 2026 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Illiteracy and National Backwardness</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Illiteracy is a great handicap to our national progress. (a) — an illiterate person cannot read, write or calculate. (b) — he remains ignorant of modern agricultural techniques and public health. (c) — he cannot contribute meaningfully to national productivity. (d) — he remains a burden on his family. (e) — female illiteracy is even more disastrous. (f) — an uneducated mother cannot raise her children properly. (g) — our government has made primary education free and compulsory. (h) — stipends are being given to female students. (i) — social organizations should set up adult literacy centers in remote villages. (j) — we can make Bangladesh 100% literate in near future.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 09 (Mymensingh Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> Firstly / Because</div>
+        <div><strong>(b)</strong> Consequently / Besides</div>
+        <div><strong>(c)</strong> Therefore / As a result</div>
+        <div><strong>(d)</strong> In fact / Ultimately</div>
+        <div><strong>(e)</strong> Furthermore / Moreover</div>
+        <div><strong>(f)</strong> For / Because</div>
+        <div><strong>(g)</strong> So / Therefore</div>
+        <div><strong>(h)</strong> In addition / Besides</div>
+        <div><strong>(i)</strong> At the same time / Similarly</div>
+        <div><strong>(j)</strong> Thus / In this way</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (j) উপায় বা পদ্ধতির চূড়ান্ত পরিণতি নির্দেশ করতে 'Thus / In this way' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 10: Dakhil Board 2025 <span class="htbd-exam-badge">Sentence Connectors — Dakhil Examination</span></h3>
+    <p><strong>টপিক: Charity and Divine Accountability</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Charity is a sublime virtue of the human soul. (a) — it prompts a wealthy person to share his fortune with the destitute. (b) — a charitable man feels the pangs of hungry orphans and widows. (c) — he opens his treasury to alleviate their miseries. (d) — he does not expect any worldly reward or flattery in return. (e) — he seeks the divine pleasure of Allah Almighty. (f) — a miser hoards gold and silver greedily. (g) — his wealth brings him no inner peace. (h) — when he dies, his ill-gotten treasure is left behind for others. (i) — we should donate generously to benevolent causes. (j) — charity cleanses the heart and saves man from eternal doom.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 10 (Dakhil Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> In fact / Indeed</div>
+        <div><strong>(b)</strong> Furthermore / In particular</div>
+        <div><strong>(c)</strong> Consequently / So</div>
+        <div><strong>(d)</strong> But / However</div>
+        <div><strong>(e)</strong> Rather / Instead</div>
+        <div><strong>(f)</strong> On the contrary / On the other hand</div>
+        <div><strong>(g)</strong> Yet / But</div>
+        <div><strong>(h)</strong> Eventually / Finally</div>
+        <div><strong>(i)</strong> Therefore / Hence</div>
+        <div><strong>(j)</strong> Truly speaking / Above all</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (e) নেতিবাচক দাবির পর আসল উদ্দেশ্য তুলে ধরতে 'Rather / Instead' বসে। (f) কৃপণের বিপরীতে 'On the contrary' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 11: Dhaka Board 2025 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Water Pollution and River Protection</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Water is a vital element of the natural environment. (a) — clean water is becoming scarce day by day. (b) — industrial effluents are dumped into rivers without treatment. (c) — municipal sewage is discharged directly into water bodies. (d) — farmers use chemical pesticides in agricultural lands. (e) — rain washes these toxins into canals and reservoirs. (f) — river water becomes poisonous and aquatic species perish. (g) — waterborne diseases like cholera and diarrhea spread among slum dwellers. (h) — we take urgent steps, our water security will collapse. (i) — effluent treatment plants (ETPs) must be made mandatory for all factories. (j) — public consciousness should be awakened against river pollution.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 11 (Dhaka Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> But / Unfortunately</div>
+        <div><strong>(b)</strong> Firstly / For one thing</div>
+        <div><strong>(c)</strong> Secondly / In addition</div>
+        <div><strong>(d)</strong> Moreover / Besides</div>
+        <div><strong>(e)</strong> Consequently / Then</div>
+        <div><strong>(f)</strong> As a result / Thus</div>
+        <div><strong>(g)</strong> Eventually / Furthermore</div>
+        <div><strong>(h)</strong> Unless</div>
+        <div><strong>(i)</strong> Therefore / So</div>
+        <div><strong>(j)</strong> At the same time / Above all</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) প্রথম নেতিবাচক পরিস্থিতি প্রকাশ করতে 'Unfortunately / But' বসে। (h) শর্তবাচক নেতিবাচক ক্লজে 'Unless' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 12: Sylhet Board 2025 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Reading Books and Intellectual Growth</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Reading books is a noble habit. (a) — it introduces us to the realm of boundless knowledge. (b) — books contain the wisdom and experiences of great philosophers. (c) — by reading books, we can travel across different lands without moving an inch. (d) — reading books gives unalloyed delight to a lonely mind. (e) — modern youths are drifting away from books. (f) — they spend hours browsing social media and playing online games. (g) — their intellectual depth and imaginative power are declining. (h) — parents and teachers should inspire students to read books outside the syllabus. (i) — schools should establish well-equipped libraries. (j) — a reading generation is the real backbone of an enlightened nation.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 12 (Sylhet Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> First of all / Firstly</div>
+        <div><strong>(b)</strong> In fact / Moreover</div>
+        <div><strong>(c)</strong> Furthermore / Besides</div>
+        <div><strong>(d)</strong> Above all / In addition</div>
+        <div><strong>(e)</strong> But unfortunately / However</div>
+        <div><strong>(f)</strong> Rather / Instead</div>
+        <div><strong>(g)</strong> Consequently / As a result</div>
+        <div><strong>(h)</strong> Therefore / So</div>
+        <div><strong>(i)</strong> At the same time / Besides</div>
+        <div><strong>(j)</strong> Truly / In short</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (e) নেতিবাচক মোড় নির্দেশ করতে 'But unfortunately / However' বসে। (f) বিকল্প অহেতুক কাজ বোঝাতে 'Instead' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 13: Barishal Board 2025 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Truthfulness vs Falsehood</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">Truthfulness is the crown of human virtues. (a) — a truthful person is honored and loved everywhere. (b) — he never compromises with falsehood even in the face of grave danger. (c) — people place implicit trust in his words. (d) — a liar is hated and looked down upon by his acquaintances. (e) — he may achieve momentary success through deceit, his ultimate downfall is inevitable. (f) — nobody believes him even when he speaks the truth. (g) — his conscience torments him ceaselessly. (h) — we should instill the value of truthfulness in children's minds. (i) — we should practice honesty in our daily transactions. (j) — truth alone triumphs in the long run.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 13 (Barishal Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> Indeed / In fact</div>
+        <div><strong>(b)</strong> Moreover / Furthermore</div>
+        <div><strong>(c)</strong> Consequently / As a result</div>
+        <div><strong>(d)</strong> On the contrary / On the other hand</div>
+        <div><strong>(e)</strong> Though / Although</div>
+        <div><strong>(f)</strong> In fact / Consequently</div>
+        <div><strong>(g)</strong> Besides / In addition</div>
+        <div><strong>(h)</strong> Therefore / Hence</div>
+        <div><strong>(i)</strong> At the same time / Simultaneously</div>
+        <div><strong>(j)</strong> Above all / Undoubtedly</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (d) মিথ্যুকের বিপরীতে 'On the contrary'। (j) পরম সত্যের উপসংহারে 'Above all / Undoubtedly' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 14: Dinajpur Board 2025 <span class="htbd-exam-badge">Sentence Connectors — SSC Examination</span></h3>
+    <p><strong>টপিক: Technical Education for National Self-Reliance</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">General education produces numerous graduates every year. (a) — most of them fail to find suitable employment. (b) — they lack practical and vocational skills. (c) — educated unemployment has become an acute social problem. (d) — technical and vocational education should be promoted extensively. (e) — technical education equips learners with hands-on vocational skills. (f) — a technically trained youth can start self-employment projects. (g) — he can earn a handsome livelihood without waiting for white-collar jobs. (h) — he can employ other jobless youths. (i) — our government is setting up polytechnic institutes in every district. (j) — we can transform our huge population into human capital.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 14 (Dinajpur Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> But / Unfortunately</div>
+        <div><strong>(b)</strong> Because / As</div>
+        <div><strong>(c)</strong> Consequently / As a result</div>
+        <div><strong>(d)</strong> Therefore / So</div>
+        <div><strong>(e)</strong> In fact / Actually</div>
+        <div><strong>(f)</strong> Furthermore / Moreover</div>
+        <div><strong>(g)</strong> Thus / In this way</div>
+        <div><strong>(h)</strong> Besides / In addition</div>
+        <div><strong>(i)</strong> In this regard / Hence</div>
+        <div><strong>(j)</strong> Only then / In the end</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) কারণ নির্দেশ করতে 'Because / As' বসে। (g) ফলাফল ও প্রণালী নির্দেশ করতে 'Thus / In this way' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 15: Dakhil Board 2024 <span class="htbd-exam-badge">Sentence Connectors — Dakhil Examination</span></h3>
+    <p><strong>টপিক: Sacrifices of Freedom Fighters in 1971</strong></p>
+    <p><em>Use appropriate sentence connectors in the blank spaces of the following passage:</em></p>
+    <div class="htbd-passage-content">The freedom fighters of 1971 are the greatest sons of our soil. (a) — they responded to the call of independence without hesitation. (b) — they fought valiantly against a heavily armed Pakistani army. (c) — many of them embraced martyrdom on the battlefield. (d) — others survived with severe bullet injuries and lost limbs. (e) — their supreme sacrifice liberated our motherland from foreign tyranny. (f) — we achieved a sovereign state and our national flag. (g) — it is our sacred duty to honor them with reverence. (h) — the state should look after the distressed families of martyrs. (i) — their heroic ideals should be included in school textbooks. (j) — their memory will remain immortal in the hearts of Bangalees.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 15 (Dakhil Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> In fact / Truly speaking</div>
+        <div><strong>(b)</strong> Fearlessly / Furthermore</div>
+        <div><strong>(c)</strong> In doing so / Eventually</div>
+        <div><strong>(d)</strong> While / On the other hand</div>
+        <div><strong>(e)</strong> Consequently / Ultimately</div>
+        <div><strong>(f)</strong> Thus / As a result</div>
+        <div><strong>(g)</strong> Therefore / Hence</div>
+        <div><strong>(h)</strong> In particular / Especially</div>
+        <div><strong>(i)</strong> At the same time / Besides</div>
+        <div><strong>(j)</strong> Undoubtedly / Forever</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (e) দীর্ঘ সংগ্রামের চূড়ান্ত ফলাফল বোঝাতে 'Ultimately / Consequently' বসে। (j) নিশ্চয়তা বোঝাতে 'Undoubtedly' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 16: Dhaka Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — SSC Examination</span></h3>
+    <p><strong>টপিক: Dialogue between a Teacher and Student</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">the teacher said to the student have you done your english homework today no sir i was suffering from fever yesterday replied the student what a pity take rest and do it tomorrow said the teacher</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 16 (Dhaka Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">The teacher said to the student, "Have you done your English homework today?" "No, sir, I was suffering from fever yesterday," replied the student. "What a pity! Take rest and do it tomorrow," said the teacher.</div>
+    <div class="htbd-rule-note">নোট: রিপোর্টেড স্পিচে প্রথম অক্ষর ক্যাপিটাল এবং ইনভার্টেড কমা (") ব্যবহৃত হয়েছে। 'No, sir,' এর পর কমা এবং প্রশ্নের শেষে প্রশ্নবোধক (?) চিহ্ন বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 17: Dakhil Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — Dakhil Examination</span></h3>
+    <p><strong>টপিক: Hazrat Omar (R) and the Hungry Woman</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">who are you and why are you crying the caliph omar r asked the poor woman my children have been starving for two days sir replied the weeping mother o allah forgive me the caliph muttered in deep grief</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 17 (Dakhil Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">"Who are you and why are you crying?" the Caliph Omar (R) asked the poor woman. "My children have been starving for two days, sir," replied the weeping mother. "O Allah, forgive me!" the Caliph muttered in deep grief.</div>
+    <div class="htbd-rule-note">নোট: 'Caliph Omar (R)' এবং 'Allah' ক্যাপিটাল লেটারে বসেছে। 'O Allah, forgive me!' এর শেষে এক্সক্ল্যামেশন মার্ক (!) বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 18: Rajshahi Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — SSC Examination</span></h3>
+    <p><strong>টপিক: King Solomon and Queen of Sheba</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">the queen of sheba said to king solomon your majesty i have brought two garlands of flowers one is natural and the other is artificial can you tell which one is real without touching them solomon smiled gently and ordered his attendants to open the palace windows</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 18 (Rajshahi Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">The Queen of Sheba said to King Solomon, "Your Majesty, I have brought two garlands of flowers. One is natural and the other is artificial. Can you tell which one is real without touching them?" Solomon smiled gently and ordered his attendants to open the palace windows.</div>
+    <div class="htbd-rule-note">নোট: প্রোপার নাউন 'Queen of Sheba', 'King Solomon', 'Your Majesty' ক্যাপিটাল অক্ষরে এবং ডায়ালগে যথাস্থানে কমা ও প্রশ্নবোধক চিহ্ন বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 19: Cumilla Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — SSC Examination</span></h3>
+    <p><strong>টপিক: Conversation about Academic Ambition</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">what is your aim in life my friend asked karim i want to be a doctor to serve the poor rural people replied rafi how noble your decision is exclaimed karim may allah grant your noble desire</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 19 (Cumilla Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">"What is your aim in life, my friend?" asked Karim. "I want to be a doctor to serve the poor rural people," replied Rafi. "How noble your decision is!" exclaimed Karim. "May Allah grant your noble desire."</div>
+    <div class="htbd-rule-note">নোট: 'Karim', 'Rafi', 'Allah' এবং বাক্যের শুরুতে ক্যাপিটাল লেটার। 'How noble your decision is!' এর পর বিস্ময়সূচক চিহ্ন (!) বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 20: Jashore Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — SSC Examination</span></h3>
+    <p><strong>টপিক: Advice of an Elderly Father</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">father said to his son why are you wasting your valuable time remember time and tide wait for none if you do not study sincerely now you will repent in the future yes father i promise to be mindful of my studies from today replied the boy</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 20 (Jashore Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">Father said to his son, "Why are you wasting your valuable time? Remember, time and tide wait for none. If you do not study sincerely now, you will repent in the future." "Yes, father, I promise to be mindful of my studies from today," replied the boy.</div>
+    <div class="htbd-rule-note">নোট: ডিরেক্ট কোটেশন 'Why are you wasting...' এ প্রশ্নবোধক চিহ্ন এবং প্রবাদ 'Remember, time and tide wait for none' এ ফুলস্টপ বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 21: Chattogram Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — SSC Examination</span></h3>
+    <p><strong>টপিক: The Lion and the Tiny Mouse</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">a tiny mouse said to the roaring lion please spare my life your majesty i may help you someday the lion laughed heartily and said how can a little creature like you help the king of beasts however you may go</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 21 (Chattogram Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">A tiny mouse said to the roaring lion, "Please spare my life, Your Majesty! I may help you someday." The lion laughed heartily and said, "How can a little creature like you help the king of beasts? However, you may go."</div>
+    <div class="htbd-rule-note">নোট: 'Your Majesty!' এ বিস্ময়সূচক এবং সিংহের ডায়ালগে প্রশ্নবোধক চিহ্ন (?) ও ইনভার্টেড কমা যথাযথভাবে বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 22: Barishal Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — SSC Examination</span></h3>
+    <p><strong>টপিক: Buying Books from a Bookstore</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">can i help you sir the salesman asked politely yes show me a good grammar book for ssc examinees replied the customer here is one sir it covers rules board questions and model tests said the salesman</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 22 (Barishal Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">"Can I help you, sir?" the salesman asked politely. "Yes, show me a good grammar book for SSC examinees," replied the customer. "Here is one, sir. It covers rules, board questions and model tests," said the salesman.</div>
+    <div class="htbd-rule-note">নোট: 'SSC' এব্রিভিয়েশন সব ক্যাপিটালে বসেছে। 'Can I help you, sir?' এ প্রশ্নবোধক চিহ্ন ও কমা বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 23: Sylhet Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — SSC Examination</span></h3>
+    <p><strong>টপিক: Robert Bruce and the Spider</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">king robert bruce of scotland was lying in a cave he was depressed because he had failed six times to free his motherland suddenly he noticed a spider trying to reach the roof it failed six times but succeeded on the seventh attempt</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 23 (Sylhet Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">King Robert Bruce of Scotland was lying in a cave. He was depressed because he had failed six times to free his motherland. Suddenly, he noticed a spider trying to reach the roof. It failed six times, but succeeded on the seventh attempt.</div>
+    <div class="htbd-rule-note">নোট: 'King Robert Bruce' এবং 'Scotland' প্রোপার নাউন হিসেবে ক্যাপিটাল লেটারে লেখা হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 24: Dinajpur Board 2026 <span class="htbd-exam-badge">Punctuation & Capitalization — SSC Examination</span></h3>
+    <p><strong>টপিক: The Rich Merchant and the Honest Porter</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">where is my lost purse containing ten thousand taka cried the merchant here it is sir i found it near the shop replied the honest porter may allah bless your honesty exclaimed the delighted merchant</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 24 (Dinajpur Board 2026)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">"Where is my lost purse containing ten thousand taka?" cried the merchant. "Here it is, sir. I found it near the shop," replied the honest porter. "May Allah bless your honesty!" exclaimed the delighted merchant.</div>
+    <div class="htbd-rule-note">নোট: প্রার্থনাসূচক অপটেটিভ বাক্য 'May Allah bless your honesty!' এর শেষে এক্সক্ল্যামেশন চিহ্ন (!) বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 25: Dakhil Board 2025 <span class="htbd-exam-badge">Punctuation & Capitalization — Dakhil Examination</span></h3>
+    <p><strong>টপিক: Hazrat Abdul Quader Jilani's Truthfulness</strong></p>
+    <p><em>Use capitals and punctuation marks where necessary in the following text:</em></p>
+    <div class="htbd-passage-content" style="background:#f8fafc; padding:14px; border:1px dashed #cbd5e1; border-radius:6px; font-style:italic;">my mother advised me never to tell a lie even in danger said young abdul quader the leader of the dacoits was astonished to hear this he said what a truthful boy you are we are shameful of our robbery</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সঠিক বিরামচিহ্ন ও ক্যাপিটালসহ সমাধান: প্রশ্ন সেট 25 (Dakhil Board 2025)</h4>
+    <div class="htbd-passage-content" style="font-weight:600; color:#14532d;">"My mother advised me never to tell a lie even in danger," said young Abdul Quader. The leader of the dacoits was astonished to hear this. He said, "What a truthful boy you are! We are shameful of our robbery."</div>
+    <div class="htbd-rule-note">নোট: 'Abdul Quader' ক্যাপিটাল লেটারে এবং 'What a truthful boy you are!' এর পর এক্সক্ল্যামেশন চিহ্ন (!) বসেছে।</div>
+</div>
+
+<div class="htbd-internal-silo">
+    <h4>এসএসসি ও দাখিল ইংরেজি পূর্ণাঙ্গ প্রস্তুতি ও অন্যান্য সহায়িকা:</h4>
+    <ul>
+        <li><strong>প্রিপজিশন ও গ্যাপ ফিলিং:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-preposition-and-gap-filling-suggestions.html">SSC English 2nd Paper Preposition &amp; Gap Filling Suggestions with Answer (এপ্রোপ্রিয়েট প্রিপজিশন ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>সাফিক্স ও প্রিফিক্স:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-suffix-and-prefix-rules-and-board-questions-with-answers.html">SSC English 2nd Paper Suffix and Prefix Suggestions with Answer (১৫টি গোল্ডেন রুলস ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>ট্যাগ কোশ্চেন:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-tag-questions-rules-and-board-questions-with-answers.html">SSC English 2nd Paper Tag Questions Suggestions with Answer (১৫টি স্পেশাল রুলস ও ২৫টি শীর্ষ বোর্ড সমাধান)</a></li>
+        <li><strong>চেঞ্জিং সেন্টেন্সেস:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-changing-sentences-rules-and-board-questions-with-answers.html">SSC English 2nd Paper Changing Sentences Suggestions with Answer (১০ নম্বরের গোল্ডেন রুলস ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>ইংরেজি ১ম পত্র মাস্টার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">SSC English 1st Paper Suggestion 2027 (পূর্ণাঙ্গ সিলেবাস ও ১০০ নম্বরের মানবণ্টন)</a></li>
+    </ul>
+</div>
+
+<h2 class="htbd-heading">সাধারণ জিজ্ঞাসা ও উত্তর (Frequently Asked Questions - FAQ)</h2>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ১: Sentence Connectors এর প্রধান কাজ কী?</strong><br>
+    উত্তর: সেন্টেন্স কানেক্টরস বা লিঙ্কিং ওয়ার্ড দুটি বাক্য বা ধারণার মাঝে যৌক্তিক সম্পর্ক স্থাপন করে—যেমন সংযোজন (Moreover), বৈপরীত্য (However), কারণ ও ফলাফল (Therefore) অথবা শর্ত (If/Unless)।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ২: Punctuation-এ ডিরেক্ট স্পিচ বা ডায়ালগ কীভাবে সাজাতে হয়?</strong><br>
+    উত্তর: বক্তার উক্তি ইনভার্টেড কমা ("...") এর মধ্যে রাখতে হয়, ইনভার্টেড কমার ভেতরের প্রথম অক্ষর Capital Letter হয় এবং কমা, প্রশ্নবোধক বা বিস্ময়সূচক চিহ্ন ইনভার্টেড কমার ভেতরেই বসে।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ৩: However এবং Moreover এর মধ্যে ব্যবহারের পার্থক্য কী?</strong><br>
+    উত্তর: পূর্বের বক্তব্যের বিপরীত বা ভিন্নধর্মী কোনো তথ্য উপস্থাপন করতে 'However' বসে; আর পূর্বের বক্তব্যকে জোরালো করতে অতিরিক্ত তথ্য যোগ করতে 'Moreover' বসে।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ৪: ইংরেজি বাক্যে Capital Letters কোথায় কোথায় বসানো বাধ্যতামূলক?</strong><br>
+    উত্তর: বাক্যের প্রথম শব্দে, ইনভার্টেড কমার ভেতরের প্রথম অক্ষরে, প্রোপার নাউন (নাম, স্থান, নদী, দেশ), সর্বনাম 'I' এবং সংক্ষিপ্ত রূপের (SSC, UNESCO) প্রতিটি অক্ষরে Capital Letter বসানো বাধ্যতামূলক।</p>
+</div>
+</div>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-connectors-and-punctuation-suggestions.html"
+  },
+  "headline": "SSC English 2nd Paper Connectors & Punctuation Suggestions with Answer | ১৫টি স্পেশাল রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+  "description": "এসএসসি ও দাখিল ইংরেজি ২য় পত্র Sentence Connectors & Punctuation: কানেক্টরস ও বিরামচিহ্নের নিয়মাবলী এবং ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-english-2nd-paper-connectors-and-punctuation-suggestions.webp",
+  "author": {
+    "@type": "Person",
+    "name": "HelpTrickBD Editorial Team",
+    "url": "https://www.helptrickbd.com/p/about-us.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.helptrickbd.com/favicon.ico"
+    }
+  },
+  "datePublished": "2026-09-19T01:00:00+06:00",
+  "dateModified": "2026-09-19T01:00:00+06:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the function of Sentence Connectors in English grammar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sentence Connectors (Linking Words) link words, phrases, sentences, or paragraphs together to establish logical relationships such as addition (Moreover, In addition), contrast (However, On the other hand), cause and effect (Therefore, Consequently), and condition (If, Unless)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the rule of using Capital Letters in English sentences?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Capital letters are strictly required for: (1) The first word of a sentence, (2) The first word inside direct speech quotation marks, (3) Proper nouns (e.g., Dhaka, Karim, Allah), (4) The pronoun 'I', (5) Abbreviations (e.g., SSC, UNESCO), and (6) Personified terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should we use 'However' versus 'Moreover' as connectors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use 'However' to introduce a statement that contrasts with or contradicts the preceding idea. Use 'Moreover' to introduce an additional piece of information that supports or strengthens the preceding idea."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are Direct Speech dialogues punctuated in Punctuation questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In direct speech: (1) Enclose the spoken words within inverted commas / quotation marks (\"\"), (2) Capitalize the first letter inside the quotes, (3) Place commas, question marks, or exclamation marks inside the quotation marks before the closing quote, and (4) Capitalize names of speakers."
+      }
+    }
+  ]
+}
+</script>

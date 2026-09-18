@@ -1,0 +1,1198 @@
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/fonts/solaiman_lipi.css" rel="stylesheet"/>
+
+<style>
+  .htbd-post-wrapper {
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+  }
+  .htbd-post-wrapper p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+    text-align: justify !important;
+  }
+  .htbd-heading {
+    color: #1a73e8 !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding-left: 14px !important;
+    margin-top: 36px !important;
+    margin-bottom: 16px !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-subheading {
+    color: #0c2340 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-top: 28px !important;
+    margin-bottom: 14px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .htbd-qbox {
+    background: #f8fafd !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding: 20px 24px !important;
+    margin: 22px 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-qbox p {
+    margin: 0 !important;
+    line-height: 1.8 !important;
+  }
+  .htbd-note-box {
+    background: #f8fafc !important;
+    border-left: 4px solid #0284c7 !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 18px 22px !important;
+    margin: 22px 0 !important;
+    font-size: 17.5px !important;
+  }
+  .htbd-note-box p {
+    margin: 8px 0 !important;
+  }
+  .htbd-table-container {
+    overflow-x: auto !important;
+    margin: 20px 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  .htbd-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    text-align: left !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    padding: 12px 16px !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+  }
+  .htbd-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+  }
+  .htbd-table tr:nth-child(even) td {
+    background: #f8fafc !important;
+  }
+  .htbd-question-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 20px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+  }
+  .htbd-clue-box {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    padding: 12px 18px !important;
+    margin: 12px 0 16px 0 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    color: #0f172a !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    font-weight: 600 !important;
+  }
+  .htbd-clue-item {
+    background: #ffffff !important;
+    border: 1px solid #94a3b8 !important;
+    padding: 3px 10px !important;
+    border-radius: 4px !important;
+  }
+  .htbd-passage-content {
+    font-family: Arial, 'SolaimanLipi', sans-serif !important;
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+    color: #1e293b !important;
+    margin: 14px 0 !important;
+  }
+  .htbd-solution-card {
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-left: 5px solid #16a34a !important;
+    border-radius: 6px !important;
+    padding: 20px 24px !important;
+    margin: 14px 0 28px 0 !important;
+  }
+  .htbd-solution-card h4 {
+    margin: 0 0 12px 0 !important;
+    color: #166534 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-answers-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+    gap: 8px 16px !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    margin-top: 10px !important;
+  }
+  .htbd-rule-note {
+    margin-top: 14px !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed #86efac !important;
+    font-size: 15px !important;
+    color: #15803d !important;
+    font-style: italic !important;
+    line-height: 1.6 !important;
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+  }
+  .htbd-exam-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 2px 10px !important;
+    border-radius: 14px !important;
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+    border: 1px solid #bae6fd !important;
+    letter-spacing: 0.2px !important;
+    vertical-align: middle !important;
+    margin-left: 8px !important;
+    font-family: Arial, sans-serif !important;
+  }
+  .htbd-internal-silo {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 18px 24px !important;
+    margin: 28px 0 !important;
+  }
+  .htbd-internal-silo h4 {
+    margin: 0 0 10px 0 !important;
+    color: #0f172a !important;
+    font-size: 18px !important;
+  }
+  .htbd-internal-silo ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+  }
+  .htbd-internal-silo li {
+    margin: 6px 0 !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-internal-silo a {
+    color: #1a73e8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+  .htbd-internal-silo a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Bi-Modal Dark Mode Support */
+  .dark .htbd-post-wrapper,
+  body.dark .htbd-post-wrapper,
+  #mainContent.dark .htbd-post-wrapper {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-post-wrapper p,
+  body.dark .htbd-post-wrapper p,
+  #mainContent.dark .htbd-post-wrapper p {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-heading,
+  body.dark .htbd-heading,
+  #mainContent.dark .htbd-heading {
+    color: #38bdf8 !important;
+    border-left-color: #0284c7 !important;
+  }
+  .dark .htbd-subheading,
+  body.dark .htbd-subheading,
+  #mainContent.dark .htbd-subheading {
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-qbox,
+  body.dark .htbd-qbox,
+  #mainContent.dark .htbd-qbox {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    border-left: 5px solid #0284c7 !important;
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-qbox strong,
+  body.dark .htbd-qbox strong,
+  #mainContent.dark .htbd-qbox strong {
+    color: #ffffff !important;
+  }
+  .dark .htbd-note-box,
+  body.dark .htbd-note-box,
+  #mainContent.dark .htbd-note-box {
+    background: #1e293b !important;
+    border-left-color: #0284c7 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table-container,
+  body.dark .htbd-table-container,
+  #mainContent.dark .htbd-table-container {
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table th,
+  body.dark .htbd-table th,
+  #mainContent.dark .htbd-table th {
+    background: #0f172a !important;
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table td,
+  body.dark .htbd-table td,
+  #mainContent.dark .htbd-table td {
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table tr:nth-child(even) td,
+  body.dark .htbd-table tr:nth-child(even) td,
+  #mainContent.dark .htbd-table tr:nth-child(even) td {
+    background: #1e293b !important;
+  }
+  .dark .htbd-clue-box,
+  body.dark .htbd-clue-box,
+  #mainContent.dark .htbd-clue-box {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+  }
+  .dark .htbd-clue-item,
+  body.dark .htbd-clue-item,
+  #mainContent.dark .htbd-clue-item {
+    background: #0f172a !important;
+    border-color: #475569 !important;
+    color: #38bdf8 !important;
+  }
+  .dark .htbd-question-card,
+  body.dark .htbd-question-card,
+  #mainContent.dark .htbd-question-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-passage-content,
+  body.dark .htbd-passage-content,
+  #mainContent.dark .htbd-passage-content {
+    color: #e2e8f0 !important;
+  }
+  .dark .htbd-solution-card,
+  body.dark .htbd-solution-card,
+  #mainContent.dark .htbd-solution-card {
+    background: #052e16 !important;
+    border-color: #14532d !important;
+    border-left-color: #22c55e !important;
+  }
+  .dark .htbd-solution-card h4,
+  body.dark .htbd-solution-card h4,
+  #mainContent.dark .htbd-solution-card h4 {
+    color: #86efac !important;
+  }
+  .dark .htbd-answers-grid,
+  body.dark .htbd-answers-grid,
+  #mainContent.dark .htbd-answers-grid {
+    color: #dcfce7 !important;
+  }
+  .dark .htbd-rule-note,
+  body.dark .htbd-rule-note,
+  #mainContent.dark .htbd-rule-note {
+    border-top-color: #14532d !important;
+    color: #a7f3d0 !important;
+  }
+  .dark .htbd-exam-badge,
+  body.dark .htbd-exam-badge,
+  #mainContent.dark .htbd-exam-badge {
+    background-color: #0c4a6e !important;
+    color: #7dd3fc !important;
+    border-color: #0284c7 !important;
+  }
+  .dark .htbd-internal-silo,
+  body.dark .htbd-internal-silo,
+  #mainContent.dark .htbd-internal-silo {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-internal-silo h4,
+  body.dark .htbd-internal-silo h4,
+  #mainContent.dark .htbd-internal-silo h4 {
+    color: #f1f5f9 !important;
+  }
+</style>
+
+<div class="htbd-post-wrapper">
+<figure style="margin: 0 0 25px 0; text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-english-2nd-paper-preposition-and-gap-filling-suggestions.webp" 
+         alt="SSC English 2nd Paper Preposition and Gap Filling Suggestions with Answer" 
+         title="SSC English 2nd Paper Preposition & Gap Filling Suggestions with Answer | এপ্রোপ্রিয়েট প্রিপজিশন ও ২৫টি বোর্ড প্রশ্ন সমাধান" 
+         width="1200" height="675" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block;" 
+         loading="lazy" decoding="async" />
+    <figcaption style="font-size: 14px; color: #64748b; margin-top: 8px; font-style: italic;">এসএসসি ও দাখিল ইংরেজি ২য় পত্র: এপ্রোপ্রিয়েট প্রিপজিশন ও গ্যাপ ফিলিং ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান সহায়িকা | HelpTrickBD</figcaption>
+</figure>
+
+<p>এসএসসি ও দাখিল ইংরেজি ২য় পত্র পরীক্ষায় ব্যাকরণ অংশের অন্যতম গুরুত্বপূর্ণ দুটি প্রশ্ন আইটেম হলো <strong>Gap Filling with Clues</strong> এবং <strong>Appropriate Prepositions</strong>। নতুন ও পরিমার্জিত প্রশ্নকাঠামো অনুসারে এগুলো প্রশ্নপত্রের ১ ও ৭ নম্বর ক্রমিকে থাকে এবং সম্মিলিতভাবে পূর্ণমান <strong>১৫ নম্বর</strong> (গ্যাপ ফিলিং ১০ নম্বর এবং প্রিপজিশন ৫ নম্বর)। প্রিপজিশনের সঠিক ব্যবহার এবং বক্সে প্রদত্ত ক্লু-শব্দগুলোর পার্টস অফ স্পিচগত রূপ পরিবর্তন করে শূন্যস্থান পূরণের কৌশল আয়ত্ত করলে এই অংশে পূর্ণ নম্বর অর্জন করা সম্ভব।</p>
+<!--more-->
+<div class="htbd-qbox">
+    <p><strong>সারসংক্ষেপ: এসএসসি প্রিপজিশন ও গ্যাপ ফিলিং মানবণ্টন ও কৌশল</strong><br>
+    <strong>প্রশ্ন কাঠামো ও নম্বর:</strong> Question No. 1 — Gap Filling with Clues (১ &times; ১০ = ১০ নম্বর) এবং Question No. 7 — Prepositions (১ &times; ৫ = ৫ নম্বর)।<br>
+    <strong>পরীক্ষার মূল রহস্য:</strong> গ্যাপ ফিলিং উইথ ক্লু-তে বক্সের শব্দটিকে হুবহু না বসিয়ে বাক্য ও টেন্সের চাহিদা অনুযায়ী তার সঠিক ফর্ম (যেমন Noun, Adjective, Adverb বা Verb form) বসাতে হয়। আর প্রিপজিশনের ক্ষেত্রে সাধারণ অর্থের চেয়ে <strong>Appropriate Preposition</strong> (যেমন: abide by, devoid of, indifferent to, hanker after) মুখস্থ থাকা সবচেয়ে জরুরি।<br>
+    <strong>নিচে শীর্ষ বোর্ড প্রশ্নসমূহে বারবার আসা এপ্রোপ্রিয়েট প্রিপজিশন চার্ট এবং ২৫টি শীর্ষ বোর্ড সমাধান দেওয়া হলো।</strong></p>
+</div>
+
+<h2 class="htbd-heading">বোর্ড পরীক্ষায় বারবার আসা এপ্রোপ্রিয়েট প্রিপজিশন চার্ট (High-Frequency Board Prepositions)</h2>
+<p>বিগত ১০ বছরের বোর্ড প্রশ্ন বিশ্লেষণ করে সবচেয়ে বেশি আসা ৫০টি এপ্রোপ্রিয়েট প্রিপজিশন অর্থসহ নিচে তালিকাভুক্ত করা হলো:</p>
+
+<div class="htbd-table-container">
+    <table class="htbd-table">
+        <thead>
+            <tr>
+                <th>Word + Preposition</th>
+                <th>বাংলা অর্থ</th>
+                <th>Word + Preposition</th>
+                <th>বাংলা অর্থ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Abide by</strong></td>
+                <td>মেনে চলা (He abides by rules)</td>
+                <td><strong>Hanker after</strong></td>
+                <td>লালায়িত হওয়া (hanker after money)</td>
+            </tr>
+            <tr>
+                <td><strong>Abstain from</strong></td>
+                <td>বিরত থাকা (abstain from smoking)</td>
+                <td><strong>Indifferent to</strong></td>
+                <td>উদাসীন (indifferent to studies)</td>
+            </tr>
+            <tr>
+                <td><strong>Addicted to</strong></td>
+                <td>খারাপ কাজে আসক্ত (addicted to drugs)</td>
+                <td><strong>Key to</strong></td>
+                <td>চাবিকাঠি (key to success)</td>
+            </tr>
+            <tr>
+                <td><strong>Aware of</strong></td>
+                <td>সচেতন (aware of current affairs)</td>
+                <td><strong>Look down upon</strong></td>
+                <td>ঘৃণা করা (look down upon the poor)</td>
+            </tr>
+            <tr>
+                <td><strong>Belong to</strong></td>
+                <td>অধিকারভুক্ত হওয়া (belongs to me)</td>
+                <td><strong>Pity for</strong></td>
+                <td>দয়া বা করুণা (pity for the distressed)</td>
+            </tr>
+            <tr>
+                <td><strong>Boast of</strong></td>
+                <td>অহংকার করা (boast of his riches)</td>
+                <td><strong>Protect from</strong></td>
+                <td>রক্ষা করা (protect from natural disasters)</td>
+            </tr>
+            <tr>
+                <td><strong>Compare to / with</strong></td>
+                <td>তুলনা করা (compared to light)</td>
+                <td><strong>Refrain from</strong></td>
+                <td>বিরত থাকা (refrain from evil deeds)</td>
+            </tr>
+            <tr>
+                <td><strong>Consist of / in</strong></td>
+                <td>গঠিত হওয়া / নিহিত থাকা</td>
+                <td><strong>Rely on / upon</strong></td>
+                <td>নির্ভর করা (rely on honest labor)</td>
+            </tr>
+            <tr>
+                <td><strong>Deprived of</strong></td>
+                <td>বঞ্চিত (deprived of rights)</td>
+                <td><strong>Satisfied with</strong></td>
+                <td>সন্তুষ্ট (satisfied with his earnings)</td>
+            </tr>
+            <tr>
+                <td><strong>Devoid of</strong></td>
+                <td>শূন্য বা বর্জিত (devoid of sense)</td>
+                <td><strong>Succeed in</strong></td>
+                <td>সফল হওয়া (succeeded in life)</td>
+            </tr>
+            <tr>
+                <td><strong>Eligible for</strong></td>
+                <td>যোগ্য (eligible for the post)</td>
+                <td><strong>Thirst for</strong></td>
+                <td>জ্ঞানের তৃষ্ণা (thirst for knowledge)</td>
+            </tr>
+            <tr>
+                <td><strong>Fond of</strong></td>
+                <td>অনুরক্ত (fond of sweet fruits)</td>
+                <td><strong>True to</strong></td>
+                <td>কথায় অটল (true to his promise)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="htbd-note-box">
+    <p><strong>সময় ও স্থানের সাধারণ প্রিপজিশন নিয়ম (Time &amp; Place Preposition Guide):</strong><br>
+    ১. <strong>নির্দিষ্ট সময় ও ছোট স্থান:</strong> নির্দিষ্ট ঘড়ির সময়, ভোর, রাত ও ছোট গ্রামের পূর্বে <strong>at</strong> বসে (যেমন: at 7 a.m., at dawn, at night, at Sagordari)।<br>
+    ২. <strong>দিন ও তারিখ:</strong> যেকোনো বার বা তারিখের পূর্বে <strong>on</strong> বসে (যেমন: on Sunday, on 26th March, on the bank of)।<br>
+    ৩. <strong>মাস, বছর, ঋতু ও বড় স্থান:</strong> মাস, বছর, ঋতু, দেশ বা বড় শহরের পূর্বে <strong>in</strong> বসে (যেমন: in May, in 2026, in summer, in Bangladesh, in Dhaka)।</p>
+</div>
+
+<h2 class="htbd-heading">বিগত বছরের শীর্ষ ২৫টি বোর্ড ও দাখিল প্রশ্ন এবং পূর্ণাঙ্গ সমাধান (Top 25 Board Questions with Answers)</h2>
+<p>নিচে ঢাকা, রাজশাহী, কুমিল্লা, চট্টগ্রাম, দিনাজপুর, বরিশাল, সিলেট এবং মাদ্রাসা বোর্ডের বিগত বছরের শীর্ষ ২৫টি প্রশ্ন (১৫টি এপ্রোপ্রিয়েট প্রিপজিশন প্যাসেজ এবং ১০টি ক্লু-বক্সযুক্ত গ্যাপ ফিলিং) ও নির্ভুল উত্তরমালা সাজিয়ে দেওয়া হলো:</p>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 01: Dhaka Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Origin and History of the Olympic Games</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">The Olympic Games were named (a) — the town of Olympia in Greece. It was (b) — Olympia where the games were first held long before the Christian era began. In those days Greece was divided (c) — many cities and men of different cities used to fight one another most (d) — the time. A man named Iphitos became deeply concerned (e) — such wasteful strifes.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 01 (Dhaka Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> after</div>
+        <div><strong>(b)</strong> at / in</div>
+        <div><strong>(c)</strong> into</div>
+        <div><strong>(d)</strong> of</div>
+        <div><strong>(e)</strong> about / with</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) কারও নামানুসারে নাম রাখা বোঝাতে 'name after' বসে। (c) বিভক্ত হওয়া বোঝাতে 'divided into' বসে। (e) উদ্বিগ্ন বা চিন্তিত বোঝাতে 'concerned about' হয়।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 02: Cumilla Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Responsibility towards Underprivileged Children</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">There are a lot of children (a) — our country who are deprived (b) — basic human needs. We should extend our helping hands (c) — them so that they can upgrade their condition. Think about the countless blessings of Almighty (d) — you. So, spread mercy (e) — you. Thus, the world will be a better place to live in.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 02 (Cumilla Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> in</div>
+        <div><strong>(b)</strong> of</div>
+        <div><strong>(c)</strong> to / towards</div>
+        <div><strong>(d)</strong> on / upon</div>
+        <div><strong>(e)</strong> around</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) বঞ্চিত হওয়া বোঝাতে এপ্রোপ্রিয়েট প্রিপজিশন 'deprived of' বসে। (c) সহায়তা প্রসারিত করতে 'extend to/towards' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 03: Jashore Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: True Spirit of Patriotism</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Patriotism refers to love for one's own country. It removes all sorts of meanness (a) — human mind and makes it broad. Patriotism inspires a man to shed the last drop (b) — blood to defend the freedom of his motherland. A man devoid (c) — this noble quality is no better than a beast. A true patriot is honored (d) — his countrymen both during his lifetime and (e) — death.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 03 (Jashore Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> from</div>
+        <div><strong>(b)</strong> of</div>
+        <div><strong>(c)</strong> of</div>
+        <div><strong>(d)</strong> by</div>
+        <div><strong>(e)</strong> after</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) বর্জিত বা শূন্য বোঝাতে 'devoid of' বসে। (d) সম্মানিত হওয়া বোঝাতে 'honored by' এবং মৃত্যুর পর বোঝাতে 'after death' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 04: Rajshahi Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Michael Madhusudan Dutt's Literary Life</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Michael Madhusudan Dutt was a celebrated 19th-century Bangalee poet and dramatist. He was born (a) — Sagordari on the bank (b) — the Kopotaksho River, a village in Keshabpur under Jashore district. From an early age, Michael aspired (c) — be an Englishman in form and manner. In his childhood, he was recognised (d) — his teachers as a precious child (e) — a rare gift of literary talent.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 04 (Rajshahi Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> at</div>
+        <div><strong>(b)</strong> of</div>
+        <div><strong>(c)</strong> to</div>
+        <div><strong>(d)</strong> by</div>
+        <div><strong>(e)</strong> with</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) ছোট স্থানের পূর্বে 'at' বসে। (c) কোনো কিছু হওয়ার তীব্র আকাঙ্ক্ষা বোঝাতে 'aspired to' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 05: Sylhet Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Education as the Light of Mind</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Education is the backbone (a) — a nation. No nation can prosper (b) — education. It is compared (c) — light as it removes the darkness of ignorance. Education is necessary (d) — both males and females in a country. It can be safely said that the development of a country depends (e) — education.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 05 (Sylhet Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> of</div>
+        <div><strong>(b)</strong> without</div>
+        <div><strong>(c)</strong> to</div>
+        <div><strong>(d)</strong> for</div>
+        <div><strong>(e)</strong> on / upon</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) ভিন্নধর্মী বস্তুর সাথে তুলনা বোঝালে 'compared to' বসে। (e) নির্ভর করা বোঝাতে 'depends on/upon' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 06: Barishal Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Qualities of a Sincere and Ideal Student</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">A good student is never indifferent (a) — his studies. He does not learn things (b) — rote blindly. Moreover, he has an insatiable thirst (c) — knowledge. He is always aware (d) — the current affairs of the world. He strictly abides (e) — his teachers' instructions.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 06 (Barishal Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> to</div>
+        <div><strong>(b)</strong> by</div>
+        <div><strong>(c)</strong> for</div>
+        <div><strong>(d)</strong> of</div>
+        <div><strong>(e)</strong> by</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) উদাসীন বোঝাতে 'indifferent to', (b) মুখস্থ করা বোঝাতে 'learn by rote', (c) জ্ঞানের তৃষ্ণা বোঝাতে 'thirst for', (e) মেনে চলা বোঝাতে 'abide by' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 07: Chattogram Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Importance of Trees and Ecology</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Trees are very useful (a) — man. They supply us (b) — oxygen without which we cannot live for a single moment. They provide shelter (c) — birds and beasts. They prevent soil erosion and protect us (d) — natural disasters. So, we should abstain (e) — cutting down trees indiscriminately.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 07 (Chattogram Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> to</div>
+        <div><strong>(b)</strong> with</div>
+        <div><strong>(c)</strong> to</div>
+        <div><strong>(d)</strong> from</div>
+        <div><strong>(e)</strong> from</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) কাউকে কোনো জিনিস সরবরাহ করা বোঝাতে 'supply with' বসে। (e) কোনো কাজ থেকে বিরত থাকা বোঝাতে 'abstain from' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 08: Dinajpur Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Honesty and High Dignity</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">An honest man is true (a) — his words. He never deviates (b) — the path of honesty. He knows that peace of mind consists (c) — contentment. He is satisfied (d) — what he earns through honest labor. He does not hanker (e) — unearned riches.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 08 (Dinajpur Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> to</div>
+        <div><strong>(b)</strong> from</div>
+        <div><strong>(c)</strong> in</div>
+        <div><strong>(d)</strong> with</div>
+        <div><strong>(e)</strong> after</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) কথায় অটল থাকা বোঝাতে 'true to', (c) কোনো কিছুর মধ্যে নিহিত থাকা বোঝাতে 'consists in', (e) লালায়িত হওয়া বোঝাতে 'hanker after' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 09: Mymensingh Board 2026 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Punctuality and Success in Life</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Punctuality is a key (a) — success in life. A punctual person is loved (b) — all. He finishes his work (c) — proper time. He never puts (d) — his work for tomorrow. Those who are careless (e) — time suffer in the long run.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 09 (Mymensingh Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> to</div>
+        <div><strong>(b)</strong> by</div>
+        <div><strong>(c)</strong> in / at</div>
+        <div><strong>(d)</strong> off</div>
+        <div><strong>(e)</strong> of / about</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) চাবিকাঠি বোঝাতে 'key to', (d) কোনো কাজ স্থগিত রাখা বোঝাতে ফ্রেইজাল ভার্ব 'put off' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 10: Dakhil Board 2025 <span class="htbd-exam-badge">Preposition — Dakhil Examination</span></h3>
+    <p><strong>টপিক: Benevolence and Human Charity</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Charity is a noble virtue. It prompts a person to feel pity (a) — the distressed. A charitable man shares his wealth (b) — the poor. He does not boast (c) — his donations. He believes that man is accountable (d) — Allah (e) — all his earthly deeds.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 10 (Dakhil Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> for</div>
+        <div><strong>(b)</strong> with</div>
+        <div><strong>(c)</strong> of</div>
+        <div><strong>(d)</strong> to</div>
+        <div><strong>(e)</strong> for</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) অহংকার করা বোঝাতে 'boast of', (d) ও (e) কারও কাছে কোনো কিছুর জন্য দায়ী হওয়া বোঝাতে 'accountable to Allah for deeds' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 11: Dhaka Board 2025 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Mobile Phone as a Means of Communication</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Mobile phone is an important means (a) — communication and correspondence. It helps us connect (b) — our relatives within a fraction of a second. But excessive reliance (c) — mobile phones is detrimental (d) — eyesight. Students must refrain (e) — playing online games during study hours.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 11 (Dhaka Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> of</div>
+        <div><strong>(b)</strong> with</div>
+        <div><strong>(c)</strong> on / upon</div>
+        <div><strong>(d)</strong> to</div>
+        <div><strong>(e)</strong> from</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) নির্ভরতা বোঝাতে 'reliance on', (d) ক্ষতিকর বোঝাতে 'detrimental to', (e) বিরত থাকা বোঝাতে 'refrain from' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 12: Sylhet Board 2025 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Health as the Root of All Happiness</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Health is the greatest (a) — all worldly possessions. To keep fit, one must adhere (b) — the rules of hygiene. We should take part (c) — outdoor sports regularly. Physical exercise adds strength (d) — our muscles and protects our body (e) — fatal ailments.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 12 (Sylhet Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> of</div>
+        <div><strong>(b)</strong> to</div>
+        <div><strong>(c)</strong> in</div>
+        <div><strong>(d)</strong> to</div>
+        <div><strong>(e)</strong> from</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) মেনে চলা বা অটল থাকা বোঝাতে 'adhere to', (c) অংশগ্রহণ করা বোঝাতে 'take part in', (e) রক্ষা করা বোঝাতে 'protect from' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 13: Barishal Board 2025 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Hard Work and National Prosperity</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Prosperity depends (a) — the proper utilization of time. Those who labor hard succeed (b) — life. On the contrary, the idle suffer (c) — poverty. We should not look down (d) — any honest profession. Let us dedicate ourselves (e) — the progress of our motherland.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 13 (Barishal Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> on / upon</div>
+        <div><strong>(b)</strong> in</div>
+        <div><strong>(c)</strong> from</div>
+        <div><strong>(d)</strong> upon / on</div>
+        <div><strong>(e)</strong> to</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) সফল হওয়া বোঝাতে 'succeed in', (c) ভোগা বোঝাতে 'suffer from', (d) কাউকে ঘৃণা করা বোঝাতে 'look down upon' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 14: Dinajpur Board 2025 <span class="htbd-exam-badge">Preposition — SSC Examination</span></h3>
+    <p><strong>টপিক: Early Morning Freshness</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">I get up early (a) — the morning and go out (b) — a brisk walk. Walking (c) — the riverside in the dawn provides pure oxygen. It refreshes my mind and fills my heart (d) — divine joy. I return home (e) — 7 a.m. and start my study.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 14 (Dinajpur Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> in</div>
+        <div><strong>(b)</strong> for</div>
+        <div><strong>(c)</strong> along / by</div>
+        <div><strong>(d)</strong> with</div>
+        <div><strong>(e)</strong> at</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) হাঁটতে যাওয়া বোঝাতে 'go for a walk', (d) পূর্ণ করা বোঝাতে 'fills with', (e) নির্দিষ্ট সময়ের পূর্বে 'at' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 15: Dakhil Board 2024 <span class="htbd-exam-badge">Preposition — Dakhil Examination</span></h3>
+    <p><strong>টপিক: Sacrifices of the Valiant Freedom Fighters</strong></p>
+    <p><em>Fill in the gaps with appropriate prepositions:</em></p>
+    <div class="htbd-passage-content">Our freedom fighters fought bravely (a) — the Pakistani occupation army in 1971. They responded (b) — the clarion call of the nation. They sacrificed their lives (c) — the sake of the country. We are indebted (d) — them for our red and green flag. We must show utmost reverence (e) — these immortal heroes.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 15 (Dakhil Board 2024)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> against</div>
+        <div><strong>(b)</strong> to</div>
+        <div><strong>(c)</strong> for</div>
+        <div><strong>(d)</strong> to</div>
+        <div><strong>(e)</strong> to / towards</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) বিরুদ্ধে যুদ্ধ করা বোঝাতে 'fought against', (c) কারও খাতিরে বোঝাতে 'for the sake of', (d) ঋণী হওয়া বোঝাতে 'indebted to' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 16: Dhaka Board 2026 <span class="htbd-exam-badge">Gap Filling with Clues — SSC Examination</span></h3>
+    <p><strong>টপিক: Causes of Failure in Public Examinations</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">motivate</span>
+        <span class="htbd-clue-item">learn</span>
+        <span class="htbd-clue-item">in</span>
+        <span class="htbd-clue-item">help</span>
+        <span class="htbd-clue-item">identified</span>
+        <span class="htbd-clue-item">avoid</span>
+        <span class="htbd-clue-item">that</span>
+        <span class="htbd-clue-item">skill</span>
+        <span class="htbd-clue-item">interest</span>
+        <span class="htbd-clue-item">poor</span>
+    </div>
+    <div class="htbd-passage-content">We have found that a great number of students fail in different public examinations. Researchers have (a) — several reasons behind this failure. They said (b) — the main cause is the lack of students' interest in some subjects. Most of the students do not enjoy (c) —. Because the major (d) — of the students is only to pass the examination. As they do not find any relation of the subjects (e) — their real life, they (f) — learning. Besides, students' motivation is very (g) —. Moreover, teachers in the country are not (h) — enough to motivate the students. So, a need-based curriculum and (i) — textbooks would (j) — us in this respect.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 16 (Dhaka Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> identified</div>
+        <div><strong>(b)</strong> that</div>
+        <div><strong>(c)</strong> learning</div>
+        <div><strong>(d)</strong> motive</div>
+        <div><strong>(e)</strong> with / in</div>
+        <div><strong>(f)</strong> avoid</div>
+        <div><strong>(g)</strong> poor</div>
+        <div><strong>(h)</strong> skilled</div>
+        <div><strong>(i)</strong> interesting</div>
+        <div><strong>(j)</strong> help</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (c) 'enjoy' এর পর সরাসরি Gerund (learning) বসে। (h) 'not skilled enough' এডজেক্টিভ হিসেবে রূপান্তর করে 'skilled' ব্যবহার করা হয়েছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 17: Dakhil Board 2026 <span class="htbd-exam-badge">Gap Filling with Clues — Dakhil Examination</span></h3>
+    <p><strong>টপিক: Truthfulness as the Greatest Virtue</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">economical</span>
+        <span class="htbd-clue-item">and</span>
+        <span class="htbd-clue-item">virtue</span>
+        <span class="htbd-clue-item">certain</span>
+        <span class="htbd-clue-item">of</span>
+        <span class="htbd-clue-item">in</span>
+        <span class="htbd-clue-item">truthful</span>
+        <span class="htbd-clue-item">ennobles</span>
+        <span class="htbd-clue-item">respected</span>
+        <span class="htbd-clue-item">a</span>
+    </div>
+    <div class="htbd-passage-content">Truthfulness refers to the habit (a) — speaking the truth. It is the greatest (b) — in a man's life. True peace (c) — prosperity depends on this virtue. It may not bring (d) — prosperity but it (e) — brings mental peace. It (f) — one's character and gives one high status in society. A truthful person is loved and (g) — by all. (h) — truthful person is honest and does not care for anybody's flattery. Religions help us being (i) —. By dint of truthfulness, all can shine (j) — life.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 17 (Dakhil Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> of</div>
+        <div><strong>(b)</strong> virtue</div>
+        <div><strong>(c)</strong> and</div>
+        <div><strong>(d)</strong> economic</div>
+        <div><strong>(e)</strong> certainly</div>
+        <div><strong>(f)</strong> ennobles</div>
+        <div><strong>(g)</strong> respected</div>
+        <div><strong>(h)</strong> A</div>
+        <div><strong>(i)</strong> truthful</div>
+        <div><strong>(j)</strong> in</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (d) 'economic prosperity' (অর্থনৈতিক সমৃদ্ধি)। (e) 'certainly' এডভার্ব হিসেবে বসেছে। (g) প্যাসিভ পার্টিসিপল হিসেবে 'respected' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 18: Cumilla Board 2026 <span class="htbd-exam-badge">Gap Filling with Clues — SSC Examination</span></h3>
+    <p><strong>টপিক: Trees and Ecological Balance</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">close</span>
+        <span class="htbd-clue-item">from</span>
+        <span class="htbd-clue-item">the</span>
+        <span class="htbd-clue-item">livable</span>
+        <span class="htbd-clue-item">with</span>
+        <span class="htbd-clue-item">like</span>
+        <span class="htbd-clue-item">balance</span>
+        <span class="htbd-clue-item">save</span>
+        <span class="htbd-clue-item">importance</span>
+        <span class="htbd-clue-item">different</span>
+    </div>
+    <div class="htbd-passage-content">Plants and trees are (a) — connected (b) — our life and well-being. (c) — benefits we get (d) — them are countless. Trees are essential for us because they have made our life (e) — on earth. Trees are most (f) — for maintaining ecological (g) —. Trees can (h) — us from (i) — natural disasters (j) — floods, draughts and cyclones.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 18 (Cumilla Board 2026)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> closely</div>
+        <div><strong>(b)</strong> with</div>
+        <div><strong>(c)</strong> The</div>
+        <div><strong>(d)</strong> from</div>
+        <div><strong>(e)</strong> livable</div>
+        <div><strong>(f)</strong> important</div>
+        <div><strong>(g)</strong> balance</div>
+        <div><strong>(h)</strong> save</div>
+        <div><strong>(i)</strong> different</div>
+        <div><strong>(j)</strong> like</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) 'closely connected' (নিবিড়ভাবে যুক্ত)। (e) জীবন বাসযোগ্য করতে 'livable' এডজেক্টিভ বসেছে। (j) উদাহরণ দিতে 'like' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 19: Dakhil Board 2025 <span class="htbd-exam-badge">Gap Filling with Clues — Dakhil Examination</span></h3>
+    <p><strong>টপিক: A True Friend in Need</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">for</span>
+        <span class="htbd-clue-item">danger</span>
+        <span class="htbd-clue-item">regret</span>
+        <span class="htbd-clue-item">asset</span>
+        <span class="htbd-clue-item">by</span>
+        <span class="htbd-clue-item">to</span>
+        <span class="htbd-clue-item">rational</span>
+        <span class="htbd-clue-item">the</span>
+        <span class="htbd-clue-item">a</span>
+        <span class="htbd-clue-item">rare</span>
+    </div>
+    <div class="htbd-passage-content">Human being is such a (a) — being who always wants friends (b) — share his feelings. (c) — this he needs (d) — true friend. A true friend is an (e) —. He always stands (f) — his friends in time of (g) —. He is not a greedy person. He always wishes for (h) — welfare of his friends. But it is a matter of (i) — that a true friend is very (j) — nowadays.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 19 (Dakhil Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> rational</div>
+        <div><strong>(b)</strong> to</div>
+        <div><strong>(c)</strong> For</div>
+        <div><strong>(d)</strong> a</div>
+        <div><strong>(e)</strong> asset</div>
+        <div><strong>(f)</strong> by</div>
+        <div><strong>(g)</strong> danger</div>
+        <div><strong>(h)</strong> the</div>
+        <div><strong>(i)</strong> regret</div>
+        <div><strong>(j)</strong> rare</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) 'rational being' (বিবেকবান প্রাণী)। (f) পাশে দাঁড়ানো বোঝাতে ফ্রেইজাল ভার্ব 'stands by' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 20: Rajshahi Board 2025 <span class="htbd-exam-badge">Gap Filling with Clues — SSC Examination</span></h3>
+    <p><strong>টপিক: Rules of Health and Cleanliness</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">early</span>
+        <span class="htbd-clue-item">rise</span>
+        <span class="htbd-clue-item">the</span>
+        <span class="htbd-clue-item">physical</span>
+        <span class="htbd-clue-item">perform</span>
+        <span class="htbd-clue-item">preservation</span>
+        <span class="htbd-clue-item">regularly</span>
+        <span class="htbd-clue-item">necessary</span>
+        <span class="htbd-clue-item">health</span>
+        <span class="htbd-clue-item">cleanliness</span>
+    </div>
+    <div class="htbd-passage-content">Students should observe (a) — rules of health. They should (b) — from bed (c) — in the morning and go out for a walk. Besides, they should take care to (d) — all those things which are (e) — for the (f) — of health. They should take part in games and sports (g) —. These are essential for their (h) — and mental growth. They should also follow the rules of (i) — to keep themselves free from (j) — diseases.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 20 (Rajshahi Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> the</div>
+        <div><strong>(b)</strong> rise</div>
+        <div><strong>(c)</strong> early</div>
+        <div><strong>(d)</strong> perform</div>
+        <div><strong>(e)</strong> necessary</div>
+        <div><strong>(f)</strong> preservation</div>
+        <div><strong>(g)</strong> regularly</div>
+        <div><strong>(h)</strong> physical</div>
+        <div><strong>(i)</strong> cleanliness</div>
+        <div><strong>(j)</strong> fatal</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) 'rise from bed' (শয্যাত্যাগ করা)। (h) 'physical and mental growth' (শারীরিক ও মানসিক বৃদ্ধি)।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 21: Jashore Board 2025 <span class="htbd-exam-badge">Gap Filling with Clues — SSC Examination</span></h3>
+    <p><strong>টপিক: Environment Protection and Ecological Harmony</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">about</span>
+        <span class="htbd-clue-item">regret</span>
+        <span class="htbd-clue-item">imbalance</span>
+        <span class="htbd-clue-item">our</span>
+        <span class="htbd-clue-item">from</span>
+        <span class="htbd-clue-item">the</span>
+        <span class="htbd-clue-item">by</span>
+        <span class="htbd-clue-item">a</span>
+        <span class="htbd-clue-item">climate</span>
+        <span class="htbd-clue-item">disaster</span>
+    </div>
+    <div class="htbd-passage-content">It is (a) — responsibility of human beings to prevent the environment (b) — being spoilt. To make life healthy and comfortable we should keep (c) — environment clean and danger-free. But often people spoil the environment (d) — doing unwise things and as (e) — result endanger their own lives. It is the ecological (f) — that causes disasters (g) — the world's (h) —. It brings (i) — different kinds of natural disasters. It is really a matter of great (j) —.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 21 (Jashore Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> the</div>
+        <div><strong>(b)</strong> from</div>
+        <div><strong>(c)</strong> our</div>
+        <div><strong>(d)</strong> by</div>
+        <div><strong>(e)</strong> a</div>
+        <div><strong>(f)</strong> imbalance</div>
+        <div><strong>(g)</strong> in</div>
+        <div><strong>(h)</strong> climate</div>
+        <div><strong>(i)</strong> about</div>
+        <div><strong>(j)</strong> regret</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (b) 'prevent from' (বিরত রাখা)। (e) 'as a result' (ফলশ্রুতিতে)। (i) ঘটানো বোঝাতে 'brings about' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 22: Barishal Board 2025 <span class="htbd-exam-badge">Gap Filling with Clues — SSC Examination</span></h3>
+    <p><strong>টপিক: Hydro-Electric Power in Bangladesh</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">present</span>
+        <span class="htbd-clue-item">flows</span>
+        <span class="htbd-clue-item">only</span>
+        <span class="htbd-clue-item">rivers</span>
+        <span class="htbd-clue-item">flowing</span>
+        <span class="htbd-clue-item">used</span>
+        <span class="htbd-clue-item">of</span>
+        <span class="htbd-clue-item">the</span>
+        <span class="htbd-clue-item">produces</span>
+        <span class="htbd-clue-item">that</span>
+    </div>
+    <div class="htbd-passage-content">(a) — water can be a great source (b) — energy. The water that (c) — down from hills has a strong current (d) — can produce electricity. Most of the (e) — in the north-east region of our country can be (f) — for this purpose. At (g) — we have (h) — one hydro-electric project at Kaptai which (i) — a significant amount (j) — electricity.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 22 (Barishal Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> Flowing</div>
+        <div><strong>(b)</strong> of</div>
+        <div><strong>(c)</strong> flows</div>
+        <div><strong>(d)</strong> that / which</div>
+        <div><strong>(e)</strong> rivers</div>
+        <div><strong>(f)</strong> used</div>
+        <div><strong>(g)</strong> present</div>
+        <div><strong>(h)</strong> only</div>
+        <div><strong>(i)</strong> produces</div>
+        <div><strong>(j)</strong> of</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) 'Flowing water' (প্রবহমান পানি)। (f) মোডাল প্যাসিভ 'can be used' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 23: Sylhet Board 2025 <span class="htbd-exam-badge">Gap Filling with Clues — SSC Examination</span></h3>
+    <p><strong>টপিক: The Role of Computer in Modern World</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">perform</span>
+        <span class="htbd-clue-item">refer</span>
+        <span class="htbd-clue-item">about</span>
+        <span class="htbd-clue-item">to</span>
+        <span class="htbd-clue-item">calculate</span>
+        <span class="htbd-clue-item">abacus</span>
+        <span class="htbd-clue-item">fairly</span>
+        <span class="htbd-clue-item">recent</span>
+        <span class="htbd-clue-item">invention</span>
+        <span class="htbd-clue-item">complex</span>
+    </div>
+    <div class="htbd-passage-content">The computer is a (a) — recent invention. It has now become an essential part of modern life. It has greatly benefited us and brought (b) — revolutionary changes in our life. Any device that helps people (c) — computation can be considered a computer. In the past, (d) — was used for calculations. Today computers can (e) — complicated mathematical calculations (f) — lightning speed. They are also used to control (g) — industrial operations. The internet connected (h) — computers has made the world a global village. It is (i) — an electronic brain that performs (j) — tasks.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 23 (Sylhet Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> fairly</div>
+        <div><strong>(b)</strong> about</div>
+        <div><strong>(c)</strong> perform</div>
+        <div><strong>(d)</strong> abacus</div>
+        <div><strong>(e)</strong> calculate</div>
+        <div><strong>(f)</strong> at</div>
+        <div><strong>(g)</strong> complex</div>
+        <div><strong>(h)</strong> to</div>
+        <div><strong>(i)</strong> like</div>
+        <div><strong>(j)</strong> multiple</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) 'fairly recent invention' (বেশ সাম্প্রতিক আবিষ্কার)। (f) দ্রুত গতিতে বোঝাতে 'at lightning speed' বসে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 24: Chattogram Board 2025 <span class="htbd-exam-badge">Gap Filling with Clues — SSC Examination</span></h3>
+    <p><strong>টপিক: Newspaper as the Storehouse of Knowledge</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">modern</span>
+        <span class="htbd-clue-item">newspaper</span>
+        <span class="htbd-clue-item">read</span>
+        <span class="htbd-clue-item">people</span>
+        <span class="htbd-clue-item">daily</span>
+        <span class="htbd-clue-item">current</span>
+        <span class="htbd-clue-item">habit</span>
+        <span class="htbd-clue-item">useful</span>
+        <span class="htbd-clue-item">mirror</span>
+        <span class="htbd-clue-item">information</span>
+    </div>
+    <div class="htbd-passage-content">Newspaper is called the (a) — of the world. It provides us with all kinds of (b) —. We can know the (c) — affairs of both home and abroad through newspapers. In the (d) — world, life without newspaper is almost impossible. It helps students improve their general knowledge. By (e) — newspapers regularly, we can widen our outlook. Reading newspaper is a very (f) — habit. Every educated (g) — should form the habit of reading a (h) — newspaper. It acts as a bridge between the government and the (i) —. In short, newspaper is an (j) — part of our civilized life.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 24 (Chattogram Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> mirror</div>
+        <div><strong>(b)</strong> information</div>
+        <div><strong>(c)</strong> current</div>
+        <div><strong>(d)</strong> modern</div>
+        <div><strong>(e)</strong> reading</div>
+        <div><strong>(f)</strong> useful</div>
+        <div><strong>(g)</strong> person</div>
+        <div><strong>(h)</strong> daily</div>
+        <div><strong>(i)</strong> people</div>
+        <div><strong>(j)</strong> integral</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) 'mirror of the world' (বিশ্বের দর্পণ)। (e) Preposition 'By' এর পর Gerund 'reading' বসেছে।</div>
+</div>
+
+<div class="htbd-question-card">
+    <h3 class="htbd-subheading">প্রশ্ন সেট 25: Dinajpur Board 2025 <span class="htbd-exam-badge">Gap Filling with Clues — SSC Examination</span></h3>
+    <p><strong>টপিক: Character as the Crown of Human Personality</strong></p>
+    <p><em>Fill in the blanks with suitable words from the box. You may need to change the forms of some words:</em></p>
+    <div class="htbd-clue-box">
+        <span class="htbd-clue-item">moral</span>
+        <span class="htbd-clue-item">character</span>
+        <span class="htbd-clue-item">adorn</span>
+        <span class="htbd-clue-item">crown</span>
+        <span class="htbd-clue-item">possess</span>
+        <span class="htbd-clue-item">respect</span>
+        <span class="htbd-clue-item">without</span>
+        <span class="htbd-clue-item">behavior</span>
+        <span class="htbd-clue-item">essential</span>
+        <span class="htbd-clue-item">truthful</span>
+    </div>
+    <div class="htbd-passage-content">Character is the (a) — of human life. A person of high (b) — character is praised everywhere. Good character (c) — a man more than expensive ornaments. An individual (d) — good character is regarded as a saint. On the contrary, a man (e) — character is no better than an animal. People show great (f) — to a person who is honest and (g) —. Good (h) — and gentle manners are (i) — components of character. Let us strive to build noble character from our (j) —.</div>
+</div>
+
+<div class="htbd-solution-card">
+    <h4>সমাধান মালা: প্রশ্ন সেট 25 (Dinajpur Board 2025)</h4>
+    <div class="htbd-answers-grid">
+        <div><strong>(a)</strong> crown</div>
+        <div><strong>(b)</strong> moral</div>
+        <div><strong>(c)</strong> adorns</div>
+        <div><strong>(d)</strong> possessing</div>
+        <div><strong>(e)</strong> without</div>
+        <div><strong>(f)</strong> respect</div>
+        <div><strong>(g)</strong> truthful</div>
+        <div><strong>(h)</strong> behavior</div>
+        <div><strong>(i)</strong> essential</div>
+        <div><strong>(j)</strong> youth</div>
+    </div>
+    <div class="htbd-rule-note">নোট: (a) 'crown of human life' (মানব জীবনের মুকুট)। (c) অলঙ্কৃত করা বোঝাতে 3rd person singular ভার্ব 'adorns' বসেছে।</div>
+</div>
+
+<div class="htbd-internal-silo">
+    <h4>এসএসসি ও দাখিল ইংরেজি পূর্ণাঙ্গ প্রস্তুতি ও অন্যান্য সহায়িকা:</h4>
+    <ul>
+        <li><strong>সাফিক্স ও প্রিফিক্স:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-suffix-and-prefix-rules-and-board-questions-with-answers.html">SSC English 2nd Paper Suffix and Prefix Suggestions with Answer (১৫টি গোল্ডেন রুলস ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>ট্যাগ কোশ্চেন:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-tag-questions-rules-and-board-questions-with-answers.html">SSC English 2nd Paper Tag Questions Suggestions with Answer (১৫টি স্পেশাল রুলস ও ২৫টি শীর্ষ বোর্ড সমাধান)</a></li>
+        <li><strong>চেঞ্জিং সেন্টেন্সেস:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-changing-sentences-rules-and-board-questions-with-answers.html">SSC English 2nd Paper Changing Sentences Suggestions with Answer (১০ নম্বরের গোল্ডেন রুলস ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>রাইট ফর্ম অফ ভার্বস:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-right-form-of.html">SSC English 2nd Paper Right Form of Verbs Suggestions with Answer (১৫টি গোল্ডেন রুলস ও ২৫টি বোর্ড সমাধান)</a></li>
+        <li><strong>ইংরেজি ১ম পত্র মাস্টার হাব:</strong> <a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html">SSC English 1st Paper Suggestion 2027 (পূর্ণাঙ্গ সিলেবাস ও ১০০ নম্বরের মানবণ্টন)</a></li>
+    </ul>
+</div>
+
+<h2 class="htbd-heading">সাধারণ জিজ্ঞাসা ও উত্তর (Frequently Asked Questions - FAQ)</h2>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ১: এপ্রোপ্রিয়েট প্রিপজিশন (Appropriate Preposition) কী?</strong><br>
+    উত্তর: সাধারণ অর্থের বাইরে নির্দিষ্ট কিছু Verb, Noun বা Adjective-এর পর ব্যাকরণিকভাবে যেসব নির্দিষ্ট প্রিপজিশন বসে বিশেষ অর্থ প্রকাশ করে, সেগুলোকে Appropriate Preposition বলে (যেমন: abide by, fond of, indifferent to)।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ২: Gap Filling with Clues-এ শব্দ পরিবর্তন করার নিয়ম কী?</strong><br>
+    উত্তর: বক্সের শব্দটিকে হুবহু না বসিয়ে শূন্যস্থানের ব্যাকরণিক অবস্থান অনুযায়ী রূপান্তর করতে হয়। যেমন: শূন্যস্থান Adjective দাবি করলে 'skill' থেকে 'skilled' বা 'educate' থেকে 'educated' করতে হবে।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ৩: Compare to এবং Compare with এর পার্থক্য কী?</strong><br>
+    উত্তর: দুটি সম্পূর্ণ ভিন্নধর্মী বস্তুর মাঝে তুলনা বোঝালে 'compare to' বসে (যেমন: Life is compared to a journey); আর একই জাতীয় দুটি বস্তুর তুলনা বোঝালে 'compare with' বসে (যেমন: Nazrul is compared with Shelley)।</p>
+</div>
+<div class="htbd-qbox" style="margin-bottom: 20px;">
+    <p><strong>প্রশ্ন ৪: সময় ও দিনের পূর্বে কোন প্রিপজিশন বসে?</strong><br>
+    উত্তর: নির্দিষ্ট ঘড়ির সময়ের পূর্বে 'at' (at 7 a.m.), দিন ও তারিখের পূর্বে 'on' (on Sunday, on 26 March), এবং মাস, বছর ও ঋতুর পূর্বে 'in' (in 2026, in winter) বসে।</p>
+</div>
+</div>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-preposition-and-gap-filling-suggestions.html"
+  },
+  "headline": "SSC English 2nd Paper Preposition & Gap Filling Suggestions with Answer | এপ্রোপ্রিয়েট প্রিপজিশন ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+  "description": "এসএসসি ও দাখিল ইংরেজি ২য় পত্র Preposition & Gap Filling Suggestions with Answer: এপ্রোপ্রিয়েট প্রিপজিশন রুলস এবং ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-english-2nd-paper-preposition-and-gap-filling-suggestions.webp",
+  "author": {
+    "@type": "Person",
+    "name": "HelpTrickBD Editorial Team",
+    "url": "https://www.helptrickbd.com/p/about-us.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.helptrickbd.com/favicon.ico"
+    }
+  },
+  "datePublished": "2026-09-19T01:00:00+06:00",
+  "dateModified": "2026-09-19T01:00:00+06:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an Appropriate Preposition in English Grammar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An Appropriate Preposition is a fixed preposition that must be used after certain verbs, nouns, or adjectives to convey a specific idiomatic meaning (e.g., abide by, fond of, addicted to, succeed in, indifferent to)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the technique to score full marks in Gap Filling with Clues?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To score full marks in Gap Filling with Clues: (1) Read the whole passage to understand the context, (2) Identify the required part of speech for each blank (Noun, Adjective, Verb, Adverb), (3) Change the form of the clue word accordingly (e.g., strong -> strength, educate -> education), and (4) Check subject-verb agreement and tense."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do we use 'compare to' versus 'compare with'?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use 'compare to' when comparing two entirely different things that have one point of similarity (e.g., Life is compared to a journey). Use 'compare with' when comparing two similar things of the same class (e.g., Shakespeare is compared with Milton)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What prepositions are used before time, day, and month/year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use 'at' before exact clock time and festivals (at 5 p.m., at night, at dawn). Use 'on' before days and dates (on Sunday, on 26 March). Use 'in' before months, seasons, and years (in May, in winter, in 2026)."
+      }
+    }
+  ]
+}
+</script>

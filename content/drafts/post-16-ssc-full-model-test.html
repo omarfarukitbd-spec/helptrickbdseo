@@ -1,0 +1,810 @@
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/fonts/solaiman_lipi.css" rel="stylesheet"/>
+
+<style>
+  .htbd-post-wrapper {
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+  }
+  .htbd-post-wrapper p {
+    font-size: 18px !important;
+    line-height: 1.85 !important;
+    color: #202124 !important;
+    margin: 16px 0 !important;
+    text-align: justify !important;
+  }
+  .htbd-heading {
+    color: #1a73e8 !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding-left: 14px !important;
+    margin-top: 36px !important;
+    margin-bottom: 16px !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+  }
+  .htbd-subheading {
+    color: #0c2340 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-top: 28px !important;
+    margin-bottom: 14px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .htbd-qbox {
+    background: #f8fafd !important;
+    border-left: 5px solid #1a73e8 !important;
+    padding: 20px 24px !important;
+    margin: 22px 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  }
+  .htbd-qbox p {
+    margin: 0 !important;
+    line-height: 1.8 !important;
+  }
+  .htbd-table-container {
+    overflow-x: auto !important;
+    margin: 20px 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  .htbd-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    text-align: left !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    padding: 12px 16px !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+  }
+  .htbd-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+  }
+  .htbd-table tr:nth-child(even) td {
+    background: #f8fafc !important;
+  }
+  .htbd-model-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 22px 26px !important;
+    margin: 24px 0 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+  }
+  .htbd-model-title {
+    color: #0369a1 !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    border-bottom: 2px solid #e0f2fe !important;
+    padding-bottom: 6px !important;
+  }
+  .htbd-model-body {
+    font-family: Arial, 'SolaimanLipi', sans-serif !important;
+    font-size: 16.5px !important;
+    line-height: 1.85 !important;
+    color: #1e293b !important;
+  }
+  .htbd-model-body h4 {
+    color: #0f172a !important;
+    font-size: 17.5px !important;
+    margin: 14px 0 6px 0 !important;
+  }
+  .htbd-clue-box {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    background: #eef2f6 !important;
+    padding: 12px 16px !important;
+    border-radius: 6px !important;
+    margin: 12px 0 16px 0 !important;
+    border: 1px dashed #94a3b8 !important;
+    font-family: Arial, sans-serif !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+  }
+  .htbd-clue-item {
+    background: #ffffff !important;
+    padding: 4px 12px !important;
+    border-radius: 4px !important;
+    border: 1px solid #cbd5e1 !important;
+    font-size: 15px !important;
+  }
+  .htbd-exam-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 2px 10px !important;
+    border-radius: 14px !important;
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+    border: 1px solid #bae6fd !important;
+    letter-spacing: 0.2px !important;
+    vertical-align: middle !important;
+    margin-left: 8px !important;
+    font-family: Arial, sans-serif !important;
+  }
+  .htbd-writing-ans {
+    background: #f8fafc !important;
+    border-left: 4px solid #0284c7 !important;
+    padding: 16px 20px !important;
+    border-radius: 0 6px 6px 0 !important;
+    margin: 16px 0 !important;
+    font-family: Arial, 'SolaimanLipi', sans-serif !important;
+    font-size: 16px !important;
+    color: #1e293b !important;
+  }
+  .htbd-sol-box {
+    background: #f0fdf4 !important;
+    border-left: 4px solid #16a34a !important;
+    padding: 16px 20px !important;
+    border-radius: 0 6px 6px 0 !important;
+    margin: 16px 0 !important;
+    font-family: Arial, 'SolaimanLipi', sans-serif !important;
+    font-size: 16px !important;
+    color: #14532d !important;
+  }
+  .htbd-internal-silo {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 18px 24px !important;
+    margin: 28px 0 !important;
+  }
+  .htbd-internal-silo h4 {
+    margin: 0 0 10px 0 !important;
+    color: #0f172a !important;
+    font-size: 18px !important;
+  }
+  .htbd-internal-silo ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+  }
+  .htbd-internal-silo li {
+    margin: 6px 0 !important;
+    font-size: 16.5px !important;
+  }
+  .htbd-internal-silo a {
+    color: #1a73e8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+  .htbd-internal-silo a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Dark Mode Support */
+  .dark .htbd-post-wrapper,
+  body.dark .htbd-post-wrapper,
+  #mainContent.dark .htbd-post-wrapper {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-post-wrapper p,
+  body.dark .htbd-post-wrapper p,
+  #mainContent.dark .htbd-post-wrapper p {
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-heading,
+  body.dark .htbd-heading,
+  #mainContent.dark .htbd-heading {
+    color: #60a5fa !important;
+    border-left-color: #60a5fa !important;
+  }
+  .dark .htbd-subheading,
+  body.dark .htbd-subheading,
+  #mainContent.dark .htbd-subheading {
+    color: #93c5fd !important;
+  }
+  .dark .htbd-qbox,
+  body.dark .htbd-qbox,
+  #mainContent.dark .htbd-qbox {
+    background: #0f172a !important;
+    border-left-color: #38bdf8 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table-container,
+  body.dark .htbd-table-container,
+  #mainContent.dark .htbd-table-container {
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table th,
+  body.dark .htbd-table th,
+  #mainContent.dark .htbd-table th {
+    background: #0f172a !important;
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-table td,
+  body.dark .htbd-table td,
+  #mainContent.dark .htbd-table td {
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-table tr:nth-child(even) td,
+  body.dark .htbd-table tr:nth-child(even) td,
+  #mainContent.dark .htbd-table tr:nth-child(even) td {
+    background: #1e293b !important;
+  }
+  .dark .htbd-model-card,
+  body.dark .htbd-model-card,
+  #mainContent.dark .htbd-model-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+  }
+  .dark .htbd-model-title,
+  body.dark .htbd-model-title,
+  #mainContent.dark .htbd-model-title {
+    color: #38bdf8 !important;
+    border-bottom-color: #334155 !important;
+  }
+  .dark .htbd-model-body,
+  body.dark .htbd-model-body,
+  #mainContent.dark .htbd-model-body {
+    color: #e2e8f0 !important;
+  }
+  .dark .htbd-model-body h4,
+  body.dark .htbd-model-body h4,
+  #mainContent.dark .htbd-model-body h4 {
+    color: #f1f5f9 !important;
+  }
+  .dark .htbd-clue-box,
+  body.dark .htbd-clue-box,
+  #mainContent.dark .htbd-clue-box {
+    background: #0f172a !important;
+    border-color: #475569 !important;
+    color: #e2e8f0 !important;
+  }
+  .dark .htbd-clue-item,
+  body.dark .htbd-clue-item,
+  #mainContent.dark .htbd-clue-item {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+  }
+  .dark .htbd-exam-badge,
+  body.dark .htbd-exam-badge,
+  #mainContent.dark .htbd-exam-badge {
+    background-color: #0c4a6e !important;
+    color: #7dd3fc !important;
+    border-color: #0284c7 !important;
+  }
+  .dark .htbd-writing-ans,
+  body.dark .htbd-writing-ans,
+  #mainContent.dark .htbd-writing-ans {
+    background: #1e293b !important;
+    border-left-color: #38bdf8 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-sol-box,
+  body.dark .htbd-sol-box,
+  #mainContent.dark .htbd-sol-box {
+    background: #064e3b !important;
+    border-left-color: #10b981 !important;
+    color: #a7f3d0 !important;
+  }
+  .dark .htbd-internal-silo,
+  body.dark .htbd-internal-silo,
+  #mainContent.dark .htbd-internal-silo {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  .dark .htbd-internal-silo h4,
+  body.dark .htbd-internal-silo h4,
+  #mainContent.dark .htbd-internal-silo h4 {
+    color: #f1f5f9 !important;
+  }
+</style>
+
+<div class="htbd-post-wrapper">
+<figure style="margin: 0 0 25px 0; text-align: center;">
+    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-english-2nd-paper-model-test-and-board-question-with-answers.webp" 
+         alt="SSC English 2nd Paper Model Test & Board Question" 
+         title="SSC English 2nd Paper Model Test & Board Question 2026-2027 with Answers" 
+         width="1200" height="675" style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block;" 
+         loading="lazy" decoding="async" />
+    <figcaption style="font-size: 14px; color: #64748b; margin-top: 8px; font-style: italic;">এসএসসি ও দাখিল ইংরেজি ২য় পত্র: ১০০ নম্বরের পূর্ণাঙ্গ বোর্ড প্রশ্ন ও এক্সক্লুসিভ মডেল টেস্ট প্রশ্ন ও নির্ভুল সমাধান | HelpTrickBD</figcaption>
+</figure>
+
+<p>এসএসসি ও দাখিল ২০২৬-২০২৭ পরীক্ষার্থীদের চূড়ান্ত প্রস্তুতি যাচাই এবং বোর্ড পরীক্ষায় কাঙ্ক্ষিত এ-প্লাস (A+) নিশ্চিত করার সবচেয়ে নির্ভরযোগ্য পদ্ধতি হলো ১০০ নম্বরের পূর্ণাঙ্গ প্রশ্নপত্রে সময় মেপে মডেল টেস্ট অনুশীলন করা। ইংরেজি ২য় পত্রে ভালো ফলাফলের মূল ভিত্তি দুটি: প্রথমত, <strong>Part A: Grammar (৬০ নম্বর)</strong> অংশের ৯টি বিষয়ে পূর্ণ নম্বর তুলে নেওয়া এবং দ্বিতীয়ত, <strong>Part B: Composition (৪০ নম্বর)</strong> অংশে নির্ভুল ও মার্জিত বাক্যশৈলীতে সময় ব্যবস্থাপনা ঠিক রেখে উত্তর সম্পন্ন করা। এখানে জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) অনুমোদিত সিলেবাস অনুযায়ী দাখিল বোর্ড পরীক্ষা ২০২৬-এর মূল প্রশ্ন এবং ২০২৬-২০২৭ সেশনের জন্য প্রণীত এক্সক্লুসিভ ফুল মডেল টেস্ট—উভয়েরই প্রশ্ন ও শতভাগ নির্ভুল সমাধান প্রকাশ করা হলো।</p>
+<!--more-->
+<div class="htbd-qbox">
+    <p><strong>সারসংক্ষেপ: ১০০ নম্বরের ইংরেজি ২য় পত্র মানবণ্টন একনজরে</strong><br>
+    <strong>Part A: Grammar (৬০ নম্বর):</strong><br>
+    ১. Gap filling with clues (১০), ২. Substitution Table (৫), ৩. Right form of verbs (১০), ৪. Changing Sentences (১০), ৫. Tag Questions (৫), ৬. Suffix &amp; Prefix (৫), ৭. Prepositions (৫), ৮. Sentence Connectors (৫), ৯. Punctuation &amp; Capitalization (৫)।<br>
+    <strong>Part B: Composition / Writing (৪০ নম্বর):</strong><br>
+    ১০. Paragraph Writing (১০), ১১. Formal Application / Email (১০), ১২. Short Composition (২০)।<br>
+    <strong>অনুশীলন পরামর্শ:</strong> ঘড়ি ধরে ঠিক ৩ ঘণ্টার মধ্যে উত্তর লিখে নিচের মডেল উত্তরের সাথে মিলিয়ে নিজের প্রস্তুতি মূল্যায়ন করুন।</p>
+</div>
+
+<h2 class="htbd-heading">সেকশন ০১: দাখিল পরীক্ষা ২০২৬ ইংরেজি ২য় পত্র (পূর্ণাঙ্গ প্রশ্ন ও সমাধান)</h2>
+<p>নিচে ২০২৬ সালের দাখিল বোর্ড পরীক্ষার প্রশ্ন ও তার সম্পূর্ণ সমাধান দেওয়া হলো। প্রতিটি প্রশ্নের সাথে ব্যাকরণগত লজিক যুক্ত রয়েছে যাতে শিক্ষার্থীরা প্রশ্নের ধরন ও বোর্ডের মান অনুধাবন করতে পারে।</p>
+
+
+<div class="htbd-model-card">
+    <div class="htbd-model-title">DAKHIL EXAMINATION 2026 | English 2nd Paper (Regular)</div>
+    <div class="htbd-model-body">
+        <p><strong>Time: 3 Hours | Subject Code: 114 | Full Marks: 100</strong></p>
+        
+        <h4>Part A — Grammar (Marks: 60)</h4>
+        
+        <p><strong>1. Complete the following passage with suitable words from the box. You may need to change the forms of some of the words. You may use one word more than once: (1 × 10 = 10)</strong></p>
+        <div class="htbd-clue-box">
+            <span class="htbd-clue-item">pleasant</span>
+            <span class="htbd-clue-item">to</span>
+            <span class="htbd-clue-item">enjoy</span>
+            <span class="htbd-clue-item">with</span>
+            <span class="htbd-clue-item">for</span>
+            <span class="htbd-clue-item">vigorous</span>
+        </div>
+        <p>Morning walk is a good habit. It is beneficial (a) ___ health. It is (b) ___ as well. It exercises a good effect (c) ___ a man's body and mind. The morning air refreshes his body and mind. It gives him (d) ___ opportunity to (e) ___ the beauties of nature too. In the morning, nature looks fresh and (f) ___. When a man takes (g) ___ morning walk, he sees the superb beauty of the sunrise. After taking morning walk, a man returns home (h) ___ cheerful mind. He takes his breakfast with great relish and starts his work with a fresh and (i) ___ mind. In short, morning walk is so pleasant and good (j) ___ health.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 1:</strong><br>
+            (a) to; (b) pleasant; (c) on; (d) an; (e) enjoy; (f) beautiful; (g) a; (h) with; (i) vigorous; (j) for.
+        </div>
+
+        <p><strong>2. Make five meaningful sentences using parts of sentences from each column of the table below: (1 × 5 = 5)</strong></p>
+        <div class="htbd-table-container">
+            <table class="htbd-table">
+                <thead>
+                    <tr>
+                        <th>Column A</th>
+                        <th>Column B</th>
+                        <th>Column C</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Newspaper</td>
+                        <td>publishes</td>
+                        <td>the good reports and avoid the bad ones.</td>
+                    </tr>
+                    <tr>
+                        <td>A student</td>
+                        <td>must</td>
+                        <td>important news and views of home and abroad.</td>
+                    </tr>
+                    <tr>
+                        <td>A newspaper</td>
+                        <td>plays</td>
+                        <td>to enrich his general knowledge and makes him aware of current issues.</td>
+                    </tr>
+                    <tr>
+                        <td>We should</td>
+                        <td>helps him</td>
+                        <td>have the habit of reading newspaper everyday.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>a vital role in modern civilization.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 2:</strong><br>
+            (a) Newspaper plays a vital role in modern civilization.<br>
+            (b) It publishes important news and views of home and abroad.<br>
+            (c) A student must have the habit of reading newspaper everyday.<br>
+            (d) A newspaper helps him to enrich his general knowledge and makes him aware of current issues.<br>
+            (e) We should accept the good reports and avoid the bad ones.
+        </div>
+
+        <p><strong>3. Complete the following text with right forms of the verbs given in the box. If needed, you can use one word more than once: (1 × 10 = 10)</strong></p>
+        <div class="htbd-clue-box">
+            <span class="htbd-clue-item">go</span>
+            <span class="htbd-clue-item">return</span>
+            <span class="htbd-clue-item">hear</span>
+            <span class="htbd-clue-item">cry</span>
+            <span class="htbd-clue-item">prepare</span>
+            <span class="htbd-clue-item">boil</span>
+            <span class="htbd-clue-item">be</span>
+        </div>
+        <p>Hazrat Omar (R.) (a) ___ out for a walk in disguise at night (b) ___ the condition of the people in his state. Once he was (c) ___ along the street and (d) ___ the crying of some children from a cottage. He went to the cottage and saw some children were (e) ___ for food. Their mother (f) ___ some water and was consoling them that food was going to be (g) ___ soon. (h) ___ the scene Hazrat Omar (R.) (i) ___ very upset. He went to the palace and (j) ___ with some sacks of food.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 3:</strong><br>
+            (a) went; (b) to see; (c) passing / going; (d) heard; (e) crying; (f) was boiling; (g) prepared; (h) Seeing; (i) became / was; (j) returned.
+        </div>
+
+        <p><strong>4. Change the following sentences according to directions: (1 × 10 = 10)</strong></p>
+        <p>(a) Patriotism is a noble virtue. (Make Complex sentence)<br>
+        (b) It is an inherent human quality. (Make Negative sentence)<br>
+        (c) It is greater than all other virtues in a man's life. (Make Interrogative sentence)<br>
+        (d) This quality motivates a man so that he can sacrifice his life for his country. (Make Simple sentence)<br>
+        (e) What an outstanding quality it is! (Make Assertive sentence)<br>
+        (f) Although some people forget their duties, true patriots always serve their country. (Make Compound sentence)<br>
+        (g) They do not abandon their homeland. (Make Affirmative sentence)<br>
+        (h) You have heard the name of Birsreshtha Mostofa Kamal. (Make Interrogative sentence)<br>
+        (i) He was very brave. (Make Exclamatory sentence)<br>
+        (j) There is no year but the nation pays special homage to the heroes like him. (Make Affirmative sentence)</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 4:</strong><br>
+            (a) It is patriotism which is a noble virtue.<br>
+            (b) It is not an acquired human quality.<br>
+            (c) Is it not greater than all other virtues in a man's life?<br>
+            (d) This quality motivates a man to sacrifice his life for his country.<br>
+            (e) It is a very outstanding quality.<br>
+            (f) Some people forget their duties, but true patriots always serve their country.<br>
+            (g) They remain in / stay in their homeland.<br>
+            (h) Haven't you heard the name of Birsreshtha Mostofa Kamal?<br>
+            (i) How brave he was!<br>
+            (j) Every year the nation pays special homage to the heroes like him.
+        </div>
+
+        <p><strong>5. Make a question tag for each of the following sentences: (1 × 5 = 5)</strong></p>
+        <p>(a) Everybody desires success, ___?<br>
+        (b) Don't tell a lie, ___?<br>
+        (c) It hardly rains in winter, ___?<br>
+        (d) How slowly he walks, ___?<br>
+        (e) Let us go for a morning walk, ___?</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 5:</strong><br>
+            (a) Everybody desires success, <strong>don't they?</strong><br>
+            (b) Don't tell a lie, <strong>will you?</strong><br>
+            (c) It hardly rains in winter, <strong>does it?</strong><br>
+            (d) How slowly he walks, <strong>doesn't he?</strong><br>
+            (e) Let us go for a morning walk, <strong>shall we?</strong>
+        </div>
+
+        <p><strong>6. Complete the text adding suffixes, prefixes or both with the root words given in the parenthesis: (1 × 5 = 5)</strong></p>
+        <p>Honesty is opposite to (a) ___ (honest). An honest man is not (b) ___ (harm) to anybody. He never does (c) ___ (just) to others. When he does anything (d) ___ (moral), he feels uncomfortable. He never tells a lie. He is always (e) ___ (response) to his duty.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 6:</strong><br>
+            (a) dishonesty; (b) harmful; (c) injustice; (d) immoral; (e) responsible.
+        </div>
+
+        <p><strong>7. Complete the following text with appropriate prepositions: (1 × 5 = 5)</strong></p>
+        <p>Success depends (a) ___ many factors but the most important one is determination. People who believe (b) ___ themselves are more likely to overcome challenges. Sometimes, we fail (c) ___ our first attempt, but that failure teaches us valuable lessons. We should always focus (d) ___ our goals and work hard everyday. Success will eventually come (e) ___ those who never stop trying.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 7:</strong><br>
+            (a) on / upon; (b) in; (c) in; (d) on; (e) to.
+        </div>
+
+        <p><strong>8. Complete the following text using suitable connectors: (1 × 5 = 5)</strong></p>
+        <p>Rosamond and her mother were going back to the chemist's shop. (a) ___ they were walking, Rosamond had to stop once again to take another stone out of the broken shoe, (b) ___ she often limped with pain. (c) ___ they got back to the shop, Rosamond's mother asked her to carefully examine the jar (d) ___ she bought it. (e) ___ Rosamond was so excited that she bought it even without looking at what was inside the jar.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 8:</strong><br>
+            (a) While / As; (b) and; (c) When; (d) before; (e) But.
+        </div>
+
+        <p><strong>9. Use capitals and punctuation marks where necessary in the following text: (5)</strong></p>
+        <p>who are happy those who have fit bodies are the happiest ones if we are physically sound we will be mentally sound too we need to take care of our health as well as be positive in thinking how lucky they are who are both ways fit</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 9:</strong><br>
+            "Who are happy? Those who have fit bodies are the happiest ones. If we are physically sound, we will be mentally sound too. We need to take care of our health as well as be positive in thinking. How lucky they are who are both ways fit!"
+        </div>
+
+        <h4>Part B — Composition / Writing (Marks: 40)</h4>
+        
+        <p><strong>10. Write a paragraph on "A Winter Morning" in about 150-200 words. (10)</strong></p>
+        <div class="htbd-writing-ans">
+            <strong>Model Answer (Paragraph: A Winter Morning):</strong><br>
+            A winter morning is misty and cold. There is dense fog all around. Sometimes the fog is so dense that the sun rays cannot get through it. Everything looks hazy and nature appears wrapped in a blanket of mist. Things at a little distance can hardly be seen. Dew drops fall on the grass and leaves at night. When the morning sun peeks through the mist, these dew drops look like sparkling pearls. People, especially the poor, suffer from the biting cold. They gather dry leaves and straw to make fires to warm themselves. Children and old people bask in the sun. In rural areas, people enjoy delicious winter delicacies like date juice, chira, muri, and various traditional pitha. As the day advances and the sun rises higher, the fog gradually melts away and people start their daily routine with energy and enthusiasm. Despite the cold, a winter morning holds a unique and peaceful charm.
+        </div>
+
+        <p><strong>11. Suppose, you are Tarek/Tamanna, a student of KHA Model High School/Madrasah. You could not pay your tuition fees in time due to your father's absence. Now, write an application to the Principal for remission of delay fine. (10)</strong></p>
+        <div class="htbd-writing-ans">
+            <strong>Model Answer (Formal Application):</strong><br>
+            25 October 2026<br>
+            The Principal<br>
+            KHA Model Madrasah / High School, Dhaka<br>
+            Subject: Application for remission of delay fine.<br><br>
+            Sir,<br>
+            I beg most respectfully to state that I am a regular student of Class 10 in your reputed institution. My father, who is the sole breadwinner of our family, was unexpectedly away on official duty in another district throughout the last month. Consequently, my monthly tuition fees for September could not be cleared within the stipulated due date.<br><br>
+            Now my father has returned and given me the required tuition fee. I am in a position to pay the fee today without further delay.<br><br>
+            May I, therefore, pray and hope that you would be kind and generous enough to remit the delay fine and allow me to pay the regular fees only.<br><br>
+            Yours obediently,<br>
+            Tarek Mahmud<br>
+            Class: 10, Roll: 04, Section: A
+        </div>
+
+        <p><strong>12. Write a short composition on "Duties to Parents" within 250-300 words. (20)</strong></p>
+        <div class="htbd-writing-ans">
+            <strong>Model Answer (Short Composition: Duties to Parents):</strong><br>
+            <strong>Introduction:</strong> Parents are the greatest blessing of Almighty Allah in our earthly life. From the very moment of our birth, they nurture us with boundless love, care, and sacrifice. They endure endless hardships to ensure our well-being, education, and moral upbringing. Therefore, every child has profound duties toward their parents.<br><br>
+            <strong>Our Primary Duties:</strong> First and foremost, we must show unconditional respect, obedience, and reverence to our parents. We should never speak to them in a harsh or disrespectful manner. Whatever they advise is aimed at our welfare; hence, following their guidance should be our moral duty. We should also assist them in household chores and share their burdens with a cheerful heart.<br><br>
+            <strong>Care in Old Age:</strong> The greatest test of filial duty comes when parents grow old and frail. In their advanced age, they need tender care, emotional support, and medical attention. Just as they nursed us during our helpless childhood, we must attend to their daily needs with utmost patience. Leaving elderly parents alone or ignoring their emotional needs is an unforgivable sin and moral failure.<br><br>
+            <strong>Spiritual & Religious Value:</strong> All world religions, especially Islam, place highest importance on honoring parents. The Holy Quran instructs us: "And lower to them the wing of humility out of mercy and say: My Lord, have mercy upon them as they brought me up when I was small." The Prophet Muhammad (peace be upon him) declared that Paradise lies beneath the feet of mothers.<br><br>
+            <strong>Conclusion:</strong> In conclusion, our debt to our parents can never be repaid in material terms. By loving them, fulfilling their wishes, and serving them selflessly, we can earn their heartfelt blessings, which serve as the foundation for peace in this world and salvation in the hereafter.
+        </div>
+    </div>
+</div>
+
+
+<h2 class="htbd-heading">সেকশন ০২: এক্সক্লুসিভ ফুল মডেল টেস্ট (১০০ নম্বরের চূড়ান্ত প্রশ্ন ও সমাধান)</h2>
+<p>দাখিল ও এসএসসি পরীক্ষার্থীদের জন্য বিশেষভাবে প্রস্তুতকৃত ১০০ নম্বরের পূর্ণাঙ্গ মডেল টেস্ট। এই প্রশ্নপত্রে বিগত বছরের টপ বোর্ড প্রশ্ন ও সেরা ক্যাডেট কলেজের স্ট্যান্ডার্ড ব্যাকরণ আইটেম সমন্বয় করা হয়েছে।</p>
+
+<div class="htbd-model-card">
+    <div class="htbd-model-title">EXCLUSIVE MODEL TEST | SSC &amp; Dakhil English 2nd Paper</div>
+    <div class="htbd-model-body">
+        <p><strong>Time: 3 Hours | Full Marks: 100</strong></p>
+        
+        <h4>Part A — Grammar (Marks: 60)</h4>
+        
+        <p><strong>1. Complete the following passage with suitable words from the box. You may need to change the forms of some of the words. You may use one word more than once: (1 × 10 = 10)</strong></p>
+        <div class="htbd-clue-box">
+            <span class="htbd-clue-item">economical</span>
+            <span class="htbd-clue-item">and</span>
+            <span class="htbd-clue-item">a</span>
+            <span class="htbd-clue-item">virtue</span>
+            <span class="htbd-clue-item">certain</span>
+            <span class="htbd-clue-item">of</span>
+            <span class="htbd-clue-item">in</span>
+            <span class="htbd-clue-item">truthful</span>
+            <span class="htbd-clue-item">ennobles</span>
+            <span class="htbd-clue-item">respected</span>
+        </div>
+        <p>Truthfulness refers to the habit (a) ___ speaking the truth. It is the greatest (b) ___ in a man's life. The true peace (c) ___ prosperity depends on this virtue. It may not bring (d) ___ prosperity but it (e) ___ brings mental peace. It (f) ___ character and gives one high status in society. A truthful person is loved and (g) ___ by all. (h) ___ truthful person is honest and does not care for anybody. Religions help us being (i) ___. By dint of truthfulness, all can shine (j) ___ life.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 1:</strong><br>
+            (a) of; (b) virtue; (c) and; (d) economic; (e) certainly; (f) ennobles; (g) respected; (h) A; (i) truthful; (j) in.
+        </div>
+
+        <p><strong>2. Make five meaningful sentences using parts of sentences from each column of the table below: (1 × 5 = 5)</strong></p>
+        <div class="htbd-table-container">
+            <table class="htbd-table">
+                <thead>
+                    <tr>
+                        <th>Column A</th>
+                        <th>Column B</th>
+                        <th>Column C</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Early rising</td>
+                        <td>enables</td>
+                        <td>long lasting effect on a man's life.</td>
+                    </tr>
+                    <tr>
+                        <td>This habit</td>
+                        <td>refreshes</td>
+                        <td>enough time to complete his daily work.</td>
+                    </tr>
+                    <tr>
+                        <td>The man who rises early</td>
+                        <td>is</td>
+                        <td>both the body and the mind of a man.</td>
+                    </tr>
+                    <tr>
+                        <td>The morning air</td>
+                        <td>gets</td>
+                        <td>a man to begin his days.</td>
+                    </tr>
+                    <tr>
+                        <td>This certainly</td>
+                        <td>has</td>
+                        <td>good for health.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 2:</strong><br>
+            (a) Early rising is good for health.<br>
+            (b) This habit enables a man to begin his days.<br>
+            (c) The man who rises early gets enough time to complete his daily work.<br>
+            (d) The morning air refreshes both the body and the mind of a man.<br>
+            (e) This certainly has long lasting effect on a man's life.
+        </div>
+
+        <p><strong>3. Complete the following text with right forms of the verbs given in the box. If needed, you can use one word more than once: (1 × 10 = 10)</strong></p>
+        <div class="htbd-clue-box">
+            <span class="htbd-clue-item">feel</span>
+            <span class="htbd-clue-item">stand</span>
+            <span class="htbd-clue-item">see</span>
+            <span class="htbd-clue-item">sleep</span>
+            <span class="htbd-clue-item">remember</span>
+            <span class="htbd-clue-item">wake</span>
+            <span class="htbd-clue-item">go</span>
+            <span class="htbd-clue-item">find</span>
+        </div>
+        <p>One night when the entire village was in deep sleep, the boy Bayazid Bustami (a) ___ in study. His mother was also (b) ___. Suddenly she (c) ___ up and (d) ___ very thirsty. She told her son to (e) ___ a glass of water. Bayazid (f) ___ to the pitcher and (g) ___ it empty. So, he went out with the pitcher in search of water. When he returned, he found his mother in deep sleep. The boy kept (h) ___ beside her mother's bed with a glass of water. In the morning when his mother woke up, she (i) ___ the son standing by her bed with a glass of water. At first, she could not understand anything. After a while she could (j) ___ what happened at night.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 3:</strong><br>
+            (a) was; (b) sleeping; (c) woke; (d) felt; (e) give; (f) went; (g) found; (h) standing; (i) saw; (j) remember.
+        </div>
+
+        <p><strong>4. Change the following sentences according to directions: (1 × 10 = 10)</strong></p>
+        <p>(a) We are proud of our freedom fighters. (Make Interrogative sentence)<br>
+        (b) Will their contribution ever be forgotten? (Make Assertive sentence)<br>
+        (c) They fought very courageously for our country. (Make Exclamatory sentence)<br>
+        (d) We must show respect to them. (Make Negative sentence)<br>
+        (e) If we take proper steps, their condition may improve. (Make Simple sentence)<br>
+        (f) We should not ignore their sacrifices. (Make Affirmative sentence)<br>
+        (g) We achieved our independence because of sacrificing their lives. (Make Complex sentence)<br>
+        (h) What a miserable life they lead! (Make Assertive sentence)<br>
+        (i) By fighting with enemies, they achieved the independence of our country. (Make Compound sentence)<br>
+        (j) We should always remember them. (Make Negative sentence)</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 4:</strong><br>
+            (a) Aren't we proud of our freedom fighters?<br>
+            (b) Their contribution will never be forgotten.<br>
+            (c) How courageously they fought for our country!<br>
+            (d) We cannot but show respect to them.<br>
+            (e) By taking proper steps, their condition may improve.<br>
+            (f) We should remember / cherish their sacrifices.<br>
+            (g) We achieved our independence because they sacrificed their lives.<br>
+            (h) They lead a very miserable life.<br>
+            (i) They fought with enemies and achieved the independence of our country.<br>
+            (j) We should never forget them.
+        </div>
+
+        <p><strong>5. Make a question tag for each of the following sentences: (1 × 5 = 5)</strong></p>
+        <p>(a) Bayazid is a student, ___?<br>
+        (b) He goes to madrasah regularly, ___?<br>
+        (c) Everybody loves him for his honesty, ___?<br>
+        (d) He hardly attends his class late, ___?<br>
+        (e) Let's follow Bayazid, ___?</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 5:</strong><br>
+            (a) Bayazid is a student, <strong>isn't he?</strong><br>
+            (b) He goes to madrasah regularly, <strong>doesn't he?</strong><br>
+            (c) Everybody loves him for his honesty, <strong>don't they?</strong><br>
+            (d) He hardly attends his class late, <strong>does he?</strong><br>
+            (e) Let's follow Bayazid, <strong>shall we?</strong>
+        </div>
+
+        <p><strong>6. Complete the text adding suffixes, prefixes or both with the root words given in the parenthesis: (1 × 5 = 5)</strong></p>
+        <p>Zainul Abedin was a Bangladeshi painter. He had an (a) ___ (ordinary) talent and was (b) ___ (national) recognized for his paintings. He played a vital role in the art (c) ___ (move) in Bangladesh. His homeland honoured him with the title Shilpacharya, or the great teacher of arts for his artistic and (d) ___ (vision) qualities. He spent most of his (e) ___ (child) near the scenic banks of the Brahmaputra River.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 6:</strong><br>
+            (a) extraordinary; (b) internationally; (c) movement; (d) visionary; (e) childhood.
+        </div>
+
+        <p><strong>7. Complete the following text with appropriate prepositions: (1 × 5 = 5)</strong></p>
+        <p>A good student is never indifferent (a) ___ his studies. He does not learn things (b) ___ rote. He does not hunt for traditional guide books. Moreover, he has great thirst (c) ___ knowledge. He is always aware (d) ___ the current affairs of the world. He abides (e) ___ his teachers' advice.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 7:</strong><br>
+            (a) to; (b) by; (c) for; (d) of; (e) by.
+        </div>
+
+        <p><strong>8. Complete the following text using suitable connectors: (1 × 5 = 5)</strong></p>
+        <p>Illiteracy is a curse (a) ___ is a root cause of ignorance. A man (b) ___ is illiterate has to face a lot of challenges in life. No development efforts can be successful (c) ___ illiteracy is removed. (d) ___ the country has achieved significant economic growth, illiteracy remains a major social challenge. Not only the government (e) ___ the educated people should come forward to eradicate illiteracy from the country.</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 8:</strong><br>
+            (a) and / which; (b) who; (c) unless / until; (d) Although / Though; (e) but also.
+        </div>
+
+        <p><strong>9. Use capitals and punctuation marks where necessary in the following text: (5)</strong></p>
+        <p>dhaka the capital of Bangladesh has its own attractions it is especially famous for its mosques once is name was jahangimagar and it was famous for muslin cloth</p>
+        <div class="htbd-sol-box">
+            <strong>Solution to Question 9:</strong><br>
+            "Dhaka, the capital of Bangladesh, has its own attractions. It is especially famous for its mosques. Once its name was Jahangirnagar and it was famous for muslin cloth."
+        </div>
+
+        <h4>Part B — Composition / Writing (Marks: 40)</h4>
+        
+        <p><strong>10. Write a paragraph on "The International Mother Language Day" in about 150-200 words. (10)</strong></p>
+        <div class="htbd-writing-ans">
+            <strong>Model Answer (Paragraph: The International Mother Language Day):</strong><br>
+            The 21st February is observed as the International Mother Language Day all over the world. It is a day of great historical pride and sorrow for the people of Bangladesh. On this day in 1952, brave sons of Bengal including Salam, Barkat, Rafiq, Jabbar, and Shafiur laid down their lives in Dhaka to uphold the dignity of our mother tongue, Bangla, against the oppressive Pakistani regime. In November 1999, UNESCO recognized the supreme sacrifice of the language martyrs by declaring February 21 as the International Mother Language Day to promote linguistic and cultural diversity worldwide. In Bangladesh, people wake up early in the morning, wear black badges, and join the barefoot morning procession (Provat Feri) singing the immortal song "Amar Bhaier Rokte Rangano Ekushey February". They walk to the Central Shaheed Minar to offer floral wreaths in solemn silence. Discussions, seminars, and cultural programmes are organized across the nation. The day inspires us to defend our cultural heritage and respect all languages of the world.
+        </div>
+
+        <p><strong>11. Suppose, you are Rahim/Rahima, a student of a well-known Madrasah / School. There is no canteen in the campus which causes serious hardship to the students. Now, write an application to your Principal for setting up a canteen. (10)</strong></p>
+        <div class="htbd-writing-ans">
+            <strong>Model Answer (Formal Application):</strong><br>
+            28 October 2026<br>
+            The Principal<br>
+            Dhanmondi Model Madrasah / High School, Dhaka<br>
+            Subject: Application for setting up a canteen in the campus.<br><br>
+            Sir,<br>
+            We, the students of your reputed institution, beg most respectfully to draw your kind attention to the fact that our campus does not have any canteen facility. We spend a long duration from 9:00 AM to 4:00 PM at the institution every working day.<br><br>
+            During the tiffin period, many students feel hungry and are compelled to buy unhygienic and uncovered street foods from roadside vendors. As a result, several students frequently suffer from food poisoning and stomach ailments. A clean and well-managed canteen serving fresh snacks, pure drinking water, and nutritious tiffin at reasonable prices has become an urgent necessity for all of us.<br><br>
+            We, therefore, earnestly pray and hope that your honour would be kind and considerate enough to take necessary steps to set up a canteen on the campus as early as possible.<br><br>
+            We remain,<br>
+            Sir,<br>
+            Yours obediently,<br>
+            Rahim Ahmed<br>
+            On behalf of the students of Class 10
+        </div>
+
+        <p><strong>12. Write a short composition on "Computer" within 250-300 words. (20)</strong></p>
+        <div class="htbd-writing-ans">
+            <strong>Model Answer (Short Composition: Computer):</strong><br>
+            <strong>Introduction:</strong> Modern civilization is largely a gift of scientific inventions, and the computer is undoubtedly the most revolutionary creation of modern science. It is an electronic device that can receive data, process complex computations at incredible speeds according to given instructions, and produce accurate outputs. Today, life without computers is almost unimaginable.<br><br>
+            <strong>Historical Background:</strong> The conceptual father of the computer was English mathematician Charles Babbage, who designed the Analytical Engine in the 19th century. Later, prominent scientists and engineers developed electro-mechanical and digital computers. Today's microcomputers and laptops are superfast, portable, and powered by sophisticated artificial intelligence.<br><br>
+            <strong>Uses in Modern Life:</strong> The application of computers is limitless. In the field of education, it assists students and researchers with online lectures, digital libraries, and interactive simulations. In medicine, doctors use computer-assisted diagnosis, CT scans, and robotic surgeries. In banking and commerce, computers handle transactions, store financial records, and facilitate international trade. In governance, it powers digital services and e-governance initiatives.<br><br>
+            <strong>Demerits & Misuses:</strong> Despite its immense benefits, excessive use of computers can cause eye strain, physical lethargy, and mental addiction, especially among students. Cybercrime, hacking, and exposure to harmful digital content are modern risks that require vigilant cybersecurity awareness.<br><br>
+            <strong>Conclusion:</strong> In conclusion, the computer has transformed the world into a connected global village. If used wisely and constructively, it can propel humanity toward unprecedented progress, innovation, and sustainable development.
+        </div>
+    </div>
+</div>
+
+<div class="htbd-internal-silo">
+    <h4>ইংরেজি ২য় পত্র পূর্ণাঙ্গ প্রস্তুতি সহায়িকা ও অন্যান্য টপিকস:</h4>
+    <ul>
+        <li><a href="https://www.helptrickbd.com/2026/09/ssc-changing-sentences-rules-and-board-questions-with-answers.html">SSC Changing Sentences Rules &amp; 25 Board Questions with Answers (১০ নম্বরের পূর্ণাঙ্গ হ্যান্ডনোট)</a></li>
+        <li><a href="https://www.helptrickbd.com/2026/09/ssc-tag-questions-rules-and-board-questions-with-answers.html">SSC Tag Questions Rules &amp; 25 Board Questions with Answers (৫ নম্বরের সুপার ট্রিকস)</a></li>
+        <li><a href="https://www.helptrickbd.com/2026/09/ssc-suffix-and-prefix-rules-and-board-questions-with-answers.html">SSC Suffix &amp; Prefix Rules &amp; 25 Board Questions with Answers (৫ নম্বরের মাস্টার গাইড)</a></li>
+        <li><a href="https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-preposition-and-gap-filling-suggestions.html">SSC English 2nd Paper Preposition &amp; Gap Filling Suggestions (১৫ নম্বরের চূড়ান্ত শিট)</a></li>
+        <li><a href="https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-connectors-and-punctuation-suggestions.html">SSC English 2nd Paper Connectors &amp; Punctuation Suggestions (১০ নম্বরের বোর্ড প্রশ্ন সংকলন)</a></li>
+        <li><a href="https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-writing-part-final-suggestion.html">SSC English 2nd Paper Writing Part Final Suggestion (৪০ নম্বরের প্যারাগ্রাফ, আবেদনপত্র ও কম্পোজিশন)</a></li>
+    </ul>
+</div>
+
+</div>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-model-test-and-board-question-with-answers.html"
+  },
+  "headline": "SSC English 2nd Paper Model Test & Board Question 2026-2027 with Answers (১০০ নম্বরের পূর্ণাঙ্গ এক্সক্লুসিভ প্রশ্ন ও সমাধান)",
+  "description": "এসএসসি ও দাখিল ইংরেজি ২য় পত্র ১০০ নম্বরের এক্সক্লুসিভ মডেল টেস্ট ও বোর্ড প্রশ্ন সমাধান: গ্রামার ও রাইটিং পার্ট পূর্ণাঙ্গ ব্যাখ্যাসহ অনুশীলন গাইড।",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc-english-2nd-paper-model-test-and-board-question-with-answers.webp",
+  "author": {
+    "@type": "Person",
+    "name": "HelpTrickBD Editorial Team",
+    "url": "https://www.helptrickbd.com/p/author-omar-faruk.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/logo.png"
+    }
+  },
+  "datePublished": "2026-09-19T01:00:00+06:00",
+  "dateModified": "2026-09-19T01:00:00+06:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the marks distribution of SSC English 2nd Paper 100 marks exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SSC and Dakhil English 2nd Paper examination carries 100 marks divided into two parts: Part A - Grammar (60 marks covering 9 distinct items: Gap Filling with Clues, Substitution Table, Right Form of Verbs, Changing Sentences, Tag Questions, Suffix-Prefix, Prepositions, Connectors, and Punctuation) and Part B - Composition / Writing (40 marks covering Paragraph, Application/Email, and Short Composition)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can a student effectively practice these Model Tests for SSC 2026-2027?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Students should take a 3-hour mock exam in an exam-hall environment without looking at the solutions. After writing the answers, cross-check with our step-by-step grammatical solutions and marking criteria to identify weak spots in Grammar and Writing formatting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are answers provided for both Grammar and Writing parts in this guide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every grammar question (Items 1 to 9) includes complete correct answers with grammatical rationale, and the writing part (Items 10 to 12) includes high-scoring model paragraphs, formal applications, and structured compositions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this model test match the latest NCTB short syllabus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, both the Dakhil Board Question 2026 and the Exclusive Model Test strictly follow the NCTB approved curriculum and board question pattern for SSC and Dakhil examinations."
+      }
+    }
+  ]
+}
+</script>
