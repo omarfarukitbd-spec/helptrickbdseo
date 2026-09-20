@@ -193,14 +193,17 @@ def find_input_box(driver):
 
 
 def paste_message_verified(driver, input_box, text):
-    """Pastes message into input box with verification and multiple fallback mechanisms."""
-    from selenium.webdriver.common.keys import Keys
-    from selenium.webdriver.common.action_chains import ActionChains
+    """
+    Inserts text line-by-line using document.execCommand('insertText') and
+    document.execCommand('insertLineBreak') to 100% preserve paragraphs,
+    empty blank lines, bullet points, and aesthetic formatting in WhatsApp Web!
+    """
+    import pyperclip
+    try:
+        pyperclip.copy(text)
+    except Exception:
+        pass
 
-    # 1. Copy to clipboard
-    copy_to_clipboard(text)
-
-    # 2. Focus input box
     try:
         driver.execute_script("arguments[0].focus();", input_box)
         time.sleep(0.3)
@@ -208,38 +211,39 @@ def paste_message_verified(driver, input_box, text):
     except Exception:
         pass
 
-    # 3. Direct send_keys Ctrl+V
+    # Split text into individual lines to strictly preserve line breaks
+    lines = text.split('\n')
+
+    # Execute JavaScript line-by-line insertion with insertLineBreak
+    js_code = """
+        var el = arguments[0];
+        var lines = arguments[1];
+        el.focus();
+        // Clear any old leftover text
+        document.execCommand('selectAll', false, null);
+        document.execCommand('delete', false, null);
+
+        for (var i = 0; i < lines.length; i++) {
+            if (lines[i].length > 0) {
+                document.execCommand('insertText', false, lines[i]);
+            }
+            if (i < lines.length - 1) {
+                document.execCommand('insertLineBreak');
+            }
+        }
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+    """
     try:
-        input_box.send_keys(Keys.CONTROL, "v")
+        driver.execute_script(js_code, input_box, lines)
         time.sleep(0.5)
-    except Exception:
-        pass
-
-    # 4. Check if text is present
-    val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
-    if not val.strip():
-        # Fallback A: ActionChains paste
-        try:
-            actions = ActionChains(driver)
-            actions.move_to_element(input_box).click().key_down(Keys.CONTROL).send_keys("v").key_up(Keys.CONTROL).perform()
-            time.sleep(0.5)
-        except Exception:
-            pass
-
-    val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
-    if not val.strip():
-        # Fallback B: document.execCommand insertText
-        try:
-            driver.execute_script("""
-                arguments[0].focus();
-                document.execCommand('insertText', false, arguments[1]);
-            """, input_box, text)
-            time.sleep(0.5)
-        except Exception:
-            pass
+    except Exception as e:
+        print(f"    [!] টেক্সট ইনসার্ট করতে সমস্যা: {e}")
+        return False
 
     final_val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
     return bool(final_val.strip())
+
 
 
 def click_send_button(driver, input_box):
