@@ -41,6 +41,33 @@ PROGRESS_JSON_PATH = os.path.join(PROJECT_ROOT, "output_posts", "whatsapp_broadc
 DEFAULT_PROFILE_DIR = os.path.join(PROJECT_ROOT, ".whatsapp_web_profile")
 
 
+def cleanup_orphaned_chrome(profile_dir):
+    """Gracefully terminates any leftover Chrome processes using this profile to prevent launch crashes."""
+    import subprocess
+    prof_name = os.path.basename(profile_dir)
+    ps_cmd = f"""
+    $processes = Get-CimInstance Win32_Process -Filter "Name = 'chrome.exe'"
+    foreach ($p in $processes) {{
+        if ($p.CommandLine -like "*{prof_name}*") {{
+            Stop-Process -Id $p.ProcessId -Force
+        }}
+    }}
+    """
+    try:
+        subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", ps_cmd], capture_output=True, timeout=8)
+        time.sleep(1)
+    except Exception:
+        pass
+
+    for lock in ["SingletonLock", "SingletonCookie", "SingletonSocket", "lockfile"]:
+        lp = os.path.join(profile_dir, lock)
+        if os.path.exists(lp):
+            try:
+                os.remove(lp)
+            except Exception:
+                pass
+
+
 def copy_to_clipboard(text):
     """Copies text to Windows system clipboard using standard library tkinter."""
     try:
@@ -302,46 +329,19 @@ def run_bot(args):
             print(f"     URL: {item['url']}")
         return
 
-def cleanup_orphaned_chrome(profile_dir):
-    """Gracefully terminates any leftover Chrome processes using this profile to prevent launch crashes."""
-    import subprocess
-    prof_name = os.path.basename(profile_dir)
-    ps_cmd = f"""
-    $processes = Get-CimInstance Win32_Process -Filter "Name = 'chrome.exe'"
-    foreach ($p in $processes) {{
-        if ($p.CommandLine -like "*{prof_name}*") {{
-            Stop-Process -Id $p.ProcessId -Force
-        }}
-    }}
-    """
-    try:
-        subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", ps_cmd], capture_output=True, timeout=8)
-        time.sleep(1)
-    except Exception:
-        pass
-
-    for lock in ["SingletonLock", "SingletonCookie", "SingletonSocket", "lockfile"]:
-        lp = os.path.join(profile_dir, lock)
-        if os.path.exists(lp):
-            try:
-                os.remove(lp)
-            except Exception:
-                pass
-
+    # Clean up any lingering Chrome from previous runs
+    print("[*] পূর্বের কোনো উইন্ডো থাকলে তা পরিষ্কার করা হচ্ছে...")
+    cleanup_orphaned_chrome(args.profile_dir)
 
     # Initialize Selenium
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
-
-    print("[*] পূর্বের কোনো উইন্ডো থাকলে তা পরিষ্কার করা হচ্ছে...")
-    cleanup_orphaned_chrome(args.profile_dir)
 
     print("[*] গুগল ক্রোম ব্রাউজার চালু করা হচ্ছে...")
     os.makedirs(args.profile_dir, exist_ok=True)
 
     options = Options()
     options.add_argument(f"--user-data-dir={args.profile_dir}")
-
     options.add_argument("--no-first-run")
     options.add_argument("--no-default-browser-check")
     options.add_argument("--disable-blink-features=AutomationControlled")
