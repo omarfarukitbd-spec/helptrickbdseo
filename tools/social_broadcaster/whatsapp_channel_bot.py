@@ -10,6 +10,8 @@ Features:
 - 100% Free & Local: Uses real Chrome with persistent user data directory.
 - Rich Preview Guarantee: Pauses 4.5 seconds after pasting so WhatsApp generates
   the large 16:9 featured banner preview card before sending.
+- Verified Paste & Send Button Click: Ensures text is really inserted and clicks
+  the green Send button (paper plane icon) rather than relying on Enter key.
 - Anti-Ban Safe Pacing: 25-30 second intervals between posts to respect rate limits.
 - Resumable: Tracks published posts in `output_posts/whatsapp_broadcast_progress.json`.
 - Zero-Emoji Compliance: Follows Helptrickbd governance standard.
@@ -115,14 +117,40 @@ def find_input_box(driver):
     """Finds the WhatsApp Channel active input box using multiple resilient selectors."""
     from selenium.webdriver.common.by import By
 
+    # Strategy 1: Check currently focused / active element
+    try:
+        active = driver.switch_to.active_element
+        if active and active.is_displayed():
+            ce = active.get_attribute("contenteditable")
+            role = active.get_attribute("role")
+            if ce == "true" or role == "textbox":
+                return active
+    except Exception:
+        pass
+
+    # Strategy 2: JavaScript querySelector for any contenteditable element
+    try:
+        js_elem = driver.execute_script("""
+            var el = document.querySelector('footer div[contenteditable="true"]') ||
+                     document.querySelector('div[contenteditable="true"][data-tab="10"]') ||
+                     document.querySelector('div[contenteditable="true"][role="textbox"]') ||
+                     document.querySelector('div[contenteditable="true"]');
+            return el;
+        """)
+        if js_elem and js_elem.is_displayed():
+            return js_elem
+    except Exception:
+        pass
+
+    # Strategy 3: Resilient XPath selectors
     selectors = [
         "//footer//div[@contenteditable='true']",
         "//div[@contenteditable='true'][@data-tab='10']",
-        "//div[@contenteditable='true'][contains(@aria-placeholder, 'update')]",
-        "//div[@contenteditable='true'][contains(@aria-placeholder, 'মেসেজ')]",
-        "//div[@contenteditable='true'][contains(@aria-placeholder, 'আপডেট')]",
         "//div[@contenteditable='true'][@role='textbox']",
-        "//div[@contenteditable='true']"
+        "//div[@contenteditable='true']",
+        "//p[contains(@class, 'selectable-text')]",
+        "//*[contains(@aria-placeholder, 'update')]",
+        "//*[contains(@aria-placeholder, 'আপডেট')]"
     ]
 
     for sel in selectors:
@@ -135,6 +163,91 @@ def find_input_box(driver):
             continue
 
     return None
+
+
+def paste_message_verified(driver, input_box, text):
+    """Pastes message into input box with verification and multiple fallback mechanisms."""
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.common.action_chains import ActionChains
+
+    # 1. Copy to clipboard
+    copy_to_clipboard(text)
+
+    # 2. Focus input box
+    try:
+        driver.execute_script("arguments[0].focus();", input_box)
+        time.sleep(0.3)
+        input_box.click()
+    except Exception:
+        pass
+
+    # 3. Direct send_keys Ctrl+V
+    try:
+        input_box.send_keys(Keys.CONTROL, "v")
+        time.sleep(0.5)
+    except Exception:
+        pass
+
+    # 4. Check if text is present
+    val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
+    if not val.strip():
+        # Fallback A: ActionChains paste
+        try:
+            actions = ActionChains(driver)
+            actions.move_to_element(input_box).click().key_down(Keys.CONTROL).send_keys("v").key_up(Keys.CONTROL).perform()
+            time.sleep(0.5)
+        except Exception:
+            pass
+
+    val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
+    if not val.strip():
+        # Fallback B: document.execCommand insertText
+        try:
+            driver.execute_script("""
+                arguments[0].focus();
+                document.execCommand('insertText', false, arguments[1]);
+            """, input_box, text)
+            time.sleep(0.5)
+        except Exception:
+            pass
+
+    final_val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
+    return bool(final_val.strip())
+
+
+def click_send_button(driver, input_box):
+    """Finds and clicks the WhatsApp Channel green Send button, with fallback to Enter."""
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
+
+    send_selectors = [
+        "//span[@data-icon='send']/ancestor::button",
+        "//span[@data-icon='send']",
+        "//button[@aria-label='Send']",
+        "//button[contains(@aria-label, 'সেন্ড')]",
+        "//button[contains(@aria-label, 'পাঠান')]",
+        "//span[@data-icon='send-refreshed']/ancestor::button",
+        "//footer//button[contains(@class, 'send')]"
+    ]
+
+    for sel in send_selectors:
+        try:
+            btns = driver.find_elements(By.XPATH, sel)
+            for b in btns:
+                if b.is_displayed():
+                    b.click()
+                    return True
+        except Exception:
+            continue
+
+    # Fallback: Press ENTER on input_box
+    try:
+        input_box.send_keys(Keys.ENTER)
+        return True
+    except Exception:
+        pass
+
+    return False
 
 
 def run_bot(args):
@@ -189,18 +302,46 @@ def run_bot(args):
             print(f"     URL: {item['url']}")
         return
 
+def cleanup_orphaned_chrome(profile_dir):
+    """Gracefully terminates any leftover Chrome processes using this profile to prevent launch crashes."""
+    import subprocess
+    prof_name = os.path.basename(profile_dir)
+    ps_cmd = f"""
+    $processes = Get-CimInstance Win32_Process -Filter "Name = 'chrome.exe'"
+    foreach ($p in $processes) {{
+        if ($p.CommandLine -like "*{prof_name}*") {{
+            Stop-Process -Id $p.ProcessId -Force
+        }}
+    }}
+    """
+    try:
+        subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", ps_cmd], capture_output=True, timeout=8)
+        time.sleep(1)
+    except Exception:
+        pass
+
+    for lock in ["SingletonLock", "SingletonCookie", "SingletonSocket", "lockfile"]:
+        lp = os.path.join(profile_dir, lock)
+        if os.path.exists(lp):
+            try:
+                os.remove(lp)
+            except Exception:
+                pass
+
+
     # Initialize Selenium
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
-    from selenium.webdriver.common.keys import Keys
-    from selenium.webdriver.common.action_chains import ActionChains
-    from selenium.webdriver.common.by import By
+
+    print("[*] পূর্বের কোনো উইন্ডো থাকলে তা পরিষ্কার করা হচ্ছে...")
+    cleanup_orphaned_chrome(args.profile_dir)
 
     print("[*] গুগল ক্রোম ব্রাউজার চালু করা হচ্ছে...")
     os.makedirs(args.profile_dir, exist_ok=True)
 
     options = Options()
     options.add_argument(f"--user-data-dir={args.profile_dir}")
+
     options.add_argument("--no-first-run")
     options.add_argument("--no-default-browser-check")
     options.add_argument("--disable-blink-features=AutomationControlled")
@@ -243,36 +384,23 @@ def run_bot(args):
         success_count = 0
         for idx, post in enumerate(queue, 1):
             print(f"--- [{idx}/{len(queue)}] প্রক্রিয়াকরণ: [{post['id']}] {post['title'][:45]}... ---")
-            
-            # Step 1: Copy to clipboard
-            if not copy_to_clipboard(post["message"]):
-                print("[!] ক্লিপবোর্ডে কপি করতে ব্যর্থ, বাদ দেওয়া হলো।")
+
+            # Step 1: Verified paste
+            pasted = paste_message_verified(driver, input_box, post["message"])
+            if not pasted:
+                print("    [!] মেসেজ পেস্ট নিশ্চিত করা যায়নি। বাদ দেওয়া হলো।")
                 continue
+            print("    > মেসেজ সফলভাবে পেস্ট হয়েছে।")
 
-            # Step 2: Focus and paste
-            try:
-                # Re-find input box to avoid stale element reference
-                curr_box = find_input_box(driver)
-                if curr_box:
-                    input_box = curr_box
-                input_box.click()
-                time.sleep(0.5)
+            # Step 2: Wait for rich preview card with thumbnail
+            print(f"    > থাম্বনেইল প্রিভিউ কার্ড লোড হতে {args.preview_wait} সেকেন্ড অপেক্ষা করা হচ্ছে...")
+            time.sleep(args.preview_wait)
 
-                actions = ActionChains(driver)
-                actions.key_down(Keys.CONTROL).send_keys("v").key_up(Keys.CONTROL).perform()
-                print("    > মেসেজ পেস্ট করা হয়েছে।")
-
-                # Step 3: Wait for rich preview card with thumbnail
-                print(f"    > থাম্বনেইল প্রিভিউ কার্ড লোড হতে {args.preview_wait} সেকেন্ড অপেক্ষা করা হচ্ছে...")
-                time.sleep(args.preview_wait)
-
-                # Step 4: Send
-                actions = ActionChains(driver)
-                actions.send_keys(Keys.ENTER).perform()
+            # Step 3: Send via green Send button click (or Enter fallback)
+            sent = click_send_button(driver, input_box)
+            if sent:
                 time.sleep(1.0)
                 print("    > [সফল] পোস্টটি চ্যানেলে প্রেরণ করা হয়েছে!")
-
-                # Step 5: Log progress
                 completed.add(post["id"])
                 progress["completed_ids"] = sorted(list(completed))
                 progress["history"].append({
@@ -283,9 +411,8 @@ def run_bot(args):
                 })
                 save_progress(progress)
                 success_count += 1
-
-            except Exception as e:
-                print(f"    [!] পোস্ট পাঠাতে ত্রুটি: {e}")
+            else:
+                print("    [!] সেন্ড বাটন ক্লিক করতে ব্যর্থ হয়েছে।")
 
             # Safe human delay before next post
             if idx < len(queue):
