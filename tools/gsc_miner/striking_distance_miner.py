@@ -21,7 +21,7 @@ except Exception:
     pass
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-DEFAULT_SITE_URL = "https://www.helptrickbd.com/"
+DEFAULT_SITE_URL = "sc-domain:helptrickbd.com"
 SERVICE_ACCOUNT_PATH = os.path.join(PROJECT_ROOT, "service_account.json")
 REPORT_PATH = os.path.join(PROJECT_ROOT, "gsc_opportunities_report.md")
 
