@@ -194,55 +194,84 @@ def find_input_box(driver):
 
 def paste_message_verified(driver, input_box, text):
     """
-    Inserts text line-by-line using document.execCommand('insertText') and
-    document.execCommand('insertLineBreak') to 100% preserve paragraphs,
-    empty blank lines, bullet points, and aesthetic formatting in WhatsApp Web!
+    Inserts text with 100% preservation of paragraphs, empty blank lines,
+    bullet points, bold markdown, and links in WhatsApp Web channels.
+    Combines OS clipboard paste (pyautogui) and Selenium Shift+Enter fallback.
     """
     import pyperclip
+    from selenium.webdriver.common.keys import Keys
+
+    # 1. Copy text to OS clipboard
     try:
         pyperclip.copy(text)
     except Exception:
         pass
 
+    # 2. Focus input box
     try:
         driver.execute_script("arguments[0].focus();", input_box)
-        time.sleep(0.3)
+        time.sleep(0.2)
         input_box.click()
+        time.sleep(0.2)
     except Exception:
         pass
 
-    # Split text into individual lines to strictly preserve line breaks
-    lines = text.split('\n')
-
-    # Execute JavaScript line-by-line insertion with insertLineBreak
-    js_code = """
-        var el = arguments[0];
-        var lines = arguments[1];
-        el.focus();
-        // Clear any old leftover text
-        document.execCommand('selectAll', false, null);
-        document.execCommand('delete', false, null);
-
-        for (var i = 0; i < lines.length; i++) {
-            if (lines[i].length > 0) {
-                document.execCommand('insertText', false, lines[i]);
-            }
-            if (i < lines.length - 1) {
-                document.execCommand('insertLineBreak');
-            }
-        }
-        el.dispatchEvent(new Event('input', { bubbles: true }));
-        el.dispatchEvent(new Event('change', { bubbles: true }));
-    """
+    # 3. Clear old text
     try:
-        driver.execute_script(js_code, input_box, lines)
-        time.sleep(0.5)
-    except Exception as e:
-        print(f"    [!] টেক্সট ইনসার্ট করতে সমস্যা: {e}")
-        return False
+        driver.execute_script("""
+            var el = arguments[0];
+            el.focus();
+            document.execCommand('selectAll', false, null);
+            document.execCommand('delete', false, null);
+        """, input_box)
+        time.sleep(0.2)
+    except Exception:
+        pass
+
+    # Method 1: Try OS Hardware Paste (pyautogui hotkey ctrl+v)
+    pasted_with_pyautogui = False
+    try:
+        import pyautogui
+        pyautogui.hotkey('ctrl', 'v')
+        time.sleep(0.6)
+        check_val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
+        if check_val and '\n' in check_val and len(check_val.strip()) > 30:
+            pasted_with_pyautogui = True
+    except Exception:
+        pasted_with_pyautogui = False
+
+    # Method 2: If OS paste did not yield multiline content, use Atomic Line insertion + Selenium Shift+Enter
+    if not pasted_with_pyautogui:
+        try:
+            # Clear again to prevent duplicate text
+            driver.execute_script("""
+                var el = arguments[0];
+                el.focus();
+                document.execCommand('selectAll', false, null);
+                document.execCommand('delete', false, null);
+            """, input_box)
+            time.sleep(0.2)
+
+            lines = text.split('\n')
+            for i, line in enumerate(lines):
+                clean_line = line.strip('\r')
+                if clean_line:
+                    # Atomically insert text (preserves Bengali ligatures and special chars)
+                    driver.execute_script("document.execCommand('insertText', false, arguments[0]);", clean_line)
+                    time.sleep(0.02)
+                if i < len(lines) - 1:
+                    # Send Shift+Enter to trigger Lexical's KEY_ENTER_COMMAND / paragraph break
+                    input_box.send_keys(Keys.SHIFT, Keys.ENTER)
+                    time.sleep(0.04)
+
+            time.sleep(0.3)
+        except Exception as e:
+            print(f"    [!] টেক্সট ইনসার্ট করতে সমস্যা: {e}")
+            return False
 
     final_val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
     return bool(final_val.strip())
+
 
 
 
