@@ -194,20 +194,13 @@ def find_input_box(driver):
 
 def paste_message_verified(driver, input_box, text):
     """
-    Inserts text with 100% preservation of paragraphs, empty blank lines,
-    bullet points, bold markdown, and links in WhatsApp Web channels.
-    Combines OS clipboard paste (pyautogui) and Selenium Shift+Enter fallback.
+    Inserts text directly into WhatsApp Web Lexical editor with 100% preservation
+    of paragraphs, empty blank lines, bullet points, bold markdown, and links.
+    Runs entirely inside Chrome via ChromeDriver (zero terminal interference).
     """
-    import pyperclip
     from selenium.webdriver.common.keys import Keys
 
-    # 1. Copy text to OS clipboard
-    try:
-        pyperclip.copy(text)
-    except Exception:
-        pass
-
-    # 2. Focus input box
+    # 1. Focus input box
     try:
         driver.execute_script("arguments[0].focus();", input_box)
         time.sleep(0.2)
@@ -216,7 +209,7 @@ def paste_message_verified(driver, input_box, text):
     except Exception:
         pass
 
-    # 3. Clear old text
+    # 2. Clear old text
     try:
         driver.execute_script("""
             var el = arguments[0];
@@ -228,49 +221,28 @@ def paste_message_verified(driver, input_box, text):
     except Exception:
         pass
 
-    # Method 1: Try OS Hardware Paste (pyautogui hotkey ctrl+v)
-    pasted_with_pyautogui = False
+    # 3. Pure In-Browser Atomic Line insertion + Selenium Shift+Enter
     try:
-        import pyautogui
-        pyautogui.hotkey('ctrl', 'v')
-        time.sleep(0.6)
-        check_val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
-        if check_val and '\n' in check_val and len(check_val.strip()) > 30:
-            pasted_with_pyautogui = True
-    except Exception:
-        pasted_with_pyautogui = False
+        lines = text.split('\n')
+        for i, line in enumerate(lines):
+            clean_line = line.strip('\r')
+            if clean_line:
+                # Atomically insert text (preserves Bengali ligatures and special chars)
+                driver.execute_script("document.execCommand('insertText', false, arguments[0]);", clean_line)
+                time.sleep(0.02)
+            if i < len(lines) - 1:
+                # Send Shift+Enter to trigger Lexical's KEY_ENTER_COMMAND / paragraph break
+                input_box.send_keys(Keys.SHIFT, Keys.ENTER)
+                time.sleep(0.04)
 
-    # Method 2: If OS paste did not yield multiline content, use Atomic Line insertion + Selenium Shift+Enter
-    if not pasted_with_pyautogui:
-        try:
-            # Clear again to prevent duplicate text
-            driver.execute_script("""
-                var el = arguments[0];
-                el.focus();
-                document.execCommand('selectAll', false, null);
-                document.execCommand('delete', false, null);
-            """, input_box)
-            time.sleep(0.2)
-
-            lines = text.split('\n')
-            for i, line in enumerate(lines):
-                clean_line = line.strip('\r')
-                if clean_line:
-                    # Atomically insert text (preserves Bengali ligatures and special chars)
-                    driver.execute_script("document.execCommand('insertText', false, arguments[0]);", clean_line)
-                    time.sleep(0.02)
-                if i < len(lines) - 1:
-                    # Send Shift+Enter to trigger Lexical's KEY_ENTER_COMMAND / paragraph break
-                    input_box.send_keys(Keys.SHIFT, Keys.ENTER)
-                    time.sleep(0.04)
-
-            time.sleep(0.3)
-        except Exception as e:
-            print(f"    [!] টেক্সট ইনসার্ট করতে সমস্যা: {e}")
-            return False
+        time.sleep(0.3)
+    except Exception as e:
+        print(f"    [!] টেক্সট ইনসার্ট করতে সমস্যা: {e}")
+        return False
 
     final_val = driver.execute_script("return arguments[0].innerText || arguments[0].textContent || '';", input_box)
     return bool(final_val.strip())
+
 
 
 
