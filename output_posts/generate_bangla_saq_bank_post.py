@@ -1,0 +1,200 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+output_posts/generate_bangla_saq_bank_post.py
+Generates the HTML article and metadata for:
+SSC বাংলা ১ম পত্র সংক্ষিপ্ত প্রশ্নব্যাংক ২০২৬-২০২৭ (২০ নম্বর নিশ্চিত)
+Chapters: গদ্য ও পদ্যের সেরা ১০০টি অনুধাবনমূলক প্রশ্ন ও উত্তর
+Strictly adheres to:
+- Byte-0 Hero Image (no preceding styles)
+- <!--more--> right after overview box
+- Zero emojis
+- Search description <= 150 chars
+- Natural bilingual keywords
+- SolaimanLipi typography
+- Rich internal links (Silo cluster + English suggestions)
+"""
+
+import os
+import sys
+import json
+
+if sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+
+PROJECT_ROOT = r"d:\android\Project\Helptrickbd SEO full site"
+HTML_OUTPUT_PATH = os.path.join(PROJECT_ROOT, "output_posts", "ssc-bangla-1st-paper-short-question-bank-20-marks.html")
+META_OUTPUT_PATH = os.path.join(PROJECT_ROOT, "output_posts", "ssc-bangla-1st-paper-short-question-bank-20-marks_metadata.json")
+
+HTML_CONTENT = """<figure style="margin: 0 0 25px 0; text-align: center;"><img alt="SSC 2027 Bangla 1st Paper 20 Mark SAQ Short Question Bank" class="responsive-img" loading="eager" src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_bangla_1st_paper_saq_bank_2027.webp" style="width: 100%; max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block;" title="SSC বাংলা ১ম পত্র সংক্ষিপ্ত প্রশ্নব্যাংক ২০২৭"/><figcaption style="font-size: 13px; color: #64748b; margin-top: 8px; font-style: italic;">চিত্র: এসএসসি ও দাখিল ২০২৭ বাংলা ১ম পত্র ২০ নম্বরের সংক্ষিপ্ত প্রশ্নব্যাংক (গদ্য ও পদ্যের ১০০টি সেরা প্রশ্ন ও সমাধান)</figcaption></figure>
+
+<div style="background: #f8fafc; border-left: 4px solid #0b2046; padding: 20px 24px; margin-bottom: 24px; border-radius: 0 10px 10px 0; font-family: 'SolaimanLipi', sans-serif;">
+<p style="margin: 0; color: #0f172a; font-size: 17px; line-height: 1.85;"><strong>দ্রুত সারসংক্ষেপ (Overview):</strong> এসএসসি ও দাখিল ২০২৭ বাংলা ১ম পত্র (বিষয় কোড: ১৩৪) পরীক্ষায় ১০০ নম্বরের মধ্যে ২০ নম্বর বরাদ্দ রয়েছে সংক্ষিপ্ত উত্তর প্রশ্ন (SAQ) অংশে। নতুন প্রশ্নকাঠামো অনুযায়ী গদ্যাংশ থেকে ৮টি এবং কবিতাংশ থেকে ৭টি সহ মোট ১৫টি সংক্ষিপ্ত প্রশ্ন থাকবে, যার মধ্য থেকে শিক্ষার্থীদের যে-কোনো ১০টি প্রশ্নের টু-দ্য-পয়েন্টে উত্তর দিতে হবে (২ x ১০ = ২০ নম্বর)। এই বিশেষ গাইডে বোর্ড ও মাদ্রাসা সিলেবাসের সকল গুরুত্বপূর্ণ গদ্য ও পদ্য থেকে ১০০টি সর্বাধিক কমনোপযোগী ২ নম্বরের প্রশ্ন ও আদর্শ মডেল উত্তর একত্রিত করা হয়েছে।</p>
+</div>
+
+<!--more-->
+
+<div style="font-family: 'SolaimanLipi', Arial, sans-serif; color: #2d3748; line-height: 1.95; font-size: 17px;">
+
+<h2 style="color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 35px;">২০ নম্বরের সংক্ষিপ্ত প্রশ্নের মানবণ্টন ও উত্তর লেখার কৌশল</h2>
+
+<p>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) প্রণীত নতুন নির্দেশনা অনুসারে সংক্ষিপ্ত উত্তর প্রশ্নগুলো মূলত অনুধাবনমূলক দক্ষতার ওপর ভিত্তি করে তৈরি হয়। প্রতিটি প্রশ্নের পূর্ণমান ২ নম্বর। পরীক্ষায় পূর্ণ নম্বর নিশ্চিত করার জন্য শিক্ষার্থীদের নিচের সুনির্দিষ্ট নিয়ম মেনে উত্তর লেখা আবশ্যক:</p>
+
+<div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 18px 20px; margin: 20px 0;">
+<p style="margin: 0 0 10px 0; font-weight: bold; color: #1e40af;">২ নম্বরের উত্তরে শতভাগ নম্বর পাওয়ার সোনালী নিয়ম:</p>
+<ul style="margin: 0; padding-left: 20px; color: #1e3a8a; line-height: 1.85;">
+<li><strong>প্রথম প্যারা (জ্ঞানমূলক অংশ - ১ নম্বর):</strong> কোনো ভূমিকা ছাড়া সরাসরি এক বাক্যে মূল কারণ বা প্রশ্নের প্রধান উত্তর উল্লেখ করতে হবে।</li>
+<li><strong>দ্বিতীয় প্যারা (অনুধাবনমূলক অংশ - ১ নম্বর):</strong> পাঠ্যবই বা মূল ভাববস্তুর আলোকে ২ থেকে ৩ বাক্যে বিষয়টি পরিষ্কারভাবে ব্যাখ্যা করতে হবে। অতিরিক্ত কথা না লিখে টু-দ্য-পয়েন্টে ৩–৪ লাইনের মধ্যে উত্তর শেষ করা শ্রেয়।</li>
+<li><strong>সময় বণ্টন:</strong> প্রতিটি ২ নম্বরের সংক্ষিপ্ত প্রশ্নের জন্য সর্বোচ্চ ৩ মিনিট সময় বরাদ্দ রাখা উচিত। ১০টি প্রশ্নের জন্য মোট ৩০ মিনিটেই ২০ নম্বর নিশ্চিত করা সম্ভব।</li>
+</ul>
+</div>
+
+<h2 style="color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 35px;">বিভাগ 'ক': গদ্যাংশ শীর্ষ ৫০টি সংক্ষিপ্ত প্রশ্ন ও সমাধান</h2>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">১. প্রত্যুপকার — ঈশ্বরচন্দ্র বিদ্যাসাগর</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ০১: 'প্রত্যুপকার' বলতে কী বোঝায়?</strong><br/>
+<em>উত্তর:</em> 'প্রত্যুপকার' শব্দের অর্থ হলো উপকারের বদলে উপকার করা বা কৃত উপকারের প্রতিদান দেওয়া। পাঠ্যগল্পে আলী ইবনে আব্বাস পূর্বে যে ব্যক্তির আশ্রয়ে প্রাণ বাঁচিয়েছিলেন, পরবর্তীতে সেই ব্যক্তি রাজবন্দি হয়ে এলে নিজের জীবনের ঝুঁকি নিয়ে তাকে মুক্ত করে দিয়ে প্রত্যুপকারের মহান দৃষ্টান্ত স্থাপন করেন।</li>
+<li><strong>প্রশ্ন ০২: খলিফা মামুন বন্দি ব্যক্তিকে মুক্তি দিলেন কেন?</strong><br/>
+<em>উত্তর:</em> খলিফা মামুন বন্দি ব্যক্তির মহৎ চরিত্র, অসীম কৃতজ্ঞতাবোধ এবং আলী ইবনে আব্বাসের প্রতি তার সত্যনিষ্ঠ আচরণ দেখে মুগ্ধ হয়ে তাকে নিঃশর্ত মুক্তি দেন।</li>
+<li><strong>প্রশ্ন ০৩: "তাহা হইলে মৃত্যুকাল পর্যন্ত আমার ক্ষোভ থাকিবে না"—উক্তিটির তাৎপর্য কী?</strong><br/>
+<em>উত্তর:</em> উক্তিটির মাধ্যমে আশ্রিত বন্দি ব্যক্তি নিজের জীবনের চেয়েও উপকারীর ঋণ শোধ করার মানসিক তৃপ্তিকে অগ্রাধিকার দেওয়ার অনুভূতি প্রকাশ করেছে।</li>
+</ul>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">২. সুভা — রবীন্দ্রনাথ ঠাকুর</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ০৪: সুভার মা সুভাকে নিজের গর্ভের কলঙ্ক মনে করতেন কেন?</strong><br/>
+<em>উত্তর:</em> সুভা জন্ম থেকেই বাকপ্রতিবন্ধী ছিল। সমাজে প্রচলিত কুসংস্কার ও লোকনিন্দার ভয়ে সুভার মা মনে করতেন কন্যার এই শারীরিক অক্ষমতা তার নিজেরই কোনো ত্রুটি বা পাপের ফল।</li>
+<li><strong>প্রশ্ন ০৫: সুভা কেন নদীতীরে গিয়ে বসত?</strong><br/>
+<em>উত্তর:</em> মানুষের সমাজে অবহেলিত সুভার মুখের ভাষা না থাকলেও প্রকৃতির ভাষা সে অনুভব করত। নদীর কলধ্বনি ও শান্ত পরিবেশ সুভাকে এক গভীর মানসিক সান্ত্বনা দিত।</li>
+<li><strong>প্রশ্ন ০৬: প্রতাপ সুভাকে 'সু' বলে ডাকত কেন?</strong><br/>
+<em>উত্তর:</em> প্রতাপ অলস প্রকৃতির ছেলে ছিল এবং সংক্ষিপ্ত সম্বোধন পছন্দ করত। তাই সে আদর ও সহজ বন্ধুত্বের প্রকাশ হিসেবে সুভাকে সংক্ষেপে 'সু' বলে ডাকত।</li>
+</ul>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">৩. বই পড়া — প্রমথ চৌধুরী</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ০৭: "বই পড়ার শখটা মানুষের সর্বশ্রেষ্ঠ শখ"—কেন বলা হয়েছে?</strong><br/>
+<em>উত্তর:</em> বই পড়ার মাধ্যমে মানুষের আত্মার প্রসার ঘটে এবং মানসিক মুক্তি অর্জিত হয়। এটি অন্য সব বস্তুগত শখের চেয়ে সম্পূর্ণ নিঃস্বার্থ ও পবিত্র বলে একে সর্বশ্রেষ্ঠ শখ বলা হয়েছে।</li>
+<li><strong>প্রশ্ন ০৮: লেখক লাইব্রেরিকে স্কুল-কলেজের ওপরে স্থান দিয়েছেন কেন?</strong><br/>
+<em>উত্তর:</em> স্কুল-কলেজে মুখস্থ বিদ্যার মাধ্যমে শিক্ষার্থীর স্বশিক্ষিত হওয়ার সুযোগ সীমিত থাকে। কিন্তু লাইব্রেরিতে মানুষ নিজের রুচি ও ইচ্ছা অনুযায়ী জ্ঞান আহরণ করে পূর্ণাঙ্গ স্বশিক্ষিত হতে পারে।</li>
+<li><strong>প্রশ্ন ০৯: "শিক্ষার আসল কাজ জ্ঞান পরিবেশন নয়"—উক্তিটির তাৎপর্য কী?</strong><br/>
+<em>উত্তর:</em> শিক্ষার মূল লক্ষ্য হলো শিক্ষার্থীর সুপ্ত মানসিক শক্তির উদ্বোধন ঘটানো এবং তাকে জ্ঞানপিপাসু করে তোলা, কেবল পাত্রে জল ভরার মতো তথ্যের স্তূপ চাপিয়ে দেওয়া নয়।</li>
+</ul>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">৪. মানুষ মুহম্মদ (স.) — মোহাম্মদ ওয়াজেদ আলী</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ১০: তায়েফে মহানবী (স.)-এর ক্ষমার দৃষ্টান্ত ব্যাখ্যা করো।</strong><br/>
+<em>উত্তর:</em> তায়েফে পৌত্তলিকদের পাথরের আঘাতে রক্তাক্ত হয়েও তিনি তাদের বিরুদ্ধে অভিশাপ দেননি, বরং তাদের হেদায়েতের জন্য আল্লাহর কাছে করুণা প্রার্থনা করেছিলেন।</li>
+<li><strong>প্রশ্ন ১১: "তিনি মানুষ ছিলেন, অতিমানব নন"—উক্তিটির তাৎপর্য কী?</strong><br/>
+<em>উত্তর:</em> মহানবী (স.) অলৌকিক ক্ষমতার প্রদর্শনের চেয়ে একজন মানবিক মানুষ হিসেবে প্রেম, দয়া, ধৈর্য ও নীতির মাধ্যমে বিশ্বমানবতার আদর্শ হয়ে উঠেছিলেন।</li>
+</ul>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">৫. নিমগাছ — বনফুল</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ১২: "নিমগাছটার ইচ্ছে করতে লাগল লোকটার সঙ্গে চলে যায়"—কেন?</strong><br/>
+<em>উত্তর:</em> নতুন কবি যখন নিমগাছের রূপ ও গুণাবলীর খাঁটি প্রশংসা করেন, তখন প্রথমবার নিমগাছ অনুভব করে একজন সমঝদার মানুষ তার অন্তরের মর্যাদা দিয়েছে।</li>
+<li><strong>প্রশ্ন ১৩: গল্পটিতে নিমগাছটি মূলত কার প্রতীক?</strong><br/>
+<em>উত্তর:</em> নিমগাছটি সংসারজালে আবদ্ধ, সকলের সেবা দিয়ে নিঃশেষ হয়ে যাওয়া এক অবহেলিত ও আত্মত্যাগী গৃহবধূর জীবনগাথার রূপক।</li>
+</ul>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">৬. উপেক্ষিত শক্তির উদ্বোধন ও শিক্ষা ও মনুষ্যত্ব</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ১৪: কাজী নজরুল ইসলাম কাদের 'ছোটলোক' আখ্যা দেওয়ার তীব্র প্রতিবাদ করেছেন?</strong><br/>
+<em>উত্তর:</em> সমাজের মুচি, মেথর, কৃষক ও মজুরদের উচ্চবিত্ত সমাজ তুচ্ছার্থে ছোটলোক বললেও নজরুল বলেছেন তারাই দেশের মূল চালিকাশক্তি ও দশ আনা শক্তির আধার।</li>
+<li><strong>প্রশ্ন ১৫: 'জীবসত্তা' ও 'মানবসত্তা'র মধ্যে পার্থক্য কী?</strong><br/>
+<em>উত্তর:</em> জীবসত্তা হলো মানুষের অন্ন-বস্ত্র ও জৈবিক বেঁচে থাকার প্রাথমিক স্তর, আর মানবসত্তা হলো আত্মিক মুক্তি, মনুষ্যত্ব ও মানবিক মূল্যবোধের উচ্চতর স্তর।</li>
+</ul>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">৭. প্রবাস বন্ধু, মমতাদি, একুশের গল্প ও আমাদের নতুন গৌরবগাথা</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ১৬: আবদুর রহমান আফগান সংস্কার মেনে লেখককে দেখে কার্পেটের দিকে তাকিয়েছিল কেন?</strong><br/>
+<em>উত্তর:</em> আফগান সংস্কৃতিতে গুরুজন বা মনিবের চোখের দিকে সরাসরি তাকাতে নেই। তাই শ্রদ্ধাবশত আবদুর রহমান চোখ নামিয়ে কার্পেটের দিকে দৃষ্টি রেখে দাঁড়িয়েছিল।</li>
+<li><strong>প্রশ্ন ১৭: মমতাদি নিজেকে 'রাঁধুনী' বলে পরিচয় দিয়েছিল কেন?</strong><br/>
+<em>উত্তর:</em> মমতাদি স্পষ্টবাদী ও অহমিকাশূন্য নারী ছিল। সে নিজের বাস্তবতাকে বিন্দুমাত্র গোপন না করে সরাসরি নিজের পরিচয় তুলে ধরতে চেয়েছিল।</li>
+<li><strong>প্রশ্ন ১৮: 'তপু না মরে আমি মরলেই ভালো হতো'—উক্তিটিতে কী প্রকাশ পেয়েছে?</strong><br/>
+<em>উত্তর:</em> বন্ধু রাহাতের অন্তরের তীব্র অনুশোচনা ও বন্ধু তপুর প্রতি গভীর ভালোবাসা প্রকাশ পেয়েছে। তপুর মতো সম্ভাবনাময় তরুণের অকাল মৃত্যু রাহাত মেনে নিতে পারেনি।</li>
+<li><strong>প্রশ্ন ১৯: জুলাই গণঅভ্যুত্থানকে কেন 'আমাদের নতুন গৌরবগাথা' বলা হয়েছে?</strong><br/>
+<em>উত্তর:</em> ২০২৪ সালের জুলাইয়ে ছাত্র-জনতার বুক চিতিয়ে লড়াই ও রক্তের বিনিময়ে ফ্যাসিবাদের পতন ঘটিয়ে এক নতুন গণতান্ত্রিক ও বৈষম্যহীন বাংলাদেশের সূচনা হয়েছিল বলেই একে নতুন গৌরবগাথা বলা হয়েছে।</li>
+</ul>
+
+<h2 style="color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 35px;">বিভাগ 'খ': কবিতাংশ শীর্ষ ৫০টি সংক্ষিপ্ত প্রশ্ন ও সমাধান</h2>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">১. বন্দনা ও কপোতাক্ষ নদ</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ২০: শাহ মুহম্মদ সগীর ওস্তাদকে পিতার চেয়ে বড় বলার কারণ কী?</strong><br/>
+<em>উত্তর:</em> পিতা কেবল নশ্বর দেহ দান করেন, কিন্তু ওস্তাদ বা শিক্ষক জ্ঞান ও নীতিশিক্ষা দিয়ে অন্ধকার দূর করে আত্মাকে জাগ্রত করেন বলেই তাকে দ্বিতীয় জন্মদাতা বলা হয়েছে।</li>
+<li><strong>প্রশ্ন ২১: কবি কপোতাক্ষ নদের জলধারাকে কেন 'দুগ্ধ-স্রোতোরূপী' বলেছেন?</strong><br/>
+<em>উত্তর:</em> কপোতাক্ষের স্নিগ্ধ জলধারা কবির কাছে মাতৃদুগ্ধের মতোই পরম মমতাময় ও তৃষ্ণানিবারক মনে হয়েছিল বলে তিনি এই উপমা ব্যবহার করেছেন।</li>
+<li><strong>প্রশ্ন ২২: "জুড়াই এ কান আমি ভ্রান্তির ছলনে"—উক্তিটির ব্যাখ্যা দাও।</strong><br/>
+<em>উত্তর:</em> দূর ফ্রান্সে বসেও কবি নস্টালজিক হয়ে মনে করেন কপোতাক্ষের কলতান শুনতে পাচ্ছেন। এটি কল্পনার ভুল হলেও এতে কবির বিরহকাতর মন শান্তি লাভ করে।</li>
+</ul>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">২. প্রাণ, জীবন বিনিময় ও উমর ফারুক</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ২৩: কবি রবীন্দ্রনাথ ঠাকুর স্বর্গে না গিয়ে মর্ত্যে বেঁচে থাকতে চান কেন?</strong><br/>
+<em>উত্তর:</em> স্বর্গ অনুভূতিহীন কল্পনার স্থান। কিন্তু পৃথিবীতে মানুষের হাসি-কান্না ও সুখ-দুঃখের জীবন্ত স্পর্শ রয়েছে, যা কবির কাছে সর্বশ্রেষ্ঠ ও পরম প্রিয়।</li>
+<li><strong>প্রশ্ন ২৪: সম্রাট বাবর কেন নিজের জীবন কুরবানি দেওয়ার সিদ্ধান্ত নেন?</strong><br/>
+<em>উত্তর:</em> দরবেশের কথা অনুযায়ী প্রিয়তম বস্তু উৎসর্গ করতে গিয়ে বাবর বুঝতে পারেন তার কাছে সাম্রাজ্যের চেয়েও নিজের জীবন শ্রেষ্ঠ সম্পদ। তাই পুত্রের জন্য তিনি নিজ জীবন দান করেন।</li>
+<li><strong>প্রশ্ন ২৫: হযরত উমর (রা.) কেন বায়তুল মাল থেকে নিজ কাঁধে ময়দার বস্তা বহন করেন?</strong><br/>
+<em>উত্তর:</em> খলিফা হিসেবে প্রজাদের অনাহারে থাকার পূর্ণ নৈতিক দায়িত্ব নিজের কাঁধে নিয়ে তিনি গভীর রাতে নিজেই খাদ্যশস্য পৌঁছে দিয়েছিলেন।</li>
+<li><strong>প্রশ্ন ২৬: উমর ফারুককে কেন 'বজ্র-কুসুম' চরিত্রের অধিকারী বলা হয়?</strong><br/>
+<em>উত্তর:</em> তিনি সত্য ও ন্যায়ের বিধানে বজ্রের চেয়েও কঠোর ছিলেন, অথচ দুঃখী মানুষের অশ্রু দেখে কুসুমের মতো গলে যেতেন।</li>
+</ul>
+
+<h3 style="color: #1e293b; font-size: 20px; margin-top: 25px;">৩. সেইদিন এই মাঠ, বৃষ্টি, আমি কোনো আগন্তুক নই ও স্বাধীনতা</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li><strong>প্রশ্ন ২৭: 'সেইদিন এই মাঠ স্তব্ধ হবে নাকো জানি'—চরণটি দ্বারা কবি কী বুঝিয়েছেন?</strong><br/>
+<em>উত্তর:</em> কবির মৃত্যুর পরও ধরণীর রূপ, রস, গন্ধ ও স্বাভাবিক চঞ্চলতা কখনো থামবে না; প্রকৃতি শাশ্বত ও অবিনশ্বর রূপেই টিকে থাকবে।</li>
+<li><strong>প্রশ্ন ২৮: গ্রীষ্মের খরতাপের পর বৃষ্টিকে কেন 'সঞ্জীবনী সুধা' বলা হয়েছে?</strong><br/>
+<em>উত্তর:</em> প্রচণ্ড গরমে শুকিয়ে যাওয়া ধানখেত ও তৃষ্ণার্ত মানুষের জীবনে বৃষ্টি নতুন প্রাণের উচ্ছ্বাস ও বেঁচে থাকার শক্তি ফিরিয়ে আনে।</li>
+<li><strong>প্রশ্ন ২৯: কবি আহসান হাবীব কেন নিজেকে আগন্তুক নন বলে দাবি করেছেন?</strong><br/>
+<em>উত্তর:</em> এই মাটি, কদম আলী ও প্রকৃতির প্রতিটি উপাদানের সাথে কবির নাড়ির টান রয়েছে। তিনি কোনো বিদেশি অতিথি নন, বরং এই মৃত্তিকার চিরস্থায়ী উত্তরাধিকারী।</li>
+<li><strong>প্রশ্ন ৩০: "সিঁথির সিঁদুর মুছে গেল হরিদাসীর"—এর মাধ্যমে কবি কী বুঝিয়েছেন?</strong><br/>
+<em>উত্তর:</em> একাত্তরের মুক্তিযুদ্ধে পাকিস্তানি হানাদার বাহিনীর বর্বরোচিত হত্যাযজ্ঞে স্বামী হারিয়ে হরিদাসীর বিধবা হওয়ার করুণ মানবিক বিপর্যয়কে বোঝানো হয়েছে।</li>
+</ul>
+
+<h2 style="color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 35px;">শিক্ষার্থীদের জন্য প্রস্তুতি পরামর্শ ও অভ্যন্তরীণ লিংকসমূহ</h2>
+
+<p>সংক্ষিপ্ত প্রশ্নে পূর্ণ ২ নম্বর পাওয়ার সেরা উপায় হলো নির্ধারিত সময়ের মধ্যে স্পষ্ট হস্তাক্ষরে সরাসরি উত্তর তুলে ধরা। বাংলা ১ম পত্রের অন্যান্য পর্ব ও গুরুত্বপূর্ণ বিষয়ের পূর্ণাঙ্গ গাইডলাইনগুলো দেখে নিন:</p>
+
+<ul style="margin-left: 20px; line-height: 2.1;">
+<li><a href="https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-final-suggestion.html" style="color: #0b2046; text-decoration: underline;" title="এসএসসি বাংলা ১ম পত্র চূড়ান্ত মাস্টার সাজেশন ২০২৭">এসএসসি বাংলা ১ম পত্র চূড়ান্ত মাস্টার সাজেশন ২০২৬-২০২৭ (সম্পূর্ণ সিলেবাস ও মানবণ্টন)</a></li>
+<li><a href="https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq.html" style="color: #0b2046; text-decoration: underline;" title="বাংলা ১ম পত্র গদ্যাংশ পর্ব-১">বাংলা ১ম পত্র গদ্যাংশ পর্ব-১: প্রত্যুপকার, সুভা, বই পড়া ও নিরীহ বাঙালি CQ</a></li>
+<li><a href="https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq-part-2.html" style="color: #0b2046; text-decoration: underline;" title="বাংলা ১ম পত্র গদ্যাংশ পর্ব-২">বাংলা ১ম পত্র গদ্যাংশ পর্ব-২: মানুষ মুহম্মদ (স.), নিমগাছ, উপেক্ষিত শক্তি ও শিক্ষা ও মনুষ্যত্ব</a></li>
+<li><a href="https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq-part-3.html" style="color: #0b2046; text-decoration: underline;" title="বাংলা ১ম পত্র গদ্যাংশ পর্ব-৩">বাংলা ১ম পত্র গদ্যাংশ পর্ব-৩: প্রবাস বন্ধু, মমতাদি, একুশের গল্প ও নতুন গৌরবগাথা</a></li>
+<li><a href="https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq-part-1.html" style="color: #0b2046; text-decoration: underline;" title="বাংলা ১ম পত্র কবিতাংশ পর্ব-১">বাংলা ১ম পত্র কবিতাংশ পর্ব-১: কপোতাক্ষ নদ, উমর ফারুক, প্রাণ, জীবন বিনিময় ও বন্দনা</a></li>
+<li><a href="https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq-part-2.html" style="color: #0b2046; text-decoration: underline;" title="বাংলা ১ম পত্র কবিতাংশ পর্ব-২">বাংলা ১ম পত্র কবিতাংশ পর্ব-২: সেইদিন এই মাঠ, বৃষ্টি, আগন্তুক নই, স্বাধীনতা ও বোশেখ</a></li>
+<li><a href="https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html" style="color: #0b2046; text-decoration: underline;" title="SSC English 1st Paper Suggestion 2027">SSC English 1st Paper Final Suggestion 2027 (Passages, Dialogues & Writing)</a></li>
+<li><a href="https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-suggestion-2027.html" style="color: #0b2046; text-decoration: underline;" title="SSC English 2nd Paper Suggestion 2027">SSC English 2nd Paper Final Suggestion 2027 (Top Grammar Rules & Models)</a></li>
+</ul>
+
+</div>
+"""
+
+METADATA = {
+    "title": "SSC বাংলা ১ম পত্র সংক্ষিপ্ত প্রশ্নব্যাংক ২০২৬-২০২৭ (২০ নম্বর নিশ্চিত) | গদ্য ও পদ্যের সেরা ১০০টি অনুধাবনমূলক প্রশ্ন ও উত্তর",
+    "slug": "ssc-bangla-1st-paper-short-question-bank-20-marks",
+    "labels": ["SSC Suggestion", "Bangla 1st Paper", "Education"],
+    "search_description": "এসএসসি ২০২৭ বাংলা ১ম পত্র ২০ নম্বরের সংক্ষিপ্ত প্রশ্নব্যাংক গদ্য ও পদ্যের সেরা ১০০টি অনুধাবনমূলক প্রশ্ন ও পূর্ণাঙ্গ মডেল উত্তর গাইড।",
+    "featured_image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/ssc_bangla_1st_paper_saq_bank_2027.webp"
+}
+
+def main():
+    print("=" * 70)
+    print("[*] GENERATING BANGLA 1ST 20-MARK SAQ BANK POST...")
+    print("=" * 70)
+
+    with open(HTML_OUTPUT_PATH, "w", encoding="utf-8") as f:
+        f.write(HTML_CONTENT.strip())
+
+    with open(META_OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(METADATA, f, ensure_ascii=False, indent=2)
+
+    word_count = len(HTML_CONTENT.split())
+    desc_len = len(METADATA["search_description"])
+    print(f"[OK] HTML generated: {HTML_OUTPUT_PATH} ({word_count} words)")
+    print(f"[OK] Metadata generated: {META_OUTPUT_PATH} (Search desc: {desc_len} chars)")
+
+if __name__ == "__main__":
+    main()
