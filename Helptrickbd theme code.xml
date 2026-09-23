@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.3.0' expr:class='data:blog.languageDirection' expr:dir='data:blog.languageDirection' expr:lang='data:blog.localeUnderscoreDelimited' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
+<!-- Yandex Webmaster Ownership Verification -->
+<meta content='ec710ea6feeded80' name='yandex-verification'/>
 <b:include name='theme-head'/>
 
 <!-- HelpTrickBD Google Search Central Compliant 1:1 Redirection & Custom 404 Engine -->
@@ -46,6 +48,12 @@
                directRedirects[pathWithoutHtml] ||
                directRedirects[decodedClean] ||
                directRedirects[decodedWithHtml];
+
+  if (rawPath.indexOf('yandex_ec710ea6feeded80') !== -1) {
+    document.title = 'Verification: ec710ea6feeded80';
+    document.body.innerHTML = 'Verification: ec710ea6feeded80';
+    return;
+  }
 
   if (target) {
     window.location.replace(target);
