@@ -1,0 +1,4 @@
+Severity,Issue,Validation,URLs
+Need improvement,LCP issue: longer than 2.5s (mobile),Not Started,33
+Need improvement,INP issue: longer than 200ms (mobile),Not Started,12
+Need improvement,CLS issue: more than 0.1 (mobile),Not Started,12

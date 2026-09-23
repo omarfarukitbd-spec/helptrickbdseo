@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Abswer.com - পূর্ণাঙ্গ এসইও, সার্চ কনসোল ও এডসেন্স অডিট রিপোর্ট</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 12mm 12mm 14mm 12mm;
+            @bottom-right {
+                content: "পৃষ্ঠা " counter(page);
+            }
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'SolaimanLipi', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1e293b;
+            background: #ffffff;
+            font-size: 13px;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        
+        /* Header Area */
+        .report-header {
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 14px;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .header-title-wrap h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        .header-subtitle {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        .report-meta-badge {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 8px 12px;
+            text-align: right;
+            font-size: 11px;
+            color: #1e40af;
+        }
+        .report-meta-badge strong {
+            display: block;
+            font-size: 13px;
+            color: #1d4ed8;
+        }
+        
+        /* Executive Summary Box */
+        .exec-summary-box {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            font-size: 12.5px;
+        }
+        .exec-summary-box p {
+            margin-bottom: 6px;
+        }
+        .exec-summary-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Section Styling */
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 1.5px solid #e2e8f0;
+            padding-bottom: 6px;
+            margin: 18px 0 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-badge {
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 4px;
+        }
+        
+        /* KPI Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .kpi-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 12px;
+            text-align: center;
+        }
+        .kpi-val {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.2;
+            margin-bottom: 2px;
+        }
+        .kpi-card.blue .kpi-val { color: #2563eb; }
+        .kpi-card.emerald .kpi-val { color: #059669; }
+        .kpi-card.amber .kpi-val { color: #d97706; }
+        .kpi-card.purple .kpi-val { color: #7c3aed; }
+        .kpi-lbl {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 600;
+        }
+        .kpi-sub {
+            font-size: 10px;
+            color: #94a3b8;
+        }
+        
+        /* Danger Alert Box */
+        .danger-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-left: 4px solid #ef4444;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+        }
+        .danger-box h3 {
+            font-size: 13.5px;
+            color: #991b1b;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11.5px;
+            margin-bottom: 16px;
+            background: #ffffff;
+        }
+        th, td {
+            padding: 7px 10px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        th {
+            background: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+        }
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+        td.num, th.num {
+            text-align: right;
+            font-family: 'Inter', sans-serif;
+        }
+        .badge-pill {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        .badge-danger { background: #fee2e2; color: #b91c1c; }
+        .badge-success { background: #dcfce7; color: #15803d; }
+        .badge-warning { background: #fef3c7; color: #b45309; }
+        
+        /* Strategy Cards */
+        .strategy-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+        }
+        .strategy-card.opt-1 { border-left: 4px solid #ef4444; }
+        .strategy-card.opt-2 { border-left: 4px solid #2563eb; }
+        .strategy-card.opt-3 { border-left: 4px solid #059669; }
+        .strategy-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #0f172a;
+        }
+        .strategy-desc {
+            font-size: 12px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        .report-footer {
+            margin-top: 24px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 8px;
+            font-size: 10.5px;
+            color: #94a3b8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="report-header">
+        <div class="header-title-wrap">
+            <h1>Abswer.com — এসইও, সার্চ কনসোল ও এডসেন্স গভীর অডিট রিপোর্ট</h1>
+            <div class="header-subtitle">ওয়েবসাইট: https://abswer.com | প্রযুক্তি: WordPress + LiteSpeed + Plus-UI | তারিখ: ২২ সেপ্টেম্বর, ২০২৬</div>
+        </div>
+        <div class="report-meta-badge">
+            <strong>কনফিডেন্সিয়াল অডিট</strong>
+            গুগল সার্চ কনসোল ডাটা বিশ্লেষণ
+        </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="exec-summary-box">
+        <p><strong>নির্বাহী সারসংক্ষেপ (Executive Summary):</strong> আপনার বন্ধুর সাইট <code>abswer.com</code>-এর গুগল সার্চ কনসোল (Search Console) এবং ক্রল ডাটা বিস্তারিতভাবে অডিট করা হয়েছে। সাইটটিতে গত ৫ মাসে <strong>৮ লক্ষ ৮৪ হাজার অর্গানিক ক্লিক</strong> এবং <strong>৫৩ লক্ষ ইম্প্রেশন</strong> এসেছে। প্রতিদিন গড়ে ৭,০০০ থেকে ৯,০০০ সার্চ ভিজিটর সাইটে প্রবেশ করছে, যা শিক্ষা খাতে অত্যন্ত প্রভাবশালী ট্রাফিক।</p>
+        <p><strong>প্রধান সতর্কতা:</strong> এই বিপুল ট্রাফিক থাকা সত্ত্বেও <strong>বর্তমান সেটআপে গুগল এডসেন্স আবেদন করলে ১০০% রিজেক্ট খাবে</strong>। কারণ ট্রাফিকের প্রায় ৯০% আসছে কপিরাইটযুক্ত বাণিজ্যিক গাইড বইয়ের পিডিএফ অনুসন্ধান থেকে এবং সেখানে অ্যাডস্টেরা (Adsterra) স্মার্টলিংক রিডাইরেক্ট স্ক্রিপ্ট সক্রিয় রয়েছে। নিচে বিস্তারিত বিশ্লেষণ ও ট্রাফিক না হারিয়ে আয়ের সঠিক পথনির্দেশ দেওয়া হলো।</p>
+    </div>
+
+    <!-- KPI Grid -->
+    <div class="kpi-grid">
+        <div class="kpi-card blue">
+            <div class="kpi-val">884,876</div>
+            <div class="kpi-lbl">মোট সার্চ ক্লিক</div>
+            <div class="kpi-sub">গত ৫ মাস (Web Search)</div>
+        </div>
+        <div class="kpi-card emerald">
+            <div class="kpi-val">5,357,474</div>
+            <div class="kpi-lbl">গুগল ইম্প্রেশন</div>
+            <div class="kpi-sub">গড় CTR: ১৬.৬%</div>
+        </div>
+        <div class="kpi-card amber">
+            <div class="kpi-val">5.1</div>
+            <div class="kpi-lbl">গড় সার্চ র‍্যাঙ্কিং</div>
+            <div class="kpi-sub">টপ ১০ পজিশনে আধিপত্য</div>
+        </div>
+        <div class="kpi-card purple">
+            <div class="kpi-val">90.5%</div>
+            <div class="kpi-lbl">ক্রলিং স্বাস্থ্য (200 OK)</div>
+            <div class="kpi-sub">রেসপন্স: ৪১৭ms (Fast)</div>
+        </div>
+    </div>
+
+    <!-- Section 1: Traffic & Demographics -->
+    <div class="section-title">
+        <span class="section-badge">১</span> ইউজার ডেমোগ্রাফিক্স ও ক্রল পারফরম্যান্স
+    </div>
+    <p style="margin-bottom: 8px; font-size: 12px; color: #475569;">
+        সার্চ কনসোলের ডিভাইস এবং কান্ট্রি ডাটা পর্যালোচনা করে দেখা যায়:
+    </p>
+    <ul style="margin-left: 20px; font-size: 12px; color: #334155; margin-bottom: 14px;">
+        <li><strong>ডিভাইস অনুপাত:</strong> মোট ক্লিকের <strong>৮৬.২% এসেছে মোবাইল ডিভাইস থেকে</strong> (৭,৬৩,৩০৭ ক্লিক), ডেস্কটপ থেকে ১২% এবং ট্যাবলেট থেকে ১.৭%। অর্থাৎ সাইটের সমস্ত মনিটাইজেশন ও রিডাইরেক্ট মূলত মোবাইল ইউজারদের ওপর প্রভাব ফেলে।</li>
+        <li><strong>ভৌগোলিক অবস্থান:</strong> মোট ট্রাফিকের <strong>৯৯.৬% এসেছে বাংলাদেশ থেকে</strong> (৮,৮১,৬২১ ক্লিক)। বাকি অল্প কিছু ট্রাফিক ভারত, সিঙ্গাপুর ও মধ্যপ্রাচ্যের প্রবাসী শিক্ষার্থীদের।</li>
+        <li><strong>গুগলবট ক্রল স্বাস্থ্য:</strong> গুগলবট দৈনিক গড়ে <strong>৮৪৫টি পেজ</strong> ক্রল করছে। এর মধ্যে ৭৬.৫% এইচটিএমএল কনটেন্ট। সার্ভার এরর (5XX) মাত্র ০.০৪% এবং ৪০৪ এরর মাত্র ০.০৩%, যা প্রযুক্তিগতভাবে অত্যন্ত পরিচ্ছন্ন।</li>
+    </ul>
+
+    <!-- Section 2: Top Pages Table -->
+    <div class="section-title">
+        <span class="section-badge">২</span> শীর্ষ ১০টি ট্রাফিক ড্রাইভিং পেজ (Top Ranked Pages)
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 50%;">পেজ ইউআরএল (Page URL)</th>
+                <th class="num">ক্লিক সংখ্যা</th>
+                <th class="num">ইম্প্রেশন</th>
+                <th class="num">CTR</th>
+                <th class="num">গড় অবস্থান</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>/ssc-class-9-10-all-guide-books/</code></td>
+                <td class="num"><strong>136,344</strong></td>
+                <td class="num">632,716</td>
+                <td class="num">21.5%</td>
+                <td class="num">4.8</td>
+            </tr>
+            <tr>
+                <td><code>/ssc-class-9-10-general-mathematics-guide-book/</code></td>
+                <td class="num"><strong>45,445</strong></td>
+                <td class="num">324,607</td>
+                <td class="num">14.0%</td>
+                <td class="num">5.1</td>
+            </tr>
+            <tr>
+                <td><code>/class-5-all-guide-books/</code></td>
+                <td class="num"><strong>45,059</strong></td>
+                <td class="num">267,689</td>
+                <td class="num">16.8%</td>
+                <td class="num">4.6</td>
+            </tr>
+            <tr>
+                <td><code>/class-5-math-solution-guide-book/</code></td>
+                <td class="num"><strong>43,111</strong></td>
+                <td class="num">134,863</td>
+                <td class="num">31.9%</td>
+                <td class="num">4.4</td>
+            </tr>
+            <tr>
+                <td><code>/ssc-class-9-10-bangla-1st-paper-guide-book/</code></td>
+                <td class="num"><strong>42,207</strong></td>
+                <td class="num">156,006</td>
+                <td class="num">27.0%</td>
+                <td class="num">4.3</td>
+            </tr>
+            <tr>
+                <td><code>/ssc-class-9-10-physics-guide-book/</code></td>
+                <td class="num"><strong>37,233</strong></td>
+                <td class="num">135,894</td>
+                <td class="num">27.4%</td>
+                <td class="num">4.9</td>
+            </tr>
+            <tr>
+                <td><code>/ssc-class-9-10-higher-math-guide-book/</code></td>
+                <td class="num"><strong>27,537</strong></td>
+                <td class="num">180,006</td>
+                <td class="num">15.3%</td>
+                <td class="num">5.7</td>
+            </tr>
+            <tr>
+                <td><code>/hsc-bangla-1st-paper-guide/</code></td>
+                <td class="num"><strong>24,954</strong></td>
+                <td class="num">192,510</td>
+                <td class="num">12.9%</td>
+                <td class="num">5.8</td>
+            </tr>
+            <tr>
+                <td><code>/class-3-all-guide-books/</code></td>
+                <td class="num"><strong>24,718</strong></td>
+                <td class="num">138,434</td>
+                <td class="num">17.8%</td>
+                <td class="num">4.1</td>
+            </tr>
+            <tr>
+                <td><code>/ssc-class-9-10-english-1st-paper-guide-book/</code></td>
+                <td class="num"><strong>22,492</strong></td>
+                <td class="num">135,326</td>
+                <td class="num">16.6%</td>
+                <td class="num">4.9</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <!-- Section 3: The Catch-22 Dilemma -->
+    <div class="section-title">
+        <span class="section-badge">৩</span> এডসেন্স বনাম ট্রাফিকের সংকট (The Core Paradox)
+    </div>
+    
+    <div class="danger-box">
+        <h3>⚠️ গুরুতর সতর্কবার্তা: সোনার ডিম পাড়া হাঁস ও এডসেন্স সংকট</h3>
+        <p>সার্চ কনসোলের ডাটা স্পষ্টভাবে প্রমাণ করে যে, সাইটের মোট ট্রাফিকের <strong>প্রায় ৯০% আসছে ক্লাস ৩ থেকে ১০ পর্যন্ত বিভিন্ন গাইড বইয়ের পিডিএফ ডাউনলোড থেকে</strong>। শিক্ষার্থীরা গুগলে <em>'class 5 math guide pdf'</em> বা <em>'class 9 guide 2026'</em> লিখে সার্চ করে সাইটে ঢুকছে। এখানেই তৈরি হয়েছে সবচেয়ে বড় দ্বিমুখী সংকট:</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px;">
+        <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; padding: 12px;">
+            <strong style="color: #9f1239; font-size: 13px; display: block; margin-bottom: 6px;">❌ যদি গাইড বইয়ের পেজগুলো ডিলিট করা হয়:</strong>
+            <p style="font-size: 12px; color: #4c0519; line-height: 1.5;">
+                এডসেন্স পাওয়ার জন্য যদি সাইট ওনার গাইড বইয়ের পেজগুলো ড্রাফট বা মুছে ফেলেন, তবে সাইটের <strong>৮৫% থেকে ৯০% অর্গানিক ট্রাফিক এক দিনেই শূন্যে নেমে আসবে</strong>। দৈনিক ৮,০০০ সার্চ ক্লিক কমে মাত্র ৫০০–৭০০ ক্লিকে দাঁড়াবে। এতে সাইটের সার্বিক কর্তৃত্ব ও আয়ের সুযোগ নষ্ট হবে।
+            </p>
+        </div>
+        <div style="background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 12px;">
+            <strong style="color: #b91c1c; font-size: 13px; display: block; margin-bottom: 6px;">❌ আর যদি বর্তমান অবস্থায় এডসেন্সে পাঠানো হয়:</strong>
+            <p style="font-size: 12px; color: #7f1d1d; line-height: 1.5;">
+                বাণিজ্যিক প্রকাশনীর গাইড বই সরাসরি গুগল ড্রাইভে শেয়ার করা গুগল এডসেন্সের কপিরাইট ও মেধা-সম্পদ নীতিমালার সরাসরি লঙ্ঘন। তার ওপর ড্রাইভের লিংকে ক্লিক করলেই <code>attemptsstately.com</code>-এর <strong>Adsterra Smartlink</strong> পপআপ খোলে, যা এডসেন্সের <strong>"Deceptive Site Navigation"</strong>-এর আওতায় পড়ে। এডসেন্স বট এটি দেখামাত্র সাইট সরাসরি রিজেক্ট বা পার্মানেন্ট ব্ল্যাকলিস্ট করবে।
+            </p>
+        </div>
+    </div>
+
+    <!-- Section 4: Other Hidden Vulnerabilities -->
+    <div class="section-title">
+        <span class="section-badge">৪</span> অন্যান্য গুরুত্বপূর্ণ টেকনিক্যাল ত্রুটি
+    </div>
+    <ul style="margin-left: 20px; font-size: 12px; color: #334155; margin-bottom: 18px;">
+        <li style="margin-bottom: 6px;"><strong>১. পাতলা ও শূন্য শব্দের পোস্ট (Thin/Empty Content):</strong> সাইটের মোট ২,৬৭৩টি পোস্টের মধ্যে অতীতে ব্লগার থেকে মাইগ্রেট করা শত শত পোস্টের বডিতে মাত্র ০ থেকে ১০টি শব্দ রয়েছে (যেমন: <code>/binamulje-kitab-paojar-jnj...</code>-এ কনটেন্ট ০ শব্দ)। এটি এডসেন্সে <em>"Low Value Content"</em> রিজেকশনের প্রধান কারণ হবে।</li>
+        <li style="margin-bottom: 6px;"><strong>২. ads.txt ফাইল রিডাইরেক্ট লুপ:</strong> <code>abswer.com/ads.txt</code> রিকোয়েস্ট করলে কোনো টেক্সট ফাইল লোড না হয়ে সোজা হোমপেজে রিডাইরেক্ট করে। এডসেন্স ক্রলার এটি পরীক্ষা করতে এলে ভেরিফিকেশন ফেইল করবে।</li>
+        <li style="margin-bottom: 6px;"><strong>৩. সাম্প্রতিক ট্রাফিক ড্রপ (-১২%):</strong> পূর্ববর্তী সপ্তাহের ৫২,৬৭৬ ক্লিক থেকে কমে সাম্প্রতিক সপ্তাহে ৪৬,৩২৯ ক্লিক হয়েছে। এটি স্বাভাবিক ছুটির দিনের পাশাপাশি কপিরাইট কনটেন্টের ওপর কোনো প্রকাশকের DMCA নোটিশ পড়ার প্রারম্ভিক লক্ষণ হতে পারে।</li>
+    </ul>
+
+    <!-- Section 5: Action Roadmap -->
+    <div class="section-title">
+        <span class="section-badge">৫</span> বাস্তবসম্মত সমাধান ও কৌশলগত রোডম্যাপ (Actionable Roadmap)
+    </div>
+    <p style="margin-bottom: 10px; font-size: 12px; color: #475569;">
+        সোনার ডিম পাড়া হাঁস জবাই না করে ট্রাফিক ধরে রেখে সর্বোচ্চ আয়ের জন্য নিচের ৩টি পদক্ষেপ অনুসরণ করা উচিত:
+    </p>
+
+    <!-- Strategy 1 -->
+    <div class="strategy-card opt-1">
+        <div class="strategy-title">১. স্মার্টলিংক ও ডিসেপ্টিভ রিডাইরেক্ট স্ক্রিপ্ট দ্রুত অপসারণ (জরুরি ও বাধ্যতামূলক)</div>
+        <div class="strategy-desc">
+            থিমের <code>plus-ui-ads-body-start</code> থেকে Adsterra Smartlink স্ক্রিপ্ট অবিলম্বে মুছে ফেলতে হবে। ভিজিটর ড্রাইভে ক্লিক করলে অন্য স্প্যাম বিজ্ঞাপনে রিডাইরেক্ট করা সার্চ কনসোলের মোবাইল এক্সপেরিয়েন্সে ক্ষতিকর। গুগল সেফ ব্রাউজিং বা ক্রলার এটি ধরলে পুরো সাইটের ওপর <em>"Deceptive Navigation Penalty"</em> নেমে আসতে পারে।
+        </div>
+    </div>
+
+    <!-- Strategy 2 -->
+    <div class="strategy-card opt-2">
+        <div class="strategy-title">২. এডসেন্স অনুমোদনের জন্য "সাব-ডোমেইন বা সেফ ক্যাটাগরি" কৌশল</div>
+        <div class="strategy-desc">
+            যদি মূল ডোমেইনে এডসেন্স নিশ্চিত করতে হয়, তবে গাইড বই ও ডাউনলোডের অংশটিকে একটি আলাদা সাব-ডোমেইনে (যেমন: <code>download.abswer.com</code>) বা আলাদা সুরক্ষিত রুটে স্থানান্তর করতে হবে। মূল ডোমেইনে তাদের অনবদ্য অরিজিনাল পোস্টসমূহ (যেমন: ফাজিল অনার্স পরীক্ষার প্রশ্ন সমাধান, উলূমুল হাদিস ও স্টুডেন্ট ক্যালকুলেটর টুলস)-এর ওপর এডসেন্স আবেদন করে দ্রুত অনুমোদন নিশ্চিত করা সম্ভব।
+        </div>
+    </div>
+
+    <!-- Strategy 3 -->
+    <div class="strategy-card opt-3">
+        <div class="strategy-title">৩. অল্টারনেটিভ প্রিমিয়াম মনিটাইজেশন (এডসেন্সের চেয়েও বেশি আয়ের সুযোগ)</div>
+        <div class="strategy-desc">
+            দৈনিক ৩০,০০০+ স্টুডেন্ট ট্রাফিকের জন্য কেবল এডসেন্সের পেছনে সময় নষ্ট না করে আরও নিরাপদ ও দ্বিগুণ লাভজনক পথ বেছে নেওয়া যায়:
+            <ul style="margin-left: 16px; margin-top: 4px;">
+                <li><strong>সরাসরি এডুটেক ও কোচিং স্পন্সরশিপ:</strong> বাংলাদেশের শীর্ষস্থানীয় ভর্তি কোচিং (উদ্ভাস, রেটিনা, ফোকাস) এবং এডুটেক প্ল্যাটফর্মগুলোর কাছে সরাসরি মান্থলি ফিক্সড ব্যানার স্পন্সরশিপ বিক্রি করা।</li>
+                <li><strong>ক্লিন নেটওয়ার্ক (Ezoic / Monetag Clean Display):</strong> কোনো রকম পপআপ বা ব্যাকগ্রাউন্ড রিডাইরেক্ট ছাড়া শুধু শালীন ডিসপ্লে ব্যানারের মাধ্যমে ৩০ হাজার ট্রাফিক থেকে প্রতি মাসে উল্লেখযোগ্য পরিমাণ রেভিনিউ জেনারেট করা সম্ভব।</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sign off Footer -->
+    <div class="report-footer">
+        <div>অডিট প্রস্তুতকারক: Antigravity AI SEO Engine | Helptrickbd Research Studio</div>
+        <div>গুগল সার্চ কনসোল ও এডসেন্স কম্প্লায়েন্স ডিরেক্টরি ২০২৬</div>
+    </div>
+
+</body>
+</html>
