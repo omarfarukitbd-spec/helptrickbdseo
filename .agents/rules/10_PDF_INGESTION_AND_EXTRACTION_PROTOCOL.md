@@ -46,7 +46,33 @@ tools/pdf_to_md/convert.py
 
 ---
 
-## 3. Editorial Proofreading & Quality Gatekeeper Protocol
+## 3. Mandatory Pre-Post PDF Analysis & Keyword Research Protocol (পিডিএফ বিশ্লেষণ, টপিক রিসার্চ ও কিওয়ার্ড ইন্টিগ্রেশন নীতি)
+
+পিডিএফ থেকে কোনো পোস্ট তৈরির পূর্বে এজেন্টকে বাধ্যতামূলকভাবে নিচের ধারাবাহিক ধাপগুলো শতভাগ অনুসরণ করতে হবে:
+
+### ক. ধাপ ০১: পিডিএফ কনটেন্ট বিশ্লেষণ (Comprehensive PDF Content Analysis)
+* ড্রাফট শুরু করার আগে পিডিএফ-এর মূল বিষয়বস্তু, পাঠ্যক্রম, তথ্য, অধ্যায় ও প্রশ্নের ধরণ পুঙ্খানুপুঙ্খভাবে বিশ্লেষণ করতে হবে।
+
+### খ. ধাপ ০২: নির্ধারিত টপিক নিয়ে এজেন্টের গবেষণা (Target Post Topic Research)
+* পিডিএফ বিশ্লেষণের পর যে নির্দিষ্ট পোস্টটি তৈরি করা হবে, সেটির টপিক ও পাঠক চাহিদা (Student / User Search Intent) নিয়ে এজেন্টকে বিস্তারিত গবেষণা করতে হবে।
+
+### গ. ধাপ ০৩: গুগলে শীর্ষ র‍্যাঙ্কিং কিওয়ার্ডের তালিকা প্রণয়ন (Top-Ranking Keyword Listing)
+* **বাংলা পোস্টের জন্য (Bangla Content):**
+  - সংশ্লিষ্ট পোস্ট সম্পর্কিত গুগলে সবচেয়ে বেশি র‍্যাঙ্ক করে এমন **বাংলা কিওয়ার্ড (Bangla Keywords)** এবং **ইংরেজি কিওয়ার্ড (English Keywords)** উভয় তালিকা প্রস্তুত করতে হবে।
+* **ইংরেজি পোস্টের জন্য (English Content):**
+  - শুধুমাত্র গুগলে শীর্ষ র‍্যাঙ্কিং থাকা **ইংরেজি কিওয়ার্ডসমূহ (English Keywords Only)** গবেষণা করে তালিকা প্রস্তুত করতে হবে (কোনো বাংলা কিওয়ার্ড আসবে না)।
+
+### ঘ. ধাপ ০৪: Title, H2, H3, H4 ও Paragraph-এ ১০০% মানবিক সুরে কিওয়ার্ড সন্নিবেশ (Natural Human Tone & Seamless Placement)
+* প্রস্তুতকৃত কিওয়ার্ডগুলোকে পোস্টের **Title (শিরোনাম), H2, H3, H4 হেডিং এবং প্রতিটি Paragraph (প্যারাগ্রাফ)-এর ভেতরে এমনভাবে বিন্যস্ত করতে হবে যেন প্রতিটি বাক্য অত্যন্ত প্রাসঙ্গিক (Contextually Relative) মনে হয়**।
+* **শতভাগ মানবিক সুর (100% Natural Human Tone):**
+  - কোনো প্রকার কৃত্রিম, রোবটিক বা জোরপূর্বক কিওয়ার্ড স্টাফিং সম্পূর্ণ নিষিদ্ধ।
+  - বাক্যের স্বাভাবিক গঠন, শিক্ষক-সুলভ প্রাঞ্জলতা এবং লেখার সাবলীল প্রবাহ (Sentence Burstiness) শতভাগ বজায় রাখতে হবে।
+  - বাংলা পোস্টে ইংরেজি টার্মগুলো স্বাভাবিক সংযোগে (যেমন: "কপোতাক্ষ নদ কবিতার CQ সমাধান", "SSC 2027 Bangla 1st Paper Suggestion-এর গুরুত্বপূর্ণ টিপস") ব্যবহৃত হবে।
+  - ইংরেজি পোস্টে সম্পূর্ণ ইংরেজি বাক্যের ছন্দে শীর্ষ কিওয়ার্ডগুলো প্রাকৃতিকভাবে যুক্ত থাকবে।
+
+---
+
+## 4. Editorial Proofreading & Quality Gatekeeper Protocol
 Raw OCR text from a scanned PDF must **NEVER** be published directly to Blogger. The agent must perform the following validation:
 
 1. **Bengali Conjunct & Spelling Rectification:**
@@ -66,7 +92,7 @@ Raw OCR text from a scanned PDF must **NEVER** be published directly to Blogger.
 
 ---
 
-## 4. Automation Command Reference
+## 5. Automation Command Reference
 * **Standard Ingestion:**
   ```powershell
   python tools/pdf_to_md/convert.py "input_pdfs/example.pdf"
@@ -75,3 +101,4 @@ Raw OCR text from a scanned PDF must **NEVER** be published directly to Blogger.
   ```powershell
   python tools/pdf_to_md/convert.py "input_pdfs/example.pdf" --api-key "<KEY>"
   ```
+
