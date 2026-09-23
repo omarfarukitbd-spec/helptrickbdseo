@@ -1319,7 +1319,7 @@ input.search-input{font-size:20px}
 .modal-grid .modal-image .post-filter-inner{height:236px;}
 .post-filter .entry-title,.raw-box .entery-category-box .entry-title,.type-list1 .list-flow .entry-title,.raw-box .modal-grid .entery-category-box .entry-title,.raw-box .entery-category .entry-title{font-size:14px;}
 .raw-box .entery-category .entry-title{margin:5px 0;}
-.block-section .block-img{height:auto !important;aspect-ratio:16/9 !important;}
+.block-section .block-img{height:290px;}
 .related-runs .related-box{width:100%;clear:both}
 .related-runs .related-box .related-box-thumb{height:250px}
 .post-snip{margin:10px 10px 0 0;}}@media screen and (max-width:480px){
@@ -1809,17 +1809,6 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
     line-height: 1.4 !important;
   }
 
-  @media screen and (max-width: 768px) {
-    .block-section.item0 .entry-title,
-    .block-section.item0 .entry-title a {
-      font-size: 15px !important;
-      line-height: 1.35 !important;
-    }
-    .block-section .block-img .entery-category-fly {
-      padding: 8px 12px 10px 12px !important;
-    }
-  }
-
   .entery-category-fly .post-author,
   .entery-category-fly .post-date,
   .entery-category-fly .post-snip {
@@ -2139,8 +2128,7 @@ disqusShortname = "templateiki";
 <meta expr:content='data:view.description.escaped ? data:view.description.escaped : (data:blog.metaDescription ? data:blog.metaDescription : data:blog.title + &quot; - শিক্ষা, চাকরি প্রস্তুতি, জাতীয় বিশ্ববিদ্যালয়ের বইয়ের তালিকা, ইসলামিক প্রবন্ধ ও তথ্যপ্রযুক্তি সহায়িকা।&quot;)' name='twitter:description'/>
 <meta expr:content='data:view.description.escaped' name='twitter:creator'/>
 <meta expr:content='data:blog.localeUnderscoreDelimited' property='og:locale'/>
-<meta content='https://www.facebook.com/108370211962367' property='article:publisher'/>
-<script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[{&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:view.title.escaped/>&quot;,&quot;description&quot;:&quot;<data:view.description.escaped/>&quot;,&quot;url&quot;:&quot;<data:view.url.canonical/>&quot;,&quot;inLanguage&quot;:&quot;<data:blog.localeUnderscoreDelimited/>&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/108370211962367&quot;,&quot;https://t.me/helptrickbd_official&quot;,&quot;https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a&quot;]}]}</script>
+<script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[{&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:view.title.escaped/>&quot;,&quot;description&quot;:&quot;<data:view.description.escaped/>&quot;,&quot;url&quot;:&quot;<data:view.url.canonical/>&quot;,&quot;inLanguage&quot;:&quot;<data:blog.localeUnderscoreDelimited/>&quot;}]}</script>
 <link href='//1.bp.blogspot.com' rel='dns-prefetch'/> <link href='//28.2bp.blogspot.com' rel='dns-prefetch'/> <link href='//3.bp.blogspot.com' rel='dns-prefetch'/> <link href='//4.bp.blogspot.com' rel='dns-prefetch'/> <link href='//2.bp.blogspot.com' rel='dns-prefetch'/> <link href='//www.blogger.com' rel='dns-prefetch'/> <link href='//maxcdn.bootstrapcdn.com' rel='dns-prefetch'/> <link href='//fonts.googleapis.com' rel='dns-prefetch'/> <link href='//use.fontawesome.com' rel='dns-prefetch'/> <link href='//ajax.googleapis.com' rel='dns-prefetch'/> <link href='//resources.blogblog.com' rel='dns-prefetch'/> <link href='//feeds.feedburner.com' rel='dns-prefetch'/> <link href='//cdnjs.cloudflare.com' rel='dns-prefetch'/> <link href='//www.google-analytics.com' rel='dns-prefetch'/> <link href='//themes.googleusercontent.com ' rel='dns-prefetch'/> <link href='//pagead2.googlesyndication.com' rel='dns-prefetch'/> <link href='//googleads.g.doubleclick.net' rel='dns-prefetch'/> <link href='//www.gstatic.com' rel='preconnect'/> <link href='//www.googletagservices.com' rel='dns-prefetch'/> <link href='//static.xx.fbcdn.net' rel='dns-prefetch'/> <link href='//tpc.googlesyndication.com' rel='dns-prefetch'/> <link href='//apis.google.com' rel='dns-prefetch'/> <link href='//www.facebook.com' rel='dns-prefetch'/> <link href='//connect.facebook.net' rel='dns-prefetch'/> <link href='//x.com' rel='dns-prefetch'/> <link href='//www.youtube.com' rel='dns-prefetch'/> <link href='//www.pinterest.com' rel='dns-prefetch'/> <link href='//www.linkedin.com' rel='dns-prefetch'/>
 <!-- Font Awesome Free 6.7.2 -->
 <!-- Font Awesome Free 6.7.2 (Async Non-blocking for Core Web Vitals) -->

@@ -1319,7 +1319,7 @@ input.search-input{font-size:20px}
 .modal-grid .modal-image .post-filter-inner{height:236px;}
 .post-filter .entry-title,.raw-box .entery-category-box .entry-title,.type-list1 .list-flow .entry-title,.raw-box .modal-grid .entery-category-box .entry-title,.raw-box .entery-category .entry-title{font-size:14px;}
 .raw-box .entery-category .entry-title{margin:5px 0;}
-.block-section .block-img{height:auto !important;aspect-ratio:16/9 !important;}
+.block-section .block-img{height:290px;}
 .related-runs .related-box{width:100%;clear:both}
 .related-runs .related-box .related-box-thumb{height:250px}
 .post-snip{margin:10px 10px 0 0;}}@media screen and (max-width:480px){
@@ -1807,17 +1807,6 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
     font-size: 22px !important;
     font-weight: 700 !important;
     line-height: 1.4 !important;
-  }
-
-  @media screen and (max-width: 768px) {
-    .block-section.item0 .entry-title,
-    .block-section.item0 .entry-title a {
-      font-size: 15px !important;
-      line-height: 1.35 !important;
-    }
-    .block-section .block-img .entery-category-fly {
-      padding: 8px 12px 10px 12px !important;
-    }
   }
 
   .entery-category-fly .post-author,

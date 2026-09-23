@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.3.0' expr:class='data:blog.languageDirection' expr:dir='data:blog.languageDirection' expr:lang='data:blog.localeUnderscoreDelimited' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
+<!-- Google Core Web Vitals LCP Accelerator & CDN Preconnect -->
+<link rel='preconnect' href='https://cdn.jsdelivr.net' crossorigin='anonymous'/>
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net'/>
+<link rel='preconnect' href='https://blogger.googleusercontent.com'/>
+<link rel='dns-prefetch' href='//blogger.googleusercontent.com'/>
 <b:include name='theme-head'/>
 
 <!-- HelpTrickBD Google Search Central Compliant 1:1 Redirection & Custom 404 Engine -->
@@ -159,7 +164,7 @@ The Blogger theme’s base XML and dynamic tags belong to Google LLC. All custom
 <Variable name="body.text.color" description="Body Text Color" hideEditor="true" type="color" default="#6d6d6d" value="#6d6d6d"/>
 <Variable name="body.title.color" description="Comments Color" hideEditor="true" type="color" default="#1f2937" value="#1f2937"/>
 <Variable name="body.link.color" description="Body Link Color" hideEditor="true" type="color" default="#6d6d6d" value="#6d6d6d"/>
-<Variable name="body.action.font.large" description="Comments Font 2" hideEditor="true" type="font" default="normal 700 14px Arial, sans-serif" value="normal 700 14px Arial, sans-serif"/>
+<Variable name="body.action.font.large" description="Comments Font 2" hideEditor="true" type="font" default="normal 700 14px Arial, sans-serif !important" value="normal 700 14px, Arial, sans-serif !important"/>
 */
 /*-- Google Raleway Font Family --*/
 @font-face{font-family:'Raleway';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/raleway/v26/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLDr4fIA9c.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
@@ -1319,7 +1324,7 @@ input.search-input{font-size:20px}
 .modal-grid .modal-image .post-filter-inner{height:236px;}
 .post-filter .entry-title,.raw-box .entery-category-box .entry-title,.type-list1 .list-flow .entry-title,.raw-box .modal-grid .entery-category-box .entry-title,.raw-box .entery-category .entry-title{font-size:14px;}
 .raw-box .entery-category .entry-title{margin:5px 0;}
-.block-section .block-img{height:auto !important;aspect-ratio:16/9 !important;}
+.block-section .block-img{height:290px;}
 .related-runs .related-box{width:100%;clear:both}
 .related-runs .related-box .related-box-thumb{height:250px}
 .post-snip{margin:10px 10px 0 0;}}@media screen and (max-width:480px){
@@ -1809,17 +1814,6 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
     line-height: 1.4 !important;
   }
 
-  @media screen and (max-width: 768px) {
-    .block-section.item0 .entry-title,
-    .block-section.item0 .entry-title a {
-      font-size: 15px !important;
-      line-height: 1.35 !important;
-    }
-    .block-section .block-img .entery-category-fly {
-      padding: 8px 12px 10px 12px !important;
-    }
-  }
-
   .entery-category-fly .post-author,
   .entery-category-fly .post-date,
   .entery-category-fly .post-snip {
@@ -2139,8 +2133,7 @@ disqusShortname = "templateiki";
 <meta expr:content='data:view.description.escaped ? data:view.description.escaped : (data:blog.metaDescription ? data:blog.metaDescription : data:blog.title + &quot; - শিক্ষা, চাকরি প্রস্তুতি, জাতীয় বিশ্ববিদ্যালয়ের বইয়ের তালিকা, ইসলামিক প্রবন্ধ ও তথ্যপ্রযুক্তি সহায়িকা।&quot;)' name='twitter:description'/>
 <meta expr:content='data:view.description.escaped' name='twitter:creator'/>
 <meta expr:content='data:blog.localeUnderscoreDelimited' property='og:locale'/>
-<meta content='https://www.facebook.com/108370211962367' property='article:publisher'/>
-<script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[{&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:view.title.escaped/>&quot;,&quot;description&quot;:&quot;<data:view.description.escaped/>&quot;,&quot;url&quot;:&quot;<data:view.url.canonical/>&quot;,&quot;inLanguage&quot;:&quot;<data:blog.localeUnderscoreDelimited/>&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/108370211962367&quot;,&quot;https://t.me/helptrickbd_official&quot;,&quot;https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a&quot;]}]}</script>
+<script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[{&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:view.title.escaped/>&quot;,&quot;description&quot;:&quot;<data:view.description.escaped/>&quot;,&quot;url&quot;:&quot;<data:view.url.canonical/>&quot;,&quot;inLanguage&quot;:&quot;<data:blog.localeUnderscoreDelimited/>&quot;}]}</script>
 <link href='//1.bp.blogspot.com' rel='dns-prefetch'/> <link href='//28.2bp.blogspot.com' rel='dns-prefetch'/> <link href='//3.bp.blogspot.com' rel='dns-prefetch'/> <link href='//4.bp.blogspot.com' rel='dns-prefetch'/> <link href='//2.bp.blogspot.com' rel='dns-prefetch'/> <link href='//www.blogger.com' rel='dns-prefetch'/> <link href='//maxcdn.bootstrapcdn.com' rel='dns-prefetch'/> <link href='//fonts.googleapis.com' rel='dns-prefetch'/> <link href='//use.fontawesome.com' rel='dns-prefetch'/> <link href='//ajax.googleapis.com' rel='dns-prefetch'/> <link href='//resources.blogblog.com' rel='dns-prefetch'/> <link href='//feeds.feedburner.com' rel='dns-prefetch'/> <link href='//cdnjs.cloudflare.com' rel='dns-prefetch'/> <link href='//www.google-analytics.com' rel='dns-prefetch'/> <link href='//themes.googleusercontent.com ' rel='dns-prefetch'/> <link href='//pagead2.googlesyndication.com' rel='dns-prefetch'/> <link href='//googleads.g.doubleclick.net' rel='dns-prefetch'/> <link href='//www.gstatic.com' rel='preconnect'/> <link href='//www.googletagservices.com' rel='dns-prefetch'/> <link href='//static.xx.fbcdn.net' rel='dns-prefetch'/> <link href='//tpc.googlesyndication.com' rel='dns-prefetch'/> <link href='//apis.google.com' rel='dns-prefetch'/> <link href='//www.facebook.com' rel='dns-prefetch'/> <link href='//connect.facebook.net' rel='dns-prefetch'/> <link href='//x.com' rel='dns-prefetch'/> <link href='//www.youtube.com' rel='dns-prefetch'/> <link href='//www.pinterest.com' rel='dns-prefetch'/> <link href='//www.linkedin.com' rel='dns-prefetch'/>
 <!-- Font Awesome Free 6.7.2 -->
 <!-- Font Awesome Free 6.7.2 (Async Non-blocking for Core Web Vitals) -->
@@ -3166,12 +3159,8 @@ disqusShortname = "templateiki";
         <b:widget id='LinkList5' locked='true' title='Top social' type='LinkList' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='sorting'>NONE</b:widget-setting>
-            <b:widget-setting name='text-3'>youtube</b:widget-setting>
-            <b:widget-setting name='link-3'>https://www.youtube.com/@helptrickbd</b:widget-setting>
-            <b:widget-setting name='text-2'>whatsapp</b:widget-setting>
-            <b:widget-setting name='link-2'>https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a</b:widget-setting>
             <b:widget-setting name='text-1'>telegram</b:widget-setting>
-            <b:widget-setting name='link-1'>https://t.me/helptrickbd_official</b:widget-setting>
+            <b:widget-setting name='link-1'>https://t.me/helptrick24bd</b:widget-setting>
             <b:widget-setting name='text-0'>facebook</b:widget-setting>
             <b:widget-setting name='link-0'>https://facebook.com/helptrickbd</b:widget-setting>
           </b:widget-settings>
@@ -4181,10 +4170,6 @@ disqusShortname = "templateiki";
         <b:widget id='LinkList77' locked='true' title='Social Plugin' type='LinkList' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='sorting'>NONE</b:widget-setting>
-            <b:widget-setting name='text-3'>whatsapp</b:widget-setting>
-            <b:widget-setting name='link-3'>https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a</b:widget-setting>
-            <b:widget-setting name='text-2'>telegram</b:widget-setting>
-            <b:widget-setting name='link-2'>https://t.me/helptrickbd_official</b:widget-setting>
             <b:widget-setting name='text-1'>youtube</b:widget-setting>
             <b:widget-setting name='link-1'>https://www.youtube.com/@helptrickbd</b:widget-setting>
             <b:widget-setting name='text-0'>facebook</b:widget-setting>
@@ -4475,14 +4460,10 @@ disqusShortname = "templateiki";
           <b:widget id='LinkList7' locked='true' title='Follow Us' type='LinkList' version='2' visible='false'>
             <b:widget-settings>
               <b:widget-setting name='sorting'>NONE</b:widget-setting>
-              <b:widget-setting name='text-3'>whatsapp</b:widget-setting>
-              <b:widget-setting name='link-3'>https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a</b:widget-setting>
-              <b:widget-setting name='text-2'>telegram</b:widget-setting>
-              <b:widget-setting name='link-2'>https://t.me/helptrickbd_official</b:widget-setting>
               <b:widget-setting name='text-1'>youtube</b:widget-setting>
               <b:widget-setting name='link-1'>https://www.youtube.com/@helptrickbd</b:widget-setting>
               <b:widget-setting name='text-0'>facebook</b:widget-setting>
-              <b:widget-setting name='link-0'>https://facebook.com/helptrickbd</b:widget-setting>
+              <b:widget-setting name='link-0'>/</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
             <b:include name='content'/>
