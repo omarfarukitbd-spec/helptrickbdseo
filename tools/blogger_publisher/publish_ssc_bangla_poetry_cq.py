@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 tools/blogger_publisher/publish_ssc_bangla_poetry_cq.py
---------------------------------------------------------
-Publishes Post 04 of the SSC Bangla 1st Paper Silo:
-'SSC ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল ও ভাবার্থ সমাধান ২০২৬-২০২৭'
+---------------------------------------------------------
+Publishes Post 02:
+'এসএসসি ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Poetry CQ Question Bank & Full Solution)'
 Adheres strictly to the 2-Step Custom English Permalink Minting Protocol.
 """
 
@@ -13,20 +13,24 @@ import sys
 import json
 import time
 
+if sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
 from tools.blogger_publisher.publisher import get_authenticated_service, BLOG_ID
 from tools.governance.pre_flight_checker import PreFlightChecker
-from tools.indexer.pubsub_hub_pinger import ping_all_hubs
+from tools.indexer.post_publish_verifier import verify_and_index_post
 
-HTML_PATH = os.path.join(PROJECT_ROOT, "output_posts", "ssc-bangla-1st-paper-poetry-cq-suggestions-2027.html")
-META_PATH = os.path.join(PROJECT_ROOT, "output_posts", "ssc-bangla-1st-paper-poetry-cq-suggestions-2027_metadata.json")
+HTML_PATH = os.path.join(PROJECT_ROOT, "output_posts", "ssc-bangla-1st-paper-poetry-cq-question-bank-2027.html")
+META_PATH = os.path.join(PROJECT_ROOT, "output_posts", "ssc-bangla-1st-paper-poetry-cq-question-bank-2027_metadata.json")
 
 def publish_poetry_cq():
     print("=" * 75)
-    print("HEL訊TRICKBD 2-STEP PUBLISHING ENGINE — BANGLA 1ST POETRY CQ")
+    print("🚀 HELPTRICKBD 2-STEP PUBLISHING ENGINE — BANGLA 1ST POETRY CQ BANK")
     print("=" * 75)
 
     if not os.path.exists(HTML_PATH) or not os.path.exists(META_PATH):
@@ -47,7 +51,7 @@ def publish_poetry_cq():
     with open(HTML_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    slug = meta["custom_slug"]
+    slug = meta.get("custom_slug") or meta.get("slug")
     full_title = meta["title"]
     labels = meta["labels"]
 
@@ -55,7 +59,7 @@ def publish_poetry_cq():
     print(f"    Slug:    {slug}")
     print(f"    Title:   {full_title}")
     print(f"    Labels:  {', '.join(labels)}")
-    print(f"    Words:   {len(content.split())} words")
+    print(f"    Words:   {len(content.split()):,} words")
 
     # 2. Blogger API Authentication
     service = get_authenticated_service()
@@ -72,63 +76,51 @@ def publish_poetry_cq():
         "labels": labels
     }
 
-    print("\n[*] [STEP 1] Minting clean English permalink on Blogger...")
-    try:
-        inserted_post = service.posts().insert(blogId=BLOG_ID, body=body, isDraft=False).execute()
-        post_id = inserted_post.get("id")
-        live_url = inserted_post.get("url")
-        print(f"    [OK] Successfully Minted Post ID: {post_id}")
-        print(f"    [OK] Permanent Clean URL:       {live_url}")
-    except Exception as e:
-        print(f"[ERROR] Step 1 Minting Failed: {e}")
-        sys.exit(1)
+    print("\n[*] STEP 1: Minting clean English permalink with draft-publish...")
+    insert_req = service.posts().insert(blogId=BLOG_ID, body=body, isDraft=False)
+    created_post = insert_req.execute()
 
-    # 4. STEP 2: Update title to full Bengali academic title
-    time.sleep(2)
-    print("\n[*] [STEP 2] Updating post title to full Bengali title...")
+    post_id = created_post.get("id")
+    live_url = created_post.get("url")
+
+    print(f"    [✔] Post Minted Successfully!")
+    print(f"        Post ID:  {post_id}")
+    print(f"        Live URL: {live_url}")
+
+    # 4. STEP 2: Update post title to full authentic Bengali Title
+    print("\n[*] STEP 2: Updating post title to full authentic Bengali Title...")
     patch_body = {
         "title": full_title
     }
+    patch_req = service.posts().patch(blogId=BLOG_ID, postId=post_id, body=patch_body)
+    updated_post = patch_req.execute()
 
-    try:
-        updated_post = service.posts().patch(
-            blogId=BLOG_ID,
-            postId=post_id,
-            body=patch_body,
-            revert=False
-        ).execute()
-        print(f"    [OK] Successfully Updated Title: {updated_post.get('title')}")
-    except Exception as e:
-        print(f"[ERROR] Step 2 Title Update Failed: {e}")
+    final_title = updated_post.get("title")
+    print(f"    [✔] Title Patched: {final_title}")
 
-    # 5. STEP 3: Ping Real-Time WebSub Hubs
-    print("\n[*] [STEP 3] Pinging Real-Time WebSub Hubs...")
-    try:
-        ping_all_hubs()
-    except Exception as e:
-        print(f"    [!] WebSub ping warning: {e}")
+    # 5. Verification & Google Indexing API Submission
+    print("\n[*] STEP 3: Automated Live Verification & Instant Indexing...")
+    time.sleep(3)  # Allow Blogger CDN cache propagation
+    verification_result = verify_and_index_post(
+        url=live_url,
+        html_path=HTML_PATH
+    )
 
-    # 6. Save Deployment Record
-    manifest = {
-        "post_id": post_id,
-        "live_url": live_url,
-        "slug": slug,
-        "title": full_title,
-        "labels": labels,
-        "status": "published_live",
-        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
-    }
-
-    record_path = os.path.join(PROJECT_ROOT, "output_posts", "ssc_bangla_poetry_cq_published.json")
-    with open(record_path, "w", encoding="utf-8") as f:
-        json.dump(manifest, f, ensure_ascii=False, indent=2)
-    print(f"\n[OK] Deployment manifest saved to: {record_path}")
+    # 6. Save Published Record
+    pub_record_path = os.path.join(PROJECT_ROOT, "output_posts", "ssc_bangla_poetry_cq_bank_published.json")
+    with open(pub_record_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "post_id": post_id,
+            "url": live_url,
+            "title": full_title,
+            "slug": slug,
+            "verification": verification_result
+        }, f, ensure_ascii=False, indent=2)
 
     print("\n" + "=" * 75)
-    print("BANGLA 1ST POETRY CQ POST LIVE SUCCESSFULLY!")
+    print(f"🎉 POST 02 PUBLISHED & INDEXED SUCCESSFULLY!")
     print(f"   URL: {live_url}")
     print("=" * 75)
-    return manifest
 
 if __name__ == "__main__":
     publish_poetry_cq()
