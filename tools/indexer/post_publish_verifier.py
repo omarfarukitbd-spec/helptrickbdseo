@@ -84,8 +84,13 @@ def verify_and_index_post(url, html_path=None):
         canonical_tag = live_soup.find("link", rel="canonical")
         canonical_href = canonical_tag["href"] if canonical_tag else ""
         results["canonical_match"] = (canonical_href.strip() == url.strip())
+        results["author_card_ok"] = ("htbd-author-box" in resp.text or "ফারুক স্যার" in resp.text)
+        results["accordion_count"] = len(live_soup.find_all("details"))
         print(f"    [✔] HTTP Status: {resp.status_code}")
         print(f"    [✔] Canonical Match: {'YES' if results['canonical_match'] else 'NO'} ({canonical_href})")
+        print(f"    [✔] Author Card (E-E-A-T): {'VERIFIED' if results['author_card_ok'] else 'MISSING'}")
+        if results["accordion_count"] > 0:
+            print(f"    [✔] Interactive Accordions: {results['accordion_count']} details elements active")
     except Exception as e:
         print(f"    [✘] Live HTTP check failed: {e}")
 
@@ -137,6 +142,8 @@ def verify_and_index_post(url, html_path=None):
 |:---|:---:|:---:|
 | **Live HTTP Status** | `HTTP {results['http_status']}` | {'Verified 200 OK' if results['http_status'] == 200 else 'FAILED'} |
 | **Canonical URL Match** | `{'EXACT MATCH' if results['canonical_match'] else 'MISMATCH'}` | {'Verified' if results['canonical_match'] else 'FAILED'} |
+| **E-E-A-T Author Card** | `Faruk Sir (.htbd-author-box)` | {'Verified 100%' if results.get('author_card_ok') else 'MISSING'} |
+| **Interactive Accordions**| `{results.get('accordion_count', 0)} Active Details Elements` | {'Interactive Dwell Booster' if results.get('accordion_count', 0) > 0 else 'Standard'} |
 | **Schema.org Microdata** | `{', '.join(results['schemas_found']) if results['schemas_found'] else 'Active'}` | {'100% Present' if results['schema_ok'] else 'Checked'} |
 | **Google Indexing API** | `Status 200 OK (Notified)` | {'Queued for Googlebot' if results['google_indexing_ok'] else 'FAILED'} |
 | **Google WebSub Hubs** | `HTTP 204 No Content` | {'Real-Time Ingested' if results['websub_ok'] else 'FAILED'} |

@@ -331,6 +331,31 @@ class PreFlightChecker:
         else:
             self.warnings.append("Search Description: Not explicitly defined in metadata. Must be delivered in report for manual Blogger input.")
 
+    def check_author_box(self):
+        """Rule 01: Mandatory Universal E-E-A-T Author Card (.htbd-author-box)"""
+        has_author_box = 'htbd-author-box' in self.raw_html or 'ফারুক স্যার (মো. ওমর ফারুক)' in self.raw_html or 'Faruk Sir' in self.raw_html
+        if has_author_box:
+            self.passed.append("Author Card: Universal E-E-A-T Author Card (.htbd-author-box) verified (PASSED)")
+        else:
+            self.errors.append("Author Card: CRITICAL! Mandatory Universal E-E-A-T Author Card (.htbd-author-box) is MISSING! Every post must feature Faruk Sir's author attribution.")
+
+    def check_interactive_accordions(self):
+        """Rule 01: Interactive Click-to-Reveal Accordions (<details><summary>) for test/MCQ/Q&A content"""
+        quiz_indicators = ['বহুনির্বাচনি', 'মডেল টেস্ট', 'জ্ঞানমূলক প্রশ্ন', 'অনুধাবনমূলক প্রশ্ন', 'mcq', 'model test', 'answer key']
+        has_quiz_patterns = any(ind in self.raw_html.lower() for ind in quiz_indicators)
+        details_count = len(self.soup.find_all('details'))
+        
+        if has_quiz_patterns:
+            if details_count > 0:
+                self.passed.append(f"Interactive Accordion: Click-to-reveal accordions verified ({details_count} <details> elements found) (PASSED)")
+            else:
+                self.warnings.append("Interactive Accordion: Post contains Quiz/MCQ/Q&A indicators but lacks click-to-reveal <details><summary> accordions! Use accordions to maximize Dwell Time.")
+        else:
+            if details_count > 0:
+                self.passed.append(f"Interactive Accordion: {details_count} click-to-reveal accordions found (PASSED)")
+            else:
+                self.passed.append("Interactive Accordion: Standard essay/guide format (PASSED)")
+
     def run_all(self):
         self.check_word_count()
         self.check_jump_break()
@@ -345,6 +370,8 @@ class PreFlightChecker:
         self.check_theme_native_css_and_bloat()
         self.check_bi_modal_dark_light_css()
         self.check_search_description()
+        self.check_author_box()
+        self.check_interactive_accordions()
         
         return len(self.errors) == 0
 
