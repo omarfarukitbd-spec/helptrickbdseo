@@ -38,18 +38,29 @@ Never apply for AdSense without these 5 standalone static pages in Blogger:
 
 ## ⚙️ 2. Blogger Technical SEO & Theme Optimization (ব্লগার টেকনিক্যাল এসইও)
 
-### A. Custom robots.txt for Blogger
+### A. Custom robots.txt for Blogger (Google Official Standard)
 Configure in **Settings > Crawlers and indexing > Custom robots.txt**:
 ```text
 User-agent: *
 Disallow: /search
-Disallow: /*?m=1
-Disallow: /*?m=0
+Disallow: /feeds/*
 Allow: /
 
-Sitemap: https://YOUR_DOMAIN.com/sitemap.xml
-Sitemap: https://YOUR_DOMAIN.com/atom.xml?redirect=false&start-index=1&max-results=500
+Sitemap: https://www.helptrickbd.com/sitemap.xml
+Sitemap: https://www.helptrickbd.com/sitemap-pages.xml
+Sitemap: https://www.helptrickbd.com/atom.xml?redirect=false&start-index=1&max-results=500
 ```
+
+> [!CAUTION]
+> #### 🛑 CRITICAL GOOGLE RULE: Never Disallow `?m=1` or `?m=0` in robots.txt
+> **গুগল ও জন মুলারের (John Mueller) অফিসিয়াল রুলস ও প্রমাণ:**
+> 1. **Canonical অদৃশ্য হওয়া (Invisible Canonical):** জন মুলার (Google Search Advocate) স্পষ্টভাবে সতর্ক করেছেন: *"If you block URLs with parameters like `?m=1` in robots.txt, Googlebot cannot crawl the page. And because Googlebot cannot crawl the page, it CANNOT SEE OR RESPECT the `rel="canonical"` tag on that page."*
+> 2. **Mobile-First Indexing ক্ষতিগ্রস্থ হওয়া:** ব্লগারে মোবাইল ইউজারদের স্বয়ংক্রিয়ভাবে `?m=1` প্যারামিটারে পাঠানো হয়। গুগল এখন Smartphone Googlebot দিয়ে সাইট ক্রল ও র‍্যাংক করে। `robots.txt`-এ `?m=1` ব্লক করলে গুগলবট মোবাইল পেজের কন্টেন্ট ও ক্যানোনিকাল লিংক ভ্যালিডেট করতে ব্যর্থ হয়।
+> 3. **Search Console "Alternate page with proper canonical tag" কোনো এরর নয়:** সার্চ কনসোলে `?m=1` যুক্ত ইউআরএল "Excluded — Alternate page with proper canonical tag" দেখানো মানে সিস্টেম **১০০% নিখুঁতভাবে কাজ করছে** (*"Working as intended. No action is required"* - Google Search Central)। গুগল মোবাইল পেজ ক্রল করে বুঝতে পেরেছে যে এটি একটি অল্টারনেট ভার্সন এবং সেটির ক্যানোনিকাল ট্যাগ পড়ে মূল ইউআরএল-কে র‍্যাংক করাচ্ছে।
+> 4. **অভ্যন্তরীণ লিঙ্কিং বনাম robots.txt এর পার্থক্য:**
+>    - পোস্ট বা সাইটের **অভ্যন্তরীণ লিঙ্কে (Internal Links)** কখনোই `?m=1` ব্যবহার করা যাবে না; সর্বদা ক্লিন ক্যানোনিকাল ডেস্কটপ লিঙ্ক দিতে হবে।
+>    - কিন্তু **`robots.txt`**-এ কখনোই `Disallow: /*?m=1` দেওয়া যাবে না; গুগলবটকে স্বাভাবিকভাবে মোবাইল ভার্সন ক্রল করতে দিতে হবে যাতে ক্যানোনিকাল ট্যাগ পড়ে সব এসইও সিগন্যাল মূল পেজে পাস হতে পারে।
+
 
 ### B. Custom Robot Header Tags (ব্লগার রোবট হেডার ট্যাগ)
 Configure in **Settings > Crawlers and indexing > Custom robot header tags**:
