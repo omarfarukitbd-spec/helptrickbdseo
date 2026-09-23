@@ -116,6 +116,17 @@ def publish_post(metadata_file, mode="schedule", blog_id=BLOG_ID):
             print(f"   Status:   {result.get('status', 'OK')}")
             print(f"   Post ID:  {result.get('id')}")
             print(f"   Live URL: {post_url}\n")
+
+            # AUTO-TRIGGER RULE 11: Post-Completion Indexing & Proof Verification
+            if not is_draft and post_url:
+                try:
+                    from tools.indexer.post_publish_verifier import verify_and_index_post
+                    html_file = metadata_file.replace("_metadata.json", ".html")
+                    print("\n[⚡ AUTO-GOVERNANCE] Automatically running Rule 11 Post-Publish Indexing & Verification...")
+                    verify_and_index_post(post_url, html_file)
+                except Exception as ve:
+                    print(f"[!] Warning: Auto-indexing verification trigger: {ve}")
+
             return post_url
         except Exception as e:
             print(f"[!] API Error: {e}. Falling back to Production Bundle.")
