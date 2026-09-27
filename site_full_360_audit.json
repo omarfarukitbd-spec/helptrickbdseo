@@ -1,327 +1,549 @@
 {
-  "total_posts": 88,
+  "total_posts": 127,
   "duplicate_toc": [],
   "thin_posts": [],
   "medium_posts": [
     {
-      "id": "6772129085481882661",
-      "title": "সার্বভৌমত্ব কি? সংজ্ঞা, বৈশিষ্ট্য ও প্রকারভেদ: একটি পূর্ণাঙ্গ আলোচনা",
-      "url": "https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html",
-      "words": 688
-    },
-    {
       "id": "3900393712518509262",
       "title": "সার্বভৌমত্বের একত্ববাদ ও বহুবাদী মতবাদ: একটি তুলনামূলক বিশ্লেষণ",
       "url": "https://www.helptrickbd.com/2026/01/sarbobhoumotter-ekottobad-o-bohubadi-motobad.html",
-      "words": 618
+      "words": 632
     },
     {
       "id": "4644286417304066012",
       "title": "সরকার কি? রাষ্ট্র ও সরকারের সম্পর্ক এবং পার্থক্য: বিস্তারিত আলোচনা",
       "url": "https://www.helptrickbd.com/2026/01/sorkar-ki-kake-bole-rastro-o-sorkarer-parthokko.html",
-      "words": 873
+      "words": 887
     },
     {
       "id": "8748426312331170418",
       "title": "কল্যাণরাষ্ট্র কী? কল্যাণরাষ্ট্রের বৈশিষ্ট্য ও কার্যাবলী",
       "url": "https://www.helptrickbd.com/2026/01/kollyan-rastro-ki-boishisto-o-karjaboli.html",
-      "words": 963
+      "words": 973
     },
     {
       "id": "179336939989858201",
       "title": "বাংলাদেশে শিল্প জাতীয়করণের ইতিহাস, পটভূমি, সমস্যা ও প্রভাব (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/bangladeshe-shilpo-jatiyokoron-shomossha.html",
-      "words": 647
+      "words": 648
     },
     {
       "id": "8316268127112895155",
       "title": "রাষ্ট্র, সমাজ ও নারী: আন্দোলনের প্রেক্ষাপট, অধিকার ও অস্তিত্ব রক্ষার লড়াই (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/nari-andolon-ostitto-rokhar-lorai.html",
-      "words": 672
+      "words": 676
     },
     {
       "id": "5020265416603423827",
       "title": "শিশুর সামাজিকীকরণ প্রক্রিয়ায় খেলার সাথী ও বন্ধুদের ভূমিকা (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/samajikikorone-khelar-sathir-bhumika.html",
-      "words": 671
+      "words": 672
     },
     {
       "id": "2778070516508854236",
       "title": "জনসংখ্যা পরিবর্তনের কারণ, প্রভাব ও প্রধান নিয়ামকসমূহ (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/jonosonkha-poribortoner-prodhan-niyamok-somuho.html",
-      "words": 630
+      "words": 632
     },
     {
       "id": "5551927583161982000",
       "title": "পরিবেশ কাকে বলে? পরিবেশের উপাদান ও শ্রেণিবিভাগ সমূহ",
       "url": "https://www.helptrickbd.com/2026/01/poribesh-kake-bole-upadan-o-srenibibhag.html",
-      "words": 748
+      "words": 760
     },
     {
       "id": "2112720902391557531",
       "title": "প্রতিবেশ কি? পরিবেশ ও প্রতিবেশের মধ্যে সম্পর্ক ও পার্থক্য",
       "url": "https://www.helptrickbd.com/2026/01/protibesh-ki-poribesh-o-protibesher-somporko.html",
-      "words": 781
+      "words": 794
     },
     {
       "id": "1937593761602997500",
       "title": "পরিবেশের উপর জনসংখ্যার নেতিবাচক প্রভাব: কারণ ও ফলাফল",
       "url": "https://www.helptrickbd.com/2026/01/jonosonkha-briddhi-poribesh-probhav.html",
-      "words": 777
+      "words": 789
     },
     {
       "id": "6907399415541442791",
       "title": "সংস্কৃতি কি? সংস্কৃতির বৈশিষ্ট্য ও বাংলাদেশের মানুষের জীবনধারা",
       "url": "https://www.helptrickbd.com/2026/01/sonskriti-ki-boishisto-bangalider-jibonjatra.html",
-      "words": 827
+      "words": 839
     },
     {
       "id": "2335597217874315854",
       "title": "গ্রামীণ ও শহরের সংস্কৃতির পার্থক্য এবং বৈশিষ্ট্যসমূহ",
       "url": "https://www.helptrickbd.com/2026/01/gramin-o-shohorer-songskritir-parthokko.html",
-      "words": 749
+      "words": 760
     },
     {
       "id": "1429095227109508205",
       "title": "রাজনৈতিক অর্থনীতি কাকে বলে? সংজ্ঞা, পরিধি ও তাত্ত্বিক কাঠামো (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/what-is-political-economy-definition-concept.html",
-      "words": 665
+      "words": 667
     },
     {
       "id": "3881771794171675240",
       "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: সাংবিধানিক পটভূমি ও গুরুত্ব (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/importance-of-reserved-seats-for-women-in-national-parliament.html",
-      "words": 660
+      "words": 661
     },
     {
       "id": "8694781974023635952",
       "title": "নারী দশকের লক্ষ্য ও উদ্দেশ্য: বিশ্ব নারী দশকের পটভূমি",
       "url": "https://www.helptrickbd.com/2026/01/goals-and-objectives-of-womens-decade.html",
-      "words": 609
+      "words": 622
     },
     {
       "id": "3995402116153520",
       "title": "পুরুষতন্ত্র কাকে বলে? সমাজতাত্ত্বিক সংজ্ঞা, উৎপত্তি, বৈশিষ্ট্য ও প্রভাব (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/what-is-patriarchy-definition-characteristics-impact.html",
-      "words": 730
-    },
-    {
-      "id": "5496176856660793475",
-      "title": "রাজনীতিতে নারীর অংশগ্রহণ বলতে কী বোঝায়?",
-      "url": "https://www.helptrickbd.com/2026/01/what-does-women-participation-in-politics-mean.html",
-      "words": 629
+      "words": 733
     },
     {
       "id": "8095492964121246778",
       "title": "নারীর ক্ষমতায়নে এনজিও-র ভূমিকা, গুরুত্ব ও বাস্তব সুফল (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/role-of-ngos-in-womens-empowerment-benefits.html",
-      "words": 683
+      "words": 710
     },
     {
       "id": "8548896560937787860",
       "title": "নারী নির্যাতন কী? সংজ্ঞা, কারণ ও প্রভাব",
       "url": "https://www.helptrickbd.com/2025/12/what-is-violence-against-women-definition-impact.html",
-      "words": 776
+      "words": 841
     },
     {
       "id": "6375521475702085898",
       "title": "১৯০৯ সালের ভারত শাসন আইন: বৈশিষ্ট্য ও গুরুত্ব",
       "url": "https://www.helptrickbd.com/2025/12/morley-minto-reforms-1909-features-importance.html",
-      "words": 709
+      "words": 721
     },
     {
       "id": "6725103459411539325",
       "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
       "url": "https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html",
-      "words": 660
+      "words": 911
     },
     {
       "id": "7152628717436788366",
       "title": "মহাত্মা গান্ধীর জনপ্রিয়তার কারণসমূহ ও রাজনৈতিক আদর্শ",
       "url": "https://www.helptrickbd.com/2025/12/reasons-mahatma-gandhi-popularity-political-ideals.html",
-      "words": 725
+      "words": 898
     },
     {
       "id": "6485913933681271646",
       "title": "রাষ্ট্রচিন্তায় ইমাম গাজ্জালির অবদান ও রাজনৈতিক দর্শন",
       "url": "https://www.helptrickbd.com/2025/12/imam-ghazali-contribution-political-thought.html",
-      "words": 875
+      "words": 886
     },
     {
       "id": "5637188129664256169",
       "title": "বাজেট কী? বাজেটের গুরুত্ব ও অর্থনীতিতে ভূমিকা",
       "url": "https://www.helptrickbd.com/2025/12/what-is-budget-importance-role-economy.html",
-      "words": 868
+      "words": 879
     },
     {
       "id": "7294177477722199301",
       "title": "রেমিট্যান্স কী? বাংলাদেশের অর্থনীতিতে রেমিট্যান্সের গুরুত্ব ও প্রভাব",
       "url": "https://www.helptrickbd.com/2025/12/what-is-remittance-importance-economy-obstacles.html",
-      "words": 809
+      "words": 821
     },
     {
       "id": "9162417808022896401",
       "title": "খিলাফত আন্দোলনের ব্যর্থতার কারণ ও ঐতিহাসিক পটভূমি",
       "url": "https://www.helptrickbd.com/2025/12/reasons-for-failure-of-khilafat-movement.html",
-      "words": 882
+      "words": 893
     },
     {
       "id": "5786345583005242847",
       "title": "সমাজ সংস্কার ও বাংলা সাহিত্যে ঈশ্বরচন্দ্র বিদ্যাসাগরের অবদান (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/12/ishwar-chandra-vidyasagar-social-reform-contribution.html",
-      "words": 641
+      "words": 667
     },
     {
       "id": "4889825247437182136",
       "title": "ইসলামে ওয়াদা পালন: কুরআন ও হাদিসের আলোকে গুরুত্ব ও ফজিলত",
       "url": "https://www.helptrickbd.com/2025/12/importance-of-keeping-promises-in-islam-quran-hadith.html",
-      "words": 899
+      "words": 913
     },
     {
       "id": "216447211214226049",
       "title": "কালামে আ'লা হযরত: ছন্দের শৈল্পিকতায় আকীদা শিক্ষা",
       "url": "https://www.helptrickbd.com/2025/12/kalame-ala-hazrat-aqeedah-poetry-full-analysis.html",
-      "words": 913
+      "words": 924
     },
     {
       "id": "6727933641837466244",
       "title": "কুরআন মুখস্থকরণ ও সংরক্ষণের গুরুত্ব",
       "url": "https://www.helptrickbd.com/2025/12/quran-memorization-preservation-importance-full-guide.html",
-      "words": 882
+      "words": 891
     },
     {
       "id": "6126999372993436911",
       "title": "লেনিনের জীবনী, সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদের সাথে সম্পর্ক",
       "url": "https://www.helptrickbd.com/2025/12/vladimir-lenin-biography-theory-marxism-comparison.html",
-      "words": 775
+      "words": 797
     },
     {
       "id": "8627593792684840586",
       "title": "বাংলাদেশে কৃষি খাতে উন্নয়নে সরকারের পদক্ষেপ",
       "url": "https://www.helptrickbd.com/2025/12/government-steps-agriculture-development-bangladesh.html",
-      "words": 783
+      "words": 793
     },
     {
       "id": "3163731179305221308",
       "title": "বাংলাদেশ প্রাণিসম্পদ গবেষণা ইনস্টিটিউট (BLRI): কার্যক্রম, উদ্ভাবন ও ভূমিকা (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/12/bangladesh-livestock-resources-research-institutes.html",
-      "words": 682
+      "words": 685
     },
     {
       "id": "9216865562894997738",
       "title": "সরকার ও রাজনৈতিক দল: ধারণা, সম্পর্ক ও বাংলাদেশে গণতান্ত্রিক চর্চা (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/12/government-political-parties-bangladesh-analysis.html",
-      "words": 618
+      "words": 621
     },
     {
       "id": "3465437051897928179",
       "title": "কম্পিউটারের প্রকারভেদ: অ্যানালগ, ডিজিটাল, হাইব্রিড ও সুপার কম্পিউটার (পার্ট-৪)",
       "url": "https://www.helptrickbd.com/2025/12/computer-types-classification-part4.html",
-      "words": 603
+      "words": 664
     },
     {
       "id": "5955879897597266679",
       "title": "কম্পিউটারের প্রজন্ম: ১ম থেকে ৫ম প্রজন্মের প্রযুক্তিগত তুলনা ও বৈশিষ্ট্য (পার্ট-৩)",
       "url": "https://www.helptrickbd.com/2025/12/computer-generations-features-part3.html",
-      "words": 648
+      "words": 709
     },
     {
       "id": "4287526406029588825",
       "title": "কম্পিউটারের ইতিহাস: এবাকাস থেকে ইন্টিগ্রেটেড সার্কিট পর্যন্ত পূর্ণাঙ্গ রূপরেখা (পার্ট-২)",
       "url": "https://www.helptrickbd.com/2025/12/computer-history-inventions-part2.html",
-      "words": 688
+      "words": 749
     },
     {
       "id": "8780611538499445916",
       "title": "কম্পিউটার কাকে বলে? কম্পিউটারের সংজ্ঞা, ইতিহাস, বৈশিষ্ট্য ও প্রজন্ম (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/12/computer-definition-history.html",
-      "words": 628
+      "words": 700
     },
     {
       "id": "369678654278004883",
       "title": "উন্নয়নশীল অর্থনীতিতে রাজনীতির দ্বিমুখী প্রভাব",
       "url": "https://www.helptrickbd.com/2025/12/Politics-indeveloping-countries-controls-the-economy.html",
-      "words": 799
+      "words": 808
     },
     {
       "id": "3166121977234663010",
       "title": "টেকসই উন্নয়ন ও বাংলাদেশ: লক্ষ্যমাত্রা, চ্যালেঞ্জ ও করণীয়",
       "url": "https://www.helptrickbd.com/2025/12/sustainable-development-goals-bd.html",
-      "words": 725
+      "words": 737
     },
     {
       "id": "709822711957352889",
       "title": "সাম্প্রতিক কালের রাষ্ট্রচিন্তা বলতে কী বুঝ: জাতীয়তাবাদ ও বিবর্তন (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/07/what-is-meant-by-recent-nationalism.html",
-      "words": 661
+      "words": 666
     },
     {
       "id": "7170314718157313108",
       "title": "রাষ্ট্রবিজ্ঞান মাস্টার্স সাজেশন্স: সাম্প্রতিক রাষ্ট্রচিন্তা বিষয়কোড ৩১১৯০১ (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/07/recent-political-thought-suggestion-2024.html",
-      "words": 632
+      "words": 634
     },
     {
       "id": "2685355301637013898",
       "title": "২০২৫ সালের আলিম পরীক্ষার রুটিন | Alim Exam Routine 2025",
       "url": "https://www.helptrickbd.com/2025/04/alim-exam-routine-2025..html",
-      "words": 882
+      "words": 896
     },
     {
       "id": "4196953979786018728",
       "title": "এসএসসি পরীক্ষার্থীদের জন্য জরুরি নিয়মাবলি ও পরীক্ষার হলের নির্দেশিকা (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/04/important-instructions-for-ssc-candidates.html",
-      "words": 783
+      "words": 785
     },
     {
       "id": "4532298606185878708",
       "title": "মিলাদ শরীফের ক্বাসিদা: মারহাবা ইয়া মারহাবা—তাৎপর্য, ব্যাখ্যা ও পূর্ণাঙ্গ লিরিক্স",
       "url": "https://www.helptrickbd.com/2025/03/marhaba-ya-marhaba-rahmatullah-alamin-e-marhaba-lyrics.html",
-      "words": 765
+      "words": 792
     },
     {
       "id": "2775432775420017039",
       "title": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লা হু: যিকিরের মহিমা, অর্থ ও পূর্ণাঙ্গ লিরিক্স",
       "url": "https://www.helptrickbd.com/2025/03/allah-allah-allahu-la-ilaha-illa-hu-lyrics.html",
-      "words": 817
+      "words": 850
     },
     {
       "id": "7292197299976881558",
       "title": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম: ঐতিহাসিক প্রেক্ষিত, তাৎপর্য ও পূর্ণাঙ্গ লিরিক্স",
       "url": "https://www.helptrickbd.com/2025/02/milad-sharif-salatun-ya-rasulallah-alaikum.html",
-      "words": 862
+      "words": 889
     },
     {
       "id": "4705377665339185450",
       "title": "সামাজিক পরিবর্তন ও রাজনৈতিক উন্নয়ন চূড়ান্ত সাজেশন: বিষয়কোড ৩১১৯০৩ (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/01/masters-social-change-and-political-development-suggestions.html",
-      "words": 640
+      "words": 645
     },
     {
       "id": "8734268051717655794",
       "title": "প্রাচ্যের রাষ্ট্রচিন্তা এর পাঠের গুরুত্ব, বৈশিষ্ট্য, পরিধি ও বিষয়বস্তু",
       "url": "https://www.helptrickbd.com/2025/01/eastern-state-thought-its-importance-characteristics.html",
-      "words": 790
+      "words": 803
     },
     {
       "id": "1200879181592128005",
       "title": "অলস ও ব্যাকবেঞ্চারদের জন্য চাকরি ও বিসিএস প্রস্তুতির সহজ গাইড (২০২৬)",
       "url": "https://www.helptrickbd.com/2024/12/simple-guide-to-job-and-bcs-preparation.html",
-      "words": 731
+      "words": 819
     },
     {
       "id": "2984334472304308439",
       "title": "আধুনিক রাষ্ট্রচিন্তা ২০১৯ সালের প্রশ্নের নির্ভুল উত্তরমালা ও সমাধান (২০২৬)",
       "url": "https://www.helptrickbd.com/2024/11/modern-political-thought-answer-sheet-2019-pdf.html",
-      "words": 692
+      "words": 694
     }
   ],
   "long_posts": [
     {
+      "id": "7156437687099332664",
+      "title": "এসএসসি ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Poetry CQ Question Bank & Full Solution)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq-question.html",
+      "words": 4189
+    },
+    {
+      "id": "8942718904689778868",
+      "title": "এসএসসি ও দাখিল বাংলা ১ম পত্র গদ্যাংশ সৃজনশীল প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Prose CQ Question Bank & Full Solution)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq-question.html",
+      "words": 5706
+    },
+    {
+      "id": "5688552421964671574",
+      "title": "এসএসসি বাংলা ১ম পত্র কবিতাংশ বহুনির্বাচনি প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Poetry MCQ Suggestion with Answers)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-mcq.html",
+      "words": 3890
+    },
+    {
+      "id": "6518640368121583889",
+      "title": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ বহুনির্বাচনি প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Prose MCQ Suggestion with Answers)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-mcq-question.html",
+      "words": 3968
+    },
+    {
+      "id": "4514455172913539953",
+      "title": "SSC বাংলা ১ম পত্র ১০০ নম্বরের পূর্ণাঙ্গ মডেল টেস্ট ও সমাধান ২০২৬-২০২৭ | বোর্ড স্ট্যান্ডার্ড CQ, MCQ ও সংক্ষিপ্ত প্রশ্ন (100 Marks Full Model Test Paper)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-model-test.html",
+      "words": 1546
+    },
+    {
+      "id": "5165737254267940811",
+      "title": "SSC বাংলা ১ম পত্র সংক্ষিপ্ত প্রশ্নব্যাংক ২০২৬-২০২৭ (২০ নম্বর নিশ্চিত) | গদ্য ও পদ্যের সেরা ১০০টি অনুধাবনমূলক প্রশ্ন ও উত্তর (20-Mark SAQ Bank)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-short-question.html",
+      "words": 1821
+    },
+    {
+      "id": "5928495229348422345",
+      "title": "SSC বাংলা ১ম পত্র কবিতাংশ পর্ব-২ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | সেইদিন এই মাঠ, বৃষ্টি, আগন্তুক নই, স্বাধীনতা ও বোশেখ CQ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq-part-2.html",
+      "words": 1599
+    },
+    {
+      "id": "6383095457170141697",
+      "title": "SSC বাংলা ১ম পত্র কবিতাংশ পর্ব-১ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | বন্দনা, কপোতাক্ষ নদ, প্রাণ, জীবন বিনিময় ও উমর ফারুক CQ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq-part-1.html",
+      "words": 1295
+    },
+    {
+      "id": "6925279533940643847",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-৩ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | প্রবাস বন্ধু, মমতাদি, একুশের গল্প ও নতুন গৌরবগাথা CQ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq-part-3.html",
+      "words": 1287
+    },
+    {
+      "id": "8676318542398082119",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-২ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | মানুষ মুহম্মদ (স.), নিমগাছ, উপেক্ষিত শক্তি ও শিক্ষা ও মনুষ্যত্ব CQ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq-part-2.html",
+      "words": 1466
+    },
+    {
+      "id": "4807143611644528582",
+      "title": "SSC ও দাখিল বাংলা ১ম পত্র ৩০ নম্বরের বহুনির্বাচনি (MCQ) ও সংক্ষিপ্ত প্রশ্নব্যাংক (SAQ) ২০২৬-২০২৭ | গদ্যাংশ ও কবিতাংশের শীর্ষ কমন প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-mcq-saq-question.html",
+      "words": 2142
+    },
+    {
+      "id": "6065716687095219706",
+      "title": "SSC ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল ও ভাবার্থ সমাধান ২০২৬-২০২৭ | কপোতাক্ষ নদ, বন্দনা, তোমাকে পাওয়ার জন্যে হে স্বাধীনতা ও জীবন বিনিময়",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq.html",
+      "words": 1507
+    },
+    {
+      "id": "7287843811300052440",
+      "title": "আমাদের নতুন গৌরবগাথা সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | জুলাই ২০২৪ গণঅভ্যুত্থান প্রবন্ধের সম্পূর্ণ বহুনির্বাচনি ও অনুধাবনমূলক সুপার সাজেশন (SSC ও দাখিল বাংলা ১ম পত্র)",
+      "url": "https://www.helptrickbd.com/2026/09/amader-notun-gourabbatha-cq-mcq.html",
+      "words": 1737
+    },
+    {
+      "id": "4356373537694150476",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-১ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | প্রত্যুপকার, সুভা, বই পড়া ও নিরীহ বাঙালি CQ Solution",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq.html",
+      "words": 2014
+    },
+    {
+      "id": "6904395060145150353",
+      "title": "SSC & Dakhil Bangla 1st Paper Final Suggestion 2026-2027 with Answers | ১০০ নম্বরের সম্পূর্ণ সিলেবাস, নতুন মানবণ্টন ও অধ্যায়ভিত্তিক সৃজনশীল-MCQ সুপার গাইড",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-final-suggestion.html",
+      "words": 1790
+    },
+    {
+      "id": "4591928734298682888",
+      "title": "যুক্তরাষ্ট্রীয় সরকারের বৈশিষ্ট্য ও কার্যাবলী: সংজ্ঞা, তুলনামূলক ছক ও পূর্ণাঙ্গ হ্যান্ডনোট (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/federal-government-features-and.html",
+      "words": 1361
+    },
+    {
+      "id": "7160657224948521919",
+      "title": "SSC English 2nd Paper Final Suggestion 2026-2027 with Answers | ১০০ নম্বরের সম্পূর্ণ সিলেবাস, মানবণ্টন ও অধ্যায়ভিত্তিক এ টু জেড মাস্টার গাইড",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-final-suggestion.html",
+      "words": 2218
+    },
+    {
+      "id": "9216323938062929290",
+      "title": "SSC English 2nd Paper Model Test & Board Question 2026-2027 with Answers",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-model-test-and.html",
+      "words": 4165
+    },
+    {
+      "id": "2819164478523778841",
+      "title": "SSC English 2nd Paper Writing Part Final Suggestion 2026-2027 | Paragraph, Application, Email & Composition",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-writing-part.html",
+      "words": 2044
+    },
+    {
+      "id": "2728520994420779689",
+      "title": "SSC Sentence Connectors & Punctuation Suggestions with Answers | Linking Words রুলস ও ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-connectors-and.html",
+      "words": 5434
+    },
+    {
+      "id": "7959520177371215724",
+      "title": "SSC English 2nd Paper Preposition & Gap Filling Suggestions with Answers | Appropriate Prepositions চার্ট ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-preposition-and.html",
+      "words": 4432
+    },
+    {
+      "id": "848541826459702618",
+      "title": "SSC Suffix and Prefix Rules & Board Questions with Answers | Parts of Speech রূপান্তর ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-suffix-and-prefix-rules-and-board.html",
+      "words": 6142
+    },
+    {
+      "id": "6576972447245567621",
+      "title": "SSC Tag Questions Rules & Board Questions with Answers | ১৫টি শর্টকাট গোল্ডেন রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-tag-questions-rules-and-board.html",
+      "words": 3532
+    },
+    {
+      "id": "4210603287369740506",
+      "title": "SSC Changing Sentences Rules & Board Questions with Answers | Voice Change, Degree ও Simple-Complex-Compound ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-changing-sentences-rules-and-board.html",
+      "words": 7635
+    },
+    {
+      "id": "4513403598587272029",
+      "title": "SSC English 2nd Paper Right Form of Verbs Suggestions with Answer | ১৫টি গোল্ডেন রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-right-form-of.html",
+      "words": 5936
+    },
+    {
+      "id": "5074244725044328705",
+      "title": "SSC 2nd Paper Substitution Table Suggestion with Answers | ২৫টি শীর্ষ বোর্ড প্রশ্ন, সমাধান ও অর্থপূর্ণ বাক্য তৈরির টেকনিক",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-substitution-table-with-answers.html",
+      "words": 4031
+    },
+    {
+      "id": "5738469294510144954",
+      "title": "SSC English 1st Paper Exclusive Model Test 2026-2027 | ১০০ নম্বরের ২টি চূড়ান্ত মডেল প্রশ্ন ও নির্ভুল সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-model-test-with.html",
+      "words": 2945
+    },
+    {
+      "id": "7522251536390389481",
+      "title": "লেনিনের সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদে অবদান: সংজ্ঞা, বৈশিষ্ট্য ও পূর্ণাঙ্গ হ্যান্ডনোট (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/lenin-theory-of-imperialism-marxism.html",
+      "words": 1299
+    },
+    {
+      "id": "1217663424233991976",
+      "title": "সমালোচনাসহ লেনিনের পার্টিতত্ত্ব ব্যাখ্যা ও বিশ্লেষণ — মাস্টার্স ও অনার্স রাষ্ট্রবিজ্ঞান স্পেশাল গাইড (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/lenin-party-theory-analysis-criticism.html",
+      "words": 1314
+    },
+    {
+      "id": "5271097818548963959",
+      "title": "১৯১৭ সালের অক্টোবর সমাজতান্ত্রিক বিপ্লবের কারণ ও ফলাফল — মাস্টার্স ও অনার্স রাষ্ট্রবিজ্ঞান স্পেশাল হ্যান্ডনোট (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/october-socialist-revolution-causes.html",
+      "words": 1708
+    },
+    {
+      "id": "6579089847743315567",
+      "title": "রাজনৈতিক আধুনিকীকরণ ও রাজনৈতিক উন্নয়নের মধ্যে পার্থক্য — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "url": "https://www.helptrickbd.com/2026/09/political-modernization-vs-political.html",
+      "words": 1427
+    },
+    {
+      "id": "5687780180749415439",
+      "title": "আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "url": "https://www.helptrickbd.com/2026/09/meaning-and-agents-of-modernization.html",
+      "words": 1478
+    },
+    {
+      "id": "2055593355523246589",
+      "title": "আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "url": "https://www.helptrickbd.com/2026/09/characteristics-of-modern-society.html",
+      "words": 1278
+    },
+    {
+      "id": "1093847854655422506",
+      "title": "SSC 2027 English Poems & Stories Suggestion | এসএসসি ইংরেজি কবিতা ও গল্প প্রশ্নোত্তর (Q8-9)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question.html",
+      "words": 10248
+    },
+    {
+      "id": "7415763963240393114",
+      "title": "SSC 2027 English Matching & Rearrange Suggestion | এসএসসি টেবিল ম্যাচিং ও রি-অ্যারেঞ্জিং",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange.html",
+      "words": 15994
+    },
+    {
+      "id": "7053633278573752071",
+      "title": "SSC 2027 English Unseen Passage & Summary Suggestion | এসএসসি আনসিন প্যাসেজ ও সামারি রাইটিং",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary.html",
+      "words": 16557
+    },
+    {
+      "id": "4013582929893307058",
+      "title": "SSC 2027 English Completing Story & Dialogue Suggestion | এসএসসি স্টোরি ও ডায়ালগ রাইটিং",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story.html",
+      "words": 23079
+    },
+    {
+      "id": "6338741433469034454",
+      "title": "SSC 2027 English Seen Passage Suggestion | এসএসসি সিন প্যাসেজ MCQ ও প্রশ্নোত্তর (100% Common)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html",
+      "words": 20486
+    },
+    {
+      "id": "5652005814898036993",
+      "title": "SSC English 1st Paper Suggestion 2027 | এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন (PDF)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+      "words": 2743
+    },
+    {
       "id": "1476323207884168710",
       "title": "সনাতন সমাজ ও আধুনিক সমাজের মধ্যে পার্থক্য — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
       "url": "https://www.helptrickbd.com/2026/09/traditional-vs-modern-society.html",
-      "words": 1241
+      "words": 1246
     },
     {
       "id": "3669862988203332709",
@@ -333,7 +555,7 @@
       "id": "677338098229047855",
       "title": "তত্ত্বাবধায়ক সরকার ও অবাধ সুষ্ঠু নির্বাচনের পূর্বশর্তসমূহ — বাংলাদেশের রাজনৈতিক বাস্তবতা",
       "url": "https://www.helptrickbd.com/2026/09/caretaker-government-free-fair-election.html",
-      "words": 1371
+      "words": 1372
     },
     {
       "id": "2764815544769069752",
@@ -351,485 +573,733 @@
       "id": "9116452035823080586",
       "title": "বাংলাদেশে রাজনৈতিক সহিংসতার কারণ ও প্রতিকার — মাস্টার্স রাষ্ট্রবিজ্ঞান স্পেশাল হ্যান্ডনোট ২০২৬",
       "url": "https://www.helptrickbd.com/2026/09/political-violence-in-bangladesh-causes.html",
-      "words": 1557
+      "words": 1562
     },
     {
       "id": "5898560761534163519",
       "title": "সরকারি প্রাথমিক শিক্ষক নিয়োগ ও চাকরির ভাইভা প্রস্তুতি গাইডলাইন (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/09/primary-teacher-job-viva-preparation.html",
-      "words": 1760
+      "words": 1784
     },
     {
       "id": "3708406842330148411",
       "title": "বিসিএস প্রিলিমিনারি ২০০ নম্বরের বিষয়ভিত্তিক মানবণ্টন ও প্রথমবারে পাসের পূর্ণাঙ্গ বুক লিস্ট",
       "url": "https://www.helptrickbd.com/2026/09/bcs-preliminary-marks-distribution_01436475916.html",
-      "words": 1495
+      "words": 1783
     },
     {
       "id": "5695213693308965635",
       "title": "ক্লাউড কম্পিউটিং কি? প্রকারভেদ, বাস্তব সুবিধা ও শীর্ষ প্ল্যাটফর্মের সহজ ব্যাখ্যা",
       "url": "https://www.helptrickbd.com/2026/09/cloud-computing-types-benefits-guide.html",
-      "words": 1167
+      "words": 1237
     },
     {
       "id": "3998042912898607308",
       "title": "কম্পিউটার ভাইরাস ও সাইবার নিরাপত্তা: ম্যালওয়্যার থেকে ডাটা সুরক্ষার সেরা উপায় (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/09/computer-virus-cyber-security-guide-2026.html",
-      "words": 1162
+      "words": 1446
+    },
+    {
+      "id": "6772129085481882661",
+      "title": "সার্বভৌমত্ব কাকে বলে ও এর বৈশিষ্ট্যসমূহ: প্রকারভেদ ও সহজ হ্যান্ডনোট (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html",
+      "words": 1536
     },
     {
       "id": "4176960177069689710",
       "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/jatiyo-songsode-narider-songrokhito-asoner-guruttox.html",
-      "words": 1300
-    },
-    {
-      "id": "5364340333482211270",
-      "title": "১০০টি অর্থনীতির গুরত্বপূর্ণ সংক্ষিপ্ত প্রশ্নোত্তর",
-      "url": "https://www.helptrickbd.com/2025/12/100-important-economics-short-questions-answers.html",
-      "words": 3142
-    },
-    {
-      "id": "4310755053029144710",
-      "title": "বাংলাদেশে মুদ্রাস্ফীতি: কারণ, প্রকৃতি ও রোধের উপায়",
-      "url": "https://www.helptrickbd.com/2025/12/bangladesh-inflation-causes-nature-prevention.html",
-      "words": 1103
-    },
-    {
-      "id": "3625794733415298944",
-      "title": "রাষ্ট্রের সংজ্ঞা, উপাদান ও লক্ষ্য-উদ্দেশ্য: পূর্ণাঙ্গ আলোচনা",
-      "url": "https://www.helptrickbd.com/2025/12/definition-of-state-elements-and-objectives.html",
-      "words": 1214
-    },
-    {
-      "id": "7728495821186827206",
-      "title": "বাংলাদেশের মৌলিক অর্থনীতির বৈশিষ্ট্য, সমস্যা ও সমাধান",
-      "url": "https://www.helptrickbd.com/2025/12/bangladesh-basic-economy-features-problems-solutions.html",
-      "words": 1956
-    },
-    {
-      "id": "5428379770712974341",
-      "title": "সমাজকল্যাণ ও সংস্কারে শেরে বাংলা ফজলুল হকের অবদান",
-      "url": "https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html",
-      "words": 1039
-    },
-    {
-      "id": "2084271035652128691",
-      "title": "রাসূল (স.) এর প্রেমে সিদ্দিকে আকবরের কান্না ও আত্মত্যাগ",
-      "url": "https://www.helptrickbd.com/2025/12/rasul-saw-love-abu-bakr-siddiq-tears-sacrifice-story.html",
-      "words": 1550
-    },
-    {
-      "id": "4230523516017109374",
-      "title": "তালেবে ইলমদের প্রতি মূল্যবান নসিহত: ইলম অর্জনের সঠিক পথ ও পাথেয়",
-      "url": "https://www.helptrickbd.com/2025/12/valuable-advice-for-students-of-knowledge-talebe-ilm.html",
-      "words": 1322
-    },
-    {
-      "id": "7653374006775251126",
-      "title": "ইমামে আযম ও ইমাম বুখারী (র.): তাত্ত্বিক পর্যালোচনা ও জীবনী",
-      "url": "https://www.helptrickbd.com/2025/12/imame-azam-abu-hanifa-imam-bukhari-biography-comparison.html",
-      "words": 2292
-    },
-    {
-      "id": "1128017279355916278",
-      "title": "জামেয়া নিয়ে পীরে বাঙ্গাল হুজুরের স্বপ্ন ও আমাদের করণীয়",
-      "url": "https://www.helptrickbd.com/2025/12/amea-ahmadiya-sunnia-peer-bangal-dream-teachers-responsibility.html",
-      "words": 1346
-    },
-    {
-      "id": "106245264473080060",
-      "title": "আহলে বাইতের ভালোবাসায় আল্লাহ ও রাসূলের সন্তুষ্টি নিহিত",
-      "url": "https://www.helptrickbd.com/2025/12/ahle-bait-love-importance-quran-hadith.html",
-      "words": 1360
-    },
-    {
-      "id": "3027586624791812868",
-      "title": "ঐতিহ্যের আলোয় জামেয়া: ইতিহাস, শিক্ষা স্তর ও সাম্প্রতিক অর্জন",
-      "url": "https://www.helptrickbd.com/2025/12/jameya-ahmadiya-sunnia-history-education-achievements.html",
-      "words": 3222
-    },
-    {
-      "id": "7098917704398168649",
-      "title": "বাংলাদেশের জনসংখ্যা: পরিস্থিতি, বৈশিষ্ট্য ও নৃতাত্ত্বিক পরিচয়",
-      "url": "https://www.helptrickbd.com/2025/12/bangladesh-population-situation-characteristics-complete.html",
-      "words": 1166
-    },
-    {
-      "id": "5470259319335110863",
-      "title": "বাংলাদেশের বনজ সম্পদ ও তার প্রতিষ্ঠান",
-      "url": "https://www.helptrickbd.com/2025/12/bangladesh-forest-resources.html",
-      "words": 1403
-    },
-    {
-      "id": "4954868321208138404",
-      "title": "বাংলাদেশের কৃষি: গবেষণা প্রতিষ্ঠান, শস্যের জাত ও কৃষি প্রযুক্তি",
-      "url": "https://www.helptrickbd.com/2025/12/bangladesh-agriculture-institutes-resources-complete.html",
-      "words": 1294
-    },
-    {
-      "id": "7178089771275714732",
-      "title": "বাংলাদেশের অর্থনীতি: বাজেট, কর ব্যবস্থা ও ভবিষ্যৎ সম্ভাবনা",
-      "url": "https://www.helptrickbd.com/2025/12/economy-of-bangladesh.html",
-      "words": 1266
-    },
-    {
-      "id": "2652437465190080886",
-      "title": "বাংলা বাগধারা ও অর্থ: বিসিএস ও চাকরির পরীক্ষার জন্য সেরা ৫০০+ কালেকশন",
-      "url": "https://www.helptrickbd.com/2025/12/bangla-bagdhara-collection-with-meaning.html",
-      "words": 1278
-    },
-    {
-      "id": "7881725556004621855",
-      "title": "বাংলাদেশের ইতিহাস: সংগ্রাম, মুক্তিযুদ্ধ ও বিজয়ের পূর্ণাঙ্গ রূপরেখা (২০২৬)",
-      "url": "https://www.helptrickbd.com/2025/11/history-of-bangladesh.html",
-      "words": 1102
-    },
-    {
-      "id": "2080353291294038390",
-      "title": "রাষ্ট্রচিন্তা কাকে বলে? রাষ্ট্রচিন্তার সংজ্ঞা, উৎপত্তি, বিবর্তন ও পরিধি (২০২৬)",
-      "url": "https://www.helptrickbd.com/2025/07/what-is-statesmanship.html",
-      "words": 1189
-    },
-    {
-      "id": "96563581694548240",
-      "title": "রাষ্ট্রবিজ্ঞান মাস্টার্স পরীক্ষা ২০২২: ক বিভাগের সকল প্রশ্নোত্তর (অনুষ্ঠিত ২০২৫)",
-      "url": "https://www.helptrickbd.com/2025/04/political-science-masters-exam-2022-all-short-questions-and-answers.html",
-      "words": 1174
-    },
-    {
-      "id": "8675903395059439252",
-      "title": "ঢাকা শিক্ষাবোর্ডে সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম ২০২৬ | ঢাকা বোর্ড অনলাইন আবেদন গাইড",
-      "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html",
-      "words": 1897
-    },
-    {
-      "id": "6354211911763303796",
-      "title": "মিলাদ শরীফ এর ক্বাসিদা - ইয়া নবী সালাম আলাইকা, ইয়া রসূল সালাম আলাইকা",
-      "url": "https://www.helptrickbd.com/2025/03/ya-nabi-salaam-alaika-ya-rasul-salaam-alaika-lyrics.html",
-      "words": 1626
-    },
-    {
-      "id": "5357717748217683501",
-      "title": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দরূদ শরীফের ফজিলত, অর্থ ও পূর্ণাঙ্গ ক্বাসিদা লিরিক্স",
-      "url": "https://www.helptrickbd.com/2025/03/allahumma-salli-ala-sayyidina-muhammad-lyrics.html",
-      "words": 1100
-    },
-    {
-      "id": "4710432391315087780",
-      "title": "রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)",
-      "url": "https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html",
-      "words": 1843
-    },
-    {
-      "id": "3305641112403867224",
-      "title": "নামতা ১ থেকে ২০ | Namta 1 to 20",
-      "url": "https://www.helptrickbd.com/2025/01/namta-1-to-20.html",
-      "words": 1351
-    },
-    {
-      "id": "4269363058446270636",
-      "title": "Hason Raja Was Born in 1854 | Class 6 English Seen Comprehension, Meaning &amp; Model Questions",
-      "url": "https://www.helptrickbd.com/2025/01/hason-raja-was-born-in-1854-class-six.html",
-      "words": 1543
-    }
-  ],
-  "missing_banner": [
-    {
-      "id": "4532298606185878708",
-      "title": "মিলাদ শরীফের ক্বাসিদা: মারহাবা ইয়া মারহাবা—তাৎপর্য, ব্যাখ্যা ও পূর্ণাঙ্গ লিরিক্স",
-      "url": "https://www.helptrickbd.com/2025/03/marhaba-ya-marhaba-rahmatullah-alamin-e-marhaba-lyrics.html"
-    },
-    {
-      "id": "2775432775420017039",
-      "title": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লা হু: যিকিরের মহিমা, অর্থ ও পূর্ণাঙ্গ লিরিক্স",
-      "url": "https://www.helptrickbd.com/2025/03/allah-allah-allahu-la-ilaha-illa-hu-lyrics.html"
-    },
-    {
-      "id": "5357717748217683501",
-      "title": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দরূদ শরীফের ফজিলত, অর্থ ও পূর্ণাঙ্গ ক্বাসিদা লিরিক্স",
-      "url": "https://www.helptrickbd.com/2025/03/allahumma-salli-ala-sayyidina-muhammad-lyrics.html"
-    },
-    {
-      "id": "7292197299976881558",
-      "title": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম: ঐতিহাসিক প্রেক্ষিত, তাৎপর্য ও পূর্ণাঙ্গ লিরিক্স",
-      "url": "https://www.helptrickbd.com/2025/02/milad-sharif-salatun-ya-rasulallah-alaikum.html"
-    }
-  ],
-  "old_banner": [
-    {
-      "id": "6772129085481882661",
-      "title": "সার্বভৌমত্ব কি? সংজ্ঞা, বৈশিষ্ট্য ও প্রকারভেদ: একটি পূর্ণাঙ্গ আলোচনা",
-      "url": "https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip6CXEZLCHC"
-    },
-    {
-      "id": "3900393712518509262",
-      "title": "সার্বভৌমত্বের একত্ববাদ ও বহুবাদী মতবাদ: একটি তুলনামূলক বিশ্লেষণ",
-      "url": "https://www.helptrickbd.com/2026/01/sarbobhoumotter-ekottobad-o-bohubadi-motobad.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhG_cMLzwUdT"
-    },
-    {
-      "id": "4644286417304066012",
-      "title": "সরকার কি? রাষ্ট্র ও সরকারের সম্পর্ক এবং পার্থক্য: বিস্তারিত আলোচনা",
-      "url": "https://www.helptrickbd.com/2026/01/sorkar-ki-kake-bole-rastro-o-sorkarer-parthokko.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDdnG5SmrMn"
-    },
-    {
-      "id": "8748426312331170418",
-      "title": "কল্যাণরাষ্ট্র কী? কল্যাণরাষ্ট্রের বৈশিষ্ট্য ও কার্যাবলী",
-      "url": "https://www.helptrickbd.com/2026/01/kollyan-rastro-ki-boishisto-o-karjaboli.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFJP1ya4ewU"
-    },
-    {
-      "id": "5551927583161982000",
-      "title": "পরিবেশ কাকে বলে? পরিবেশের উপাদান ও শ্রেণিবিভাগ সমূহ",
-      "url": "https://www.helptrickbd.com/2026/01/poribesh-kake-bole-upadan-o-srenibibhag.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhz52sJK_fmU"
-    },
-    {
-      "id": "2112720902391557531",
-      "title": "প্রতিবেশ কি? পরিবেশ ও প্রতিবেশের মধ্যে সম্পর্ক ও পার্থক্য",
-      "url": "https://www.helptrickbd.com/2026/01/protibesh-ki-poribesh-o-protibesher-somporko.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmjxQeUtMIW"
-    },
-    {
-      "id": "1937593761602997500",
-      "title": "পরিবেশের উপর জনসংখ্যার নেতিবাচক প্রভাব: কারণ ও ফলাফল",
-      "url": "https://www.helptrickbd.com/2026/01/jonosonkha-briddhi-poribesh-probhav.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDlH6anNbbW"
-    },
-    {
-      "id": "6907399415541442791",
-      "title": "সংস্কৃতি কি? সংস্কৃতির বৈশিষ্ট্য ও বাংলাদেশের মানুষের জীবনধারা",
-      "url": "https://www.helptrickbd.com/2026/01/sonskriti-ki-boishisto-bangalider-jibonjatra.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAnS4FP6gKy"
-    },
-    {
-      "id": "2335597217874315854",
-      "title": "গ্রামীণ ও শহরের সংস্কৃতির পার্থক্য এবং বৈশিষ্ট্যসমূহ",
-      "url": "https://www.helptrickbd.com/2026/01/gramin-o-shohorer-songskritir-parthokko.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5lWbuKxPTZ"
+      "words": 1315
     },
     {
       "id": "5496176856660793475",
       "title": "রাজনীতিতে নারীর অংশগ্রহণ বলতে কী বোঝায়?",
       "url": "https://www.helptrickbd.com/2026/01/what-does-women-participation-in-politics-mean.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZIuWMTUG2J"
-    },
-    {
-      "id": "8548896560937787860",
-      "title": "নারী নির্যাতন কী? সংজ্ঞা, কারণ ও প্রভাব",
-      "url": "https://www.helptrickbd.com/2025/12/what-is-violence-against-women-definition-impact.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwriUhCVe5l"
-    },
-    {
-      "id": "6375521475702085898",
-      "title": "১৯০৯ সালের ভারত শাসন আইন: বৈশিষ্ট্য ও গুরুত্ব",
-      "url": "https://www.helptrickbd.com/2025/12/morley-minto-reforms-1909-features-importance.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeFguQcud_W"
-    },
-    {
-      "id": "6725103459411539325",
-      "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
-      "url": "https://www.helptrickbd.com/2025/12/contribution-raja-rammohan-roy-social-reform.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiu3teIaHZd3"
-    },
-    {
-      "id": "7152628717436788366",
-      "title": "মহাত্মা গান্ধীর জনপ্রিয়তার কারণসমূহ ও রাজনৈতিক আদর্শ",
-      "url": "https://www.helptrickbd.com/2025/12/reasons-mahatma-gandhi-popularity-political-ideals.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqKJt6P6jUH"
-    },
-    {
-      "id": "6485913933681271646",
-      "title": "রাষ্ট্রচিন্তায় ইমাম গাজ্জালির অবদান ও রাজনৈতিক দর্শন",
-      "url": "https://www.helptrickbd.com/2025/12/imam-ghazali-contribution-political-thought.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEid6ZmYTeD62"
-    },
-    {
-      "id": "5637188129664256169",
-      "title": "বাজেট কী? বাজেটের গুরুত্ব ও অর্থনীতিতে ভূমিকা",
-      "url": "https://www.helptrickbd.com/2025/12/what-is-budget-importance-role-economy.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwFpdhQrrew"
+      "words": 1109
     },
     {
       "id": "5364340333482211270",
       "title": "১০০টি অর্থনীতির গুরত্বপূর্ণ সংক্ষিপ্ত প্রশ্নোত্তর",
       "url": "https://www.helptrickbd.com/2025/12/100-important-economics-short-questions-answers.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAfHb5zkXrF"
-    },
-    {
-      "id": "4310755053029144710",
-      "title": "বাংলাদেশে মুদ্রাস্ফীতি: কারণ, প্রকৃতি ও রোধের উপায়",
-      "url": "https://www.helptrickbd.com/2025/12/bangladesh-inflation-causes-nature-prevention.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJIGkYRXzLg"
+      "words": 3151
     },
     {
       "id": "3625794733415298944",
       "title": "রাষ্ট্রের সংজ্ঞা, উপাদান ও লক্ষ্য-উদ্দেশ্য: পূর্ণাঙ্গ আলোচনা",
       "url": "https://www.helptrickbd.com/2025/12/definition-of-state-elements-and-objectives.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheJgMghhmjI"
+      "words": 1225
+    },
+    {
+      "id": "4310755053029144710",
+      "title": "বাংলাদেশে মুদ্রাস্ফীতি: কারণ, প্রকৃতি ও রোধের উপায়",
+      "url": "https://www.helptrickbd.com/2025/12/bangladesh-inflation-causes-nature-prevention.html",
+      "words": 1114
     },
     {
       "id": "7728495821186827206",
       "title": "বাংলাদেশের মৌলিক অর্থনীতির বৈশিষ্ট্য, সমস্যা ও সমাধান",
       "url": "https://www.helptrickbd.com/2025/12/bangladesh-basic-economy-features-problems-solutions.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDsOMQ1_Nx9"
-    },
-    {
-      "id": "7294177477722199301",
-      "title": "রেমিট্যান্স কী? বাংলাদেশের অর্থনীতিতে রেমিট্যান্সের গুরুত্ব ও প্রভাব",
-      "url": "https://www.helptrickbd.com/2025/12/what-is-remittance-importance-economy-obstacles.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgI3JyIOVCJ2"
-    },
-    {
-      "id": "9162417808022896401",
-      "title": "খিলাফত আন্দোলনের ব্যর্থতার কারণ ও ঐতিহাসিক পটভূমি",
-      "url": "https://www.helptrickbd.com/2025/12/reasons-for-failure-of-khilafat-movement.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAqXP9xBwN9"
+      "words": 1967
     },
     {
       "id": "5428379770712974341",
       "title": "সমাজকল্যাণ ও সংস্কারে শেরে বাংলা ফজলুল হকের অবদান",
       "url": "https://www.helptrickbd.com/2025/12/sher-e-bangla-fazlul-haque-social-welfare.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaCJMMG9fKQ"
-    },
-    {
-      "id": "4889825247437182136",
-      "title": "ইসলামে ওয়াদা পালন: কুরআন ও হাদিসের আলোকে গুরুত্ব ও ফজিলত",
-      "url": "https://www.helptrickbd.com/2025/12/importance-of-keeping-promises-in-islam-quran-hadith.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUrNUA4_I25"
-    },
-    {
-      "id": "216447211214226049",
-      "title": "কালামে আ'লা হযরত: ছন্দের শৈল্পিকতায় আকীদা শিক্ষা",
-      "url": "https://www.helptrickbd.com/2025/12/kalame-ala-hazrat-aqeedah-poetry-full-analysis.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwOX9Sgz52Y"
-    },
-    {
-      "id": "6727933641837466244",
-      "title": "কুরআন মুখস্থকরণ ও সংরক্ষণের গুরুত্ব",
-      "url": "https://www.helptrickbd.com/2025/12/quran-memorization-preservation-importance-full-guide.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4hfagJwdZ8"
+      "words": 1051
     },
     {
       "id": "2084271035652128691",
       "title": "রাসূল (স.) এর প্রেমে সিদ্দিকে আকবরের কান্না ও আত্মত্যাগ",
       "url": "https://www.helptrickbd.com/2025/12/rasul-saw-love-abu-bakr-siddiq-tears-sacrifice-story.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqLjduGcoCW"
+      "words": 1563
     },
     {
       "id": "4230523516017109374",
       "title": "তালেবে ইলমদের প্রতি মূল্যবান নসিহত: ইলম অর্জনের সঠিক পথ ও পাথেয়",
       "url": "https://www.helptrickbd.com/2025/12/valuable-advice-for-students-of-knowledge-talebe-ilm.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaY0ouUo7gZ"
+      "words": 1337
     },
     {
       "id": "7653374006775251126",
       "title": "ইমামে আযম ও ইমাম বুখারী (র.): তাত্ত্বিক পর্যালোচনা ও জীবনী",
       "url": "https://www.helptrickbd.com/2025/12/imame-azam-abu-hanifa-imam-bukhari-biography-comparison.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8k5xkiSjdE"
+      "words": 2306
     },
     {
       "id": "1128017279355916278",
       "title": "জামেয়া নিয়ে পীরে বাঙ্গাল হুজুরের স্বপ্ন ও আমাদের করণীয়",
       "url": "https://www.helptrickbd.com/2025/12/amea-ahmadiya-sunnia-peer-bangal-dream-teachers-responsibility.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkT-A9Ig7fP"
+      "words": 1359
     },
     {
       "id": "106245264473080060",
       "title": "আহলে বাইতের ভালোবাসায় আল্লাহ ও রাসূলের সন্তুষ্টি নিহিত",
       "url": "https://www.helptrickbd.com/2025/12/ahle-bait-love-importance-quran-hadith.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-S2VbK07Za"
+      "words": 1372
     },
     {
       "id": "3027586624791812868",
       "title": "ঐতিহ্যের আলোয় জামেয়া: ইতিহাস, শিক্ষা স্তর ও সাম্প্রতিক অর্জন",
       "url": "https://www.helptrickbd.com/2025/12/jameya-ahmadiya-sunnia-history-education-achievements.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsbcUUv6xEb"
-    },
-    {
-      "id": "6126999372993436911",
-      "title": "লেনিনের জীবনী, সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদের সাথে সম্পর্ক",
-      "url": "https://www.helptrickbd.com/2025/12/vladimir-lenin-biography-theory-marxism-comparison.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKiXxbnrC5_"
+      "words": 3235
     },
     {
       "id": "7098917704398168649",
       "title": "বাংলাদেশের জনসংখ্যা: পরিস্থিতি, বৈশিষ্ট্য ও নৃতাত্ত্বিক পরিচয়",
       "url": "https://www.helptrickbd.com/2025/12/bangladesh-population-situation-characteristics-complete.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoVrAccIs0G"
-    },
-    {
-      "id": "8627593792684840586",
-      "title": "বাংলাদেশে কৃষি খাতে উন্নয়নে সরকারের পদক্ষেপ",
-      "url": "https://www.helptrickbd.com/2025/12/government-steps-agriculture-development-bangladesh.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKeNabQ0OG3"
+      "words": 1177
     },
     {
       "id": "5470259319335110863",
       "title": "বাংলাদেশের বনজ সম্পদ ও তার প্রতিষ্ঠান",
       "url": "https://www.helptrickbd.com/2025/12/bangladesh-forest-resources.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyaft07YkzA"
+      "words": 1413
     },
     {
       "id": "4954868321208138404",
       "title": "বাংলাদেশের কৃষি: গবেষণা প্রতিষ্ঠান, শস্যের জাত ও কৃষি প্রযুক্তি",
       "url": "https://www.helptrickbd.com/2025/12/bangladesh-agriculture-institutes-resources-complete.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5gmS38zVeU"
-    },
-    {
-      "id": "369678654278004883",
-      "title": "উন্নয়নশীল অর্থনীতিতে রাজনীতির দ্বিমুখী প্রভাব",
-      "url": "https://www.helptrickbd.com/2025/12/Politics-indeveloping-countries-controls-the-economy.html",
-      "src": "https://blogger.googleusercontent.com/img/a/AVvXsEjx_cjbyjHqopXSsxs79R"
+      "words": 1307
     },
     {
       "id": "7178089771275714732",
       "title": "বাংলাদেশের অর্থনীতি: বাজেট, কর ব্যবস্থা ও ভবিষ্যৎ সম্ভাবনা",
       "url": "https://www.helptrickbd.com/2025/12/economy-of-bangladesh.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfMAUGYxUHv"
-    },
-    {
-      "id": "3166121977234663010",
-      "title": "টেকসই উন্নয়ন ও বাংলাদেশ: লক্ষ্যমাত্রা, চ্যালেঞ্জ ও করণীয়",
-      "url": "https://www.helptrickbd.com/2025/12/sustainable-development-goals-bd.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiY59ZXayeYY"
+      "words": 1278
     },
     {
       "id": "2652437465190080886",
       "title": "বাংলা বাগধারা ও অর্থ: বিসিএস ও চাকরির পরীক্ষার জন্য সেরা ৫০০+ কালেকশন",
       "url": "https://www.helptrickbd.com/2025/12/bangla-bagdhara-collection-with-meaning.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOROi33jZ8r"
+      "words": 1352
+    },
+    {
+      "id": "7881725556004621855",
+      "title": "বাংলাদেশের ইতিহাস: সংগ্রাম, মুক্তিযুদ্ধ ও বিজয়ের পূর্ণাঙ্গ রূপরেখা (২০২৬)",
+      "url": "https://www.helptrickbd.com/2025/11/history-of-bangladesh.html",
+      "words": 1104
+    },
+    {
+      "id": "2080353291294038390",
+      "title": "রাষ্ট্রচিন্তা কাকে বলে? রাষ্ট্রচিন্তার সংজ্ঞা, উৎপত্তি, বিবর্তন ও পরিধি (২০২৬)",
+      "url": "https://www.helptrickbd.com/2025/07/what-is-statesmanship.html",
+      "words": 1193
     },
     {
       "id": "96563581694548240",
       "title": "রাষ্ট্রবিজ্ঞান মাস্টার্স পরীক্ষা ২০২২: ক বিভাগের সকল প্রশ্নোত্তর (অনুষ্ঠিত ২০২৫)",
       "url": "https://www.helptrickbd.com/2025/04/political-science-masters-exam-2022-all-short-questions-and-answers.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivGgiyPI07v"
+      "words": 1188
     },
     {
-      "id": "2685355301637013898",
-      "title": "২০২৫ সালের আলিম পরীক্ষার রুটিন | Alim Exam Routine 2025",
-      "url": "https://www.helptrickbd.com/2025/04/alim-exam-routine-2025..html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhz2aoVL_Bxt"
+      "id": "8675903395059439252",
+      "title": "ঢাকা শিক্ষাবোর্ডে সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম ২০২৬ | ঢাকা বোর্ড অনলাইন আবেদন গাইড",
+      "url": "https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html",
+      "words": 1917
     },
     {
       "id": "6354211911763303796",
       "title": "মিলাদ শরীফ এর ক্বাসিদা - ইয়া নবী সালাম আলাইকা, ইয়া রসূল সালাম আলাইকা",
       "url": "https://www.helptrickbd.com/2025/03/ya-nabi-salaam-alaika-ya-rasul-salaam-alaika-lyrics.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinlfBHcyLCd"
+      "words": 1643
     },
     {
-      "id": "8734268051717655794",
-      "title": "প্রাচ্যের রাষ্ট্রচিন্তা এর পাঠের গুরুত্ব, বৈশিষ্ট্য, পরিধি ও বিষয়বস্তু",
-      "url": "https://www.helptrickbd.com/2025/01/eastern-state-thought-its-importance-characteristics.html",
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdYBIUFwPUT"
+      "id": "5357717748217683501",
+      "title": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দরূদ শরীফের ফজিলত, অর্থ ও পূর্ণাঙ্গ ক্বাসিদা লিরিক্স",
+      "url": "https://www.helptrickbd.com/2025/03/allahumma-salli-ala-sayyidina-muhammad-lyrics.html",
+      "words": 1131
+    },
+    {
+      "id": "4710432391315087780",
+      "title": "রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)",
+      "url": "https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html",
+      "words": 1862
+    },
+    {
+      "id": "3305641112403867224",
+      "title": "নামতা ১ থেকে ২০ | Namta 1 to 20",
+      "url": "https://www.helptrickbd.com/2025/01/namta-1-to-20.html",
+      "words": 1364
+    },
+    {
+      "id": "4269363058446270636",
+      "title": "Hason Raja Was Born in 1854 | Class 6 English Seen Comprehension, Meaning &amp; Model Questions",
+      "url": "https://www.helptrickbd.com/2025/01/hason-raja-was-born-in-1854-class-six.html",
+      "words": 1549
     }
   ],
-  "official_banner_count": 39,
+  "missing_banner": [],
+  "old_banner": [],
+  "official_banner_count": 127,
   "posts_summary": [
+    {
+      "id": "7156437687099332664",
+      "title": "এসএসসি ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Poetry CQ Question Bank & Full Solution)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq-question.html",
+      "labels": [
+        "Education Guide",
+        "SSC Suggestion 2027"
+      ],
+      "words": 4189,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "8942718904689778868",
+      "title": "এসএসসি ও দাখিল বাংলা ১ম পত্র গদ্যাংশ সৃজনশীল প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Prose CQ Question Bank & Full Solution)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq-question.html",
+      "labels": [
+        "Education Guide",
+        "SSC Suggestion 2027"
+      ],
+      "words": 5706,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "5688552421964671574",
+      "title": "এসএসসি বাংলা ১ম পত্র কবিতাংশ বহুনির্বাচনি প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Poetry MCQ Suggestion with Answers)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-mcq.html",
+      "labels": [
+        "Education Guide",
+        "SSC Suggestion 2027"
+      ],
+      "words": 3890,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "6518640368121583889",
+      "title": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ বহুনির্বাচনি প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Prose MCQ Suggestion with Answers)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-mcq-question.html",
+      "labels": [
+        "Education Guide",
+        "SSC Suggestion 2027"
+      ],
+      "words": 3968,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "4514455172913539953",
+      "title": "SSC বাংলা ১ম পত্র ১০০ নম্বরের পূর্ণাঙ্গ মডেল টেস্ট ও সমাধান ২০২৬-২০২৭ | বোর্ড স্ট্যান্ডার্ড CQ, MCQ ও সংক্ষিপ্ত প্রশ্ন (100 Marks Full Model Test Paper)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-model-test.html",
+      "labels": [
+        "Bangla 1st Paper",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 1546,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "5165737254267940811",
+      "title": "SSC বাংলা ১ম পত্র সংক্ষিপ্ত প্রশ্নব্যাংক ২০২৬-২০২৭ (২০ নম্বর নিশ্চিত) | গদ্য ও পদ্যের সেরা ১০০টি অনুধাবনমূলক প্রশ্ন ও উত্তর (20-Mark SAQ Bank)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-short-question.html",
+      "labels": [
+        "Bangla 1st Paper",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 1821,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "5928495229348422345",
+      "title": "SSC বাংলা ১ম পত্র কবিতাংশ পর্ব-২ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | সেইদিন এই মাঠ, বৃষ্টি, আগন্তুক নই, স্বাধীনতা ও বোশেখ CQ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq-part-2.html",
+      "labels": [
+        "Bangla 1st Paper",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 1599,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "6383095457170141697",
+      "title": "SSC বাংলা ১ম পত্র কবিতাংশ পর্ব-১ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | বন্দনা, কপোতাক্ষ নদ, প্রাণ, জীবন বিনিময় ও উমর ফারুক CQ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq-part-1.html",
+      "labels": [
+        "Bangla 1st Paper",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 1295,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "6925279533940643847",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-৩ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | প্রবাস বন্ধু, মমতাদি, একুশের গল্প ও নতুন গৌরবগাথা CQ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq-part-3.html",
+      "labels": [
+        "Bangla 1st Paper",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 1287,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "8676318542398082119",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-২ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | মানুষ মুহম্মদ (স.), নিমগাছ, উপেক্ষিত শক্তি ও শিক্ষা ও মনুষ্যত্ব CQ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq-part-2.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 1466,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "4807143611644528582",
+      "title": "SSC ও দাখিল বাংলা ১ম পত্র ৩০ নম্বরের বহুনির্বাচনি (MCQ) ও সংক্ষিপ্ত প্রশ্নব্যাংক (SAQ) ২০২৬-২০২৭ | গদ্যাংশ ও কবিতাংশের শীর্ষ কমন প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-mcq-saq-question.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 2142,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "6065716687095219706",
+      "title": "SSC ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল ও ভাবার্থ সমাধান ২০২৬-২০২৭ | কপোতাক্ষ নদ, বন্দনা, তোমাকে পাওয়ার জন্যে হে স্বাধীনতা ও জীবন বিনিময়",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-poetry-cq.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 1507,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "7287843811300052440",
+      "title": "আমাদের নতুন গৌরবগাথা সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | জুলাই ২০২৪ গণঅভ্যুত্থান প্রবন্ধের সম্পূর্ণ বহুনির্বাচনি ও অনুধাবনমূলক সুপার সাজেশন (SSC ও দাখিল বাংলা ১ম পত্র)",
+      "url": "https://www.helptrickbd.com/2026/09/amader-notun-gourabbatha-cq-mcq.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 1737,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "4356373537694150476",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-১ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | প্রত্যুপকার, সুভা, বই পড়া ও নিরীহ বাঙালি CQ Solution",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-prose-cq.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 2014,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "6904395060145150353",
+      "title": "SSC & Dakhil Bangla 1st Paper Final Suggestion 2026-2027 with Answers | ১০০ নম্বরের সম্পূর্ণ সিলেবাস, নতুন মানবণ্টন ও অধ্যায়ভিত্তিক সৃজনশীল-MCQ সুপার গাইড",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-final-suggestion.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 1790,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "4591928734298682888",
+      "title": "যুক্তরাষ্ট্রীয় সরকারের বৈশিষ্ট্য ও কার্যাবলী: সংজ্ঞা, তুলনামূলক ছক ও পূর্ণাঙ্গ হ্যান্ডনোট (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/federal-government-features-and.html",
+      "labels": [
+        "Political Science"
+      ],
+      "words": 1361,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "7160657224948521919",
+      "title": "SSC English 2nd Paper Final Suggestion 2026-2027 with Answers | ১০০ নম্বরের সম্পূর্ণ সিলেবাস, মানবণ্টন ও অধ্যায়ভিত্তিক এ টু জেড মাস্টার গাইড",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-final-suggestion.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 2218,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "9216323938062929290",
+      "title": "SSC English 2nd Paper Model Test & Board Question 2026-2027 with Answers",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-model-test-and.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 4165,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "2819164478523778841",
+      "title": "SSC English 2nd Paper Writing Part Final Suggestion 2026-2027 | Paragraph, Application, Email & Composition",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-writing-part.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 2044,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "2728520994420779689",
+      "title": "SSC Sentence Connectors & Punctuation Suggestions with Answers | Linking Words রুলস ও ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-connectors-and.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 5434,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "7959520177371215724",
+      "title": "SSC English 2nd Paper Preposition & Gap Filling Suggestions with Answers | Appropriate Prepositions চার্ট ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-preposition-and.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 4432,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "848541826459702618",
+      "title": "SSC Suffix and Prefix Rules & Board Questions with Answers | Parts of Speech রূপান্তর ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-suffix-and-prefix-rules-and-board.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 6142,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "6576972447245567621",
+      "title": "SSC Tag Questions Rules & Board Questions with Answers | ১৫টি শর্টকাট গোল্ডেন রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-tag-questions-rules-and-board.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 3532,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "4210603287369740506",
+      "title": "SSC Changing Sentences Rules & Board Questions with Answers | Voice Change, Degree ও Simple-Complex-Compound ",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-changing-sentences-rules-and-board.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 7635,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "4513403598587272029",
+      "title": "SSC English 2nd Paper Right Form of Verbs Suggestions with Answer | ১৫টি গোল্ডেন রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-right-form-of.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 5936,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "5074244725044328705",
+      "title": "SSC 2nd Paper Substitution Table Suggestion with Answers | ২৫টি শীর্ষ বোর্ড প্রশ্ন, সমাধান ও অর্থপূর্ণ বাক্য তৈরির টেকনিক",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-substitution-table-with-answers.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 4031,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "5738469294510144954",
+      "title": "SSC English 1st Paper Exclusive Model Test 2026-2027 | ১০০ নম্বরের ২টি চূড়ান্ত মডেল প্রশ্ন ও নির্ভুল সমাধান",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-model-test-with.html",
+      "labels": [
+        "Education",
+        "Education Guide",
+        "SSC Suggestion"
+      ],
+      "words": 2945,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "7522251536390389481",
+      "title": "লেনিনের সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদে অবদান: সংজ্ঞা, বৈশিষ্ট্য ও পূর্ণাঙ্গ হ্যান্ডনোট (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/lenin-theory-of-imperialism-marxism.html",
+      "labels": [
+        "Political Science"
+      ],
+      "words": 1299,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "1217663424233991976",
+      "title": "সমালোচনাসহ লেনিনের পার্টিতত্ত্ব ব্যাখ্যা ও বিশ্লেষণ — মাস্টার্স ও অনার্স রাষ্ট্রবিজ্ঞান স্পেশাল গাইড (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/lenin-party-theory-analysis-criticism.html",
+      "labels": [
+        "Political Science"
+      ],
+      "words": 1314,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "5271097818548963959",
+      "title": "১৯১৭ সালের অক্টোবর সমাজতান্ত্রিক বিপ্লবের কারণ ও ফলাফল — মাস্টার্স ও অনার্স রাষ্ট্রবিজ্ঞান স্পেশাল হ্যান্ডনোট (২০২৬)",
+      "url": "https://www.helptrickbd.com/2026/09/october-socialist-revolution-causes.html",
+      "labels": [
+        "Political Science"
+      ],
+      "words": 1708,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "6579089847743315567",
+      "title": "রাজনৈতিক আধুনিকীকরণ ও রাজনৈতিক উন্নয়নের মধ্যে পার্থক্য — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "url": "https://www.helptrickbd.com/2026/09/political-modernization-vs-political.html",
+      "labels": [
+        "Political Science"
+      ],
+      "words": 1427,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "5687780180749415439",
+      "title": "আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "url": "https://www.helptrickbd.com/2026/09/meaning-and-agents-of-modernization.html",
+      "labels": [
+        "Political Science"
+      ],
+      "words": 1478,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "2055593355523246589",
+      "title": "আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "url": "https://www.helptrickbd.com/2026/09/characteristics-of-modern-society.html",
+      "labels": [
+        "Political Science"
+      ],
+      "words": 1278,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "1093847854655422506",
+      "title": "SSC 2027 English Poems & Stories Suggestion | এসএসসি ইংরেজি কবিতা ও গল্প প্রশ্নোত্তর (Q8-9)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-poems-stories-question.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 10248,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "7415763963240393114",
+      "title": "SSC 2027 English Matching & Rearrange Suggestion | এসএসসি টেবিল ম্যাচিং ও রি-অ্যারেঞ্জিং",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-matching-rearrange.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 15994,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "7053633278573752071",
+      "title": "SSC 2027 English Unseen Passage & Summary Suggestion | এসএসসি আনসিন প্যাসেজ ও সামারি রাইটিং",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-unseen-passage-summary.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 16557,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "4013582929893307058",
+      "title": "SSC 2027 English Completing Story & Dialogue Suggestion | এসএসসি স্টোরি ও ডায়ালগ রাইটিং",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-completing-story.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 23079,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "6338741433469034454",
+      "title": "SSC 2027 English Seen Passage Suggestion | এসএসসি সিন প্যাসেজ MCQ ও প্রশ্নোত্তর (100% Common)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-2027-english-seen-passage-suggestion.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 20486,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
+    {
+      "id": "5652005814898036993",
+      "title": "SSC English 1st Paper Suggestion 2027 | এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন (PDF)",
+      "url": "https://www.helptrickbd.com/2026/09/ssc-english-1st-paper-suggestion-2027.html",
+      "labels": [
+        "Dakhil Suggestion",
+        "Education",
+        "SSC Suggestion"
+      ],
+      "words": 2743,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
+    },
     {
       "id": "1476323207884168710",
       "title": "সনাতন সমাজ ও আধুনিক সমাজের মধ্যে পার্থক্য — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
@@ -837,7 +1307,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1241,
+      "words": 1246,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -861,7 +1331,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1371,
+      "words": 1372,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -897,7 +1367,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1557,
+      "words": 1562,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -909,7 +1379,7 @@
       "labels": [
         "Job Study Article"
       ],
-      "words": 1760,
+      "words": 1784,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -921,7 +1391,7 @@
       "labels": [
         "Job Study Article"
       ],
-      "words": 1495,
+      "words": 1783,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -933,7 +1403,7 @@
       "labels": [
         "ICT Guide"
       ],
-      "words": 1167,
+      "words": 1237,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -945,22 +1415,22 @@
       "labels": [
         "ICT Guide"
       ],
-      "words": 1162,
+      "words": 1446,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
     },
     {
       "id": "6772129085481882661",
-      "title": "সার্বভৌমত্ব কি? সংজ্ঞা, বৈশিষ্ট্য ও প্রকারভেদ: একটি পূর্ণাঙ্গ আলোচনা",
+      "title": "সার্বভৌমত্ব কাকে বলে ও এর বৈশিষ্ট্যসমূহ: প্রকারভেদ ও সহজ হ্যান্ডনোট (২০২৬)",
       "url": "https://www.helptrickbd.com/2026/01/sarbobhoumotto-ki-songga-boishisto-o-prokarved.html",
       "labels": [
         "Political Science"
       ],
-      "words": 688,
+      "words": 1536,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "3900393712518509262",
@@ -969,10 +1439,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 618,
+      "words": 632,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "4644286417304066012",
@@ -981,10 +1451,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 873,
+      "words": 887,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "8748426312331170418",
@@ -993,10 +1463,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 963,
+      "words": 973,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "4176960177069689710",
@@ -1005,7 +1475,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1300,
+      "words": 1315,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1017,7 +1487,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 647,
+      "words": 648,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1029,7 +1499,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 672,
+      "words": 676,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1042,7 +1512,7 @@
         "Education Guide",
         "Political Science"
       ],
-      "words": 671,
+      "words": 672,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1054,7 +1524,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 630,
+      "words": 632,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1066,10 +1536,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 748,
+      "words": 760,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "2112720902391557531",
@@ -1079,10 +1549,10 @@
         "Education Guide",
         "Political Science"
       ],
-      "words": 781,
+      "words": 794,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "1937593761602997500",
@@ -1092,10 +1562,10 @@
         "Education Guide",
         "Political Science"
       ],
-      "words": 777,
+      "words": 789,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "6907399415541442791",
@@ -1105,10 +1575,10 @@
         "Education Guide",
         "Political Science"
       ],
-      "words": 827,
+      "words": 839,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "2335597217874315854",
@@ -1118,10 +1588,10 @@
         "Education Guide",
         "Political Science"
       ],
-      "words": 749,
+      "words": 760,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "1429095227109508205",
@@ -1130,7 +1600,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 665,
+      "words": 667,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1142,7 +1612,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 660,
+      "words": 661,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1154,7 +1624,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 609,
+      "words": 622,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1166,7 +1636,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 730,
+      "words": 733,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1178,10 +1648,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 629,
+      "words": 1109,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "8095492964121246778",
@@ -1190,7 +1660,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 683,
+      "words": 710,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1202,10 +1672,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 776,
+      "words": 841,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "6375521475702085898",
@@ -1214,10 +1684,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 709,
+      "words": 721,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "6725103459411539325",
@@ -1226,10 +1696,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 660,
+      "words": 911,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "7152628717436788366",
@@ -1238,10 +1708,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 725,
+      "words": 898,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "6485913933681271646",
@@ -1250,10 +1720,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 875,
+      "words": 886,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "5637188129664256169",
@@ -1262,10 +1732,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 868,
+      "words": 879,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "5364340333482211270",
@@ -1274,22 +1744,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 3142,
+      "words": 3151,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
-    },
-    {
-      "id": "4310755053029144710",
-      "title": "বাংলাদেশে মুদ্রাস্ফীতি: কারণ, প্রকৃতি ও রোধের উপায়",
-      "url": "https://www.helptrickbd.com/2025/12/bangladesh-inflation-causes-nature-prevention.html",
-      "labels": [
-        "Political Science"
-      ],
-      "words": 1103,
-      "has_dup_toc": false,
-      "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "3625794733415298944",
@@ -1298,10 +1756,22 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1214,
+      "words": 1225,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
+    },
+    {
+      "id": "4310755053029144710",
+      "title": "বাংলাদেশে মুদ্রাস্ফীতি: কারণ, প্রকৃতি ও রোধের উপায়",
+      "url": "https://www.helptrickbd.com/2025/12/bangladesh-inflation-causes-nature-prevention.html",
+      "labels": [
+        "Political Science"
+      ],
+      "words": 1114,
+      "has_dup_toc": false,
+      "has_img": true,
+      "is_official_banner": true
     },
     {
       "id": "7728495821186827206",
@@ -1310,10 +1780,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1956,
+      "words": 1967,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "7294177477722199301",
@@ -1322,10 +1792,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 809,
+      "words": 821,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "9162417808022896401",
@@ -1334,10 +1804,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 882,
+      "words": 893,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "5786345583005242847",
@@ -1347,7 +1817,7 @@
         "Education Guide",
         "Political Science"
       ],
-      "words": 641,
+      "words": 667,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1359,10 +1829,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1039,
+      "words": 1051,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "4889825247437182136",
@@ -1371,10 +1841,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 899,
+      "words": 913,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "216447211214226049",
@@ -1383,10 +1853,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 913,
+      "words": 924,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "6727933641837466244",
@@ -1395,10 +1865,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 882,
+      "words": 891,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "2084271035652128691",
@@ -1407,10 +1877,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 1550,
+      "words": 1563,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "4230523516017109374",
@@ -1419,10 +1889,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 1322,
+      "words": 1337,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "7653374006775251126",
@@ -1431,10 +1901,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 2292,
+      "words": 2306,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "1128017279355916278",
@@ -1443,10 +1913,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 1346,
+      "words": 1359,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "106245264473080060",
@@ -1455,10 +1925,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 1360,
+      "words": 1372,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "3027586624791812868",
@@ -1468,10 +1938,10 @@
         "Education Guide",
         "Islamic Article"
       ],
-      "words": 3222,
+      "words": 3235,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "6126999372993436911",
@@ -1480,10 +1950,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 775,
+      "words": 797,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "7098917704398168649",
@@ -1493,10 +1963,10 @@
         "Job Study Article",
         "Political Science"
       ],
-      "words": 1166,
+      "words": 1177,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "8627593792684840586",
@@ -1506,10 +1976,10 @@
         "Job Study Article",
         "Political Science"
       ],
-      "words": 783,
+      "words": 793,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "3163731179305221308",
@@ -1519,7 +1989,7 @@
         "Education Guide",
         "Political Science"
       ],
-      "words": 682,
+      "words": 685,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1532,10 +2002,10 @@
         "Job Study Article",
         "Political Science"
       ],
-      "words": 1403,
+      "words": 1413,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "4954868321208138404",
@@ -1545,10 +2015,10 @@
         "Job Study Article",
         "Political Science"
       ],
-      "words": 1294,
+      "words": 1307,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "9216865562894997738",
@@ -1557,7 +2027,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 618,
+      "words": 621,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1569,7 +2039,7 @@
       "labels": [
         "ICT Guide"
       ],
-      "words": 603,
+      "words": 664,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1581,7 +2051,7 @@
       "labels": [
         "ICT Guide"
       ],
-      "words": 648,
+      "words": 709,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1593,7 +2063,7 @@
       "labels": [
         "ICT Guide"
       ],
-      "words": 688,
+      "words": 749,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1605,7 +2075,7 @@
       "labels": [
         "ICT Guide"
       ],
-      "words": 628,
+      "words": 700,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1617,10 +2087,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 799,
+      "words": 808,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "7178089771275714732",
@@ -1629,10 +2099,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1266,
+      "words": 1278,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "3166121977234663010",
@@ -1641,10 +2111,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 725,
+      "words": 737,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "2652437465190080886",
@@ -1653,10 +2123,10 @@
       "labels": [
         "Education Guide"
       ],
-      "words": 1278,
+      "words": 1352,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "7881725556004621855",
@@ -1665,7 +2135,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1102,
+      "words": 1104,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1677,7 +2147,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 661,
+      "words": 666,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1689,7 +2159,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1189,
+      "words": 1193,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1701,7 +2171,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 632,
+      "words": 634,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1713,10 +2183,10 @@
       "labels": [
         "Political Science"
       ],
-      "words": 1174,
+      "words": 1188,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "2685355301637013898",
@@ -1725,10 +2195,10 @@
       "labels": [
         "Education Guide"
       ],
-      "words": 882,
+      "words": 896,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "4196953979786018728",
@@ -1737,7 +2207,7 @@
       "labels": [
         "Education Guide"
       ],
-      "words": 783,
+      "words": 785,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1749,7 +2219,7 @@
       "labels": [
         "Education Guide"
       ],
-      "words": 1897,
+      "words": 1917,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1761,10 +2231,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 1626,
+      "words": 1643,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "4532298606185878708",
@@ -1773,10 +2243,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 765,
+      "words": 792,
       "has_dup_toc": false,
-      "has_img": false,
-      "is_official_banner": false
+      "has_img": true,
+      "is_official_banner": true
     },
     {
       "id": "2775432775420017039",
@@ -1785,10 +2255,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 817,
+      "words": 850,
       "has_dup_toc": false,
-      "has_img": false,
-      "is_official_banner": false
+      "has_img": true,
+      "is_official_banner": true
     },
     {
       "id": "5357717748217683501",
@@ -1797,10 +2267,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 1100,
+      "words": 1131,
       "has_dup_toc": false,
-      "has_img": false,
-      "is_official_banner": false
+      "has_img": true,
+      "is_official_banner": true
     },
     {
       "id": "7292197299976881558",
@@ -1809,10 +2279,10 @@
       "labels": [
         "Islamic Article"
       ],
-      "words": 862,
+      "words": 889,
       "has_dup_toc": false,
-      "has_img": false,
-      "is_official_banner": false
+      "has_img": true,
+      "is_official_banner": true
     },
     {
       "id": "4705377665339185450",
@@ -1821,7 +2291,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 640,
+      "words": 645,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1833,20 +2303,19 @@
       "labels": [
         "Political Science"
       ],
-      "words": 790,
+      "words": 803,
       "has_dup_toc": false,
       "has_img": true,
-      "is_official_banner": false
+      "is_official_banner": true
     },
     {
       "id": "4710432391315087780",
       "title": "রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)",
       "url": "https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html",
       "labels": [
-        "Honours 4th year",
         "Political Science"
       ],
-      "words": 1843,
+      "words": 1862,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1858,7 +2327,7 @@
       "labels": [
         "Education Guide"
       ],
-      "words": 1351,
+      "words": 1364,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1870,7 +2339,7 @@
       "labels": [
         "Education Guide"
       ],
-      "words": 1543,
+      "words": 1549,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1883,7 +2352,7 @@
         "Education Guide",
         "Job Study Article"
       ],
-      "words": 731,
+      "words": 819,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
@@ -1895,7 +2364,7 @@
       "labels": [
         "Political Science"
       ],
-      "words": 692,
+      "words": 694,
       "has_dup_toc": false,
       "has_img": true,
       "is_official_banner": true
