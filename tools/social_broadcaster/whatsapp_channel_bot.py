@@ -248,7 +248,7 @@ def paste_message_verified(driver, input_box, text):
 
 
 def click_send_button(driver, input_box):
-    """Finds and clicks the WhatsApp Channel green Send button, with fallback to Enter."""
+    """Finds and clicks the WhatsApp Channel green Send button, with JS fallback and Enter key."""
     from selenium.webdriver.common.by import By
     from selenium.webdriver.common.keys import Keys
 
@@ -267,7 +267,10 @@ def click_send_button(driver, input_box):
             btns = driver.find_elements(By.XPATH, sel)
             for b in btns:
                 if b.is_displayed():
-                    b.click()
+                    try:
+                        b.click()
+                    except Exception:
+                        driver.execute_script("arguments[0].click();", b)
                     return True
         except Exception:
             continue
@@ -276,6 +279,120 @@ def click_send_button(driver, input_box):
     try:
         input_box.send_keys(Keys.ENTER)
         return True
+    except Exception:
+        pass
+
+    return False
+
+
+def wait_for_login(driver, timeout=120):
+    """Waits for user login or existing session to be ready."""
+    from selenium.webdriver.common.by import By
+    import time
+
+    start_time = time.time()
+    qr_notified = False
+
+    while time.time() - start_time < timeout:
+        try:
+            main_pane = driver.find_elements(By.XPATH, "//div[@id='pane-side'] | //header | //div[@contenteditable='true']")
+            if any(p.is_displayed() for p in main_pane):
+                print("[OK] হোয়াটসঅ্যাপ ওয়েব সফলভাবে প্রস্তুত ও অথেনটিকেটেড।")
+                return True
+        except Exception:
+            pass
+
+        try:
+            qr = driver.find_elements(By.XPATH, "//canvas | //div[@data-ref]")
+            if any(q.is_displayed() for q in qr) and not qr_notified:
+                print("[!] কিউআর কোড (QR Code) দেখা যাচ্ছে — অনুগ্রহ করে আপনার মোবাইল দিয়ে একবার স্ক্যান করুন...")
+                qr_notified = True
+        except Exception:
+            pass
+
+        time.sleep(2)
+
+    return False
+
+
+def auto_open_channel(driver, channel_name="HelpTrickBD", timeout=45):
+    """Automatically finds and opens the HelpTrickBD channel without manual clicks."""
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
+    import time
+
+    start_time = time.time()
+    print(f"[*] স্বয়ংক্রিয়ভাবে '{channel_name}' চ্যানেল খোঁজা হচ্ছে...")
+
+    while time.time() - start_time < timeout:
+        # 1. Check if already in the channel
+        try:
+            headers = driver.find_elements(By.XPATH, f"//header//*[contains(text(), '{channel_name}') or contains(@title, '{channel_name}')]")
+            if any(h.is_displayed() for h in headers):
+                print(f"[OK] '{channel_name}' চ্যানেল ইতিমধ্যে উন্মুক্ত রয়েছে।")
+                return True
+        except Exception:
+            pass
+
+        # 2. Look for Channel in chat/channel list
+        try:
+            channel_items = driver.find_elements(By.XPATH, f"//span[@title='{channel_name}'] | //span[text()='{channel_name}'] | //div[contains(@aria-label, '{channel_name}')]")
+            for item in channel_items:
+                if item.is_displayed():
+                    item.click()
+                    time.sleep(2)
+                    return True
+        except Exception:
+            pass
+
+        # 3. Click Channels tab icon on left navigation rail
+        try:
+            channel_tabs = driver.find_elements(By.XPATH, "//span[@data-icon='newsletter'] | //button[contains(@aria-label, 'Channel')] | //button[contains(@aria-label, 'চ্যানেল')] | //span[@data-icon='status-refreshed'] | //button[@aria-label='Channels'] | //span[@data-icon='newsletter-outline']")
+            for tab in channel_tabs:
+                if tab.is_displayed():
+                    try:
+                        tab.click()
+                    except Exception:
+                        driver.execute_script("arguments[0].click();", tab)
+                    time.sleep(2)
+                    break
+        except Exception:
+            pass
+
+        # 4. Search input box
+        try:
+            search_boxes = driver.find_elements(By.XPATH, "//div[@contenteditable='true'][@data-tab='3'] | //div[@role='textbox'][contains(@title, 'Search')] | //div[@role='textbox']")
+            for sb in search_boxes:
+                if sb.is_displayed():
+                    sb.click()
+                    sb.clear()
+                    sb.send_keys(channel_name)
+                    time.sleep(1.5)
+                    sb.send_keys(Keys.ENTER)
+                    time.sleep(2)
+                    break
+        except Exception:
+            pass
+
+        time.sleep(2)
+
+    # 5. Direct channel URL fallback
+    try:
+        print("[*] সরাসরি চ্যানেল লিঙ্ক লোড করার চেষ্টা করা হচ্ছে...")
+        driver.get("https://web.whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a")
+        time.sleep(4)
+        headers = driver.find_elements(By.XPATH, f"//header//*[contains(text(), '{channel_name}') or contains(@title, '{channel_name}')]")
+        if any(h.is_displayed() for h in headers):
+            print(f"[OK] '{channel_name}' চ্যানেল সরাসরি লিঙ্কে উন্মুক্ত হয়েছে।")
+            return True
+    except Exception:
+        pass
+
+    # Save debug screenshot if channel not opened
+    try:
+        dbg_path = os.path.join(PROJECT_ROOT, "output_posts", "whatsapp_channel_debug.png")
+        driver.save_screenshot(dbg_path)
+        print(f"[!] চ্যানেল চিহ্নিত করা যায়নি। ডিবাগ স্ক্রিনশট সংরক্ষিত: {dbg_path}")
     except Exception:
         pass
 
@@ -362,25 +479,49 @@ def run_bot(args):
         print("[*] হোয়াটসঅ্যাপ ওয়েব লোড করা হচ্ছে: https://web.whatsapp.com/")
         driver.get("https://web.whatsapp.com/")
 
-        # Login and Channel Navigation Guide
-        print("\n" + "=" * 70)
-        print("নির্দেশনা (দয়া করে ব্রাউজারে লক্ষ্য করুন):")
-        print("১. যদি কিউআর কোড (QR Code) দেখা যায়, ফোনের হোয়াটসঅ্যাপ দিয়ে স্ক্যান করুন।")
-        print("২. লগইন হওয়ার পর আপনার হোয়াটসঅ্যাপ চ্যানেলের (Channel) ওপর ক্লিক করে চ্যানেলটি ওপেন করুন।")
-        print("৩. চ্যানেল উইন্ডো ওপেন হলে নিচে কীবোর্ডের [Enter] চাপুন...")
-        print("=" * 70 + "\n")
+        if getattr(args, "auto", False):
+            print("\n" + "=" * 70)
+            print("[*] অটোমেটেড বট মোড সক্রিয় (জিরো-হ্যান্ডস অটো-পাইলট)...")
+            print("=" * 70 + "\n")
+            if not wait_for_login(driver, timeout=120):
+                print("[ERROR] হোয়াটসঅ্যাপ ওয়েব প্রস্তুত হতে সময়সীমা পার হয়েছে।")
+                return
 
-        input(">> চ্যানেল ওপেন করে এখানে [Enter] চাপুন: ")
+            auto_open_channel(driver, "HelpTrickBD", timeout=45)
 
-        print("\n[*] চ্যাট ইনপুট বক্স খোঁজা হচ্ছে...")
-        input_box = find_input_box(driver)
-        if not input_box:
-            print("[!] চ্যাট ইনপুট বক্স স্বয়ংক্রিয়ভাবে পাওয়া যায়নি।")
-            print("অনুগ্রহ করে ব্রাউজারে 'Type an update' ইনপুট বক্সে একবার মাউস দিয়ে ক্লিক করুন।")
-            input(">> ক্লিক করার পর এখানে [Enter] চাপুন: ")
+            # Wait for input box
+            input_box = None
+            for _ in range(15):
+                input_box = find_input_box(driver)
+                if input_box:
+                    break
+                time.sleep(2)
+        else:
+            # Login and Channel Navigation Guide
+            print("\n" + "=" * 70)
+            print("নির্দেশনা (দয়া করে ব্রাউজারে লক্ষ্য করুন):")
+            print("১. যদি কিউআর কোড (QR Code) দেখা যায়, ফোনের হোয়াটসঅ্যাপ দিয়ে স্ক্যান করুন।")
+            print("২. লগইন হওয়ার পর আপনার হোয়াটসঅ্যাপ চ্যানেলের (Channel) ওপর ক্লিক করে চ্যানেলটি ওপেন করুন।")
+            print("৩. চ্যানেল উইন্ডো ওপেন হলে নিচে কীবোর্ডের [Enter] চাপুন...")
+            print("=" * 70 + "\n")
+
+            input(">> চ্যানেল ওপেন করে এখানে [Enter] চাপুন: ")
             input_box = find_input_box(driver)
 
         if not input_box:
+            print("[!] চ্যাট ইনপুট বক্স স্বয়ংক্রিয়ভাবে পাওয়া যায়নি।")
+            if not getattr(args, "auto", False):
+                print("অনুগ্রহ করে ব্রাউজারে 'Type an update' ইনপুট বক্সে একবার মাউস দিয়ে ক্লিক করুন।")
+                input(">> ক্লিক করার পর এখানে [Enter] চাপুন: ")
+            input_box = find_input_box(driver)
+
+        if not input_box:
+            try:
+                dbg_input = os.path.join(PROJECT_ROOT, "output_posts", "whatsapp_input_debug.png")
+                driver.save_screenshot(dbg_input)
+                print(f"[!] ইনপুট বক্স পাওয়া যায়নি। স্ক্রিনশট সংরক্ষিত: {dbg_input}")
+            except Exception:
+                pass
             print("[ERROR] ইনপুট বক্স লোকেট করা যায়নি। স্ক্রিপ্ট স্থগিত করা হলো।")
             return
 
@@ -433,12 +574,20 @@ def run_bot(args):
         print("=" * 70)
 
     finally:
-        print("\n[*] ব্রাউজার খোলা রাখা হয়েছে। আপনি নিজে চেক করতে পারেন।")
-        input(">> ব্রাউজার বন্ধ করতে এখানে [Enter] চাপুন: ")
-        try:
-            driver.quit()
-        except Exception:
-            pass
+        if getattr(args, "auto", False):
+            print("\n[*] অটো-মোড সমাপ্ত: ব্রাউজার বন্ধ করা হচ্ছে...")
+            time.sleep(2)
+            try:
+                driver.quit()
+            except Exception:
+                pass
+        else:
+            print("\n[*] ব্রাউজার খোলা রাখা হয়েছে। আপনি নিজে চেক করতে পারেন।")
+            input(">> ব্রাউজার বন্ধ করতে এখানে [Enter] চাপুন: ")
+            try:
+                driver.quit()
+            except Exception:
+                pass
 
 
 if __name__ == "__main__":
@@ -451,6 +600,7 @@ if __name__ == "__main__":
     parser.add_argument("--reset", action="store_true", help="হিস্ট্রি রিসেট করা")
     parser.add_argument("--dry-run", action="store_true", help="পরীক্ষামূলকভাবে তালিকা দেখা (কোনো পোস্ট হবে না)")
     parser.add_argument("--profile-dir", type=str, default=DEFAULT_PROFILE_DIR, help="ক্রোম প্রোফাইল ডিরেক্টরি")
+    parser.add_argument("--auto", action="store_true", help="সম্পূর্ণ স্বয়ংক্রিয়ভাবে কোনো ইনপুট ছাড়াই চ্যানেল খুঁজে পোস্ট করা")
 
     args = parser.parse_args()
     run_bot(args)

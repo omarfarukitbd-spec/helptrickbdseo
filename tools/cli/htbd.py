@@ -235,6 +235,13 @@ def cmd_auto(args):
     else:
         print("\n[✔] Generation Complete! Run with --publish --live to publish directly to Blogger.")
 
+def cmd_whatsapp(args):
+    from tools.social_broadcaster.whatsapp_channel_bot import run_bot
+    args.auto = not getattr(args, "interactive", False)
+    args.profile_dir = getattr(args, "profile_dir", os.path.join(PROJECT_ROOT, ".whatsapp_web_profile"))
+    run_bot(args)
+
+
 def main():
     parser = argparse.ArgumentParser(description="HelpTrickBD Master Unified Agent Power CLI")
     subparsers = parser.add_subparsers(dest="command")
@@ -247,9 +254,22 @@ def main():
     p_auto.add_argument("--publish", action="store_true", help="Publish directly to Blogger")
     p_auto.add_argument("--live", action="store_true", help="Publish as Live (default is draft if omitted)")
 
+    # whatsapp command
+    p_wa = subparsers.add_parser("whatsapp", help="Autonomous WhatsApp Channel auto-publishing pipeline")
+    p_wa.add_argument("--limit", type=int, default=5, help="Number of posts to broadcast (default: 5)")
+    p_wa.add_argument("--all", action="store_true", help="Broadcast all pending posts")
+    p_wa.add_argument("--start-from", type=str, default=None, help="Start from specific post ID (e.g., WA-113)")
+    p_wa.add_argument("--delay", type=float, default=25.0, help="Delay between posts in seconds")
+    p_wa.add_argument("--preview-wait", type=float, default=4.5, help="Wait for rich preview in seconds")
+    p_wa.add_argument("--dry-run", action="store_true", help="Preview posts without sending")
+    p_wa.add_argument("--interactive", action="store_true", help="Interactive mode with prompts")
+    p_wa.add_argument("--reset", action="store_true", help="Reset broadcast progress")
+
     args = parser.parse_args()
     if args.command == "auto":
         cmd_auto(args)
+    elif args.command == "whatsapp":
+        cmd_whatsapp(args)
     else:
         parser.print_help()
 
