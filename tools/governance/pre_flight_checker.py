@@ -332,12 +332,26 @@ class PreFlightChecker:
             self.warnings.append("Search Description: Not explicitly defined in metadata. Must be delivered in report for manual Blogger input.")
 
     def check_author_box(self):
-        """Rule 01: Mandatory Universal E-E-A-T Author Card (.htbd-author-box)"""
+        """Rule 01: Mandatory Universal E-E-A-T Author Card (.htbd-author-box) & Real Avatar Verification"""
         has_author_box = 'htbd-author-box' in self.raw_html or 'ফারুক স্যার (মো. ওমর ফারুক)' in self.raw_html or 'Faruk Sir' in self.raw_html
-        if has_author_box:
-            self.passed.append("Author Card: Universal E-E-A-T Author Card (.htbd-author-box) verified (PASSED)")
-        else:
+        if not has_author_box:
             self.errors.append("Author Card: CRITICAL! Mandatory Universal E-E-A-T Author Card (.htbd-author-box) is MISSING! Every post must feature Faruk Sir's author attribution.")
+            return
+
+        # Check for dummy/broken author avatar URLs
+        author_box = self.soup.find(class_='htbd-author-box')
+        if author_box:
+            img = author_box.find('img')
+            if img:
+                src = img.get('src', '')
+                if 'AVvXsEhySZZu016J5j9eU3zV' in src or 'placeholder' in src.lower() or not src:
+                    self.errors.append(f"Author Card: CRITICAL! Broken dummy author image URL detected in .htbd-author-box ('{src}'). Must use official CDN: 'https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp'")
+                else:
+                    self.passed.append(f"Author Card: Universal E-E-A-T Card with verified author avatar ({src.split('/')[-1]}) verified (PASSED)")
+            else:
+                self.errors.append("Author Card: CRITICAL! Author card is missing Faruk Sir's avatar <img> tag!")
+        else:
+            self.passed.append("Author Card: Universal E-E-A-T Author Card (.htbd-author-box) verified (PASSED)")
 
     def check_interactive_accordions(self):
         """Rule 01: Interactive Click-to-Reveal Accordions (<details><summary>) for test/MCQ/Q&A content"""

@@ -371,21 +371,32 @@ python tools/governance/pre_flight_checker.py <PATH_TO_POST_HTML>
   > "অ্যাকাডেমিক পাঠ্যক্রম এবং স্নাতক ও স্নাতকোত্তর পর্যায়ের রাষ্ট্রবিজ্ঞান, আধুনিক রাষ্ট্রচিন্তা ও সাহিত্য বিশ্লেষণে এক দশকের বাস্তব শিক্ষকতার অভিজ্ঞতাসম্পন্ন একজন অ্যাকাডেমিক মেন্টর।"
 - *বিশেষ দ্রষ্টব্য:* হেল্পট্রিকবিডিতে স্কুল, কলেজ ছাড়াও জাতীয় বিশ্ববিদ্যালয়ের অনার্স ও মাস্টার্স রাষ্ট্রবিজ্ঞানের প্রচুর পোস্ট রয়েছে; তাই লেখকের পরিচয় কেবল "মাধ্যমিক শিক্ষক"-এ সীমাবদ্ধ না রেখে সার্বজনীন ও উচ্চতর অ্যাকাডেমিক গবেষক হিসেবে বজায় রাখতে হবে।
 
-### খ. স্ট্যান্ডার্ড এইচটিএমএল আর্কিটেকচার (HTML Template):
+### খ. স্ট্যান্ডার্ড এইচটিএমএল আর্কিটেকচার ও বাধ্যতামূলক রিয়েল অবতার ইমেজ:
+> [!CAUTION]
+> **জিরো ডামি ইমেজ পলিসি (Zero Dummy/Broken Image Policy):** লেখক পরিচিতি বক্সে কোনো অবস্থাতেই ডামি বা ফেক ইউআরএল (যেমন `blogger.googleusercontent.com/img/a/AVvXs...` বা অন্য কোনো প্লেসহোল্ডার) ব্যবহার করা সম্পূর্ণ নিষিদ্ধ। অবশ্যই অফিসিয়াল সিডিএন হোস্ট করা `faruk_sir.webp` অবতার ব্যবহার করতে হবে।
+
 ```html
-<div class="htbd-author-box" style="margin-top: 40px; margin-bottom: 25px; padding: 22px; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #1e3a8a; border-radius: 8px; font-family: 'SolaimanLipi', Arial, sans-serif;">
-  <div style="font-size: 13px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">লেখক পরিচিতি</div>
-  <div style="font-size: 19px; color: #0f172a; font-weight: 700; margin-bottom: 2px;">ফারুক স্যার (মো. ওমর ফারুক)</div>
-  <div style="font-size: 14px; color: #1e3a8a; font-weight: 600; margin-bottom: 10px;">শিক্ষাবিদ ও অ্যাকাডেমিক গবেষক | প্রতিষ্ঠাতা, HelpTrickBD</div>
-  <p style="margin: 0; font-size: 15px; color: #475569; line-height: 1.65;">
-    অ্যাকাডেমিক পাঠ্যক্রম এবং স্নাতক ও স্নাতকোত্তর পর্যায়ের রাষ্ট্রবিজ্ঞান, আধুনিক রাষ্ট্রচিন্তা ও সাহিত্য বিশ্লেষণে এক দশকের বাস্তব শিক্ষকতার অভিজ্ঞতাসম্পন্ন একজন অ্যাকাডেমিক মেন্টর।
-  </p>
+<div class="htbd-author-box" style="display: flex; align-items: center; gap: 18px; margin: 35px 0 25px 0; padding: 18px 22px; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #1e3a8a; border-radius: 10px; font-family: 'SolaimanLipi', Arial, sans-serif;">
+  <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp" 
+       alt="ফারুক স্যার (মো. ওমর ফারুক)" 
+       class="htbd-author-avatar" 
+       width="75" height="75" 
+       loading="lazy" 
+       style="width: 75px !important; height: 75px !important; min-width: 75px !important; max-width: 75px !important; border-radius: 50% !important; object-fit: cover !important; border: 2px solid #2563eb !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;" />
+  <div class="htbd-author-info" style="flex: 1 1 auto; min-width: 0;">
+    <h4 style="margin: 0 0 4px 0; color: #1e3a8a; font-size: 18px; font-weight: 700; line-height: 1.3;">ফারুক স্যার (মো. ওমর ফারুক)</h4>
+    <div class="htbd-author-meta" style="font-size: 13px; color: #64748b; margin-bottom: 6px; font-weight: 600;">শিক্ষাবিদ ও অ্যাকাডেমিক গবেষক | প্রতিষ্ঠাতা, HelpTrickBD</div>
+    <p class="htbd-author-bio" style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0;">
+      অ্যাকাডেমিক পাঠ্যক্রম এবং স্নাতক ও স্নাতকোত্তর পর্যায়ের রাষ্ট্রবিজ্ঞান, আধুনিক রাষ্ট্রচিন্তা ও সাহিত্য বিশ্লেষণে এক দশকের বাস্তব শিক্ষকতার অভিজ্ঞতাসম্পন্ন একজন অ্যাকাডেমিক মেন্টর।
+    </p>
+  </div>
 </div>
 ```
 
-### গ. বসানোর নিয়ম ও কোয়ালিটি গেটকিপার:
+### গ. বসানোর নিয়ম ও অটোমেটেড কোয়ালিটি গেটকিপার:
 1. প্রতিটি পোস্টের মূল আলোচনার শেষে এবং এফএকিউ/মন্তব্য সেকশনের পূর্বে এটি বসবে।
-2. `tools/governance/pre_flight_checker.py` স্বয়ংক্রিয়ভাবে প্রতিটি পোস্টে এই বক্সের উপস্থিতি যাচাই করে; বক্স অনুপস্থিত থাকলে পোস্ট পাবলিশ স্বয়ংক্রিয়ভাবে ব্লকড হবে।
+2. **বাধ্যতামূলক অবতার ইউআরএল চেক:** `tools/governance/pre_flight_checker.py` স্বয়ংক্রিয়ভাবে লেখক পরিচিতির ইমেজ সোর্স পরীক্ষা করে। যদি ইমেজটি অনুপস্থিত থাকে বা কোনো ডামি ইউআরএল (`AVvXs...` বা `placeholder`) পায়, তবে পোস্ট পাবলিশ সম্পূর্ণ ব্লকড হবে।
+3. **ডুয়াল মোড কম্প্যাটিবিলিটি:** ডার্ক মোডেও যেন ফ্রেমের কনট্রাস্ট ও নাম পরিষ্কার থাকে তা নিশ্চিত করতে হবে।
 
 ---
 
