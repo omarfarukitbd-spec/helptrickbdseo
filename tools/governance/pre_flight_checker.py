@@ -177,8 +177,8 @@ class PreFlightChecker:
                 self.errors.append(f"Image #{idx+1} is missing a descriptive alt attribute")
                 missing_alt = True
                 
-            # Check lazy loading
-            if loading != 'lazy':
+            # Check lazy loading (Hero image at index 0 should be eager for LCP optimization)
+            if idx > 0 and loading != 'lazy':
                 missing_lazy = True
 
             # Check format
