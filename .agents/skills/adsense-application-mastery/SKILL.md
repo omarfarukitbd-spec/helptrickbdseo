@@ -1,0 +1,238 @@
+---
+name: adsense-application-mastery
+description: Comprehensive Google AdSense application, identity verification, address/PIN setup, and policy compliance blueprint. Use whenever preparing, auditing, or executing an AdSense application for Blogger or custom-domain websites.
+---
+
+# Google AdSense Application & Identity Verification Mastery Skill
+
+This skill provides an exhaustive, fail-safe blueprint for preparing, auditing, and submitting a website to **Google AdSense**, ensuring 100% compliance with Google Publisher Policies, Identity Verification (KYC), Address (PIN) Mail delivery, US Tax (W-8BEN) treaties, and Wire Transfer banking in Bangladesh.
+
+---
+
+## 1. Cardinal Rule: The "One Person, One Account" Policy (এক ব্যক্তি, এক অ্যাকাউন্ট নীতি)
+
+Google enforces a strict **one account per individual/entity** policy worldwide. Violating this is the single most common cause of permanent account rejection ("You already have an AdSense account").
+
+### A. Pre-Application Duplicate Check
+Before creating or submitting any AdSense account:
+1. **Search All Personal Gmail Accounts:**
+   - Search your inbox for emails from `adsense-noreply@google.com`, `google-payments-noreply@google.com`, or subjects containing `AdSense`, `Publisher ID`, `pub-`.
+2. **Google Username Recovery:**
+   - Use [Google Account Recovery](https://accounts.google.com/signin/usernamerecovery) using your primary mobile number and full legal name to see all Gmail accounts registered under your identity.
+3. **If a Previous Account Exists:**
+   - **Scenario A (Accessible):** Log in to the old AdSense account, navigate to **Sites > Add Site**, and submit the new domain there. Never create a second account.
+   - **Scenario B (Unwanted Old Account):** Log in to the old AdSense account, go to **Account > Settings > Account information**, and click **Close Account**. Wait at least 3-7 business days for Google's backend to purge the link before applying with a new account.
+   - **Scenario C (Lost / Inaccessible Old Account):** If an old account cannot be recovered or closed, the applicant **MUST apply under an immediate family member's legal identity** (Father, Mother, Brother, or Spouse) who is 18+ and has never had an AdSense account.
+
+---
+
+## 2. 100% Identity & Payment Profile Matching (আইডেন্টিটি ও পেমেন্ট প্রোফাইল সামঞ্জস্য)
+
+Every legal, digital, and banking identity data point must match **100% letter-for-letter**. A single typo or variation between documents causes identity verification failure and payment suspension.
+
+### A. The 5-Point Identity Match Checklist
+All five entities must have the exact same English spelling:
+1. **Google Account (Gmail) Profile Name** (`myaccount.google.com/personal-info`)
+2. **Google Payments Profile Name** (`pay.google.com`)
+3. **Government-issued Photo ID** (Smart NID Card, Passport, or Driving License)
+4. **Bank Account Holder Name** (for SWIFT wire transfer payouts)
+5. **US Tax Form W-8BEN Legal Name**
+
+### B. Bangladeshi NID Name Standards
+- **Use the English Spelling on Smart NID:**
+  - If the Smart NID says `MD. OMAR FARUK`, the Google Account, Payments profile, and Bank account must be `MD. OMAR FARUK` (or `Md Omar Faruk`).
+  - Do NOT use abbreviations if the card has the full name, and do NOT expand abbreviations if the card has initials.
+  - If the Smart NID contains dots (e.g. `MD.`), standard AdSense forms accept letters and spaces (`Md Omar Faruk`).
+- **Date of Birth (DOB):**
+  - The applicant MUST be at least 18 years old on the date of application.
+  - The DOB set in the Google Account profile MUST match the DOB on the Smart NID/Passport.
+- **Account Type:**
+  - Select **Individual** (ব্যক্তিগত). Do NOT select "Business" unless you possess a legally registered company with a corporate Bank Account and TIN in the company's name. An Individual account cannot be converted to a Business account later.
+
+---
+
+## 3. Address & Physical PIN Delivery Protocol (ঠিকানা ও ডাক পিন নীতিমালা)
+
+Google AdSense verifies the publisher's physical address by mailing a paper postcard containing a 6-digit PIN via standard international airmail once the account reaches the $10 verification threshold.
+
+### A. Bangladesh Post Delivery Optimization (চিঠি পাওয়ার নিশ্চিত কৌশল)
+In Bangladesh, international mail delivered by the Bangladesh Post Office (ডাক বিভাগ) frequently gets delayed or lost if the local postman cannot locate the address. Follow this exact address formatting:
+
+1. **Address Line 1:**
+   - Village / House No, Road No / Area, Union / Ward / Sub-district.
+   - Example: `House 12, Road 4, Sector 7, Uttara` or `Vill: Chandpur, PO: Madhabpur`.
+2. **Address Line 2 (CRITICAL FOR BANGLADESH):**
+   - **ALWAYS put your active mobile phone number here.**
+   - Example: `Mobile: +88017XXXXXXXX (Call for Delivery)`
+   - Reason: Google does NOT print the phone field on the exterior of the paper postcard envelope. But it DOES print Address Line 2. When the postman sees your phone number printed on the envelope, they will call you directly to pick up the letter.
+3. **City / District:**
+   - Your official administrative district (e.g., `Dhaka`, `Sylhet`, `Chattogram`, `Rajshahi`).
+4. **Postal Code (ZIP Code):**
+   - The exact **4-digit Postal Code** of your local sub-post office where you can physically visit and collect mail. Never guess or use a generic central code.
+
+### B. What to Do If the PIN Fails to Arrive
+- Google allows you to request a replacement PIN every 30 days (up to 4 times).
+- After the 4th PIN request (approx. 4 months), Google automatically activates the **Online PIN Troubleshooter / Document Verification**, where you can upload a photo of your Smart NID or Bank Statement with the matching address for instant digital verification.
+
+---
+
+## 4. Website Technical & Ownership Prerequisites (ওয়েবসাইট টেকনিক্যাল ও মালিকানা যাচাই)
+
+Never submit an application until the website satisfies all technical verification gates:
+
+### A. Domain & DNS Configuration
+1. **Root Domain Submission:**
+   - For custom domains, submit the root domain (`helptrickbd.com`). AdSense will automatically cover `www.helptrickbd.com`.
+2. **SSL / HTTPS Active:**
+   - Active SSL certificate with 100% HTTPS enforcement. Zero mixed-content warnings (all images and scripts must load via `https://`).
+3. **ads.txt Live at Root:**
+   - URL: `https://www.helptrickbd.com/ads.txt` and `https://helptrickbd.com/ads.txt`
+   - Content: `google.com, pub-5722984027647168, DIRECT, f08c47fec0942fa0`
+   - Must return `HTTP 200 OK` with plain text content.
+4. **AdSense Snippet in HTML `<head>`:**
+   - Must be placed between `<head>` and `</head>` on the homepage and across all template pages:
+     ```html
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5722984027647168" crossorigin="anonymous"></script>
+     ```
+5. **Crawler Access (robots.txt):**
+   - `robots.txt` must NOT block `User-agent: Mediapartners-Google` or `User-agent: *`.
+   - Never disallow post content or feeds needed by Googlebot.
+
+---
+
+## 5. Editorial & Content Quality Thresholds (সম্পাদকীয় ও কনটেন্ট মানদণ্ড)
+
+AdSense human reviewers and machine learning crawlers evaluate whether the site represents a legitimate, value-adding publication:
+
+### A. Content Volume & Depth
+- **Minimum Post Count:** 30 to 50+ posts minimum (HelpTrickBD has 128 posts).
+- **Zero Thin Content:** No articles under 600 words. At least 50%+ of all articles must be 1,000 to 1,500+ words.
+- **Originality & E-E-A-T:** Real human expertise, structured analysis, curriculum citations, and author attribution cards (`.htbd-author-box`) with clean author thumbnails.
+- **No Copyright Infringement:** Zero pirated software, cracked APKs, unauthorized movie/song downloads, or scraped full-text articles from news media.
+
+### B. The 5 Mandatory Legal Trust Pages
+Must be accessible via the site's footer and header menus, returning `HTTP 200 OK`:
+1. **About Us (`/p/about-us.html`):** Site mission, editorial standards, author background, physical/editorial contact details.
+2. **Contact Us (`/p/contact-us.html`):** Working contact form, dedicated email address, social links.
+3. **Privacy Policy (`/p/privacy-policy.html`):** Must explicitly state that the site uses Google AdSense, third-party cookies (DoubleClick DART), and explains user privacy choices.
+4. **Terms & Conditions (`/p/terms-conditions.html`):** User terms, copyright notices, acceptable use.
+5. **Disclaimer (`/p/disclaimer.html`):** Educational/informational disclaimer.
+
+### C. Clean Navigation & Zero Empty Categories
+- Every category or label visible in the header menu MUST contain at least 4 to 5 published articles.
+- Zero broken links (404 errors) anywhere on the homepage, menus, or footer.
+
+---
+
+## 6. Step-by-Step AdSense Submission Protocol (ধাপে ধাপে আবেদন নির্দেশিকা)
+
+Follow this precise chronological workflow:
+
+### Step 1: Pre-Submission Audit
+Run the automated pre-flight audit tool:
+```bash
+python tools/auditor/run_full_site_360_audit.py
+python tools/auditor/scan_live_images_and_links.py
+```
+Verify:
+- Thin content = 0
+- Broken links = 0
+- Official 16:9 banners = 100%
+
+### Step 2: Google Account & Payments Verification
+1. Sign in to your designated Gmail account.
+2. Go to `myaccount.google.com/personal-info` and confirm that Name and Date of Birth match your Smart NID.
+
+### Step 3: Sign Up on Google AdSense
+1. Visit `https://adsense.google.com/start/`.
+2. Enter your site URL: `helptrickbd.com` (without https or www).
+3. Enter your Gmail address.
+4. Select Country/Territory: **Bangladesh**.
+5. Read and accept the Terms and Conditions.
+6. Click **Start using AdSense**.
+
+### Step 4: Complete Customer Information (Payment Profile)
+1. In the AdSense dashboard, under **Enter Information**:
+   - Account Type: **Individual**.
+   - Name: Enter your full legal name exactly as shown on your Smart NID.
+   - Address Line 1: Village / Road / House / Area.
+   - Address Line 2: `Mobile: +88017XXXXXXXX`
+   - Town / City: Your district.
+   - Postal Code: Exact 4-digit code.
+   - Phone Number: Your active mobile number for SMS OTP verification.
+2. Click **Submit**.
+
+### Step 5: Connect Your Site
+1. Under **Connect your site to AdSense**:
+   - Check the box: "I've pasted the code into my site" (if using AdSense code) OR confirm `ads.txt` is verified.
+2. Click **Request Review** (অনুরোধ পাঠান).
+
+---
+
+## 7. The Review Period Governance (পর্যালোচনা চলাকালীন নিয়মাবলি)
+
+The AdSense review process typically takes between **48 hours and 14 days**. During this sensitive window, strict rules must be maintained:
+
+1. **Keep Publishing (Do NOT Pause):**
+   - Publish at least 1 to 2 high-quality, 1,200+ word articles per week.
+   - Why: Google reviewers check if the site is actively maintained. A stagnant site during review signals low commitment.
+2. **Zero Structural Changes:**
+   - Do NOT change the Blogger theme.
+   - Do NOT modify menu structures, labels, or URL slugs.
+   - Do NOT delete existing posts.
+3. **Zero Artificial Traffic:**
+   - Never purchase bot traffic, use auto-surf exchanges, or post spam links on Facebook groups urging people to click.
+   - Rely strictly on natural Google Search organic traffic.
+
+---
+
+## 8. Post-Approval Financial & Compliance Setup (অনুমোদন পরবর্তী সেটআপ)
+
+Once you receive the "Good news! Your site is now ready to show AdSense ads" email:
+
+### A. US Tax Information (Form W-8BEN & Bangladesh e-TIN)
+1. Go to **Payments > Payments info > Manage settings > United States tax info**.
+2. Start the tax form:
+   - Type of account: **Individual**.
+   - Are you a US citizen/resident? **No**.
+   - Select form type: **W-8BEN** (for non-US individuals).
+3. **Claim Tax Treaty Benefits (Crucial):**
+   - Country of citizenship: **Bangladesh**.
+   - Under **Foreign TIN**, enter your official **12-digit Bangladesh e-TIN**.
+   - Check the box: "Are you claiming a reduced rate of withholding under a tax treaty?" -> Select **Yes**, country: **Bangladesh**.
+   - Select treaty rates:
+     * Services (AdSense): 0% reduced treaty rate (instead of 30%).
+     * Motion Picture & TV (YouTube if applicable): 10% treaty rate.
+     * Other copyright: 10% treaty rate.
+4. Digitally sign the form with your legal name and submit.
+
+### B. Bank Wire Transfer (SWIFT Wire)
+When earnings reach $10, configure your payout method:
+1. Go to **Payments > Payments info > Add payment method > Add new wire transfer details**.
+2. Required fields:
+   - **Beneficiary ID:** (Optional, leave blank).
+   - **Name on Bank Account:** Must match AdSense Payee Name exactly.
+   - **Bank Name:** Full official English name of your bank (e.g. `Islami Bank Bangladesh PLC`, `Dutch-Bangla Bank PLC`, `City Bank PLC`, `Eastern Bank PLC`).
+   - **SWIFT-BIC:** The 8 or 11-character SWIFT code of your bank's head office (e.g. `IBBLBDDH` for Islami Bank).
+   - **Routing Number:** 9-digit branch routing number.
+   - **Account Number:** Full numeric bank account number.
+3. Set as **Primary payment method**.
+
+---
+
+## 9. Comprehensive Pre-Application Checklist Matrix
+
+| # | অডিট চেকলিস্ট আইটেম | প্রয়োজনীয় মান | ভেরিফিকেশন মেথড |
+|:---:|:---|:---|:---|
+| 01 | **আবেদনকারীর বয়স** | ন্যূনতম ১৮ বছর বা তদূর্ধ্ব | গুগল অ্যাকাউন্ট জন্মতারিখ ও এনআইডি কার্ড |
+| 02 | **ডুপ্লিকেট অ্যাকাউন্ট চেক** | অতীতে কোনো এডসেন্স অ্যাকাউন্ট খোলা নেই | জিমেইল ইনবক্স সার্চ ও ইউজারনেম রিকভারি |
+| 03 | **এনআইডি ও জিমেইল নামের মিল** | শতভাগ বর্ণে বর্ণে মিল (স্মার্ট এনআইডির ইংরেজি) | জিমেইল প্রোফাইল ও পেমেন্ট প্রোফাইল এডিট |
+| 04 | **ঠিকানার সাথে মোবাইল নম্বর** | Address Line 2-তে সক্রিয় মোবাইল নম্বর অন্তর্ভুক্ত | পোস্টম্যান যেন চিঠি পেয়ে সরাসরি কল করতে পারেন |
+| 05 | **সঠিক ৪-ডিজিট পোস্টাল কোড** | নিজ স্থানীয় সাব-পোস্ট অফিসের ৪ অঙ্কের কোড | ডাক বিভাগের অফিসিয়াল কোড লিস্ট |
+| 06 | **৫টি বাধ্যতামূলক লিগ্যাল পেজ** | About Us, Contact Us, Privacy Policy, Terms, Disclaimer | প্রতিটি পেজে HTTP 200 রেসপন্স নিশ্চিত |
+| 07 | **ads.txt ফাইল সক্রিয়** | রুট ডোমেনে pub-ID সহ সক্রিয় ads.txt | `https://www.helptrickbd.com/ads.txt` (200 OK) |
+| 08 | **এডসেন্স হেড কোড** | `<head>` ব্লকে অফিসিয়াল জাভাস্ক্রিপ্ট কোড যুক্ত | থিমের HTML সোর্সে ca-pub স্ক্রিপ্ট উপস্থিত |
+| 09 | **কনটেন্ট গভীরতা ও মোট পোস্ট** | ৩০+ পোস্ট (সাইটে ১২৮টি বিদ্যমান), থিন কনটেন্ট ০ | ৬০০ শব্দের নিচে কোনো পোস্ট নেই |
+| 10 | **মেনু ও ক্যাটাগরি ব্যালান্স** | প্রতিটি লেবেলে ন্যুনতম ৪-৫টি পোস্ট, ০টি খালি লেবেল | হেডার মেনুর সমস্ত লিঙ্কে পোস্ট বিদ্যমান |
+| 11 | **ব্রোকেন লিঙ্ক ও ইমেজ ALT** | ০টি ব্রোকেন লিঙ্ক, ১০০% ছবিতে ডেসক্রিপটিভ ALT | সাইটওয়াইড স্ক্রিপ্ট স্ক্যানে ভেরিফায়েড |
+| 12 | **অর্গানিক সার্চ ট্রাফিক** | সার্চ কনসোলে দৈনিক নিয়মিত ক্লিক ও ইমপ্রেশন | গুগলে আসল মানুষ সাইট ভিজিট করছে |
