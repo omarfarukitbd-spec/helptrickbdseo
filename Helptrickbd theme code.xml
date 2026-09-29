@@ -1999,6 +1999,72 @@ a.main-button.button.sp-bt:before{padding:5px 12px;margin:0 5px 0 0;}
     opacity: 1 !important;
   }
 
+/* Helptrickbd Universal E-E-A-T Compact Author Card */
+.htbd-author-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin: 35px 0 25px 0 !important;
+  padding: 18px 22px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 5px solid #1e3a8a !important;
+  border-radius: 10px !important;
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
+}
+.htbd-author-box img,
+.htbd-author-box .htbd-author-avatar,
+img.htbd-author-avatar {
+  width: 75px !important;
+  height: 75px !important;
+  min-width: 75px !important;
+  max-width: 75px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid #2563eb !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  margin: 0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+.htbd-author-info {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+.htbd-author-info h4 {
+  margin: 0 0 4px 0 !important;
+  color: #1e3a8a !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+.htbd-author-meta {
+  font-size: 13px !important;
+  color: #64748b !important;
+  margin-bottom: 6px !important;
+  font-weight: 600 !important;
+}
+.htbd-author-bio {
+  font-size: 14px !important;
+  color: #334155 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+.dark .htbd-author-box, [data-theme="dark"] .htbd-author-box {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  border-left-color: #3b82f6 !important;
+}
+.dark .htbd-author-box h4, [data-theme="dark"] .htbd-author-box h4 {
+  color: #93c5fd !important;
+}
+.dark .htbd-author-box .htbd-author-meta, [data-theme="dark"] .htbd-author-box .htbd-author-meta {
+  color: #94a3b8 !important;
+}
+.dark .htbd-author-box p, [data-theme="dark"] .htbd-author-box p {
+  color: #cbd5e1 !important;
+}
+
 ]]></b:skin>
 </b:if>
 <b:if cond='data:view.isLayoutMode'>

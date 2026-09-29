@@ -648,12 +648,18 @@ def build_article_html():
 </ul>
 
 <!-- Universal E-E-A-T Author Attribution Box -->
-<div class="htbd-author-box">
-  <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/logo.png" alt="ফারুক স্যার (মো. ওমর ফারুক)" width="75" height="75" loading="lazy" style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 2px solid #0d9488; flex-shrink: 0;" />
-  <div>
-    <h4 style="margin: 0 0 6px 0; color: #0f2d4a; font-size: 18px; font-weight: 700;">লেখক ও পর্যালোচনা: ফারুক স্যার (মো. ওমর ফারুক)</h4>
-    <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.65;">
-    প্রতিষ্ঠাতা ও প্রধান সম্পাদক, HelpTrickBD। জাতীয় শিক্ষা কারিকুলাম, বিশ্ববিদ্যালয় ভর্তি পরীক্ষা ও সরকারি চাকরির নিয়োগ পরীক্ষার সিনিয়র মেন্টর। বিগত এক দশকের বেশি সময় ধরে হাজারো শিক্ষার্থীকে ভর্তি ও ক্যারিয়ার পরামর্শ দিয়ে আসছেন।
+<div class="htbd-author-box" style="display: flex; align-items: center; gap: 18px; margin: 35px 0 25px 0; padding: 18px 22px; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #0d9488; border-radius: 10px; font-family: 'SolaimanLipi', Arial, sans-serif;">
+  <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp" 
+       alt="ফারুক স্যার (মো. ওমর ফারুক)" 
+       class="htbd-author-avatar" 
+       width="75" height="75" 
+       loading="lazy" 
+       style="width: 75px !important; height: 75px !important; min-width: 75px !important; max-width: 75px !important; border-radius: 50% !important; object-fit: cover !important; border: 2px solid #0d9488 !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;" />
+  <div class="htbd-author-info" style="flex: 1 1 auto; min-width: 0;">
+    <h4 style="margin: 0 0 4px 0; color: #0f2d4a; font-size: 18px; font-weight: 700; line-height: 1.3;">লেখক ও পর্যালোচনা: ফারুক স্যার (মো. ওমর ফারুক)</h4>
+    <div class="htbd-author-meta" style="font-size: 13px; color: #0f766e; margin-bottom: 6px; font-weight: 600;">শিক্ষাবিদ ও উচ্চশিক্ষা গবেষক | প্রতিষ্ঠাতা, HelpTrickBD</div>
+    <p class="htbd-author-bio" style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0;">
+      প্রতিষ্ঠাতা ও প্রধান সম্পাদক, HelpTrickBD। জাতীয় শিক্ষা কারিকুলাম, বিশ্ববিদ্যালয় ভর্তি পরীক্ষা ও সরকারি চাকরির নিয়োগ পরীক্ষার সিনিয়র মেন্টর। বিগত এক দশকের বেশি সময় ধরে হাজারো শিক্ষার্থীকে ভর্তি ও ক্যারিয়ার পরামর্শ দিয়ে আসছেন।
     </p>
   </div>
 </div>
