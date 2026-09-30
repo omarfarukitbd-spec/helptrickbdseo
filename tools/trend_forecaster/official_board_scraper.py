@@ -287,29 +287,142 @@ def scrape_du_7college_notices(limit=6):
     return notices
 
 
+def scrape_dgme_medical_notices(limit=6):
+    """
+    Scrapes Directorate General of Medical Education (dgme.gov.bd) for MBBS/BDS notices.
+    """
+    url = "https://dgme.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for link, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["এমবিবিএস", "বিডিএস", "ভর্তি", "পরীক্ষা", "বিজ্ঞপ্তি", "রেজাল্ট", "মেডিকেল"]):
+                if len(clean) > 10 and clean not in seen:
+                    seen.add(clean)
+                    full_link = link if link.startswith("http") else "https://dgme.gov.bd" + link
+                    notices.append({
+                        "source": "মেডিকেল ও ডেন্টাল ভর্তি (DGME Official)",
+                        "title": clean,
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "মেডিকেল ভর্তি"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] DGME Medical Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_du_admission_notices(limit=4):
+    """
+    Scrapes Dhaka University Undergraduate Admission portal (admission.eis.du.ac.bd).
+    """
+    url = "https://admission.eis.du.ac.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=8) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for link, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["ইউনিট", "ভর্তি", "বিজ্ঞপ্তি", "পরীক্ষা", "তারিখ"]):
+                if len(clean) > 8 and clean not in seen:
+                    seen.add(clean)
+                    full_link = link if link.startswith("http") else "https://admission.eis.du.ac.bd/" + link.lstrip("/")
+                    notices.append({
+                        "source": "ঢাকা বিশ্ববিদ্যালয় ভর্তি (DU Admission Official)",
+                        "title": clean,
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "বিশ্ববিদ্যালয় ভর্তি"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] DU Admission Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_rajshahi_board_notices(limit=5):
+    """
+    Scrapes Rajshahi Education Board (rajshahieducationboard.gov.bd).
+    """
+    url = "http://rajshahieducationboard.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=8) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+\.pdf)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for link, text in matches:
+            clean = clean_html_text(text)
+            if len(clean) > 10 and clean not in seen:
+                seen.add(clean)
+                full_link = link if link.startswith("http") else "http://rajshahieducationboard.gov.bd/" + link.lstrip("/")
+                notices.append({
+                    "source": "রাজশাহী শিক্ষা বোর্ড (Official)",
+                    "title": clean,
+                    "pdf_url": full_link,
+                    "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                    "category": "মাধ্যমিক ও উচ্চমাধ্যমিক"
+                })
+                if len(notices) >= limit:
+                    break
+    except Exception as e:
+        print(f"[-] Rajshahi Board Scraper ত্রুটি: {e}")
+
+    return notices
+
+
 def fetch_all_official_board_notices():
     """
     Consolidates notices directly from all official education portals.
     """
     all_notices = []
     
-    # 1. National University
+    # 1. National University (Honours, Masters, Degree)
     all_notices.extend(scrape_national_university_notices(limit=10))
 
-    # 2. Dhaka Education Board
-    all_notices.extend(scrape_dhaka_board_notices(limit=6))
+    # 2. Dhaka Education Board (SSC & HSC)
+    all_notices.extend(scrape_dhaka_board_notices(limit=5))
 
-    # 3. BTEB Technical Board
-    all_notices.extend(scrape_bteb_notices(limit=6))
+    # 3. Rajshahi Education Board
+    all_notices.extend(scrape_rajshahi_board_notices(limit=4))
 
-    # 4. BMEB Madrasah Education Board
-    all_notices.extend(scrape_bmeb_notices(limit=6))
+    # 4. BTEB Technical Board (Polytechnic)
+    all_notices.extend(scrape_bteb_notices(limit=5))
 
-    # 5. NTRCA Teachers Registration
-    all_notices.extend(scrape_ntrca_notices(limit=6))
+    # 5. BMEB Madrasah Education Board (Dakhil & Alim)
+    all_notices.extend(scrape_bmeb_notices(limit=5))
 
-    # 6. DU 7 Colleges
+    # 6. NTRCA Teachers Registration
+    all_notices.extend(scrape_ntrca_notices(limit=5))
+
+    # 7. DU 7 Colleges
     all_notices.extend(scrape_du_7college_notices(limit=4))
+
+    # 8. DGME Medical & Dental Admission
+    all_notices.extend(scrape_dgme_medical_notices(limit=4))
+
+    # 9. DU Undergraduate Admission
+    all_notices.extend(scrape_du_admission_notices(limit=3))
 
     return all_notices
 
