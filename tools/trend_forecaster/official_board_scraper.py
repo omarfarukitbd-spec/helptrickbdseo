@@ -391,6 +391,75 @@ def scrape_rajshahi_board_notices(limit=5):
     return notices
 
 
+def scrape_bou_open_university_notices(limit=6):
+    """
+    Scrapes Bangladesh Open University (BOU - bou.ac.bd) for SSC, HSC, BA/BSS, MBA notices.
+    """
+    url = "https://www.bou.ac.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']*upload/notice/[^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for link, text in matches:
+            clean = clean_html_text(text)
+            if len(clean) > 10 and clean not in seen:
+                seen.add(clean)
+                full_link = link if link.startswith("http") else "https://www.bou.ac.bd/" + link.lstrip("/")
+                notices.append({
+                    "source": "উন্মুক্ত বিশ্ববিদ্যালয় (BOU Official)",
+                    "title": clean,
+                    "pdf_url": full_link,
+                    "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                    "category": "বাউবি উন্মুক্ত শিক্ষা"
+                })
+                if len(notices) >= limit:
+                    break
+    except Exception as e:
+        print(f"[-] BOU Open University Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_bnmc_nursing_notices(limit=4):
+    """
+    Scrapes Bangladesh Nursing & Midwifery Council (bnmc.gov.bd).
+    """
+    url = "http://www.bnmc.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=8) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for link, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["নার্সিং", "ভর্তি", "পরীক্ষা", "লাইসেন্সিং", "বিজ্ঞপ্তি"]):
+                if len(clean) > 8 and clean not in seen:
+                    seen.add(clean)
+                    full_link = link if link.startswith("http") else "http://www.bnmc.gov.bd" + link
+                    notices.append({
+                        "source": "নার্সিং কাউন্সিল (BNMC Official)",
+                        "title": clean,
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "নার্সিং ও মিডওয়াইফারি"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] BNMC Nursing Scraper ত্রুটি: {e}")
+
+    return notices
+
+
 def fetch_all_official_board_notices():
     """
     Consolidates notices directly from all official education portals.
@@ -400,28 +469,34 @@ def fetch_all_official_board_notices():
     # 1. National University (Honours, Masters, Degree)
     all_notices.extend(scrape_national_university_notices(limit=10))
 
-    # 2. Dhaka Education Board (SSC & HSC)
+    # 2. Bangladesh Open University (BOU SSC, HSC, BA/BSS, MBA)
+    all_notices.extend(scrape_bou_open_university_notices(limit=6))
+
+    # 3. Dhaka Education Board (SSC & HSC)
     all_notices.extend(scrape_dhaka_board_notices(limit=5))
 
-    # 3. Rajshahi Education Board
+    # 4. Rajshahi Education Board
     all_notices.extend(scrape_rajshahi_board_notices(limit=4))
 
-    # 4. BTEB Technical Board (Polytechnic)
+    # 5. BTEB Technical Board (Polytechnic)
     all_notices.extend(scrape_bteb_notices(limit=5))
 
-    # 5. BMEB Madrasah Education Board (Dakhil & Alim)
+    # 6. BMEB Madrasah Education Board (Dakhil & Alim)
     all_notices.extend(scrape_bmeb_notices(limit=5))
 
-    # 6. NTRCA Teachers Registration
+    # 7. NTRCA Teachers Registration
     all_notices.extend(scrape_ntrca_notices(limit=5))
 
-    # 7. DU 7 Colleges
+    # 8. DU 7 Colleges
     all_notices.extend(scrape_du_7college_notices(limit=4))
 
-    # 8. DGME Medical & Dental Admission
+    # 9. DGME Medical & Dental Admission
     all_notices.extend(scrape_dgme_medical_notices(limit=4))
 
-    # 9. DU Undergraduate Admission
+    # 10. BNMC Nursing & Midwifery Council
+    all_notices.extend(scrape_bnmc_nursing_notices(limit=4))
+
+    # 11. DU Undergraduate Admission
     all_notices.extend(scrape_du_admission_notices(limit=3))
 
     return all_notices
