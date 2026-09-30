@@ -354,7 +354,7 @@ def build_department_sections():
     sections = []
     for dept in DEPT_DATA:
         slug = dept["slug"]
-        card_url = f"{CDN_BASE}/nu_honours_2nd_year_routine_{slug}.webp"
+        card_url = f"{CDN_BASE}/nu_honours_2nd_year_fb_routine_{slug}.webp"
 
         rows_html = []
         for day, code, title, note in dept["papers"]:

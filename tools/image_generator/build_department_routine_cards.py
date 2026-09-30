@@ -639,7 +639,7 @@ def build_all_department_cards():
 
     for i, dept in enumerate(DEPARTMENTS, 1):
         slug = dept["slug"]
-        webp_filename = f"nu_honours_2nd_year_routine_{slug}.webp"
+        webp_filename = f"nu_honours_2nd_year_fb_routine_{slug}.webp"
         final_webp_path = os.path.join(OUTPUT_DIR, webp_filename)
 
         html_code = generate_dept_card_html(dept)
