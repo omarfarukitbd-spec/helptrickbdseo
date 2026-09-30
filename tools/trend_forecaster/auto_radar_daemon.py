@@ -42,7 +42,7 @@ from tools.trend_forecaster.bd_exam_early_radar import (
     OUTPUT_REPORT
 )
 
-SEEN_NOTICES_FILE = os.path.join(PROJECT_ROOT, "scratch", "seen_radar_notices.json")
+SEEN_NOTICES_FILE = os.path.join(PROJECT_ROOT, "tools", "trend_forecaster", "seen_radar_notices.json")
 
 
 def load_seen_notices():
