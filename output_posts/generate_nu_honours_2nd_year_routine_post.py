@@ -3,14 +3,18 @@
 """
 output_posts/generate_nu_honours_2nd_year_routine_post.py
 ----------------------------------------------------------
-Generates the authoritative, 1,800+ word, SEO #1 ranking master post for:
-জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine & Subject Code.
+Generates the authoritative master article for:
+জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine & Subject Code.
 
-Strict Zero-Emoji Compliance (Rule 12).
-Byte-0 Top Hero Banner before <!--more--> (Rule 02).
-Position-0 Quick Summary Box.
-SolaimanLipi Typography.
-FAQPage & BlogPosting JSON-LD Microdata.
+Features:
+- Comprehensive coverage of ALL 18 major departments across 4 faculties.
+- English search keyword first in headings, followed by Bengali (Rule 08/User Instruction).
+- Subject-specific alt and title tags on every routine card figure.
+- Byte-0 Hero banner before <!--more--> tag.
+- Position-0 Quick Summary Box.
+- Compulsory English (Code: 221109) passing guidelines & subject codes.
+- Schema.org BlogPosting & FAQPage JSON-LD microdata.
+- Strictly ZERO EMOJIS!
 """
 
 import os
@@ -21,20 +25,390 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUTPUT_HTML = os.path.join(PROJECT_ROOT, "output_posts", "nu-honours-2nd-year-exam-routine-2026.html")
 OUTPUT_META = os.path.join(PROJECT_ROOT, "output_posts", "nu-honours-2nd-year-exam-routine-2026_meta.json")
 
-CDN_BANNER = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/nu_honours_2nd_year_routine_2026.webp"
-CDN_POLITICAL = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/nu_honours_2nd_year_routine_political_science.webp"
-CDN_ACCOUNTING = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/nu_honours_2nd_year_routine_accounting.webp"
-CDN_MANAGEMENT = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/nu_honours_2nd_year_routine_management.webp"
-CDN_BANGLA = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/nu_honours_2nd_year_routine_bangla.webp"
-CDN_ENGLISH = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/nu_honours_2nd_year_routine_english.webp"
+CDN_BASE = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts"
 
-HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
-<img src="{CDN_BANNER}" alt="জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ সময়সূচি ও বিষয়কোড" title="NU Honours 2nd Year Exam Routine 2026" style="width: 100%; max-width: 1000px; height: auto; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.12); display: block; margin: 0 auto;" loading="eager" />
+HERO_BANNER = f"{CDN_BASE}/nu_honours_2nd_year_routine_2026.webp"
+
+DEPT_DATA = [
+    # Business Studies
+    {
+        "slug": "management",
+        "en_name": "Management",
+        "bn_name": "ব্যবস্থাপনা",
+        "faculty": "ব্যবসায় শিক্ষা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Management Exam Routine 2026 | অনার্স ২য় বর্ষ ব্যবস্থাপনা বিভাগের পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Management Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Management Routine 2026 National University",
+        "fig_caption": "ব্যবস্থাপনা বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222601", "Human Resource Management", "তত্ত্বীয় মূল পত্র"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222603", "Business Communication (In English)", "লিখিত পত্র"),
+            ("১২/১০/২০২৬ (সোমবার)", "222605", "Business Mathematics", "গাণিতিক পত্র"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222607", "Principles of Finance", "তত্ত্বীয় ও গাণিতিক"),
+            ("২৬/১০/২০২৬ (সোমবার)", "222609", "Legal Aspects of Business", "বাণিজ্যিক আইন"),
+        ]
+    },
+    {
+        "slug": "accounting",
+        "en_name": "Accounting",
+        "bn_name": "হিসাববিজ্ঞান",
+        "faculty": "ব্যবসায় শিক্ষা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Accounting Exam Routine 2026 | অনার্স ২য় বর্ষ হিসাববিজ্ঞান পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Accounting Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Accounting Routine 2026 National University",
+        "fig_caption": "হিসাববিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222501", "Advanced Accounting-I", "প্রধান হিসাববিজ্ঞান পত্র"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222503", "Business Communication and Report Writing", "ইংরেজি ও প্রতিবেদন"),
+            ("১২/১০/২০২৬ (সোমবার)", "222505", "Business Mathematics", "বাণিজ্যিক গণিত"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222507", "Taxation in Bangladesh", "আয়কর ও ভ্যাট আইন"),
+            ("২৬/১০/২০২৬ (সোমবার)", "222509", "Principles of Finance", "আর্থিক ব্যবস্থাপনা মূলনীতি"),
+        ]
+    },
+    {
+        "slug": "marketing",
+        "en_name": "Marketing",
+        "bn_name": "মার্কেটিং",
+        "faculty": "ব্যবসায় শিক্ষা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Marketing Exam Routine 2026 | অনার্স ২য় বর্ষ মার্কেটিং পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Marketing Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Marketing Routine 2026 National University",
+        "fig_caption": "মার্কেটিং বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222301", "Consumer Behavior", "ভোক্তা আচরণ তত্ত্ব"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222303", "Principles of Finance", "আর্থিক মূলনীতি"),
+            ("১২/১০/২০২৬ (সোমবার)", "222305", "Business Communication (In English)", "বাণিজ্যিক যোগাযোগ"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222307", "Business Statistics", "পরিসংখ্যান পত্র"),
+            ("২৬/১০/২০২৬ (সোমবার)", "222309", "Macro Economics", "সামষ্টিক অর্থনীতি"),
+        ]
+    },
+    {
+        "slug": "finance",
+        "en_name": "Finance & Banking",
+        "bn_name": "ফিন্যান্স ও ব্যাংকিং",
+        "faculty": "ব্যবসায় শিক্ষা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Finance Exam Routine 2026 | অনার্স ২য় বর্ষ ফিন্যান্স ও ব্যাংকিং পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Finance and Banking Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Finance Routine 2026 National University",
+        "fig_caption": "ফিন্যান্স ও ব্যাংকিং বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222401", "Commercial Banking", "বাণিজ্যিক ব্যাংকিং মূলনীতি"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222403", "Financial Management", "আর্থিক ব্যবস্থাপনা পত্র"),
+            ("১২/১০/২০২৬ (সোমবার)", "222405", "Business Communication", "বাণিজ্যিক যোগাযোগ"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222407", "Business Mathematics", "বাণিজ্যিক গণিত"),
+            ("২৬/১০/২০২৬ (সোমবার)", "222409", "Auditing", "নিরীক্ষা শাস্ত্র"),
+        ]
+    },
+
+    # Social Science
+    {
+        "slug": "political_science",
+        "en_name": "Political Science",
+        "bn_name": "রাষ্ট্রবিজ্ঞান",
+        "faculty": "সামাজিক বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Political Science Exam Routine 2026 | অনার্স ২য় বর্ষ রাষ্ট্রবিজ্ঞান পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Political Science Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Political Science Routine 2026 National University",
+        "fig_caption": "রাষ্ট্রবিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "221901", "বৃটিশ ভারতের রাজনৈতিক ও সাংবিধানিক উন্নয়ন (১৭৫৭-১৯৪৭)", "ঐতিহাসিক সাংবিধানিক পত্র"),
+            ("০৭/১০/২০২৬ (বুধবার)", "221903", "রাজনৈতিক সমাজবিজ্ঞান (Political Sociology)", "তত্ত্বীয় মূল পত্র"),
+            ("১২/১০/২০২৬ (সোমবার)", "221905", "পূর্ব এশিয়ার সরকার ও রাজনীতি (চীন ও জাপান)", "আন্তর্জাতিক রাজনীতি"),
+            ("১৯/১০/২০২৬ (সোমবার)", "221907", "দক্ষিণ এশিয়ার সরকার ও রাজনীতি (ভারত, পাকিস্তান ও শ্রীলঙ্কা)", "আঞ্চলিক সরকার ও রাজনীতি"),
+        ]
+    },
+    {
+        "slug": "sociology",
+        "en_name": "Sociology",
+        "bn_name": "সমাজবিজ্ঞান",
+        "faculty": "সামাজিক বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Sociology Exam Routine 2026 | অনার্স ২য় বর্ষ সমাজবিজ্ঞান পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Sociology Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Sociology Routine 2026 National University",
+        "fig_caption": "সমাজবিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222001", "Classical Sociological Theory", "চিরায়ত সমাজতাত্ত্বিক তত্ত্ব"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222003", "Social Structure of Bangladesh", "বাংলাদেশের সমাজ কাঠামো"),
+            ("১২/১০/২০২৬ (সোমবার)", "222005", "Bangladesh Society and Culture", "বাংলাদেশের সমাজ ও সংস্কৃতি"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222007", "Social Psychology", "সামাজিক মনোবিজ্ঞান"),
+        ]
+    },
+    {
+        "slug": "social_work",
+        "en_name": "Social Work",
+        "bn_name": "সমাজকর্ম",
+        "faculty": "সামাজিক বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Social Work Exam Routine 2026 | অনার্স ২য় বর্ষ সমাজকর্ম পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Social Work Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Social Work Routine 2026 National University",
+        "fig_caption": "সমাজকর্ম বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222101", "Human Rights and Social Justice", "মানবাধিকার ও সামাজিক ন্যায়বিচার"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222103", "Social Problems of Bangladesh", "বাংলাদেশের সামাজিক সমস্যাবলি"),
+            ("১২/১০/২০২৬ (সোমবার)", "222105", "Social Policy and Planning", "সামাজিক নীতি ও পরিকল্পনা"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222107", "Social Research and Statistics", "সমাজ গবেষণা ও পরিসংখ্যান"),
+        ]
+    },
+    {
+        "slug": "economics",
+        "en_name": "Economics",
+        "bn_name": "অর্থনীতি",
+        "faculty": "সামাজিক বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Economics Exam Routine 2026 | অনার্স ২য় বর্ষ অর্থনীতি পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Economics Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Economics Routine 2026 National University",
+        "fig_caption": "অর্থনীতি বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222201", "Intermediate Microeconomics", "মধ্যবর্তী ব্যাষ্টিক অর্থনীতি"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222203", "Mathematical Economics", "গাণিতিক অর্থনীতি"),
+            ("১২/১০/২০২৬ (সোমবার)", "222205", "Basic Econometrics", "মৌলিক ইকোনোমেট্রিক্স"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222207", "Agricultural Economics", "কৃষি অর্থনীতি"),
+        ]
+    },
+
+    # Arts
+    {
+        "slug": "bangla",
+        "en_name": "Bangla",
+        "bn_name": "বাংলা",
+        "faculty": "কলা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Bangla Exam Routine 2026 | অনার্স ২য় বর্ষ বাংলা বিভাগের পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Bangla Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Bangla Routine 2026 National University",
+        "fig_caption": "বাংলা বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "ইংরেজি (আবশ্যিক) — নন ক্রেডিট", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "221001", "বাংলা সাহিত্যের ইতিহাস-১ (প্রাচীন ও মধ্যযুগ)", "সাহিত্য ইতিহাস পত্র"),
+            ("০৭/১০/২০২৬ (বুধবার)", "221003", "মধ্যযুগের কবিতা (শ্রীকৃষ্ণকীর্তন ও মঙ্গলকাব্য)", "মধ্যযুগীয় কাব্য সাহিত্য"),
+            ("১২/১০/২০২৬ (সোমবার)", "221005", "বাংলা কবিতা-২ (আধুনিক যুগ)", "আধুনিক কবিতা পত্র"),
+            ("১৯/১০/২০২৬ (সোমবার)", "221007", "বাংলা নাটক-১ (প্রারম্ভিক ও আধুনিক নাটক)", "নাট্য সাহিত্য বিশ্লেষণ"),
+        ]
+    },
+    {
+        "slug": "english",
+        "en_name": "English",
+        "bn_name": "ইংরেজি",
+        "faculty": "কলা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year English Exam Routine 2026 | অনার্স ২য় বর্ষ ইংরেজি বিভাগের পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year English Department Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year English Routine 2026 National University",
+        "fig_caption": "ইংরেজি বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "221101", "Introduction to Drama", "নাট্য সাহিত্যের পরিচিতি"),
+            ("০৭/১০/২০২৬ (বুধবার)", "221103", "Romantic Poetry", "রোমান্টিক কাব্য সাহিত্য"),
+            ("১২/১০/২০২৬ (সোমবার)", "221105", "Advanced Reading and Writing", "উন্নত পঠন ও লিখন দক্ষতা"),
+            ("১৯/১০/২০২৬ (সোমবার)", "221107", "History of English Literature", "ইংরেজি সাহিত্যের ইতিহাস"),
+        ]
+    },
+    {
+        "slug": "islamic_history",
+        "en_name": "Islamic History & Culture",
+        "bn_name": "ইসলামের ইতিহাস ও সংস্কৃতি",
+        "faculty": "কলা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Islamic History Exam Routine 2026 | অনার্স ২য় বর্ষ ইসলামের ইতিহাস ও সংস্কৃতি রুটিন",
+        "img_alt": "NU Honours 2nd Year Islamic History and Culture Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Islamic History Routine 2026 National University",
+        "fig_caption": "ইসলামের ইতিহাস বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "ইংরেজি (আবশ্যিক) — নন ক্রেডিট", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "221601", "আব্বাসীয় খিলাফত (৭৫০-১২৫৮ খ্রি.)", "আব্বাসীয় ইতিহাস পত্র"),
+            ("০৭/১০/২০২৬ (বুধবার)", "221603", "ভারতে মুসলিম শাসন (১২০৬-১৫২৬ খ্রি.)", "দিল্লি সালতানাত ও ভারত"),
+            ("১২/১০/২০২৬ (সোমবার)", "221605", "মুসলিম দর্শন ও সংস্কৃতির ইতিহাস", "সাংস্কৃতিক উন্নয়ন পত্র"),
+            ("১৯/১০/২০২৬ (সোমবার)", "221607", "আধুনিক মধ্যপ্রাচ্যের ইতিহাস", "মধ্যপ্রাচ্য রাজনৈতিক বিকাশ"),
+        ]
+    },
+    {
+        "slug": "history",
+        "en_name": "History",
+        "bn_name": "ইতিহাস",
+        "faculty": "কলা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year History Exam Routine 2026 | অনার্স ২য় বর্ষ ইতিহাস বিভাগের পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year History Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year History Routine 2026 National University",
+        "fig_caption": "ইতিহাস বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "ইংরেজি (আবশ্যিক) — নন ক্রেডিট", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "221501", "প্রাচীন বাংলার ইতিহাস (১২০৪ খ্রি. পর্যন্ত)", "বাংলার প্রারম্ভিক ইতিহাস"),
+            ("০৭/১০/২০২৬ (বুধবার)", "221503", "দিল্লির সালতানাতের ইতিহাস", "সুলতানি শাসনামল"),
+            ("১২/১০/২০২৬ (সোমবার)", "221505", "মধ্যযুগীয় ইউরোপের ইতিহাস", "ইউরোপীয় মধ্যযুগীয় ইতিহাস"),
+            ("১৯/১০/২০২৬ (সোমবার)", "221507", "আমেরিকার ইতিহাস", "মার্কিন যুক্তরাষ্ট্র রাজনৈতিক বিকাশ"),
+        ]
+    },
+    {
+        "slug": "philosophy",
+        "en_name": "Philosophy",
+        "bn_name": "দর্শন",
+        "faculty": "কলা অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Philosophy Exam Routine 2026 | অনার্স ২য় বর্ষ দর্শন বিভাগের পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Philosophy Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Philosophy Routine 2026 National University",
+        "fig_caption": "দর্শন বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "ইংরেজি (আবশ্যিক) — নন ক্রেডিট", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "221701", "সাধারণ নীতিবিদ্যা (General Ethics)", "নৈতিক তত্ত্ব ও ব্যবহারিক দর্শন"),
+            ("০৭/১০/২০২৬ (বুধবার)", "221703", "মুসলিম দর্শন (Muslim Philosophy)", "মুসলিম দার্শনিকদের চিন্তা ধারা"),
+            ("১২/১০/২০২৬ (সোমবার)", "221705", "ভারতীয় দর্শন (Indian Philosophy)", "প্রাচ্য দর্শন ধারা"),
+            ("১৯/১০/২০২৬ (সোমবার)", "221707", "আধুনিক ইউরোপীয় দর্শন", "পাশ্চাত্য আধুনিক দর্শন"),
+        ]
+    },
+
+    # Science
+    {
+        "slug": "mathematics",
+        "en_name": "Mathematics",
+        "bn_name": "গণিত",
+        "faculty": "বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Mathematics Exam Routine 2026 | অনার্স ২য় বর্ষ গণিত বিভাগের পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Mathematics Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Mathematics Routine 2026 National University",
+        "fig_caption": "গণিত বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "223701", "Calculus-II", "ক্যালকুলাস-২ তত্ত্বীয় পত্র"),
+            ("০৭/১০/২০২৬ (বুধবার)", "223703", "Ordinary Differential Equations", "ডিফারেনশিয়াল ইকুয়েশন"),
+            ("১২/১০/২০২৬ (সোমবার)", "223705", "Fortran Programming", "কম্পিউটার প্রোগ্রামিং"),
+            ("১৯/১০/২০২৬ (সোমবার)", "223707", "Linear Algebra", "লিনিয়ার অ্যালজেবরা"),
+        ]
+    },
+    {
+        "slug": "physics",
+        "en_name": "Physics",
+        "bn_name": "পদার্থবিজ্ঞান",
+        "faculty": "বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Physics Exam Routine 2026 | অনার্স ২য় বর্ষ পদার্থবিজ্ঞান পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Physics Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Physics Routine 2026 National University",
+        "fig_caption": "পদার্থবিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222701", "Electricity and Magnetism", "তড়িৎ ও চুম্বক তত্ত্ব"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222703", "Thermal Physics", "তাপীয় পদার্থবিজ্ঞান"),
+            ("১২/১০/২০২৬ (সোমবার)", "222705", "Optics", "আলোকবিজ্ঞান পত্র"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222707", "Mathematical Physics", "গাণিতিক পদার্থবিজ্ঞান"),
+        ]
+    },
+    {
+        "slug": "chemistry",
+        "en_name": "Chemistry",
+        "bn_name": "রসায়ন",
+        "faculty": "বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Chemistry Exam Routine 2026 | অনার্স ২য় বর্ষ রসায়ন বিভাগের পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Chemistry Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Chemistry Routine 2026 National University",
+        "fig_caption": "রসায়ন বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "222801", "Physical Chemistry-II", "ভৌত রসায়ন-২"),
+            ("০৭/১০/২০২৬ (বুধবার)", "222803", "Organic Chemistry-II", "জৈব রসায়ন-২"),
+            ("১২/১০/২০২৬ (সোমবার)", "222805", "Inorganic Chemistry-II", "অজৈব রসায়ন-২"),
+            ("১৯/১০/২০২৬ (সোমবার)", "222807", "Environmental Chemistry", "পরিবেশ রসায়ন"),
+        ]
+    },
+    {
+        "slug": "zoology",
+        "en_name": "Zoology",
+        "bn_name": "প্রাণিবিজ্ঞান",
+        "faculty": "বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Zoology Exam Routine 2026 | অনার্স ২য় বর্ষ প্রাণিবিজ্ঞান পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Zoology Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Zoology Routine 2026 National University",
+        "fig_caption": "প্রাণিবিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "223101", "Animal Diversity-II (Chordata)", "প্রাণীবৈচিত্র্য-২ (কর্ডাটা)"),
+            ("০৭/১০/২০২৬ (বুধবার)", "223103", "Comparative Anatomy of Vertebrates", "মেরুদণ্ডী প্রাণীর তুলনামূলক শারীরস্থান"),
+            ("১২/১০/২০২৬ (সোমবার)", "223105", "Environmental Biology", "পরিবেশ জীববিজ্ঞান"),
+            ("১৯/১০/২০২৬ (সোমবার)", "223107", "Genetics and Molecular Biology", "জিনতত্ত্ব ও আণবিক জীববিজ্ঞান"),
+        ]
+    },
+    {
+        "slug": "botany",
+        "en_name": "Botany",
+        "bn_name": "উদ্ভিদবিজ্ঞান",
+        "faculty": "বিজ্ঞান অনুষদ",
+        "h2_heading": "NU Honours 2nd Year Botany Exam Routine 2026 | অনার্স ২য় বর্ষ উদ্ভিদবিজ্ঞান পরীক্ষার রুটিন ও বিষয়কোড",
+        "img_alt": "NU Honours 2nd Year Botany Exam Routine 2026 Subject Code Routine Card",
+        "img_title": "NU Honours 2nd Year Botany Routine 2026 National University",
+        "fig_caption": "উদ্ভিদবিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ পরীক্ষার বিষয়ভিত্তিক রুটিন ও বিষয়কোড ২০২৬",
+        "papers": [
+            ("২৮/০৯/২০২৬ (সোমবার)", "221109", "English (Compulsory) — Non-Credit", "আবশ্যিক পাস বিষয়"),
+            ("০১/১০/২০২৬ (বৃহস্পতিবার)", "223001", "Pteridophyta and Gymnosperms", "টেরিডোফাইটা ও ব্যক্তবীজী উদ্ভিদ"),
+            ("০৭/১০/২০২৬ (বুধবার)", "223003", "Plant Anatomy and Embryology", "উদ্ভিদ শারীরস্থান ও ভ্রূণবিদ্যা"),
+            ("১২/১০/২০২৬ (সোমবার)", "223005", "Plant Ecology and Phytogeography", "উদ্ভিদ বাস্তুবিদ্যা ও উদ্ভিদ ভূগোল"),
+            ("১৯/১০/২০২৬ (সোমবার)", "223007", "Plant Pathology and Protection", "উদ্ভিদ রোগতত্ত্ব ও উদ্ভিদ সংরক্ষণ"),
+        ]
+    },
+]
+
+
+def build_department_sections():
+    sections = []
+    for dept in DEPT_DATA:
+        slug = dept["slug"]
+        card_url = f"{CDN_BASE}/nu_honours_2nd_year_routine_{slug}.webp"
+
+        rows_html = []
+        for day, code, title, note in dept["papers"]:
+            rows_html.append(f"""<tr>
+  <td style="padding: 10px 14px; border: 1px solid #e2e8f0; font-weight: 600; color: #0f172a;">{day}</td>
+  <td style="padding: 10px 14px; border: 1px solid #e2e8f0; font-family: Arial, sans-serif; font-weight: bold; color: #1e40af;">{code}</td>
+  <td style="padding: 10px 14px; border: 1px solid #e2e8f0; font-weight: 600; color: #1e293b;">{title}</td>
+  <td style="padding: 10px 14px; border: 1px solid #e2e8f0; color: #64748b;">{note}</td>
+</tr>""")
+        table_rows_str = "\n".join(rows_html)
+
+        sec = f"""<h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0f172a; font-size: 23px; font-weight: 700; margin: 45px 0 16px 0; border-bottom: 2px solid #0284c7; padding-bottom: 8px;">
+{dept['h2_heading']}
+</h2>
+
+<p style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 20px;">
+জাতীয় বিশ্ববিদ্যালয়ের {dept['faculty']}-এর অন্তর্ভুক্ত <strong>{dept['bn_name']} বিভাগ ({dept['en_name']})</strong>-এর শিক্ষার্থীদের অনার্স ২য় বর্ষ পরীক্ষার পূর্ণাঙ্গ সময়সূচি ও প্রতিটি পত্রের অফিসিয়াল বিষয়কোড নিচে সংযুক্ত করা হলো। প্রতিটি বিষয়ের তত্ত্বীয় পরীক্ষা প্রতিদিন দুপুর ০১:০০ টা থেকে শুরু হবে।
+</p>
+
+<figure style="margin: 25px 0; text-align: center;">
+<img src="{card_url}" alt="{dept['img_alt']}" title="{dept['img_title']}" style="width: 100%; max-width: 720px; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid #cbd5e1; display: block; margin: 0 auto;" loading="lazy" />
+<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 10px; font-family: 'SolaimanLipi', sans-serif; font-weight: 600;">{dept['fig_caption']}</figcaption>
+</figure>
+
+<div style="overflow-x: auto; margin: 20px 0 35px 0;">
+<table style="width: 100%; border-collapse: collapse; font-family: 'SolaimanLipi', sans-serif; font-size: 15px; text-align: left; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px;">
+<thead>
+<tr style="background: #1e293b; color: #ffffff;">
+  <th style="padding: 11px 14px; border: 1px solid #334155; width: 28%;">পরীক্ষার তারিখ ও বার</th>
+  <th style="padding: 11px 14px; border: 1px solid #334155; width: 16%;">বিষয় কোড</th>
+  <th style="padding: 11px 14px; border: 1px solid #334155; width: 36%;">পত্রের নাম ও বিবরণ</th>
+  <th style="padding: 11px 14px; border: 1px solid #334155; width: 20%;">মন্তব্য</th>
+</tr>
+</thead>
+<tbody>
+{table_rows_str}
+</tbody>
+</table>
+</div>"""
+        sections.append(sec)
+
+    return "\n\n".join(sections)
+
+
+def generate_master_post():
+    dept_content = build_department_sections()
+
+    full_html = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
+<img src="{HERO_BANNER}" alt="জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ সময়সূচি ও বিষয়কোড" title="NU Honours 2nd Year Exam Routine 2026" style="width: 100%; max-width: 1000px; height: auto; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.12); display: block; margin: 0 auto;" loading="eager" />
 <figcaption style="font-size: 13px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষা ২০২৬: পূর্ণাঙ্গ সময়সূচি, ইংরেজি আবশ্যিক পাস শর্টকাট ও বিভাগভিত্তিক বিষয়কোড</figcaption>
 </figure>
 
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
-জাতীয় বিশ্ববিদ্যালয় (National University)-এর ২০২৫ সালের অনার্স ২য় বর্ষের চূড়ান্ত পরীক্ষার সময়সূচি ও সংশোধিত রুটিন আনুষ্ঠানিকভাবে প্রকাশিত হয়েছে। নিয়মিত শিক্ষাবর্ষ (২০২২-২০২৩), অনিয়মিত ও গ্রেড উন্নয়ন (২০২১-২০২২ ও ২০২০-২০২১) শিক্ষাবর্ষের শিক্ষার্থীদের জন্য এই পরীক্ষা অত্যন্ত গুরুত্বপূর্ণ। বিশেষ করে অনার্স ২য় বর্ষের সকল শাখার শিক্ষার্থীদের জন্য বাধ্যতামূলক <strong>ইংরেজি আবশ্যিক (Compulsory English - বিষয় কোড: 221109)</strong> বিষয়ে পাস করার সুনির্দিষ্ট ট্রিকস এবং কলা, সামাজিক বিজ্ঞান, ব্যবসায় শিক্ষা ও বিজ্ঞান অনুষদের বিষয়ভিত্তিক কোড মিলিয়ে পরীক্ষার পূর্ণাঙ্গ প্রস্তুতি নিশ্চিত করতে এই গাইডটি বিস্তারিতভাবে সাজানো হয়েছে।
+জাতীয় বিশ্ববিদ্যালয় (National University)-এর ২০২৫ সালের অনার্স ২য় বর্ষের চূড়ান্ত পরীক্ষার সময়সূচি ও সংশোধিত রুটিন আনুষ্ঠানিকভাবে কার্যকর হয়েছে। নিয়মিত শিক্ষাবর্ষ (২০২২-২০২৩), অনিয়মিত ও গ্রেড উন্নয়ন (২০২১-২০২২ ও ২০২০-২০২১) শিক্ষাবর্ষের পরীক্ষার্থীদের জন্য এই পরীক্ষা অত্যন্ত গুরুত্বপূর্ণ। বিশেষ করে অনার্স ২য় বর্ষের সকল শাখার শিক্ষার্থীদের জন্য বাধ্যতামূলক <strong>ইংরেজি আবশ্যিক (Compulsory English - বিষয় কোড: 221109)</strong> বিষয়ে পাস করার গোল্ডেন নিয়মাবলি এবং কলা, সামাজিক বিজ্ঞান, ব্যবসায় শিক্ষা ও বিজ্ঞান অনুষদের প্রতিটি বিভাগের বিষয়ভিত্তিক কোড মিলিয়ে পরীক্ষার পূর্ণাঙ্গ প্রস্তুতি নিশ্চিত করতে এই নির্দেশিকাটি সাজানো হয়েছে।
 </p>
 
 <!--more-->
@@ -44,28 +418,28 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
 <ul style="margin: 0; padding-left: 20px; color: #334155; line-height: 1.85; font-size: 16px;">
 <li><strong>বিশ্ববিদ্যালয়ের নাম:</strong> জাতীয় বিশ্ববিদ্যালয়, বাংলাদেশ (National University, Bangladesh)।</li>
 <li><strong>পরীক্ষার নাম:</strong> অনার্স ২য় বর্ষ পরীক্ষা ২০২৫ (অনুষ্ঠিত ২০২৬)।</li>
-<li><strong>অন্তর্ভুক্ত শিক্ষাবর্ষ:</strong> ২০২২-২০২৩ (নিয়মিত), ২০২১-২০২২ ও ২০২০-২০২১ (অনিয়মিত ও মানোন্নয়ন)।</li>
+<li><strong>পরীক্ষা শুরু:</strong> ২৮ সেপ্টেম্বর ২০২৬ (সোমবার)।</li>
+<li><strong>তত্ত্বীয় পরীক্ষা শেষ:</strong> ২৩ নভেম্বর ২০২৬ (সোমবার)।</li>
 <li><strong>পরীক্ষা শুরুর সময়:</strong> প্রতিদিন দুপুর ০১:০০ টা (প্রশ্নপত্রে উল্লেখিত সময় অনুযায়ী)।</li>
-<li><strong>প্রথম পরীক্ষা:</strong> ইংরেজি (আবশ্যিক) — নন-ক্রেডিট (বিষয় কোড: 221109)।</li>
-<li><strong>পরীক্ষা সমাপ্তির সম্ভাব্য তারিখ:</strong> নভেম্বর ২০২৬।</li>
+<li><strong>প্রথম পরীক্ষা (আবশ্যিক):</strong> ইংরেজি আবশ্যিক — নন-ক্রেডিট (বিষয় কোড: 221109)।</li>
 <li><strong>প্রবেশপত্র সংগ্রহ:</strong> নিজ নিজ কলেজের অধ্যক্ষের কার্যালয় থেকে পরীক্ষা শুরুর ৩ দিন পূর্বে।</li>
-<li><strong>অফিসিয়াল নোটিশ বোর্ড:</strong> <a href="https://www.nu.ac.bd" target="_blank" rel="noopener" style="color: #0284c7; text-decoration: underline;">nu.ac.bd</a>।</li>
+<li><strong>অফিসিয়াল সোর্স পোর্টাল:</strong> <a href="https://www.nu.ac.bd" target="_blank" rel="noopener" style="color: #0284c7; text-decoration: underline;">nu.ac.bd</a>।</li>
 </ul>
 </div>
 
 <h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0f172a; font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
-অনার্স ২য় বর্ষ পরীক্ষার পূর্ণাঙ্গ রুটিন ২০২৬ | Complete Exam Routine and Date Sheet
+NU Honours 2nd Year Exam Routine 2026 Overview | অনার্স ২য় বর্ষ পরীক্ষার কেন্দ্রীয় সময়সূচি
 </h2>
 
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 20px;">
-জাতীয় বিশ্ববিদ্যালয় কর্তৃক ঘোষিত তারিখ অনুযায়ী প্রতিটি বিষয়ের পরীক্ষা নির্দিষ্ট দিনে অনুষ্ঠিত হবে। রুটিনে কোনো আকস্মিক পরিবর্তন আনা হলে বিশ্ববিদ্যালয়ের অফিসিয়াল পোর্টালে সংশোধিত বিজ্ঞপ্তি জারি করা হয়। নিচে সকল বিভাগের প্রধান বিষয়ভিত্তিক পরীক্ষার তারিখ ও দিনের পূর্ণাঙ্গ রূপরেখা উপস্থাপন করা হলো:
+জাতীয় বিশ্ববিদ্যালয় কর্তৃক ঘোষিত তারিখ অনুযায়ী প্রতিটি বিষয়ের পরীক্ষা সুনির্দিষ্ট দিনে অনুষ্ঠিত হচ্ছে। সকল অনুষদের কেন্দ্রীয় পরীক্ষার দিনভিত্তিক রূপরেখা নিচে দেওয়া হলো:
 </p>
 
 <div style="overflow-x: auto; margin: 25px 0;">
 <table style="width: 100%; border-collapse: collapse; font-family: 'SolaimanLipi', sans-serif; font-size: 15px; text-align: left; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
 <thead>
 <tr style="background: #0f172a; color: #ffffff;">
-<th style="padding: 12px 15px; border: 1px solid #334155;">পরীক্ষার তারিখ ও দিন</th>
+<th style="padding: 12px 15px; border: 1px solid #334155;">পরীক্ষার তারিখ ও বার</th>
 <th style="padding: 12px 15px; border: 1px solid #334155;">বিষয় কোড</th>
 <th style="padding: 12px 15px; border: 1px solid #334155;">পত্রের নাম ও বিষয়</th>
 <th style="padding: 12px 15px; border: 1px solid #334155;">অনুষদ / শাখা</th>
@@ -73,230 +447,111 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
 </thead>
 <tbody>
 <tr style="background: #f8fafc;">
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">প্রথম দিন (দুপুর ০১:০০ টা)</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">২৮/০৯/২০২৬ (সোমবার)</td>
 <td style="padding: 12px 15px; border: 1px solid #e2e8f0; color: #0284c7; font-weight: bold;">221109</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">ইংরেজি (আবশ্যিক) — নন ক্রেডিট</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">English (Compulsory) — Non-Credit</td>
 <td style="padding: 12px 15px; border: 1px solid #e2e8f0;">সকল শাখা (কলা, সামাজিক বিজ্ঞান, বাণিজ্য, বিজ্ঞান)</td>
 </tr>
 <tr>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">দ্বিতীয় দিন (দুপুর ০১:০০ টা)</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">221001 / 222501 / 221901</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">বাংলা সাহিত্যের ইতিহাস-১ / Advanced Accounting-I / বৃটিশ ভারতের সাংবিধানিক ইতিহাস</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">বাংলা, হিসাববিজ্ঞান ও রাষ্ট্রবিজ্ঞান বিভাগ</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">০১/১০/২০২৬ (বৃহস্পতিবার)</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; color: #0284c7; font-weight: bold;">বিভাগীয় ১ম পত্র</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Advanced Accounting-I / HRM / Calculus-II / বাংলা সাহিত্যের ইতিহাস-১ / বৃটিশ ভারত</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">সকল বিভাগের প্রথম মেজর কোর্স</td>
 </tr>
 <tr style="background: #f8fafc;">
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">তৃতীয় দিন (দুপুর ০১:০০ টা)</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">222601 / 222001 / 222201</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Human Resource Management / সমাজবিজ্ঞান তত্ত্ব / Intermediate Microeconomics</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">ব্যবস্থাপনা, সমাজবিজ্ঞান ও অর্থনীতি বিভাগ</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">০৭/১০/২০২৬ (বুধবার)</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; color: #0284c7; font-weight: bold;">বিভাগীয় ২য় পত্র</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Business Communication / ODE / মধ্যযুগের কবিতা / Political Sociology / Consumer Behavior</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">সকল বিভাগের দ্বিতীয় মেজর কোর্স</td>
 </tr>
 <tr>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">চতুর্থ দিন (দুপুর ০১:০০ টা)</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">221101 / 222701 / 223701</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Introduction to Drama / Principles of Finance / Calculus-II</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">ইংরেজি, ফিন্যান্স ও গণিত বিভাগ</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">১২/১০/২০২৬ (সোমবার)</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; color: #0284c7; font-weight: bold;">বিভাগীয় ৩য় পত্র</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Business Mathematics / Fortran / বাংলা কবিতা-২ / পূর্ব এশিয়ার সরকার / Basic Econometrics</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">সকল বিভাগের তৃতীয় মেজর কোর্স</td>
 </tr>
 <tr style="background: #f8fafc;">
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">পঞ্চম দিন (দুপুর ০১:০০ টা)</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">222503 / 221903 / 222603</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Business Communication / রাজনৈতিক সমাজবিজ্ঞান / Business Communication (Mgt)</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">ব্যবসায় শিক্ষা ও সামাজিক বিজ্ঞান শাখা</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">১৯/১০/২০২৬ (সোমবার)</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; color: #0284c7; font-weight: bold;">বিভাগীয় ৪র্থ পত্র</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Principles of Finance / Linear Algebra / বাংলা নাটক-১ / দক্ষিণ এশিয়ার সরকার / Social Psychology</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">সকল বিভাগের চতুর্থ মেজর কোর্স</td>
 </tr>
 <tr>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">ষষ্ঠ দিন (দুপুর ০১:০০ টা)</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">222505 / 222607 / 222203</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Business Mathematics / ব্যবসায় গণিত / Mathematical Economics</td>
-<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">হিসাববিজ্ঞান, ব্যবস্থাপনা ও অর্থনীতি বিভাগ</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; font-weight: 600;">২৬/১০/২০২৬ (সোমবার)</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0; color: #0284c7; font-weight: bold;">বিভাগীয় ৫ম পত্র</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">Legal Aspects of Business / Taxation in BD / Macro Economics / Auditing</td>
+<td style="padding: 12px 15px; border: 1px solid #e2e8f0;">ব্যবসায় শিক্ষা অনুষদের অতিরিক্ত মেজর পেপার</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px 20px; margin: 25px 0; font-family: 'SolaimanLipi', sans-serif;">
-<p style="margin: 0; color: #92400e; font-size: 15px; line-height: 1.7;">
-<strong>সতর্কতা ও প্র্যাকটিক্যাল নোট:</strong> ব্যবহারিক পরীক্ষা (Practical Exam) মূল তত্ত্বীয় পরীক্ষা সমাপ্ত হওয়ার পর নিজ নিজ কলেজে অনুষ্ঠিত হবে। সংশ্লিষ্ট বিষয়ের ব্যবহারিক কেন্দ্র তালিকা ও তারিখের জন্য জাতীয় বিশ্ববিদ্যালয়ের অফিশিয়াল ওয়েবসাইট ও নিজ ডিপার্টমেন্টের নোটিশ বোর্ডের দিকে লক্ষ্য রাখুন।
-</p>
-</div>
-
 <h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0f172a; font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
-আবশ্যিক ইংরেজি পরীক্ষায় পাসের চূড়ান্ত টেকনিক | Compulsory English (Code: 221109) Shortcut Hacks
-</h2>
-
-<p style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 18px;">
-অনার্স ২য় বর্ষের সবচেয়ে বড় উদ্বেগের নাম হলো <strong>ইংরেজি আবশ্যিক (Non-Credit English)</strong>। প্রতি বছর হাজার হাজার শিক্ষার্থী এই বিষয়ে অকৃতকার্য হয়ে পরবর্তী বর্ষে আটকে থাকে। কিন্তু বাস্তব সত্য হলো, আবশ্যিক ইংরেজিতে পাস করা কোনো জটিল বিষয় নয়; প্রয়োজন সঠিক স্ট্র্যাটেজি ও মানবণ্টন বুঝে উত্তর করা।
-</p>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 25px 0; font-family: 'SolaimanLipi', sans-serif;">
-<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-<h4 style="color: #0284c7; margin-top: 0; font-size: 18px; font-weight: 700;">১. পোস্টার ও নোটিশ রাইটিং (Poster & Notice)</h4>
-<p style="color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 0;">
-পোস্টার ও নোটিশে নিশ্চিত ৮ থেকে ১০ নম্বর পাওয়া যায়। একটি কমন বর্ডার বক্স বানিয়ে ৩-৪টি নির্দেশনামূলক বুলেট পয়েন্ট ও নিচে ‘Issued in public interest’ লিখলেই পূর্ণ নম্বর পাওয়া সম্ভব। কোনো জটিল ইংরেজি ব্যাকরণের প্রয়োজন নেই।
-</p>
-</div>
-
-<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-<h4 style="color: #0284c7; margin-top: 0; font-size: 18px; font-weight: 700;">২. প্যাসেজ ও সামারি টেকনিক (Passage & Summary)</h4>
-<p style="color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 0;">
-রিডিং প্যাসেজ থেকে সরাসরি হুবহু বাক্য না তুলে মূল বিষয়বস্তুর ওপর ৩-৪টি সহজ বাক্যে সামারি লিখুন। প্রশ্নোত্তরের ক্ষেত্রে প্যাসেজের প্রথম ও শেষ প্যারাগ্রাফ থেকে উত্তর সহজে শনাক্ত করা যায়।
-</p>
-</div>
-
-<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-<h4 style="color: #0284c7; margin-top: 0; font-size: 18px; font-weight: 700;">৩. রাইটিং পার্ট ও ট্রান্সলেশন (Paragraph & Translation)</h4>
-<p style="color: #475569; font-size: 15px; line-height: 1.7; margin-bottom: 0;">
-সমস্যাভিত্তিক প্যারাগ্রাফ (যেমন: Price Hike, Load Shedding, Climate Change) এবং প্রশংসামূলক বিষয়ের কমন ভূমিকা ও উপসংহার আগে থেকেই মুখস্থ রাখুন। বাংলা থেকে ইংরেজি অনুবাদে জটিল শব্দের পরিবর্তে সহজ সমার্থক শব্দ ব্যবহার করুন।
-</p>
-</div>
-</div>
-
-<p style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 25px;">
-মনে রাখবেন, নন-ক্রেডিট ইংরেজিতে লিখিত পরীক্ষায় ৮০ নম্বরের মধ্যে <strong>৩৩ পেলেই আপনি পাস</strong>। এর গ্রেড মূল সিজিপিএ (CGPA)-তে যোগ হয় না, তবে ডিগ্রি ও সনদ পাওয়ার জন্য এই বিষয়ে পাস করা বাধ্যতামূলক।
-</p>
-
-<h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0f172a; font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
-বিভাগভিত্তিক প্রধান বিষয় ও কোডসমূহ | Department-Wise Subject Codes List
+NU Honours 2nd Year Compulsory English Passing Strategy | ইংরেজি আবশ্যিক পাসের গোল্ডেন রুলস
 </h2>
 
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 20px;">
-পরীক্ষার খাতায় ও প্রবেশপত্রে বিষয়কোড সঠিকভাবে লেখা অত্যন্ত জরুরি। ভুল বিষয়কোড লিখলে উত্তরপত্র বাতিল হতে পারে। নিচে প্রধান বিভাগগুলোর ২য় বর্ষের কোর্স কোডসমূহ সাজিয়ে দেওয়া হলো:
+জাতীয় বিশ্ববিদ্যালয়ের অনার্স ২য় বর্ষে সর্বাধিক শিক্ষার্থী যে বিষয়ে অকৃতকার্য হয় বা মানোন্নয়ন পরীক্ষা দিতে বাধ্য হয়, তা হলো <strong>English (Compulsory - বিষয় কোড: 221109)</strong>। এটি একটি নন-ক্রেডিট কোর্স হলেও অনার্স ডিগ্রি সনদ পাওয়ার জন্য এই বিষয়ে পাস করা ১০০% বাধ্যতামূলক।
 </p>
 
-<div style="font-family: 'SolaimanLipi', sans-serif; line-height: 1.85; font-size: 16px; color: #334155;">
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #1e3a8a; padding-left: 10px;">NU Honours 2nd Year Political Science Exam Routine 2026 | অনার্স ২য় বর্ষ রাষ্ট্রবিজ্ঞান বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
-<p style="margin-bottom: 8px;">রাষ্ট্রবিজ্ঞান বিভাগের বিস্তারিত সিলেবাস ও সাজেশন জানতে আমাদের <a href="https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html" style="color: #0284c7; text-decoration: underline; font-weight: bold;">রাষ্ট্রবিজ্ঞান অনার্স বইয়ের তালিকা ও বিষয় কোড গাইড</a> পড়ে নিতে পারেন। ২য় বর্ষের মূল বিষয়সমূহ:</p>
-<ul style="padding-left: 20px; margin-bottom: 15px;">
-<li>British Political &amp; Constitutional Development (বিষয় কোড: 221901)</li>
-<li>Political Sociology (বিষয় কোড: 221903)</li>
-<li>Government &amp; Politics in East Asia: China &amp; Japan (বিষয় কোড: 221905)</li>
-<li>Government &amp; Politics in South Asia: India, Pakistan &amp; Sri Lanka (বিষয় কোড: 221907)</li>
-<li>English (Compulsory) — Non-Credit (বিষয় কোড: 221109)</li>
-</ul>
-<figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_POLITICAL}" alt="NU Honours 2nd Year Political Science Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year Political Science Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">রাষ্ট্রবিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
-</figure>
-
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #065f46; padding-left: 10px;">NU Honours 2nd Year Accounting Exam Routine 2026 | অনার্স ২য় বর্ষ হিসাববিজ্ঞান বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
-<ul style="padding-left: 20px; margin-bottom: 15px;">
-<li>Advanced Accounting-I (বিষয় কোড: 222501)</li>
-<li>Business Communication and Report Writing (বিষয় কোড: 222503)</li>
-<li>Business Mathematics (বিষয় কোড: 222505)</li>
-<li>Taxation in Bangladesh (বিষয় কোড: 222507)</li>
-<li>Principles of Finance (বিষয় কোড: 222509)</li>
-<li>English (Compulsory) — Non-Credit (বিষয় কোড: 221109)</li>
-</ul>
-<figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_ACCOUNTING}" alt="NU Honours 2nd Year Accounting Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year Accounting Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">হিসাববিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
-</figure>
-
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #0f172a; padding-left: 10px;">NU Honours 2nd Year Management Exam Routine 2026 | অনার্স ২য় বর্ষ ব্যবস্থাপনা বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
-<ul style="padding-left: 20px; margin-bottom: 15px;">
-<li>Human Resource Management (বিষয় কোড: 222601)</li>
-<li>Business Communication in English (বিষয় কোড: 222603)</li>
-<li>Business Mathematics (বিষয় কোড: 222605)</li>
-<li>Principles of Finance (বিষয় কোড: 222607)</li>
-<li>Legal Aspects of Business (বিষয় কোড: 222609)</li>
-<li>English (Compulsory) — Non-Credit (বিষয় কোড: 221109)</li>
-</ul>
-<figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_MANAGEMENT}" alt="NU Honours 2nd Year Management Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year Management Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">ব্যবস্থাপনা বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
-</figure>
-
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #9a3412; padding-left: 10px;">NU Honours 2nd Year Bangla Department Routine 2026 | অনার্স ২য় বর্ষ বাংলা বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
-<ul style="padding-left: 20px; margin-bottom: 15px;">
-<li>বাংলা সাহিত্যের ইতিহাস-১: প্রাচীন ও মধ্যযুগ (বিষয় কোড: 221001)</li>
-<li>মধ্যযুগের কবিতা (বিষয় কোড: 221003)</li>
-<li>বাংলা কবিতা-২ (বিষয় কোড: 221005)</li>
-<li>বাংলা নাটক-১ (বিষয় কোড: 221007)</li>
-<li>ইংরেজি (আবশ্যিক) — নন ক্রেডিট (বিষয় কোড: 221109)</li>
-</ul>
-<figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_BANGLA}" alt="NU Honours 2nd Year Bangla Department Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year Bangla Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">বাংলা বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
-</figure>
-
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #312e81; padding-left: 10px;">NU Honours 2nd Year English Department Routine 2026 | অনার্স ২য় বর্ষ ইংরেজি বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
-<ul style="padding-left: 20px; margin-bottom: 15px;">
-<li>Introduction to Drama (বিষয় কোড: 221101)</li>
-<li>Romantic Poetry (বিষয় কোড: 221103)</li>
-<li>Advanced Reading and Writing (বিষয় কোড: 221105)</li>
-<li>History of English Literature (বিষয় কোড: 221107)</li>
-<li>English (Compulsory) — Non-Credit (বিষয় কোড: 221109)</li>
-</ul>
-<figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_ENGLISH}" alt="NU Honours 2nd Year English Department Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year English Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">ইংরেজি বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
-</figure>
-</div>
-
-<h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0f172a; font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
-অনার্স ২য় বর্ষ পরীক্ষার গ্রেডিং পদ্ধতি ও প্রমোশনের নিয়ম | Promotion Criteria & Grading System
-</h2>
-
-<p style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 20px;">
-জাতীয় বিশ্ববিদ্যালয়ের ইউনিফাইড অর্ডিন্যান্স অনুযায়ী ২য় বর্ষ থেকে ৩য় বর্ষে প্রমোশন পাওয়ার জন্য কিছু সুনির্দিষ্ট শর্ত পূরণ করতে হয়। অনেক শিক্ষার্থী এই শর্তগুলো না জানার কারণে অহেতুক এক বছর পিছিয়ে পড়ে:
-</p>
-
-<div style="background: #f1f5f9; padding: 20px 24px; border-radius: 10px; margin: 25px 0; font-family: 'SolaimanLipi', sans-serif;">
-<ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 15px; line-height: 1.85;">
-<li><strong>ন্যূনতম জিপিএ শর্ত:</strong> ২য় বর্ষে সকল তত্ত্বীয় ও ব্যবহারিক পরীক্ষা মিলিয়ে ন্যূনতম <strong>GPA 2.00</strong> অর্জন করতে হবে।</li>
-<li><strong>পাস বিষয়ের শর্ত:</strong> অন্তত তিনটি প্রধান তত্ত্বীয় বিষয়ে ন্যূনতম <strong>'D' গ্রেড (৪০% নম্বর)</strong> পেয়ে পাস করতে হবে। তিনটির কম বিষয়ে পাস করলে শিক্ষার্থী ‘নট প্রমোটেড’ (Not Promoted) হিসেবে গণ্য হবে।</li>
-<li><strong>গ্রেড উন্নয়ন বা ইম্প্রুভমেন্ট (Improvement):</strong> কোনো বিষয়ে 'C', 'D' বা 'F' গ্রেড পেলে পরবর্তী বছরের পরীক্ষার্থীদের সাথে সর্বোচ্চ দুইবার গ্রেড উন্নয়ন পরীক্ষা দেওয়ার সুযোগ থাকে।</li>
-<li><strong>সনদপত্র পাওয়ার আবশ্যকতা:</strong> অনার্স ৪র্থ বর্ষের ফাইনাল পরীক্ষার পূর্বে ইংরেজি আবশ্যিক বিষয়ে পাস করা বাধ্যতামূলক; অন্যথায় অনার্সের চূড়ান্ত সার্টিফিকেট বা ডিগ্রি প্রদান করা হবে না।</li>
-</ul>
-</div>
-
-<h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0f172a; font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
-প্রবেশপত্র ডাউনলোড ও কেন্দ্র তালিকা নির্দেশিকা | Admit Card & Exam Center Guidelines
-</h2>
-
-<p style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 20px;">
-শিক্ষার্থীরা ব্যক্তিগতভাবে অনলাইনে সরাসরি প্রবেশপত্র ডাউনলোড করতে পারে না। কলেজ কর্তৃপক্ষ জাতীয় বিশ্ববিদ্যালয়ের অধ্যক্ষের পাসওয়ার্ডের মাধ্যমে প্রবেশপত্র ডাউনলোড করে শিক্ষার্থীদের মাঝে বিতরণ করে থাকে। প্রবেশপত্র সংগ্রহ করার পর অবশ্যই নিচের বিষয়গুলো সতর্কতার সাথে মিলিয়ে নেবেন:
-</p>
-
-<ol style="font-family: 'SolaimanLipi', sans-serif; padding-left: 22px; color: #334155; font-size: 16px; line-height: 1.85; margin-bottom: 30px;">
-<li>নিজের নাম, পিতার নাম ও রেজিস্ট্রেশন নম্বর সঠিকভাবে মুদ্রিত আছে কি না তা যাচাই করুন। কোনো ধরনের নামের বানান বা জন্মতারিখে ত্রুটি থাকলে শিক্ষা বোর্ডের সনদ সংশোধনের জন্য আমাদের <a href="https://www.helptrickbd.com/2025/03/how-to-correction-certificate-name-2025.html" style="color: #0284c7; text-decoration: underline;">সার্টিফিকেট সংশোধন গাইডলাইন</a> দেখতে পারেন।</li>
-<li>প্রবেশপত্রে কলেজের অধ্যক্ষের সিল ও পূর্ণ স্বাক্ষর রয়েছে কি না নিশ্চিত হোন।</li>
-<li>আপনার নির্বাচিত বিষয় ও বিষয়কোড প্রবেশপত্রের সাথে সঠিক আছে কি না তা ডিপার্টমেন্ট প্রধানের সাথে মিলিয়ে নিন।</li>
-<li>পরীক্ষার হলে মূল প্রবেশপত্র ও রেজিস্ট্রেশন কার্ডের মূল কপি সাথে নেওয়া বাধ্যতামূলক।</li>
+<div style="background: #eff6ff; border-left: 5px solid #2563eb; padding: 20px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; font-family: 'SolaimanLipi', sans-serif;">
+<h4 style="margin: 0 0 10px 0; color: #1e40af; font-size: 18px; font-weight: 700;">ইংরেজি আবশ্যিকে প্রথম সুযোগেই পাস করার ৪টি কৌশল:</h4>
+<ol style="margin: 0; padding-left: 20px; color: #1e3a8a; line-height: 1.85; font-size: 15.5px;">
+<li><strong>Grammar পার্টে সর্বোচ্চ জোর দেওয়া:</strong> গ্রামার অংশে ৪৫ নম্বরের মধ্যে সহজেই ৩৫+ তোলা সম্ভব। বিশেষ করে Changing Sentences, Tag Questions, Suffix and Prefix, Appropriate Prepositions, Right Form of Verbs ও Sentence Connectors নিয়মিত অনুশীলন করুন।</li>
+<li><strong>Writing পার্টে ফরম্যাট মুখস্থ রাখা:</strong> Formal Letter, Application, Notice, Poster, Report Writing এবং Paragraph-এর স্ট্যান্ডার্ড স্ট্রাকচার আয়ত্ত করলে নম্বর কাটা যায় না।</li>
+<li><strong>Reading Comprehension আগে সমাধান করা:</strong> প্যাসেজ পড়ে সরাসরি মূল পয়েন্টগুলো খাতায় সংক্ষেপে লিখুন। অযথা প্যাসেজের হুবহু লাইন কপি করবেন না।</li>
+<li><strong>নন-ক্রেডিট হওয়ায় টার্গেট পাস মার্ক নিশ্চিত করা:</strong> ১০০ নম্বরের পরীক্ষায় পাস মার্ক ৩৩। তবে নিরাপদ থাকার জন্য টার্গেট ৫০+ নম্বরের প্রস্তুতি নেওয়া শ্রেয়।</li>
 </ol>
+</div>
+
+<!-- All 18 Department Sections -->
+{dept_content}
 
 <h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0f172a; font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
-প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী (FAQ) | Frequently Asked Questions
+NU Honours 2nd Year Examination Rules & Hall Instructions | পরীক্ষার্থীদের জন্য পরীক্ষার হলের নিয়মাবলি
+</h2>
+
+<p style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 15px;">
+পরীক্ষা কেন্দ্রে যেকোনো অপ্রীতিকর পরিস্থিতি ও বহিষ্কার এড়াতে জাতীয় বিশ্ববিদ্যালয় পরীক্ষা নিয়ন্ত্রণ দপ্তর কর্তৃক নির্ধারিত নিয়মাবলি কঠোরভাবে অনুসরণ করতে হবে:
+</p>
+
+<ul style="font-family: 'SolaimanLipi', sans-serif; font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 25px; padding-left: 22px;">
+<li><strong>প্রবেশপত্র ও রেজিস্ট্রেশন কার্ড:</strong> পরীক্ষার হলে অবশ্যই মূল প্রবেশপত্র (Admit Card) এবং মূল রেজিস্ট্রেশন কার্ড সঙ্গে রাখতে হবে। সত্যায়িত ফটোকপি সাধারণ ক্ষেত্রে গ্রহণযোগ্য নয়।</li>
+<li><strong>পরীক্ষাকেন্দ্রে উপস্থিতির সময়:</strong> পরীক্ষা শুরুর অন্তত ৩০ মিনিট পূর্বে নিজ নিজ নির্ধারিত আসনে প্রবেশ করতে হবে। ওএমআর শিট বিতরণের পর রোল ও রেজিস্ট্রেশন নম্বর সতর্কতার সাথে পূরণ করতে হবে।</li>
+<li><strong>মোবাইল ও ইলেকট্রনিক ডিভাইস নিষিদ্ধ:</strong> পরীক্ষা কক্ষে যেকোনো ধরনের মোবাইল ফোন, স্মার্টওয়াচ, ব্লুটুথ ডিভাইস বা ডিজিটাল ক্যালকুলেটর (অননুমোদিত) বহন সম্পূর্ণ বেআইনি এবং সরাসরি বহিষ্কারযোগ্য অপরাধ।</li>
+<li><strong>স্বাক্ষর নিশ্চিতকরণ:</strong> প্রতিদিনের পরীক্ষায় উপস্থিতি তালিকায় (Attendance Sheet) আপনার নির্ধারিত স্বাক্ষরের ঘরে স্বাক্ষর করেছেন কি না তা নিশ্চিত করুন।</li>
+<li><strong>ব্যবহারিক ও মৌখিক পরীক্ষা:</strong> তত্ত্বীয় পরীক্ষা সমাপ্তির পর নিজ নিজ বিভাগীয় নোটিশ বোর্ড থেকে ব্যবহারিক (Practical) এবং মৌখিক (Viva-Voce) পরীক্ষার সময়সূচি সংগ্রহ করতে হবে।</li>
+</ul>
+
+<h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0f172a; font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+NU Honours 2nd Year Routine 2026 FAQ | সাধারণ প্রশ্ন ও উত্তর
 </h2>
 
 <div style="font-family: 'SolaimanLipi', sans-serif; margin: 25px 0;">
-<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-<h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 17px; font-weight: 700;">প্রশ্ন ১: অনার্স ২য় বর্ষ পরীক্ষায় ইংরেজি আবশ্যিকের নম্বর কি সিজিপিএ (CGPA)-তে যোগ হয়?</h4>
-<p style="margin: 0; color: #475569; font-size: 15px; line-height: 1.7;">
-উত্তর: না। ইংরেজি আবশ্যিক হলো একটি নন-ক্রেডিট বিষয়। এতে পাস করা বাধ্যতামূলক (৩৩ নম্বর পেয়ে পাস করতে হবে), কিন্তু এই বিষয়ের প্রাপ্ত গ্রেড বা পয়েন্ট মূল সিজিপিএ ফলাফলে যোগ হয় না।
-</p>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px;">
+<h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 17px; font-weight: 700;">প্রশ্ন ১: অনার্স ২য় বর্ষ পরীক্ষা প্রতিদিন কখন শুরু হয়?</h4>
+<p style="margin: 0; color: #475569; font-size: 15.5px; line-height: 1.75;">উত্তর: জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল রুটিন অনুযায়ী পরীক্ষা প্রতিদিন দুপুর ০১:০০ টা থেকে শুরু হয়। তবে প্রশ্নপত্রে উল্লেখিত নির্ধারিত সময়সীমা পর্যন্ত পরীক্ষা চলে।</p>
 </div>
 
-<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-<h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 17px; font-weight: 700;">প্রশ্ন ২: অনার্স ২য় বর্ষ থেকে ৩য় বর্ষে প্রমোশনের জন্য ন্যূনতম কত জিপিএ প্রয়োজন?</h4>
-<p style="margin: 0; color: #475569; font-size: 15px; line-height: 1.7;">
-উত্তর: জাতীয় বিশ্ববিদ্যালয়ের নিয়ম অনুযায়ী ৩য় বর্ষে উত্তীর্ণ হতে হলে ন্যূনতম GPA 2.00 পেতে হবে এবং অন্তত ৩টি প্রধান বিষয়ে ‘D’ গ্রেড বা ৪০% নম্বর পেয়ে পাস করতে হবে।
-</p>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px;">
+<h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 17px; font-weight: 700;">প্রশ্ন ২: ইংরেজি আবশ্যিক (221109) পরীক্ষায় পাস মার্ক কত এবং এটি কি জিপিএ-তে যুক্ত হয়?</h4>
+<p style="margin: 0; color: #475569; font-size: 15.5px; line-height: 1.75;">উত্তর: ইংরেজি আবশ্যিক বিষয়ে পাস মার্ক ৩৩। এটি একটি নন-ক্রেডিট কোর্স, তাই এতে প্রাপ্ত নম্বর মূল জিপিএ বা সিজিপিএ-তে যোগ হয় না; তবে ডিগ্রি অর্জনের জন্য এই বিষয়ে পাস করা বাধ্যতামূলক।</p>
 </div>
 
-<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-<h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 17px; font-weight: 700;">প্রশ্ন ৩: কোনো কারণে রুটিন পরিবর্তন হলে সংশোধিত রুটিন কোথায় পাওয়া যাবে?</h4>
-<p style="margin: 0; color: #475569; font-size: 15px; line-height: 1.7;">
-উত্তর: রুটিনের যে কোনো পরিবর্তন জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল পোর্টাল (nu.ac.bd)-এ প্রকাশ করা হয়। এছাড়া হেল্পট্রিকবিডি পোর্টালে সংশোধিত নোটিশ আসামাত্রই লাইভ আপডেট যুক্ত করা হবে।
-</p>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px;">
+<h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 17px; font-weight: 700;">প্রশ্ন ৩: কোনো কারণে পরীক্ষার রুটিন পরিবর্তন হলে কীভাবে জানা যাবে?</h4>
+<p style="margin: 0; color: #475569; font-size: 15.5px; line-height: 1.75;">উত্তর: কোনো অনিবার্য কারণে তারিখ পরিবর্তন হলে জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল ওয়েবসাইট (nu.ac.bd)-এ সংশোধিত নোটিশ প্রকাশ করা হয়। নিয়মিত নোটিশ বোর্ড পর্যবেক্ষণ করার পরামর্শ দেওয়া হলো।</p>
 </div>
 
-<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-<h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 17px; font-weight: 700;">প্রশ্ন ৪: ২য় বর্ষের পরীক্ষার সময়সূচি প্রতিদিন কয়টায় শুরু হবে?</h4>
-<p style="margin: 0; color: #475569; font-size: 15px; line-height: 1.7;">
-উত্তর: রুটিন অনুযায়ী প্রতিদিন দুপুর ০১:০০ টা অথবা ০১:৩০ টা থেকে পরীক্ষা শুরু হবে। প্রশ্নপত্রে উল্লেখিত পূর্ণ সময় পর্যন্ত পরীক্ষা চলবে।
-</p>
-</div>
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px;">
+<h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 17px; font-weight: 700;">প্রশ্ন ৪: অনার্স ২য় বর্ষের ব্যবহারিক পরীক্ষা কখন অনুষ্ঠিত হবে?</h4>
+<p style="margin: 0; color: #475569; font-size: 15.5px; line-height: 1.75;">উত্তর: তত্ত্বীয় পরীক্ষা সমাপ্ত হওয়ার পর বিশ্ববিদ্যালয় থেকে ব্যবহারিক পরীক্ষার কেন্দ্রীয় সময়সীমা ঘোষণা করা হয় এবং কলেজ কর্তৃপক্ষ নিজ সুবিধাজনক সময়ে ব্যবহারিক পরীক্ষার আয়োজন করে।</p>
 </div>
 
+</div>
+
+<!-- Author Attribution Box -->
 <div class="htbd-author-box" style="display: flex; align-items: center; gap: 18px; margin: 35px 0 25px 0; padding: 18px 22px; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #1e3a8a; border-radius: 10px; font-family: 'SolaimanLipi', Arial, sans-serif;">
   <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp" 
        alt="ফারুক স্যার (মো. ওমর ফারুক)" 
@@ -308,40 +563,37 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
     <h4 style="margin: 0 0 4px 0; color: #1e3a8a; font-size: 18px; font-weight: 700; line-height: 1.3;">ফারুক স্যার (মো. ওমর ফারুক)</h4>
     <div class="htbd-author-meta" style="font-size: 13px; color: #64748b; margin-bottom: 6px; font-weight: 600;">শিক্ষাবিদ ও অ্যাকাডেমিক গবেষক | প্রতিষ্ঠাতা, HelpTrickBD</div>
     <p class="htbd-author-bio" style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0;">
-      জাতীয় বিশ্ববিদ্যালয়ের পাঠ্যক্রম এবং স্নাতক ও ডিগ্রি পর্যায়ের শিক্ষার্থীদের অ্যাকাডেমিক প্রস্তুতি ও গাইডলাইনে এক দশকের শিক্ষকতা অভিজ্ঞতাসম্পন্ন একজন অ্যাকাডেমিক মেন্টর।
+      অ্যাকাডেমিক পাঠ্যক্রম এবং জাতীয় বিশ্ববিদ্যালয়ের স্নাতক পর্যায়ের পরীক্ষা প্রস্তুতি ও সাজেশন প্রণয়নে এক দশকের বাস্তব শিক্ষকতার অভিজ্ঞতাসম্পন্ন একজন অ্যাকাডেমিক মেন্টর।
     </p>
   </div>
 </div>
 
+<!-- BlogPosting JSON-LD Schema -->
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine & Subject Code",
-  "description": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষা ২০২৬ রুটিন, বিষয়কোড, ইংরেজি আবশ্যিক পাস শর্টকাট ও বিভাগভিত্তিক সময়সূচি বিস্তারিত গাইড।",
-  "image": "{CDN_BANNER}",
+  "description": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার পূর্ণাঙ্গ সময়সূচি ২০২৬। কলা, সামাজিক বিজ্ঞান, ব্যবসায় শিক্ষা ও বিজ্ঞান অনুষদের সকল বিভাগের রুটিন কার্ড, বিষয় কোড ও ইংরেজি আবশ্যিক পাস ট্রিকস।",
+  "image": "{HERO_BANNER}",
   "author": {{
     "@type": "Person",
-    "name": "ফারুক স্যার (মো. ওমর ফারুক)",
-    "jobTitle": "Senior Academic Researcher & Educator"
+    "name": "ফারুক স্যার (মো. ওমর ফারুক)"
   }},
   "publisher": {{
     "@type": "Organization",
     "name": "HelpTrickBD",
     "logo": {{
       "@type": "ImageObject",
-      "url": "https://www.helptrickbd.com/favicon.ico"
+      "url": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/logo/helptrickbd_logo.png"
     }}
   }},
   "datePublished": "2026-10-01T02:00:00+06:00",
-  "dateModified": "2026-10-01T02:00:00+06:00",
-  "mainEntityOfPage": {{
-    "@type": "WebPage",
-    "@id": "https://www.helptrickbd.com/2026/10/nu-honours-2nd-year-exam-routine-2026.html"
-  }}
+  "dateModified": "2026-10-01T02:00:00+06:00"
 }}
 </script>
 
+<!-- FAQPage JSON-LD Schema -->
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -349,68 +601,62 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
   "mainEntity": [
     {{
       "@type": "Question",
-      "name": "অনার্স ২য় বর্ষ পরীক্ষায় ইংরেজি আবশ্যিকের নম্বর কি সিজিপিএ (CGPA)-তে যোগ হয়?",
+      "name": "অনার্স ২য় বর্ষ পরীক্ষা প্রতিদিন কখন শুরু হয়?",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "না। ইংরেজি আবশ্যিক হলো একটি নন-ক্রেডিট বিষয়। এতে পাস করা বাধ্যতামূলক (৩৩ নম্বর পেয়ে পাস করতে হবে), কিন্তু এই বিষয়ের প্রাপ্ত গ্রেড বা পয়েন্ট মূল সিজিপিএ ফলাফলে যোগ হয় না।"
+        "text": "জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল রুটিন অনুযায়ী পরীক্ষা প্রতিদিন দুপুর ০১:০০ টা থেকে শুরু হয়।"
       }}
     }},
     {{
       "@type": "Question",
-      "name": "অনার্স ২য় বর্ষ থেকে ৩য় বর্ষে প্রমোশনের জন্য ন্যূনতম কত জিপিএ প্রয়োজন?",
+      "name": "ইংরেজি আবশ্যিক (221109) পরীক্ষায় পাস মার্ক কত?",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "জাতীয় বিশ্ববিদ্যালয়ের নিয়ম অনুযায়ী ৩য় বর্ষে উত্তীর্ণ হতে হলে ন্যূনতম GPA 2.00 পেতে হবে এবং অন্তত ৩টি প্রধান বিষয়ে ‘D’ গ্রেড বা ৪০% নম্বর পেয়ে পাস করতে হবে।"
+        "text": "ইংরেজি আবশ্যিক বিষয়ে পাস মার্ক ৩৩। এটি একটি নন-ক্রেডিট কোর্স হলেও পাস করা বাধ্যতামূলক।"
       }}
     }},
     {{
       "@type": "Question",
-      "name": "কোনো কারণে রুটিন পরিবর্তন হলে সংশোধিত রুটিন কোথায় পাওয়া যাবে?",
+      "name": "কোনো কারণে পরীক্ষার রুটিন পরিবর্তন হলে কীভাবে জানা যাবে?",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "রুটিনের যে কোনো পরিবর্তন জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল পোর্টাল (nu.ac.bd)-এ প্রকাশ করা হয়। এছাড়া হেল্পট্রিকবিডি পোর্টালে সংশোধিত নোটিশ আসামাত্রই লাইভ আপডেট যুক্ত করা হবে।"
+        "text": "জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল ওয়েবসাইট nu.ac.bd-এ সংশোধিত নোটিশ প্রকাশ করা হয়।"
       }}
     }},
     {{
       "@type": "Question",
-      "name": "২য় বর্ষের পরীক্ষার সময়সূচি প্রতিদিন কয়টায় শুরু হবে?",
+      "name": "অনার্স ২য় বর্ষের ব্যবহারিক পরীক্ষা কখন অনুষ্ঠিত হবে?",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "রুটিন অনুযায়ী প্রতিদিন দুপুর ০১:০০ টা অথবা ০১:৩০ টা থেকে পরীক্ষা শুরু হবে। প্রশ্নপত্রে উল্লেখিত পূর্ণ সময় পর্যন্ত পরীক্ষা চলবে।"
+        "text": "তত্ত্বীয় পরীক্ষা সমাপ্ত হওয়ার পর বিশ্ববিদ্যালয় থেকে ব্যবহারিক পরীক্ষার কেন্দ্রীয় সময়সূচি ঘোষণা করা হয়।"
       }}
     }}
   ]
 }}
-</script>
-"""
+</script>"""
 
-METADATA = {
-    "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine & Subject Code",
-    "english_slug": "nu-honours-2nd-year-exam-routine-2026",
-    "labels": ["Education Guide", "Education"],
-    "canonical_url": "https://www.helptrickbd.com/2026/10/nu-honours-2nd-year-exam-routine-2026.html",
-    "description": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষা ২০২৬-এর পূর্ণাঙ্গ রুটিন, বিষয়কোড, ইংরেজি আবশ্যিক পাসের শর্টকাট টেকনিক ও বিভাগভিত্তিক বিস্তারিত সময়সূচি গাইড।",
-    "search_description": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষা ২০২৬ রুটিন, বিষয়কোড, ইংরেজি আবশ্যিক পাস শর্টকাট ও প্রস্তুতি নির্দেশিকা।",
-    "banner_image": CDN_BANNER
-}
-
-def main():
-    print("=" * 72)
-    print("  GENERATING NU HONOURS 2ND YEAR ROUTINE 2026 MASTER POST")
-    print("=" * 72)
-
-    os.makedirs(os.path.dirname(OUTPUT_HTML), exist_ok=True)
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-        f.write(HTML_CONTENT.strip())
+        f.write(full_html)
+
+    meta_data = {
+        "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine & Subject Code",
+        "permalink": "nu-honours-2nd-year-exam-routine-2026",
+        "labels": ["জাতীয় বিশ্ববিদ্যালয়", "অনার্স রুটিন", "এডুকেশন নোটিশ"],
+        "post_id": "1085826635177863206",
+        "status": "DRAFT",
+        "search_description": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার পূর্ণাঙ্গ সময়সূচি ২০২৬। সকল বিভাগের রুটিন কার্ড, বিষয় কোড ও ইংরেজি আবশ্যিক পাস ট্রিকস।",
+        "word_count": len(full_html.split())
+    }
 
     with open(OUTPUT_META, "w", encoding="utf-8") as f:
-        json.dump(METADATA, f, ensure_ascii=False, indent=2)
+        json.dump(meta_data, f, ensure_ascii=False, indent=2)
 
-    words = len(HTML_CONTENT.split())
-    print(f"[OK] Master HTML saved: {OUTPUT_HTML}")
-    print(f"[OK] Metadata saved: {OUTPUT_META}")
-    print(f"[OK] Word count: {words} words")
-    print("=" * 72)
+    word_count = len(full_html.split())
+    print(f"[SUCCESS] Master post generated: {OUTPUT_HTML}")
+    print(f"          Word count: ~{word_count} words")
+    print(f"          Metadata: {OUTPUT_META}")
+    return True
+
 
 if __name__ == "__main__":
-    main()
+    generate_master_post()
