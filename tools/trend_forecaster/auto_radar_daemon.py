@@ -41,6 +41,7 @@ from tools.trend_forecaster.bd_exam_early_radar import (
     generate_360_master_report,
     OUTPUT_REPORT
 )
+from tools.trend_forecaster.official_board_scraper import fetch_all_official_board_notices
 
 SEEN_NOTICES_FILE = os.path.join(PROJECT_ROOT, "tools", "trend_forecaster", "seen_radar_notices.json")
 
@@ -101,13 +102,20 @@ def run_radar_check():
     print(f"  চলতি সময়: {now.strftime('%Y-%m-%d %I:%M %p')}")
     print("=" * 72)
 
-    print("[*] সর্বশেষ লাইভ নোটিশ ও রুটিন সার্চ করা হচ্ছে...")
-    live_notices = fetch_all_tier_live_notices()
+    print("[*] অফিসিয়াল শিক্ষা বোর্ড ও বিশ্ববিদ্যালয়ের নোটিশ পোর্টাল স্ক্র্যাপ করা হচ্ছে...")
+    official_notices = fetch_all_official_board_notices()
+    print(f"[OK] {len(official_notices)}টি অফিসিয়াল নোটিশ ও PDF সরাসরি সংগ্রহ করা হয়েছে।")
+
+    print("[*] সর্বশেষ সংবাদ ও প্রেস বিজ্ঞপ্তি স্ক্যান করা হচ্ছে...")
+    news_notices = fetch_all_tier_live_notices()
+    
+    # Combined notices, official first
+    all_notices = official_notices + news_notices
     
     new_notices = []
-    keywords_of_interest = ["রুটিন", "routine", "তারিখ", "পরীক্ষা", "ফরম পূরণ", "বিজ্ঞপ্তি", "সংশোধিত", "ভর্তি", "সার্কুলার", "ফলাফল", "রেজাল্ট"]
+    keywords_of_interest = ["রুটিন", "routine", "তারিখ", "পরীক্ষা", "ফরম পূরণ", "বিজ্ঞপ্তি", "সংশোধিত", "ভর্তি", "সার্কুলার", "ফলাফল", "রেজাল্ট", "কেন্দ্র"]
 
-    for n in live_notices:
+    for n in all_notices:
         n_hash = make_notice_hash(n)
         if n_hash not in seen_db:
             is_urgent = any(kw in n["title"].lower() for kw in keywords_of_interest)
@@ -119,11 +127,11 @@ def run_radar_check():
                 "first_seen": now.strftime("%Y-%m-%d %H:%M:%S")
             }
 
-    print(f"[OK] মোট {len(live_notices)}টি নোটিশের মধ্যে {len(new_notices)}টি নতুন নোটিশ শনাক্ত হয়েছে।")
+    print(f"[OK] মোট {len(all_notices)}টি নোটিশের মধ্যে {len(new_notices)}টি নতুন নোটিশ শনাক্ত হয়েছে।")
 
     # Evaluate 30-45 day Golden Window
     radar_results = evaluate_360_degree_radar(now.month)
-    generate_360_master_report(radar_results, live_notices, now)
+    generate_360_master_report(radar_results, all_notices, now)
     save_seen_notices(seen_db)
 
     # If new urgent notices found, trigger Windows Toast Notification

@@ -123,9 +123,14 @@ def build_radar_alert_html(new_notices, urgent_items, now):
 
     if new_notices:
         lines.append("<b>জরুরি নতুন নোটিশ ও রুটিন প্রকাশিত হয়েছে:</b>")
-        for idx, n in enumerate(new_notices[:6], 1):
+        for idx, n in enumerate(new_notices[:7], 1):
             title = n["title"].replace("<", "&lt;").replace(">", "&gt;")
-            lines.append(f"{idx}. {title}")
+            source = f"[{n.get('source', 'শিক্ষা বোর্ড')}]"
+            pdf_link = n.get("pdf_url")
+            if pdf_link:
+                lines.append(f"{idx}. {source} {title}\n   <a href=\"{pdf_link}\">[অফিসিয়াল PDF ডাউনলোড]</a>")
+            else:
+                lines.append(f"{idx}. {source} {title}")
         lines.append("")
     else:
         lines.append("<b>নিয়মিত ট্র্যাকিং আপডেট:</b> নতুন কোনো রুটিন আসেনি।")
