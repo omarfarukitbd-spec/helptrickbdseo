@@ -110,44 +110,62 @@ def send_telegram_message(bot_token, chat_id, html_text):
         return False
 
 
-def build_radar_alert_html(new_notices, urgent_items, now):
+def build_radar_alert_html(new_notices, all_notices, urgent_items, now):
     """
     Builds clean, professional Bengali alert text strictly with zero emojis.
+    Prominently highlights:
+    1. [ব্রেকিং — মাত্র প্রকাশিত নতুন নোটিশ (গত ১ ঘণ্টার মধ্যে)] -> Items not present in previous scan
+    2. [চলতি সপ্তাহের সক্রিয় অফিসিয়াল নোটিশ ও PDF]
+    3. [চলতি মাসের এসইও গোল্ডেন উইন্ডো — শীর্ষ ৩টি অগ্রাধিকার পোস্ট]
     """
     time_str = now.strftime("%Y-%m-%d | %I:%M %p")
     lines = [
         "<b>[হেল্পট্রিকবিডি ৩৬০-ডিগ্রি এক্সাম রাডার সতর্কবার্তা]</b>",
-        f"<b>তারিখ ও সময়:</b> {time_str}",
-        "----------------------------------------"
+        f"<b>স্ক্যান সময়কাল:</b> {time_str} (প্রতি ১ ঘণ্টা পর পর অটো-চেক)",
+        "========================================"
     ]
 
+    # SECTION 1: LAST UPDATED INFO (JUST PUBLISHED IN LAST 1 HOUR)
+    lines.append("<b>[ব্রেকিং — মাত্র প্রকাশিত নতুন নোটিশ ও রুটিন (গত ১ ঘণ্টার মধ্যে)]</b>")
     if new_notices:
-        lines.append("<b>জরুরি নতুন নোটিশ ও রুটিন প্রকাশিত হয়েছে:</b>")
-        for idx, n in enumerate(new_notices[:7], 1):
+        lines.append("<i>(নিচের নোটিশগুলো আগের স্ক্যানে ছিল না, এইমাত্র অফিসিয়াল পোর্টালে যুক্ত হয়েছে)</i>")
+        for idx, n in enumerate(new_notices[:8], 1):
             title = n["title"].replace("<", "&lt;").replace(">", "&gt;")
             source = f"[{n.get('source', 'শিক্ষা বোর্ড')}]"
             pdf_link = n.get("pdf_url")
             if pdf_link:
-                lines.append(f"{idx}. {source} {title}\n   <a href=\"{pdf_link}\">[অফিসিয়াল PDF ডাউনলোড]</a>")
+                lines.append(f"<b>{idx}. {source} {title}</b>\n   <a href=\"{pdf_link}\">[অফিসিয়াল PDF ডাউনলোড]</a>")
             else:
-                lines.append(f"{idx}. {source} {title}")
+                lines.append(f"<b>{idx}. {source} {title}</b>")
         lines.append("")
+        lines.append("<b>তাৎক্ষণিক অ্যাকশন:</b> এখনই পিসি অন করে সবার আগে পোস্ট তৈরি করুন এবং গুগলে ১ নম্বর স্থান নিশ্চিত করুন!")
     else:
-        lines.append("<b>নিয়মিত ট্র্যাকিং আপডেট:</b> নতুন কোনো রুটিন আসেনি।")
-        lines.append("")
+        lines.append("<i>গত ১ ঘণ্টায় নতুন কোনো নোটিশ আপলোড হয়নি। সিস্টেম ২৪ ঘণ্টা প্রতি ঘণ্টায় স্বয়ংক্রিয়ভাবে নজরদারি অব্যাহত রেখেছে।</i>")
+    
+    lines.append("----------------------------------------")
 
+    # SECTION 2: ACTIVE OFFICIAL NOTICES (Recent Top Official Notices with PDF)
+    lines.append("<b>[চলতি সপ্তাহের সক্রিয় শীর্ষ নোটিশ ও অফিসিয়াল PDF]</b>")
+    official_sample = [n for n in all_notices if n.get("pdf_url") and not n.get("pdf_url").endswith("#")][:5]
+    for idx, n in enumerate(official_sample, 1):
+        title = n["title"].replace("<", "&lt;").replace(">", "&gt;")
+        source = f"[{n.get('source', 'শিক্ষা বোর্ড')}]"
+        lines.append(f"• {source} {title}\n  <a href=\"{n['pdf_url']}\">[অফিসিয়াল PDF]</a>")
+    lines.append("----------------------------------------")
+
+    # SECTION 3: 30-45 DAY SEO GOLDEN WINDOW RECOMMENDATIONS
     if urgent_items:
-        lines.append("<b>চলতি মাসের শীর্ষ এসইও গোল্ডেন উইন্ডো (তাৎক্ষণিক পোস্ট করণীয়):</b>")
+        lines.append("<b>[চলতি মাসের এসইও গোল্ডেন উইন্ডো — শীর্ষ ৩টি অগ্রাধিকার পোস্ট]</b>")
         for idx, item in enumerate(urgent_items[:3], 1):
             name = item["exam_name"].replace("<", "&lt;").replace(">", "&gt;")
             keywords = ", ".join(item["target_keywords"][:2]).replace("<", "&lt;").replace(">", "&gt;")
-            lines.append(f"• <b>{name}</b>")
-            lines.append(f"  টার্গেট কি-ওয়ার্ড: <i>{keywords}</i>")
-            lines.append(f"  করণীয়: {item['content_blueprint'][:70]}...")
+            lines.append(f"<b>{idx}. {name}</b>")
+            lines.append(f"   টার্গেট কি-ওয়ার্ড: <i>{keywords}</i>")
+            lines.append(f"   করণীয়: {item['content_blueprint'][:70]}...")
             lines.append("")
 
-    lines.append("----------------------------------------")
-    lines.append("<b>অ্যাকশন:</b> পিসি অন করে সবার আগে পোস্ট তৈরি করুন এবং গুগলে ১ নম্বর স্থান নিশ্চিত করুন!")
+    lines.append("========================================")
+    lines.append("হেল্পট্রিকবিডি ক্লাউড বট • ২৪ ঘণ্টা স্বয়ংক্রিয় ক্লাউড মনিটরিং")
     return "\n".join(lines)
 
 
@@ -198,11 +216,11 @@ def main():
         return
 
     # Normal execution: scan notices and radar
-    new_notices, urgent_items = run_radar_check()
+    new_notices, all_notices, urgent_items = run_radar_check()
 
     # Send message if there are new notices OR if forced (scheduled check)
     if new_notices or args.force:
-        html_msg = build_radar_alert_html(new_notices, urgent_items, now)
+        html_msg = build_radar_alert_html(new_notices, all_notices, urgent_items, now)
         ok = send_telegram_message(bot_token, chat_id, html_msg)
         if ok:
             print("[SUCCESS] টেলিগ্রামে সফলভাবে এক্সাম রাডার রিপোর্ট পাঠানো হয়েছে!")

@@ -182,6 +182,111 @@ def scrape_bteb_notices(limit=8):
     return notices
 
 
+def scrape_bmeb_notices(limit=8):
+    """
+    Scrapes Bangladesh Madrasah Education Board (bmeb.gov.bd) official notices & PDFs.
+    """
+    url = "http://www.bmeb.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for link, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["দাখিল", "আলim", "আলিম", "পরীক্ষা", "রুটিন", "ফরম পূরণ", "বিজ্ঞপ্তি", "ফলাফল"]):
+                if len(clean) > 12 and clean not in seen:
+                    seen.add(clean)
+                    full_link = link if link.startswith("http") else "http://www.bmeb.gov.bd" + link
+                    notices.append({
+                        "source": "মাদ্রাসা শিক্ষা বোর্ড (BMEB Official)",
+                        "title": clean,
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "দাখিল ও আলিম"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] BMEB Notice Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_ntrca_notices(limit=6):
+    """
+    Scrapes NTRCA (Non-Government Teachers Registration and Certification Authority).
+    """
+    url = "http://www.ntrca.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for link, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["শিক্ষক", "নিবন্ধন", "বিজ্ঞপ্তি", "রুটিন", "পরীক্ষা", "ফলাফল", "ভাইভা", "সিলেবাস"]):
+                if len(clean) > 12 and clean not in seen:
+                    seen.add(clean)
+                    full_link = link if link.startswith("http") else "http://www.ntrca.gov.bd" + link
+                    notices.append({
+                        "source": "এনটিআরসিএ (NTRCA Official)",
+                        "title": clean,
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "শিক্ষক নিবন্ধন"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] NTRCA Notice Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_du_7college_notices(limit=6):
+    """
+    Scrapes Dhaka University Affiliated 7 Colleges official portal.
+    """
+    url = "https://7college.du.ac.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for link, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["পরীক্ষা", "রুটিন", "ফরম পূরণ", "বিজ্ঞপ্তি", "অনার্স", "মাস্টার্স", "রেজাল্ট"]):
+                if len(clean) > 10 and clean not in seen:
+                    seen.add(clean)
+                    full_link = link if link.startswith("http") else "https://7college.du.ac.bd/" + link.lstrip("/")
+                    notices.append({
+                        "source": "ঢাবি অধিভুক্ত ৭ কলেজ (7 College Official)",
+                        "title": clean,
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "৭ কলেজ অনার্স ও মাস্টার্স"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] 7 College Notice Scraper ত্রুটি: {e}")
+
+    return notices
+
+
 def fetch_all_official_board_notices():
     """
     Consolidates notices directly from all official education portals.
@@ -189,16 +294,22 @@ def fetch_all_official_board_notices():
     all_notices = []
     
     # 1. National University
-    nu = scrape_national_university_notices(limit=12)
-    all_notices.extend(nu)
+    all_notices.extend(scrape_national_university_notices(limit=10))
 
     # 2. Dhaka Education Board
-    dhaka = scrape_dhaka_board_notices(limit=6)
-    all_notices.extend(dhaka)
+    all_notices.extend(scrape_dhaka_board_notices(limit=6))
 
     # 3. BTEB Technical Board
-    bteb = scrape_bteb_notices(limit=6)
-    all_notices.extend(bteb)
+    all_notices.extend(scrape_bteb_notices(limit=6))
+
+    # 4. BMEB Madrasah Education Board
+    all_notices.extend(scrape_bmeb_notices(limit=6))
+
+    # 5. NTRCA Teachers Registration
+    all_notices.extend(scrape_ntrca_notices(limit=6))
+
+    # 6. DU 7 Colleges
+    all_notices.extend(scrape_du_7college_notices(limit=4))
 
     return all_notices
 

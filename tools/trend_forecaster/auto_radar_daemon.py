@@ -145,11 +145,11 @@ def run_radar_check():
             )
             print(f"[ALERT] নতুন জরুরি নোটিশ শনাক্ত হয়েছে: {first}")
 
-    return new_notices, [r for r in radar_results if r["urgency_score"] <= 2]
+    return new_notices, all_notices, [r for r in radar_results if r["urgency_score"] <= 2]
 
 
 if __name__ == "__main__":
-    new_notices, urgent_items = run_radar_check()
+    new_notices, all_notices, urgent_items = run_radar_check()
     if new_notices:
         print("\n[*] নতুন শনাক্তকৃত নোটিশসমূহ:")
         for idx, n in enumerate(new_notices, 1):
