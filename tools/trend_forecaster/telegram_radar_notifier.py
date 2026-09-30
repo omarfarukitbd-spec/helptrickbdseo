@@ -153,15 +153,16 @@ def build_radar_alert_html(new_notices, all_notices, urgent_items, now):
         lines.append(f"• {source} {title}\n  <a href=\"{n['pdf_url']}\">[অফিসিয়াল PDF]</a>")
     lines.append("----------------------------------------")
 
-    # SECTION 3: 30-45 DAY SEO GOLDEN WINDOW RECOMMENDATIONS
+    # SECTION 3: 30-45 DAY SEO GOLDEN WINDOW & HIGH-TRAFFIC ROADMAP
     if urgent_items:
-        lines.append("<b>[চলতি মাসের এসইও গোল্ডেন উইন্ডো — শীর্ষ ৩টি অগ্রাধিকার পোস্ট]</b>")
+        lines.append("<b>[সর্বোচ্চ ট্রাফিকের অগ্রাধিকারভিত্তিক পোস্ট ও করণীয় গাইড]</b>")
         for idx, item in enumerate(urgent_items[:3], 1):
             name = item["exam_name"].replace("<", "&lt;").replace(">", "&gt;")
-            keywords = ", ".join(item["target_keywords"][:2]).replace("<", "&lt;").replace(">", "&gt;")
-            lines.append(f"<b>{idx}. {name}</b>")
-            lines.append(f"   টার্গেট কি-ওয়ার্ড: <i>{keywords}</i>")
-            lines.append(f"   করণীয়: {item['content_blueprint'][:70]}...")
+            keywords = ", ".join(item["target_keywords"][:3]).replace("<", "&lt;").replace(">", "&gt;")
+            lines.append(f"<b>অগ্রাধিকার {idx}: {name}</b>")
+            lines.append(f"• <b>সার্চ ভলিউম:</b> {item.get('search_volume', 'উচ্চ')}")
+            lines.append(f"• <b>টার্গেট কি-ওয়ার্ডস:</b> <i>{keywords}</i>")
+            lines.append(f"• <b>পোস্টে যা যা দিতে হবে:</b> {item['content_blueprint']}")
             lines.append("")
 
     lines.append("========================================")
