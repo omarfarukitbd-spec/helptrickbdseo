@@ -10,7 +10,7 @@ Strictly zero-emoji compliant.
 
 import re
 import random
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from bs4 import BeautifulSoup
 
 
