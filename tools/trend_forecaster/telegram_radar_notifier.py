@@ -155,15 +155,20 @@ def build_radar_alert_html(new_notices, all_notices, urgent_items, now):
 
     # SECTION 3: 30-45 DAY SEO GOLDEN WINDOW & HIGH-TRAFFIC ROADMAP
     if urgent_items:
-        lines.append("<b>[সর্বোচ্চ ট্রাফিকের অগ্রাধিকারভিত্তিক পোস্ট ও করণীয় গাইড]</b>")
+        lines.append("<b>[সাইটে সর্বোচ্চ ভিজিটর টানার জন্য এখনই যা পোস্ট করতে হবে]</b>")
+        lines.append("<i>(কনটেন্ট চাহিদা ও গুগল সার্চ ট্রেন্ড অনুযায়ী অগ্রাধিকার তালিকা)</i>\n")
         for idx, item in enumerate(urgent_items[:3], 1):
             name = item["exam_name"].replace("<", "&lt;").replace(">", "&gt;")
             keywords = ", ".join(item["target_keywords"][:3]).replace("<", "&lt;").replace(">", "&gt;")
-            lines.append(f"<b>অগ্রাধিকার {idx}: {name}</b>")
+            status_tag = "তাৎক্ষণিক সর্বোচ্চ ট্রাফিক" if idx == 1 else "উচ্চ সম্ভাবনা"
+            lines.append(f"<b>অগ্রাধিকার {idx} ({status_tag}):</b>")
+            lines.append(f"• <b>পরীক্ষা/বিষয়:</b> {name}")
             lines.append(f"• <b>সার্চ ভলিউম:</b> {item.get('search_volume', 'উচ্চ')}")
             lines.append(f"• <b>টার্গেট কি-ওয়ার্ডস:</b> <i>{keywords}</i>")
-            lines.append(f"• <b>পোস্টে যা যা দিতে হবে:</b> {item['content_blueprint']}")
+            lines.append(f"• <b>পোস্টে যা যা তথ্য দিতে হবে:</b>\n  {item['content_blueprint']}")
             lines.append("")
+
+        lines.append("<b>পরামর্শ:</b> সাইটে সর্বোচ্চ ভিজিটর আনতে সবার আগে <b>অগ্রাধিকার ১</b> এর পোস্টটি রেডি করে পাবলিশ করুন!")
 
     lines.append("========================================")
     lines.append("হেল্পট্রিকবিডি ক্লাউড বট • ২৪ ঘণ্টা স্বয়ংক্রিয় ক্লাউড মনিটরিং")
