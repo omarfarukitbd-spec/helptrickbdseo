@@ -162,7 +162,7 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
 </p>
 
 <div style="font-family: 'SolaimanLipi', sans-serif; line-height: 1.85; font-size: 16px; color: #334155;">
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px;">১. রাষ্ট্রবিজ্ঞান বিভাগ (Political Science Department):</h3>
+<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #1e3a8a; padding-left: 10px;">NU Honours 2nd Year Political Science Exam Routine 2026 | অনার্স ২য় বর্ষ রাষ্ট্রবিজ্ঞান বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
 <p style="margin-bottom: 8px;">রাষ্ট্রবিজ্ঞান বিভাগের বিস্তারিত সিলেবাস ও সাজেশন জানতে আমাদের <a href="https://www.helptrickbd.com/2025/01/honours-political-science-book-list.html" style="color: #0284c7; text-decoration: underline; font-weight: bold;">রাষ্ট্রবিজ্ঞান অনার্স বইয়ের তালিকা ও বিষয় কোড গাইড</a> পড়ে নিতে পারেন। ২য় বর্ষের মূল বিষয়সমূহ:</p>
 <ul style="padding-left: 20px; margin-bottom: 15px;">
 <li>British Political &amp; Constitutional Development (বিষয় কোড: 221901)</li>
@@ -172,11 +172,11 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
 <li>English (Compulsory) — Non-Credit (বিষয় কোড: 221109)</li>
 </ul>
 <figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_POLITICAL}" alt="জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ রাষ্ট্রবিজ্ঞান বিভাগ পরীক্ষার রুটিন ২০২৬ ও বিষয় কোড" title="NU Honours 2nd Year Political Science Exam Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">রাষ্ট্রবিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার বিষয়ভিত্তিক সময়সূচি ও কোড কার্ড</figcaption>
+<img src="{CDN_POLITICAL}" alt="NU Honours 2nd Year Political Science Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year Political Science Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
+<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">রাষ্ট্রবিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
 </figure>
 
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px;">২. হিসাববিজ্ঞান বিভাগ (Accounting Department):</h3>
+<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #065f46; padding-left: 10px;">NU Honours 2nd Year Accounting Exam Routine 2026 | অনার্স ২য় বর্ষ হিসাববিজ্ঞান বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
 <ul style="padding-left: 20px; margin-bottom: 15px;">
 <li>Advanced Accounting-I (বিষয় কোড: 222501)</li>
 <li>Business Communication and Report Writing (বিষয় কোড: 222503)</li>
@@ -186,11 +186,11 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
 <li>English (Compulsory) — Non-Credit (বিষয় কোড: 221109)</li>
 </ul>
 <figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_ACCOUNTING}" alt="জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ হিসাববিজ্ঞান বিভাগ পরীক্ষার রুটিন ২০২৬ ও বিষয় কোড" title="NU Honours 2nd Year Accounting Exam Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">হিসাববিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার বিষয়ভিত্তিক সময়সূচি ও কোড কার্ড</figcaption>
+<img src="{CDN_ACCOUNTING}" alt="NU Honours 2nd Year Accounting Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year Accounting Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
+<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">হিসাববিজ্ঞান বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
 </figure>
 
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px;">৩. ব্যবস্থাপনা বিভাগ (Management Department):</h3>
+<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #0f172a; padding-left: 10px;">NU Honours 2nd Year Management Exam Routine 2026 | অনার্স ২য় বর্ষ ব্যবস্থাপনা বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
 <ul style="padding-left: 20px; margin-bottom: 15px;">
 <li>Human Resource Management (বিষয় কোড: 222601)</li>
 <li>Business Communication in English (বিষয় কোড: 222603)</li>
@@ -200,11 +200,11 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
 <li>English (Compulsory) — Non-Credit (বিষয় কোড: 221109)</li>
 </ul>
 <figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_MANAGEMENT}" alt="জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ ব্যবস্থাপনা বিভাগ পরীক্ষার রুটিন ২০২৬ ও বিষয় কোড" title="NU Honours 2nd Year Management Exam Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">ব্যবস্থাপনা বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার বিষয়ভিত্তিক সময়সূচি ও কোড কার্ড</figcaption>
+<img src="{CDN_MANAGEMENT}" alt="NU Honours 2nd Year Management Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year Management Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
+<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">ব্যবস্থাপনা বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
 </figure>
 
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px;">৪. বাংলা বিভাগ (Bangla Department):</h3>
+<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #9a3412; padding-left: 10px;">NU Honours 2nd Year Bangla Department Routine 2026 | অনার্স ২য় বর্ষ বাংলা বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
 <ul style="padding-left: 20px; margin-bottom: 15px;">
 <li>বাংলা সাহিত্যের ইতিহাস-১: প্রাচীন ও মধ্যযুগ (বিষয় কোড: 221001)</li>
 <li>মধ্যযুগের কবিতা (বিষয় কোড: 221003)</li>
@@ -213,11 +213,11 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
 <li>ইংরেজি (আবশ্যিক) — নন ক্রেডিট (বিষয় কোড: 221109)</li>
 </ul>
 <figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_BANGLA}" alt="জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ বাংলা বিভাগ পরীক্ষার রুটিন ২০২৬ ও বিষয় কোড" title="NU Honours 2nd Year Bangla Exam Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">বাংলা বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার বিষয়ভিত্তিক সময়সূচি ও কোড কার্ড</figcaption>
+<img src="{CDN_BANGLA}" alt="NU Honours 2nd Year Bangla Department Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year Bangla Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
+<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">বাংলা বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
 </figure>
 
-<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px;">৫. ইংরেজি বিভাগ (English Department):</h3>
+<h3 style="color: #0f172a; font-size: 19px; margin-top: 25px; border-left: 4px solid #312e81; padding-left: 10px;">NU Honours 2nd Year English Department Routine 2026 | অনার্স ২য় বর্ষ ইংরেজি বিভাগ পরীক্ষার রুটিন ও বিষয়কোড</h3>
 <ul style="padding-left: 20px; margin-bottom: 15px;">
 <li>Introduction to Drama (বিষয় কোড: 221101)</li>
 <li>Romantic Poetry (বিষয় কোড: 221103)</li>
@@ -226,8 +226,8 @@ HTML_CONTENT = f"""<figure style="margin: 0 0 25px 0; text-align: center;">
 <li>English (Compulsory) — Non-Credit (বিষয় কোড: 221109)</li>
 </ul>
 <figure style="margin: 20px 0 30px 0; text-align: center;">
-<img src="{CDN_ENGLISH}" alt="জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ ইংরেজি বিভাগ পরীক্ষার রুটিন ২০২৬ ও বিষয় কোড" title="NU Honours 2nd Year English Exam Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
-<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">ইংরেজি বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার বিষয়ভিত্তিক সময়সূচি ও কোড কার্ড</figcaption>
+<img src="{CDN_ENGLISH}" alt="NU Honours 2nd Year English Department Exam Routine 2026 Subject Code List" title="National University Honours 2nd Year English Routine 2026" style="width: 100%; max-width: 950px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: block; margin: 0 auto;" loading="lazy" />
+<figcaption style="font-size: 13.5px; color: #64748b; margin-top: 8px; font-family: 'SolaimanLipi', sans-serif;">ইংরেজি বিভাগ: অনার্স ২য় বর্ষ চূড়ান্ত পরীক্ষার অফিশিয়াল রুটিন ও বিষয়কোড কার্ড</figcaption>
 </figure>
 </div>
 
