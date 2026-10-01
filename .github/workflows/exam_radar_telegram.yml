@@ -77,8 +77,14 @@ jobs:
           fi
 
       - name: Commit & Sync State Back to GitHub
+        continue-on-error: true
         run: |
           git config --global user.name "HelpTrickBD Cloud Bot"
           git config --global user.email "bot@helptrickbd.com"
           git add tools/trend_forecaster/seen_radar_notices.json output_posts/ || true
-          git diff --staged --quiet || (git commit -m "chore(cloud-engine): sync seen notices and post state [skip ci]" && git push origin main)
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "chore(cloud-engine): sync seen notices and post state [skip ci]" || true
+            git push origin main || echo "Git push skipped or permissions restricted"
+          else
+            echo "No state changes to commit."
+          fi
