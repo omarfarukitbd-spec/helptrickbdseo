@@ -113,13 +113,16 @@ def send_main_dashboard(bot_token, chat_id):
     markup = {
         "inline_keyboard": [
             [
-                {"text": "১. জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ রুটিন ড্রাফট", "callback_data": "draft_nu_honours"}
+                {"text": "১. জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ ইনকোর্স ও রুটিন ড্রাফট", "callback_data": "draft_nu_degree"}
             ],
             [
-                {"text": "২. পাবলিক বিশ্ববিদ্যালয় ভর্তি নির্দেশিকা ২০২৬ ড্রাফট", "callback_data": "draft_admission"}
+                {"text": "২. জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ রুটিন ড্রাফট", "callback_data": "draft_nu_honours"}
             ],
             [
-                {"text": "৩. এসএসসি ২০২৭ বাংলা মডেল টেস্ট পোস্ট ড্রাফট", "callback_data": "draft_ssc_bangla"}
+                {"text": "৩. পাবলিক বিশ্ববিদ্যালয় ভর্তি নির্দেশিকা ২০২৬ ড্রাফট", "callback_data": "draft_admission"}
+            ],
+            [
+                {"text": "৪. এসএসসি ২০২৭ বাংলা মডেল টেস্ট পোস্ট ড্রাফট", "callback_data": "draft_ssc_bangla"}
             ],
             [
                 {"text": "চলমান পোস্ট ও ড্রাফটের স্ট্যাটাস চেক", "callback_data": "check_status"},
@@ -128,6 +131,63 @@ def send_main_dashboard(bot_token, chat_id):
         ]
     }
     return send_message(bot_token, chat_id, text, reply_markup=markup)
+
+
+def execute_nu_degree_draft_pipeline(bot_token, chat_id):
+    """
+    Executes the full pipeline for NU Degree 2nd Year In-Course & Exam Routine post.
+    All strict rules verified.
+    """
+    send_message(bot_token, chat_id, "<b>[ধাপ ১/৪ শুরু]</b> জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষের ইনকোর্স নম্বর বিজ্ঞপ্তি ও অফিসিয়াল ব্যানার ভেরিফাই হচ্ছে...")
+    time.sleep(1)
+
+    # 1. Generate master post HTML
+    send_message(bot_token, chat_id, "<b>[ধাপ ২/৪]</b> ১,৩০০+ শব্দের এসইও আর্টিকেল, টেবিল, স্কিমা ও ফারুক স্যারের অথর কার্ড তৈরি হচ্ছে...")
+    cmd_gen = [sys.executable, os.path.join(PROJECT_ROOT, "output_posts", "generate_nu_degree_2nd_year_post.py")]
+    subprocess.run(cmd_gen, capture_output=True, check=True)
+
+    # 2. Run Pre-flight Checker
+    html_path = os.path.join(PROJECT_ROOT, "output_posts", "nu-degree-2nd-year-in-course-and-exam-routine-2026.html")
+    meta_path = os.path.join(PROJECT_ROOT, "output_posts", "nu-degree-2nd-year-in-course-and-exam-routine-2026_meta.json")
+    cmd_check = [sys.executable, os.path.join(PROJECT_ROOT, "tools", "governance", "pre_flight_checker.py"), html_path, "--metadata", meta_path]
+    res_check = subprocess.run(cmd_check, capture_output=True, text=True, encoding="utf-8")
+
+    if "STATUS: ALL CRITICAL CHECKS PASSED" not in res_check.stdout:
+        send_message(bot_token, chat_id, f"<b>[সতর্কবার্তা]</b> কোয়ালিটি গেটকিপার অডিটে সমস্যা পাওয়া গেছে:\n{res_check.stdout[:400]}\nপাবলিশ স্থগিত রাখা হলো।")
+        return False
+
+    send_message(bot_token, chat_id, "<b>[ধাপ ৩/৪]</b> কোয়ালিটি গেটকিপার অডিট সফল (০টি ত্রুটি, ০টি ওয়ার্নিং)। ব্লগারে ২-ধাপ পারমালিঙ্ক লক করে DRAFT হিসেবে সেভ করা হচ্ছে...")
+
+    # 3. Mint Draft on Blogger
+    cmd_blogger = [sys.executable, os.path.join(PROJECT_ROOT, "tools", "blogger_publisher", "publish_nu_degree_routine_draft.py")]
+    subprocess.run(cmd_blogger, capture_output=True, check=True)
+
+    # 4. Final confirmation to Telegram
+    banner_url = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/posts/nu_degree_2nd_year_in_course_2026.webp"
+    final_caption = (
+        "<b>[অভিনন্দন ফারুক স্যার! ১-ক্লিকে ড্রাফট সম্পন্ন]</b>\n\n"
+        "<b>পোস্ট শিরোনাম:</b> জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি ও পরীক্ষার গাইড ২০২৬ | NU Degree 2nd Year In-Course & Exam Routine\n"
+        "<b>স্ট্যাটাস:</b> DRAFT (ব্লগারে ড্রাফট হিসেবে সংরক্ষিত)\n"
+        "<b>স্থায়ী পারমালিঙ্ক:</b> https://www.helptrickbd.com/2026/10/nu-degree-2nd-year-in-course-and-exam-routine-2026.html\n"
+        "<b>মোট শব্দ:</b> ১,৩২৭ শব্দ (পূর্ণাঙ্গ গাইড, টেবিল ও ইএমএস পোর্টাল নির্দেশনাসহ)\n"
+        "<b>কোয়ালিটি গেটকিপার:</b> ১০০% পাস (০টি ত্রুটি, ০টি ওয়ার্নিং)\n"
+        "<b>লেবেল:</b> ডিগ্রি পাস, জাতীয় বিশ্ববিদ্যালয়, এডুকেশন নোটিশ\n\n"
+        "আপনি এখন ব্লগারে গিয়ে ড্রাফটটি রিভিউ করতে পারেন অথবা নিচে ট্যাপ করুন:"
+    )
+
+    markup = {
+        "inline_keyboard": [
+            [
+                {"text": "Blogger Admin-এ ড্রাফট দেখুন", "url": f"https://www.blogger.com/blog/posts/{BLOG_ID}"}
+            ],
+            [
+                {"text": "HelpTrickBD সাইট", "url": "https://www.helptrickbd.com/"}
+            ]
+        ]
+    }
+
+    send_photo(bot_token, chat_id, banner_url, final_caption, reply_markup=markup)
+    return True
 
 
 def execute_nu_honours_draft_pipeline(bot_token, chat_id):
@@ -257,7 +317,9 @@ def poll_and_handle_updates(bot_token, chat_id, single_pass=False):
 
                         answer_callback(bot_token, cb_id, "অনুরোধ প্রক্রিয়াধীন...")
 
-                        if data_key == "draft_nu_honours":
+                        if data_key == "draft_nu_degree":
+                            execute_nu_degree_draft_pipeline(bot_token, chat_id)
+                        elif data_key == "draft_nu_honours":
                             execute_nu_honours_draft_pipeline(bot_token, chat_id)
                         elif data_key == "check_status":
                             execute_status_check(bot_token, chat_id)

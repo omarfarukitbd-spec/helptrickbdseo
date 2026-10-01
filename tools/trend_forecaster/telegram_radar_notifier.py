@@ -235,17 +235,57 @@ def generate_instant_seo_package(notice_title, source):
                 "অনার্স ১ম বর্ষ পরীক্ষার কেন্দ্র তালিকা"
             ]
         }
-    elif "ডিগ্রি" in t:
+    elif "ডিগ্রী" in t or "ডিগ্রি" in t:
+        if "২য় বর্ষ" in t or "২য় বর্ষ" in t or "দ্বিতীয় বর্ষ" in t:
+            return {
+                "proposed_title": f"জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি ও পরীক্ষার গাইড {now_year} | NU Degree 2nd Year In-Course & Exam Routine",
+                "english_slug": f"nu-degree-2nd-year-in-course-and-exam-routine-{now_year}",
+                "labels": "ডিগ্রি পাস, জাতীয় বিশ্ববিদ্যালয়, এডুকেশন নোটিশ",
+                "audience": "জাতীয় বিশ্ববিদ্যালয়ের ডিগ্রি (পাস) ও সার্টিফিকেট কোর্স ২য় বর্ষের শিক্ষার্থী ও শিক্ষকবৃন্দ",
+                "intent": "ইনকোর্স পরীক্ষার নম্বর অনলাইনে এন্ট্রির বর্ধিত সময়সূচি, প্রবেবল লিস্টের নিয়ম ও পরীক্ষার রুটিন আপডেট",
+                "top_queries": [
+                    f"ডিগ্রি ২য় বর্ষ ইনকোর্স পরীক্ষার নম্বর এন্ট্রি {now_year}",
+                    f"জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ পরীক্ষার রুটিন {now_year}",
+                    f"NU Degree 2nd Year In-course Marks Entry & Form Fill up {now_year}"
+                ]
+            }
+        elif "৩য় বর্ষ" in t or "৩য় বর্ষ" in t or "তৃতীয় বর্ষ" in t:
+            return {
+                "proposed_title": f"জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ৩য় বর্ষ পরীক্ষার রেজাল্ট {now_year} ও পুনঃনিরীক্ষণ আবেদন | NU Degree 3rd Year Result & Re-scrutiny",
+                "english_slug": f"nu-degree-3rd-year-exam-result-{now_year}",
+                "labels": "ডিগ্রি পাস, জাতীয় বিশ্ববিদ্যালয়, পরীক্ষার ফলাফল",
+                "audience": "জাতীয় বিশ্ববিদ্যালয়ের ডিগ্রি ৩য় বর্ষের ফলপ্রার্থী শিক্ষার্থী",
+                "intent": "ডিগ্রি ৩য় বর্ষ পরীক্ষার রেজাল্ট দেখার নিয়ম ও উত্তরপত্র পুনঃনিরীক্ষণ আবেদন পদ্ধতি",
+                "top_queries": [
+                    f"ডিগ্রি ৩য় বর্ষ পরীক্ষার রেজাল্ট {now_year}",
+                    f"NU Degree 3rd Year Result {now_year} nu.ac.bd",
+                    "ডিগ্রি পরীক্ষার খাতা চ্যালেঞ্জ নিয়ম"
+                ]
+            }
+        else:
+            return {
+                "proposed_title": f"জাতীয় বিশ্ববিদ্যালয় ডিগ্রি পাস ও সার্টিফিকেট কোর্স পরীক্ষার রুটিন {now_year} | NU Degree Exam Routine PDF",
+                "english_slug": f"nu-degree-exam-routine-{now_year}",
+                "labels": "ডিগ্রি পাস, জাতীয় বিশ্ববিদ্যালয়, এডুকেশন নোটিশ",
+                "audience": "জাতীয় বিশ্ববিদ্যালয়ের ডিগ্রি ১ম/২য়/৩য় বর্ষের শিক্ষার্থী",
+                "intent": "ডিগ্রি পরীক্ষার সময়সূচি, কেন্দ্র তালিকা ও শর্ট সাজেশন",
+                "top_queries": [
+                    f"ডিগ্রি পরীক্ষার রুটিন {now_year}",
+                    f"NU Degree Pass Exam Routine {now_year}",
+                    "ডিগ্রি পরীক্ষার প্রবেশপত্র ডাউনলোড নিয়ম"
+                ]
+            }
+    elif "এলএলবি" in t or "llb" in t.lower():
         return {
-            "proposed_title": f"জাতীয় বিশ্ববিদ্যালয় ডিগ্রি পাস ও সার্টিফিকেট কোর্স পরীক্ষার রুটিন {now_year} | NU Degree Exam Routine PDF",
-            "english_slug": f"nu-degree-exam-routine-{now_year}",
-            "labels": "ডিগ্রি পাস, জাতীয় বিশ্ববিদ্যালয়, এডুকেশন নোটিশ",
-            "audience": "জাতীয় বিশ্ববিদ্যালয়ের ডিগ্রি ১ম/২য়/৩য় বর্ষের শিক্ষার্থী",
-            "intent": "ডিগ্রি পরীক্ষার সময়সূচি, কেন্দ্র তালিকা ও শর্ট সাজেশন",
+            "proposed_title": f"জাতীয় বিশ্ববিদ্যালয় এলএলবি ১ম পর্ব পরীক্ষার ফরম পূরণ {now_year} (বর্ধিত সময়) | NU LLB 1st Part Form Fill Up Routine & Fee",
+            "english_slug": f"nu-llb-1st-part-exam-form-fill-up-{now_year}",
+            "labels": "এলএলবি, জাতীয় বিশ্ববিদ্যালয়, প্রফেশনাল কোর্স",
+            "audience": "জাতীয় বিশ্ববিদ্যালয়ের এলএলবি (LLB) ১ম পর্বের শিক্ষার্থী ও ল কলেজ কর্তৃপক্ষ",
+            "intent": "এলএলবি ১ম পর্ব পরীক্ষার বর্ধিত ফরম পূরণের সময়সূচি, সোনালী সেবায় ফি জমা ও প্রয়োজনীয় কাগজপত্র",
             "top_queries": [
-                f"ডিগ্রি পরীক্ষার রুটিন {now_year}",
-                f"NU Degree Pass Exam Routine {now_year}",
-                "ডিগ্রি পরীক্ষার প্রবেশপত্র ডাউনলোড নিয়ম"
+                f"জাতীয় বিশ্ববিদ্যালয় এলএলবি ১ম পর্ব পরীক্ষার ফরম পূরণ {now_year}",
+                f"NU LLB 1st Part Exam Form Fill Up {now_year}",
+                "এলএলবি ১ম পর্ব পরীক্ষার ফি সোনালী সেবা"
             ]
         }
     elif "এসএসসি" in t or "ssc" in t.lower():
@@ -318,11 +358,29 @@ def extract_key_dates_and_details(title, pdf_url):
     if date_m:
         details.append(f"ঘোষিত তারিখ: {date_m.group(1)}")
 
+    # Specific notice intelligence for Degree 2nd Year In-course (Notice 6069)
+    if "৬০৬৯" in (pdf_url or "") or ("ডিগ্রী" in title and "ইনকোর্স" in title) or ("ডিগ্রি" in title and "ইনকোর্স" in title):
+        details.append("ইনকোর্স নম্বর অনলাইনে এন্ট্রি বর্ধিত সময়: ০৪/১০/২০২৬ থেকে ১২/১০/২০২৬ পর্যন্ত")
+        details.append("গুরুত্বপূর্ণ শর্ত: ইনকোর্স নম্বর অনলাইনে এন্ট্রি ছাড়া ফরম পূরণের Probable লিস্টে পরীক্ষার্থীর নাম অন্তর্ভুক্ত হবে না")
+        details.append("কোর্সকোড সংশোধন: পূর্বে ভুল কোর্সকোড ও ভুল এন্ট্রি উক্ত সময়ের মধ্যে সংশোধন করা যাবে")
+        details.append("মূল স্মারক: ০৫(৫৩৪) জাতীঃ বিঃ/পরীঃ/ডিগ্রী (পাস)/২০২২/৬০৬৯ (তারিখ: ০১/১০/২০২৬)")
+        return details
+
+    # Specific notice intelligence for LLB 1st Part (Notice 2084)
+    if "২০৮৪" in (pdf_url or "") or ("এলএলবি" in title and "ফরম পূরণ" in title):
+        details.append("অনলাইনে আবেদন ফরম সংগ্রহের শেষ তারিখ: ১১/১০/২০২৬ খ্রি.")
+        details.append("কলেজ কর্তৃক ডাটা এন্ট্রি ও নিশ্চয়ন: ১২/১০/২০২৬ থেকে ১৩/১০/২০২৬ খ্রি.")
+        details.append("সোনালী সেবায় ফি জমার সময়সীমা: ১৪/১০/২০২৬ থেকে ১৫/১০/২০২৬ খ্রি.")
+        details.append("মূল স্মারক: জাতীঃ বিঃ/পরীঃ/প্রফেঃ/এলএলবি ১ম পর্ব/২০২৪/২০৮৪ (তারিখ: ৩০/০৯/২০২৬)")
+        return details
+
     # Action type
     if "রুটিন" in title or "সময়সূচি" in title:
         details.append("ধরন: চূড়ান্ত পরীক্ষার সময়সূচি (Routine)")
     elif "ফরম পূরণ" in title:
         details.append("ধরন: অনলাইন ফরম পূরণ ও ফি প্রদান (Form Fill-up)")
+    elif "ইনকোর্স" in title:
+        details.append("ধরন: ইনকোর্স পরীক্ষার নম্বর এন্ট্রি ও ডাটা সংশোধন")
     elif "সংশোধিত" in title:
         details.append("ধরন: সংশোধিত বা পরিবর্তিত সময়সূচি (Revised Notice)")
     elif "ফলাফল" in title or "রেজাল্ট" in title:
