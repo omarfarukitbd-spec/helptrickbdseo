@@ -1,36 +1,84 @@
-name: "360 BD Exam Radar & Telegram Cloud Alert"
+name: "HelpTrickBD 360 Exam Radar & Autonomous Drafting Engine"
 
 on:
   schedule:
-    # Runs every 1 hour (24 times daily) directly on GitHub Cloud
-    - cron: '0 * * * *'
+    # Runs every 1 hour, 24/7 on GitHub Cloud (even when PC is completely turned off)
+    - cron: '15 * * * *'
   workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        default: 'radar_check'
+        type: choice
+        options:
+          - 'radar_check'
+          - 'morning_digest'
+          - 'draft_degree'
+          - 'draft_honours'
+  repository_dispatch:
+    types: [radar_check, morning_digest, draft_degree, draft_honours]
 
 permissions:
   contents: write
 
 jobs:
-  run-exam-radar:
+  execute-engine:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Set up Python
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
-      - name: Run Telegram Exam Radar Notifier
+      - name: Install Python Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pillow google-api-python-client google-auth-httplib2 google-auth-oauthlib pymupdf
+
+      - name: Restore Credentials from Secrets
+        env:
+          BLOGGER_TOKEN_JSON: ${{ secrets.BLOGGER_TOKEN_JSON }}
+          CLIENT_SECRETS_JSON: ${{ secrets.CLIENT_SECRETS_JSON }}
+        run: |
+          mkdir -p tools/blogger_publisher
+          if [ -n "$BLOGGER_TOKEN_JSON" ]; then
+            echo "$BLOGGER_TOKEN_JSON" > tools/blogger_publisher/blogger_token.json
+          fi
+          if [ -n "$CLIENT_SECRETS_JSON" ]; then
+            echo "$CLIENT_SECRETS_JSON" > tools/blogger_publisher/client_secrets.json
+          fi
+
+      - name: Execute Engine Action
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TRIGGER_ACTION: ${{ github.event.inputs.action || github.event.action || 'radar_check' }}
         run: |
-          python tools/trend_forecaster/telegram_radar_notifier.py
+          echo "Executing Action: $TRIGGER_ACTION"
+          if [ "$TRIGGER_ACTION" = "draft_degree" ]; then
+            python output_posts/generate_nu_degree_2nd_year_post.py
+            python tools/governance/pre_flight_checker.py output_posts/nu-degree-2nd-year-in-course-and-exam-routine-2026.html --metadata output_posts/nu-degree-2nd-year-in-course-and-exam-routine-2026_meta.json
+            python tools/blogger_publisher/publish_nu_degree_routine_draft.py
+          elif [ "$TRIGGER_ACTION" = "draft_honours" ]; then
+            python output_posts/generate_nu_honours_2nd_year_routine_post.py
+            python tools/governance/pre_flight_checker.py output_posts/nu-honours-2nd-year-exam-routine-2026.html --metadata output_posts/nu-honours-2nd-year-exam-routine-2026_meta.json
+            python tools/blogger_publisher/update_nu_honours_routine_draft.py
+          elif [ "$TRIGGER_ACTION" = "morning_digest" ]; then
+            python tools/trend_forecaster/telegram_radar_notifier.py --morning-brief
+          else
+            python tools/trend_forecaster/telegram_radar_notifier.py
+          fi
 
-      - name: Commit Seen Notices Cache
+      - name: Commit & Sync State Back to GitHub
         run: |
           git config --global user.name "HelpTrickBD Cloud Bot"
           git config --global user.email "bot@helptrickbd.com"
-          git add tools/trend_forecaster/seen_radar_notices.json bd_exam_seo_radar_report.md || true
-          git diff --staged --quiet || (git commit -m "chore(radar): update seen exam notices cache [skip ci]" && git push)
+          git add tools/trend_forecaster/seen_radar_notices.json output_posts/ || true
+          git diff --staged --quiet || (git commit -m "chore(cloud-engine): sync seen notices and post state [skip ci]" && git push origin main)
