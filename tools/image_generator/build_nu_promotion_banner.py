@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+tools/image_generator/build_nu_promotion_banner.py
+----------------------------------------------------
+Generates the official 16:9 featured banner for:
+জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার গাইড ও ৩য় বর্ষে প্রমোশনের নিয়মাবলী ২০২৬
+"""
+
+import os
+import sys
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+from tools.image_generator.build_official_bg_thumbnails import generate_official_bg_banner
+
+BANNER_CONFIG = {
+    "filename": "nu_honours_2nd_year_promotion_rules_2026.png",
+    "category_key": "Education Guide",
+    "badge_label": "জাতীয় বিশ্ববিদ্যালয় • অনার্স ২য় বর্ষ ২০২৬",
+    "custom_tag_text": "NU Honours 2nd Year • ৩য় বর্ষে প্রমোশনের চূড়ান্ত গাইডলাইন",
+    "title": "NU Honours 2nd Year Exam & Promotion Rules",
+    "subtitle": "অনার্স ২য় বর্ষ পরীক্ষার গাইড ও ৩য় বর্ষে প্রমোশনের নিয়ম",
+    "features": [
+        "৩য় বর্ষে প্রমোশনের ন্যূনতম পাস মার্ক",
+        "CGPA ২.০০ অর্জনের সেরা কৌশল",
+        "ইংরেজি আবশ্যিক (নন-ক্রেডিট) নিয়ম",
+        "এফ গ্রেড ও ইমপ্রুভমেন্ট পরীক্ষা গাইড"
+    ]
+}
+
+def main():
+    print("=" * 70)
+    print("GENERATING OFFICIAL BANNER FOR NU HONOURS PROMOTION RULES 2026...")
+    print("=" * 70)
+
+    out_webp = generate_official_bg_banner(
+        filename=BANNER_CONFIG["filename"],
+        category_key=BANNER_CONFIG["category_key"],
+        badge_label=BANNER_CONFIG["badge_label"],
+        title=BANNER_CONFIG["title"],
+        subtitle=BANNER_CONFIG["subtitle"],
+        features=BANNER_CONFIG["features"],
+        custom_tag_text=BANNER_CONFIG["custom_tag_text"]
+    )
+
+    print(f"\n[OK] Master Banner Generated: {out_webp}")
+    if os.path.exists(out_webp):
+        size_kb = os.path.getsize(out_webp) / 1024
+        print(f"    Size: {size_kb:.2f} KB (Target: 10-20 KB)")
+
+if __name__ == "__main__":
+    main()
