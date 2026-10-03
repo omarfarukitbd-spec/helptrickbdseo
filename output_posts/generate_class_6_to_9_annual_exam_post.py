@@ -309,14 +309,14 @@ def generate_master_post():
 </h2>
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 22px 25px; margin: 25px 0; font-family: 'SolaimanLipi', sans-serif;">
-<p style="margin: 0 0 12px 0; font-size: 16px; line-height: 1.8; color: #1e293b;">
-এই আর্টিকেলে উপস্থাপিত সকল নিয়মাবলি শিক্ষা মন্ত্রণালয়, এনসিটিবি ও মাউশির অফিসিয়াল প্রজ্ঞাপন দ্বারা অনুমোদিত। বিদ্যালয়ভিত্তিক যেকোনো বিশেষ সংশোধনী বা রুটিন যাচাই করতে শিক্ষার্থীদের সরকারি পোর্টালগুলো অনুসরণের পরামর্শ দেওয়া হচ্ছে:
+<p style="margin: 0 0 16px 0; font-size: 16px; line-height: 1.8; color: #1e293b;">
+এই আর্টিকেলে উপস্থাপিত সকল মানবণ্টন ও মূল্যায়ন কাঠামো শিক্ষা মন্ত্রণালয়, এনসিটিবি ও মাউশির অফিসিয়াল প্রজ্ঞাপন দ্বারা অনুমোদিত। পরিপত্র যাচাই ও বিস্তারিত জানতে সরাসরি সরকারি পোর্টালের নোটিশ সেকশনগুলো নিচে দেওয়া হলো:
 </p>
-<ul style="margin: 0; padding-left: 20px; line-height: 1.9; font-size: 15.5px; color: #0f172a;">
-<li><strong>মাধ্যমিক ও উচ্চশিক্ষা অধিদপ্তর (মাউশি):</strong> <a href="https://dshe.gov.bd" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: underline; font-weight: 600;">www.dshe.gov.bd</a></li>
-<li><strong>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB):</strong> <a href="https://nctb.gov.bd" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: underline; font-weight: 600;">www.nctb.gov.bd</a></li>
-<li><strong>শিক্ষা মন্ত্রণালয়, গণপ্রজাতন্ত্রী বাংলাদেশ সরকার:</strong> <a href="https://moedu.gov.bd" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: underline; font-weight: 600;">www.moedu.gov.bd</a></li>
-<li><strong>বিদ্যালয়ের নোটিশ বোর্ড:</strong> নিজ নিজ বিদ্যালয়ের শ্রেণি শিক্ষক কর্তৃক প্রদত্ত ব্যবহারিক ও বার্ষিক পরীক্ষার সময়সূচি।</li>
+<ul style="margin: 0; padding-left: 20px; line-height: 2.1; font-size: 15.5px; color: #0f172a;">
+<li style="margin-bottom: 8px;"><strong>মাধ্যমিক ও উচ্চশিক্ষা অধিদপ্তর (মাউশি) অফিসিয়াল নোটিশ বোর্ড:</strong> <a href="https://www.dshe.gov.bd/site/notices" target="_blank" rel="noopener noreferrer" style="color: #1e40af; text-decoration: underline; font-weight: 600;">dshe.gov.bd/site/notices</a> (সংশোধিত মূল্যায়ন নির্দেশনা ও বিষয়-কাঠামো নোটিশ)</li>
+<li style="margin-bottom: 8px;"><strong>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (NCTB) পরিপত্র শাখা:</strong> <a href="http://www.nctb.gov.bd/site/notices" target="_blank" rel="noopener noreferrer" style="color: #1e40af; text-decoration: underline; font-weight: 600;">nctb.gov.bd/site/notices</a> (বার্ষিক সামষ্টিক মূল্যায়ন ও মানবণ্টন নির্দেশিকা)</li>
+<li style="margin-bottom: 8px;"><strong>শিক্ষা মন্ত্রণালয় (মাধ্যমিক ও উচ্চ শিক্ষা বিভাগ):</strong> <a href="https://shed.gov.bd/site/notices" target="_blank" rel="noopener noreferrer" style="color: #1e40af; text-decoration: underline; font-weight: 600;">shed.gov.bd/site/notices</a> (পরীক্ষা ও পাঠ্যসূচি সংক্রান্ত সরকারি প্রজ্ঞাপন)</li>
+<li><strong>বিদ্যালয়ের নিজস্ব নোটিশ বোর্ড:</strong> নিজ নিজ বিদ্যালয়ের প্রধান শিক্ষক ও শ্রেণি শিক্ষক কর্তৃক নোটিশ বোর্ডে টাঙানো ব্যবহারিক ও বার্ষিক পরীক্ষার চূড়ান্ত রুটিন।</li>
 </ul>
 </div>
 
