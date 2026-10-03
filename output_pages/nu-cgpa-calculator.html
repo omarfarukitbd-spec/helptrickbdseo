@@ -231,6 +231,13 @@
         </div>
 
         <!-- Dynamic Course Table/Container -->
+        <div style="display: grid; grid-template-columns: 2.2fr 0.9fr 1.2fr 1fr 34px; gap: 6px; padding: 6px 10px; background: #e2e8f0; border-radius: 6px; font-size: 12.5px; font-weight: 700; color: #334155; margin-bottom: 8px;">
+          <div>কোর্স কোড ও নাম</div>
+          <div style="text-align: center;">ক্রেডিট</div>
+          <div style="text-align: center;">লেটার গ্রেড</div>
+          <div style="text-align: center;">পয়েন্ট (GP)</div>
+          <div style="text-align: center;">মুছুন</div>
+        </div>
         <div id="courses-container" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;">
           <!-- Course Rows injected dynamically via JS -->
         </div>
@@ -315,41 +322,30 @@
             <input type="number" id="imp-current-gpa" min="0.00" max="4.00" step="0.01" value="2.65" style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #94a3b8; border-radius: 6px; font-size: 15px; font-weight: 700;" />
           </div>
 
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;">
-            <div style="font-size: 14px; font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">মানোন্নয়ন পরীক্ষার বিষয়সমূহ:</div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 14px; font-weight: 700; color: #1e3a8a;">মানোন্নয়ন পরীক্ষার বিষয়সমূহ:</span>
+              <span style="font-size: 12px; color: #64748b;">(সরাসরি পয়েন্ট ইনপুট দিন)</span>
+            </div>
+
+            <!-- Column Header -->
+            <div style="display: grid; grid-template-columns: 1.8fr 1.1fr 1.1fr 30px; gap: 6px; padding: 5px 8px; background: #f1f5f9; border-radius: 4px; font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 6px;">
+              <div>কোর্সের নাম</div>
+              <div style="text-align: center;">পূর্বের পয়েন্ট (GP)</div>
+              <div style="text-align: center;">টার্গেট পয়েন্ট (GP)*</div>
+              <div style="text-align: center;">মুছুন</div>
+            </div>
             
             <div id="imp-courses-list" style="display: flex; flex-direction: column; gap: 8px;">
-              <!-- Course 1 -->
-              <div class="imp-course-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px; align-items: center;">
-                <input type="text" placeholder="কোর্স নাম" value="কোর্স ০১" style="padding: 5px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;" />
-                <select class="imp-old-grade" style="padding: 5px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;">
-                  <option value="2.00">D (2.00)</option>
-                  <option value="2.25">C (2.25)</option>
-                  <option value="0.00">F (0.00)</option>
-                </select>
-                <select class="imp-new-grade" style="padding: 5px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; font-weight: 600; color: #059669;">
-                  <option value="3.25" selected>B+ (3.25)*</option>
-                  <option value="3.00">B (3.00)</option>
-                  <option value="2.75">B- (2.75)</option>
-                </select>
-              </div>
-
-              <!-- Course 2 -->
-              <div class="imp-course-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px; align-items: center;">
-                <input type="text" placeholder="কোর্স নাম" value="কোর্স ০২" style="padding: 5px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;" />
-                <select class="imp-old-grade" style="padding: 5px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;">
-                  <option value="2.00" selected>D (2.00)</option>
-                  <option value="2.25">C (2.25)</option>
-                  <option value="0.00">F (0.00)</option>
-                </select>
-                <select class="imp-new-grade" style="padding: 5px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; font-weight: 600; color: #059669;">
-                  <option value="3.25" selected>B+ (3.25)*</option>
-                  <option value="3.00">B (3.00)</option>
-                  <option value="2.75">B- (2.75)</option>
-                </select>
-              </div>
+              <!-- Dynamic Improvement Course Rows -->
             </div>
-            <div style="font-size: 11.5px; color: #64748b; margin-top: 6px;">*এনইউ নিয়ম অনুযায়ী ইমপ্রুভমেন্টে সর্বোচ্চ B+ (৩.২৫) পর্যন্ত গণনা করা হয়।</div>
+
+            <div style="margin-top: 10px; display: flex; gap: 8px;">
+              <button type="button" id="btn-add-imp-course" style="flex: 1; background: #f1f5f9; color: #1e3a8a; border: 1px dashed #93c5fd; padding: 7px 10px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer;">
+                + আরেকটি বিষয় যোগ করুন
+              </button>
+            </div>
+            <div style="font-size: 11.5px; color: #64748b; margin-top: 8px; line-height: 1.5;">*এনইউ নিয়ম অনুযায়ী ইমপ্রুভমেন্টে সর্বোচ্চ B+ (৩.২৫) পর্যন্ত গণনা করা হয়। আপনি সরাসরি আপনার প্রত্যাশিত ফ্র্যাকশনাল বা পূর্ণ গ্রেড পয়েন্ট (যেমন: ৩.২৫, ৩.১০, ২.৮৫ ইত্যাদি) টাইপ করতে পারেন।</div>
           </div>
 
           <!-- Improvement Output -->
@@ -507,6 +503,9 @@
 </p>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
 অনেক শিক্ষার্থী মনে করেন, চার বছরের জিপিএ সাধারণ যোগ করে চার দিয়ে ভাগ করলেই বুঝি সিজিপিএ পাওয়া যায়। এটি একটি মারাত্মক ভুল ধারণা! কারণ জাতীয় বিশ্ববিদ্যালয়ের প্রতিটি কোর্সের ক্রেডিট সমান নয়। কোনো কোর্স ৪ ক্রেডিটের (১০০ নম্বর), কোনো কোর্স ২ ক্রেডিটের (৫০ নম্বর) আবার ব্যবহারিক ও মৌখিক পরীক্ষার ক্রেডিট ভিন্ন হয়ে থাকে। ক্রেডিট-ওয়েটেড পদ্ধতি অনুসরণ না করে হিসাব করলে ফলাফলে বড় ধরনের গরমিল দেখা দেয়। হেল্পট্রিকবিডির এই ক্যালকুলেটরটি জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল একাডেমিক অর্ডিন্যান্স অনুযায়ী <strong>ক্রেডিট-ওয়েটেড এভারেজ ফর্মুলা</strong> ব্যবহার করে স্বয়ংক্রিয়ভাবে শতভাগ নির্ভুল ফলাফল প্রদর্শন করে।
+</p>
+<p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
+<strong>সরাসরি ফ্র্যাকশনাল বা কাস্টম পয়েন্ট ইনপুট সুবিধা:</strong> অনেক শিক্ষার্থী তাদের নির্দিষ্ট পরীক্ষার নম্বরপত্র অনুযায়ী বা মানোন্নয়ন পর্যালোচনায় ড্রপডাউনের বাঁধা-ধরা লেটার গ্রেডের বাইরে যেকোনো কাস্টম ফ্র্যাকশনাল পয়েন্ট (যেমন: ৩.৪৫, ৩.১৮, ৩.৬০ ইত্যাদি) সরাসরি ইনপুট দিয়ে রেজাল্ট পরীক্ষা করতে চান। হেল্পট্রিকবিডি ক্যালকুলেটরে প্রতিটি কোর্সের পাশে <strong>লেটার গ্রেডের পাশাপাশি সরাসরি পয়েন্ট (GP) টাইপ করার স্বতন্ত্র ঘর</strong> যুক্ত করা হয়েছে। লেটার গ্রেড সিলেক্ট করলে পয়েন্ট ঘরে স্বয়ংক্রিয়ভাবে পয়েন্ট বসে যায়, আবার সরাসরি পয়েন্ট টাইপ করলে ক্যালকুলেটর স্বয়ংক্রিয়ভাবে সেই সুনির্দিষ্ট পয়েন্টের ভিত্তিতে শতভাগ নির্ভুল ক্রেডিট-ওয়েটেড সিজিপিএ নির্ধারণ করে।
 </p>
 
 <h2 style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
@@ -744,10 +743,18 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 </div>
 
 <!-- FAQ 10 -->
-<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 25px; font-family: 'SolaimanLipi', sans-serif;">
+<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 14px; font-family: 'SolaimanLipi', sans-serif;">
 <h3 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 18px; font-weight: 700;">১০. ব্রাউজার রিফ্রেশ করলে কি আমার ইনপুট করা রেজাল্ট মুছে যাবে?</h3>
 <p style="margin: 0; color: #334155; font-size: 16px; line-height: 1.8;">
 না! আমাদের ক্যালকুলেটরে লোকাল স্টোরেজ (LocalStorage) অটো-সেভ ব্যবস্থা রয়েছে। ফলে পেজ বন্ধ বা রিফ্রেশ করলেও আপনার ইনপুট করা রেজাল্ট সম্পূর্ণ নিরাপদ সংরক্ষিত থাকবে।
+</p>
+</div>
+
+<!-- FAQ 11 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 25px; font-family: 'SolaimanLipi', sans-serif;">
+<h3 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 18px; font-weight: 700;">১১. লেটার গ্রেড ছাড়া কি সরাসরি দশমিক বা কাস্টম পয়েন্ট দিয়ে সিজিপিএ হিসাব করা যায়?</h3>
+<p style="margin: 0; color: #334155; font-size: 16px; line-height: 1.8;">
+হ্যাঁ! আমাদের ক্যালকুলেটরে প্রতিটি বিষয়ের জন্য লেটার গ্রেডের পাশাপাশি &quot;পয়েন্ট (GP)&quot; ঘর রয়েছে। আপনি চাইলে লেটার গ্রেড ড্রপডাউন স্পর্শ না করেই যেকোনো ফ্র্যাকশনাল বা সুনির্দিষ্ট পয়েন্ট (যেমন: ৩.৫৫, ৩.১২, ২.৮৫ ইত্যাদি) সরাসরি লিখে মুহূর্তেই সঠিক সিজিপিএ গণনা করতে পারবেন।
 </p>
 </div>
 
@@ -1006,24 +1013,26 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   const selDept = document.getElementById('sel-dept');
   const selYear = document.getElementById('sel-year');
 
-  function createCourseRow(code = '', name = '', credit = 4, selectedGrade = 'A') {
+  function createCourseRow(code = '', name = '', credit = 4, selectedGrade = 'A', exactPoint = null) {
     const row = document.createElement('div');
     row.className = 'htbd-course-row';
     row.style.background = '#ffffff';
     row.style.border = '1px solid #e2e8f0';
     row.style.borderRadius = '8px';
-    row.style.padding = '10px 12px';
+    row.style.padding = '8px 10px';
     row.style.display = 'grid';
-    row.style.gridTemplateColumns = '2.5fr 1fr 1.2fr 40px';
-    row.style.gap = '8px';
+    row.style.gridTemplateColumns = '2.2fr 0.9fr 1.2fr 1fr 34px';
+    row.style.gap = '6px';
     row.style.alignItems = 'center';
+
+    let initialPoint = (exactPoint !== null && !isNaN(exactPoint)) ? parseFloat(exactPoint).toFixed(2) : (GRADE_SCALE[selectedGrade] !== undefined ? GRADE_SCALE[selectedGrade].toFixed(2) : '3.75');
 
     row.innerHTML = `
       <div>
         <input type="text" class="c-name" value="${name ? code + ' - ' + name : code}" placeholder="কোর্স কোড ও নাম" style="width: 100%; box-sizing: border-box; padding: 6px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;" />
       </div>
       <div>
-        <select class="c-credit" style="width: 100%; padding: 6px 2px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;">
+        <select class="c-credit" style="width: 100%; box-sizing: border-box; padding: 6px 2px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; text-align: center;">
           <option value="4" ${credit === 4 ? 'selected' : ''}>৪ ক্রেডিট</option>
           <option value="3" ${credit === 3 ? 'selected' : ''}>৩ ক্রেডিট</option>
           <option value="2" ${credit === 2 ? 'selected' : ''}>২ ক্রেডিট</option>
@@ -1031,7 +1040,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
         </select>
       </div>
       <div>
-        <select class="c-grade" style="width: 100%; padding: 6px 4px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; font-weight: 700; color: #1e3a8a;">
+        <select class="c-grade" style="width: 100%; box-sizing: border-box; padding: 6px 2px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; font-weight: 700; color: #1e3a8a;">
           <option value="A+" ${selectedGrade === 'A+' ? 'selected' : ''}>A+ (4.00)</option>
           <option value="A" ${selectedGrade === 'A' ? 'selected' : ''}>A (3.75)</option>
           <option value="A-" ${selectedGrade === 'A-' ? 'selected' : ''}>A- (3.50)</option>
@@ -1042,15 +1051,54 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
           <option value="C" ${selectedGrade === 'C' ? 'selected' : ''}>C (2.25)</option>
           <option value="D" ${selectedGrade === 'D' ? 'selected' : ''}>D (2.00)</option>
           <option value="F" ${selectedGrade === 'F' ? 'selected' : ''}>F (0.00)</option>
+          <option value="custom" ${selectedGrade === 'custom' ? 'selected' : ''}>কাস্টম পয়েন্ট</option>
         </select>
       </div>
+      <div>
+        <input type="number" class="c-point" min="0.00" max="4.00" step="0.01" value="${initialPoint}" placeholder="0.00" style="width: 100%; box-sizing: border-box; padding: 6px 4px; border: 1px solid #94a3b8; border-radius: 4px; font-size: 13.5px; font-weight: 700; text-align: center; color: #0f172a; background: #f8fafc;" title="সরাসরি পয়েন্ট ইনপুট দিন" />
+      </div>
       <div style="text-align: center;">
-        <button type="button" class="btn-del-course" style="background: #fee2e2; color: #ef4444; border: none; width: 32px; height: 32px; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold;">×</button>
+        <button type="button" class="btn-del-course" style="background: #fee2e2; color: #ef4444; border: none; width: 30px; height: 30px; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold;">×</button>
       </div>
     `;
 
-    row.querySelector('.c-credit').addEventListener('change', calculateSubjectMode);
-    row.querySelector('.c-grade').addEventListener('change', calculateSubjectMode);
+    const cCredit = row.querySelector('.c-credit');
+    const cGrade = row.querySelector('.c-grade');
+    const cPoint = row.querySelector('.c-point');
+
+    // Two-way sync: Grade dropdown -> Point input
+    cGrade.addEventListener('change', () => {
+      const gr = cGrade.value;
+      if (GRADE_SCALE[gr] !== undefined) {
+        cPoint.value = GRADE_SCALE[gr].toFixed(2);
+      }
+      calculateSubjectMode();
+    });
+
+    // Two-way sync: Point input -> Grade dropdown
+    cPoint.addEventListener('input', () => {
+      let p = parseFloat(cPoint.value);
+      if (isNaN(p)) p = 0;
+      if (p > 4.00) p = 4.00;
+      if (p < 0.00) p = 0.00;
+
+      // Check if matches standard grade scale
+      let matchedGrade = null;
+      for (const [g, val] of Object.entries(GRADE_SCALE)) {
+        if (Math.abs(val - p) < 0.001) {
+          matchedGrade = g;
+          break;
+        }
+      }
+      if (matchedGrade) {
+        cGrade.value = matchedGrade;
+      } else {
+        cGrade.value = 'custom';
+      }
+      calculateSubjectMode();
+    });
+
+    cCredit.addEventListener('change', calculateSubjectMode);
     row.querySelector('.btn-del-course').addEventListener('click', () => {
       row.remove();
       calculateSubjectMode();
@@ -1066,8 +1114,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
     rows.forEach(r => {
       const cr = parseFloat(r.querySelector('.c-credit').value) || 0;
-      const gr = r.querySelector('.c-grade').value;
-      const gp = GRADE_SCALE[gr] !== undefined ? GRADE_SCALE[gr] : 0;
+      const gp = parseFloat(r.querySelector('.c-point').value) || 0;
 
       if (cr > 0) {
         totalPoints += (cr * gp);
@@ -1129,18 +1176,30 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     const raw = smartPasteInput.value;
     if (!raw.trim()) return;
 
-    // Regex to match: 6 digits course code + letter grade
-    // Example: 221901 - A- or 221901 A or 221901: B+
-    const pattern = /(\d{6})\s*[-:\s]*\s*([A-DF][+-]?)/gi;
+    // Regex to match: 6 digits course code + letter grade or exact numeric point
+    const pattern = /(\d{6})\s*[-:\s]*\s*([A-DF][+-]?|\d+(?:\.\d+)?)/gi;
     let match;
     let found = 0;
 
     coursesContainer.innerHTML = '';
     while ((match = pattern.exec(raw)) !== null) {
       const code = match[1];
-      const grade = match[2].toUpperCase();
+      const valStr = match[2].trim().toUpperCase();
       const credit = (code === '221109') ? 0 : 4; // non credit english check
-      createCourseRow(code, '', credit, grade);
+
+      const numVal = parseFloat(valStr);
+      if (!isNaN(numVal) && numVal <= 4.00) {
+        let matchedGrade = 'custom';
+        for (const [g, val] of Object.entries(GRADE_SCALE)) {
+          if (Math.abs(val - numVal) < 0.001) {
+            matchedGrade = g;
+            break;
+          }
+        }
+        createCourseRow(code, '', credit, matchedGrade, numVal);
+      } else {
+        createCourseRow(code, '', credit, valStr);
+      }
       found++;
     }
 
@@ -1148,9 +1207,9 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       smartPasteBox.style.display = 'none';
       smartPasteInput.value = '';
       calculateSubjectMode();
-      alert(found + 'টি কোর্সের গ্রেড সফলভাবে অটো-ফিল করা হয়েছে!');
+      alert(found + 'টি কোর্সের গ্রেড ও পয়েন্ট সফলভাবে অটো-ফিল করা হয়েছে!');
     } else {
-      alert('সঠিক রেজাল্ট ফরম্যাট শনাক্ত করা যায়নি। অনুগ্রহ করে কোড ও গ্রেড (যেমন: 221901 A) পেস্ট করুন।');
+      alert('সঠিক রেজাল্ট ফরম্যাট শনাক্ত করা যায়নি। অনুগ্রহ করে কোড ও গ্রেড বা পয়েন্ট (যেমন: 221901 A অথবা 221901 3.75) পেস্ট করুন।');
     }
   });
 
@@ -1209,13 +1268,42 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   const impCurrentGpa = document.getElementById('imp-current-gpa');
   const impNewGpa = document.getElementById('imp-new-gpa');
   const impDeltaGpa = document.getElementById('imp-delta-gpa');
-  const impRows = document.querySelectorAll('.imp-course-row');
+  const impCoursesList = document.getElementById('imp-courses-list');
+  const btnAddImpCourse = document.getElementById('btn-add-imp-course');
+
+  function createImpRow(name = 'কোর্স', oldGp = 2.00, newGp = 3.25) {
+    const row = document.createElement('div');
+    row.className = 'imp-course-row';
+    row.style.display = 'grid';
+    row.style.gridTemplateColumns = '1.8fr 1.1fr 1.1fr 30px';
+    row.style.gap = '6px';
+    row.style.alignItems = 'center';
+
+    row.innerHTML = `
+      <input type="text" class="imp-name" placeholder="কোর্স নাম" value="${name}" style="padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; box-sizing: border-box; width: 100%;" />
+      <input type="number" class="imp-old-gp" min="0.00" max="4.00" step="0.01" value="${typeof oldGp === 'number' ? oldGp.toFixed(2) : oldGp}" placeholder="2.00" style="padding: 6px 4px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; font-weight: 700; text-align: center; box-sizing: border-box; width: 100%;" title="পূর্বের গ্রেড পয়েন্ট" />
+      <input type="number" class="imp-new-gp" min="0.00" max="3.25" step="0.01" value="${typeof newGp === 'number' ? newGp.toFixed(2) : newGp}" placeholder="3.25" style="padding: 6px 4px; border: 1px solid #86efac; background: #f0fdf4; border-radius: 4px; font-size: 13px; font-weight: 700; color: #15803d; text-align: center; box-sizing: border-box; width: 100%;" title="প্রত্যাশিত নতুন পয়েন্ট (সর্বোচ্চ ৩.২৫)" />
+      <button type="button" class="btn-del-imp" style="background: #fee2e2; color: #ef4444; border: none; width: 28px; height: 28px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">×</button>
+    `;
+
+    row.querySelector('.imp-old-gp').addEventListener('input', calculateImprovementMode);
+    row.querySelector('.imp-new-gp').addEventListener('input', calculateImprovementMode);
+    row.querySelector('.btn-del-imp').addEventListener('click', () => {
+      row.remove();
+      calculateImprovementMode();
+    });
+
+    impCoursesList.appendChild(row);
+  }
 
   impCurrentGpa.addEventListener('input', calculateImprovementMode);
-  impRows.forEach(r => {
-    r.querySelector('.imp-old-grade').addEventListener('change', calculateImprovementMode);
-    r.querySelector('.imp-new-grade').addEventListener('change', calculateImprovementMode);
-  });
+  if (btnAddImpCourse) {
+    btnAddImpCourse.addEventListener('click', () => {
+      const count = document.querySelectorAll('.imp-course-row').length + 1;
+      createImpRow('কোর্স ' + (count < 10 ? '০' : '') + count, 2.00, 3.25);
+      calculateImprovementMode();
+    });
+  }
 
   function calculateImprovementMode() {
     const currentGpa = parseFloat(impCurrentGpa.value) || 2.65;
@@ -1223,9 +1311,11 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     let oldPoints = currentGpa * defaultCredits;
     let gainedPoints = 0;
 
+    const impRows = document.querySelectorAll('.imp-course-row');
     impRows.forEach(r => {
-      const oldGp = parseFloat(r.querySelector('.imp-old-grade').value) || 2.00;
-      const newGp = parseFloat(r.querySelector('.imp-new-grade').value) || 3.25;
+      const oldGp = parseFloat(r.querySelector('.imp-old-gp').value) || 0;
+      let newGp = parseFloat(r.querySelector('.imp-new-gp').value) || 0;
+      if (newGp > 3.25) newGp = 3.25; // NU B+ cap
       const cr = 4; // standard 4 credit
       if (newGp > oldGp) {
         gainedPoints += (newGp - oldGp) * cr;
@@ -1277,14 +1367,15 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
         const name = r.querySelector('.c-name').value || ('কোর্স ' + (idx + 1));
         const cr = r.querySelector('.c-credit').value;
         const gr = r.querySelector('.c-grade').value;
-        const gp = GRADE_SCALE[gr] || 0;
+        const gp = parseFloat(r.querySelector('.c-point').value) || 0;
         const pts = (parseFloat(cr) * gp).toFixed(2);
+        const gradeText = gr === 'custom' ? `কাস্টম (${gp.toFixed(2)})` : `${gr} (${gp.toFixed(2)})`;
 
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td style="border: 1px solid #cbd5e1; padding: 8px;">${name}</td>
           <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">${cr}</td>
-          <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-weight: 700;">${gr} (${gp.toFixed(2)})</td>
+          <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-weight: 700;">${gradeText}</td>
           <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">${pts}</td>
         `;
         printTableBody.appendChild(tr);
@@ -1355,6 +1446,8 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   // Initial Boot
   loadState();
   btnResetCourses.click(); // load initial rows
+  createImpRow('কোর্স ০১', 2.00, 3.25);
+  createImpRow('কোর্স ০২', 2.25, 3.25);
   calculateYearMode();
   calculateTargetMode();
   calculateImprovementMode();
@@ -1458,6 +1551,14 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "হ্যাঁ, তবে F গ্রেডের গ্রেড পয়েন্ট হলো ০.০০। এটি মোট ক্রেডিটের সাথে যুক্ত হয়ে গড় সিজিপিএ ব্যাপকভাবে হ্রাস করে। পরবর্তী বর্ষে পরীক্ষা দিয়ে F গ্রেড ক্লিয়ার করলে নতুন গ্রেড পয়েন্ট যুক্ত হয়ে সিজিপিএ বৃদ্ধি পাবে।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "লেটার গ্রেড ছাড়া কি সরাসরি দশমিক বা কাস্টম পয়েন্ট দিয়ে সিজিপিএ হিসাব করা যায়?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "হ্যাঁ, হেল্পট্রিকবিডি ক্যালকুলেটরে প্রতিটি বিষয়ের জন্য লেটার গ্রেডের পাশাপাশি সরাসরি পয়েন্ট (GP) ঘর রয়েছে। আপনি যেকোনো ফ্র্যাকশনাল বা সুনির্দিষ্ট পয়েন্ট সরাসরি লিখে নির্ভুল সিজিপিএ গণনা করতে পারবেন।"
       }
     }
   ]
