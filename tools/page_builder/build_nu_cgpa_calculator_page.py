@@ -49,6 +49,28 @@ def generate_page():
 
 <!--more-->
 
+<style>
+/* Full-Width Canvas for NU CGPA Calculator Page (Hides sidebar and gives 100% width) */
+.static_page #feed-view, .item-view #feed-view, #feed-view {{
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}}
+.static_page #sidebar-container, .item-view #sidebar-container, #sidebar-container {{
+  display: none !important;
+}}
+.htbd-calc-grid {{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+}}
+@media (max-width: 880px) {{
+  .htbd-calc-grid {{
+    grid-template-columns: 1fr;
+  }}
+}}
+</style>
+
 <!-- ========================================================================== -->
 <!-- INTERACTIVE WEB APPLICATION: NU ADVANCED CGPA CALCULATOR ENGINE           -->
 <!-- ========================================================================== -->
@@ -60,7 +82,7 @@ def generate_page():
       NATIONAL UNIVERSITY BANGLADESH • ACADEMIC SUITE
     </span>
     <h2 style="margin: 5px 0 10px 0; color: #0c2340; font-size: 26px; font-weight: 700;">
-      জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর ২০২৬
+      জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর ২০২৬
     </h2>
     <p style="margin: 0; color: #64748b; font-size: 15px;">
       অনার্স, ডিগ্রি পাস ও মাস্টার্স শিক্ষার্থীদের জন্য আধুনিক, নির্ভুল ও তাৎক্ষণিক রেজাল্ট মূল্যায়ন ব্যবস্থা
@@ -97,7 +119,7 @@ def generate_page():
   </div>
 
   <!-- Main Grid Layout: Form Area (Left) & Live Dashboard (Right) -->
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+  <div class="htbd-calc-grid">
 
     <!-- LEFT COLUMN: MODE PANELS -->
     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
@@ -385,8 +407,8 @@ def generate_page():
         </div>
 
         <!-- Speedometer / Circular Gauge SVG -->
-        <div style="text-align: center; margin: 15px 0 10px 0;">
-          <div style="position: relative; width: 170px; height: 170px; margin: 0 auto;">
+        <div style="text-align: center; margin: 10px 0 8px 0;">
+          <div style="position: relative; width: 135px; height: 135px; margin: 0 auto;">
             <svg viewBox="0 0 120 120" style="width: 100%; height: 100%; transform: rotate(-90deg);">
               <!-- Background Circle -->
               <circle cx="60" cy="60" r="50" fill="none" stroke="#f1f5f9" stroke-width="12" />
@@ -394,16 +416,16 @@ def generate_page():
               <circle id="dash-gauge-circle" cx="60" cy="60" r="50" fill="none" stroke="#2563eb" stroke-width="12" stroke-dasharray="314.16" stroke-dashoffset="314.16" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;" />
             </svg>
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-              <span id="dash-cgpa-val" style="font-size: 34px; font-weight: 800; color: #0f172a; line-height: 1;">0.00</span>
-              <span style="font-size: 12px; color: #64748b; font-weight: 600; margin-top: 4px;">আউট অব ৪.০০</span>
+              <span id="dash-cgpa-val" style="font-size: 28px; font-weight: 800; color: #0f172a; line-height: 1;">0.00</span>
+              <span style="font-size: 11.5px; color: #64748b; font-weight: 600; margin-top: 3px;">আউট অব ৪.০০</span>
             </div>
           </div>
         </div>
 
         <!-- Division & Status Badge -->
-        <div style="text-align: center; margin-bottom: 20px;">
-          <div id="dash-division-badge" style="display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 15px; font-weight: 700; background: #f1f5f9; color: #475569; transition: all 0.3s;">
-            ইনপুট দিন
+        <div style="text-align: center; margin-bottom: 16px;">
+          <div id="dash-division-badge" style="display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 14.5px; font-weight: 700; background: #f1f5f9; color: #475569; transition: all 0.3s;">
+            ফলাফল দেখতে ইনপুট দিন
           </div>
         </div>
 
@@ -835,15 +857,15 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     const y4Card = document.querySelector('.htbd-year-card[data-year="4"]');
 
     if (currentProgram === 'honours') {{
-      dashProgramBadge.textContent = 'স্নাতক (সম্মান)';
+      dashProgramBadge.innerHTML = 'স্নাতক (সম্মান)';
       if (y3Card) y3Card.style.display = 'block';
       if (y4Card) y4Card.style.display = 'block';
     }} else if (currentProgram === 'degree') {{
-      dashProgramBadge.textContent = 'ডিগ্রি (পাস)';
+      dashProgramBadge.innerHTML = 'ডিগ্রি (পাস)';
       if (y3Card) y3Card.style.display = 'block';
       if (y4Card) y4Card.style.display = 'none';
     }} else if (currentProgram === 'masters') {{
-      dashProgramBadge.textContent = 'মাস্টার্স';
+      dashProgramBadge.innerHTML = 'মাস্টার্স';
       if (y3Card) y3Card.style.display = 'none';
       if (y4Card) y4Card.style.display = 'none';
     }}
@@ -981,7 +1003,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     }}
 
     dashGaugeCircle.style.stroke = color;
-    dashDivisionBadge.textContent = badgeText;
+    dashDivisionBadge.innerHTML = badgeText;
     dashDivisionBadge.style.background = badgeBg;
     dashDivisionBadge.style.color = badgeColor;
 
@@ -1186,25 +1208,25 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     targetReqGpa.textContent = reqGpa > 0 ? reqGpa.toFixed(2) : '0.00';
 
     if (reqGpa <= 3.10) {{
-      targetBadge.textContent = 'সহজসাধ্য ও বাস্তবসম্মত';
+      targetBadge.innerHTML = 'সহজসাধ্য ও বাস্তবসম্মত';
       targetBadge.style.background = '#dcfce7';
       targetBadge.style.color = '#15803d';
-      targetAdvice.textContent = 'আপনার কাঙ্ক্ষিত ফলাফল অর্জন করা বেশ সহজ। নিয়মিত ক্লাসের পড়া শেষ করলেই আপনি ফার্স্ট ক্লাস নিশ্চিত করতে পারবেন।';
+      targetAdvice.innerHTML = 'আপনার কাঙ্ক্ষিত ফলাফল অর্জন করা বেশ সহজ। নিয়মিত ক্লাসের পড়া শেষ করলেই আপনি ফার্স্ট ক্লাস নিশ্চিত করতে পারবেন।';
     }} else if (reqGpa <= 3.45) {{
-      targetBadge.textContent = 'সম্ভব, নিয়মিত অধ্যবসায় প্রয়োজন';
+      targetBadge.innerHTML = 'সম্ভব, নিয়মিত অধ্যবসায় প্রয়োজন';
       targetBadge.style.background = '#dbeafe';
       targetBadge.style.color = '#1e40af';
-      targetAdvice.textContent = 'বাকি বর্ষগুলোর প্রতিটি বিষয়ে কমপক্ষে B+ বা A- গ্রেড পেতে হবে। ইনকোর্স ও ব্যবহারিকে পুরো নম্বর তোলার চেষ্টা করুন।';
+      targetAdvice.innerHTML = 'বাকি বর্ষগুলোর প্রতিটি বিষয়ে কমপক্ষে B+ বা A- গ্রেড পেতে হবে। ইনকোর্স ও ব্যবহারিকে পুরো নম্বর তোলার চেষ্টা করুন।';
     }} else if (reqGpa <= 3.85) {{
-      targetBadge.textContent = 'চ্যালেঞ্জিং, কঠোর প্রস্তুতি লাগবে';
+      targetBadge.innerHTML = 'চ্যালেঞ্জিং, কঠোর প্রস্তুতি লাগবে';
       targetBadge.style.background = '#fef3c7';
       targetBadge.style.color = '#b45309';
-      targetAdvice.textContent = 'আপনাকে প্রতিটি বিষয়ে A বা A+ গ্রেড পেতে হবে। প্রয়োজনে পূর্ববর্তী বছরের C বা D পাওয়া বিষয়ে মানোন্নয়ন পরীক্ষা দেওয়ার পরামর্শ রইল।';
+      targetAdvice.innerHTML = 'আপনাকে প্রতিটি বিষয়ে A বা A+ গ্রেড পেতে হবে। প্রয়োজনে পূর্ববর্তী বছরের C বা D পাওয়া বিষয়ে মানোন্নয়ন পরীক্ষা দেওয়ার পরামর্শ রইল।';
     }} else {{
-      targetBadge.textContent = 'অসম্ভব (মানোন্নয়ন পরীক্ষা দিন)';
+      targetBadge.innerHTML = 'অসম্ভব (মানোন্নয়ন পরীক্ষা দিন)';
       targetBadge.style.background = '#fee2e2';
       targetBadge.style.color = '#b91c1c';
-      targetAdvice.textContent = 'গাণিতিকভাবে ৪.০০ এর বেশি জিপিএ তোলা অসম্ভব। পূর্ববর্তী বর্ষগুলোর খারাপ হওয়া বিষয়ের মানোন্নয়ন (Improvement) পরীক্ষা দেওয়া ছাড়া ৩.০০ স্পর্শ করা সম্ভব নয়।';
+      targetAdvice.innerHTML = 'গাণিতিকভাবে ৪.০০ এর বেশি জিপিএ তোলা অসম্ভব। পূর্ববর্তী বর্ষগুলোর খারাপ হওয়া বিষয়ের মানোন্নয়ন (Improvement) পরীক্ষা দেওয়া ছাড়া ৩.০০ স্পর্শ করা সম্ভব নয়।';
     }}
   }}
 
@@ -1257,7 +1279,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     printTableBody.innerHTML = '';
     document.getElementById('print-cgpa').textContent = dashCgpaVal.textContent;
     document.getElementById('print-total-credits').textContent = dashTotalCredits.textContent;
-    document.getElementById('print-division').textContent = dashDivisionBadge.textContent;
+    document.getElementById('print-division').innerHTML = dashDivisionBadge.innerHTML;
     document.getElementById('print-date').textContent = new Date().toLocaleDateString('bn-BD');
 
     if (currentMode === 'mode-year') {{
@@ -1303,7 +1325,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   // Copy Summary
   document.getElementById('btn-copy-summary').addEventListener('click', () => {{
     const cgpa = dashCgpaVal.textContent;
-    const div = dashDivisionBadge.textContent;
+    const div = dashDivisionBadge.innerText;
     const cr = dashTotalCredits.textContent;
     const text = `জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর রেজাল্ট:\n• সিজিপিএ: ${{cgpa}} / 4.00\n• মূল্যায়ন: ${{div}}\n• মোট ক্রেডিট: ${{cr}}\nহিসাব করুন: https://www.helptrickbd.com/p/nu-cgpa-calculator.html`;
 
