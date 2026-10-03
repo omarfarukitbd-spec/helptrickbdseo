@@ -59,6 +59,27 @@ def generate_page():
 
 <style>
 /* ========================================================================== */
+/* 0. SOLAIMANLIPI & BENGALI HIGH-PRECISION WEB TYPOGRAPHY                    */
+/* ========================================================================== */
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+
+@font-face {{
+  font-family: 'SolaimanLipi';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-normal-v1.0.woff2') format('woff2');
+}}
+@font-face {{
+  font-family: 'SolaimanLipi';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
+}}
+
+/* ========================================================================== */
 /* 1. FULL-WIDTH RESPONSIVE CANVAS FOR BLOGGER                                */
 /* ========================================================================== */
 .static_page #feed-view, .item-view #feed-view, #feed-view,
@@ -84,7 +105,7 @@ def generate_page():
   width: 100% !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
-  font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
@@ -578,6 +599,9 @@ def generate_page():
 }}
 
 /* The Pure A4 Transcript Sheet */
+#htbd-certificate-paper, #htbd-certificate-paper * {{
+  font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
+}}
 #htbd-certificate-paper {{
   width: 100%;
   max-width: 790px;
@@ -2734,9 +2758,23 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     certRegSession.textContent = modalInpSession.value.trim() || '২০২০-২১ (নিয়মিত)';
   }});
 
+  // Pure deterministic Bengali numeral and date converter
+  function toBnDigits(num) {{
+    const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+    return String(num).replace(/[0-9]/g, d => bnDigits[d]);
+  }}
+
+  function getBnDateString(date) {{
+    const bnMonths = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+    const day = toBnDigits(date.getDate());
+    const month = bnMonths[date.getMonth()];
+    const year = toBnDigits(date.getFullYear());
+    return day + ' ' + month + ', ' + year;
+  }}
+
   function populateCertificateData() {{
     const now = new Date();
-    const dateFormatted = now.toLocaleDateString('bn-BD', {{ day: 'numeric', month: 'long', year: 'numeric' }});
+    const dateFormatted = getBnDateString(now);
     const randomRef = 'Ref: NU-' + now.getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
     certRefNo.textContent = randomRef;
     certIssueDate.textContent = 'তারিখ: ' + dateFormatted;
@@ -2769,6 +2807,13 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
     // Table Rows
     certTableBody.innerHTML = '';
+    const yearLabels = {{
+      '1': {{ bn: '১ম বর্ষ বার্ষিক পরীক্ষা', en: '1st Year Final Examination' }},
+      '2': {{ bn: '২য় বর্ষ বার্ষিক পরীক্ষা', en: '2nd Year Final Examination' }},
+      '3': {{ bn: '৩য় বর্ষ বার্ষিক পরীক্ষা', en: '3rd Year Final Examination' }},
+      '4': {{ bn: '৪র্থ বর্ষ বার্ষিক পরীক্ষা', en: '4th Year Final Examination' }}
+    }};
+
     if (currentMode === 'mode-year') {{
       let rowIdx = 1;
       yearCards.forEach(card => {{
@@ -2793,11 +2838,15 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
         else if (pNum >= 2.25) lg = 'C';
         else if (pNum >= 2.00) lg = 'D';
 
+        const yInfo = yearLabels[yr] || {{ bn: toBnDigits(yr) + 'ম বর্ষ বার্ষিক পরীক্ষা', en: yr + 'th Year Final Examination' }};
+        const examTitle = yInfo.bn + ' (' + yInfo.en + ')';
+        const rowBnIdx = toBnDigits(rowIdx < 10 ? '0' + rowIdx : rowIdx);
+
         const tr = document.createElement('tr');
         tr.style.background = (rowIdx % 2 === 0) ? '#f8fafc' : '#ffffff';
         tr.innerHTML = `
-          <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center;">${{rowIdx < 10 ? '০' + rowIdx : rowIdx}}</td>
-          <td style="border: 1px solid #cbd5e1; padding: 5px 8px; font-weight: 600;">${{yr}}ম বর্ষ বার্ষিক পরীক্ষা (${{yr}}st Year Final Examination)</td>
+          <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center;">${{rowBnIdx}}</td>
+          <td style="border: 1px solid #cbd5e1; padding: 5px 8px; font-weight: 600;">${{examTitle}}</td>
           <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center;">${{cr}}</td>
           <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center; font-weight: 700; color: #1e3a8a;">${{lg}}</td>
           <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center; font-weight: 700;">${{gpa}}</td>
@@ -2810,7 +2859,8 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       const rows = document.querySelectorAll('.htbd-course-row');
       let rowIdx = 1;
       rows.forEach(r => {{
-        const name = r.querySelector('.c-name').value.trim() || ('কোর্স ' + (rowIdx < 10 ? '০' : '') + rowIdx);
+        const rowBnIdx = toBnDigits(rowIdx < 10 ? '0' + rowIdx : rowIdx);
+        const name = r.querySelector('.c-name').value.trim() || ('কোর্স ' + rowBnIdx);
         const cr = r.querySelector('.c-credit').value;
         const gr = r.querySelector('.c-grade').value || '-';
         const rawGp = r.querySelector('.c-point').value.trim();
@@ -2820,7 +2870,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
         const tr = document.createElement('tr');
         tr.style.background = (rowIdx % 2 === 0) ? '#f8fafc' : '#ffffff';
         tr.innerHTML = `
-          <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center;">${{rowIdx < 10 ? '০' + rowIdx : rowIdx}}</td>
+          <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center;">${{rowBnIdx}}</td>
           <td style="border: 1px solid #cbd5e1; padding: 5px 8px; font-weight: 600;">${{name}}</td>
           <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center;">${{cr}}</td>
           <td style="border: 1px solid #cbd5e1; padding: 5px 6px; text-align: center; font-weight: 700; color: #1e3a8a;">${{gr}}</td>
@@ -2858,8 +2908,25 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 <head>
   <meta charset="utf-8">
   <title>NU_Academic_Transcript_2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.maateen.me/solaiman-lipi/font.css">
   <style>
+    @font-face {{
+      font-family: 'SolaimanLipi';
+      font-display: swap;
+      font-style: normal;
+      font-weight: 400;
+      src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-normal-v1.0.woff2') format('woff2');
+    }}
+    @font-face {{
+      font-family: 'SolaimanLipi';
+      font-display: swap;
+      font-style: normal;
+      font-weight: 700;
+      src: url('https://fonts.maateen.me/solaiman-lipi/solaimanlipi-bold-v1.0.woff2') format('woff2');
+    }}
     @page {{
       size: A4 portrait;
       margin: 8mm 10mm;
@@ -2868,13 +2935,14 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       box-sizing: border-box;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
+      font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
     }}
     body {{
       margin: 0;
       padding: 0;
       background: #ffffff !important;
       color: #0c2340 !important;
-      font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, Arial, sans-serif !important;
+      font-family: 'SolaimanLipi', 'Noto Sans Bengali', Arial, sans-serif !important;
     }}
     #htbd-certificate-paper {{
       width: 100% !important;
@@ -2899,12 +2967,22 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 </html>`);
     doc.close();
 
-    // Trigger Print once styles load
-    setTimeout(() => {{
+    // Trigger Print once styles and fonts are 100% loaded
+    const triggerPrint = () => {{
       iframe.contentWindow.focus();
       iframe.contentWindow.print();
-      setTimeout(() => iframe.remove(), 2500);
-    }}, 450);
+      setTimeout(() => iframe.remove(), 4000);
+    }};
+
+    if (doc.fonts && doc.fonts.ready) {{
+      doc.fonts.ready.then(() => {{
+        setTimeout(triggerPrint, 250);
+      }}).catch(() => {{
+        setTimeout(triggerPrint, 600);
+      }});
+    }} else {{
+      setTimeout(triggerPrint, 700);
+    }}
   }});
 
   // Copy Summary
