@@ -30,6 +30,7 @@ The agent is strictly FORBIDDEN from performing any of the following actions wit
 | 6 | **Final Live Publishing to Blogger** | Publishing untested, raw AI content directly to live production bypasses quality gatekeeping. | Agent must run `pre_flight_checker.py`, present preview/metadata to user, and confirm before calling live publish. |
 | 7 | **Pulling Updates from Git (`git pull` / `git fetch`)** | Unprompted pulls cause unwanted merge conflicts, rebase locks, or unexpected local overwrites. | Only execute `git pull` when the user explicitly instructs in chat (e.g., "গিট থেকে পুল করো" / "pull koro"). |
 | 8 | **Editing Existing Posts Without Pre-Backup** | Overwriting content without a snapshot prevents rollback if mistakes occur. | Agent MUST verify that a 100% snapshot (HTML, labels, images, metadata) is created in `backups/posts/` before any update. |
+| 9 | **Using Outdated, Stale, or Factually Discarded Information** | Publishing cancelled circulars (e.g., discarded draft mark distributions, obsolete curricula, stale fees) misinforms readers and destroys E-E-A-T and AdSense trust. | Agent MUST verify that all policies, marks distributions, and dates match the latest official gazettes/circulars (`.gov.bd`). Never rely on third-party blogs or viral internet myths. |
 
 ---
 
