@@ -1642,51 +1642,51 @@ def generate_page():
       <div id="htbd-certificate-paper">
         <div class="htbd-cert-inner-frame">
 
-          <!-- Background Watermark Crest (Ultra-Subtle Institutional Seal) -->
-          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 280px; height: 280px; opacity: 0.04; pointer-events: none; z-index: 1;">
-            <svg viewBox="0 0 200 200" style="width: 100%; height: 100%;">
-              <circle cx="100" cy="100" r="95" fill="none" stroke="#1e3a8a" stroke-width="4" stroke-dasharray="6,4" />
-              <circle cx="100" cy="100" r="82" fill="none" stroke="#b45309" stroke-width="2" />
-              <path d="M50 135 Q100 115 150 135 L140 145 Q100 128 60 145 Z" fill="#1e3a8a" />
-              <circle cx="100" cy="75" r="28" fill="#b91c1c" />
-              <path d="M72 105 L100 70 L128 105 Z" fill="#b45309" />
-            </svg>
+          <!-- Background Watermark (Ultra-Subtle Unofficial Notice) -->
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-25deg); font-size: 38px; font-weight: 800; color: #0c2340; opacity: 0.035; pointer-events: none; z-index: 1; white-space: nowrap; user-select: none; letter-spacing: 4px; text-transform: uppercase;">
+            HELPTRICKBD • UNOFFICIAL STUDENT COPY
           </div>
 
           <!-- Document Header -->
           <div style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #1e3a8a; padding-bottom: 12px; margin-bottom: 12px;">
             <!-- Left: NU Official Vector Monogram / Emblem -->
-            <div style="width: 65px; height: 65px; flex-shrink: 0; text-align: center;">
-              <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
-                <circle cx="50" cy="50" r="46" fill="#f8fafc" stroke="#1e3a8a" stroke-width="3" />
-                <circle cx="50" cy="50" r="39" fill="none" stroke="#b45309" stroke-width="1.5" />
+            <div style="width: 70px; height: 70px; flex-shrink: 0; text-align: center;">
+              <svg width="70" height="70" viewBox="0 0 100 100" style="width: 70px !important; height: 70px !important; display: block; margin: 0 auto;">
+                <circle cx="50" cy="50" r="47" fill="#1e3a8a" />
+                <circle cx="50" cy="50" r="43" fill="#ffffff" stroke="#b45309" stroke-width="1.5" />
+                <circle cx="50" cy="50" r="33" fill="#f8fafc" stroke="#1e3a8a" stroke-width="1.5" />
                 <!-- Sunburst -->
-                <circle cx="50" cy="38" r="14" fill="#b91c1c" />
-                <path d="M50 16 L50 22 M34 22 L38 27 M66 22 L62 27" stroke="#b45309" stroke-width="2" stroke-linecap="round" />
+                <path d="M50 19 L50 25 M38 23 L41 27 M62 23 L59 27 M30 31 L35 33 M70 31 L65 33" stroke="#d97706" stroke-width="1.8" stroke-linecap="round" />
+                <circle cx="50" cy="38" r="11" fill="#dc2626" />
                 <!-- Open Book -->
-                <path d="M26 62 Q50 50 50 68 Q50 50 74 62 L74 72 Q50 60 50 78 Q50 60 26 72 Z" fill="#1e3a8a" />
-                <path d="M50 68 L50 78" stroke="#b45309" stroke-width="2" />
+                <path d="M28 58 Q50 48 50 64 Q50 48 72 58 L72 68 Q50 58 50 74 Q50 58 28 68 Z" fill="#1e3a8a" />
+                <path d="M30 60 Q50 50 50 66 L50 72 Q50 56 30 66 Z" fill="#ffffff" opacity="0.9" />
+                <path d="M70 60 Q50 50 50 66 L50 72 Q50 56 70 66 Z" fill="#ffffff" opacity="0.9" />
+                <line x1="50" y1="50" x2="50" y2="74" stroke="#b45309" stroke-width="1.5" />
                 <!-- Rice Sheaves Base -->
-                <path d="M30 76 Q50 86 70 76" fill="none" stroke="#15803d" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M28 72 Q50 84 72 72" fill="none" stroke="#15803d" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M24 66 Q26 75 34 80 M76 66 Q74 75 66 80" fill="none" stroke="#15803d" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M36 82 Q50 86 64 82 L60 87 Q50 89 40 87 Z" fill="#b45309" />
               </svg>
             </div>
 
             <!-- Center: University Identification & Document Title -->
-            <div style="text-align: center; flex: 1; padding: 0 12px;">
-              <div style="font-size: 19px; font-weight: 800; color: #0c2340; letter-spacing: 0.5px; line-height: 1.2;">জাতীয় বিশ্ববিদ্যালয়, বাংলাদেশ</div>
-              <div style="font-size: 13.5px; font-weight: 700; color: #1e3a8a; letter-spacing: 0.8px; margin-top: 2px;">NATIONAL UNIVERSITY, BANGLADESH</div>
-              <div style="font-size: 11px; color: #475569; margin-top: 2px;">Gazipur-1704, Bangladesh • Academic Evaluation System</div>
-              <div style="display: inline-block; background: #1e3a8a; color: #ffffff; padding: 3px 14px; border-radius: 4px; font-size: 12px; font-weight: 700; margin-top: 5px; letter-spacing: 0.5px;">
-                ACADEMIC TRANSCRIPT & GRADE EVALUATION REPORT
+            <div style="text-align: center; flex: 1; padding: 0 10px;">
+              <div style="font-size: 18px; font-weight: 800; color: #0c2340; letter-spacing: 0.5px; line-height: 1.2;">জাতীয় বিশ্ববিদ্যালয় গ্রেডিং সিস্টেম</div>
+              <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; letter-spacing: 0.6px; margin-top: 2px;">NATIONAL UNIVERSITY GRADING SYSTEM • BANGLADESH</div>
+              <div style="font-size: 11px; color: #475569; margin-top: 2px;">হেল্পট্রিকবিডি অনলাইন শিক্ষা প্ল্যাটফর্ম • HelpTrickBD.com EduTools</div>
+              <div style="display: inline-block; background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; padding: 3px 14px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-top: 4px; letter-spacing: 0.5px;">
+                অনলাইন সিজিপিএ মূল্যায়ন রেকর্ড (শিক্ষার্থী কপি — অফিসিয়াল ট্রান্সক্রিপ্ট নয়)
               </div>
             </div>
 
             <!-- Right: Official Document Verification & Serial Box -->
-            <div style="width: 140px; flex-shrink: 0; text-align: right;">
-              <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc; font-size: 10px; line-height: 1.4; text-align: left;">
-                <div style="font-weight: 700; color: #1e3a8a; font-size: 9.5px; text-transform: uppercase;">PROVISIONAL TRANSCRIPT</div>
-                <div id="cert-ref-no" style="font-family: monospace; font-size: 9.5px; color: #0f172a; font-weight: bold; margin-top: 2px;">Ref: NU-2026-89412</div>
-                <div id="cert-issue-date" style="color: #475569; font-size: 9.5px; margin-top: 1px;">তারিখ: ৩ অক্টোবর ২০২৬</div>
+            <div style="width: 145px; flex-shrink: 0; text-align: right;">
+              <div style="border: 1px dashed #f59e0b; border-radius: 4px; padding: 5px 8px; background: #fffbeb; font-size: 9.5px; line-height: 1.35; text-align: left;">
+                <div style="font-weight: 800; color: #b45309; font-size: 9px; text-transform: uppercase;">UNOFFICIAL REPORT</div>
+                <div style="font-size: 8.5px; color: #dc2626; font-weight: 700;">মূল সনদ বা ট্রান্সক্রিপ্ট নয়</div>
+                <div id="cert-ref-no" style="font-family: monospace; font-size: 9px; color: #0f172a; margin-top: 2px;">Ref: HTBD-NU-2026-89412</div>
+                <div id="cert-issue-date" style="color: #475569; font-size: 9px; margin-top: 1px;">তারিখ: ৩ অক্টোবর, ২০২৬</div>
               </div>
             </div>
           </div>
@@ -1756,39 +1756,39 @@ def generate_page():
           </div>
 
           <!-- Official Sign-off & Verification Footer -->
-          <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px; padding-top: 12px; border-top: 1px dashed #cbd5e1;">
+          <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 12px; border-top: 1px dashed #cbd5e1;">
             <!-- Left: Platform Signature & Security Hash -->
             <div style="font-size: 10px; color: #475569; line-height: 1.45; width: 33%;">
-              প্রস্তুতকারক: <strong>HelpTrickBD Digital Education</strong><br />
-              ভেরিফিকেশন কি: <span style="font-family: monospace; color: #1e3a8a; font-weight: bold;">HTBD-NU26-VAL</span><br />
-              মূল্যায়ন স্ট্যাটাস: <span style="color: #15803d; font-weight: bold;">সিস্টেম ভেরিফাইড (PASS)</span>
+              উৎস প্ল্যাটফর্ম: <strong>HelpTrickBD.com</strong><br />
+              টুল: <strong>NU CGPA Calculator 2026</strong><br />
+              স্ট্যাটাস: <span style="color: #0369a1; font-weight: bold;">শিক্ষার্থী ব্যক্তিগত রেকর্ড (অনানুষ্ঠানিক)</span>
             </div>
 
             <!-- Center: Embossed Official Seal Stamp (SVG) -->
             <div style="text-align: center; width: 33%;">
-              <div style="display: inline-block; border: 2px dashed #1e3a8a; border-radius: 50%; width: 70px; height: 70px; padding: 2px; box-sizing: border-box;">
-                <div style="border: 1px solid #1e3a8a; border-radius: 50%; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 7px; font-weight: 700; color: #1e3a8a; text-transform: uppercase; line-height: 1.15;">
-                  <span>NATIONAL</span>
-                  <span style="font-size: 8.5px; color: #b45309; letter-spacing: 0.5px;">- 2026 -</span>
-                  <span>UNIVERSITY</span>
-                  <span style="font-size: 6px; color: #059669; letter-spacing: 0.5px;">EVALUATED</span>
+              <div style="display: inline-block; border: 2px dashed #0284c7; border-radius: 50%; width: 70px; height: 70px; padding: 2px; box-sizing: border-box;">
+                <div style="border: 1px solid #0284c7; border-radius: 50%; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 6.5px; font-weight: 700; color: #0369a1; text-transform: uppercase; line-height: 1.15;">
+                  <span>HELPTRICKBD</span>
+                  <span style="font-size: 7.5px; color: #b45309; letter-spacing: 0.5px;">- ONLINE -</span>
+                  <span>CALCULATOR</span>
+                  <span style="font-size: 5.5px; color: #15803d; letter-spacing: 0.5px;">STUDENT COPY</span>
                 </div>
               </div>
             </div>
 
-            <!-- Right: Examination Controller Signature Line -->
+            <!-- Right: Auto-Generated Notice (No Signature) -->
             <div style="text-align: center; width: 33%;">
-              <div style="font-family: 'Brush Script MT', cursive, Georgia, serif; font-size: 18px; color: #1e3a8a; margin-bottom: 2px; font-style: italic;">Md. Omar Faruk</div>
-              <div style="border-top: 1.5px solid #0c2340; padding-top: 4px; font-size: 11px; font-weight: 700; color: #0c2340;">
-                পরীক্ষা মূল্যায়ন সমন্বয়কারী
+              <div style="border: 1px dashed #cbd5e1; border-radius: 6px; padding: 6px 8px; background: #f8fafc; font-size: 10px; line-height: 1.4; color: #475569;">
+                <div style="font-weight: 700; color: #b91c1c; font-size: 10px;">কম্পিউটার অটো-জেনারেটেড কপি</div>
+                <div style="font-weight: 600; color: #1e3a8a; font-size: 9px; margin-top: 1px;">HelpTrickBD.com সিস্টেম দ্বারা প্রস্তুতকৃত</div>
+                <div style="font-size: 8px; color: #64748b; margin-top: 2px;">(অনলাইন মূল্যায়ন — কোনো স্বাক্ষরের প্রয়োজন নেই)</div>
               </div>
-              <div style="font-size: 9.5px; color: #64748b;">(Controller of Examinations Desk)</div>
             </div>
           </div>
 
           <!-- Bottom Legal & Ordinance Disclaimer -->
-          <div style="position: relative; z-index: 2; margin-top: 10px; font-size: 9px; color: #64748b; line-height: 1.35; text-align: center; border-top: 0.5px solid #e2e8f0; padding-top: 6px;">
-            * এই একাডেমিক মূল্যায়নপত্রটি জাতীয় বিশ্ববিদ্যালয়ের ৪.০০ ক্রেডিট-ওয়েটেড অর্ডিন্যান্স অনুযায়ী স্বয়ংক্রিয়ভাবে প্রস্তুতকৃত। সরকারি চাকরি ও উচ্চশিক্ষার প্রাতিষ্ঠানিক প্রামাণ্য দলিলের জন্য গাজীপুর পরীক্ষা নিয়ন্ত্রণ দপ্তর কর্তৃক ইস্যুকৃত মূল সনদ ও ট্রান্সক্রিপ্ট প্রযোজ্য।
+          <div style="position: relative; z-index: 2; margin-top: 10px; font-size: 9.5px; color: #334155; line-height: 1.45; text-align: center; border: 1px solid #fecaca; background: #fef2f2; border-radius: 6px; padding: 7px 12px;">
+            <strong style="color: #b91c1c;">[জরুরি সতর্কবার্তা ও আইনি নোটিশ]:</strong> এই ফলাফল বিবরণীটি শিক্ষার্থীদের ব্যক্তিগত হিসাব ও সিজিপিএ পর্যালোচনার সুবিধার্থে <strong>HelpTrickBD.com</strong>-এর স্বয়ংক্রিয় অনলাইন ক্যালকুলেটর দ্বারা প্রস্তুতকৃত একটি অনানুষ্ঠানিক (Unofficial) কপি। এটি জাতীয় বিশ্ববিদ্যালয় গাজীপুর কর্তৃক ইস্যুকৃত কোনো মূল সনদ বা অফিসিয়াল ট্রান্সক্রিপ্ট নয়। সরকারি/বেসরকারি চাকরি, উচ্চশিক্ষা বা পাসপোর্ট আবেদনের ক্ষেত্রে জাতীয় বিশ্ববিদ্যালয় পরীক্ষা নিয়ন্ত্রণ দপ্তর কর্তৃক ইস্যুকৃত মূল সনদ ও সিলমোহরযুক্ত ট্রান্সক্রিপ্টই একমাত্র প্রযোজ্য ও আইনগতভাবে গ্রহণযোগ্য।
           </div>
 
         </div>
