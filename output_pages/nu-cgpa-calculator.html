@@ -1530,17 +1530,19 @@
         <!-- Progression Trend Curve (SVG Canvas) -->
         <div class="htbd-trend-card">
           <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; display: flex; justify-content: space-between;">
-            <span class="htbd-trend-title" style="color: #475569;">বর্ষভিত্তিক অগ্রগতি গ্রাফ</span>
-            <span style="font-size: 11px; color: #94a3b8;">১ম → ৪র্থ বর্ষ</span>
+            <span id="dash-trend-title" class="htbd-trend-title" style="color: #475569;">বর্ষভিত্তিক অগ্রগতি গ্রাফ</span>
+            <span id="dash-trend-sub" style="font-size: 11px; color: #94a3b8;">১ম → ৪র্থ বর্ষ</span>
           </div>
           <div style="height: 60px; width: 100%;">
             <svg id="dash-trend-svg" viewBox="0 0 200 60" style="width: 100%; height: 100%; overflow: visible;">
               <line class="dash-trend-axis" x1="10" y1="50" x2="190" y2="50" stroke="#cbd5e1" stroke-width="1" />
               <polyline id="dash-trend-line" fill="none" stroke="#3b82f6" stroke-width="2.5" points="20,50 70,50 120,50 170,50" />
-              <circle id="p1" cx="20" cy="50" r="3.5" fill="#1e40af" />
-              <circle id="p2" cx="70" cy="50" r="3.5" fill="#1e40af" />
-              <circle id="p3" cx="120" cy="50" r="3.5" fill="#1e40af" />
-              <circle id="p4" cx="170" cy="50" r="3.5" fill="#1e40af" />
+              <g id="dash-trend-points">
+                <circle id="p1" cx="20" cy="50" r="3.5" fill="#1e40af" />
+                <circle id="p2" cx="70" cy="50" r="3.5" fill="#1e40af" />
+                <circle id="p3" cx="120" cy="50" r="3.5" fill="#1e40af" />
+                <circle id="p4" cx="170" cy="50" r="3.5" fill="#1e40af" />
+              </g>
             </svg>
           </div>
         </div>
@@ -2111,6 +2113,9 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   const dashTotalPoints = document.getElementById('dash-total-points');
   const dashProgramBadge = document.getElementById('dash-program-badge');
   const dashTrendLine = document.getElementById('dash-trend-line');
+  const dashTrendTitle = document.getElementById('dash-trend-title');
+  const dashTrendSub = document.getElementById('dash-trend-sub');
+  const dashTrendPoints = document.getElementById('dash-trend-points');
 
   // Program switching (Clean Class Toggle, Zero Inline Style Pollution)
   progBtns.forEach(btn => {
@@ -2220,7 +2225,11 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     });
 
     const cgpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
-    updateDashboard(cgpa, totalCredits, totalPoints, yearGpas);
+    updateDashboard(cgpa, totalCredits, totalPoints, yearGpas, {
+      title: _bn('বর্ষভিত্তিক অগ্রগতি গ্রাফ'),
+      sub: _bn('১ম → ৪র্থ বর্ষ'),
+      type: 'year'
+    });
     saveState();
   }
 
@@ -2243,7 +2252,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     return _bn('নট প্রমোটেড / ডিগ্রি অপ্রাপ্ত');
   }
 
-  function updateDashboard(cgpa, credits, points, gpaTrend) {
+  function updateDashboard(cgpa, credits, points, trendData, trendConfig) {
     const formattedCgpa = cgpa.toFixed(2);
     dashCgpaVal.textContent = formattedCgpa;
     dashTotalCredits.textContent = credits;
@@ -2283,31 +2292,107 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
     dashGaugeCircle.style.stroke = strokeColor;
 
-    // Update Trend Graph (Only plots valid entered years)
-    if (gpaTrend && gpaTrend.length >= 2) {
-      const xCoords = [20, 70, 120, 170];
+    // Adaptive Dynamic Trend Graph
+    const cfg = trendConfig || {
+      title: _bn('বর্ষভিত্তিক অগ্রগতি গ্রাফ'),
+      sub: _bn('১ম → ৪র্থ বর্ষ'),
+      type: 'year'
+    };
+
+    if (dashTrendTitle) {
+      dashTrendTitle.textContent = cfg.title;
+      scrubEntities(dashTrendTitle);
+    }
+    if (dashTrendSub) {
+      dashTrendSub.textContent = cfg.sub;
+      scrubEntities(dashTrendSub);
+    }
+
+    if (dashTrendPoints && dashTrendLine) {
+      dashTrendPoints.innerHTML = '';
       let validPoints = [];
 
-      gpaTrend.forEach((val, i) => {
-        if (i < xCoords.length) {
-          const circle = document.getElementById('p' + (i + 1));
-          if (val !== null && !isNaN(val)) {
-            const y = 50 - (Math.min(Math.max(val / 4.00, 0), 1) * 40);
-            validPoints.push(xCoords[i] + ',' + y);
-            if (circle) {
-              circle.setAttribute('cy', y);
-              circle.style.opacity = '1';
-            }
-          } else {
-            if (circle) {
-              circle.setAttribute('cy', 50);
-              circle.style.opacity = '0.25';
-            }
-          }
-        }
-      });
+      if (cfg.type === 'course') {
+        // Course-wise mode: trendData is array of label and val
+        const list = Array.isArray(trendData) ? trendData : [];
+        if (list.length > 0) {
+          const count = list.length;
+          const startX = 20;
+          const endX = 180;
+          const stepX = count > 1 ? ((endX - startX) / (count - 1)) : 0;
 
-      if (dashTrendLine) {
+          list.forEach((item, idx) => {
+            const val = (item && typeof item === 'object') ? item.val : item;
+            if (val !== null && !isNaN(val)) {
+              const x = count === 1 ? 100 : Math.round(startX + (idx * stepX));
+              const y = 50 - (Math.min(Math.max(val / 4.00, 0), 1) * 40);
+              const yFixed = y.toFixed(1);
+              validPoints.push(x + ',' + yFixed);
+
+              const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+              circle.setAttribute('cx', x);
+              circle.setAttribute('cy', yFixed);
+              circle.setAttribute('r', '4');
+              circle.setAttribute('fill', '#1e40af');
+              circle.setAttribute('stroke', '#ffffff');
+              circle.setAttribute('stroke-width', '1.5');
+              circle.style.transition = 'all 0.3s ease';
+
+              const titleElem = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+              const lbl = (item && item.label) ? item.label : ('কোর্স ' + (idx + 1));
+              titleElem.textContent = lbl + ': ' + val.toFixed(2) + ' GP';
+              circle.appendChild(titleElem);
+
+              dashTrendPoints.appendChild(circle);
+            }
+          });
+
+          if (validPoints.length >= 2) {
+            dashTrendLine.setAttribute('points', validPoints.join(' '));
+            dashTrendLine.style.opacity = '1';
+          } else if (validPoints.length === 1) {
+            dashTrendLine.setAttribute('points', validPoints[0] + ' ' + validPoints[0]);
+            dashTrendLine.style.opacity = '0.5';
+          } else {
+            dashTrendLine.setAttribute('points', '10,50 190,50');
+            dashTrendLine.style.opacity = '0.2';
+          }
+        } else {
+          dashTrendLine.setAttribute('points', '10,50 190,50');
+          dashTrendLine.style.opacity = '0.2';
+        }
+      } else {
+        // Year mode: trendData is array of numbers or nulls [y1, y2, y3, y4]
+        const xCoords = [20, 70, 120, 170];
+        const list = Array.isArray(trendData) ? trendData : [];
+
+        xCoords.forEach((x, i) => {
+          const val = list[i];
+          const hasVal = (val !== null && val !== undefined && !isNaN(val) && val > 0);
+          const y = hasVal ? (50 - (Math.min(Math.max(val / 4.00, 0), 1) * 40)) : 50;
+          const yFixed = y.toFixed(1);
+
+          if (hasVal) {
+            validPoints.push(x + ',' + yFixed);
+          }
+
+          const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          circle.setAttribute('cx', x);
+          circle.setAttribute('cy', yFixed);
+          circle.setAttribute('r', hasVal ? '4' : '3');
+          circle.setAttribute('fill', '#1e40af');
+          circle.setAttribute('stroke', '#ffffff');
+          circle.setAttribute('stroke-width', hasVal ? '1.5' : '1');
+          circle.style.opacity = hasVal ? '1' : '0.25';
+          circle.style.transition = 'all 0.3s ease';
+
+          const titleElem = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+          titleElem.textContent = (i + 1) + 'ম বর্ষ: ' + (hasVal ? val.toFixed(2) + ' GPA' : 'ইনপুট নেই');
+          circle.appendChild(titleElem);
+
+          dashTrendPoints.appendChild(circle);
+        });
+
         if (validPoints.length >= 2) {
           dashTrendLine.setAttribute('points', validPoints.join(' '));
           dashTrendLine.style.opacity = '1';
@@ -2451,22 +2536,31 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     const rows = document.querySelectorAll('.htbd-course-row');
     let totalPoints = 0;
     let totalCredits = 0;
+    let courseData = [];
 
-    rows.forEach(r => {
+    rows.forEach((r, idx) => {
       const cr = parseFloat(r.querySelector('.c-credit').value) || 0;
       const rawVal = r.querySelector('.c-point').value.trim();
+      const nameInput = r.querySelector('.c-name');
+      let cLabel = nameInput && nameInput.value.trim() ? nameInput.value.trim() : ('কোর্স ' + (idx + 1));
+      if (cLabel.length > 25) cLabel = cLabel.substring(0, 22) + '...';
 
       if (rawVal !== '') {
         const gp = parseFloat(rawVal);
         if (!isNaN(gp) && cr > 0) {
           totalPoints += (cr * gp);
           totalCredits += cr;
+          courseData.push({ label: cLabel, val: gp });
         }
       }
     });
 
     const gpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
-    updateDashboard(gpa, totalCredits, totalPoints, [gpa, gpa, gpa, gpa]);
+    updateDashboard(gpa, totalCredits, totalPoints, courseData, {
+      title: _bn('কোর্সভিত্তিক পয়েন্ট বিশ্লেষণ'),
+      sub: _bn('কোর্স ১ → শেষ কোর্স'),
+      type: 'course'
+    });
   }
 
   btnAddCourse.addEventListener('click', () => {
@@ -2603,6 +2697,18 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       targetBadge.textContent = 'অসম্ভব (মানোন্নয়ন পরীক্ষা দিন)';
       targetAdvice.textContent = 'গাণিতিকভাবে ৪.০০ এর বেশি জিপিএ তোলা অসম্ভব। পূর্ববর্তী বর্ষগুলোর খারাপ হওয়া বিষয়ের মানোন্নয়ন (Improvement) পরীক্ষা দেওয়া ছাড়া ৩.০০ স্পর্শ করা সম্ভব নয়।';
     }
+
+    if (currentMode === 'mode-target') {
+      updateDashboard(goal, completed * 32, current * completed * 32, [
+        { label: 'বর্তমান CGPA', val: current },
+        { label: 'টার্গেট CGPA', val: goal },
+        { label: 'প্রয়োজনীয় GPA', val: Math.min(Math.max(reqGpa, 0), 4) }
+      ], {
+        title: _bn('টার্গেট ও প্রয়োজনীয় ফলাফল'),
+        sub: _bn('বর্তমান → লক্ষ্য → প্রয়োজনীয়'),
+        type: 'course'
+      });
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -2689,6 +2795,17 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
     impNewGpa.textContent = finalGpa.toFixed(2);
     impDeltaGpa.textContent = (delta >= 0 ? '+' : '') + delta.toFixed(2) + ' GPA';
+
+    if (currentMode === 'mode-improvement') {
+      updateDashboard(finalGpa, defaultCredits, updatedPoints, [
+        { label: 'পূর্বের GPA', val: currentGpa },
+        { label: 'নতুন সম্ভাব্য GPA', val: finalGpa }
+      ], {
+        title: _bn('মানোন্নয়ন অগ্রগতি তুলনা'),
+        sub: _bn('পূর্বের → নতুন GPA'),
+        type: 'course'
+      });
+    }
   }
 
   // ---------------------------------------------------------------------------
