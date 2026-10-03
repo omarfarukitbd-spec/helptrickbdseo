@@ -23,24 +23,381 @@
 <!--more-->
 
 <style>
-/* Full-Width Canvas for NU CGPA Calculator Page (Hides sidebar and gives 100% width) */
-.static_page #feed-view, .item-view #feed-view, #feed-view {
+/* 1. Full-Width Responsive Canvas for NU CGPA Calculator Page */
+.static_page #feed-view, .item-view #feed-view, #feed-view,
+.static_page .main-wrapper, .item-view .main-wrapper,
+.static_page .content-wrapper, .item-view .content-wrapper,
+.static_page #main, .item-view #main,
+.static_page .blog-post, .item-view .blog-post,
+.static_page .post-body, .item-view .post-body,
+.static_page .post-outer-container, .item-view .post-outer-container {
   width: 100% !important;
   max-width: 100% !important;
   float: none !important;
+  box-sizing: border-box !important;
 }
 .static_page #sidebar-container, .item-view #sidebar-container, #sidebar-container {
   display: none !important;
 }
+
+#htbd-nu-cgpa-app {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
 .htbd-calc-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+/* 2. Desktop Table Header for Subject Mode */
+.htbd-course-header {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1.25fr 1fr 38px;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+/* 3. Course Row Base (Desktop) */
+.htbd-course-row {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1.25fr 1fr 38px;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+.htbd-course-row:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 2px 6px rgba(37,99,235,0.08);
+}
+.cr-top {
+  display: contents;
+}
+.cr-controls {
+  display: contents;
+}
+.cr-name {
+  grid-column: 1;
+}
+.cr-col-credit {
+  grid-column: 2;
+}
+.cr-col-grade {
+  grid-column: 3;
+}
+.cr-col-point {
+  grid-column: 4;
+}
+.cr-del-wrap {
+  grid-column: 5;
+  text-align: center;
+}
+.cr-label {
+  display: none;
+}
+.c-name, .c-credit, .c-grade, .c-point {
+  box-sizing: border-box !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.c-name:focus, .c-credit:focus, .c-grade:focus, .c-point:focus {
+  outline: none !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15) !important;
+}
+.btn-del-course {
+  background: #fee2e2;
+  color: #ef4444;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-del-course:hover {
+  background: #fecaca;
+  color: #dc2626;
+  transform: scale(1.05);
+}
+
+/* 4. Improvement Simulator Row (Desktop) */
+.htbd-imp-header {
+  display: grid;
+  grid-template-columns: 1.8fr 1.1fr 1.1fr 34px;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 6px;
+  align-items: center;
+}
+.imp-course-row {
+  display: grid;
+  grid-template-columns: 1.8fr 1.1fr 1.1fr 34px;
+  gap: 6px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 8px;
+  box-sizing: border-box;
+}
+.imp-top {
+  display: contents;
+}
+.imp-bottom {
+  display: contents;
+}
+.imp-name-wrap {
+  grid-column: 1;
+}
+.imp-col-old {
+  grid-column: 2;
+}
+.imp-col-new {
+  grid-column: 3;
+}
+.imp-del-wrap {
+  grid-column: 4;
+  text-align: center;
+}
+.imp-label {
+  display: none;
+}
+.btn-del-imp {
+  background: #fee2e2;
+  color: #ef4444;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-del-imp:hover {
+  background: #fecaca;
+  color: #dc2626;
+}
+
+/* 5. Mobile & Tablet Optimization (< 880px and < 640px) */
 @media (max-width: 880px) {
   .htbd-calc-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
+}
+
+@media (max-width: 640px) {
+  #htbd-nu-cgpa-app {
+    padding: 14px 10px !important;
+    border-radius: 12px !important;
+    margin: 15px 0 !important;
+  }
+  .htbd-mode-panel {
+    padding: 12px 8px !important;
+  }
+  .htbd-prog-btn {
+    font-size: 13px !important;
+    padding: 6px 14px !important;
+  }
+  .htbd-tab-btn {
+    font-size: 13.5px !important;
+    padding: 8px 10px !important;
+    min-width: 130px !important;
+  }
+
+  /* Hide raw table header on mobile */
+  .htbd-course-header {
+    display: none !important;
+  }
+
+  /* Transform Subject Row into an Ultra-Modern Card */
+  .htbd-course-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 12px 10px !important;
+    border-radius: 10px !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03) !important;
+  }
+  .cr-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .cr-name {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    grid-column: auto !important;
+  }
+  .cr-name input {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 8px 10px !important;
+    height: 38px !important;
+    border: 1px solid #94a3b8 !important;
+    border-radius: 6px !important;
+  }
+  .cr-del-wrap {
+    grid-column: auto !important;
+    flex-shrink: 0 !important;
+  }
+  .btn-del-course {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .cr-controls {
+    display: grid !important;
+    grid-template-columns: 1fr 1.15fr 1fr !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+  .cr-col-credit, .cr-col-grade, .cr-col-point {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    min-width: 0 !important;
+    grid-column: auto !important;
+  }
+  .cr-label {
+    display: block !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+    white-space: nowrap !important;
+  }
+  .c-credit, .c-grade, .c-point {
+    width: 100% !important;
+    height: 38px !important;
+    padding: 5px 4px !important;
+    font-size: 13px !important;
+    border-radius: 6px !important;
+  }
+
+  /* Improvement Simulator Mobile Card */
+  .htbd-imp-header {
+    display: none !important;
+  }
+  .imp-course-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 10px !important;
+  }
+  .imp-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .imp-name-wrap {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    grid-column: auto !important;
+  }
+  .imp-del-wrap {
+    grid-column: auto !important;
+    flex-shrink: 0 !important;
+  }
+  .imp-bottom {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .imp-col-old, .imp-col-new {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    grid-column: auto !important;
+  }
+  .imp-label {
+    display: block !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+    white-space: nowrap !important;
+  }
+  .imp-old-gp, .imp-new-gp {
+    height: 36px !important;
+  }
+}
+
+/* 6. Bi-Modal Dark Mode Overrides for Helptrickbd Dark Theme */
+.dark #htbd-nu-cgpa-app {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+.dark #htbd-nu-cgpa-app h2, .dark #htbd-nu-cgpa-app h3, .dark #htbd-nu-cgpa-app h4 {
+  color: #f8fafc !important;
+}
+.dark .htbd-course-header {
+  background: #334155 !important;
+  color: #cbd5e1 !important;
+}
+.dark .htbd-course-row {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+.dark .c-name, .dark .c-credit, .dark .c-grade, .dark .c-point,
+.dark .imp-name, .dark .imp-old-gp, .dark .imp-new-gp {
+  background: #1e293b !important;
+  border-color: #475569 !important;
+  color: #f8fafc !important;
+}
+.dark .c-grade {
+  color: #93c5fd !important;
+}
+.dark .cr-label, .dark .imp-label {
+  color: #94a3b8 !important;
+}
+.dark .htbd-imp-header {
+  background: #334155 !important;
+  color: #cbd5e1 !important;
+}
+.dark .imp-course-row {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+.dark .btn-del-course, .dark .btn-del-imp {
+  background: #450a0a !important;
+  color: #f87171 !important;
 }
 </style>
 
@@ -231,7 +588,7 @@
         </div>
 
         <!-- Dynamic Course Table/Container -->
-        <div style="display: grid; grid-template-columns: 2.2fr 0.9fr 1.2fr 1fr 34px; gap: 6px; padding: 6px 10px; background: #e2e8f0; border-radius: 6px; font-size: 12.5px; font-weight: 700; color: #334155; margin-bottom: 8px;">
+        <div class="htbd-course-header">
           <div>কোর্স কোড ও নাম</div>
           <div style="text-align: center;">ক্রেডিট</div>
           <div style="text-align: center;">লেটার গ্রেড</div>
@@ -329,7 +686,7 @@
             </div>
 
             <!-- Column Header -->
-            <div style="display: grid; grid-template-columns: 1.8fr 1.1fr 1.1fr 30px; gap: 6px; padding: 5px 8px; background: #f1f5f9; border-radius: 4px; font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 6px;">
+            <div class="htbd-imp-header">
               <div>কোর্সের নাম</div>
               <div style="text-align: center;">পূর্বের পয়েন্ট (GP)</div>
               <div style="text-align: center;">টার্গেট পয়েন্ট (GP)*</div>
@@ -956,11 +1313,17 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
     // Division & Color Scheme
     let color = '#2563eb';
-    let badgeText = 'ইনপুট দিন';
+    let badgeText = 'পয়েন্ট বা গ্রেড ইনপুট দিন';
     let badgeBg = '#f1f5f9';
     let badgeColor = '#475569';
 
-    if (cgpa >= 3.00) {
+    if (credits === 0 || cgpa === 0) {
+      color = '#94a3b8';
+      badgeText = 'পয়েন্ট বা গ্রেড ইনপুট দিন';
+      badgeBg = '#f1f5f9';
+      badgeColor = '#475569';
+      dashGaugeCircle.style.strokeDashoffset = circumference;
+    } else if (cgpa >= 3.00) {
       color = '#15803d'; // Emerald
       badgeText = 'First Class (১ম শ্রেণি)';
       badgeBg = '#dcfce7';
@@ -975,7 +1338,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       badgeText = 'Third Class (৩য় শ্রেণি)';
       badgeBg = '#fef3c7';
       badgeColor = '#b45309';
-    } else if (cgpa > 0) {
+    } else {
       color = '#dc2626'; // Red
       badgeText = 'নট প্রমোটেড / ডিগ্রি অপ্রাপ্ত';
       badgeBg = '#fee2e2';
@@ -1013,7 +1376,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   const selDept = document.getElementById('sel-dept');
   const selYear = document.getElementById('sel-year');
 
-  function createCourseRow(code = '', name = '', credit = 4, selectedGrade = '', exactPoint = null) {
+  function createCourseRow(code = '', name = '', credit = 4, selectedGrade = '', exactPoint = '') {
     const row = document.createElement('div');
     row.className = 'htbd-course-row';
 
@@ -1032,37 +1395,37 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       .map(([v,t]) => `<option value="${v}" ${selectedGrade === v ? 'selected' : ''}>${t}</option>`).join('');
 
     row.innerHTML = `
-      <div class="cr-name">
-        <input type="text" class="c-name" value="${displayName}"
-          placeholder="কোর্স কোড ও নাম"
-          style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #cbd5e1;border-radius:4px;font-size:13px;" />
+      <div class="cr-top">
+        <div class="cr-name">
+          <input type="text" class="c-name" value="${displayName}"
+            placeholder="কোর্স কোড ও নাম"
+            style="width:100%;box-sizing:border-box;padding:7px 10px;border:1px solid #cbd5e1;border-radius:6px;font-size:13.5px;" />
+        </div>
+        <div class="cr-del-wrap">
+          <button type="button" class="btn-del-course" title="কোর্স মুছুন">×</button>
+        </div>
       </div>
       <div class="cr-controls">
-        <div>
+        <div class="cr-col cr-col-credit">
           <span class="cr-label">ক্রেডিট</span>
-          <select class="c-credit" style="width:100%;box-sizing:border-box;padding:6px 2px;border:1px solid #cbd5e1;border-radius:4px;font-size:13px;text-align:center;">
+          <select class="c-credit" style="width:100%;box-sizing:border-box;padding:7px 4px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;text-align:center;background:#ffffff;">
             ${cOpts}
           </select>
         </div>
-        <div>
+        <div class="cr-col cr-col-grade">
           <span class="cr-label">লেটার গ্রেড</span>
-          <select class="c-grade" style="width:100%;box-sizing:border-box;padding:6px 2px;border:1px solid #cbd5e1;border-radius:4px;font-size:12.5px;font-weight:700;color:#1e3a8a;">
+          <select class="c-grade" style="width:100%;box-sizing:border-box;padding:7px 4px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;font-weight:700;color:#1e3a8a;background:#ffffff;">
             ${gOpts}
           </select>
         </div>
-        <div>
+        <div class="cr-col cr-col-point">
           <span class="cr-label">পয়েন্ট (GP)</span>
           <input type="number" class="c-point"
             min="0.00" max="4.00" step="0.01"
             value="${initialPoint}"
-            placeholder="টাইপ করুন"
-            style="width:100%;box-sizing:border-box;padding:6px 4px;border:1.5px solid #94a3b8;border-radius:4px;font-size:13px;font-weight:700;text-align:center;color:#0f172a;background:#f8fafc;"
+            placeholder="0.00"
+            style="width:100%;box-sizing:border-box;padding:7px 4px;border:1.5px solid #94a3b8;border-radius:6px;font-size:14px;font-weight:700;text-align:center;color:#0f172a;background:#f8fafc;"
             title="পয়েন্ট টাইপ করলে গ্রেড অটো-সিলেক্ট হবে" />
-        </div>
-        <div style="text-align:center;padding-top:2px;">
-          <span class="cr-label" style="visibility:hidden;">X</span>
-          <button type="button" class="btn-del-course"
-            style="background:#fee2e2;color:#ef4444;border:none;width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:16px;font-weight:bold;display:block;">×</button>
         </div>
       </div>
     `;
@@ -1070,22 +1433,21 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     const cCredit = row.querySelector('.c-credit');
     const cGrade  = row.querySelector('.c-grade');
     const cPoint  = row.querySelector('.c-point');
+    const btnDel  = row.querySelector('.btn-del-course');
 
-    // Grade dropdown -> Point input (one-way sync with visual feedback)
+    // Grade dropdown -> Point input (Sync)
     cGrade.addEventListener('change', () => {
       const gr = cGrade.value;
       if (gr && GRADE_SCALE[gr] !== undefined) {
         cPoint.value = GRADE_SCALE[gr].toFixed(2);
-        cPoint.classList.add('gp-synced');
-        setTimeout(() => cPoint.classList.remove('gp-synced'), 700);
       } else if (gr === '') {
         cPoint.value = '';
       }
       calculateSubjectMode();
     });
 
-    // Point input -> Grade dropdown (auto-select matching letter grade!)
-    cPoint.addEventListener('input', () => {
+    // Point input -> Auto Select matching Letter Grade
+    const syncPointToGrade = () => {
       const rawVal = cPoint.value.trim();
       if (rawVal === '') {
         cGrade.value = '';
@@ -1093,7 +1455,11 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
         return;
       }
       let p = parseFloat(rawVal);
-      if (isNaN(p)) { cGrade.value = ''; calculateSubjectMode(); return; }
+      if (isNaN(p)) {
+        cGrade.value = '';
+        calculateSubjectMode();
+        return;
+      }
       if (p > 4.00) p = 4.00;
       if (p < 0.00) p = 0.00;
 
@@ -1109,13 +1475,15 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       else if (p >= 2.00) g = 'D';
 
       cGrade.value = g;
-      cGrade.classList.add('grade-synced');
-      setTimeout(() => cGrade.classList.remove('grade-synced'), 700);
       calculateSubjectMode();
-    });
+    };
+
+    cPoint.addEventListener('input', syncPointToGrade);
+    cPoint.addEventListener('keyup', syncPointToGrade);
+    cPoint.addEventListener('change', syncPointToGrade);
 
     cCredit.addEventListener('change', calculateSubjectMode);
-    row.querySelector('.btn-del-course').addEventListener('click', () => {
+    btnDel.addEventListener('click', () => {
       row.remove();
       calculateSubjectMode();
     });
@@ -1130,11 +1498,14 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
     rows.forEach(r => {
       const cr = parseFloat(r.querySelector('.c-credit').value) || 0;
-      const gp = parseFloat(r.querySelector('.c-point').value) || 0;
+      const rawVal = r.querySelector('.c-point').value.trim();
 
-      if (cr > 0) {
-        totalPoints += (cr * gp);
-        totalCredits += cr;
+      if (rawVal !== '') {
+        const gp = parseFloat(rawVal);
+        if (!isNaN(gp) && cr > 0) {
+          totalPoints += (cr * gp);
+          totalCredits += cr;
+        }
       }
     });
 
@@ -1143,16 +1514,20 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   }
 
   btnAddCourse.addEventListener('click', () => {
-    createCourseRow();
+    const count = document.querySelectorAll('.htbd-course-row').length + 1;
+    const name = 'কোর্স ' + (count < 10 ? '০' : '') + count;
+    createCourseRow(name, '', 4, '', '');
     calculateSubjectMode();
   });
 
   btnResetCourses.addEventListener('click', () => {
     coursesContainer.innerHTML = '';
-    createCourseRow('কোর্স ০১', '', 4, 'A');
-    createCourseRow('কোর্স ০২', '', 4, 'A-');
-    createCourseRow('কোর্স ০৩', '', 4, 'B+');
-    createCourseRow('কোর্স ০৪', '', 4, 'B');
+    createCourseRow('কোর্স ০১', '', 4, '', '');
+    createCourseRow('কোর্স ০২', '', 4, '', '');
+    createCourseRow('কোর্স ০৩', '', 4, '', '');
+    createCourseRow('কোর্স ০৪', '', 4, '', '');
+    createCourseRow('কোর্স ০৫', '', 4, '', '');
+    createCourseRow('কোর্স ০৬', '', 4, '', '');
     calculateSubjectMode();
   });
 
@@ -1165,7 +1540,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       coursesContainer.innerHTML = '';
       const list = SYLLABUS[dept].years[year];
       list.forEach(c => {
-        createCourseRow(c.code, c.name, c.credit, 'A');
+        createCourseRow(c.code, c.name, c.credit, '', '');
       });
       calculateSubjectMode();
     } else {
@@ -1287,19 +1662,32 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   const impCoursesList = document.getElementById('imp-courses-list');
   const btnAddImpCourse = document.getElementById('btn-add-imp-course');
 
-  function createImpRow(name = 'কোর্স', oldGp = 2.00, newGp = 3.25) {
+  function createImpRow(name = '', oldGp = '', newGp = '') {
     const row = document.createElement('div');
     row.className = 'imp-course-row';
-    row.style.display = 'grid';
-    row.style.gridTemplateColumns = '1.8fr 1.1fr 1.1fr 30px';
-    row.style.gap = '6px';
-    row.style.alignItems = 'center';
+
+    const oldVal = (oldGp !== '' && !isNaN(oldGp)) ? parseFloat(oldGp).toFixed(2) : '';
+    const newVal = (newGp !== '' && !isNaN(newGp)) ? parseFloat(newGp).toFixed(2) : '';
 
     row.innerHTML = `
-      <input type="text" class="imp-name" placeholder="কোর্স নাম" value="${name}" style="padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; box-sizing: border-box; width: 100%;" />
-      <input type="number" class="imp-old-gp" min="0.00" max="4.00" step="0.01" value="${typeof oldGp === 'number' ? oldGp.toFixed(2) : oldGp}" placeholder="2.00" style="padding: 6px 4px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; font-weight: 700; text-align: center; box-sizing: border-box; width: 100%;" title="পূর্বের গ্রেড পয়েন্ট" />
-      <input type="number" class="imp-new-gp" min="0.00" max="3.25" step="0.01" value="${typeof newGp === 'number' ? newGp.toFixed(2) : newGp}" placeholder="3.25" style="padding: 6px 4px; border: 1px solid #86efac; background: #f0fdf4; border-radius: 4px; font-size: 13px; font-weight: 700; color: #15803d; text-align: center; box-sizing: border-box; width: 100%;" title="প্রত্যাশিত নতুন পয়েন্ট (সর্বোচ্চ ৩.২৫)" />
-      <button type="button" class="btn-del-imp" style="background: #fee2e2; color: #ef4444; border: none; width: 28px; height: 28px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">×</button>
+      <div class="imp-top">
+        <div class="imp-name-wrap">
+          <input type="text" class="imp-name" placeholder="কোর্স নাম / কোড" value="${name}" style="padding: 7px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; box-sizing: border-box; width: 100%;" />
+        </div>
+        <div class="imp-del-wrap">
+          <button type="button" class="btn-del-imp" title="মুছুন">×</button>
+        </div>
+      </div>
+      <div class="imp-bottom">
+        <div class="imp-col imp-col-old">
+          <span class="imp-label">পূর্বের পয়েন্ট (GP)</span>
+          <input type="number" class="imp-old-gp" min="0.00" max="4.00" step="0.01" value="${oldVal}" placeholder="2.00" style="padding: 7px 4px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13.5px; font-weight: 700; text-align: center; box-sizing: border-box; width: 100%; background: #ffffff;" title="পূর্বের গ্রেড পয়েন্ট" />
+        </div>
+        <div class="imp-col imp-col-new">
+          <span class="imp-label">টার্গেট পয়েন্ট (সর্বোচ্চ ৩.২৫)</span>
+          <input type="number" class="imp-new-gp" min="0.00" max="3.25" step="0.01" value="${newVal}" placeholder="3.25" style="padding: 7px 4px; border: 1px solid #86efac; background: #f0fdf4; border-radius: 6px; font-size: 13.5px; font-weight: 700; color: #15803d; text-align: center; box-sizing: border-box; width: 100%;" title="প্রত্যাশিত নতুন পয়েন্ট (সর্বোচ্চ ৩.২৫)" />
+        </div>
+      </div>
     `;
 
     row.querySelector('.imp-old-gp').addEventListener('input', calculateImprovementMode);
@@ -1316,7 +1704,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   if (btnAddImpCourse) {
     btnAddImpCourse.addEventListener('click', () => {
       const count = document.querySelectorAll('.imp-course-row').length + 1;
-      createImpRow('কোর্স ' + (count < 10 ? '০' : '') + count, 2.00, 3.25);
+      createImpRow('কোর্স ' + (count < 10 ? '০' : '') + count, '', '');
       calculateImprovementMode();
     });
   }
@@ -1461,9 +1849,9 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
   // Initial Boot
   loadState();
-  btnResetCourses.click(); // load initial rows
-  createImpRow('কোর্স ০১', 2.00, 3.25);
-  createImpRow('কোর্স ০২', 2.25, 3.25);
+  if (btnResetCourses) btnResetCourses.click(); // load empty initial course rows
+  createImpRow('কোর্স ০১', '', '');
+  createImpRow('কোর্স ০২', '', '');
   calculateYearMode();
   calculateTargetMode();
   calculateImprovementMode();
