@@ -1013,88 +1013,104 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   const selDept = document.getElementById('sel-dept');
   const selYear = document.getElementById('sel-year');
 
-  function createCourseRow(code = '', name = '', credit = 4, selectedGrade = 'A', exactPoint = null) {
+  function createCourseRow(code = '', name = '', credit = 4, selectedGrade = '', exactPoint = null) {
     const row = document.createElement('div');
     row.className = 'htbd-course-row';
-    row.style.background = '#ffffff';
-    row.style.border = '1px solid #e2e8f0';
-    row.style.borderRadius = '8px';
-    row.style.padding = '8px 10px';
-    row.style.display = 'grid';
-    row.style.gridTemplateColumns = '2.2fr 0.9fr 1.2fr 1fr 34px';
-    row.style.gap = '6px';
-    row.style.alignItems = 'center';
 
-    let initialPoint = (exactPoint !== null && !isNaN(exactPoint)) ? parseFloat(exactPoint).toFixed(2) : (GRADE_SCALE[selectedGrade] !== undefined ? GRADE_SCALE[selectedGrade].toFixed(2) : '3.75');
+    let initialPoint = '';
+    if (exactPoint !== null && exactPoint !== '' && !isNaN(exactPoint)) {
+      initialPoint = parseFloat(exactPoint).toFixed(2);
+    } else if (selectedGrade && GRADE_SCALE[selectedGrade] !== undefined) {
+      initialPoint = GRADE_SCALE[selectedGrade].toFixed(2);
+    }
+
+    const displayName = name ? code + ' - ' + name : code;
+    const cOpts = [[4,'৪ ক্রেডিট'],[3,'৩ ক্রেডিট'],[2,'২ ক্রেডিট'],[0,'নন-ক্রেডিট']]
+      .map(([v,t]) => `<option value="${v}" ${credit === v ? 'selected' : ''}>${t}</option>`).join('');
+    const gOpts = [['','-- গ্রেড --'],['A+','A+ (4.00)'],['A','A (3.75)'],['A-','A- (3.50)'],
+      ['B+','B+ (3.25)'],['B','B (3.00)'],['B-','B- (2.75)'],['C+','C+ (2.50)'],['C','C (2.25)'],['D','D (2.00)'],['F','F (0.00)']]
+      .map(([v,t]) => `<option value="${v}" ${selectedGrade === v ? 'selected' : ''}>${t}</option>`).join('');
 
     row.innerHTML = `
-      <div>
-        <input type="text" class="c-name" value="${name ? code + ' - ' + name : code}" placeholder="কোর্স কোড ও নাম" style="width: 100%; box-sizing: border-box; padding: 6px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;" />
+      <div class="cr-name">
+        <input type="text" class="c-name" value="${displayName}"
+          placeholder="কোর্স কোড ও নাম"
+          style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #cbd5e1;border-radius:4px;font-size:13px;" />
       </div>
-      <div>
-        <select class="c-credit" style="width: 100%; box-sizing: border-box; padding: 6px 2px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; text-align: center;">
-          <option value="4" ${credit === 4 ? 'selected' : ''}>৪ ক্রেডিট</option>
-          <option value="3" ${credit === 3 ? 'selected' : ''}>৩ ক্রেডিট</option>
-          <option value="2" ${credit === 2 ? 'selected' : ''}>২ ক্রেডিট</option>
-          <option value="0" ${credit === 0 ? 'selected' : ''}>নন-ক্রেডিট</option>
-        </select>
-      </div>
-      <div>
-        <select class="c-grade" style="width: 100%; box-sizing: border-box; padding: 6px 2px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; font-weight: 700; color: #1e3a8a;">
-          <option value="A+" ${selectedGrade === 'A+' ? 'selected' : ''}>A+ (4.00)</option>
-          <option value="A" ${selectedGrade === 'A' ? 'selected' : ''}>A (3.75)</option>
-          <option value="A-" ${selectedGrade === 'A-' ? 'selected' : ''}>A- (3.50)</option>
-          <option value="B+" ${selectedGrade === 'B+' ? 'selected' : ''}>B+ (3.25)</option>
-          <option value="B" ${selectedGrade === 'B' ? 'selected' : ''}>B (3.00)</option>
-          <option value="B-" ${selectedGrade === 'B-' ? 'selected' : ''}>B- (2.75)</option>
-          <option value="C+" ${selectedGrade === 'C+' ? 'selected' : ''}>C+ (2.50)</option>
-          <option value="C" ${selectedGrade === 'C' ? 'selected' : ''}>C (2.25)</option>
-          <option value="D" ${selectedGrade === 'D' ? 'selected' : ''}>D (2.00)</option>
-          <option value="F" ${selectedGrade === 'F' ? 'selected' : ''}>F (0.00)</option>
-          <option value="custom" ${selectedGrade === 'custom' ? 'selected' : ''}>কাস্টম পয়েন্ট</option>
-        </select>
-      </div>
-      <div>
-        <input type="number" class="c-point" min="0.00" max="4.00" step="0.01" value="${initialPoint}" placeholder="0.00" style="width: 100%; box-sizing: border-box; padding: 6px 4px; border: 1px solid #94a3b8; border-radius: 4px; font-size: 13.5px; font-weight: 700; text-align: center; color: #0f172a; background: #f8fafc;" title="সরাসরি পয়েন্ট ইনপুট দিন" />
-      </div>
-      <div style="text-align: center;">
-        <button type="button" class="btn-del-course" style="background: #fee2e2; color: #ef4444; border: none; width: 30px; height: 30px; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold;">×</button>
+      <div class="cr-controls">
+        <div>
+          <span class="cr-label">ক্রেডিট</span>
+          <select class="c-credit" style="width:100%;box-sizing:border-box;padding:6px 2px;border:1px solid #cbd5e1;border-radius:4px;font-size:13px;text-align:center;">
+            ${cOpts}
+          </select>
+        </div>
+        <div>
+          <span class="cr-label">লেটার গ্রেড</span>
+          <select class="c-grade" style="width:100%;box-sizing:border-box;padding:6px 2px;border:1px solid #cbd5e1;border-radius:4px;font-size:12.5px;font-weight:700;color:#1e3a8a;">
+            ${gOpts}
+          </select>
+        </div>
+        <div>
+          <span class="cr-label">পয়েন্ট (GP)</span>
+          <input type="number" class="c-point"
+            min="0.00" max="4.00" step="0.01"
+            value="${initialPoint}"
+            placeholder="টাইপ করুন"
+            style="width:100%;box-sizing:border-box;padding:6px 4px;border:1.5px solid #94a3b8;border-radius:4px;font-size:13px;font-weight:700;text-align:center;color:#0f172a;background:#f8fafc;"
+            title="পয়েন্ট টাইপ করলে গ্রেড অটো-সিলেক্ট হবে" />
+        </div>
+        <div style="text-align:center;padding-top:2px;">
+          <span class="cr-label" style="visibility:hidden;">X</span>
+          <button type="button" class="btn-del-course"
+            style="background:#fee2e2;color:#ef4444;border:none;width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:16px;font-weight:bold;display:block;">×</button>
+        </div>
       </div>
     `;
 
     const cCredit = row.querySelector('.c-credit');
-    const cGrade = row.querySelector('.c-grade');
-    const cPoint = row.querySelector('.c-point');
+    const cGrade  = row.querySelector('.c-grade');
+    const cPoint  = row.querySelector('.c-point');
 
-    // Two-way sync: Grade dropdown -> Point input
+    // Grade dropdown -> Point input (one-way sync with visual feedback)
     cGrade.addEventListener('change', () => {
       const gr = cGrade.value;
-      if (GRADE_SCALE[gr] !== undefined) {
+      if (gr && GRADE_SCALE[gr] !== undefined) {
         cPoint.value = GRADE_SCALE[gr].toFixed(2);
+        cPoint.classList.add('gp-synced');
+        setTimeout(() => cPoint.classList.remove('gp-synced'), 700);
+      } else if (gr === '') {
+        cPoint.value = '';
       }
       calculateSubjectMode();
     });
 
-    // Two-way sync: Point input -> Grade dropdown
+    // Point input -> Grade dropdown (auto-select matching letter grade!)
     cPoint.addEventListener('input', () => {
-      let p = parseFloat(cPoint.value);
-      if (isNaN(p)) p = 0;
+      const rawVal = cPoint.value.trim();
+      if (rawVal === '') {
+        cGrade.value = '';
+        calculateSubjectMode();
+        return;
+      }
+      let p = parseFloat(rawVal);
+      if (isNaN(p)) { cGrade.value = ''; calculateSubjectMode(); return; }
       if (p > 4.00) p = 4.00;
       if (p < 0.00) p = 0.00;
 
-      // Check if matches standard grade scale
-      let matchedGrade = null;
-      for (const [g, val] of Object.entries(GRADE_SCALE)) {
-        if (Math.abs(val - p) < 0.001) {
-          matchedGrade = g;
-          break;
-        }
-      }
-      if (matchedGrade) {
-        cGrade.value = matchedGrade;
-      } else {
-        cGrade.value = 'custom';
-      }
+      let g = 'F';
+      if      (p >= 4.00) g = 'A+';
+      else if (p >= 3.75) g = 'A';
+      else if (p >= 3.50) g = 'A-';
+      else if (p >= 3.25) g = 'B+';
+      else if (p >= 3.00) g = 'B';
+      else if (p >= 2.75) g = 'B-';
+      else if (p >= 2.50) g = 'C+';
+      else if (p >= 2.25) g = 'C';
+      else if (p >= 2.00) g = 'D';
+
+      cGrade.value = g;
+      cGrade.classList.add('grade-synced');
+      setTimeout(() => cGrade.classList.remove('grade-synced'), 700);
       calculateSubjectMode();
     });
 
