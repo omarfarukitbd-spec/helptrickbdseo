@@ -2091,6 +2091,28 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 <!-- ========================================================================== -->
 <script>
 (function() {{
+  // ---------------------------------------------------------------------------
+  // BLOGGER HTML ENTITY SCRUBBER & DECODER
+  // ---------------------------------------------------------------------------
+  function _bn(str) {{
+    if (!str || typeof str !== 'string') return str;
+    if (str.indexOf('&') === -1) return str;
+    const txt = document.createElement('textarea');
+    txt.innerHTML = str;
+    return txt.value;
+  }}
+
+  function scrubEntities(root) {{
+    if (!root) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    let node;
+    while ((node = walker.nextNode())) {{
+      if (node.nodeValue && node.nodeValue.indexOf('&#') !== -1) {{
+        node.nodeValue = _bn(node.nodeValue);
+      }}
+    }}
+  }}
+
   // 1. SYLLABUS DATABASE
   const SYLLABUS = {syllabus_json_str};
 
@@ -2142,15 +2164,15 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     const y4Card = document.querySelector('.htbd-year-card[data-year="4"]');
 
     if (currentProgram === 'honours') {{
-      dashProgramBadge.innerHTML = 'স্নাতক (সম্মান)';
+      dashProgramBadge.textContent = _bn('স্নাতক (সম্মান)');
       if (y3Card) y3Card.style.display = 'block';
       if (y4Card) y4Card.style.display = 'block';
     }} else if (currentProgram === 'degree') {{
-      dashProgramBadge.innerHTML = 'ডিগ্রি (পাস)';
+      dashProgramBadge.textContent = _bn('ডিগ্রি (পাস)');
       if (y3Card) y3Card.style.display = 'block';
       if (y4Card) y4Card.style.display = 'none';
     }} else if (currentProgram === 'masters') {{
-      dashProgramBadge.innerHTML = 'মাস্টার্স';
+      dashProgramBadge.textContent = _bn('মাস্টার্স');
       if (y3Card) y3Card.style.display = 'none';
       if (y4Card) y4Card.style.display = 'none';
     }}
@@ -2249,11 +2271,11 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   // DASHBOARD UPDATER (PURE CSS BADGES & GAUGE ACCURACY)
   // ---------------------------------------------------------------------------
   function getDivisionText(cgpa, credits) {{
-    if (credits === 0 || cgpa === 0) return 'পয়েন্ট বা গ্রেড ইনপুট দিন';
-    if (cgpa >= 3.00) return 'First Class (১ম শ্রেণি)';
-    if (cgpa >= 2.25) return 'Second Class (২য় শ্রেণি)';
-    if (cgpa >= 2.00) return 'Third Class (৩য় শ্রেণি)';
-    return 'নট প্রমোটেড / ডিগ্রি অপ্রাপ্ত';
+    if (credits === 0 || cgpa === 0) return _bn('পয়েন্ট বা গ্রেড ইনপুট দিন');
+    if (cgpa >= 3.00) return _bn('First Class (১ম শ্রেণি)');
+    if (cgpa >= 2.25) return _bn('Second Class (২য় শ্রেণি)');
+    if (cgpa >= 2.00) return _bn('Third Class (৩য় শ্রেণি)');
+    return _bn('নট প্রমোটেড / ডিগ্রি অপ্রাপ্ত');
   }}
 
   function updateDashboard(cgpa, credits, points, gpaTrend) {{
@@ -2273,7 +2295,8 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
     let strokeColor = '#2563eb';
     const divText = getDivisionText(cgpa, credits);
-    dashDivisionBadge.textContent = divText;
+    dashDivisionBadge.textContent = _bn(divText);
+    scrubEntities(dashDivisionBadge);
 
     if (credits === 0 || cgpa === 0) {{
       strokeColor = '#94a3b8';
@@ -2737,6 +2760,14 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     document.body.style.overflow = 'hidden'; // prevent bg scroll
   }});
 
+  // Open Modal & Populate Certificate
+  btnPrint.addEventListener('click', () => {{
+    populateCertificateData();
+    scrubEntities(document.getElementById('htbd-transcript-modal'));
+    transcriptModal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // prevent bg scroll
+  }});
+
   // Close Modal
   function closeModal() {{
     transcriptModal.style.display = 'none';
@@ -2749,46 +2780,49 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 
   // Live Input Sync
   modalInpName.addEventListener('input', () => {{
-    certStudentName.textContent = modalInpName.value.trim() || 'পরীক্ষার্থী (Examinee)';
+    certStudentName.textContent = modalInpName.value.trim() || _bn('পরীক্ষার্থী (Examinee)');
+    scrubEntities(certStudentName);
   }});
   modalInpCollege.addEventListener('input', () => {{
-    certCollegeName.textContent = modalInpCollege.value.trim() || 'জাতীয় বিশ্ববিদ্যালয় অধিভুক্ত কলেজ';
+    certCollegeName.textContent = modalInpCollege.value.trim() || _bn('জাতীয় বিশ্ববিদ্যালয় অধিভুক্ত কলেজ');
+    scrubEntities(certCollegeName);
   }});
   modalInpSession.addEventListener('input', () => {{
-    certRegSession.textContent = modalInpSession.value.trim() || '২০২০-২১ (নিয়মিত)';
+    certRegSession.textContent = modalInpSession.value.trim() || _bn('২০২০-২১ (নিয়মিত)');
+    scrubEntities(certRegSession);
   }});
 
   // Pure deterministic Bengali numeral and date converter
   function toBnDigits(num) {{
     const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-    return String(num).replace(/[0-9]/g, d => bnDigits[d]);
+    return String(num).replace(/[0-9]/g, d => _bn(bnDigits[d]));
   }}
 
   function getBnDateString(date) {{
     const bnMonths = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
     const day = toBnDigits(date.getDate());
-    const month = bnMonths[date.getMonth()];
+    const month = _bn(bnMonths[date.getMonth()]);
     const year = toBnDigits(date.getFullYear());
-    return day + ' ' + month + ', ' + year;
+    return _bn(day + ' ' + month + ', ' + year);
   }}
 
   function populateCertificateData() {{
     const now = new Date();
     const dateFormatted = getBnDateString(now);
     const randomRef = 'Ref: NU-' + now.getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
-    certRefNo.textContent = randomRef;
-    certIssueDate.textContent = 'তারিখ: ' + dateFormatted;
+    certRefNo.textContent = _bn(randomRef);
+    certIssueDate.textContent = _bn('তারিখ: ' + dateFormatted);
 
     // Student identity
-    certStudentName.textContent = modalInpName.value.trim() || 'পরীক্ষার্থী (Examinee)';
-    certCollegeName.textContent = modalInpCollege.value.trim() || 'জাতীয় বিশ্ববিদ্যালয় অধিভুক্ত কলেজ';
-    certRegSession.textContent = modalInpSession.value.trim() || '২০২০-২১ (নিয়মিত)';
+    certStudentName.textContent = modalInpName.value.trim() || _bn('পরীক্ষার্থী (Examinee)');
+    certCollegeName.textContent = modalInpCollege.value.trim() || _bn('জাতীয় বিশ্ববিদ্যালয় অধিভুক্ত কলেজ');
+    certRegSession.textContent = modalInpSession.value.trim() || _bn('২০২০-২১ (নিয়মিত)');
 
     // Degree Name
-    let progName = 'স্নাতক (সম্মান) চার বছর';
-    if (currentProgram === 'degree') progName = 'ডিগ্রি (পাস) তিন বছর';
-    else if (currentProgram === 'masters') progName = 'মাস্টার্স রেগুলার / প্রিলিমিনারি';
-    certProgramName.textContent = progName;
+    let progName = _bn('স্নাতক (সম্মান) চার বছর');
+    if (currentProgram === 'degree') progName = _bn('ডিগ্রি (পাস) তিন বছর');
+    else if (currentProgram === 'masters') progName = _bn('মাস্টার্স রেগুলার / প্রিলিমিনারি');
+    certProgramName.textContent = _bn(progName);
 
     // CGPA & Metrics
     const cgpa = parseFloat(dashCgpaVal.textContent) || 0;
@@ -2799,7 +2833,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     certTotalCredits.textContent = totalCredits;
     certTotalPoints.textContent = totalPoints;
     certCgpa.textContent = cgpa.toFixed(2);
-    certDivision.textContent = divText;
+    certDivision.textContent = _bn(divText);
 
     certFootCredits.textContent = totalCredits;
     certFootCgpa.textContent = cgpa.toFixed(2);
@@ -2808,10 +2842,10 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
     // Table Rows
     certTableBody.innerHTML = '';
     const yearLabels = {{
-      '1': {{ bn: '১ম বর্ষ বার্ষিক পরীক্ষা', en: '1st Year Final Examination' }},
-      '2': {{ bn: '২য় বর্ষ বার্ষিক পরীক্ষা', en: '2nd Year Final Examination' }},
-      '3': {{ bn: '৩য় বর্ষ বার্ষিক পরীক্ষা', en: '3rd Year Final Examination' }},
-      '4': {{ bn: '৪র্থ বর্ষ বার্ষিক পরীক্ষা', en: '4th Year Final Examination' }}
+      '1': {{ bn: _bn('১ম বর্ষ বার্ষিক পরীক্ষা'), en: '1st Year Final Examination' }},
+      '2': {{ bn: _bn('২য় বর্ষ বার্ষিক পরীক্ষা'), en: '2nd Year Final Examination' }},
+      '3': {{ bn: _bn('৩য় বর্ষ বার্ষিক পরীক্ষা'), en: '3rd Year Final Examination' }},
+      '4': {{ bn: _bn('৪র্থ বর্ষ বার্ষিক পরীক্ষা'), en: '4th Year Final Examination' }}
     }};
 
     if (currentMode === 'mode-year') {{
@@ -2881,6 +2915,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
         rowIdx++;
       }});
     }}
+    scrubEntities(document.getElementById('htbd-transcript-modal'));
   }}
 
   // ---------------------------------------------------------------------------
@@ -2889,6 +2924,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   btnTriggerPdfPrint.addEventListener('click', () => {{
     const paper = document.getElementById('htbd-certificate-paper');
     if (!paper) return;
+    scrubEntities(paper);
 
     // Create an invisible, isolated iframe
     const iframe = document.createElement('iframe');
@@ -3039,6 +3075,8 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   }}
 
   // Initial Boot
+  scrubEntities(document.getElementById('htbd-nu-cgpa-app'));
+  scrubEntities(document.getElementById('htbd-transcript-modal'));
   loadState();
   if (btnResetCourses) btnResetCourses.click(); // load empty initial course rows
   createImpRow('কোর্স ০১', '', '');
@@ -3046,6 +3084,8 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
   calculateYearMode();
   calculateTargetMode();
   calculateImprovementMode();
+  scrubEntities(document.getElementById('htbd-nu-cgpa-app'));
+  scrubEntities(document.getElementById('htbd-transcript-modal'));
 
 }})();
 </script>
