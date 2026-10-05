@@ -285,7 +285,7 @@ def click_send_button(driver, input_box):
     return False
 
 
-def wait_for_login(driver, timeout=120):
+def wait_for_login(driver, timeout=300):
     """Waits for user login or existing session to be ready."""
     from selenium.webdriver.common.by import By
     import time
@@ -307,6 +307,12 @@ def wait_for_login(driver, timeout=120):
             if any(q.is_displayed() for q in qr) and not qr_notified:
                 print("[!] কিউআর কোড (QR Code) দেখা যাচ্ছে — অনুগ্রহ করে আপনার মোবাইল দিয়ে একবার স্ক্যান করুন...")
                 qr_notified = True
+                try:
+                    qr_img_path = os.path.join(PROJECT_ROOT, "output_posts", "whatsapp_qr_code.png")
+                    driver.save_screenshot(qr_img_path)
+                    print(f"[*] কিউআর কোড স্ক্রিনশট সংরক্ষিত: {qr_img_path}")
+                except Exception:
+                    pass
         except Exception:
             pass
 
@@ -464,6 +470,7 @@ def run_bot(args):
 
     options = Options()
     options.add_argument(f"--user-data-dir={args.profile_dir}")
+    options.add_argument("--remote-debugging-port=9225")
     options.add_argument("--no-first-run")
     options.add_argument("--no-default-browser-check")
     options.add_argument("--disable-blink-features=AutomationControlled")
@@ -483,7 +490,7 @@ def run_bot(args):
             print("\n" + "=" * 70)
             print("[*] অটোমেটেড বট মোড সক্রিয় (জিরো-হ্যান্ডস অটো-পাইলট)...")
             print("=" * 70 + "\n")
-            if not wait_for_login(driver, timeout=120):
+            if not wait_for_login(driver, timeout=300):
                 print("[ERROR] হোয়াটসঅ্যাপ ওয়েব প্রস্তুত হতে সময়সীমা পার হয়েছে।")
                 return
 

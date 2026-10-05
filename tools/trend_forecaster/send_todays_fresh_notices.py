@@ -62,6 +62,7 @@ def main():
     todays_notices = [
         {
             "source": "জাতীয় বিশ্ববিদ্যালয় (NU Official)",
+            "portal_url": "https://www.nu.ac.bd/",
             "title": "২০২৫ সালের ডিগ্রী (পাস) ও সার্টিফিকেট কোর্সের ২য় বর্ষের ইনকোর্স পরীক্ষার নম্বর অনলাইনে এন্ট্রির সময় বৃদ্ধি সংক্রান্ত বিজ্ঞপ্তি।",
             "pdf_url": "https://www.nu.ac.bd/uploads/notices/notice_6069_pub_date_01102026.pdf",
             "pub_date": "2026-10-01",
@@ -71,6 +72,7 @@ def main():
         },
         {
             "source": "জাতীয় বিশ্ববিদ্যালয় (NU Official)",
+            "portal_url": "https://www.nu.ac.bd/",
             "title": "২০২৫ ও ২০২৬ সালের এলএলবি প্রথম পর্ব পরীক্ষার ফরম পূরণের সময় বৃদ্ধি সংক্রান্ত বিজ্ঞপ্তি।",
             "pdf_url": "https://www.nu.ac.bd/uploads/notices/notice_2084_pub_date_01102026.PDF",
             "pub_date": "2026-10-01",

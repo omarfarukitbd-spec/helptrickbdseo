@@ -394,12 +394,25 @@ def extract_key_dates_and_details(title, pdf_url):
 def build_breaking_notice_card(notice, idx):
     """
     Builds an all-inclusive intelligence card for a single breaking notice.
-    Incorporates all 7 requested features.
+    Incorporates all requested features, exact source links, and precise timestamps.
+    Strictly Zero Emojis (Rule 12).
     """
     title = notice["title"].replace("<", "&lt;").replace(">", "&gt;")
     source = notice.get("source", "শিক্ষা বোর্ড")
-    pdf_url = notice.get("pdf_url")
-    now_str = datetime.now().strftime("%I:%M %p")
+    pdf_url = notice.get("pdf_url") or ""
+    portal_url = notice.get("portal_url") or ""
+    link_url = notice.get("link") or ""
+
+    # Exact source link determination (prefer direct PDF, then notice page link, then portal URL)
+    exact_source_url = pdf_url or link_url or portal_url or "https://www.nu.ac.bd/"
+
+    # Precise timestamps calculation (BD Time: UTC+6)
+    utc_now = datetime.now(timezone.utc)
+    bd_now = utc_now + timedelta(hours=6)
+    alert_dispatch_time = bd_now.strftime("%Y-%m-%d | %I:%M %p")
+
+    pub_date_raw = notice.get("pub_date", "")
+    pub_date_str = pub_date_raw if pub_date_raw else "অফিসিয়াল নোটিশ অনুযায়ী"
 
     # 1. Site Coverage Status
     cov = check_site_coverage(notice["title"])
@@ -414,8 +427,8 @@ def build_breaking_notice_card(notice, idx):
     seo = generate_instant_seo_package(notice["title"], source)
 
     # 3. Key Dates & Details
-    dates = extract_key_dates_and_details(notice["title"], pdf_url)
-    dates_str = "\n  • ".join(dates) if dates else "অফিসিয়াল পিডিএফ নোটিশে সুনির্দিষ্ট সময় উল্লেখ রয়েছে"
+    dates = extract_key_dates_and_details(notice["title"], exact_source_url)
+    dates_str = "\n  • ".join(dates) if dates else "অফিসিয়াল নোটিশে সুনির্দিষ্ট সময় উল্লেখ রয়েছে"
 
     # 4. Queries string
     queries_str = "\n  • ".join(seo["top_queries"])
@@ -423,7 +436,13 @@ def build_breaking_notice_card(notice, idx):
     lines = [
         f"<b>[ব্রেকিং নোটিশ #{idx}] {source}</b>",
         f"<b>শিরোনাম:</b> {title}",
-        f"<b>শনাক্ত সময়:</b> {now_str}",
+        "----------------------------------------",
+        "<b>উৎস ও সময়কাল ট্র্যাকিং:</b>",
+        f"  • <b>কোথা থেকে পাওয়া গেছে (উৎস):</b> {source}",
+        f"  • <b>অফিসিয়াল পোর্টাল:</b> <a href=\"{portal_url}\">{portal_url}</a>" if portal_url else f"  • <b>অফিসিয়াল পোর্টাল:</b> {source}",
+        f"  • <b>সরাসরি মূল সোর্স লিংক:</b> <a href=\"{exact_source_url}\">{exact_source_url}</a>",
+        f"  • <b>নোটিশ প্রকাশের তারিখ/সময়:</b> {pub_date_str}",
+        f"  • <b>রাডার অ্যালার্ট পাঠানোর সময়:</b> {alert_dispatch_time} (বাংলাদেশ মান সময়)",
         "----------------------------------------",
         f"<b>১. সাইট কভারেজ অডিট:</b>\n  {cov_badge}",
         "----------------------------------------",
@@ -445,10 +464,11 @@ def build_breaking_notice_card(notice, idx):
         "----------------------------------------"
     ]
 
-    if pdf_url:
-        lines.append(f"<b>অফিসিয়াল PDF:</b> <a href=\"{pdf_url}\">[সরাসরি PDF ডাউনলোড করুন]</a>")
+    if exact_source_url:
+        label = "সরাসরি অফিসিয়াল PDF ডাউনলোড" if exact_source_url.lower().endswith(".pdf") or ".pdf" in exact_source_url.lower() else "সরাসরি মূল সোর্স লিংক দেখুন"
+        lines.append(f"<b>মূল সোর্স ডকুমেন্ট:</b> <a href=\"{exact_source_url}\">[{label}]</a>")
 
-    return "\n".join(lines), cov.get("url"), pdf_url
+    return "\n".join(lines), cov.get("url"), exact_source_url
 
 
 def build_breaking_alerts_batch(new_notices, now):
@@ -461,14 +481,14 @@ def build_breaking_alerts_batch(new_notices, now):
     ]
 
     cards = []
-    first_pdf_url = None
+    first_source_url = None
     first_post_url = None
 
     for idx, n in enumerate(new_notices[:5], 1):
-        card_text, post_url, pdf_url = build_breaking_notice_card(n, idx)
+        card_text, post_url, exact_source_url = build_breaking_notice_card(n, idx)
         cards.append(card_text)
-        if not first_pdf_url and pdf_url:
-            first_pdf_url = pdf_url
+        if not first_source_url and exact_source_url:
+            first_source_url = exact_source_url
         if not first_post_url and post_url:
             first_post_url = post_url
 
@@ -479,11 +499,13 @@ def build_breaking_alerts_batch(new_notices, now):
 
     full_text = "\n".join(header) + "\n\n" + "\n\n".join(cards) + "\n\n" + "\n".join(footer)
 
-    # 7. Interactive Telegram Inline Action Buttons
+    # Interactive Telegram Inline Action Buttons
     keyboard = []
     row1 = []
-    if first_pdf_url:
-        row1.append({"text": "অফিসিয়াল PDF ডাউনলোড", "url": first_pdf_url})
+    if first_source_url:
+        is_pdf = first_source_url.lower().endswith(".pdf") or ".pdf" in first_source_url.lower()
+        btn_text = "সরাসরি অফিসিয়াল PDF" if is_pdf else "সরাসরি মূল সোর্স লিংক"
+        row1.append({"text": btn_text, "url": first_source_url})
     if first_post_url:
         row1.append({"text": "আমাদের পোস্ট দেখুন", "url": first_post_url})
     else:
@@ -498,6 +520,62 @@ def build_breaking_alerts_batch(new_notices, now):
 
     reply_markup = {"inline_keyboard": keyboard}
     return full_text, reply_markup
+
+
+def dispatch_breaking_notices(bot_token, chat_id, notices, now):
+    """
+    Dispatches breaking notices to Telegram.
+    If 1 notice: sends comprehensive card with its custom direct source buttons.
+    If multiple notices: sends an introductory header followed by individual cards,
+    ensuring messages never exceed Telegram's 4096 character limit and every notice
+    gets its own exact source/PDF download link and action buttons.
+    """
+    if not notices:
+        return True
+
+    total = len(notices)
+    time_str = now.strftime("%Y-%m-%d | %I:%M %p")
+
+    if total > 1:
+        intro_text = (
+            "<b>[হেল্পট্রিকবিডি ৩৬০-ডিগ্রি ব্রেকিং এক্সাম রাডার অ্যালার্ট]</b>\n"
+            f"<b>নোটিশ স্ক্যান সময়কাল:</b> {time_str} (বাংলাদেশ মান সময়)\n"
+            f"<b>নতুন শনাক্তকৃত অফিসিয়াল নোটিশ:</b> {total}টি\n"
+            "========================================\n"
+            "প্রতিটি নোটিশের মূল উৎস লিংক, প্রকাশের সময় এবং ইনস্ট্যান্ট এসইও প্যাকেজ নিচে প্রেরণ করা হলো:"
+        )
+        send_telegram_message(bot_token, chat_id, intro_text)
+
+    all_ok = True
+    for idx, n in enumerate(notices[:5], 1):
+        card_text, post_url, exact_source_url = build_breaking_notice_card(n, idx)
+
+        keyboard = []
+        row1 = []
+        if exact_source_url:
+            is_pdf = exact_source_url.lower().endswith(".pdf") or ".pdf" in exact_source_url.lower()
+            btn_text = "সরাসরি অফিসিয়াল PDF" if is_pdf else "সরাসরি মূল সোর্স লিংক"
+            row1.append({"text": btn_text, "url": exact_source_url})
+        if post_url:
+            row1.append({"text": "আমাদের পোস্ট দেখুন", "url": post_url})
+        else:
+            row1.append({"text": "HelpTrickBD সাইট", "url": "https://www.helptrickbd.com/"})
+
+        if row1:
+            keyboard.append(row1)
+        keyboard.append([
+            {"text": "Blogger Admin Panel", "url": "https://www.blogger.com/blog/posts/8468755675548028711"}
+        ])
+
+        reply_markup = {"inline_keyboard": keyboard}
+        ok = send_telegram_message(bot_token, chat_id, card_text, reply_markup=reply_markup)
+        if not ok:
+            all_ok = False
+        if total > 1:
+            import time
+            time.sleep(1)
+
+    return all_ok
 
 
 def build_morning_seo_digest(all_notices, urgent_items, now):
@@ -647,8 +725,7 @@ def main():
 
     # Breaking Notice Alert
     if new_notices:
-        html_msg, reply_markup = build_breaking_alerts_batch(new_notices, bd_now)
-        ok = send_telegram_message(bot_token, chat_id, html_msg, reply_markup=reply_markup)
+        ok = dispatch_breaking_notices(bot_token, chat_id, new_notices, bd_now)
         if ok:
             print(f"[SUCCESS] টেলিগ্রামে {len(new_notices)}টি ব্রেকিং নোটিশের পূর্ণাঙ্গ ইন্টেলিজেন্স রিপোর্ট পাঠানো হয়েছে!")
         else:
@@ -657,8 +734,7 @@ def main():
         # Fallback force summary
         if all_notices:
             sample_notices = all_notices[:3]
-            html_msg, reply_markup = build_breaking_alerts_batch(sample_notices, bd_now)
-            send_telegram_message(bot_token, chat_id, html_msg, reply_markup=reply_markup)
+            dispatch_breaking_notices(bot_token, chat_id, sample_notices, bd_now)
             print("[SUCCESS] ফোর্স মোডে রাডার রিপোর্ট পাঠানো হয়েছে!")
     else:
         print("[*] নতুন কোনো নোটিশ না থাকায় টেলিগ্রামে অ্যালার্ট পাঠানো হয়নি (নীরব মোড)।")

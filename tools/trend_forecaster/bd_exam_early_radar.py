@@ -517,9 +517,12 @@ def fetch_all_tier_live_notices() -> list[dict]:
                         if title not in seen_titles:
                             seen_titles.add(title)
                             live_notices.append({
+                                "source": f"জাতীয় শিক্ষাবার্তা ও গুগল নিউজ ({q})",
+                                "portal_url": "https://news.google.com/",
                                 "title": title,
                                 "pub_date": pub_elem.text.strip() if pub_elem is not None else "",
                                 "link": link_elem.text.strip() if link_elem is not None else "",
+                                "pdf_url": "",
                                 "query": q
                             })
         except Exception:

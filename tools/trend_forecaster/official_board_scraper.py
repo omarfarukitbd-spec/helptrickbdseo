@@ -87,6 +87,7 @@ def scrape_national_university_notices(limit=15):
                 notices.append({
                     "source": "জাতীয় বিশ্ববিদ্যালয় (NU Official)",
                     "title": clean,
+                    "portal_url": "https://www.nu.ac.bd/",
                     "pdf_url": full_link,
                     "pub_date": pub_date,
                     "category": "অনার্স ও মাস্টার্স"
@@ -121,8 +122,9 @@ def scrape_dhaka_board_notices(limit=10):
                 seen.add(clean)
                 full_link = link if link.startswith("http") else "https://dhakaeducationboard.gov.bd/" + link.lstrip("/")
                 notices.append({
-                    "source": "ঢাকা শিক্ষা বোর্ড (Official)",
+                    "source": "ঢাকা শিক্ষা বোর্ড (Dhaka Board Official)",
                     "title": clean,
+                    "portal_url": "https://dhakaeducationboard.gov.bd/",
                     "pdf_url": full_link,
                     "pub_date": datetime.now().strftime("%Y-%m-%d"),
                     "category": "মাধ্যমিক ও উচ্চমাধ্যমিক"
@@ -170,6 +172,7 @@ def scrape_bteb_notices(limit=8):
                     notices.append({
                         "source": "কারিগরি শিক্ষা বোর্ড (BTEB Official)",
                         "title": clean,
+                        "portal_url": "http://www.bteb.gov.bd/site/view/notices",
                         "pdf_url": full_link,
                         "pub_date": datetime.now().strftime("%Y-%m-%d"),
                         "category": "পলিটেকনিক ও কারিগরি"
@@ -205,6 +208,7 @@ def scrape_bmeb_notices(limit=8):
                     notices.append({
                         "source": "মাদ্রাসা শিক্ষা বোর্ড (BMEB Official)",
                         "title": clean,
+                        "portal_url": "http://www.bmeb.gov.bd/",
                         "pdf_url": full_link,
                         "pub_date": datetime.now().strftime("%Y-%m-%d"),
                         "category": "দাখিল ও আলিম"
@@ -240,6 +244,7 @@ def scrape_ntrca_notices(limit=6):
                     notices.append({
                         "source": "এনটিআরসিএ (NTRCA Official)",
                         "title": clean,
+                        "portal_url": "http://www.ntrca.gov.bd/",
                         "pdf_url": full_link,
                         "pub_date": datetime.now().strftime("%Y-%m-%d"),
                         "category": "শিক্ষক নিবন্ধন"
@@ -275,6 +280,7 @@ def scrape_du_7college_notices(limit=6):
                     notices.append({
                         "source": "ঢাবি অধিভুক্ত ৭ কলেজ (7 College Official)",
                         "title": clean,
+                        "portal_url": "https://7college.du.ac.bd/",
                         "pdf_url": full_link,
                         "pub_date": datetime.now().strftime("%Y-%m-%d"),
                         "category": "৭ কলেজ অনার্স ও মাস্টার্স"
@@ -310,6 +316,7 @@ def scrape_dgme_medical_notices(limit=6):
                     notices.append({
                         "source": "মেডিকেল ও ডেন্টাল ভর্তি (DGME Official)",
                         "title": clean,
+                        "portal_url": "https://dgme.gov.bd/",
                         "pdf_url": full_link,
                         "pub_date": datetime.now().strftime("%Y-%m-%d"),
                         "category": "মেডিকেল ভর্তি"
@@ -345,6 +352,7 @@ def scrape_du_admission_notices(limit=4):
                     notices.append({
                         "source": "ঢাকা বিশ্ববিদ্যালয় ভর্তি (DU Admission Official)",
                         "title": clean,
+                        "portal_url": "https://admission.eis.du.ac.bd/",
                         "pdf_url": full_link,
                         "pub_date": datetime.now().strftime("%Y-%m-%d"),
                         "category": "বিশ্ববিদ্যালয় ভর্তি"
@@ -379,6 +387,7 @@ def scrape_rajshahi_board_notices(limit=5):
                 notices.append({
                     "source": "রাজশাহী শিক্ষা বোর্ড (Official)",
                     "title": clean,
+                    "portal_url": "http://rajshahieducationboard.gov.bd/",
                     "pdf_url": full_link,
                     "pub_date": datetime.now().strftime("%Y-%m-%d"),
                     "category": "মাধ্যমিক ও উচ্চমাধ্যমিক"
@@ -413,6 +422,7 @@ def scrape_bou_open_university_notices(limit=6):
                 notices.append({
                     "source": "উন্মুক্ত বিশ্ববিদ্যালয় (BOU Official)",
                     "title": clean,
+                    "portal_url": "https://www.bou.ac.bd/",
                     "pdf_url": full_link,
                     "pub_date": datetime.now().strftime("%Y-%m-%d"),
                     "category": "বাউবি উন্মুক্ত শিক্ষা"
@@ -448,6 +458,7 @@ def scrape_bnmc_nursing_notices(limit=4):
                     notices.append({
                         "source": "নার্সিং কাউন্সিল (BNMC Official)",
                         "title": clean,
+                        "portal_url": "http://www.bnmc.gov.bd/",
                         "pdf_url": full_link,
                         "pub_date": datetime.now().strftime("%Y-%m-%d"),
                         "category": "নার্সিং ও মিডওয়াইফারি"
