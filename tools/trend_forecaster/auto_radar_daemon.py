@@ -118,6 +118,7 @@ def run_radar_check():
         "bcs", "নন-ক্যাডার", "শিক্ষক নিবন্ধন", "admit", "viva", "মৌখিক", "circular"
     ]
 
+    new_notices = []
     for n in all_notices:
         n_hash = make_notice_hash(n)
         if n_hash not in seen_db:
