@@ -327,6 +327,45 @@ def generate_instant_seo_package(notice_title, source):
                 "বিসিএস প্রিলি পাসের শর্টকাট কৌশল"
             ]
         }
+    elif "ntrca" in t.lower() or "শিক্ষক নিবন্ধন" in t or "এনটিআরসিএ" in t:
+        return {
+            "proposed_title": f"এনটিআরসিএ শিক্ষক নিবন্ধন ও নিয়োগ পরীক্ষার নোটিশ {now_year} | NTRCA Exam Circular & Viva Routine",
+            "english_slug": f"ntrca-teacher-registration-exam-routine-{now_year}",
+            "labels": "শিক্ষক নিবন্ধন, সরকারি চাকরি, ক্যারিয়ার গাইড",
+            "audience": "বেসরকারি শিক্ষক নিবন্ধন (NTRCA) ও গণবিজ্ঞপ্তি চাকরিপ্রার্থী",
+            "intent": "শিক্ষক নিবন্ধন পরীক্ষার নোটিশ, প্রিলিমিনারি/লিখিত/মৌখিক পরীক্ষার সময়সূচি ও ফলাফল",
+            "top_queries": [
+                f"এনটিআরসিএ শিক্ষক নিবন্ধন পরীক্ষার রুটিন {now_year}",
+                f"NTRCA Exam Result & Viva Schedule {now_year}",
+                "শিক্ষক নিবন্ধন মৌখিক পরীক্ষার নোটিশ"
+            ]
+        }
+    elif "রেলওয়ে" in t or "রেলওয়ে" in t or "railway" in t.lower():
+        return {
+            "proposed_title": f"বাংলাদেশ রেলওয়ে নিয়োগ বিজ্ঞপ্তি ও পরীক্ষার সময়সূচি {now_year} | Bangladesh Railway Job Circular",
+            "english_slug": f"bangladesh-railway-job-circular-routine-{now_year}",
+            "labels": "রেলওয়ে চাকরি, সরকারি চাকরি, ক্যারিয়ার গাইড",
+            "audience": "বাংলাদেশ রেলওয়ে সরকারি চাকরিপ্রার্থী",
+            "intent": "রেলওয়ে নিয়োগ বিজ্ঞপ্তি, পদের বিবরণ, আবেদনের শর্ত ও পরীক্ষার তারিখ",
+            "top_queries": [
+                f"বাংলাদেশ রেলওয়ে নিয়োগ বিজ্ঞপ্তি {now_year}",
+                f"Railway Job Circular & Exam Date {now_year}",
+                "রেলওয়ে পরীক্ষার এডমিট কার্ড ডাউনলোড"
+            ]
+        }
+    elif "নিয়োগ" in t or "চাকরি" in t or "নন-ক্যাডার" in t or "non-cadre" in t.lower():
+        return {
+            "proposed_title": f"সরকারি চাকরি নিয়োগ বিজ্ঞপ্তি ও পরীক্ষার গাইড {now_year} | Govt Job Circular & Routine",
+            "english_slug": f"bd-govt-job-circular-routine-{now_year}",
+            "labels": "সরকারি চাকরি, জব স্টাডি, ক্যারিয়ার গাইড",
+            "audience": "সরকারি ও স্বায়ত্তশাসিত প্রতিষ্ঠানে চাকরিপ্রার্থী",
+            "intent": "আবেদনের যোগ্যতা, পদ সংখ্যা, পরীক্ষার মানবণ্টন ও প্রবেশপত্র",
+            "top_queries": [
+                f"সরকারি চাকরির খবর ও নিয়োগ বিজ্ঞপ্তি {now_year}",
+                f"Govt Job Circular {now_year} BD",
+                "চাকরির পরীক্ষার সময়সূচি ও এডমিট কার্ড"
+            ]
+        }
     else:
         clean_name = re.sub(r'[^a-zA-Z0-9\s]', '', t)[:40].strip().replace(' ', '-').lower()
         slug = f"bd-edu-notice-{clean_name or 'latest'}-{now_year}"
@@ -387,6 +426,12 @@ def extract_key_dates_and_details(title, pdf_url):
         details.append("ধরন: পরীক্ষার ফলাফল প্রকাশ (Result Publication)")
     elif "ব্যবহারিক" in title:
         details.append("ধরন: ব্যবহারিক ও মৌখিক পরীক্ষা (Practical/Viva)")
+    elif "মৌখিক" in title or "ভাইভা" in title or "viva" in title.lower():
+        details.append("ধরন: মৌখিক পরীক্ষা ও সাক্ষাৎকার সিডিউল (Viva Voce Schedule)")
+    elif "প্রবেশপত্র" in title or "admit" in title.lower():
+        details.append("ধরন: পরীক্ষার প্রবেশপত্র ডাউনলোড (Admit Card Download)")
+    elif "নিয়োগ" in title or "চাকরি" in title or "সার্কুলার" in title or "circular" in title.lower():
+        details.append("ধরন: অফিসিয়াল নিয়োগ বিজ্ঞপ্তি ও আবেদন নির্দেশিকা (Job Circular)")
 
     return details
 

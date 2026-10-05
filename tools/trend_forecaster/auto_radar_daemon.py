@@ -112,8 +112,11 @@ def run_radar_check():
     # Combined notices, official first
     all_notices = official_notices + news_notices
     
-    new_notices = []
-    keywords_of_interest = ["রুটিন", "routine", "তারিখ", "পরীক্ষা", "ফরম পূরণ", "বিজ্ঞপ্তি", "সংশোধিত", "ভর্তি", "সার্কুলার", "ফলাফল", "রেজাল্ট", "কেন্দ্র"]
+    keywords_of_interest = [
+        "রুটিন", "routine", "তারিখ", "পরীক্ষা", "ফরম পূরণ", "বিজ্ঞপ্তি", "সংশোধিত",
+        "ভর্তি", "সার্কুলার", "ফলাফল", "রেজাল্ট", "কেন্দ্র", "নিয়োগ", "চাকরি", "বিসিএস",
+        "bcs", "নন-ক্যাডার", "শিক্ষক নিবন্ধন", "admit", "viva", "মৌখিক", "circular"
+    ]
 
     for n in all_notices:
         n_hash = make_notice_hash(n)

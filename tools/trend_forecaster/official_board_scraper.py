@@ -40,6 +40,14 @@ SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
 SSL_CTX.verify_mode = ssl.CERT_NONE
 
+SSL_LEGACY_CTX = ssl.create_default_context()
+SSL_LEGACY_CTX.check_hostname = False
+SSL_LEGACY_CTX.verify_mode = ssl.CERT_NONE
+try:
+    SSL_LEGACY_CTX.set_ciphers("DEFAULT@SECLEVEL=1")
+except Exception:
+    pass
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -223,7 +231,8 @@ def scrape_bmeb_notices(limit=8):
 
 def scrape_ntrca_notices(limit=6):
     """
-    Scrapes NTRCA (Non-Government Teachers Registration and Certification Authority).
+    Directly scrapes NTRCA (Non-Government Teachers Registration and Certification Authority)
+    official live recruitment and exam notices from /pages/notices/.
     """
     url = "http://www.ntrca.gov.bd/"
     notices = []
@@ -232,27 +241,63 @@ def scrape_ntrca_notices(limit=6):
         with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
+        pattern = r'<a[^>]+href=["\'](/pages/notices/[^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for href, text in matches:
+            clean = clean_html_text(text)
+            if len(clean) > 10 and clean not in seen and not clean.startswith("সকল"):
+                seen.add(clean)
+                full_link = "http://www.ntrca.gov.bd" + href
+                notices.append({
+                    "source": "এনটিআরসিএ (NTRCA Official)",
+                    "title": clean,
+                    "portal_url": "http://www.ntrca.gov.bd/",
+                    "pdf_url": full_link,
+                    "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                    "category": "শিক্ষক নিবন্ধন ও নিয়োগ"
+                })
+                if len(notices) >= limit:
+                    break
+    except Exception as e:
+        print(f"[-] NTRCA Notice Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_bpsc_notices(limit=6):
+    """
+    Scrapes Bangladesh Public Service Commission (BPSC) active BCS and Non-Cadre
+    examination circulars, notices, and admit cards via official portal.
+    """
+    url = "http://bpsc.teletalk.com.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_LEGACY_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
         pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
         matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
         seen = set()
-        for link, text in matches:
+        for href, text in matches:
             clean = clean_html_text(text)
-            if any(k in clean for k in ["শিক্ষক", "নিবন্ধন", "বিজ্ঞপ্তি", "রুটিন", "পরীক্ষা", "ফলাফল", "ভাইভা", "সিলেবাস"]):
-                if len(clean) > 12 and clean not in seen:
+            if any(k in clean.lower() for k in ["bcs", "বিসিএস", "non cadre", "non-cadre", "নন-ক্যাডার", "admit card", "examination", "পরীক্ষা"]):
+                if len(clean) > 8 and clean not in seen and not clean.startswith("সকল") and href != "#":
                     seen.add(clean)
-                    full_link = link if link.startswith("http") else "http://www.ntrca.gov.bd" + link
+                    full_link = href if href.startswith("http") else "http://bpsc.teletalk.com.bd/" + href.lstrip("/")
                     notices.append({
-                        "source": "এনটিআরসিএ (NTRCA Official)",
+                        "source": "বাংলাদেশ সরকারি কর্ম কমিশন (BPSC Official)",
                         "title": clean,
-                        "portal_url": "http://www.ntrca.gov.bd/",
+                        "portal_url": "http://www.bpsc.gov.bd/",
                         "pdf_url": full_link,
                         "pub_date": datetime.now().strftime("%Y-%m-%d"),
-                        "category": "শিক্ষক নিবন্ধন"
+                        "category": "বিসিএস ও সরকারি চাকরি"
                     })
                     if len(notices) >= limit:
                         break
     except Exception as e:
-        print(f"[-] NTRCA Notice Scraper ত্রুটি: {e}")
+        print(f"[-] BPSC Notice Scraper ত্রুটি: {e}")
 
     return notices
 
@@ -365,27 +410,27 @@ def scrape_du_admission_notices(limit=4):
     return notices
 
 
-def scrape_rajshahi_board_notices(limit=5):
+def scrape_rajshahi_board_notices(limit=6):
     """
-    Scrapes Rajshahi Education Board (rajshahieducationboard.gov.bd).
+    Scrapes Rajshahi Education Board (rajshahieducationboard.gov.bd) live notices.
     """
     url = "http://rajshahieducationboard.gov.bd/"
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=8) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
-        pattern = r'<a[^>]+href=["\']([^"\']+\.pdf)["\'][^>]*>(.*?)</a>'
+        pattern = r'<a[^>]+href=["\'](/pages/(?:notices|news)/[^"\']+)["\'][^>]*>(.*?)</a>'
         matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
         seen = set()
-        for link, text in matches:
+        for href, text in matches:
             clean = clean_html_text(text)
-            if len(clean) > 10 and clean not in seen:
+            if len(clean) > 10 and clean not in seen and not clean.startswith("সকল"):
                 seen.add(clean)
-                full_link = link if link.startswith("http") else "http://rajshahieducationboard.gov.bd/" + link.lstrip("/")
+                full_link = "http://rajshahieducationboard.gov.bd" + href
                 notices.append({
-                    "source": "রাজশাহী শিক্ষা বোর্ড (Official)",
+                    "source": "রাজশাহী শিক্ষা বোর্ড (Rajshahi Board Official)",
                     "title": clean,
                     "portal_url": "http://rajshahieducationboard.gov.bd/",
                     "pdf_url": full_link,
@@ -396,6 +441,151 @@ def scrape_rajshahi_board_notices(limit=5):
                     break
     except Exception as e:
         print(f"[-] Rajshahi Board Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_chittagong_board_notices(limit=6):
+    """
+    Scrapes Chittagong Education Board (bise-ctg.gov.bd) official notices.
+    """
+    url = "https://bise-ctg.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for href, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["এসএসসি", "এইচএসসি", "পরীক্ষা", "বিজ্ঞপ্তি", "রুটিন", "বৃত্তি"]):
+                if len(clean) > 12 and clean not in seen and href != "#":
+                    seen.add(clean)
+                    full_link = href if href.startswith("http") else "https://bise-ctg.gov.bd/" + href.lstrip("/")
+                    notices.append({
+                        "source": "চট্টগ্রাম শিক্ষা বোর্ড (Chittagong Board Official)",
+                        "title": clean,
+                        "portal_url": "https://bise-ctg.gov.bd/",
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "মাধ্যমিক ও উচ্চমাধ্যমিক"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] Chittagong Board Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_jessore_board_notices(limit=6):
+    """
+    Scrapes Jessore Education Board (jessoreboard.gov.bd) official notices and PDFs.
+    """
+    url = "https://www.jessoreboard.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for href, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["এসএসসি", "এইচএসসি", "পরীক্ষা", "বিজ্ঞপ্তি", "রুটিন", "ফরম পূরণ", "রেজাল্ট", "বিতরণ"]):
+                if len(clean) > 12 and clean not in seen and href != "#":
+                    seen.add(clean)
+                    clean_href = href.replace("www.jessoreboard.gov.bd/www.jessoreboard.gov.bd", "www.jessoreboard.gov.bd")
+                    full_link = clean_href if clean_href.startswith("http") else "https://www.jessoreboard.gov.bd/" + clean_href.lstrip("/")
+                    notices.append({
+                        "source": "যশোর শিক্ষা বোর্ড (Jessore Board Official)",
+                        "title": clean,
+                        "portal_url": "https://www.jessoreboard.gov.bd/",
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "মাধ্যমিক ও উচ্চমাধ্যমিক"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] Jessore Board Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_dshe_notices(limit=6):
+    """
+    Scrapes Directorate of Secondary and Higher Education (dshe.gov.bd)
+    official educational and teacher recruitment notices.
+    """
+    url = "http://www.dshe.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\'](/pages/(?:notices|files|news)/[^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for href, text in matches:
+            clean = clean_html_text(text)
+            if len(clean) > 10 and clean not in seen and not clean.startswith("সকল"):
+                seen.add(clean)
+                full_link = "http://www.dshe.gov.bd" + href
+                notices.append({
+                    "source": "মাধ্যমিক ও উচ্চশিক্ষা অধিদপ্তর (DSHE Official)",
+                    "title": clean,
+                    "portal_url": "http://www.dshe.gov.bd/",
+                    "pdf_url": full_link,
+                    "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                    "category": "শিক্ষা অধিদপ্তর নির্দেশনা"
+                })
+                if len(notices) >= limit:
+                    break
+    except Exception as e:
+        print(f"[-] DSHE Notice Scraper ত্রুটি: {e}")
+
+    return notices
+
+
+def scrape_railway_job_notices(limit=4):
+    """
+    Scrapes Bangladesh Railway (railway.gov.bd) recruitment and circular notices.
+    """
+    url = "http://www.railway.gov.bd/"
+    notices = []
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
+        matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+        seen = set()
+        for href, text in matches:
+            clean = clean_html_text(text)
+            if any(k in clean for k in ["নিয়োগ", "চাকরি", "বিজ্ঞপ্তি", "আবেদন", "পদ"]):
+                if len(clean) > 8 and clean not in seen and href != "#":
+                    seen.add(clean)
+                    full_link = href if href.startswith("http") else "http://www.railway.gov.bd" + href
+                    notices.append({
+                        "source": "বাংলাদেশ রেলওয়ে নিয়োগ (Railway Official)",
+                        "title": clean,
+                        "portal_url": "http://www.railway.gov.bd/",
+                        "pdf_url": full_link,
+                        "pub_date": datetime.now().strftime("%Y-%m-%d"),
+                        "category": "রেলওয়ে ও সরকারি চাকরি"
+                    })
+                    if len(notices) >= limit:
+                        break
+    except Exception as e:
+        print(f"[-] Railway Job Scraper ত্রুটি: {e}")
 
     return notices
 
@@ -473,41 +663,60 @@ def scrape_bnmc_nursing_notices(limit=4):
 
 def fetch_all_official_board_notices():
     """
-    Consolidates notices directly from all official education portals.
+    Consolidates notices directly from all official education boards and government job portals:
+    - National University & Universities (NU, DU, 7 College, BOU)
+    - All General Education Boards (Dhaka, Rajshahi, Chittagong, Jessore, Madrasah, Technical)
+    - Major Govt Job Portals (NTRCA, BPSC BCS & Non-Cadre, DSHE, Railway)
+    - Medical & Professional Councils (DGME, BNMC)
     """
     all_notices = []
-    
+
     # 1. National University (Honours, Masters, Degree)
-    all_notices.extend(scrape_national_university_notices(limit=10))
+    all_notices.extend(scrape_national_university_notices(limit=8))
 
     # 2. Bangladesh Open University (BOU SSC, HSC, BA/BSS, MBA)
-    all_notices.extend(scrape_bou_open_university_notices(limit=6))
+    all_notices.extend(scrape_bou_open_university_notices(limit=5))
 
     # 3. Dhaka Education Board (SSC & HSC)
-    all_notices.extend(scrape_dhaka_board_notices(limit=5))
+    all_notices.extend(scrape_dhaka_board_notices(limit=4))
 
     # 4. Rajshahi Education Board
     all_notices.extend(scrape_rajshahi_board_notices(limit=4))
 
-    # 5. BTEB Technical Board (Polytechnic)
-    all_notices.extend(scrape_bteb_notices(limit=5))
+    # 5. Chittagong Education Board
+    all_notices.extend(scrape_chittagong_board_notices(limit=4))
 
-    # 6. BMEB Madrasah Education Board (Dakhil & Alim)
-    all_notices.extend(scrape_bmeb_notices(limit=5))
+    # 6. Jessore Education Board
+    all_notices.extend(scrape_jessore_board_notices(limit=4))
 
-    # 7. NTRCA Teachers Registration
+    # 7. BTEB Technical Board (Polytechnic)
+    all_notices.extend(scrape_bteb_notices(limit=4))
+
+    # 8. BMEB Madrasah Education Board (Dakhil & Alim)
+    all_notices.extend(scrape_bmeb_notices(limit=4))
+
+    # 9. NTRCA Teachers Registration & Recruitment
     all_notices.extend(scrape_ntrca_notices(limit=5))
 
-    # 8. DU 7 Colleges
+    # 10. BPSC (BCS & Non-Cadre Jobs)
+    all_notices.extend(scrape_bpsc_notices(limit=5))
+
+    # 11. DSHE (Secondary & Higher Education Directorate)
+    all_notices.extend(scrape_dshe_notices(limit=4))
+
+    # 12. Bangladesh Railway Jobs
+    all_notices.extend(scrape_railway_job_notices(limit=3))
+
+    # 13. DU 7 Colleges
     all_notices.extend(scrape_du_7college_notices(limit=4))
 
-    # 9. DGME Medical & Dental Admission
+    # 14. DGME Medical & Dental Admission
     all_notices.extend(scrape_dgme_medical_notices(limit=4))
 
-    # 10. BNMC Nursing & Midwifery Council
-    all_notices.extend(scrape_bnmc_nursing_notices(limit=4))
+    # 15. BNMC Nursing & Midwifery Council
+    all_notices.extend(scrape_bnmc_nursing_notices(limit=3))
 
-    # 11. DU Undergraduate Admission
+    # 16. DU Undergraduate Admission
     all_notices.extend(scrape_du_admission_notices(limit=3))
 
     return all_notices
