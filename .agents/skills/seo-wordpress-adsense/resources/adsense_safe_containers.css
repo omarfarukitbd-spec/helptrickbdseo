@@ -1,0 +1,62 @@
+/* 
+ * Helptrickbd Zero-CLS AdSense Safe Containers
+ * Pre-reserves fixed-height CSS aspect ratio wrappers to eliminate Cumulative Layout Shift.
+ */
+
+/* Header Leaderboard Banner (728x90 desktop, 320x100 mobile) */
+.ht-ad-header-wrapper {
+  display: block;
+  width: 100%;
+  max-width: 728px;
+  min-height: 90px;
+  margin: 15px auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: rgba(241, 245, 249, 0.5);
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .ht-ad-header-wrapper {
+    max-width: 320px;
+    min-height: 100px;
+  }
+}
+
+/* In-Article Responsive Ad Slot (After paragraph 2 / Middle of content) */
+.ht-ad-in-article-wrapper {
+  display: block;
+  width: 100%;
+  min-height: 280px;
+  margin: 25px auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: rgba(241, 245, 249, 0.4);
+  border: 1px dashed rgba(203, 213, 225, 0.6);
+  border-radius: 10px;
+  padding: 8px;
+}
+
+[data-theme="dark"] .ht-ad-in-article-wrapper {
+  background-color: rgba(30, 41, 59, 0.4);
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+/* Sidebar Medium Rectangle / Half-Page (300x250 or 300x600) */
+.ht-ad-sidebar-wrapper {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  min-height: 250px;
+  margin: 20px auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: rgba(241, 245, 249, 0.5);
+  border-radius: 8px;
+}
+
+.ht-ad-sidebar-sticky {
+  position: sticky;
+  top: 90px;
+  min-height: 600px;
+}
