@@ -1,0 +1,92 @@
+{
+  "mode": "dry_run",
+  "timestamp": "2026-10-07T19:03:13Z",
+  "total_processed": 5,
+  "total_links_rewritten": 9,
+  "total_seo_meta_updated": 5,
+  "total_featured_images_set": 4,
+  "results": [
+    {
+      "id": 1,
+      "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার গাইড ও",
+      "slug": "nu-honours-2nd-year-exam-guide-and",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": true,
+      "featured_image_set": false,
+      "actions": [
+        "Injected Rank Math Focus KW: 'অনার্স ২য় বর্ষ পরীক্ষার গাইড' and Meta Description"
+      ],
+      "applied": false,
+      "status": "PREVIEW (DRY-RUN)"
+    },
+    {
+      "id": 282,
+      "title": "জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষা ডিজিটালাইজেশন ও একিউ",
+      "slug": "nu-exam-digitization-aqa-global-mou-2026",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": true,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Injected Rank Math Focus KW: 'জাতীয় বিশ্ববিদ্যালয় পরীক্ষা ডিজিটালাইজেশন' and Meta Description",
+        "Found hero image: nu_exam_digitization_aqa_global_mou_2026.webp",
+        "[DRY-RUN] Will upload/bind hero image as featured_media"
+      ],
+      "applied": false,
+      "status": "PREVIEW (DRY-RUN)"
+    },
+    {
+      "id": 283,
+      "title": "৬ষ্ঠ, ৭ম, ৮ম ও ৯ম শ্রেণির বার্ষিক পরীক্ষার মানবণ্ট",
+      "slug": "class-6-to-9-annual-exam-marks-distribution-2026",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": true,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Injected Rank Math Focus KW: 'বার্ষিক পরীক্ষার মানবণ্টন ও প্রস্তুতি' and Meta Description",
+        "Found hero image: class_6_to_9_annual_exam_marks_distribution_2026.webp",
+        "[DRY-RUN] Will upload/bind hero image as featured_media"
+      ],
+      "applied": false,
+      "status": "PREVIEW (DRY-RUN)"
+    },
+    {
+      "id": 284,
+      "title": "জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ ইনকোর্স নম্ব",
+      "slug": "nu-degree-2nd-year-in-course-and-exam",
+      "changes_detected": true,
+      "links_rewritten": 1,
+      "seo_meta_updated": true,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 1 legacy internal links to clean URLs",
+        "Injected Rank Math Focus KW: 'ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি' and Meta Description",
+        "Found hero image: nu_degree_2nd_year_in_course_2026.webp",
+        "[DRY-RUN] Will upload/bind hero image as featured_media"
+      ],
+      "applied": false,
+      "status": "PREVIEW (DRY-RUN)"
+    },
+    {
+      "id": 285,
+      "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ",
+      "slug": "nu-honours-2nd-year-exam-routine-2026",
+      "changes_detected": true,
+      "links_rewritten": 1,
+      "seo_meta_updated": true,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 1 legacy internal links to clean URLs",
+        "Injected Rank Math Focus KW: 'অনার্স ২য় বর্ষ পরীক্ষার রুটিন' and Meta Description",
+        "Found hero image: nu_honours_2nd_year_routine_2026.webp",
+        "[DRY-RUN] Will upload/bind hero image as featured_media"
+      ],
+      "applied": false,
+      "status": "PREVIEW (DRY-RUN)"
+    }
+  ]
+}

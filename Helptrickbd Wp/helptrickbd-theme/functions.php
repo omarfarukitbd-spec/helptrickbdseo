@@ -362,3 +362,29 @@ function ht_get_category_icon($slug = '', $name = '') {
     return 'folder_open';
 }
 
+/**
+ * Register Rank Math SEO postmeta fields for REST API access.
+ * Enables automated tools to read and update Rank Math metadata.
+ */
+function ht_register_rank_math_rest_meta() {
+    $meta_keys = [
+        'rank_math_title',
+        'rank_math_description',
+        'rank_math_focus_keyword',
+        'rank_math_canonical_url',
+        'rank_math_robots',
+    ];
+
+    foreach ($meta_keys as $key) {
+        register_post_meta('post', $key, [
+            'show_in_rest' => true,
+            'single'       => true,
+            'type'         => 'string',
+            'auth_callback' => function() {
+                return current_user_can('edit_posts');
+            }
+        ]);
+    }
+}
+add_action('init', 'ht_register_rank_math_rest_meta');
+
