@@ -31,9 +31,9 @@ HUBS = [
 ]
 
 FEED_URLS = [
-    "https://www.helptrickbd.com/feeds/posts/default",
-    "https://www.helptrickbd.com/atom.xml?redirect=false&start-index=1&max-results=500",
-    "https://www.helptrickbd.com/sitemap.xml"
+    "https://www.helptrickbd.com/feed/",
+    "https://www.helptrickbd.com/sitemap_index.xml",
+    "https://www.helptrickbd.com/post-sitemap.xml"
 ]
 
 HEADERS = {

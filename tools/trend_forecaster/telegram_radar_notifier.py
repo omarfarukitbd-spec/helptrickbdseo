@@ -121,6 +121,32 @@ def load_all_known_posts():
     posts = []
     seen_titles = set()
 
+    # Load from WordPress migration catalog first (Single Source of Truth)
+    wp_log_paths = [
+        os.path.join(PROJECT_ROOT, "Helptrickbd Wp", "migration_log.json"),
+        os.path.join(os.path.dirname(PROJECT_ROOT), "Helptrickbd Wp", "migration_log.json")
+    ]
+    for p_path in wp_log_paths:
+        if os.path.exists(p_path):
+            try:
+                with open(p_path, "r", encoding="utf-8") as f:
+                    wp_data = json.load(f)
+                    for item in wp_data.get("posts", []):
+                        title = item.get("title", "")
+                        slug = item.get("slug", "")
+                        if title and title not in seen_titles:
+                            seen_titles.add(title)
+                            posts.append({
+                                "id": item.get("id"),
+                                "title": title,
+                                "slug": slug,
+                                "url": f"https://www.helptrickbd.com/{slug}/",
+                                "status": "LIVE"
+                            })
+            except Exception:
+                pass
+
+    # Also load from older catalogs if available
     for path in [CATALOG_PATH, BLOGGER_POSTS_PATH, SCRATCH_POSTS_PATH]:
         if os.path.exists(path):
             try:
@@ -143,10 +169,11 @@ def load_all_known_posts():
                 title = m.get("title", "")
                 if title and title not in seen_titles:
                     seen_titles.add(title)
+                    slug = m.get("slug") or m.get("permalink", "")
                     posts.append({
                         "id": m.get("post_id", ""),
                         "title": title,
-                        "url": f"https://www.helptrickbd.com/2026/10/{m.get('permalink', '')}.html",
+                        "url": f"https://www.helptrickbd.com/{slug}/",
                         "status": m.get("status", "DRAFT")
                     })
         except Exception:

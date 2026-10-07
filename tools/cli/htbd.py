@@ -38,7 +38,7 @@ from tools.studio.backend.studio_engine import (
 )
 from templates.engine.template_renderer import render_template
 from tools.governance.pre_flight_checker import PreFlightChecker
-from tools.blogger_publisher.publisher import get_authenticated_service, BLOG_ID
+from tools.wp_publisher.publisher import WordPressPublisher
 from tools.indexer.pubsub_hub_pinger import ping_all_hubs
 
 def cmd_auto(args):
@@ -128,14 +128,14 @@ def cmd_auto(args):
             """,
             "silo_nav_box_html": f"""
               <div class="htbd-silo-nav-box" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #0284c7; border-radius:8px; padding:18px 22px; margin:32px 0;">
-                <p style="margin:0 0 6px 0; font-size:18px; font-weight:700; color:#0f172a;">📚 {title} — স্টাডি সাইলো সিরিজ</p>
+                <p style="margin:0 0 6px 0; font-size:18px; font-weight:700; color:#0f172a;">{title} — স্টাডি সাইলো সিরিজ</p>
                 <p style="margin:0 0 12px 0; font-size:14px; color:#475569;">সিলেবাসের সম্পূর্ণ প্রস্তুতি নিশ্চিত করতে সহযোগী পোস্টগুলো ক্রমানুসারে পড়ুন:</p>
                 <ul style="margin:0; padding-left:20px; color:#334155; line-height:1.85;">
                   <li><strong>পিলার হাব:</strong> {blueprint['pillar']['title']}</li>
                 </ul>
               </div>
             """,
-            "post_url": f"https://www.helptrickbd.com/2026/09/{slug}.html",
+            "post_url": f"https://www.helptrickbd.com/{slug}/",
             "meta_desc": p.get("search_desc", title)[:145],
             "faq_schema_json": """
               {"@type": "Question", "name": "How to prepare effectively?", "acceptedAnswer": {"@type": "Answer", "text": "Follow the structured syllabus and practice board-standard model questions regularly."}}
@@ -159,7 +159,9 @@ def cmd_auto(args):
             "category": category,
             "labels": p.get("labels", ["Education"]),
             "search_desc": p.get("search_desc", title)[:145],
-            "banner_url": banner_url
+            "banner_url": banner_url,
+            "banner_path": out_webp,
+            "focus_keyword": p.get("focus_keyword", slug.replace("-", " "))
         }
         with open(meta_file, "w", encoding="utf-8") as f:
             json.dump(meta_data, f, ensure_ascii=False, indent=2)
@@ -167,7 +169,7 @@ def cmd_auto(args):
         # Pre-Flight Check
         checker = PreFlightChecker(html_file, metadata_path=meta_file)
         passed = checker.run_all()
-        print(f"    [✔] Post: '{slug}' — Words: {checker.word_count} | Pre-Flight: {'PASSED' if passed else 'FAIL'}")
+        print(f"    [PASS] Post: '{slug}' — Words: {checker.word_count} | Pre-Flight: {'PASSED' if passed else 'FAIL'}")
 
         generated_posts.append({
             "title": p_title,
@@ -178,62 +180,92 @@ def cmd_auto(args):
             "word_count": checker.word_count
         })
 
-    # 4. Direct Blogger Publishing (if requested)
+    # 4. Direct WordPress Publishing (if requested)
     if publish_now:
         print("\n" + "=" * 75)
-        print("🚀 PUBLISHING TO BLOGGER API v3...")
+        print("PUBLISHING TO WORDPRESS REST API...")
         print("=" * 75)
 
-        service = get_authenticated_service()
-        if not service:
-            print("[ERROR] Could not authenticate with Blogger API.")
-            return
-
+        wp_pub = WordPressPublisher()
         live_results = []
+
+        cat_id = wp_pub.get_or_create_category(category)
+        category_ids = [cat_id] if cat_id else []
+
         for gp in generated_posts:
             with open(gp["html_file"], "r", encoding="utf-8") as f:
                 content = f.read()
 
-            body = {
-                "title": gp["title"],
-                "content": content,
-                "labels": gp["meta_data"]["labels"]
-            }
+            banner_path = gp["meta_data"].get("banner_path")
+            featured_media_id = None
+            if banner_path and os.path.exists(banner_path):
+                print(f"[*] Uploading featured image: {os.path.basename(banner_path)}...")
+                featured_media_id = wp_pub.upload_featured_image(
+                    banner_path,
+                    alt_text=gp["title"],
+                    title=gp["title"]
+                )
 
-            res = service.posts().insert(blogId=BLOG_ID, body=body, isDraft=not is_live).execute()
-            p_url = res.get("url", "")
-            p_id = res.get("id", "")
-            live_results.append({
-                "title": gp["title"],
-                "url": p_url,
-                "id": p_id,
-                "desc": gp["meta_data"]["search_desc"]
-            })
+            tag_ids = []
+            for lbl in gp["meta_data"].get("labels", []):
+                if lbl:
+                    t_id = wp_pub.get_or_create_tag(lbl)
+                    if t_id:
+                        tag_ids.append(t_id)
 
-            # Indexing ping
-            if is_live and p_url:
-                try:
-                    cmd = [sys.executable, os.path.join(PROJECT_ROOT, "tools", "indexer", "index_now.py"), "--url", p_url]
-                    subprocess.run(cmd, capture_output=True, text=True, cwd=os.path.join(PROJECT_ROOT, "tools", "indexer"))
-                except Exception:
-                    pass
+            post_status = "publish" if is_live else "draft"
+            res = wp_pub.create_post(
+                title=gp["title"],
+                content=content,
+                slug=gp["slug"],
+                categories=category_ids,
+                tags=tag_ids,
+                status=post_status,
+                featured_media_id=featured_media_id,
+                seo_meta=gp["meta_data"]
+            )
 
-        # Hub ping
+            if res.get("success"):
+                p_url = res.get("url", "")
+                p_id = res.get("id", "")
+                p_edit = res.get("edit_url", "")
+                live_results.append({
+                    "title": gp["title"],
+                    "url": p_url,
+                    "edit_url": p_edit,
+                    "id": p_id,
+                    "status": res.get("status"),
+                    "desc": gp["meta_data"]["search_desc"]
+                })
+
+                # Indexing ping if live
+                if is_live and p_url:
+                    try:
+                        cmd = [sys.executable, os.path.join(PROJECT_ROOT, "tools", "indexer", "index_now.py"), "--url", p_url]
+                        subprocess.run(cmd, capture_output=True, text=True, cwd=os.path.join(PROJECT_ROOT, "tools", "indexer"))
+                    except Exception:
+                        pass
+            else:
+                print(f"[ERROR] Failed to create post '{gp['title']}': {res.get('error')}")
+
+        # Hub ping if live
         if is_live:
             ping_all_hubs()
 
         # 5. Compact Live Report
         print("\n" + "=" * 75)
-        print("🎉 HELPTRICKBD COMPACT PUBLISHING REPORT")
+        print("HELPTRICKBD WORDPRESS PUBLISHING REPORT")
         print("=" * 75)
         for lr in live_results:
-            print(f"\n• {lr['title']}")
-            print(f"  🔗 Live URL: {lr['url']}")
-            print(f"  📋 Search Description: {lr['desc']}")
+            print(f"\n* Title: {lr['title']}")
+            print(f"  Status   : {lr['status'].upper()}")
+            print(f"  Live URL : {lr['url']}")
+            print(f"  Edit URL : {lr['edit_url']}")
+            print(f"  SEO Desc : {lr['desc']}")
         print("\n" + "=" * 75)
 
     else:
-        print("\n[✔] Generation Complete! Run with --publish --live to publish directly to Blogger.")
+        print("\n[OK] Generation Complete! Run with --publish to create Draft in WordPress, or --publish --live to publish directly.")
 
 def cmd_whatsapp(args):
     from tools.social_broadcaster.whatsapp_channel_bot import run_bot
@@ -251,7 +283,7 @@ def main():
     p_auto.add_argument("--title", required=True, help="Main topic or post title")
     p_auto.add_argument("--category", default="Education", help="Category name")
     p_auto.add_argument("--pdf", default=None, help="Path to syllabus/suggestion PDF")
-    p_auto.add_argument("--publish", action="store_true", help="Publish directly to Blogger")
+    p_auto.add_argument("--publish", action="store_true", help="Publish directly to WordPress")
     p_auto.add_argument("--live", action="store_true", help="Publish as Live (default is draft if omitted)")
 
     # whatsapp command

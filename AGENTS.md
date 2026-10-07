@@ -6,7 +6,7 @@ This file is automatically loaded by Antigravity IDE into the AI agent's memory 
 
 ## 📌 1. Project Profile & Core Objective
 - **Website:** [Helptrickbd.com](https://www.helptrickbd.com/)
-- **CMS:** Blogger (Blogspot)
+- **CMS:** WordPress 6.7+ (PHP 8.1+) on `https://www.helptrickbd.com`
 - **Primary Goal:** 100% Google AdSense Approval, Core Web Vitals excellence, and fast Google Search Console ranking.
 - **Repository:** `https://github.com/omarfarukitbd-spec/helptrickbdseo.git`
 - **Main Branch:** `main`
@@ -19,14 +19,14 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 
 1. **[00_AGENT_CONSTITUTION.md](file:///.agents/rules/00_AGENT_CONSTITUTION.md)**: Supreme authority, Stop-Gates & User Permission Matrix.
 2. **[01_CONTENT_STANDARDS.md](file:///.agents/rules/01_CONTENT_STANDARDS.md)**: Word counts (1,200–1,600+), Language strictness (English stays English, Bengali stays Bengali), SolaimanLipi, `<!--more-->` tag, 5 Human Archetypes.
-3. **[02_IMAGE_AND_ASSET_RULES.md](file:///.agents/rules/02_IMAGE_AND_ASSET_RULES.md)**: 16:9 banners, 10–20 KB WebP compression, jsDelivr CDN hosting, authentic author thumbnail preservation, UI annotations (Red Box, Arrow, Pin).
-4. **[03_PUBLISHING_PERMALINK_RULES.md](file:///.agents/rules/03_PUBLISHING_PERMALINK_RULES.md)**: Mandatory 2-Step Custom English Permalink Minting (Zero generic `blog-post_xx.html`), Blogger API v3, Google Indexing API pinging.
-5. **[04_LABEL_TAXONOMY_GOVERNANCE.md](file:///.agents/rules/04_LABEL_TAXONOMY_GOVERNANCE.md)**: Strict Label Permission Gate & AdSense category balance.
+3. **[02_IMAGE_AND_ASSET_RULES.md](file:///.agents/rules/02_IMAGE_AND_ASSET_RULES.md)**: 16:9 banners, 10–20 KB WebP compression, jsDelivr CDN hosting, WordPress Media Library / Featured Image, authentic author thumbnail preservation.
+4. **[03_PUBLISHING_PERMALINK_RULES.md](file:///.agents/rules/03_PUBLISHING_PERMALINK_RULES.md)**: WordPress Clean Permalinks (/%postname%/), WordPress REST API (tools/wp_publisher/), Rank Math SEO metadata, Google Indexing API pinging.
+5. **[04_LABEL_TAXONOMY_GOVERNANCE.md](file:///.agents/rules/04_LABEL_TAXONOMY_GOVERNANCE.md)**: WordPress Hierarchical Category Governance & AdSense category balance.
 6. **[05_MULTI_PC_SYNC_PROTOCOL.md](file:///.agents/rules/05_MULTI_PC_SYNC_PROTOCOL.md)**: Git Pull Strictly Manual (User Instruction Only), Post-Task Auto-Push (`git push origin main`), Secrets safety.
 7. **[06_COMMUNICATION_AND_REPORTING_PROTOCOL.md](file:///.agents/rules/06_COMMUNICATION_AND_REPORTING_PROTOCOL.md)**: Mandatory Live Bengali Reporting & 100% Bengali Artifacts (Plans, Walkthroughs & Audits).
-8. **[07_POST_BACKUP_AND_RESTORE_PROTOCOL.md](file:///.agents/rules/07_POST_BACKUP_AND_RESTORE_PROTOCOL.md)**: Mandatory Pre-Edit Full Post Backup & Rollback Protocol (Original HTML, Image Manifest, Labels & Metadata).
+8. **[07_POST_BACKUP_AND_RESTORE_PROTOCOL.md](file:///.agents/rules/07_POST_BACKUP_AND_RESTORE_PROTOCOL.md)**: Mandatory Pre-Edit Full Post Backup & Rollback Protocol (Original HTML, Image Manifest, Categories & Metadata).
 9. **[08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md](file:///.agents/rules/08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md)**: Mandatory Inquisitive Clarification Gate (Zero guesswork on short prompts), Lightning-Fast Execution Once Clear, and Zero Sycophancy (Challenge mistakes with facts, policy & reality; Never blindly agree).
-10. **[09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md](file:///.agents/rules/09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md)**: Mandatory Single Theme Source of Truth (Zero separate snippet files; all edits directly inside `Helptrickbd theme code.xml`; zero code duplication; dark mode post contrast & callout inversion engine).
+10. **[09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md](file:///.agents/rules/09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md)**: Mandatory Single Theme Source of Truth (Zero separate snippet files; all edits directly inside `Helptrickbd Wp/helptrickbd-theme/`; zero code duplication; dark mode WCAG 2.1 AA contrast).
 11. **[10_PDF_INGESTION_AND_EXTRACTION_PROTOCOL.md](file:///.agents/rules/10_PDF_INGESTION_AND_EXTRACTION_PROTOCOL.md)**: Mandatory PDF Ingestion, Rapid Extraction & Editorial Correction Protocol (Zero manual page slicing/disk loops; auto-detect Born-Digital vs Scanned; PyMuPDF4LLM & In-Memory Vision Pipeline; mandatory Bengali conjunct/table editorial proofreading).
 12. **[11_POST_PUBLISH_INDEXING_AND_VERIFICATION_PROTOCOL.md](file:///.agents/rules/11_POST_PUBLISH_INDEXING_AND_VERIFICATION_PROTOCOL.md)**: Mandatory Post-Publish Indexing, Multi-Engine Push (Google Indexing API v3, WebSub, IndexNow) & Proof Verification Gate (Zero premature reporting; 100% live status confirmation required before notifying user).
 
@@ -48,7 +48,7 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 ### A. Typography & Fonts:
 - **Default Font:** `SolaimanLipi` (applied cleanly via CSS `@font-face` from Ekushey CDN / jsDelivr).
 - **Reason:** Hind Siliguri had broken conjunct/glyph rendering issues (e.g., numeral ১ and specific Bengali ligatures had distorted spacing). SolaimanLipi renders standard Bengali newspaper-grade typography across all modern browsers and mobile viewports.
-- **Master Theme File:** [`Helptrickbd theme code.xml`](file:///Helptrickbd%20theme%20code.xml) (Single source of truth).
+- **Master Theme Directory:** [`Helptrickbd Wp/helptrickbd-theme/`](file:///Helptrickbd%20Wp/helptrickbd-theme/) (HelpTrickBD Pro v1.2.5 — Single source of truth).
 
 ### B. Content & Article Architecture Standard:
 Every revived or new article MUST strictly adhere to:
@@ -68,8 +68,8 @@ Every revived or new article MUST strictly adhere to:
 2. **Strict Language Preservation:** ইংরেজি পোস্ট **১০০% ইংরেজিতেই** রাখতে হবে। কোনো ইংরেজি পোস্ট বাংলায় রূপান্তর করা সম্পূর্ণ নিষিদ্ধ।
 3. **Non-destructive Augmentation:** ইউজারের মূল টেক্সট সবসময় অক্ষুণ্ণ রাখতে হবে। পোস্ট বড় করতে হলে ইউজারের লেখার **আগে ভূমিকা** এবং **পরে মডেল প্রশ্ন/বিশ্লেষণ/নোটস** যোগ করতে হবে।
 4. **Original Thumbnail Preservation & Custom Template Standard:** লেখকের নিজস্ব থাম্বনেইল থাকলে তা কোনোভাবেই প্রতিস্থাপন করা যাবে না। নতুন থাম্বনেইল তৈরি করতে হলে অবশ্যই `Thumbnail BG/` ফোল্ডারের নির্দিষ্ট ব্যাকগ্রাউন্ড (১ ক্যাটাগরি = ১ ফিক্সড ব্যাকগ্রাউন্ড), অফিসিয়াল হেল্পট্রিকবিডি লোগো এবং `Hind Siliguri Bold` ফন্ট ব্যবহার করতে হবে।
-5. **Mandatory `<!--more-->` Jump Break & Byte-0 Top Hero Placement (হিরো ইমেজের বাইট-০ অবস্থান ও পরে বাধ্যতামূলক মোর ট্যাগ):** ব্লগারে পোস্টের মূল ব্যানার বা হিরো ইমেজ (`<figure><img ...></figure>`) এইচটিএমএল ফাইলের একদম শুরুতে (Byte 0 / প্রথম ১০০ ক্যারেক্টারের মধ্যে) অবস্থান করবে। কোনো অবস্থাতেই বড় `<style>` বা সিএসএস ব্লক হিরো ইমেজের পূর্বে বসানো যাবে না, যাতে গুগল ব্লগারের ৮ কেবি (8 KB) থাম্বনেইল স্ক্যানার প্রথম ১০০ ক্যারেক্টারেই ইমেজ পেয়ে যায় এবং এডমিন প্যানেলে ধূসর অক্ষরের ফলব্যাক আইকন তৈরি না হয়। এবং তার নিচে ভূমিকা প্যারাগ্রাফের ঠিক পরেই `<!--more-->` ট্যাগ বসাতে হবে। কোনো অবস্থাতেই হিরো ইমেজের পূর্বে `<!--more-->` বসানো যাবে না। ইমেজের পূর্বে মোর ট্যাগ দিলে ব্লগারে আরএসএস ফিড থেকে ছবি বাদ পড়ে যায় এবং হোমপেজ/রিলেটেড পোস্ট উইজেটে ব্রোকেন ধূসর ক্যামেরা আইকন তৈরি হয়।
-6. **Label Governance (ইউজারের পূর্বানুমতি):** পোস্ট পাবলিশ বা আপডেটের আগে অবশ্যই ইউজারকে জিজ্ঞেস করতে হবে কোন লেবেলে যুক্ত হবে এবং কোনো নতুন লেবেল যোগ করা হবে কি না।
+5. **WordPress Featured Image & Excerpt Standard (ফিচার্ড ইমেজ ও সামারি মানদণ্ড):** পোস্টের ব্যানার ওয়ার্ডপ্রেস মিডিয়া লাইব্রেরিতে আপলোড হয়ে স্বয়ংক্রিয়ভাবে নেটিভ `featured_media` হিসেবে যুক্ত হবে। পোস্ট বডির প্রথম ভূমিকা প্যারাগ্রাফের পর স্ট্যান্ডার্ড `<!--more-->` ট্যাগ ব্যবহার করা যাবে যাতে ওয়ার্ডপ্রেস আর্কাইভ ও আরএসএস ফিডে ক্লিন সামারি তৈরি হয়।
+6. **Category & Tag Governance (ক্যাটাগরি ও ট্যাগ শৃঙ্খলা):** পোস্ট পাবলিশ বা আপডেটের আগে অবশ্যই সুনির্দিষ্ট প্যারেন্ট-চাইল্ড ক্যাটাগরি (যেমন: Education > SSC) এবং প্রাসঙ্গিক ট্যাগ নির্ধারণ করতে হবে।
 7. **Anti-AI Editorial Diversity & Archetypes (স্বাভাবিক মানবিক কনটেন্ট আর্কিটেকচার):** কোনো রোবটিক কুকি-কাটার টেমপ্লেট ব্যবহার করা সম্পূর্ণ নিষিদ্ধ। প্রতিটি আর্টিকেলে একই রকম নীল বর্ডার, একই বাঁধা-ধরা 'সারসংক্ষেপ (Quick Overview)' বা জোর করে সূচিপত্র/তুলনামূলক টেবিল ঢুকানো যাবে না। বিষয়বস্তু ও উদ্দেশ্য অনুযায়ী ৫টি মানবিক আর্কিটাইপ (সাহিত্যিক প্রবন্ধ, বিশ্ববিদ্যালয় লেকচার হ্যান্ডনোট, স্টেপ-বাই-স্টেপ রুটিন/নোটিশ, স্কুল স্টাডি গাইড, এবং বিসিএস বুলেট শিট) অনুযায়ী ভিন্ন ভিন্ন ডিজাইন ও বাক্যের মানবিক ছন্দ (Sentence Burstiness) ব্যবহার করতে হবে।
 8. **English Content Bilingual Thumbnail & High-Rank Keyword Rule (দ্বিভাষিক থাম্বনেইল, গুগল হাই-র‌্যাংক কি-ওয়ার্ড ও মানবিক ইন্টিগ্রেশন নীতি):**
    - **থাম্বনেইল দ্বিভাষিক স্ট্যান্ডার্ড:** পোস্ট যদি ইংরেজিতে হয় (যেমন: English 1st/2nd Paper, Grammar বা Suggestion), তবে থাম্বনেইলে **বাংলা ও ইংরেজি উভয় ভাষাই উপস্থিত থাকতে হবে** (প্রধান ইংরেজি কি-ওয়ার্ড/টাইটেল বড় হরফে এবং সাথে সাবটাইটেল/হুকে সুস্পষ্ট বাংলা টেক্সট যাতে শিক্ষার্থীদের ক্লিক-থ্রু রেট বৃদ্ধি পায়)। বাংলা পোস্ট হলে থাম্বনেইল মূলত মার্জিত বাংলায় থাকবে। **Universal English Footer Tagline:** সব থাম্বনেইলে ডানপাশের ফ্রস্টেড পিল সর্বদা ১০০% ইংরেজিতে থাকবে: `Learn Smart • Lead Future • Latest Edition 2026`।

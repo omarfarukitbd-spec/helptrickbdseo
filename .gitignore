@@ -38,6 +38,9 @@ indexing_history.log
 social_credentials.json
 *social_credentials*.json
 !tools/social_broadcaster/social_credentials.template.json
+tools/wp_publisher/config.json
+*wp_publisher/config.json
+!tools/wp_publisher/config.example.json
 
 # Build outputs & generated test reports
 dist/

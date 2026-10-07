@@ -74,23 +74,23 @@ class PreFlightChecker:
             self.errors.append(f"Word Count: {count:,} words (CRITICAL: under 1,000 words thin content)")
 
     def check_jump_break(self):
-        """Rule 01 & 02: Mandatory <!--more--> tag placed strictly AFTER the featured hero <img>"""
+        """Rule 01 & 02: Optional or standard <!--more--> tag for excerpt generation"""
+        has_featured_meta = bool(self.metadata.get("banner_url") or self.metadata.get("banner_path"))
         if '<!--more-->' in self.raw_html:
             more_pos = self.raw_html.find('<!--more-->')
             img_pos = self.raw_html.find('<img')
             
-            # 🛡️ STRICT RULE: Hero <img> MUST be placed BEFORE <!--more-->
-            if img_pos == -1:
-                self.errors.append("Jump Break / Thumbnail: CRITICAL! No <img> found in post!")
-            elif img_pos > more_pos:
-                self.errors.append("Jump Break / Thumbnail: CRITICAL! The hero <img> MUST be placed BEFORE <!--more-->! Placing <!--more--> before <img> cuts the image from Blogger feeds, displaying gray camera placeholders!")
+            if img_pos != -1 and img_pos < more_pos:
+                self.passed.append(f"Jump Break: <!--more--> correctly placed after lead intro & image (char {more_pos}) (PASSED)")
+            elif has_featured_meta or img_pos != -1:
+                self.passed.append(f"Jump Break: <!--more--> placed at char {more_pos} (WordPress excerpt boundary verified) (PASSED)")
             else:
-                self.passed.append(f"Jump Break: <!--more--> correctly placed AFTER featured hero image (img at {img_pos}, more at {more_pos}) (PASSED)")
+                self.passed.append(f"Jump Break: <!--more--> found at char {more_pos} (PASSED)")
 
             if more_pos > 5000:
                 self.warnings.append(f"Jump Break: <!--more--> is placed relatively late (char {more_pos})")
         else:
-            self.errors.append("Jump Break: <!--more--> tag is MISSING from the post!")
+            self.warnings.append("Jump Break: <!--more--> tag is not present in post HTML (WordPress will auto-generate excerpt from first paragraph).")
 
     def check_typography(self):
         """Rule 01 & Rule 22: SolaimanLipi font styling (enforced globally by theme)"""
@@ -110,22 +110,19 @@ class PreFlightChecker:
             self.passed.append("Theme Styling: Minimalist, clean and calm palette verified (PASSED)")
 
     def check_featured_image(self):
-        """Rule 02: Every article MUST have at least one featured <img> tag (prevents gray camera placeholder)
-        and it MUST be placed at Byte 0 / within first 1,000 chars (satisfies Blogger 8 KB scanner)."""
+        """Rule 02: Every article MUST have a featured image (either via WordPress Featured Image metadata or <img> tag)."""
+        has_featured_meta = bool(self.metadata.get("banner_url") or self.metadata.get("banner_path"))
         imgs = self.soup.find_all('img')
-        if not imgs:
-            self.errors.append("Featured Image: CRITICAL! No <img> tag found in post HTML! Blogger will display gray camera placeholder!")
+        
+        if not imgs and not has_featured_meta:
+            self.errors.append("Featured Image: CRITICAL! No <img> tag found in post HTML and no banner in metadata! Post lacks a visual thumbnail.")
             return
-            
-        first_img_idx = self.raw_html.find('<img')
-        if first_img_idx > 1000:
-            self.errors.append(
-                f"Featured Image Position: CRITICAL! First <img> is located at character index {first_img_idx} (> 1000). "
-                "It MUST be placed at the very beginning of the HTML (Byte 0 / before <style> blocks) "
-                "so Blogger's 8 KB backend thumbnail scanner immediately detects it and avoids [S] fallback icon!"
-            )
-        else:
-            self.passed.append(f"Featured Image: Found {len(imgs)} image(s), hero image at index {first_img_idx} (< 1000 chars, instant Blogger thumbnail detection) (PASSED)")
+
+        if has_featured_meta:
+            self.passed.append("Featured Image: Native WordPress Featured Image configured in metadata (PASSED)")
+        elif imgs:
+            first_img_idx = self.raw_html.find('<img')
+            self.passed.append(f"Featured Image: Found {len(imgs)} image(s) in post HTML (hero image at char {first_img_idx}) (PASSED)")
 
     def check_image_sources(self):
         """Rule 02: Images must be CDN hosted, zero local filesystem leaks"""
@@ -391,7 +388,7 @@ class PreFlightChecker:
 
     def print_report(self):
         print("\n" + "="*70)
-        print(f"🛡️  PRE-FLIGHT GATEKEEPER AUDIT: {os.path.basename(self.html_path)}")
+        print(f"PRE-FLIGHT GATEKEEPER AUDIT: {os.path.basename(self.html_path)}")
         print("="*70)
         
         for p in self.passed:
@@ -410,7 +407,7 @@ class PreFlightChecker:
             return True
         else:
             print(f"STATUS: BLOCKED! {len(self.errors)} CRITICAL VIOLATION(S) DETECTED.")
-            print("Action Required: Fix all [BLOCKED] issues before publishing to Blogger.")
+            print("Action Required: Fix all [BLOCKED] issues before publishing to WordPress.")
             print("="*70 + "\n")
             return False
 
