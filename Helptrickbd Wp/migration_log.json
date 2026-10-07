@@ -1,0 +1,1986 @@
+{
+  "generated_at": "2026-10-07T03:21:31.336555",
+  "total_posts": 134,
+  "source_blog": "arafatitbd.blogspot.com",
+  "target_site": "https://www.helptrickbd.com",
+  "author": "ayesha",
+  "batches": [
+    {
+      "file": "helptrickbd_part1_posts_01_to_45.xml",
+      "post_range": "01 - 45",
+      "count": 45,
+      "size_bytes": 4039327
+    },
+    {
+      "file": "helptrickbd_part2_posts_46_to_90.xml",
+      "post_range": "46 - 90",
+      "count": 45,
+      "size_bytes": 1592066
+    },
+    {
+      "file": "helptrickbd_part3_posts_91_to_134.xml",
+      "post_range": "91 - 134",
+      "count": 44,
+      "size_bytes": 1528371
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "batch": "Part 1",
+      "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার গাইড ও ৩য় বর্ষে প্রমোশনের নিয়মাবলী ২০২৬",
+      "slug": "nu-honours-2nd-year-exam-guide-and",
+      "date": "2026-10-03 14:21:12",
+      "categories": [
+        "Education Guide",
+        "National University"
+      ],
+      "tags_count": 7,
+      "focus_keyword": "অনার্স ২য় বর্ষ পরীক্ষার গাইড",
+      "word_count": 3490,
+      "has_jump_break": true
+    },
+    {
+      "id": 2,
+      "batch": "Part 1",
+      "title": "জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষা ডিজিটালাইজেশন ও একিউএ গ্লোবাল চুক্তি: পরীক্ষা ও মূল্যায়নে ঐতিহাসিক পরিবর্তন",
+      "slug": "nu-exam-digitization-aqa-global-mou-2026",
+      "date": "2026-10-03 13:39:49",
+      "categories": [
+        "Education Guide",
+        "National University"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "জাতীয় বিশ্ববিদ্যালয় পরীক্ষা ডিজিটালাইজেশন",
+      "word_count": 4039,
+      "has_jump_break": true
+    },
+    {
+      "id": 3,
+      "batch": "Part 1",
+      "title": "৬ষ্ঠ, ৭ম, ৮ম ও ৯ম শ্রেণির বার্ষিক পরীক্ষার মানবণ্টন ও পূর্ণাঙ্গ প্রস্তুতি গাইড ২০২৬",
+      "slug": "class-6-to-9-annual-exam-marks-distribution-2026",
+      "date": "2026-10-03 12:45:13",
+      "categories": [
+        "Education Guide"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "বার্ষিক পরীক্ষার মানবণ্টন ও প্রস্তুতি",
+      "word_count": 5094,
+      "has_jump_break": true
+    },
+    {
+      "id": 4,
+      "batch": "Part 1",
+      "title": "জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি ও পরীক্ষার গাইড ২০২৬ | NU Degree 2nd Year In-Course & Exam Routine",
+      "slug": "nu-degree-2nd-year-in-course-and-exam",
+      "date": "2026-10-02 01:57:14",
+      "categories": [
+        "Education Guide",
+        "National University"
+      ],
+      "tags_count": 7,
+      "focus_keyword": "ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি",
+      "word_count": 3495,
+      "has_jump_break": true
+    },
+    {
+      "id": 5,
+      "batch": "Part 1",
+      "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine & Subject Code",
+      "slug": "nu-honours-2nd-year-exam-routine-2026",
+      "date": "2026-10-01 08:53:00",
+      "categories": [
+        "Education Guide",
+        "National University"
+      ],
+      "tags_count": 8,
+      "focus_keyword": "অনার্স ২য় বর্ষ পরীক্ষার রুটিন",
+      "word_count": 7839,
+      "has_jump_break": true
+    },
+    {
+      "id": 6,
+      "batch": "Part 1",
+      "title": "ভূরাজনীতি কাকে বলে? সংজ্ঞা, উপাদান, প্রকৃতি, রাজনৈতিক ভূগোলের সাথে পার্থক্য এবং বাংলাদেশের ভূরাজনীতি",
+      "slug": "geopolitics-definition-elements-nature",
+      "date": "2026-09-30 06:59:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "ভূরাজনীতি কাকে বলে উপাদান ও গুরুত্ব",
+      "word_count": 8521,
+      "has_jump_break": true
+    },
+    {
+      "id": 7,
+      "batch": "Part 1",
+      "title": "পাবলিক বিশ্ববিদ্যালয় ভর্তি যোগ্যতা ২০২৬: বিজ্ঞান, মানবিক ও ব্যবসায় শাখা পূর্ণাঙ্গ গাইড (Public University Admission Guide 2026)",
+      "slug": "public-university-admission-eligibility",
+      "date": "2026-09-29 10:33:17",
+      "categories": [
+        "Education Guide",
+        "University Admission"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "পাবলিক বিশ্ববিদ্যালয় ভর্তি যোগ্যতা ২০২৬",
+      "word_count": 14686,
+      "has_jump_break": true
+    },
+    {
+      "id": 8,
+      "batch": "Part 1",
+      "title": "এসএসসি ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Poetry CQ Question Bank & Full Solution)",
+      "slug": "ssc-bangla-1st-paper-poetry-cq-question",
+      "date": "2026-09-24 00:26:57",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 11,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র কবিতাংশ সৃজনশীল",
+      "word_count": 11652,
+      "has_jump_break": true
+    },
+    {
+      "id": 9,
+      "batch": "Part 1",
+      "title": "এসএসসি ও দাখিল বাংলা ১ম পত্র গদ্যাংশ সৃজনশীল প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Prose CQ Question Bank & Full Solution)",
+      "slug": "ssc-bangla-1st-paper-prose-cq-question",
+      "date": "2026-09-24 00:24:34",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 11,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ সৃজনশীল",
+      "word_count": 15668,
+      "has_jump_break": true
+    },
+    {
+      "id": 10,
+      "batch": "Part 1",
+      "title": "এসএসসি বাংলা ১ম পত্র কবিতাংশ বহুনির্বাচনি প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Poetry MCQ Suggestion with Answers)",
+      "slug": "ssc-bangla-1st-paper-poetry-mcq",
+      "date": "2026-09-24 00:02:59",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 10,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র কবিতাংশ MCQ",
+      "word_count": 10027,
+      "has_jump_break": true
+    },
+    {
+      "id": 11,
+      "batch": "Part 1",
+      "title": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ বহুনির্বাচনি প্রশ্নব্যাংক ২০২৬-২০২৭ (SSC Bangla 1st Paper Prose MCQ Suggestion with Answers)",
+      "slug": "ssc-bangla-1st-paper-prose-mcq-question",
+      "date": "2026-09-24 00:02:31",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 10,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ MCQ",
+      "word_count": 10233,
+      "has_jump_break": true
+    },
+    {
+      "id": 12,
+      "batch": "Part 1",
+      "title": "SSC বাংলা ১ম পত্র ১০০ নম্বরের পূর্ণাঙ্গ মডেল টেস্ট ও সমাধান ২০২৬-২০২৭ | বোর্ড স্ট্যান্ডার্ড CQ, MCQ ও সংক্ষিপ্ত প্রশ্ন (100 Marks Full Model Test Paper)",
+      "slug": "ssc-bangla-1st-paper-model-test",
+      "date": "2026-09-23 21:15:11",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 12,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র মডেল টেস্ট",
+      "word_count": 3611,
+      "has_jump_break": true
+    },
+    {
+      "id": 13,
+      "batch": "Part 1",
+      "title": "SSC বাংলা ১ম পত্র সংক্ষিপ্ত প্রশ্নব্যাংক ২০২৬-২০২৭ (২০ নম্বর নিশ্চিত) | গদ্য ও পদ্যের সেরা ১০০টি অনুধাবনমূলক প্রশ্ন ও উত্তর (20-Mark SAQ Bank)",
+      "slug": "ssc-bangla-1st-paper-short-question",
+      "date": "2026-09-23 21:09:36",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 8,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র সংক্ষিপ্ত প্রশ্ন",
+      "word_count": 4388,
+      "has_jump_break": true
+    },
+    {
+      "id": 14,
+      "batch": "Part 1",
+      "title": "SSC বাংলা ১ম পত্র কবিতাংশ পর্ব-২ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | সেইদিন এই মাঠ, বৃষ্টি, আগন্তুক নই, স্বাধীনতা ও বোশেখ CQ",
+      "slug": "ssc-bangla-1st-paper-poetry-cq-part-2",
+      "date": "2026-09-23 21:05:56",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 9,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র কবিতাংশ সৃজনশীল",
+      "word_count": 4029,
+      "has_jump_break": true
+    },
+    {
+      "id": 15,
+      "batch": "Part 1",
+      "title": "SSC বাংলা ১ম পত্র কবিতাংশ পর্ব-১ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | বন্দনা, কপোতাক্ষ নদ, প্রাণ, জীবন বিনিময় ও উমর ফারুক CQ",
+      "slug": "ssc-bangla-1st-paper-poetry-cq-part-1",
+      "date": "2026-09-23 21:01:28",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 9,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র কবিতাংশ সৃজনশীল",
+      "word_count": 3202,
+      "has_jump_break": true
+    },
+    {
+      "id": 16,
+      "batch": "Part 1",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-৩ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | প্রবাস বন্ধু, মমতাদি, একুশের গল্প ও নতুন গৌরবগাথা CQ",
+      "slug": "ssc-bangla-1st-paper-prose-cq-part-3",
+      "date": "2026-09-23 20:58:22",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 9,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ সৃজনশীল",
+      "word_count": 3236,
+      "has_jump_break": true
+    },
+    {
+      "id": 17,
+      "batch": "Part 1",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-২ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | মানুষ মুহম্মদ (স.), নিমগাছ, উপেক্ষিত শক্তি ও শিক্ষা ও মনুষ্যত্ব CQ",
+      "slug": "ssc-bangla-1st-paper-prose-cq-part-2",
+      "date": "2026-09-23 20:52:05",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 11,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ সৃজনশীল",
+      "word_count": 3582,
+      "has_jump_break": true
+    },
+    {
+      "id": 18,
+      "batch": "Part 1",
+      "title": "SSC ও দাখিল বাংলা ১ম পত্র ৩০ নম্বরের বহুনির্বাচনি (MCQ) ও সংক্ষিপ্ত প্রশ্নব্যাংক (SAQ) ২০২৬-২০২৭ | গদ্যাংশ ও কবিতাংশের শীর্ষ কমন প্রশ্ন সমাধান",
+      "slug": "ssc-bangla-1st-paper-mcq-saq-question",
+      "date": "2026-09-23 20:18:44",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 12,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র কবিতাংশ MCQ",
+      "word_count": 4971,
+      "has_jump_break": true
+    },
+    {
+      "id": 19,
+      "batch": "Part 1",
+      "title": "SSC ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল ও ভাবার্থ সমাধান ২০২৬-২০২৭ | কপোতাক্ষ নদ, বন্দনা, তোমাকে পাওয়ার জন্যে হে স্বাধীনতা ও জীবন বিনিময়",
+      "slug": "ssc-bangla-1st-paper-poetry-cq",
+      "date": "2026-09-23 20:15:23",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 11,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র কবিতাংশ সৃজনশীল",
+      "word_count": 3790,
+      "has_jump_break": true
+    },
+    {
+      "id": 20,
+      "batch": "Part 1",
+      "title": "আমাদের নতুন গৌরবগাথা সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | জুলাই ২০২৪ গণঅভ্যুত্থান প্রবন্ধের সম্পূর্ণ বহুনির্বাচনি ও অনুধাবনমূলক সুপার সাজেশন (SSC ও দাখিল বাংলা ১ম পত্র)",
+      "slug": "amader-notun-gourabbatha-cq-mcq",
+      "date": "2026-09-23 20:12:20",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 12,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র MCQ",
+      "word_count": 4634,
+      "has_jump_break": true
+    },
+    {
+      "id": 21,
+      "batch": "Part 1",
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-১ সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২০২৭ | প্রত্যুপকার, সুভা, বই পড়া ও নিরীহ বাঙালি CQ Solution",
+      "slug": "ssc-bangla-1st-paper-prose-cq",
+      "date": "2026-09-23 20:07:59",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 11,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ সৃজনশীল",
+      "word_count": 4983,
+      "has_jump_break": true
+    },
+    {
+      "id": 22,
+      "batch": "Part 1",
+      "title": "SSC & Dakhil Bangla 1st Paper Final Suggestion 2026-2027 with Answers | ১০০ নম্বরের সম্পূর্ণ সিলেবাস, নতুন মানবণ্টন ও অধ্যায়ভিত্তিক সৃজনশীল-MCQ সুপার গাইড",
+      "slug": "ssc-bangla-1st-paper-final-suggestion",
+      "date": "2026-09-23 20:00:49",
+      "categories": [
+        "SSC & Dakhil",
+        "Bangla 1st Paper",
+        "Education Guide"
+      ],
+      "tags_count": 12,
+      "focus_keyword": "এসএসসি বাংলা ১ম পত্র MCQ",
+      "word_count": 4549,
+      "has_jump_break": true
+    },
+    {
+      "id": 23,
+      "batch": "Part 1",
+      "title": "যুক্তরাষ্ট্রীয় সরকারের বৈশিষ্ট্য ও কার্যাবলী: সংজ্ঞা, তুলনামূলক ছক ও পূর্ণাঙ্গ হ্যান্ডনোট (২০২৬)",
+      "slug": "federal-government-features-and",
+      "date": "2026-09-20 14:04:50",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "যুক্তরাষ্ট্রীয় সরকার বৈশিষ্ট্য ও গুণাগুণ",
+      "word_count": 3946,
+      "has_jump_break": true
+    },
+    {
+      "id": 24,
+      "batch": "Part 1",
+      "title": "SSC English 2nd Paper Final Suggestion 2026-2027 with Answers | ১০০ নম্বরের সম্পূর্ণ সিলেবাস, মানবণ্টন ও অধ্যায়ভিত্তিক এ টু জেড মাস্টার গাইড",
+      "slug": "ssc-english-2nd-paper-final-suggestion",
+      "date": "2026-09-19 11:30:00",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 10,
+      "focus_keyword": "SSC English 2nd Paper Suggestion",
+      "word_count": 5484,
+      "has_jump_break": true
+    },
+    {
+      "id": 25,
+      "batch": "Part 1",
+      "title": "SSC English 2nd Paper Model Test & Board Question 2026-2027 with Answers",
+      "slug": "ssc-english-2nd-paper-model-test-and",
+      "date": "2026-09-19 11:00:00",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 10,
+      "focus_keyword": "SSC English 2nd Paper Suggestion",
+      "word_count": 5638,
+      "has_jump_break": true
+    },
+    {
+      "id": 26,
+      "batch": "Part 1",
+      "title": "SSC English 2nd Paper Writing Part Final Suggestion 2026-2027 | Paragraph, Application, Email & Composition",
+      "slug": "ssc-english-2nd-paper-writing-part",
+      "date": "2026-09-19 10:30:00",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 10,
+      "focus_keyword": "SSC English 2nd Paper Suggestion",
+      "word_count": 3539,
+      "has_jump_break": true
+    },
+    {
+      "id": 27,
+      "batch": "Part 1",
+      "title": "SSC Sentence Connectors & Punctuation Suggestions with Answers | Linking Words রুলস ও ২৫টি শীর্ষ বোর্ড প্রশ্ন সমাধান",
+      "slug": "ssc-english-2nd-paper-connectors-and",
+      "date": "2026-09-19 10:00:00",
+      "categories": [
+        "SSC & Dakhil",
+        "Education Guide"
+      ],
+      "tags_count": 8,
+      "focus_keyword": "SSC Sentence Connectors Rules",
+      "word_count": 7572,
+      "has_jump_break": true
+    },
+    {
+      "id": 28,
+      "batch": "Part 1",
+      "title": "SSC English 2nd Paper Preposition & Gap Filling Suggestions with Answers | Appropriate Prepositions চার্ট ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "slug": "ssc-english-2nd-paper-preposition-and",
+      "date": "2026-09-19 09:30:00",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 10,
+      "focus_keyword": "SSC English 2nd Paper Suggestion",
+      "word_count": 6608,
+      "has_jump_break": true
+    },
+    {
+      "id": 29,
+      "batch": "Part 1",
+      "title": "SSC Suffix and Prefix Rules & Board Questions with Answers | Parts of Speech রূপান্তর ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "slug": "ssc-suffix-and-prefix-rules-and-board",
+      "date": "2026-09-19 09:00:00",
+      "categories": [
+        "SSC & Dakhil",
+        "Education Guide"
+      ],
+      "tags_count": 8,
+      "focus_keyword": "SSC Suffix and Prefix Rules",
+      "word_count": 8151,
+      "has_jump_break": true
+    },
+    {
+      "id": 30,
+      "batch": "Part 1",
+      "title": "SSC Tag Questions Rules & Board Questions with Answers | ১৫টি শর্টকাট গোল্ডেন রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "slug": "ssc-tag-questions-rules-and-board",
+      "date": "2026-09-19 08:30:00",
+      "categories": [
+        "SSC & Dakhil",
+        "Education Guide"
+      ],
+      "tags_count": 8,
+      "focus_keyword": "SSC Tag Questions Rules",
+      "word_count": 5839,
+      "has_jump_break": true
+    },
+    {
+      "id": 31,
+      "batch": "Part 1",
+      "title": "SSC Changing Sentences Rules & Board Questions with Answers | Voice Change, Degree ও Simple-Complex-Compound",
+      "slug": "ssc-changing-sentences-rules-and-board",
+      "date": "2026-09-19 08:00:00",
+      "categories": [
+        "SSC & Dakhil",
+        "Education Guide"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "SSC Changing Sentences Rules",
+      "word_count": 9712,
+      "has_jump_break": true
+    },
+    {
+      "id": 32,
+      "batch": "Part 1",
+      "title": "SSC English 2nd Paper Right Form of Verbs Suggestions with Answer | ১৫টি গোল্ডেন রুলস ও ২৫টি বোর্ড প্রশ্ন সমাধান",
+      "slug": "ssc-english-2nd-paper-right-form-of",
+      "date": "2026-09-18 19:52:18",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 10,
+      "focus_keyword": "SSC English 2nd Paper Suggestion",
+      "word_count": 8832,
+      "has_jump_break": true
+    },
+    {
+      "id": 33,
+      "batch": "Part 1",
+      "title": "SSC 2nd Paper Substitution Table Suggestion with Answers | ২৫টি শীর্ষ বোর্ড প্রশ্ন, সমাধান ও অর্থপূর্ণ বাক্য তৈরির টেকনিক",
+      "slug": "ssc-substitution-table-with-answers",
+      "date": "2026-09-18 19:51:12",
+      "categories": [
+        "SSC & Dakhil",
+        "Education Guide"
+      ],
+      "tags_count": 8,
+      "focus_keyword": "SSC Substitution Table Suggestion",
+      "word_count": 6649,
+      "has_jump_break": true
+    },
+    {
+      "id": 34,
+      "batch": "Part 1",
+      "title": "SSC English 1st Paper Exclusive Model Test 2026-2027 | ১০০ নম্বরের ২টি চূড়ান্ত মডেল প্রশ্ন ও নির্ভুল সমাধান",
+      "slug": "ssc-english-1st-paper-model-test-with",
+      "date": "2026-09-18 19:50:54",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 8,
+      "focus_keyword": "SSC English Model Test",
+      "word_count": 4873,
+      "has_jump_break": true
+    },
+    {
+      "id": 35,
+      "batch": "Part 1",
+      "title": "লেনিনের সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদে অবদান: সংজ্ঞা, বৈশিষ্ট্য ও পূর্ণাঙ্গ হ্যান্ডনোট (২০২৬)",
+      "slug": "lenin-theory-of-imperialism-marxism",
+      "date": "2026-09-18 19:45:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "লেনিনের সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদ",
+      "word_count": 4559,
+      "has_jump_break": true
+    },
+    {
+      "id": 36,
+      "batch": "Part 1",
+      "title": "সমালোচনাসহ লেনিনের পার্টিতত্ত্ব ব্যাখ্যা ও বিশ্লেষণ — মাস্টার্স ও অনার্স রাষ্ট্রবিজ্ঞান স্পেশাল গাইড (২০২৬)",
+      "slug": "lenin-party-theory-analysis-criticism",
+      "date": "2026-09-18 18:30:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 7,
+      "focus_keyword": "ভ্লাদিমির লেনিনের রাজনৈতিক দর্শন",
+      "word_count": 4455,
+      "has_jump_break": true
+    },
+    {
+      "id": 37,
+      "batch": "Part 1",
+      "title": "১৯১৭ সালের অক্টোবর সমাজতান্ত্রিক বিপ্লবের কারণ ও ফলাফল — মাস্টার্স ও অনার্স রাষ্ট্রবিজ্ঞান স্পেশাল হ্যান্ডনোট (২০২৬)",
+      "slug": "october-socialist-revolution-causes",
+      "date": "2026-09-18 17:15:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 8,
+      "focus_keyword": "১৯১৭ সালের অক্টোবর সমাজতান্ত্রিক",
+      "word_count": 5605,
+      "has_jump_break": true
+    },
+    {
+      "id": 38,
+      "batch": "Part 1",
+      "title": "রাজনৈতিক আধুনিকীকরণ ও রাজনৈতিক উন্নয়নের মধ্যে পার্থক্য — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "slug": "political-modernization-vs-political",
+      "date": "2026-09-18 09:00:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "রাজনৈতিক আধুনিকীকরণ ও রাজনৈতিক",
+      "word_count": 4625,
+      "has_jump_break": true
+    },
+    {
+      "id": 39,
+      "batch": "Part 1",
+      "title": "আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "slug": "meaning-and-agents-of-modernization",
+      "date": "2026-09-18 08:30:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "আধুনিকীকরণ কী ও আধুনিকীকরণের",
+      "word_count": 4722,
+      "has_jump_break": true
+    },
+    {
+      "id": 40,
+      "batch": "Part 1",
+      "title": "আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "slug": "characteristics-of-modern-society",
+      "date": "2026-09-18 08:00:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ",
+      "word_count": 4122,
+      "has_jump_break": true
+    },
+    {
+      "id": 41,
+      "batch": "Part 1",
+      "title": "SSC 2027 English Poems & Stories Suggestion | এসএসসি ইংরেজি কবিতা ও গল্প প্রশ্নোত্তর (Q8-9)",
+      "slug": "ssc-2027-english-poems-stories-question",
+      "date": "2026-09-16 23:36:57",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 9,
+      "focus_keyword": "SSC 2027 English Poems",
+      "word_count": 13845,
+      "has_jump_break": true
+    },
+    {
+      "id": 42,
+      "batch": "Part 1",
+      "title": "SSC 2027 English Matching & Rearrange Suggestion | এসএসসি টেবিল ম্যাচিং ও রি-অ্যারেঞ্জিং",
+      "slug": "ssc-2027-english-matching-rearrange",
+      "date": "2026-09-16 23:36:42",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 9,
+      "focus_keyword": "SSC English Matching & Rearrange",
+      "word_count": 21396,
+      "has_jump_break": true
+    },
+    {
+      "id": 43,
+      "batch": "Part 1",
+      "title": "SSC 2027 English Unseen Passage & Summary Suggestion | এসএসসি আনসিন প্যাসেজ ও সামারি রাইটিং",
+      "slug": "ssc-2027-english-unseen-passage-summary",
+      "date": "2026-09-16 23:36:27",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 9,
+      "focus_keyword": "SSC English Unseen Passage Suggestion",
+      "word_count": 21434,
+      "has_jump_break": true
+    },
+    {
+      "id": 44,
+      "batch": "Part 1",
+      "title": "SSC 2027 English Completing Story & Dialogue Suggestion | এসএসসি স্টোরি ও ডায়ালগ রাইটিং",
+      "slug": "ssc-2027-english-completing-story",
+      "date": "2026-09-16 23:32:19",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 9,
+      "focus_keyword": "SSC Completing Story Suggestion",
+      "word_count": 27348,
+      "has_jump_break": true
+    },
+    {
+      "id": 45,
+      "batch": "Part 1",
+      "title": "SSC 2027 English Seen Passage Suggestion | এসএসসি সিন প্যাসেজ MCQ ও প্রশ্নোত্তর (100% Common)",
+      "slug": "ssc-2027-english-seen-passage-suggestion",
+      "date": "2026-09-16 23:31:47",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 11,
+      "focus_keyword": "SSC English Seen Passage Suggestion",
+      "word_count": 23865,
+      "has_jump_break": true
+    },
+    {
+      "id": 46,
+      "batch": "Part 2",
+      "title": "SSC English 1st Paper Suggestion 2027 | এসএসসি ২০২৭ ইংরেজি ১ম পত্র চূড়ান্ত সাজেশন ও মানবণ্টন (PDF)",
+      "slug": "ssc-english-1st-paper-suggestion-2027",
+      "date": "2026-09-16 22:34:26",
+      "categories": [
+        "SSC & Dakhil",
+        "English 2nd Paper",
+        "Education Guide"
+      ],
+      "tags_count": 9,
+      "focus_keyword": "SSC English 1st Paper Suggestion",
+      "word_count": 6656,
+      "has_jump_break": true
+    },
+    {
+      "id": 47,
+      "batch": "Part 2",
+      "title": "সনাতন সমাজ ও আধুনিক সমাজের মধ্যে পার্থক্য — মাস্টার্স রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ২০২৬",
+      "slug": "traditional-vs-modern-society",
+      "date": "2026-09-16 18:23:36",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "সনাতন সমাজ ও আধুনিক",
+      "word_count": 3900,
+      "has_jump_break": true
+    },
+    {
+      "id": 48,
+      "batch": "Part 2",
+      "title": "পরিবর্তনশীল সমাজের বৈশিষ্ট্যসমূহ — মাস্টার্স রাষ্ট্রবিজ্ঞান স্পেশাল হ্যান্ডনোট ২০২৬",
+      "slug": "transitional-society-characteristics",
+      "date": "2026-09-16 18:23:24",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "পরিবর্তনশীল সমাজের বৈশিষ্ট্যসমূহ",
+      "word_count": 4263,
+      "has_jump_break": true
+    },
+    {
+      "id": 49,
+      "batch": "Part 2",
+      "title": "তত্ত্বাবধায়ক সরকার ও অবাধ সুষ্ঠু নির্বাচনের পূর্বশর্তসমূহ — বাংলাদেশের রাজনৈতিক বাস্তবতা",
+      "slug": "caretaker-government-free-fair-election",
+      "date": "2026-09-16 13:40:16",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "তত্ত্বাবধায়ক সরকার ও অবাধ",
+      "word_count": 4224,
+      "has_jump_break": true
+    },
+    {
+      "id": 50,
+      "batch": "Part 2",
+      "title": "ধর্মনিরপেক্ষতা বনাম ইসলামি মূল্যবোধ — স্বাধীন বাংলাদেশে আদর্শিক দ্বন্দ্বের ইতিহাস",
+      "slug": "secularism-vs-islamic-values-in",
+      "date": "2026-09-16 13:40:04",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "ধর্মনিরপেক্ষতা বনাম ইসলামি মূল্যবোধ",
+      "word_count": 4072,
+      "has_jump_break": true
+    },
+    {
+      "id": 51,
+      "batch": "Part 2",
+      "title": "বাংলাদেশের জাতিসংঘ সদস্যপদ লাভের ইতিহাস ও বাধাসমূহ — ১৯৭২ সালের পটভূমি",
+      "slug": "bangladesh-un-membership-1972-obstacles",
+      "date": "2026-09-16 13:39:52",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "বাংলাদেশের জাতিসংঘ সদস্যপদ লাভের",
+      "word_count": 4428,
+      "has_jump_break": true
+    },
+    {
+      "id": 52,
+      "batch": "Part 2",
+      "title": "বাংলাদেশে রাজনৈতিক সহিংসতার কারণ ও প্রতিকার — মাস্টার্স রাষ্ট্রবিজ্ঞান স্পেশাল হ্যান্ডনোট ২০২৬",
+      "slug": "political-violence-in-bangladesh-causes",
+      "date": "2026-09-16 13:39:39",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "বাংলাদেশে রাজনৈতিক সহিংসতার কারণ",
+      "word_count": 4902,
+      "has_jump_break": true
+    },
+    {
+      "id": 53,
+      "batch": "Part 2",
+      "title": "সরকারি প্রাথমিক শিক্ষক নিয়োগ ও চাকরির ভাইভা প্রস্তুতি গাইডলাইন (২০২৬)",
+      "slug": "primary-teacher-job-viva-preparation",
+      "date": "2026-09-15 15:47:23",
+      "categories": [
+        "Job Preparation"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "প্রাথমিক শিক্ষক নিয়োগ ভাইভা প্রস্তুতি",
+      "word_count": 4505,
+      "has_jump_break": true
+    },
+    {
+      "id": 54,
+      "batch": "Part 2",
+      "title": "বিসিএস প্রিলিমিনারি ২০০ নম্বরের বিষয়ভিত্তিক মানবণ্টন ও প্রথমবারে পাসের পূর্ণাঙ্গ বুক লিস্ট",
+      "slug": "bcs-preliminary-marks-distribution_01436475916",
+      "date": "2026-09-15 15:47:13",
+      "categories": [
+        "Job Preparation"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "বিসিএস প্রিলিমিনারি নম্বর বণ্টন",
+      "word_count": 4434,
+      "has_jump_break": true
+    },
+    {
+      "id": 55,
+      "batch": "Part 2",
+      "title": "ক্লাউড কম্পিউটিং কি? প্রকারভেদ, বাস্তব সুবিধা ও শীর্ষ প্ল্যাটফর্মের সহজ ব্যাখ্যা",
+      "slug": "cloud-computing-types-benefits-guide",
+      "date": "2026-09-15 15:47:05",
+      "categories": [
+        "ICT & Technology"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "ক্লাউড কম্পিউটিং প্রকারভেদ ও গুরুত্ব",
+      "word_count": 3258,
+      "has_jump_break": true
+    },
+    {
+      "id": 56,
+      "batch": "Part 2",
+      "title": "কম্পিউটার ভাইরাস ও সাইবার নিরাপত্তা: ম্যালওয়্যার থেকে ডাটা সুরক্ষার সেরা উপায় (২০২৬)",
+      "slug": "computer-virus-cyber-security-guide-2026",
+      "date": "2026-09-15 15:46:55",
+      "categories": [
+        "ICT & Technology"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "কম্পিউটার ভাইরাস ও সাইবার নিরাপত্তা",
+      "word_count": 3807,
+      "has_jump_break": true
+    },
+    {
+      "id": 57,
+      "batch": "Part 2",
+      "title": "সার্বভৌমত্ব কাকে বলে ও এর বৈশিষ্ট্যসমূহ: প্রকারভেদ ও সহজ হ্যান্ডনোট (২০২৬)",
+      "slug": "sarbobhoumotto-ki-songga-boishisto-o-prokarved",
+      "date": "2026-01-21 17:02:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "সার্বভৌমত্ব কাকে বলে বৈশিষ্ট্য ও শ্রেণীবিভাগ",
+      "word_count": 4542,
+      "has_jump_break": true
+    },
+    {
+      "id": 58,
+      "batch": "Part 2",
+      "title": "সার্বভৌমত্বের একত্ববাদ ও বহুবাদী মতবাদ: একটি তুলনামূলক বিশ্লেষণ",
+      "slug": "sarbobhoumotter-ekottobad-o-bohubadi-motobad",
+      "date": "2026-01-21 12:10:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "সার্বভৌমত্বের একত্ববাদ ও বহুত্ববাদ",
+      "word_count": 1926,
+      "has_jump_break": true
+    },
+    {
+      "id": 59,
+      "batch": "Part 2",
+      "title": "সরকার কি? রাষ্ট্র ও সরকারের সম্পর্ক এবং পার্থক্য: বিস্তারিত আলোচনা",
+      "slug": "sorkar-ki-kake-bole-rastro-o-sorkarer-parthokko",
+      "date": "2026-01-20 23:35:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "সরকার কাকে বলে রাষ্ট্র ও সরকারের পার্থক্য",
+      "word_count": 2513,
+      "has_jump_break": true
+    },
+    {
+      "id": 60,
+      "batch": "Part 2",
+      "title": "কল্যাণরাষ্ট্র কী? কল্যাণরাষ্ট্রের বৈশিষ্ট্য ও কার্যাবলী",
+      "slug": "kollyan-rastro-ki-boishisto-o-karjaboli",
+      "date": "2026-01-20 22:43:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "কল্যাণরাষ্ট্র কী কল্যাণরাষ্ট্রের বৈশিষ্ট্য",
+      "word_count": 2981,
+      "has_jump_break": true
+    },
+    {
+      "id": 61,
+      "batch": "Part 2",
+      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যালেঞ্জ ও ভবিষ্যৎ (২০২৬)",
+      "slug": "jatiyo-songsode-narider-songrokhito-asoner-guruttox",
+      "date": "2026-01-15 15:00:22",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "জাতীয় সংসদে নারীদের সংরক্ষিত আসনের গুরুত্ব",
+      "word_count": 3791,
+      "has_jump_break": true
+    },
+    {
+      "id": 62,
+      "batch": "Part 2",
+      "title": "বাংলাদেশে শিল্প জাতীয়করণের ইতিহাস, পটভূমি, সমস্যা ও প্রভাব (২০২৬)",
+      "slug": "bangladeshe-shilpo-jatiyokoron-shomossha",
+      "date": "2026-01-13 12:38:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "শিল্প জাতীয়করণ কী সমস্যা ও ফলাফল",
+      "word_count": 2030,
+      "has_jump_break": false
+    },
+    {
+      "id": 63,
+      "batch": "Part 2",
+      "title": "রাষ্ট্র, সমাজ ও নারী: আন্দোলনের প্রেক্ষাপট, অধিকার ও অস্তিত্ব রক্ষার লড়াই (২০২৬)",
+      "slug": "nari-andolon-ostitto-rokhar-lorai",
+      "date": "2026-01-12 22:32:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "রাষ্ট্র সমাজ ও নারী",
+      "word_count": 2153,
+      "has_jump_break": false
+    },
+    {
+      "id": 64,
+      "batch": "Part 2",
+      "title": "শিশুর সামাজিকীকরণ প্রক্রিয়ায় খেলার সাথী ও বন্ধুদের ভূমিকা (২০২৬)",
+      "slug": "samajikikorone-khelar-sathir-bhumika",
+      "date": "2026-01-11 23:11:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "সামাজিকীকরণে খেলার সাথীর ভূমিকা",
+      "word_count": 2059,
+      "has_jump_break": false
+    },
+    {
+      "id": 65,
+      "batch": "Part 2",
+      "title": "জনসংখ্যা পরিবর্তনের কারণ, প্রভাব ও প্রধান নিয়ামকসমূহ (২০২৬)",
+      "slug": "jonosonkha-poribortoner-prodhan-niyamok-somuho",
+      "date": "2026-01-11 23:02:49",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "জনসংখ্যা পরিবর্তনের প্রধান নিয়ামকসমূহ",
+      "word_count": 1897,
+      "has_jump_break": false
+    },
+    {
+      "id": 66,
+      "batch": "Part 2",
+      "title": "পরিবেশ কাকে বলে? পরিবেশের উপাদান ও শ্রেণিবিভাগ সমূহ",
+      "slug": "poribesh-kake-bole-upadan-o-srenibibhag",
+      "date": "2026-01-11 03:26:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "পরিবেশ কাকে বলে উপাদান ও শ্রেণীবিভাগ",
+      "word_count": 1978,
+      "has_jump_break": true
+    },
+    {
+      "id": 67,
+      "batch": "Part 2",
+      "title": "প্রতিবেশ কি? পরিবেশ ও প্রতিবেশের মধ্যে সম্পর্ক ও পার্থক্য",
+      "slug": "protibesh-ki-poribesh-o-protibesher-somporko",
+      "date": "2026-01-11 02:44:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "প্রতিবেশ কি পরিবেশ ও প্রতিবেশের সম্পর্ক",
+      "word_count": 2096,
+      "has_jump_break": true
+    },
+    {
+      "id": 68,
+      "batch": "Part 2",
+      "title": "পরিবেশের উপর জনসংখ্যার নেতিবাচক প্রভাব: কারণ ও ফলাফল",
+      "slug": "jonosonkha-briddhi-poribesh-probhav",
+      "date": "2026-01-11 01:01:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "পরিবেশের উপর জনসংখ্যার নেতিবাচক প্রভাব",
+      "word_count": 1973,
+      "has_jump_break": true
+    },
+    {
+      "id": 69,
+      "batch": "Part 2",
+      "title": "সংস্কৃতি কি? সংস্কৃতির বৈশিষ্ট্য ও বাংলাদেশের মানুষের জীবনধারা",
+      "slug": "sonskriti-ki-boishisto-bangalider-jibonjatra",
+      "date": "2026-01-11 00:51:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "সংস্কৃতি কি বৈশিষ্ট্য ও বাঙালির সংস্কৃতি",
+      "word_count": 2212,
+      "has_jump_break": true
+    },
+    {
+      "id": 70,
+      "batch": "Part 2",
+      "title": "গ্রামীণ ও শহরের সংস্কৃতির পার্থক্য এবং বৈশিষ্ট্যসমূহ",
+      "slug": "gramin-o-shohorer-songskritir-parthokko",
+      "date": "2026-01-10 23:49:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "গ্রামীণ ও শহরের সংস্কৃতির পার্থক্য",
+      "word_count": 2077,
+      "has_jump_break": true
+    },
+    {
+      "id": 71,
+      "batch": "Part 2",
+      "title": "রাজনৈতিক অর্থনীতি কাকে বলে? সংজ্ঞা, পরিধি ও তাত্ত্বিক কাঠামো (২০২৬)",
+      "slug": "what-is-political-economy-definition-concept",
+      "date": "2026-01-08 18:01:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "রাজনৈতিক অর্থনীতি কাকে বলে",
+      "word_count": 2091,
+      "has_jump_break": false
+    },
+    {
+      "id": 72,
+      "batch": "Part 2",
+      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: সাংবিধানিক পটভূমি ও গুরুত্ব (২০২৬)",
+      "slug": "importance-of-reserved-seats-for-women-in-national-parliament",
+      "date": "2026-01-08 17:33:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "জাতীয় সংসদে নারীদের সংরক্ষিত আসনের গুরুত্ব",
+      "word_count": 1955,
+      "has_jump_break": false
+    },
+    {
+      "id": 73,
+      "batch": "Part 2",
+      "title": "নারী দশকের লক্ষ্য ও উদ্দেশ্য: বিশ্ব নারী দশকের পটভূমি",
+      "slug": "goals-and-objectives-of-womens-decade",
+      "date": "2026-01-08 14:43:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "নারী দশকের লক্ষ্য ও উদ্দেশ্য",
+      "word_count": 2210,
+      "has_jump_break": true
+    },
+    {
+      "id": 74,
+      "batch": "Part 2",
+      "title": "পুরুষতন্ত্র কাকে বলে? সমাজতাত্ত্বিক সংজ্ঞা, উৎপত্তি, বৈশিষ্ট্য ও প্রভাব (২০২৬)",
+      "slug": "what-is-patriarchy-definition-characteristics-impact",
+      "date": "2026-01-08 14:38:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "পুরুষতন্ত্র কাকে বলে সমাজতাত্ত্বিক",
+      "word_count": 2369,
+      "has_jump_break": false
+    },
+    {
+      "id": 75,
+      "batch": "Part 2",
+      "title": "রাজনীতিতে নারীর অংশগ্রহণ বলতে কী বোঝায়?",
+      "slug": "what-does-women-participation-in-politics-mean",
+      "date": "2026-01-07 14:56:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "রাজনীতিতে নারীর অংশগ্রহণ বলতে কী বোঝায়",
+      "word_count": 3446,
+      "has_jump_break": true
+    },
+    {
+      "id": 76,
+      "batch": "Part 2",
+      "title": "নারীর ক্ষমতায়নে এনজিও-র ভূমিকা, গুরুত্ব ও বাস্তব সুফল (২০২৬)",
+      "slug": "role-of-ngos-in-womens-empowerment-benefits",
+      "date": "2026-01-07 14:49:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "নারীর ক্ষমতায়নে এনজিও-র ভূমিকা",
+      "word_count": 2618,
+      "has_jump_break": true
+    },
+    {
+      "id": 77,
+      "batch": "Part 2",
+      "title": "নারী নির্যাতন কী? সংজ্ঞা, কারণ ও প্রভাব",
+      "slug": "what-is-violence-against-women-definition-impact",
+      "date": "2025-12-31 23:38:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "নারী নির্যাতন কী কারণ ও প্রতিকার",
+      "word_count": 2593,
+      "has_jump_break": true
+    },
+    {
+      "id": 78,
+      "batch": "Part 2",
+      "title": "১৯০৯ সালের ভারত শাসন আইন: বৈশিষ্ট্য ও গুরুত্ব",
+      "slug": "morley-minto-reforms-1909-features-importance",
+      "date": "2025-12-31 23:31:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "১৯০৯ সালের ভারত শাসন আইন বৈশিষ্ট্য",
+      "word_count": 2126,
+      "has_jump_break": true
+    },
+    {
+      "id": 79,
+      "batch": "Part 2",
+      "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
+      "slug": "contribution-raja-rammohan-roy-social-reform",
+      "date": "2025-12-31 23:20:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান",
+      "word_count": 2812,
+      "has_jump_break": true
+    },
+    {
+      "id": 80,
+      "batch": "Part 2",
+      "title": "মহাত্মা গান্ধীর জনপ্রিয়তার কারণসমূহ ও রাজনৈতিক আদর্শ",
+      "slug": "reasons-mahatma-gandhi-popularity-political-ideals",
+      "date": "2025-12-31 19:55:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "মহাত্মা গান্ধীর জনপ্রিয়তার কারণ ও রাজনৈতিক আদর্শ",
+      "word_count": 2686,
+      "has_jump_break": true
+    },
+    {
+      "id": 81,
+      "batch": "Part 2",
+      "title": "রাষ্ট্রচিন্তায় ইমাম গাজ্জালির অবদান ও রাজনৈতিক দর্শন",
+      "slug": "imam-ghazali-contribution-political-thought",
+      "date": "2025-12-31 19:45:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "রাষ্ট্রচিন্তায় ইমাম গাজ্জালির অবদান",
+      "word_count": 2487,
+      "has_jump_break": true
+    },
+    {
+      "id": 82,
+      "batch": "Part 2",
+      "title": "বাজেট কী? বাজেটের গুরুত্ব ও অর্থনীতিতে ভূমিকা",
+      "slug": "what-is-budget-importance-role-economy",
+      "date": "2025-12-31 19:21:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "বাজেট কী গুরুত্ব ও অর্থনীতিতে ভূমিকা",
+      "word_count": 2293,
+      "has_jump_break": true
+    },
+    {
+      "id": 83,
+      "batch": "Part 2",
+      "title": "১০০টি অর্থনীতির গুরত্বপূর্ণ সংক্ষিপ্ত প্রশ্নোত্তর",
+      "slug": "100-important-economics-short-questions-answers",
+      "date": "2025-12-31 18:23:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "১০০টি অর্থনীতির গুরুত্বপূর্ণ সংক্ষিপ্ত প্রশ্নোত্তর",
+      "word_count": 8344,
+      "has_jump_break": false
+    },
+    {
+      "id": 84,
+      "batch": "Part 2",
+      "title": "রাষ্ট্রের সংজ্ঞা, উপাদান ও লক্ষ্য-উদ্দেশ্য: পূর্ণাঙ্গ আলোচনা",
+      "slug": "definition-of-state-elements-and-objectives",
+      "date": "2025-12-31 17:10:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "রাষ্ট্রের সংজ্ঞা উপাদান ও লক্ষ্য উদ্দেশ্য",
+      "word_count": 3408,
+      "has_jump_break": true
+    },
+    {
+      "id": 85,
+      "batch": "Part 2",
+      "title": "বাংলাদেশে মুদ্রাস্ফীতি: কারণ, প্রকৃতি ও রোধের উপায়",
+      "slug": "bangladesh-inflation-causes-nature-prevention",
+      "date": "2025-12-31 17:10:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "বাংলাদেশে মুদ্রাস্ফীতি কারণ ও রোধের উপায়",
+      "word_count": 3470,
+      "has_jump_break": true
+    },
+    {
+      "id": 86,
+      "batch": "Part 2",
+      "title": "বাংলাদেশের মৌলিক অর্থনীতির বৈশিষ্ট্য, সমস্যা ও সমাধান",
+      "slug": "bangladesh-basic-economy-features-problems-solutions",
+      "date": "2025-12-31 16:18:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "বাংলাদেশের মৌলিক অর্থনীতির বৈশিষ্ট্য ও সমস্যা",
+      "word_count": 5265,
+      "has_jump_break": true
+    },
+    {
+      "id": 87,
+      "batch": "Part 2",
+      "title": "রেমিট্যান্স কী? বাংলাদেশের অর্থনীতিতে রেমিট্যান্সের গুরুত্ব ও প্রভাব",
+      "slug": "what-is-remittance-importance-economy-obstacles",
+      "date": "2025-12-31 13:56:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "রেমিট্যান্স কী বাংলাদেশের অর্থনীতিতে গুরুত্ব",
+      "word_count": 2376,
+      "has_jump_break": true
+    },
+    {
+      "id": 88,
+      "batch": "Part 2",
+      "title": "খিলাফত আন্দোলনের ব্যর্থতার কারণ ও ঐতিহাসিক পটভূমি",
+      "slug": "reasons-for-failure-of-khilafat-movement",
+      "date": "2025-12-31 04:33:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "খিলাফত আন্দোলনের ব্যর্থতার কারণ",
+      "word_count": 2311,
+      "has_jump_break": true
+    },
+    {
+      "id": 89,
+      "batch": "Part 2",
+      "title": "সমাজ সংস্কার ও বাংলা সাহিত্যে ঈশ্বরচন্দ্র বিদ্যাসাগরের অবদান (২০২৬)",
+      "slug": "ishwar-chandra-vidyasagar-social-reform-contribution",
+      "date": "2025-12-31 03:16:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "সমাজ সংস্কারে ঈশ্বরচন্দ্র বিদ্যাসাগরের অবদান",
+      "word_count": 2404,
+      "has_jump_break": true
+    },
+    {
+      "id": 90,
+      "batch": "Part 2",
+      "title": "সমাজকল্যাণ ও সংস্কারে শেরে বাংলা ফজলুল হকের অবদান",
+      "slug": "sher-e-bangla-fazlul-haque-social-welfare",
+      "date": "2025-12-31 03:08:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "শেরে বাংলা এ কে ফজলুল হকের অবদান",
+      "word_count": 2540,
+      "has_jump_break": true
+    },
+    {
+      "id": 91,
+      "batch": "Part 3",
+      "title": "ইসলামে ওয়াদা পালন: কুরআন ও হাদিসের আলোকে গুরুত্ব ও ফজিলত",
+      "slug": "importance-of-keeping-promises-in-islam-quran-hadith",
+      "date": "2025-12-29 12:52:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "ইসলামে ওয়াদা পালন",
+      "word_count": 2687,
+      "has_jump_break": true
+    },
+    {
+      "id": 92,
+      "batch": "Part 3",
+      "title": "কালামে আ'লা হযরত: ছন্দের শৈল্পিকতায় আকীদা শিক্ষা",
+      "slug": "kalame-ala-hazrat-aqeedah-poetry-full-analysis",
+      "date": "2025-12-22 22:02:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "কালামে আ'লা হযরত",
+      "word_count": 2488,
+      "has_jump_break": true
+    },
+    {
+      "id": 93,
+      "batch": "Part 3",
+      "title": "কুরআন মুখস্থকরণ ও সংরক্ষণের গুরুত্ব",
+      "slug": "quran-memorization-preservation-importance-full-guide",
+      "date": "2025-12-22 21:37:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "কুরআন মুখস্থকরণ ও সংরক্ষণের গুরুত্ব",
+      "word_count": 2505,
+      "has_jump_break": true
+    },
+    {
+      "id": 94,
+      "batch": "Part 3",
+      "title": "রাসূল (স.) এর প্রেমে সিদ্দিকে আকবরের কান্না ও আত্মত্যাগ",
+      "slug": "rasul-saw-love-abu-bakr-siddiq-tears-sacrifice-story",
+      "date": "2025-12-13 17:30:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "রাসূল (স.) প্রেমে সিদ্দিকে আকবরের আত্মত্যাগ",
+      "word_count": 3988,
+      "has_jump_break": true
+    },
+    {
+      "id": 95,
+      "batch": "Part 3",
+      "title": "তালেবে ইলমদের প্রতি মূল্যবান নসিহত: ইলম অর্জনের সঠিক পথ ও পাথেয়",
+      "slug": "valuable-advice-for-students-of-knowledge-talebe-ilm",
+      "date": "2025-12-13 12:30:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "তালেবে ইলমদের প্রতি নসিহত ও ইলমের পথ",
+      "word_count": 3436,
+      "has_jump_break": true
+    },
+    {
+      "id": 96,
+      "batch": "Part 3",
+      "title": "ইমামে আযম ও ইমাম বুখারী (র.): তাত্ত্বিক পর্যালোচনা ও জীবনী",
+      "slug": "imame-azam-abu-hanifa-imam-bukhari-biography-comparison",
+      "date": "2025-12-13 09:48:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "ইমামে আযম ও ইমাম বুখারী জীবনী পর্যালোচনা",
+      "word_count": 5356,
+      "has_jump_break": true
+    },
+    {
+      "id": 97,
+      "batch": "Part 3",
+      "title": "জামেয়া নিয়ে পীরে বাঙ্গাল হুজুরের স্বপ্ন ও আমাদের করণীয়",
+      "slug": "amea-ahmadiya-sunnia-peer-bangal-dream-teachers-responsibility",
+      "date": "2025-12-13 02:09:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "জামেয়া আহমদিয়া সুন্নিয়া ইতিহাস ও ঐতিহ্য",
+      "word_count": 3756,
+      "has_jump_break": true
+    },
+    {
+      "id": 98,
+      "batch": "Part 3",
+      "title": "আহলে বাইতের ভালোবাসায় আল্লাহ ও রাসূলের সন্তুষ্টি নিহিত",
+      "slug": "ahle-bait-love-importance-quran-hadith",
+      "date": "2025-12-13 01:38:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "আহলে বাইতের ভালোবাসার গুরুত্ব হাদিস",
+      "word_count": 3937,
+      "has_jump_break": true
+    },
+    {
+      "id": 99,
+      "batch": "Part 3",
+      "title": "ঐতিহ্যের আলোয় জামেয়া: ইতিহাস, শিক্ষা স্তর ও সাম্প্রতিক অর্জন",
+      "slug": "jameya-ahmadiya-sunnia-history-education-achievements",
+      "date": "2025-12-13 00:10:00",
+      "categories": [
+        "Islamic Article",
+        "Education Guide"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "জামেয়া আহমদিয়া সুন্নিয়া ইতিহাস ও ঐতিহ্য",
+      "word_count": 9346,
+      "has_jump_break": false
+    },
+    {
+      "id": 100,
+      "batch": "Part 3",
+      "title": "লেনিনের জীবনী, সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদের সাথে সম্পর্ক",
+      "slug": "vladimir-lenin-biography-theory-marxism-comparison",
+      "date": "2025-12-08 10:27:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "লেনিনের সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদ",
+      "word_count": 2639,
+      "has_jump_break": true
+    },
+    {
+      "id": 101,
+      "batch": "Part 3",
+      "title": "বাংলাদেশের জনসংখ্যা: পরিস্থিতি, বৈশিষ্ট্য ও নৃতাত্ত্বিক পরিচয়",
+      "slug": "bangladesh-population-situation-characteristics-complete",
+      "date": "2025-12-08 04:51:00",
+      "categories": [
+        "Political Science",
+        "Job Preparation"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "বাংলাদেশের জনসংখ্যা পরিস্থিতি ও বৈশিষ্ট্য",
+      "word_count": 3479,
+      "has_jump_break": true
+    },
+    {
+      "id": 102,
+      "batch": "Part 3",
+      "title": "বাংলাদেশে কৃষি খাতে উন্নয়নে সরকারের পদক্ষেপ",
+      "slug": "government-steps-agriculture-development-bangladesh",
+      "date": "2025-12-08 03:58:00",
+      "categories": [
+        "Political Science",
+        "Job Preparation"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "বাংলাদেশে কৃষি খাতে উন্নয়নে সরকারের পদক্ষেপ",
+      "word_count": 2546,
+      "has_jump_break": true
+    },
+    {
+      "id": 103,
+      "batch": "Part 3",
+      "title": "বাংলাদেশ প্রাণিসম্পদ গবেষণা ইনস্টিটিউট (BLRI): কার্যক্রম, উদ্ভাবন ও ভূমিকা (২০২৬)",
+      "slug": "bangladesh-livestock-resources-research-institutes",
+      "date": "2025-12-08 03:10:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "বাংলাদেশ প্রাণিসম্পদ গবেষণা ইনস্টিটিউট",
+      "word_count": 2193,
+      "has_jump_break": false
+    },
+    {
+      "id": 104,
+      "batch": "Part 3",
+      "title": "বাংলাদেশের বনজ সম্পদ ও তার প্রতিষ্ঠান",
+      "slug": "bangladesh-forest-resources",
+      "date": "2025-12-08 02:50:00",
+      "categories": [
+        "Political Science",
+        "Job Preparation"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "বাংলাদেশের বনজ সম্পদ ও প্রতিষ্ঠান",
+      "word_count": 4020,
+      "has_jump_break": true
+    },
+    {
+      "id": 105,
+      "batch": "Part 3",
+      "title": "বাংলাদেশের কৃষি: গবেষণা প্রতিষ্ঠান, শস্যের জাত ও কৃষি প্রযুক্তি",
+      "slug": "bangladesh-agriculture-institutes-resources-complete",
+      "date": "2025-12-08 02:08:00",
+      "categories": [
+        "Political Science",
+        "Job Preparation"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "বাংলাদেশের কৃষি গবেষণা প্রতিষ্ঠান ও শস্যের জাত",
+      "word_count": 3996,
+      "has_jump_break": true
+    },
+    {
+      "id": 106,
+      "batch": "Part 3",
+      "title": "সরকার ও রাজনৈতিক দল: ধারণা, সম্পর্ক ও বাংলাদেশে গণতান্ত্রিক চর্চা (২০২৬)",
+      "slug": "government-political-parties-bangladesh-analysis",
+      "date": "2025-12-07 21:17:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "সরকার ও রাজনৈতিক দল গণতান্ত্রিক চর্চা",
+      "word_count": 1914,
+      "has_jump_break": false
+    },
+    {
+      "id": 107,
+      "batch": "Part 3",
+      "title": "কম্পিউটারের প্রকারভেদ: অ্যানালগ, ডিজিটাল, হাইব্রিড ও সুপার কম্পিউটার (পার্ট-৪)",
+      "slug": "computer-types-classification-part4",
+      "date": "2025-12-07 19:47:00",
+      "categories": [
+        "ICT & Technology"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "কম্পিউটারের প্রকারভেদ ও শ্রেণীবিভাগ",
+      "word_count": 2117,
+      "has_jump_break": false
+    },
+    {
+      "id": 108,
+      "batch": "Part 3",
+      "title": "কম্পিউটারের প্রজন্ম: ১ম থেকে ৫ম প্রজন্মের প্রযুক্তিগত তুলনা ও বৈশিষ্ট্য (পার্ট-৩)",
+      "slug": "computer-generations-features-part3",
+      "date": "2025-12-07 19:43:00",
+      "categories": [
+        "ICT & Technology"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "কম্পিউটারের প্রজন্ম বৈশিষ্ট্য ও তুলনা",
+      "word_count": 2120,
+      "has_jump_break": false
+    },
+    {
+      "id": 109,
+      "batch": "Part 3",
+      "title": "কম্পিউটারের ইতিহাস: এবাকাস থেকে ইন্টিগ্রেটেড সার্কিট পর্যন্ত পূর্ণাঙ্গ রূপরেখা (পার্ট-২)",
+      "slug": "computer-history-inventions-part2",
+      "date": "2025-12-07 19:38:00",
+      "categories": [
+        "ICT & Technology"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "কম্পিউটারের ইতিহাস ও বিবর্তন",
+      "word_count": 2390,
+      "has_jump_break": false
+    },
+    {
+      "id": 110,
+      "batch": "Part 3",
+      "title": "কম্পিউটার কাকে বলে? কম্পিউটারের সংজ্ঞা, ইতিহাস, বৈশিষ্ট্য ও প্রজন্ম (২০২৬)",
+      "slug": "computer-definition-history",
+      "date": "2025-12-07 19:32:00",
+      "categories": [
+        "ICT & Technology"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "কম্পিউটার কাকে বলে ইতিহাস ও বৈশিষ্ট্য",
+      "word_count": 2013,
+      "has_jump_break": false
+    },
+    {
+      "id": 111,
+      "batch": "Part 3",
+      "title": "উন্নয়নশীল অর্থনীতিতে রাজনীতির দ্বিমুখী প্রভাব",
+      "slug": "Politics-indeveloping-countries-controls-the-economy",
+      "date": "2025-12-07 03:46:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "উন্নয়নশীল অর্থনীতিতে রাজনীতির দ্বিমুখী প্রভাব",
+      "word_count": 2480,
+      "has_jump_break": false
+    },
+    {
+      "id": 112,
+      "batch": "Part 3",
+      "title": "বাংলাদেশের অর্থনীতি: বাজেট, কর ব্যবস্থা ও ভবিষ্যৎ সম্ভাবনা",
+      "slug": "economy-of-bangladesh",
+      "date": "2025-12-06 03:52:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "বাংলাদেশের অর্থনীতির ইতিহাস ও বর্তমান রূপরেখা",
+      "word_count": 3402,
+      "has_jump_break": true
+    },
+    {
+      "id": 113,
+      "batch": "Part 3",
+      "title": "টেকসই উন্নয়ন ও বাংলাদেশ: লক্ষ্যমাত্রা, চ্যালেঞ্জ ও করণীয়",
+      "slug": "sustainable-development-goals-bd",
+      "date": "2025-12-06 01:10:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "টেকসই উন্নয়ন ও বাংলাদেশ",
+      "word_count": 2146,
+      "has_jump_break": true
+    },
+    {
+      "id": 114,
+      "batch": "Part 3",
+      "title": "বাংলা বাগধারা ও অর্থ: বিসিএস ও চাকরির পরীক্ষার জন্য সেরা ৫০০+ কালেকশন",
+      "slug": "bangla-bagdhara-collection-with-meaning",
+      "date": "2025-12-04 11:49:00",
+      "categories": [
+        "Education Guide"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "বাংলা বাগধারা সংকলন অর্থসহ তালিকা",
+      "word_count": 4832,
+      "has_jump_break": true
+    },
+    {
+      "id": 115,
+      "batch": "Part 3",
+      "title": "বাংলাদেশের ইতিহাস: সংগ্রাম, মুক্তিযুদ্ধ ও বিজয়ের পূর্ণাঙ্গ রূপরেখা (২০২৬)",
+      "slug": "history-of-bangladesh",
+      "date": "2025-11-25 05:24:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "বাংলাদেশের পূর্ণাঙ্গ ইতিহাস ও রাজনৈতিক পটভূমি",
+      "word_count": 3196,
+      "has_jump_break": false
+    },
+    {
+      "id": 116,
+      "batch": "Part 3",
+      "title": "সাম্প্রতিক কালের রাষ্ট্রচিন্তা বলতে কী বুঝ: জাতীয়তাবাদ ও বিবর্তন (২০২৬)",
+      "slug": "what-is-meant-by-recent-nationalism",
+      "date": "2025-07-22 00:21:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "সাম্প্রতিক জাতীয়তাবাদ বলতে কী বোঝায়",
+      "word_count": 2297,
+      "has_jump_break": false
+    },
+    {
+      "id": 117,
+      "batch": "Part 3",
+      "title": "রাষ্ট্রচিন্তা কাকে বলে? রাষ্ট্রচিন্তার সংজ্ঞা, উৎপত্তি, বিবর্তন ও পরিধি (২০২৬)",
+      "slug": "what-is-statesmanship",
+      "date": "2025-07-21 00:09:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "রাষ্ট্রচিন্তা কাকে বলে ও পরিধি",
+      "word_count": 3716,
+      "has_jump_break": false
+    },
+    {
+      "id": 118,
+      "batch": "Part 3",
+      "title": "রাষ্ট্রবিজ্ঞান মাস্টার্স সাজেশন্স: সাম্প্রতিক রাষ্ট্রচিন্তা বিষয়কোড ৩১১৯০১ (২০২৬)",
+      "slug": "recent-political-thought-suggestion-2024",
+      "date": "2025-07-20 23:52:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "রাষ্ট্রবিজ্ঞান মাস্টার্স চূড়ান্ত সাজেশন",
+      "word_count": 2170,
+      "has_jump_break": false
+    },
+    {
+      "id": 119,
+      "batch": "Part 3",
+      "title": "রাষ্ট্রবিজ্ঞান মাস্টার্স পরীক্ষা ২০২২: ক বিভাগের সকল প্রশ্নোত্তর (অনুষ্ঠিত ২০২৫)",
+      "slug": "political-science-masters-exam-2022-all-short-questions-and-answers",
+      "date": "2025-04-15 02:54:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "রাষ্ট্রবিজ্ঞান মাস্টার্স চূড়ান্ত সাজেশন",
+      "word_count": 3180,
+      "has_jump_break": true
+    },
+    {
+      "id": 120,
+      "batch": "Part 3",
+      "title": "২০২৫ সালের আলিম পরীক্ষার রুটিন | Alim Exam Routine 2025",
+      "slug": "alim-exam-routine-2025.",
+      "date": "2025-04-10 01:44:00",
+      "categories": [
+        "Education Guide"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "আলিম পরীক্ষার রুটিন",
+      "word_count": 2470,
+      "has_jump_break": true
+    },
+    {
+      "id": 121,
+      "batch": "Part 3",
+      "title": "এসএসসি পরীক্ষার্থীদের জন্য জরুরি নিয়মাবলি ও পরীক্ষার হলের নির্দেশিকা (২০২৬)",
+      "slug": "important-instructions-for-ssc-candidates",
+      "date": "2025-04-10 00:30:00",
+      "categories": [
+        "Education Guide"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "এসএসসি পরীক্ষার্থীদের জন্য জরুরি",
+      "word_count": 2236,
+      "has_jump_break": false
+    },
+    {
+      "id": 122,
+      "batch": "Part 3",
+      "title": "ঢাকা শিক্ষাবোর্ডে সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম ২০২৬ | ঢাকা বোর্ড অনলাইন আবেদন গাইড",
+      "slug": "how-to-correction-certificate-name-2025",
+      "date": "2025-03-25 01:16:00",
+      "categories": [
+        "Education Guide"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "সার্টিফিকেট নাম ও বয়স সংশোধনের নিয়ম",
+      "word_count": 5580,
+      "has_jump_break": true
+    },
+    {
+      "id": 123,
+      "batch": "Part 3",
+      "title": "মিলাদ শরীফ এর ক্বাসিদা - ইয়া নবী সালাম আলাইকা, ইয়া রসূল সালাম আলাইকা",
+      "slug": "ya-nabi-salaam-alaika-ya-rasul-salaam-alaika-lyrics",
+      "date": "2025-03-02 00:50:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "ইয়া নবী সালাম আলাইকা লিরিক্স ও ব্যাখ্যা",
+      "word_count": 3259,
+      "has_jump_break": true
+    },
+    {
+      "id": 124,
+      "batch": "Part 3",
+      "title": "মিলাদ শরীফের ক্বাসিদা: মারহাবা ইয়া মারহাবা—তাৎপর্য, ব্যাখ্যা ও পূর্ণাঙ্গ লিরিক্স",
+      "slug": "marhaba-ya-marhaba-rahmatullah-alamin-e-marhaba-lyrics",
+      "date": "2025-03-01 23:42:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "মিলাদ শরীফের ক্বাসিদা মারহাবা লিরিক্স",
+      "word_count": 2667,
+      "has_jump_break": true
+    },
+    {
+      "id": 125,
+      "batch": "Part 3",
+      "title": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লা হু: যিকিরের মহিমা, অর্থ ও পূর্ণাঙ্গ লিরিক্স",
+      "slug": "allah-allah-allahu-la-ilaha-illa-hu-lyrics",
+      "date": "2025-03-01 23:28:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লাহু লিরিক্স",
+      "word_count": 2749,
+      "has_jump_break": true
+    },
+    {
+      "id": 126,
+      "batch": "Part 3",
+      "title": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দরূদ শরীফের ফজিলত, অর্থ ও পূর্ণাঙ্গ ক্বাসিদা লিরিক্স",
+      "slug": "allahumma-salli-ala-sayyidina-muhammad-lyrics",
+      "date": "2025-03-01 22:59:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "মিলাদ শরীফ ক্বাসিদা লিরিক্স",
+      "word_count": 3469,
+      "has_jump_break": true
+    },
+    {
+      "id": 127,
+      "batch": "Part 3",
+      "title": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম: ঐতিহাসিক প্রেক্ষিত, তাৎপর্য ও পূর্ণাঙ্গ লিরিক্স",
+      "slug": "milad-sharif-salatun-ya-rasulallah-alaikum",
+      "date": "2025-02-28 04:26:00",
+      "categories": [
+        "Islamic Article"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম",
+      "word_count": 2985,
+      "has_jump_break": true
+    },
+    {
+      "id": 128,
+      "batch": "Part 3",
+      "title": "সামাজিক পরিবর্তন ও রাজনৈতিক উন্নয়ন চূড়ান্ত সাজেশন: বিষয়কোড ৩১১৯০৩ (২০২৬)",
+      "slug": "masters-social-change-and-political-development-suggestions",
+      "date": "2025-01-28 03:45:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 5,
+      "focus_keyword": "সামাজিক পরিবর্তন ও রাজনৈতিক",
+      "word_count": 2093,
+      "has_jump_break": false
+    },
+    {
+      "id": 129,
+      "batch": "Part 3",
+      "title": "প্রাচ্যের রাষ্ট্রচিন্তা এর পাঠের গুরুত্ব, বৈশিষ্ট্য, পরিধি ও বিষয়বস্তু",
+      "slug": "eastern-state-thought-its-importance-characteristics",
+      "date": "2025-01-15 00:24:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 3,
+      "focus_keyword": "প্রাচ্যের রাষ্ট্রচিন্তা পাঠের গুরুত্ব",
+      "word_count": 2906,
+      "has_jump_break": true
+    },
+    {
+      "id": 130,
+      "batch": "Part 3",
+      "title": "রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)",
+      "slug": "honours-political-science-book-list",
+      "date": "2025-01-13 23:12:00",
+      "categories": [
+        "Political Science",
+        "Education Guide"
+      ],
+      "tags_count": 6,
+      "focus_keyword": "রাষ্ট্রবিজ্ঞান অনার্স পাঠ্য বইয়ের তালিকা",
+      "word_count": 4736,
+      "has_jump_break": true
+    },
+    {
+      "id": 131,
+      "batch": "Part 3",
+      "title": "নামতা ১ থেকে ২০ | Namta 1 to 20",
+      "slug": "namta-1-to-20",
+      "date": "2025-01-11 23:51:00",
+      "categories": [
+        "Education Guide"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "নামতা ১ থেকে ২০",
+      "word_count": 1620,
+      "has_jump_break": false
+    },
+    {
+      "id": 132,
+      "batch": "Part 3",
+      "title": "Hason Raja Was Born in 1854 | Class 6 English Seen Comprehension, Meaning & Model Questions",
+      "slug": "hason-raja-was-born-in-1854-class-six",
+      "date": "2025-01-11 22:21:00",
+      "categories": [
+        "Education Guide"
+      ],
+      "tags_count": 2,
+      "focus_keyword": "Hason Raja Was Born",
+      "word_count": 2178,
+      "has_jump_break": true
+    },
+    {
+      "id": 133,
+      "batch": "Part 3",
+      "title": "অলস ও ব্যাকবেঞ্চারদের জন্য চাকরি ও বিসিএস প্রস্তুতির সহজ গাইড (২০২৬)",
+      "slug": "simple-guide-to-job-and-bcs-preparation",
+      "date": "2024-12-01 07:32:00",
+      "categories": [
+        "Job Preparation",
+        "Education Guide"
+      ],
+      "tags_count": 7,
+      "focus_keyword": "চাকরি ও বিসিএস প্রস্তুতির সহজ গাইড",
+      "word_count": 2416,
+      "has_jump_break": false
+    },
+    {
+      "id": 134,
+      "batch": "Part 3",
+      "title": "আধুনিক রাষ্ট্রচিন্তা ২০১৯ সালের প্রশ্নের নির্ভুল উত্তরমালা ও সমাধান (২০২৬)",
+      "slug": "modern-political-thought-answer-sheet-2019-pdf",
+      "date": "2024-11-28 04:16:00",
+      "categories": [
+        "Political Science"
+      ],
+      "tags_count": 4,
+      "focus_keyword": "আধুনিক রাষ্ট্রচিন্তা ২০১৯ সালের",
+      "word_count": 2186,
+      "has_jump_break": false
+    }
+  ]
+}

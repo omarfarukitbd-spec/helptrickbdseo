@@ -1,0 +1,1971 @@
+/**
+ * HelpTrickBD Pro - Core Layout & Component Stylesheet
+ * 100% Pure CSS3 Variables, Responsive Grid, Dark Mode, Zero Emojis.
+ */
+
+/* -------------------------------------------------------------
+ * 1. Base Reset & Typography
+ * ------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--ht-bg);
+    color: var(--ht-text-primary);
+    font-family: var(--ht-font-bn);
+    line-height: 1.7;
+    font-weight: 400;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    overflow-x: hidden;
+}
+
+/* Explicit font-family enforcement: SolaimanLipi Everywhere */
+button, input, textarea, select,
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, label,
+table, th, td, caption, thead, tbody, tr,
+.ht-nav-link, .ht-card-title, .ht-widget-title {
+    font-family: 'SolaimanLipi', var(--ht-font-bn) !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--ht-transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, input, textarea, select {
+    font-size: 1rem;
+    color: inherit;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Screen Reader Only Utility */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: var(--ht-primary);
+    color: #fff;
+    clip: auto !important;
+    clip-path: none;
+    display: block;
+    font-size: 0.9rem;
+    height: auto;
+    left: 10px;
+    padding: 10px 15px;
+    position: fixed;
+    top: 10px;
+    width: auto;
+    z-index: 100000;
+    border-radius: var(--ht-radius-sm);
+}
+
+/* Material 3 Vector SVG Icon Styling */
+.ht-m3-icon {
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+    fill: currentColor;
+}
+
+.ht-container {
+    width: 100%;
+    max-width: var(--ht-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -------------------------------------------------------------
+ * 2. Top Bar (Notice Ticker & Countdown)
+ * ------------------------------------------------------------- */
+.ht-topbar {
+    background: var(--ht-surface);
+    border-bottom: 1px solid var(--ht-surface-border);
+    font-size: 0.85rem;
+    height: var(--ht-topbar-height);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 40;
+}
+
+.ht-topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.ht-ticker-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.ht-ticker-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--ht-primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--ht-radius-sm);
+    white-space: nowrap;
+}
+
+.ht-ticker-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--ht-text-secondary);
+}
+
+.ht-ticker-link:hover {
+    color: var(--ht-primary);
+}
+
+.ht-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.ht-top-countdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ht-warning);
+    font-weight: 600;
+    background: var(--ht-warning-light);
+    padding: 2px 10px;
+    border-radius: var(--ht-radius-sm);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.ht-topbar-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ht-text-muted);
+}
+
+/* -------------------------------------------------------------
+ * 3. Primary Header & Navigation
+ * ------------------------------------------------------------- */
+.ht-header {
+    background: var(--ht-surface);
+    border-bottom: 1px solid var(--ht-surface-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: var(--ht-shadow-sm);
+    transition: var(--ht-transition);
+}
+
+/* Offset sticky header when WordPress Admin Bar is present */
+.admin-bar .ht-header {
+    top: 32px;
+}
+@media screen and (max-width: 782px) {
+    .admin-bar .ht-header {
+        top: 46px;
+    }
+}
+
+.ht-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--ht-header-height);
+    gap: 20px;
+}
+
+.ht-brand {
+    display: flex;
+    align-items: center;
+}
+
+.ht-logo-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.ht-logo-text {
+    font-family: var(--ht-font-en);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--ht-text-primary);
+    line-height: 1.1;
+}
+
+.ht-logo-accent {
+    color: var(--ht-primary);
+}
+
+.ht-logo-tagline {
+    font-size: 0.72rem;
+    color: var(--ht-text-muted);
+    font-weight: 500;
+}
+
+/* Nav Menu */
+.ht-nav {
+    display: flex;
+    align-items: center;
+}
+
+.ht-menu-list {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+}
+
+.ht-menu-list > li > a {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ht-text-secondary);
+    border-radius: var(--ht-radius-sm);
+}
+
+.ht-menu-list > li > a:hover {
+    color: var(--ht-primary);
+    background: var(--ht-primary-light);
+}
+
+/* Header Actions */
+.ht-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ht-search-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ht-surface-hover);
+    border: 1px solid var(--ht-surface-border);
+    padding: 7px 12px;
+    border-radius: var(--ht-radius-full);
+    color: var(--ht-text-muted);
+    font-size: 0.88rem;
+    transition: var(--ht-transition);
+}
+
+.ht-search-btn:hover {
+    border-color: var(--ht-primary);
+    color: var(--ht-primary);
+}
+
+.ht-search-kbd {
+    background: var(--ht-surface);
+    border: 1px solid var(--ht-surface-border);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: var(--ht-font-en);
+    font-size: 0.72rem;
+    color: var(--ht-text-muted);
+}
+
+.ht-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--ht-radius-full);
+    background: var(--ht-surface-hover);
+    border: 1px solid var(--ht-surface-border);
+    color: var(--ht-text-secondary);
+    position: relative;
+    transition: var(--ht-transition);
+}
+
+.ht-action-btn:hover {
+    color: var(--ht-primary);
+    border-color: var(--ht-primary);
+}
+
+.ht-badge-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--ht-primary);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: var(--ht-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--ht-surface);
+}
+
+.ht-theme-icon-dark {
+    display: none;
+}
+
+[data-theme="dark"] .ht-theme-icon-light {
+    display: none;
+}
+
+[data-theme="dark"] .ht-theme-icon-dark {
+    display: inline-flex;
+}
+
+.ht-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--ht-text-primary);
+}
+
+.ht-menu-toggle .ht-icon-close {
+    display: none;
+}
+
+/* -------------------------------------------------------------
+ * 4. Hero Section (Featured 1+3 Grid)
+ * ------------------------------------------------------------- */
+.ht-hero-section {
+    margin: 28px 0 36px 0;
+}
+
+.ht-hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+}
+
+/* Lead Card */
+.ht-hero-lead-card {
+    position: relative;
+    border-radius: var(--ht-radius-lg);
+    overflow: hidden;
+    height: 440px;
+    box-shadow: var(--ht-shadow-md);
+    background: #0f172a;
+}
+
+.ht-hero-lead-thumb-wrap {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.ht-hero-lead-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.ht-hero-lead-card:hover .ht-hero-lead-img {
+    transform: scale(1.03);
+}
+
+.ht-hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.92) 100%);
+    pointer-events: none;
+}
+
+.ht-hero-lead-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    color: #fff;
+    z-index: 2;
+}
+
+.ht-hero-badge-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.ht-hero-lead-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.ht-hero-lead-title a {
+    color: #ffffff;
+}
+
+.ht-hero-lead-title a:hover {
+    color: var(--ht-accent);
+}
+
+.ht-hero-lead-excerpt {
+    font-size: 0.95rem;
+    color: #e2e8f0;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Sub Hero Grid (3 items stacked) */
+.ht-hero-sub-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.ht-hero-sub-card {
+    display: flex;
+    gap: 14px;
+    background: var(--ht-surface-card);
+    border: 1px solid var(--ht-surface-border);
+    border-radius: var(--ht-radius-md);
+    padding: 12px;
+    transition: var(--ht-transition);
+    height: calc((440px - 32px) / 3);
+}
+
+.ht-hero-sub-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ht-shadow-md);
+    border-color: var(--ht-primary);
+}
+
+.ht-hero-sub-thumb-wrap {
+    flex-shrink: 0;
+    width: 140px;
+    height: 100%;
+    border-radius: var(--ht-radius-sm);
+    overflow: hidden;
+}
+
+.ht-hero-sub-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ht-hero-sub-card:hover .ht-hero-sub-img {
+    transform: scale(1.05);
+}
+
+.ht-hero-sub-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.ht-hero-sub-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 4px 0 6px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ht-hero-sub-title a:hover {
+    color: var(--ht-primary);
+}
+
+/* -------------------------------------------------------------
+ * 5. Category Filter Tabs
+ * ------------------------------------------------------------- */
+.ht-category-tabs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--ht-surface);
+    border: 1px solid var(--ht-surface-border);
+    padding: 10px 16px;
+    border-radius: var(--ht-radius-md);
+    margin-bottom: 24px;
+}
+
+.ht-tabs-heading {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ht-text-muted);
+    white-space: nowrap;
+}
+
+.ht-tabs-scroll {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.ht-tabs-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.ht-tab-btn {
+    padding: 6px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: var(--ht-radius-full);
+    background: var(--ht-surface-hover);
+    color: var(--ht-text-secondary);
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+.ht-tab-btn:hover {
+    color: var(--ht-primary);
+    background: var(--ht-primary-light);
+}
+
+.ht-tab-active {
+    background: var(--ht-primary);
+    color: #fff !important;
+}
+
+/* -------------------------------------------------------------
+ * 6. Main Layout Row (70% Content + 30% Sidebar)
+ * ------------------------------------------------------------- */
+.ht-layout-row {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: 30px;
+    margin-bottom: 48px;
+    align-items: start;
+    width: 100%;
+}
+
+.ht-content-area,
+.ht-article-col,
+.ht-page-col {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ht-sidebar-area {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ht-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ht-surface-border);
+}
+
+.ht-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ht-text-primary);
+}
+
+.ht-icon-primary {
+    color: var(--ht-primary);
+}
+
+/* Cards Grid */
+.ht-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.ht-card {
+    background: var(--ht-surface-card);
+    border: 1px solid var(--ht-surface-border);
+    border-radius: var(--ht-radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--ht-shadow-card);
+    transition: var(--ht-transition);
+}
+
+.ht-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ht-shadow-md);
+    border-color: var(--ht-primary-border);
+}
+
+.ht-card-thumb-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--ht-surface-hover);
+}
+
+.ht-card-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ht-card:hover .ht-card-thumb-wrap img {
+    transform: scale(1.04);
+}
+
+.ht-card-bm-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--ht-radius-full);
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--ht-transition);
+    z-index: 3;
+}
+
+.ht-card-bm-btn:hover, .ht-card-bm-btn.ht-saved {
+    background: var(--ht-primary);
+    color: #fff;
+}
+
+.ht-card-cat-float {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 3;
+}
+
+.ht-card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.ht-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ht-card-title a:hover {
+    color: var(--ht-primary);
+}
+
+.ht-card-excerpt {
+    font-size: 0.9rem;
+    color: var(--ht-text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+.ht-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--ht-text-muted);
+    padding-top: 12px;
+    border-top: 1px solid var(--ht-border-light);
+}
+
+.ht-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Badges */
+.ht-cat-badge {
+    display: inline-block;
+    background: var(--ht-primary);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--ht-radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.ht-eeat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--ht-accent-light);
+    color: var(--ht-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--ht-radius-sm);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ht-icon-verified {
+    color: var(--ht-accent);
+}
+
+/* Fallback Thumbnail */
+.ht-fallback-thumb {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--ht-surface-hover) 0%, var(--ht-primary-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.ht-fallback-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--ht-text-muted);
+    font-size: 0.85rem;
+}
+
+.ht-fallback-icon {
+    color: var(--ht-primary);
+    opacity: 0.6;
+}
+
+/* -------------------------------------------------------------
+ * 7. Ad Containers (Zero CLS)
+ * ------------------------------------------------------------- */
+.ht-ad-wrapper {
+    margin: 24px 0;
+    padding: 10px;
+    background: var(--ht-surface);
+    border: 1px dashed var(--ht-surface-border);
+    border-radius: var(--ht-radius-md);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ht-ad-label {
+    font-size: 0.68rem;
+    color: var(--ht-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.ht-card-native-ad {
+    background: var(--ht-surface-card);
+    border: 1px dashed var(--ht-primary-border);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------------------------------------------------
+ * 8. Sidebar Widgets (Popular Posts, Modern Categories & Core WP)
+ * ------------------------------------------------------------- */
+.ht-sidebar-area {
+    min-width: 0;
+}
+
+.ht-widget {
+    background: var(--ht-surface-card);
+    border: 1px solid var(--ht-surface-border);
+    border-radius: var(--ht-radius-md);
+    padding: 22px;
+    margin-bottom: 24px;
+    box-shadow: var(--ht-shadow-card);
+}
+
+.ht-widget-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ht-surface-border);
+}
+
+.ht-widget-icon {
+    color: var(--ht-primary);
+    flex-shrink: 0;
+}
+
+.ht-widget-title {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--ht-text-primary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* =============================================================
+   Sidebar Top Instant AJAX Live Search (Position #1)
+   ============================================================= */
+.ht-widget-side-search {
+    background: var(--ht-surface-card);
+    border: 1px solid var(--ht-surface-border);
+    position: relative;
+}
+
+.ht-side-search-box {
+    position: relative;
+    width: 100%;
+}
+
+.ht-side-search-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid var(--ht-surface-border);
+    border-radius: var(--ht-radius-md);
+    background: var(--ht-surface);
+    transition: all 0.25s ease;
+}
+
+.ht-side-search-input-wrap:focus-within {
+    border-color: var(--ht-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    background: var(--ht-surface-card);
+}
+
+.ht-side-search-icon {
+    position: absolute;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ht-text-muted);
+    pointer-events: none;
+}
+
+.ht-side-search-field {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.92rem;
+    color: var(--ht-text-primary);
+    padding: 10px 40px 10px 38px;
+    border-radius: var(--ht-radius-md);
+}
+
+.ht-side-search-field::placeholder {
+    color: var(--ht-text-muted);
+}
+
+.ht-side-search-clear {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: var(--ht-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ht-side-search-clear:hover {
+    color: var(--ht-primary);
+    transform: scale(1.15);
+}
+
+.ht-side-search-spinner {
+    position: absolute;
+    right: 32px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(37, 99, 235, 0.2);
+    border-top-color: var(--ht-primary);
+    border-radius: 50%;
+    animation: ht-spin 0.6s linear infinite;
+}
+
+@keyframes ht-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Dropdown Live Results Under Sidebar Search */
+.ht-side-search-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background: var(--ht-surface-card);
+    border: 1px solid var(--ht-surface-border);
+    border-radius: var(--ht-radius-md);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.ht-side-results-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.ht-side-result-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--ht-surface-border);
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.ht-side-result-item:last-of-type {
+    border-bottom: none;
+}
+
+.ht-side-result-item:hover {
+    background: var(--ht-surface-hover);
+}
+
+.ht-side-result-thumb {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--ht-radius-sm);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.ht-side-result-thumb-fallback {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--ht-radius-sm);
+    background: var(--ht-surface-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ht-primary);
+    flex-shrink: 0;
+}
+
+.ht-side-result-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.ht-side-result-cat {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ht-primary);
+    margin-bottom: 2px;
+}
+
+.ht-side-result-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ht-text-primary);
+    margin: 0 0 3px 0;
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ht-side-result-date {
+    font-size: 0.73rem;
+    color: var(--ht-text-muted);
+}
+
+.ht-side-result-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    background: var(--ht-surface-hover);
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--ht-primary);
+    text-align: center;
+    border-top: 1px solid var(--ht-surface-border);
+    transition: background 0.2s ease;
+}
+
+.ht-side-result-all:hover {
+    background: var(--ht-primary-light);
+}
+
+.ht-side-result-none {
+    padding: 18px;
+    text-align: center;
+    color: var(--ht-text-muted);
+    font-size: 0.88rem;
+}
+
+/* Countdown Widget */
+.ht-widget-countdown {
+    background: linear-gradient(135deg, var(--ht-surface-card) 0%, var(--ht-primary-light) 100%);
+    border-color: var(--ht-primary-border);
+}
+
+.ht-side-countdown-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ht-text-secondary);
+}
+
+.ht-side-countdown-display {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.ht-side-days {
+    font-family: var(--ht-font-en);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--ht-primary);
+    line-height: 1;
+}
+
+.ht-side-unit {
+    font-size: 1rem;
+    color: var(--ht-text-muted);
+}
+
+/* =============================================================
+   Popular Posts Component (জনপ্রিয় পোস্ট - Circular Thumbnail + Floating Badge)
+   ============================================================= */
+.ht-popular-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ht-popular-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--ht-surface-border);
+    position: relative;
+    transition: var(--ht-transition);
+}
+
+.ht-popular-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Floating Thumbnail Wrapper with Corner Rank Badge */
+.ht-popular-thumb-wrap {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    min-width: 66px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.ht-popular-thumb-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% !important;
+    overflow: hidden;
+    background: var(--ht-surface-hover);
+    border: 2.5px solid var(--ht-surface-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.ht-popular-thumb-circle img,
+.ht-popular-thumb,
+.ht-popular-thumb-round {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.ht-popular-item:hover .ht-popular-thumb-circle {
+    border-color: var(--ht-primary);
+    transform: scale(1.04);
+}
+
+.ht-popular-item:hover .ht-popular-thumb-circle img {
+    transform: scale(1.1);
+}
+
+/* Floating Rank Position Badge (Top-Left of Circular Avatar) */
+.ht-popular-badge {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: 2;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.72rem;
+    line-height: 1;
+    color: #ffffff;
+    border: 2px solid var(--ht-surface-card);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.ht-popular-item:hover .ht-popular-badge {
+    transform: scale(1.12);
+}
+
+.ht-rank-1 {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.ht-rank-2 {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.ht-rank-3 {
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+.ht-rank-4, .ht-rank-5, .ht-rank-6, .ht-rank-7, .ht-rank-8, .ht-rank-9, .ht-rank-10 {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+/* Popular Details */
+.ht-popular-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.ht-popular-cat-wrap {
+    margin-bottom: 2px;
+}
+
+.ht-popular-cat-chip {
+    background: #3b82f6;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.25;
+}
+
+.ht-popular-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--ht-text-primary);
+}
+
+.ht-popular-title a {
+    color: var(--ht-text-primary);
+    transition: color 0.2s ease;
+}
+
+.ht-popular-item:hover .ht-popular-title a {
+    color: var(--ht-primary);
+}
+
+.ht-popular-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.74rem;
+    color: var(--ht-text-muted);
+    margin-top: 2px;
+}
+
+.ht-popular-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ht-popular-date .ht-meta-icon {
+    opacity: 0.75;
+    vertical-align: middle;
+}
+
+/* =============================================================
+   Contextual Category Cards Grid with Far-Right Stats Badges
+   ============================================================= */
+.ht-cat-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ht-cat-card-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--ht-surface-card);
+    border: 1px solid var(--ht-surface-border);
+    border-radius: var(--ht-radius-sm);
+    text-decoration: none;
+    transition: all 0.22s ease;
+}
+
+.ht-cat-card-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.ht-cat-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 8px;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--ht-primary);
+    transition: all 0.22s ease;
+}
+
+.ht-cat-card-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ht-text-primary);
+    transition: color 0.22s ease;
+}
+
+/* Statistics Badge Pinned Far Right */
+.ht-cat-stat-badge {
+    margin-left: auto;
+    padding: 3px 10px;
+    background: var(--ht-surface-hover);
+    color: var(--ht-text-secondary);
+    border-radius: var(--ht-radius-full);
+    font-size: 0.76rem;
+    font-weight: 700;
+    border: 1px solid var(--ht-surface-border);
+    flex-shrink: 0;
+    transition: all 0.22s ease;
+}
+
+.ht-cat-card-box:hover {
+    background: var(--ht-surface-hover);
+    border-color: var(--ht-primary-border);
+    transform: translateX(4px);
+}
+
+.ht-cat-card-box:hover .ht-cat-card-icon {
+    background: var(--ht-primary);
+    color: #ffffff;
+}
+
+.ht-cat-card-box:hover .ht-cat-card-name {
+    color: var(--ht-primary);
+}
+
+.ht-cat-card-box:hover .ht-cat-stat-badge {
+    background: var(--ht-primary);
+    color: #ffffff;
+    border-color: var(--ht-primary);
+}
+
+/* =============================================================
+   Styling for WordPress Core Widgets (Recent Posts, Categories, Archive)
+   Removes ALL raw bullets and transforms default widgets into sleek cards!
+   ============================================================= */
+.widget_recent_entries ul,
+.widget_categories ul,
+.widget_archive ul,
+.wp-block-latest-posts,
+.wp-block-categories {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Core Recent Posts Styling */
+.widget_recent_entries ul li,
+.wp-block-latest-posts li {
+    padding: 10px 12px;
+    background: var(--ht-surface);
+    border: 1px solid var(--ht-surface-border);
+    border-left: 3px solid var(--ht-primary);
+    border-radius: var(--ht-radius-sm);
+    transition: var(--ht-transition);
+}
+
+.widget_recent_entries ul li:hover,
+.wp-block-latest-posts li:hover {
+    background: var(--ht-primary-light);
+    border-color: var(--ht-primary-border);
+    transform: translateX(3px);
+}
+
+.widget_recent_entries ul li a,
+.wp-block-latest-posts li a {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ht-text-primary);
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.widget_recent_entries ul li a:hover,
+.wp-block-latest-posts li a:hover {
+    color: var(--ht-primary);
+}
+
+.widget_recent_entries .post-date,
+.wp-block-latest-posts__post-date {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ht-text-muted);
+}
+
+/* Core Categories Widget Styling */
+.widget_categories ul li,
+.wp-block-categories li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--ht-surface);
+    border: 1px solid var(--ht-surface-border);
+    border-radius: var(--ht-radius-sm);
+    transition: var(--ht-transition);
+}
+
+.widget_categories ul li:hover,
+.wp-block-categories li:hover {
+    background: var(--ht-primary-light);
+    border-color: var(--ht-primary-border);
+    transform: translateX(4px);
+}
+
+.widget_categories ul li a,
+.wp-block-categories li a {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ht-text-primary);
+    transition: var(--ht-transition);
+}
+
+.widget_categories ul li:hover a,
+.wp-block-categories li:hover a {
+    color: var(--ht-primary);
+}
+
+/* -------------------------------------------------------------
+ * 9. Pagination
+ * ------------------------------------------------------------- */
+.ht-pagination-wrap {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+}
+
+.page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: var(--ht-radius-sm);
+    background: var(--ht-surface);
+    border: 1px solid var(--ht-surface-border);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ht-text-secondary);
+}
+
+.page-numbers:hover {
+    border-color: var(--ht-primary);
+    color: var(--ht-primary);
+}
+
+.page-numbers.current {
+    background: var(--ht-primary);
+    color: #fff;
+    border-color: var(--ht-primary);
+}
+
+/* -------------------------------------------------------------
+ * 10. Footer Layout
+ * ------------------------------------------------------------- */
+.ht-footer {
+    background: var(--ht-surface);
+    border-top: 1px solid var(--ht-surface-border);
+    margin-top: 60px;
+}
+
+.ht-pre-footer {
+    background: var(--ht-surface-hover);
+    border-bottom: 1px solid var(--ht-surface-border);
+    padding: 24px 0;
+}
+
+.ht-pre-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.ht-pre-footer-title {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ht-text-primary);
+}
+
+.ht-pre-footer-sub {
+    font-size: 0.9rem;
+    color: var(--ht-text-muted);
+}
+
+.ht-pre-footer-btns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ht-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: var(--ht-radius-sm);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: var(--ht-transition);
+}
+
+.ht-btn-primary {
+    background: var(--ht-primary);
+    color: #fff;
+}
+
+.ht-btn-primary:hover {
+    background: var(--ht-primary-hover);
+}
+
+.ht-btn-whatsapp {
+    background: #25d366;
+    color: #fff;
+}
+
+.ht-btn-whatsapp:hover {
+    background: #1ebc59;
+}
+
+.ht-btn-telegram {
+    background: #0088cc;
+    color: #fff;
+}
+
+.ht-btn-telegram:hover {
+    background: #0077b5;
+}
+
+/* Footer Main 4-Columns */
+.ht-footer-main {
+    padding: 48px 20px;
+}
+
+.ht-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 36px;
+}
+
+.ht-footer-col-brand .ht-footer-logo {
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.ht-footer-desc {
+    font-size: 0.9rem;
+    color: var(--ht-text-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.ht-footer-trust {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ht-accent);
+}
+
+.ht-footer-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ht-text-primary);
+    margin-bottom: 16px;
+}
+
+.ht-footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ht-footer-links a {
+    font-size: 0.9rem;
+    color: var(--ht-text-secondary);
+}
+
+.ht-footer-links a:hover {
+    color: var(--ht-primary);
+    padding-left: 4px;
+}
+
+.ht-footer-bottom {
+    border-top: 1px solid var(--ht-surface-border);
+    padding: 18px 0;
+    font-size: 0.85rem;
+    color: var(--ht-text-muted);
+}
+
+.ht-footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Circular Scroll to Top */
+.ht-scroll-top {
+    position: fixed;
+    bottom: 84px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--ht-radius-full);
+    background: var(--ht-surface);
+    border: 1px solid var(--ht-surface-border);
+    box-shadow: var(--ht-shadow-md);
+    color: var(--ht-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--ht-transition);
+    z-index: 45;
+}
+
+.ht-scroll-top.ht-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ht-progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+.ht-progress-bg {
+    stroke: var(--ht-surface-border);
+}
+
+.ht-progress-bar {
+    stroke: var(--ht-primary);
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+/* -------------------------------------------------------------
+ * 11. Responsive Breakpoints (Audit & Mobile Optimization)
+ * ------------------------------------------------------------- */
+@media (max-width: 1180px) {
+    .ht-layout-row {
+        grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+        gap: 24px;
+    }
+    .ht-sidebar-area {
+        width: 100%;
+    }
+    .ht-menu-list > li > a {
+        padding: 6px 8px;
+        font-size: 0.88rem;
+    }
+    .ht-search-kbd {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .ht-nav {
+        display: none !important;
+    }
+    .ht-menu-toggle {
+        display: flex !important;
+    }
+    .ht-layout-row {
+        grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+        gap: 20px;
+    }
+    .ht-sidebar-area {
+        width: 100%;
+    }
+    .ht-hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .ht-hero-lead-card {
+        height: 380px;
+    }
+    .ht-hero-sub-grid {
+        flex-direction: row;
+        height: auto;
+    }
+    .ht-hero-sub-card {
+        flex: 1;
+        height: auto;
+    }
+    .ht-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ONLY collapse sidebar to 1-column below the article on screens <= 840px */
+@media (max-width: 840px) {
+    .ht-layout-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .ht-sidebar-area {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 70px; /* Space for fixed mobile dock */
+    }
+
+    .ht-topbar {
+        display: none;
+    }
+
+    .ht-header-inner {
+        height: 60px;
+        gap: 12px;
+    }
+
+    .ht-logo-text {
+        font-size: 1.35rem;
+    }
+
+    .ht-logo-tagline {
+        display: none;
+    }
+
+    .ht-hero-sub-grid {
+        flex-direction: column;
+    }
+
+    .ht-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ht-pre-footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .ht-pre-footer-btns {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ht-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .ht-footer-bottom-inner {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .ht-mobile-dock {
+        display: flex;
+    }
+
+    .ht-scroll-top {
+        bottom: 76px;
+        right: 14px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .ht-widget {
+        padding: 18px 16px;
+        margin-bottom: 20px;
+    }
+
+    .ht-popular-thumb-wrap {
+        width: 60px;
+        height: 60px;
+    }
+
+    .ht-popular-title {
+        font-size: 0.88rem;
+    }
+
+    .ht-cat-card-box {
+        padding: 9px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ht-container {
+        padding: 0 14px;
+    }
+
+    .ht-search-btn {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .ht-search-btn span {
+        display: none;
+    }
+
+    .ht-action-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .ht-logo-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* =============================================================
+   Dark Mode Component Tokens & Contrast Perfection
+   ============================================================= */
+[data-theme="dark"] .ht-popular-badge {
+    border-color: #131b2e;
+}
+
+[data-theme="dark"] .ht-popular-title a {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .ht-popular-title a:hover {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .ht-popular-thumb-circle {
+    border-color: #1e293b;
+    background: #111827;
+}
+
+[data-theme="dark"] .ht-popular-cat-chip {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .ht-popular-meta {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .ht-cat-card-box {
+    background: #131b2e;
+    border-color: #1e293b;
+}
+
+[data-theme="dark"] .ht-cat-card-name {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .ht-cat-stat-badge {
+    background: #1f2937;
+    border-color: #1e293b;
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .ht-side-search-input-wrap {
+    background: #111827;
+    border-color: #1e293b;
+}
+
+[data-theme="dark"] .ht-side-search-field {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .ht-side-search-results {
+    background: #131b2e;
+    border-color: #1e293b;
+}
+
+[data-theme="dark"] .ht-side-result-item {
+    border-color: #1e293b;
+}
+
+[data-theme="dark"] .ht-side-result-item:hover {
+    background: #1f2937;
+}
+
+[data-theme="dark"] .ht-side-result-title {
+    color: #f8fafc;
+}
+
+/* Mobile Drawer Links Touch Target (Min 48px) */
+.ht-drawer-nav li a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: var(--ht-radius-sm);
+    font-size: 0.96rem;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .ht-drawer-nav li a {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .ht-drawer-nav li a:hover {
+    background: #1f2937;
+    color: #60a5fa;
+}
+
+/* Safe Area Insets for Mobile Bottom Dock */
+.ht-mobile-dock {
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+    }
+}
+

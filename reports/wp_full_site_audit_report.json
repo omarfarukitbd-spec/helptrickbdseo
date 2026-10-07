@@ -1,0 +1,428 @@
+{
+  "summary": {
+    "total_posts_audited": 5,
+    "posts_pass": 0,
+    "posts_warning": 5,
+    "posts_critical": 0,
+    "total_categories": 11,
+    "under_populated_categories": [
+      "Uncategorized (0 posts)",
+      "University Admission (1 posts)"
+    ],
+    "missing_legal_pages": []
+  },
+  "legal_pages": [
+    {
+      "label": "About Us (আমাদের সম্পর্কে)",
+      "slug": "about-us",
+      "found": true
+    },
+    {
+      "label": "Contact Us (যোগাযোগ)",
+      "slug": "contact-us",
+      "found": true
+    },
+    {
+      "label": "Privacy Policy (গোপনীয়তা নীতি)",
+      "slug": "privacy-policy-2",
+      "found": true
+    },
+    {
+      "label": "Terms and Conditions (ব্যবহারের শর্তাবলী)",
+      "slug": "terms-conditions",
+      "found": true
+    },
+    {
+      "label": "Disclaimer (দাবিত্যাগ)",
+      "slug": "disclaimer",
+      "found": true
+    }
+  ],
+  "categories": [
+    {
+      "name": "Bangla 1st Paper",
+      "slug": "bangla-1st-paper",
+      "count": 15,
+      "status": "PASS"
+    },
+    {
+      "name": "Education Guide",
+      "slug": "education-guide",
+      "count": 57,
+      "status": "PASS"
+    },
+    {
+      "name": "English 2nd Paper",
+      "slug": "english-2nd-paper",
+      "count": 12,
+      "status": "PASS"
+    },
+    {
+      "name": "ICT &amp; Technology",
+      "slug": "ict-technology",
+      "count": 6,
+      "status": "PASS"
+    },
+    {
+      "name": "Islamic Article",
+      "slug": "islamic-article",
+      "count": 14,
+      "status": "PASS"
+    },
+    {
+      "name": "Job Preparation",
+      "slug": "job-preparation",
+      "count": 7,
+      "status": "PASS"
+    },
+    {
+      "name": "National University",
+      "slug": "national-university",
+      "count": 4,
+      "status": "PASS"
+    },
+    {
+      "name": "Political Science",
+      "slug": "political-science",
+      "count": 67,
+      "status": "PASS"
+    },
+    {
+      "name": "SSC &amp; Dakhil",
+      "slug": "ssc-dakhil",
+      "count": 32,
+      "status": "PASS"
+    },
+    {
+      "name": "Uncategorized",
+      "slug": "uncategorized",
+      "count": 0,
+      "status": "WARNING"
+    },
+    {
+      "name": "University Admission",
+      "slug": "university-admission",
+      "count": 1,
+      "status": "WARNING"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার গাইড ও ৩য় বর্ষে প্রমোশনের নিয়মাবলী ২০২৬",
+      "slug": "nu-honours-2nd-year-exam-guide-and",
+      "live_url": "https://www.helptrickbd.com/nu-honours-2nd-year-exam-guide-and/",
+      "edit_url": "https://www.helptrickbd.com/wp-admin/post.php?post=1&action=edit",
+      "status": "WARNING",
+      "word_count": 1515,
+      "checks": {
+        "content_depth": {
+          "check": "content_depth",
+          "word_count": 1515,
+          "status": "PASS",
+          "messages": [
+            "Content depth passed: 1,515 words."
+          ]
+        },
+        "image_seo": {
+          "check": "image_seo",
+          "status": "WARNING",
+          "messages": [
+            "Missing Featured Image: No native featured_media attached to post.",
+            "All 2 image(s) have descriptive alt tags."
+          ],
+          "total_images": 2,
+          "missing_alt": 0
+        },
+        "rank_math": {
+          "check": "rank_math_seo",
+          "status": "WARNING",
+          "messages": [
+            "SEO Title is long (83 chars), might truncate in Google SERP.",
+            "Missing Meta Description: rank_math_description is empty.",
+            "Notice: No explicit focus keyword defined in Rank Math postmeta."
+          ]
+        },
+        "headings": {
+          "check": "headings",
+          "status": "PASS",
+          "messages": [
+            "Structured heading hierarchy verified (7 H2 headings)."
+          ]
+        },
+        "links": {
+          "check": "links_and_legacy",
+          "status": "WARNING",
+          "messages": [
+            "Residual legacy links found: 3 link(s) still point to old .html URLs."
+          ],
+          "legacy_html_links": [
+            "https://www.helptrickbd.com/p/nu-cgpa-calculator.html",
+            "https://www.helptrickbd.com/2026/10/nu-honours-2nd-year-exam-routine-2026.html",
+            "https://www.helptrickbd.com/2026/10/nu-exam-digitization-aqa-global-mou-2026.html"
+          ]
+        },
+        "interactive": {
+          "check": "interactive_elements",
+          "status": "PASS",
+          "messages": [
+            "Rich interactive formatting verified: 2 table(s), 5 accordion(s), 2 callout card(s)."
+          ]
+        }
+      }
+    },
+    {
+      "id": 282,
+      "title": "জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষা ডিজিটালাইজেশন ও একিউএ গ্লোবাল চুক্তি: পরীক্ষা ও মূল্যায়নে ঐতিহাসিক পরিবর্তন",
+      "slug": "nu-exam-digitization-aqa-global-mou-2026",
+      "live_url": "https://www.helptrickbd.com/nu-exam-digitization-aqa-global-mou-2026/",
+      "edit_url": "https://www.helptrickbd.com/wp-admin/post.php?post=282&action=edit",
+      "status": "WARNING",
+      "word_count": 1432,
+      "checks": {
+        "content_depth": {
+          "check": "content_depth",
+          "word_count": 1432,
+          "status": "PASS",
+          "messages": [
+            "Content depth passed: 1,432 words."
+          ]
+        },
+        "image_seo": {
+          "check": "image_seo",
+          "status": "WARNING",
+          "messages": [
+            "Missing Featured Image: No native featured_media attached to post.",
+            "All 2 image(s) have descriptive alt tags."
+          ],
+          "total_images": 2,
+          "missing_alt": 0
+        },
+        "rank_math": {
+          "check": "rank_math_seo",
+          "status": "WARNING",
+          "messages": [
+            "SEO Title is long (105 chars), might truncate in Google SERP.",
+            "Missing Meta Description: rank_math_description is empty.",
+            "Notice: No explicit focus keyword defined in Rank Math postmeta."
+          ]
+        },
+        "headings": {
+          "check": "headings",
+          "status": "PASS",
+          "messages": [
+            "Structured heading hierarchy verified (7 H2 headings)."
+          ]
+        },
+        "links": {
+          "check": "links_and_legacy",
+          "status": "WARNING",
+          "messages": [
+            "Residual legacy links found: 2 link(s) still point to old .html URLs."
+          ],
+          "legacy_html_links": [
+            "https://www.helptrickbd.com/p/nu-cgpa-calculator.html",
+            "https://www.helptrickbd.com/2026/10/class-6-to-9-annual-exam-marks.html"
+          ]
+        },
+        "interactive": {
+          "check": "interactive_elements",
+          "status": "PASS",
+          "messages": [
+            "Rich interactive formatting verified: 1 table(s), 5 accordion(s), 2 callout card(s)."
+          ]
+        }
+      }
+    },
+    {
+      "id": 283,
+      "title": "৬ষ্ঠ, ৭ম, ৮ম ও ৯ম শ্রেণির বার্ষিক পরীক্ষার মানবণ্টন ও পূর্ণাঙ্গ প্রস্তুতি গাইড ২০২৬",
+      "slug": "class-6-to-9-annual-exam-marks-distribution-2026",
+      "live_url": "https://www.helptrickbd.com/class-6-to-9-annual-exam-marks-distribution-2026/",
+      "edit_url": "https://www.helptrickbd.com/wp-admin/post.php?post=283&action=edit",
+      "status": "WARNING",
+      "word_count": 2127,
+      "checks": {
+        "content_depth": {
+          "check": "content_depth",
+          "word_count": 2127,
+          "status": "PASS",
+          "messages": [
+            "Content depth passed: 2,127 words."
+          ]
+        },
+        "image_seo": {
+          "check": "image_seo",
+          "status": "WARNING",
+          "messages": [
+            "Missing Featured Image: No native featured_media attached to post.",
+            "All 2 image(s) have descriptive alt tags."
+          ],
+          "total_images": 2,
+          "missing_alt": 0
+        },
+        "rank_math": {
+          "check": "rank_math_seo",
+          "status": "WARNING",
+          "messages": [
+            "SEO Title is long (83 chars), might truncate in Google SERP.",
+            "Missing Meta Description: rank_math_description is empty.",
+            "Notice: No explicit focus keyword defined in Rank Math postmeta."
+          ]
+        },
+        "headings": {
+          "check": "headings",
+          "status": "PASS",
+          "messages": [
+            "Structured heading hierarchy verified (8 H2 headings)."
+          ]
+        },
+        "links": {
+          "check": "links_and_legacy",
+          "status": "WARNING",
+          "messages": [
+            "Residual legacy links found: 5 link(s) still point to old .html URLs."
+          ],
+          "legacy_html_links": [
+            "https://www.helptrickbd.com/2025/12/bangla-bagdhara-collection-with-meaning.html",
+            "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-right-form-of.html",
+            "https://www.helptrickbd.com/2026/09/ssc-bangla-1st-paper-model-test.html",
+            "https://www.helptrickbd.com/2026/09/ssc-english-2nd-paper-final-suggestion.html",
+            "https://www.helptrickbd.com/2025/04/important-instructions-for-ssc-candidates.html"
+          ]
+        },
+        "interactive": {
+          "check": "interactive_elements",
+          "status": "PASS",
+          "messages": [
+            "Rich interactive formatting verified: 3 table(s), 5 accordion(s), 2 callout card(s)."
+          ]
+        }
+      }
+    },
+    {
+      "id": 284,
+      "title": "জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি ও পরীক্ষার গাইড ২০২৬ | NU Degree 2nd Year In-Course &#038; Exam Routine",
+      "slug": "nu-degree-2nd-year-in-course-and-exam",
+      "live_url": "https://www.helptrickbd.com/nu-degree-2nd-year-in-course-and-exam/",
+      "edit_url": "https://www.helptrickbd.com/wp-admin/post.php?post=284&action=edit",
+      "status": "WARNING",
+      "word_count": 1379,
+      "checks": {
+        "content_depth": {
+          "check": "content_depth",
+          "word_count": 1379,
+          "status": "PASS",
+          "messages": [
+            "Content depth passed: 1,379 words."
+          ]
+        },
+        "image_seo": {
+          "check": "image_seo",
+          "status": "WARNING",
+          "messages": [
+            "Missing Featured Image: No native featured_media attached to post.",
+            "All 2 image(s) have descriptive alt tags."
+          ],
+          "total_images": 2,
+          "missing_alt": 0
+        },
+        "rank_math": {
+          "check": "rank_math_seo",
+          "status": "WARNING",
+          "messages": [
+            "SEO Title is long (131 chars), might truncate in Google SERP.",
+            "Missing Meta Description: rank_math_description is empty.",
+            "Notice: No explicit focus keyword defined in Rank Math postmeta."
+          ]
+        },
+        "headings": {
+          "check": "headings",
+          "status": "PASS",
+          "messages": [
+            "Structured heading hierarchy verified (8 H2 headings)."
+          ]
+        },
+        "links": {
+          "check": "links_and_legacy",
+          "status": "WARNING",
+          "messages": [
+            "Residual legacy links found: 1 link(s) still point to old .html URLs."
+          ],
+          "legacy_html_links": [
+            "https://www.helptrickbd.com/p/nu-cgpa-calculator.html"
+          ]
+        },
+        "interactive": {
+          "check": "interactive_elements",
+          "status": "PASS",
+          "messages": [
+            "Rich interactive formatting verified: 1 table(s), 2 callout card(s)."
+          ]
+        }
+      }
+    },
+    {
+      "id": 285,
+      "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine &#038; Subject Code",
+      "slug": "nu-honours-2nd-year-exam-routine-2026",
+      "live_url": "https://www.helptrickbd.com/nu-honours-2nd-year-exam-routine-2026/",
+      "edit_url": "https://www.helptrickbd.com/wp-admin/post.php?post=285&action=edit",
+      "status": "WARNING",
+      "word_count": 3178,
+      "checks": {
+        "content_depth": {
+          "check": "content_depth",
+          "word_count": 3178,
+          "status": "PASS",
+          "messages": [
+            "Content depth passed: 3,178 words."
+          ]
+        },
+        "image_seo": {
+          "check": "image_seo",
+          "status": "WARNING",
+          "messages": [
+            "Missing Featured Image: No native featured_media attached to post.",
+            "All 20 image(s) have descriptive alt tags."
+          ],
+          "total_images": 20,
+          "missing_alt": 0
+        },
+        "rank_math": {
+          "check": "rank_math_seo",
+          "status": "WARNING",
+          "messages": [
+            "SEO Title is long (121 chars), might truncate in Google SERP.",
+            "Missing Meta Description: rank_math_description is empty.",
+            "Notice: No explicit focus keyword defined in Rank Math postmeta."
+          ]
+        },
+        "headings": {
+          "check": "headings",
+          "status": "PASS",
+          "messages": [
+            "Structured heading hierarchy verified (22 H2 headings)."
+          ]
+        },
+        "links": {
+          "check": "links_and_legacy",
+          "status": "WARNING",
+          "messages": [
+            "Residual legacy links found: 1 link(s) still point to old .html URLs."
+          ],
+          "legacy_html_links": [
+            "https://www.helptrickbd.com/p/nu-cgpa-calculator.html"
+          ]
+        },
+        "interactive": {
+          "check": "interactive_elements",
+          "status": "PASS",
+          "messages": [
+            "Rich interactive formatting verified: 19 table(s), 2 callout card(s)."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# ==============================================================================
+# HelpTrickBD - Blogger to WordPress 301 Permanent Redirect Rules (.htaccess)
+# Add these lines to the top of your .htaccess file (before WordPress core rules)
+# to handle redirects at the server level with zero PHP overhead.
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# 1. Edge-Case Slug Aliases (Blogger truncated slugs -> WordPress clean slugs)
+RewriteRule ^(?:p/|\d{4}/\d{2}/)?ssc-english-2nd-paper-suggestion-2027\.html$ /ssc-english-2nd-paper-final-suggestion/ [R=301,L]
+RewriteRule ^(?:p/|\d{4}/\d{2}/)?bcs-preliminary-marks-distribution-booklist\.html$ /bcs-preliminary-marks-distribution_01436475916/ [R=301,L]
+RewriteRule ^(?:p/|\d{4}/\d{2}/)?remittance-importance\.html$ /what-is-remittance-importance-economy-obstacles/ [R=301,L]
+RewriteRule ^(?:p/|\d{4}/\d{2}/)?basic-economy-problems-bd\.html$ /bangladesh-basic-economy-features-problems-solutions/ [R=301,L]
+RewriteRule ^(?:p/|\d{4}/\d{2}/)?budget-importance\.html$ /what-is-budget-importance-role-economy/ [R=301,L]
+RewriteRule ^(?:p/|\d{4}/\d{2}/)?nu-cgpa-calculator\.html$ /nu-cgpa-calculator/ [R=301,L]
+
+# 2. General Blogger Post Redirects (/YYYY/MM/slug.html -> /slug/)
+RewriteRule ^\d{4}/\d{2}/([^/]+)\.html$ /$1/ [R=301,L]
+
+# 3. General Blogger Static Page Redirects (/p/slug.html -> /slug/)
+RewriteRule ^p/([^/]+)\.html$ /$1/ [R=301,L]
+
+# 4. Clean up any trailing random numbers like _01436475916 (if requested)
+RewriteRule ^([a-zA-Z0-9-]+)_\d+/?$ /$1/ [R=301,L]
+
+</IfModule>

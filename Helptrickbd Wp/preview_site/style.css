@@ -1,0 +1,109 @@
+/*
+Theme Name: HelpTrickBD Pro
+Theme URI: https://www.helptrickbd.com
+Author: Help Trick BD Team
+Author URI: https://www.helptrickbd.com
+Description: World-class, responsive, and ultra-high-performance WordPress educational and technology magazine theme tailored for academic portals, National University, SSC/Dakhil, ICT, and job study articles. 100% Core Web Vitals speed optimized, zero external bloat, pure Google Material 3 vector SVG icons, zero emojis, and complete Rank Math SEO & Google AdSense integration.
+Version: 1.2.2
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: helptrickbd
+Tags: education, technology, news, two-columns, custom-menu, featured-images, theme-options, translation-ready, wide-blocks
+*/
+
+/* Core CSS Tokens & Material 3 Design System Variables */
+:root {
+    /* Color Palette - Light Mode */
+    --ht-bg: #f8fafc;
+    --ht-surface: #ffffff;
+    --ht-surface-hover: #f1f5f9;
+    --ht-surface-card: #ffffff;
+    --ht-surface-border: #e2e8f0;
+    --ht-border-light: #edf2f7;
+
+    --ht-text-primary: #0f172a;
+    --ht-text-secondary: #334155;
+    --ht-text-muted: #64748b;
+    --ht-text-inverse: #ffffff;
+
+    --ht-primary: #2563eb;
+    --ht-primary-hover: #1d4ed8;
+    --ht-primary-light: #eff6ff;
+    --ht-primary-border: #bfdbfe;
+
+    --ht-accent: #10b981;
+    --ht-accent-hover: #059669;
+    --ht-accent-light: #ecfdf5;
+
+    --ht-warning: #f59e0b;
+    --ht-warning-light: #fffbeb;
+    --ht-danger: #ef4444;
+    --ht-danger-light: #fef2f2;
+    --ht-info: #0284c7;
+    --ht-info-light: #f0f9ff;
+
+    /* Typography */
+    --ht-font-bn: 'Hind Siliguri', 'SolaimanLipi', 'Kalpurush', 'Nikosh', 'AdorshoLipi', 'Siyam Rupali', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --ht-font-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --ht-font-code: 'Fira Code', Consolas, Monaco, monospace;
+
+    /* Layout & Dimensions */
+    --ht-max-width: 1240px;
+    --ht-header-height: 72px;
+    --ht-topbar-height: 40px;
+    --ht-bottom-nav-height: 64px;
+    --ht-radius-sm: 6px;
+    --ht-radius-md: 12px;
+    --ht-radius-lg: 16px;
+    --ht-radius-full: 9999px;
+
+    /* Shadows (Material 3 Elevation) */
+    --ht-shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --ht-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+    --ht-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.09), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+    --ht-shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --ht-shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15);
+
+    /* Transitions */
+    --ht-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Tokens */
+[data-theme="dark"] {
+    --ht-bg: #090d16;
+    --ht-surface: #111827;
+    --ht-surface-hover: #1f2937;
+    --ht-surface-card: #131b2e;
+    --ht-surface-border: #1e293b;
+    --ht-border-light: #232e42;
+
+    --ht-text-primary: #f8fafc;
+    --ht-text-secondary: #cbd5e1;
+    --ht-text-muted: #94a3b8;
+    --ht-text-inverse: #0f172a;
+
+    --ht-primary: #3b82f6;
+    --ht-primary-hover: #60a5fa;
+    --ht-primary-light: rgba(59, 130, 246, 0.15);
+    --ht-primary-border: rgba(59, 130, 246, 0.3);
+
+    --ht-accent: #34d399;
+    --ht-accent-hover: #10b981;
+    --ht-accent-light: rgba(52, 211, 153, 0.15);
+
+    --ht-warning: #fbbf24;
+    --ht-warning-light: rgba(251, 191, 36, 0.15);
+    --ht-danger: #f87171;
+    --ht-danger-light: rgba(248, 113, 113, 0.15);
+    --ht-info: #38bdf8;
+    --ht-info-light: rgba(56, 189, 248, 0.15);
+
+    --ht-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --ht-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
+    --ht-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+    --ht-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    --ht-shadow-glow: 0 0 25px rgba(59, 130, 246, 0.25);
+}
