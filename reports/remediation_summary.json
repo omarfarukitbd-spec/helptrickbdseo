@@ -1,24 +1,22 @@
 {
-  "mode": "dry_run",
-  "timestamp": "2026-10-07T19:03:13Z",
-  "total_processed": 5,
-  "total_links_rewritten": 9,
-  "total_seo_meta_updated": 5,
-  "total_featured_images_set": 4,
+  "mode": "live_applied",
+  "timestamp": "2026-10-07T19:34:17Z",
+  "total_processed": 134,
+  "total_links_rewritten": 453,
+  "total_seo_meta_updated": 0,
+  "total_featured_images_set": 133,
   "results": [
     {
       "id": 1,
       "title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার গাইড ও",
       "slug": "nu-honours-2nd-year-exam-guide-and",
-      "changes_detected": true,
+      "changes_detected": false,
       "links_rewritten": 0,
-      "seo_meta_updated": true,
+      "seo_meta_updated": false,
       "featured_image_set": false,
-      "actions": [
-        "Injected Rank Math Focus KW: 'অনার্স ২য় বর্ষ পরীক্ষার গাইড' and Meta Description"
-      ],
+      "actions": [],
       "applied": false,
-      "status": "PREVIEW (DRY-RUN)"
+      "status": "SKIPPED (NO CHANGES)"
     },
     {
       "id": 282,
@@ -26,16 +24,15 @@
       "slug": "nu-exam-digitization-aqa-global-mou-2026",
       "changes_detected": true,
       "links_rewritten": 2,
-      "seo_meta_updated": true,
+      "seo_meta_updated": false,
       "featured_image_set": true,
       "actions": [
         "Rewrote 2 legacy internal links to clean URLs",
-        "Injected Rank Math Focus KW: 'জাতীয় বিশ্ববিদ্যালয় পরীক্ষা ডিজিটালাইজেশন' and Meta Description",
         "Found hero image: nu_exam_digitization_aqa_global_mou_2026.webp",
-        "[DRY-RUN] Will upload/bind hero image as featured_media"
+        "Bound media ID 15016 as featured_media"
       ],
-      "applied": false,
-      "status": "PREVIEW (DRY-RUN)"
+      "applied": true,
+      "status": "SUCCESS"
     },
     {
       "id": 283,
@@ -43,16 +40,15 @@
       "slug": "class-6-to-9-annual-exam-marks-distribution-2026",
       "changes_detected": true,
       "links_rewritten": 5,
-      "seo_meta_updated": true,
+      "seo_meta_updated": false,
       "featured_image_set": true,
       "actions": [
         "Rewrote 5 legacy internal links to clean URLs",
-        "Injected Rank Math Focus KW: 'বার্ষিক পরীক্ষার মানবণ্টন ও প্রস্তুতি' and Meta Description",
         "Found hero image: class_6_to_9_annual_exam_marks_distribution_2026.webp",
-        "[DRY-RUN] Will upload/bind hero image as featured_media"
+        "Bound media ID 15018 as featured_media"
       ],
-      "applied": false,
-      "status": "PREVIEW (DRY-RUN)"
+      "applied": true,
+      "status": "SUCCESS"
     },
     {
       "id": 284,
@@ -60,16 +56,15 @@
       "slug": "nu-degree-2nd-year-in-course-and-exam",
       "changes_detected": true,
       "links_rewritten": 1,
-      "seo_meta_updated": true,
+      "seo_meta_updated": false,
       "featured_image_set": true,
       "actions": [
         "Rewrote 1 legacy internal links to clean URLs",
-        "Injected Rank Math Focus KW: 'ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি' and Meta Description",
         "Found hero image: nu_degree_2nd_year_in_course_2026.webp",
-        "[DRY-RUN] Will upload/bind hero image as featured_media"
+        "Bound media ID 15020 as featured_media"
       ],
-      "applied": false,
-      "status": "PREVIEW (DRY-RUN)"
+      "applied": true,
+      "status": "SUCCESS"
     },
     {
       "id": 285,
@@ -77,16 +72,2057 @@
       "slug": "nu-honours-2nd-year-exam-routine-2026",
       "changes_detected": true,
       "links_rewritten": 1,
-      "seo_meta_updated": true,
+      "seo_meta_updated": false,
       "featured_image_set": true,
       "actions": [
         "Rewrote 1 legacy internal links to clean URLs",
-        "Injected Rank Math Focus KW: 'অনার্স ২য় বর্ষ পরীক্ষার রুটিন' and Meta Description",
         "Found hero image: nu_honours_2nd_year_routine_2026.webp",
-        "[DRY-RUN] Will upload/bind hero image as featured_media"
+        "Bound media ID 15022 as featured_media"
       ],
-      "applied": false,
-      "status": "PREVIEW (DRY-RUN)"
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 286,
+      "title": "ভূরাজনীতি কাকে বলে? সংজ্ঞা, উপাদান, প্রকৃতি, রাজনৈ",
+      "slug": "geopolitics-definition-elements-nature",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: geopolitics-bangladesh-political-science-notes.webp",
+        "Bound media ID 15024 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 287,
+      "title": "পাবলিক বিশ্ববিদ্যালয় ভর্তি যোগ্যতা ২০২৬: বিজ্ঞান,",
+      "slug": "public-university-admission-eligibility",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: public_university_admission_guide_2026.webp",
+        "Bound media ID 15026 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 8,
+      "title": "এসএসসি ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল প্রশ্",
+      "slug": "ssc-bangla-1st-paper-poetry-cq-question",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_poetry_cq_bank_2027.webp",
+        "Bound media ID 15028 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 288,
+      "title": "এসএসসি ও দাখিল বাংলা ১ম পত্র গদ্যাংশ সৃজনশীল প্রশ্",
+      "slug": "ssc-bangla-1st-paper-prose-cq-question",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_prose_cq_bank_2027.webp",
+        "Bound media ID 15030 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 10,
+      "title": "এসএসসি বাংলা ১ম পত্র কবিতাংশ বহুনির্বাচনি প্রশ্নব্",
+      "slug": "ssc-bangla-1st-paper-poetry-mcq",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_poetry_mcq_bank_2027.webp",
+        "Bound media ID 15032 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 289,
+      "title": "এসএসসি বাংলা ১ম পত্র গদ্যাংশ বহুনির্বাচনি প্রশ্নব্",
+      "slug": "ssc-bangla-1st-paper-prose-mcq-question",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_prose_mcq_bank_2027.webp",
+        "Bound media ID 15034 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 290,
+      "title": "SSC বাংলা ১ম পত্র ১০০ নম্বরের পূর্ণাঙ্গ মডেল টেস্ট",
+      "slug": "ssc-bangla-1st-paper-model-test",
+      "changes_detected": true,
+      "links_rewritten": 10,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 10 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_model_test_2027.webp",
+        "Bound media ID 15036 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 13,
+      "title": "SSC বাংলা ১ম পত্র সংক্ষিপ্ত প্রশ্নব্যাংক ২০২৬-২০২৭",
+      "slug": "ssc-bangla-1st-paper-short-question",
+      "changes_detected": true,
+      "links_rewritten": 8,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 8 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_saq_bank_2027.webp",
+        "Bound media ID 15038 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 14,
+      "title": "SSC বাংলা ১ম পত্র কবিতাংশ পর্ব-২ সৃজনশীল প্রশ্ন ও ",
+      "slug": "ssc-bangla-1st-paper-poetry-cq-part-2",
+      "changes_detected": true,
+      "links_rewritten": 9,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 9 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_poetry_part2_2027.webp",
+        "Bound media ID 15040 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 15,
+      "title": "SSC বাংলা ১ম পত্র কবিতাংশ পর্ব-১ সৃজনশীল প্রশ্ন ও ",
+      "slug": "ssc-bangla-1st-paper-poetry-cq-part-1",
+      "changes_detected": true,
+      "links_rewritten": 6,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 6 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_poetry_part1_2027.webp",
+        "Bound media ID 15042 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 16,
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-৩ সৃজনশীল প্রশ্ন ও ",
+      "slug": "ssc-bangla-1st-paper-prose-cq-part-3",
+      "changes_detected": true,
+      "links_rewritten": 7,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 7 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_prose_part3_2027.webp",
+        "Bound media ID 15044 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 17,
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-২ সৃজনশীল প্রশ্ন ও ",
+      "slug": "ssc-bangla-1st-paper-prose-cq-part-2",
+      "changes_detected": true,
+      "links_rewritten": 9,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 9 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_prose_part2_2027.webp",
+        "Bound media ID 15046 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 18,
+      "title": "SSC ও দাখিল বাংলা ১ম পত্র ৩০ নম্বরের বহুনির্বাচনি ",
+      "slug": "ssc-bangla-1st-paper-mcq-saq-question",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_mcq_saq_2027.webp",
+        "Bound media ID 15048 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 19,
+      "title": "SSC ও দাখিল বাংলা ১ম পত্র কবিতাংশ সৃজনশীল ও ভাবার্",
+      "slug": "ssc-bangla-1st-paper-poetry-cq",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_poetry_cq_2027.webp",
+        "Bound media ID 15050 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 20,
+      "title": "আমাদের নতুন গৌরবগাথা সৃজনশীল প্রশ্ন ও উত্তর ২০২৬-২",
+      "slug": "amader-notun-gourabbatha-cq-mcq",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: amader_notun_gourabbatha_cq_mcq_2027.webp",
+        "Bound media ID 15052 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 21,
+      "title": "SSC বাংলা ১ম পত্র গদ্যাংশ পর্ব-১ সৃজনশীল প্রশ্ন ও ",
+      "slug": "ssc-bangla-1st-paper-prose-cq",
+      "changes_detected": true,
+      "links_rewritten": 8,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 8 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_prose_cq_2027.webp",
+        "Bound media ID 15054 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 22,
+      "title": "SSC &#038; Dakhil Bangla 1st Paper Final Suggestio",
+      "slug": "ssc-bangla-1st-paper-final-suggestion",
+      "changes_detected": true,
+      "links_rewritten": 16,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 16 legacy internal links to clean URLs",
+        "Found hero image: ssc_bangla_1st_paper_final_suggestion_2027.webp",
+        "Bound media ID 15056 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 23,
+      "title": "যুক্তরাষ্ট্রীয় সরকারের বৈশিষ্ট্য ও কার্যাবলী: সংজ",
+      "slug": "federal-government-features-and",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: federal-government-features-hero.webp",
+        "Bound media ID 15058 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 24,
+      "title": "SSC English 2nd Paper Final Suggestion 2026-2027 w",
+      "slug": "ssc-english-2nd-paper-final-suggestion",
+      "changes_detected": true,
+      "links_rewritten": 9,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 9 legacy internal links to clean URLs",
+        "Found hero image: ssc-english-2nd-paper-final-suggestion-2026.webp",
+        "Bound media ID 15060 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 25,
+      "title": "SSC English 2nd Paper Model Test &#038; Board Ques",
+      "slug": "ssc-english-2nd-paper-model-test-and",
+      "changes_detected": true,
+      "links_rewritten": 6,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 6 legacy internal links to clean URLs",
+        "Found hero image: ssc-english-2nd-paper-model-test-and-board-question-with-answers.webp",
+        "Bound media ID 15062 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 26,
+      "title": "SSC English 2nd Paper Writing Part Final Suggestio",
+      "slug": "ssc-english-2nd-paper-writing-part",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc-english-2nd-paper-writing-part-final-suggestion.webp",
+        "Bound media ID 15064 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 27,
+      "title": "SSC Sentence Connectors &#038; Punctuation Suggest",
+      "slug": "ssc-english-2nd-paper-connectors-and",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc-english-2nd-paper-connectors-and-punctuation-suggestions.webp",
+        "Bound media ID 15066 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 28,
+      "title": "SSC English 2nd Paper Preposition &#038; Gap Filli",
+      "slug": "ssc-english-2nd-paper-preposition-and",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc-english-2nd-paper-preposition-and-gap-filling-suggestions.webp",
+        "Bound media ID 15068 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 29,
+      "title": "SSC Suffix and Prefix Rules &#038; Board Questions",
+      "slug": "ssc-suffix-and-prefix-rules-and-board",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc-suffix-and-prefix-rules-and-board-questions-with-answers.webp",
+        "Bound media ID 15070 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 30,
+      "title": "SSC Tag Questions Rules &#038; Board Questions wit",
+      "slug": "ssc-tag-questions-rules-and-board",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: ssc-tag-questions-rules-and-board-questions-with-answers.webp",
+        "Bound media ID 15072 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 31,
+      "title": "SSC Changing Sentences Rules &#038; Board Question",
+      "slug": "ssc-changing-sentences-rules-and-board",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: ssc-changing-sentences-rules-and-board-questions-with-answers.webp",
+        "Bound media ID 15074 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 32,
+      "title": "SSC English 2nd Paper Right Form of Verbs Suggesti",
+      "slug": "ssc-english-2nd-paper-right-form-of",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: ssc-english-2nd-paper-right-form-of-verbs-suggestions-with-answer.webp",
+        "Bound media ID 15076 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 33,
+      "title": "SSC 2nd Paper Substitution Table Suggestion with A",
+      "slug": "ssc-substitution-table-with-answers",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: ssc-substitution-table-with-answers-board-questions.webp",
+        "Bound media ID 15078 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 34,
+      "title": "SSC English 1st Paper Exclusive Model Test 2026-20",
+      "slug": "ssc-english-1st-paper-model-test-with",
+      "changes_detected": true,
+      "links_rewritten": 1,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 1 legacy internal links to clean URLs",
+        "Found hero image: ssc-english-1st-paper-model-test-with-answers.webp",
+        "Bound media ID 15080 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 35,
+      "title": "লেনিনের সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদে অবদান: সং",
+      "slug": "lenin-theory-of-imperialism-marxism",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: lenin-theory-of-imperialism-marxism-contribution.webp",
+        "Bound media ID 15082 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 36,
+      "title": "সমালোচনাসহ লেনিনের পার্টিতত্ত্ব ব্যাখ্যা ও বিশ্লেষ",
+      "slug": "lenin-party-theory-analysis-criticism",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: lenin-party-theory-analysis-criticism.webp",
+        "Bound media ID 15084 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 37,
+      "title": "১৯১৭ সালের অক্টোবর সমাজতান্ত্রিক বিপ্লবের কারণ ও ফ",
+      "slug": "october-socialist-revolution-causes",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: october-socialist-revolution-causes-results.webp",
+        "Bound media ID 15086 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 38,
+      "title": "রাজনৈতিক আধুনিকীকরণ ও রাজনৈতিক উন্নয়নের মধ্যে পার্",
+      "slug": "political-modernization-vs-political",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: political-modernization-vs-development-banner.webp",
+        "Bound media ID 15088 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 39,
+      "title": "আধুনিকীকরণ কী ও আধুনিকীকরণের প্রধান বাহনসমূহ — মাস",
+      "slug": "meaning-and-agents-of-modernization",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: modernization-agents-media-banner.webp",
+        "Bound media ID 15090 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 40,
+      "title": "আধুনিক সমাজের বৈশিষ্ট্যসমূহ ও স্বরূপ — মাস্টার্স র",
+      "slug": "characteristics-of-modern-society",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: modern-society-characteristics-banner.webp",
+        "Bound media ID 15092 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 41,
+      "title": "SSC 2027 English Poems &#038; Stories Suggestion |",
+      "slug": "ssc-2027-english-poems-stories-question",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc_2027_silo_04_poems_stories.webp",
+        "Bound media ID 15094 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 42,
+      "title": "SSC 2027 English Matching &#038; Rearrange Suggest",
+      "slug": "ssc-2027-english-matching-rearrange",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc_2027_silo_03_matching_rearrange.webp",
+        "Bound media ID 15096 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 43,
+      "title": "SSC 2027 English Unseen Passage &#038; Summary Sug",
+      "slug": "ssc-2027-english-unseen-passage-summary",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc_2027_silo_02_unseen_summary.webp",
+        "Bound media ID 15098 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 44,
+      "title": "SSC 2027 English Completing Story &#038; Dialogue ",
+      "slug": "ssc-2027-english-completing-story",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc_2027_silo_05_story_dialogue.webp",
+        "Bound media ID 15100 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 45,
+      "title": "SSC 2027 English Seen Passage Suggestion | এসএসসি ",
+      "slug": "ssc-2027-english-seen-passage-suggestion",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: ssc_2027_silo_01_seen_passage.webp",
+        "Bound media ID 15102 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 46,
+      "title": "SSC English 1st Paper Suggestion 2027 | এসএসসি ২০২",
+      "slug": "ssc-english-1st-paper-suggestion-2027",
+      "changes_detected": true,
+      "links_rewritten": 7,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 7 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-5652005814898036993.webp",
+        "Bound media ID 15104 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 47,
+      "title": "সনাতন সমাজ ও আধুনিক সমাজের মধ্যে পার্থক্য — মাস্টা",
+      "slug": "traditional-vs-modern-society",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-1476323207884168710.webp",
+        "Bound media ID 15106 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 48,
+      "title": "পরিবর্তনশীল সমাজের বৈশিষ্ট্যসমূহ — মাস্টার্স রাষ্ট",
+      "slug": "transitional-society-characteristics",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3669862988203332709.webp",
+        "Bound media ID 15108 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 49,
+      "title": "তত্ত্বাবধায়ক সরকার ও অবাধ সুষ্ঠু নির্বাচনের পূর্ব",
+      "slug": "caretaker-government-free-fair-election",
+      "changes_detected": true,
+      "links_rewritten": 6,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 6 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-677338098229047855.webp",
+        "Bound media ID 15110 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 50,
+      "title": "ধর্মনিরপেক্ষতা বনাম ইসলামি মূল্যবোধ — স্বাধীন বাংল",
+      "slug": "secularism-vs-islamic-values-in",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-2764815544769069752.webp",
+        "Bound media ID 15112 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 51,
+      "title": "বাংলাদেশের জাতিসংঘ সদস্যপদ লাভের ইতিহাস ও বাধাসমূহ",
+      "slug": "bangladesh-un-membership-1972-obstacles",
+      "changes_detected": true,
+      "links_rewritten": 6,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 6 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-6404645292087443148.webp",
+        "Bound media ID 15114 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 52,
+      "title": "বাংলাদেশে রাজনৈতিক সহিংসতার কারণ ও প্রতিকার — মাস্",
+      "slug": "political-violence-in-bangladesh-causes",
+      "changes_detected": true,
+      "links_rewritten": 10,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 10 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-9116452035823080586.webp",
+        "Bound media ID 15116 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 53,
+      "title": "সরকারি প্রাথমিক শিক্ষক নিয়োগ ও চাকরির ভাইভা প্রস্",
+      "slug": "primary-teacher-job-viva-preparation",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: primary-teacher-viva-preparation-hero.webp",
+        "Bound media ID 15118 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 54,
+      "title": "বিসিএস প্রিলিমিনারি ২০০ নম্বরের বিষয়ভিত্তিক মানবণ",
+      "slug": "bcs-preliminary-marks-distribution_01436475916",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: bcs-preliminary-marks-distribution-hero.webp",
+        "Bound media ID 15120 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 55,
+      "title": "ক্লাউড কম্পিউটিং কি? প্রকারভেদ, বাস্তব সুবিধা ও শী",
+      "slug": "cloud-computing-types-benefits-guide",
+      "changes_detected": true,
+      "links_rewritten": 8,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 8 legacy internal links to clean URLs",
+        "Found hero image: cloud-computing-guide-banner.webp",
+        "Bound media ID 15122 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 56,
+      "title": "কম্পিউটার ভাইরাস ও সাইবার নিরাপত্তা: ম্যালওয়্যার থ",
+      "slug": "computer-virus-cyber-security-guide-2026",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: computer-virus-cyber-security-hero.webp",
+        "Bound media ID 15124 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 57,
+      "title": "সার্বভৌমত্ব কাকে বলে ও এর বৈশিষ্ট্যসমূহ: প্রকারভেদ",
+      "slug": "sarbobhoumotto-ki-songga-boishisto-o-prokarved",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-6772129085481882661.webp",
+        "Bound media ID 15126 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 58,
+      "title": "সার্বভৌমত্বের একত্ববাদ ও বহুবাদী মতবাদ: একটি তুলনা",
+      "slug": "sarbobhoumotter-ekottobad-o-bohubadi-motobad",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3900393712518509262.webp",
+        "Bound media ID 15128 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 59,
+      "title": "সরকার কি? রাষ্ট্র ও সরকারের সম্পর্ক এবং পার্থক্য: ",
+      "slug": "sorkar-ki-kake-bole-rastro-o-sorkarer-parthokko",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4644286417304066012.webp",
+        "Bound media ID 15130 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 60,
+      "title": "কল্যাণরাষ্ট্র কী? কল্যাণরাষ্ট্রের বৈশিষ্ট্য ও কার্",
+      "slug": "kollyan-rastro-ki-boishisto-o-karjaboli",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-8748426312331170418.webp",
+        "Bound media ID 15132 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 61,
+      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: বাস্তবতা, চ্যাল",
+      "slug": "jatiyo-songsode-narider-songrokhito-asoner-guruttox",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4176960177069689710.webp",
+        "Bound media ID 15134 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 62,
+      "title": "বাংলাদেশে শিল্প জাতীয়করণের ইতিহাস, পটভূমি, সমস্যা",
+      "slug": "bangladeshe-shilpo-jatiyokoron-shomossha",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-179336939989858201.webp",
+        "Bound media ID 15136 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 63,
+      "title": "রাষ্ট্র, সমাজ ও নারী: আন্দোলনের প্রেক্ষাপট, অধিকার",
+      "slug": "nari-andolon-ostitto-rokhar-lorai",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-8316268127112895155.webp",
+        "Bound media ID 15138 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 64,
+      "title": "শিশুর সামাজিকীকরণ প্রক্রিয়ায় খেলার সাথী ও বন্ধুদ",
+      "slug": "samajikikorone-khelar-sathir-bhumika",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-5020265416603423827.webp",
+        "Bound media ID 15140 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 65,
+      "title": "জনসংখ্যা পরিবর্তনের কারণ, প্রভাব ও প্রধান নিয়ামকসম",
+      "slug": "jonosonkha-poribortoner-prodhan-niyamok-somuho",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-2778070516508854236.webp",
+        "Bound media ID 15142 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 66,
+      "title": "পরিবেশ কাকে বলে? পরিবেশের উপাদান ও শ্রেণিবিভাগ সমূ",
+      "slug": "poribesh-kake-bole-upadan-o-srenibibhag",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-5551927583161982000.webp",
+        "Bound media ID 15144 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 67,
+      "title": "প্রতিবেশ কি? পরিবেশ ও প্রতিবেশের মধ্যে সম্পর্ক ও প",
+      "slug": "protibesh-ki-poribesh-o-protibesher-somporko",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-2112720902391557531.webp",
+        "Bound media ID 15146 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 68,
+      "title": "পরিবেশের উপর জনসংখ্যার নেতিবাচক প্রভাব: কারণ ও ফলা",
+      "slug": "jonosonkha-briddhi-poribesh-probhav",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-1937593761602997500.webp",
+        "Bound media ID 15148 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 69,
+      "title": "সংস্কৃতি কি? সংস্কৃতির বৈশিষ্ট্য ও বাংলাদেশের মানু",
+      "slug": "sonskriti-ki-boishisto-bangalider-jibonjatra",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-6907399415541442791.webp",
+        "Bound media ID 15150 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 70,
+      "title": "গ্রামীণ ও শহরের সংস্কৃতির পার্থক্য এবং বৈশিষ্ট্যসম",
+      "slug": "gramin-o-shohorer-songskritir-parthokko",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-2335597217874315854.webp",
+        "Bound media ID 15152 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 71,
+      "title": "রাজনৈতিক অর্থনীতি কাকে বলে? সংজ্ঞা, পরিধি ও তাত্ত্",
+      "slug": "what-is-political-economy-definition-concept",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-1429095227109508205.webp",
+        "Bound media ID 15154 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 72,
+      "title": "জাতীয় সংসদে নারীদের সংরক্ষিত আসন: সাংবিধানিক পটভূ",
+      "slug": "importance-of-reserved-seats-for-women-in-national-parliament",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3881771794171675240.webp",
+        "Bound media ID 15156 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 73,
+      "title": "নারী দশকের লক্ষ্য ও উদ্দেশ্য: বিশ্ব নারী দশকের পটভ",
+      "slug": "goals-and-objectives-of-womens-decade",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-8694781974023635952.webp",
+        "Bound media ID 15158 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 74,
+      "title": "পুরুষতন্ত্র কাকে বলে? সমাজতাত্ত্বিক সংজ্ঞা, উৎপত্ত",
+      "slug": "what-is-patriarchy-definition-characteristics-impact",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3995402116153520.webp",
+        "Bound media ID 15160 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 75,
+      "title": "রাজনীতিতে নারীর অংশগ্রহণ বলতে কী বোঝায়?",
+      "slug": "what-does-women-participation-in-politics-mean",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-5496176856660793475.webp",
+        "Bound media ID 15162 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 76,
+      "title": "নারীর ক্ষমতায়নে এনজিও-র ভূমিকা, গুরুত্ব ও বাস্তব ",
+      "slug": "role-of-ngos-in-womens-empowerment-benefits",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-8095492964121246778.webp",
+        "Bound media ID 15164 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 77,
+      "title": "নারী নির্যাতন কী? সংজ্ঞা, কারণ ও প্রভাব",
+      "slug": "what-is-violence-against-women-definition-impact",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-8548896560937787860.webp",
+        "Bound media ID 15166 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 78,
+      "title": "১৯০৯ সালের ভারত শাসন আইন: বৈশিষ্ট্য ও গুরুত্ব",
+      "slug": "morley-minto-reforms-1909-features-importance",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-6375521475702085898.webp",
+        "Bound media ID 15168 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 79,
+      "title": "সমাজ সংস্কারে রাজা রামমোহন রায়ের অবদান ও ভূমিকা",
+      "slug": "contribution-raja-rammohan-roy-social-reform",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-6725103459411539325.webp",
+        "Bound media ID 15170 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 80,
+      "title": "মহাত্মা গান্ধীর জনপ্রিয়তার কারণসমূহ ও রাজনৈতিক আদ",
+      "slug": "reasons-mahatma-gandhi-popularity-political-ideals",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-7152628717436788366.webp",
+        "Bound media ID 15172 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 81,
+      "title": "রাষ্ট্রচিন্তায় ইমাম গাজ্জালির অবদান ও রাজনৈতিক দর",
+      "slug": "imam-ghazali-contribution-political-thought",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-6485913933681271646.webp",
+        "Bound media ID 15174 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 82,
+      "title": "বাজেট কী? বাজেটের গুরুত্ব ও অর্থনীতিতে ভূমিকা",
+      "slug": "what-is-budget-importance-role-economy",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-5637188129664256169.webp",
+        "Bound media ID 15176 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 83,
+      "title": "১০০টি অর্থনীতির গুরত্বপূর্ণ সংক্ষিপ্ত প্রশ্নোত্তর",
+      "slug": "100-important-economics-short-questions-answers",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-5364340333482211270.webp",
+        "Bound media ID 15178 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 85,
+      "title": "বাংলাদেশে মুদ্রাস্ফীতি: কারণ, প্রকৃতি ও রোধের উপায",
+      "slug": "bangladesh-inflation-causes-nature-prevention",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4310755053029144710.webp",
+        "Bound media ID 15180 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 84,
+      "title": "রাষ্ট্রের সংজ্ঞা, উপাদান ও লক্ষ্য-উদ্দেশ্য: পূর্ণা",
+      "slug": "definition-of-state-elements-and-objectives",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3625794733415298944.webp",
+        "Bound media ID 15182 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 292,
+      "title": "বাংলাদেশের মৌলিক অর্থনীতির বৈশিষ্ট্য, সমস্যা ও সমা",
+      "slug": "bangladesh-basic-economy-features-problems-solutions",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-7728495821186827206.webp",
+        "Bound media ID 15184 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 293,
+      "title": "রেমিট্যান্স কী? বাংলাদেশের অর্থনীতিতে রেমিট্যান্সে",
+      "slug": "what-is-remittance-importance-economy-obstacles",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-7294177477722199301.webp",
+        "Bound media ID 15186 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 88,
+      "title": "খিলাফত আন্দোলনের ব্যর্থতার কারণ ও ঐতিহাসিক পটভূমি",
+      "slug": "reasons-for-failure-of-khilafat-movement",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-9162417808022896401.webp",
+        "Bound media ID 15188 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 89,
+      "title": "সমাজ সংস্কার ও বাংলা সাহিত্যে ঈশ্বরচন্দ্র বিদ্যাসা",
+      "slug": "ishwar-chandra-vidyasagar-social-reform-contribution",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-5786345583005242847.webp",
+        "Bound media ID 15190 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 90,
+      "title": "সমাজকল্যাণ ও সংস্কারে শেরে বাংলা ফজলুল হকের অবদান",
+      "slug": "sher-e-bangla-fazlul-haque-social-welfare",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-5428379770712974341.webp",
+        "Bound media ID 15192 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 91,
+      "title": "ইসলামে ওয়াদা পালন: কুরআন ও হাদিসের আলোকে গুরুত্ব ও",
+      "slug": "importance-of-keeping-promises-in-islam-quran-hadith",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4889825247437182136.webp",
+        "Bound media ID 15194 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 92,
+      "title": "কালামে আ&#8217;লা হযরত: ছন্দের শৈল্পিকতায় আকীদা শি",
+      "slug": "kalame-ala-hazrat-aqeedah-poetry-full-analysis",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-216447211214226049.webp",
+        "Bound media ID 15196 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 93,
+      "title": "কুরআন মুখস্থকরণ ও সংরক্ষণের গুরুত্ব",
+      "slug": "quran-memorization-preservation-importance-full-guide",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-6727933641837466244.webp",
+        "Bound media ID 15198 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 94,
+      "title": "রাসূল (স.) এর প্রেমে সিদ্দিকে আকবরের কান্না ও আত্ম",
+      "slug": "rasul-saw-love-abu-bakr-siddiq-tears-sacrifice-story",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-2084271035652128691.webp",
+        "Bound media ID 15200 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 95,
+      "title": "তালেবে ইলমদের প্রতি মূল্যবান নসিহত: ইলম অর্জনের সঠ",
+      "slug": "valuable-advice-for-students-of-knowledge-talebe-ilm",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4230523516017109374.webp",
+        "Bound media ID 15202 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 96,
+      "title": "ইমামে আযম ও ইমাম বুখারী (র.): তাত্ত্বিক পর্যালোচনা",
+      "slug": "imame-azam-abu-hanifa-imam-bukhari-biography-comparison",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-7653374006775251126.webp",
+        "Bound media ID 15204 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 97,
+      "title": "জামেয়া নিয়ে পীরে বাঙ্গাল হুজুরের স্বপ্ন ও আমাদের ক",
+      "slug": "amea-ahmadiya-sunnia-peer-bangal-dream-teachers-responsibility",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-1128017279355916278.webp",
+        "Bound media ID 15206 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 98,
+      "title": "আহলে বাইতের ভালোবাসায় আল্লাহ ও রাসূলের সন্তুষ্টি ",
+      "slug": "ahle-bait-love-importance-quran-hadith",
+      "changes_detected": true,
+      "links_rewritten": 1,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 1 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-106245264473080060.webp",
+        "Bound media ID 15208 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 99,
+      "title": "ঐতিহ্যের আলোয় জামেয়া: ইতিহাস, শিক্ষা স্তর ও সাম্",
+      "slug": "jameya-ahmadiya-sunnia-history-education-achievements",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3027586624791812868.webp",
+        "Bound media ID 15210 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 100,
+      "title": "লেনিনের জীবনী, সাম্রাজ্যবাদ তত্ত্ব ও মার্কসবাদের স",
+      "slug": "vladimir-lenin-biography-theory-marxism-comparison",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-6126999372993436911.webp",
+        "Bound media ID 15212 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 101,
+      "title": "বাংলাদেশের জনসংখ্যা: পরিস্থিতি, বৈশিষ্ট্য ও নৃতাত্",
+      "slug": "bangladesh-population-situation-characteristics-complete",
+      "changes_detected": true,
+      "links_rewritten": 2,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 2 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-7098917704398168649.webp",
+        "Bound media ID 15214 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 102,
+      "title": "বাংলাদেশে কৃষি খাতে উন্নয়নে সরকারের পদক্ষেপ",
+      "slug": "government-steps-agriculture-development-bangladesh",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-8627593792684840586.webp",
+        "Bound media ID 15216 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 103,
+      "title": "বাংলাদেশ প্রাণিসম্পদ গবেষণা ইনস্টিটিউট (BLRI): কার",
+      "slug": "bangladesh-livestock-resources-research-institutes",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3163731179305221308.webp",
+        "Bound media ID 15218 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 104,
+      "title": "বাংলাদেশের বনজ সম্পদ ও তার প্রতিষ্ঠান",
+      "slug": "bangladesh-forest-resources",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-5470259319335110863.webp",
+        "Bound media ID 15220 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 105,
+      "title": "বাংলাদেশের কৃষি: গবেষণা প্রতিষ্ঠান, শস্যের জাত ও ক",
+      "slug": "bangladesh-agriculture-institutes-resources-complete",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-4954868321208138404.webp",
+        "Bound media ID 15222 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 106,
+      "title": "সরকার ও রাজনৈতিক দল: ধারণা, সম্পর্ক ও বাংলাদেশে গণ",
+      "slug": "government-political-parties-bangladesh-analysis",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-9216865562894997738.webp",
+        "Bound media ID 15224 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 107,
+      "title": "কম্পিউটারের প্রকারভেদ: অ্যানালগ, ডিজিটাল, হাইব্রিড",
+      "slug": "computer-types-classification-part4",
+      "changes_detected": true,
+      "links_rewritten": 9,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 9 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3465437051897928179.webp",
+        "Bound media ID 15226 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 108,
+      "title": "কম্পিউটারের প্রজন্ম: ১ম থেকে ৫ম প্রজন্মের প্রযুক্ত",
+      "slug": "computer-generations-features-part3",
+      "changes_detected": true,
+      "links_rewritten": 9,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 9 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-5955879897597266679.webp",
+        "Bound media ID 15228 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 109,
+      "title": "কম্পিউটারের ইতিহাস: এবাকাস থেকে ইন্টিগ্রেটেড সার্ক",
+      "slug": "computer-history-inventions-part2",
+      "changes_detected": true,
+      "links_rewritten": 9,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 9 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4287526406029588825.webp",
+        "Bound media ID 15230 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 110,
+      "title": "কম্পিউটার কাকে বলে? কম্পিউটারের সংজ্ঞা, ইতিহাস, বৈ",
+      "slug": "computer-definition-history",
+      "changes_detected": true,
+      "links_rewritten": 9,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 9 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-8780611538499445916.webp",
+        "Bound media ID 15232 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 111,
+      "title": "উন্নয়নশীল অর্থনীতিতে রাজনীতির দ্বিমুখী প্রভাব",
+      "slug": "politics-indeveloping-countries-controls-the-economy",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-369678654278004883.webp",
+        "Bound media ID 15234 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 112,
+      "title": "বাংলাদেশের অর্থনীতি: বাজেট, কর ব্যবস্থা ও ভবিষ্যৎ ",
+      "slug": "economy-of-bangladesh",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-7178089771275714732.webp",
+        "Bound media ID 15236 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 113,
+      "title": "টেকসই উন্নয়ন ও বাংলাদেশ: লক্ষ্যমাত্রা, চ্যালেঞ্জ ",
+      "slug": "sustainable-development-goals-bd",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-3166121977234663010.webp",
+        "Bound media ID 15238 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 114,
+      "title": "বাংলা বাগধারা ও অর্থ: বিসিএস ও চাকরির পরীক্ষার জন্",
+      "slug": "bangla-bagdhara-collection-with-meaning",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-2652437465190080886.webp",
+        "Bound media ID 15240 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 115,
+      "title": "বাংলাদেশের ইতিহাস: সংগ্রাম, মুক্তিযুদ্ধ ও বিজয়ের ",
+      "slug": "history-of-bangladesh",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-7881725556004621855.webp",
+        "Bound media ID 15242 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 116,
+      "title": "সাম্প্রতিক কালের রাষ্ট্রচিন্তা বলতে কী বুঝ: জাতীয়",
+      "slug": "what-is-meant-by-recent-nationalism",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-709822711957352889.webp",
+        "Bound media ID 15244 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 117,
+      "title": "রাষ্ট্রচিন্তা কাকে বলে? রাষ্ট্রচিন্তার সংজ্ঞা, উৎপ",
+      "slug": "what-is-statesmanship",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-2080353291294038390.webp",
+        "Bound media ID 15246 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 118,
+      "title": "রাষ্ট্রবিজ্ঞান মাস্টার্স সাজেশন্স: সাম্প্রতিক রাষ্",
+      "slug": "recent-political-thought-suggestion-2024",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-7170314718157313108.webp",
+        "Bound media ID 15248 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 119,
+      "title": "রাষ্ট্রবিজ্ঞান মাস্টার্স পরীক্ষা ২০২২: ক বিভাগের স",
+      "slug": "political-science-masters-exam-2022-all-short-questions-and-answers",
+      "changes_detected": true,
+      "links_rewritten": 1,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 1 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-96563581694548240.webp",
+        "Bound media ID 15250 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 120,
+      "title": "২০২৫ সালের আলিম পরীক্ষার রুটিন | Alim Exam Routine",
+      "slug": "alim-exam-routine-2025",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-2685355301637013898.webp",
+        "Bound media ID 15252 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 121,
+      "title": "এসএসসি পরীক্ষার্থীদের জন্য জরুরি নিয়মাবলি ও পরীক্ষ",
+      "slug": "important-instructions-for-ssc-candidates",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4196953979786018728.webp",
+        "Bound media ID 15254 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 122,
+      "title": "ঢাকা শিক্ষাবোর্ডে সার্টিফিকেট নাম ও বয়স সংশোধনের ",
+      "slug": "how-to-correction-certificate-name-2025",
+      "changes_detected": true,
+      "links_rewritten": 4,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 4 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-8675903395059439252.webp",
+        "Bound media ID 15256 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 123,
+      "title": "মিলাদ শরীফ এর ক্বাসিদা &#8211; ইয়া নবী সালাম আলাইক",
+      "slug": "ya-nabi-salaam-alaika-ya-rasul-salaam-alaika-lyrics",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-6354211911763303796.webp",
+        "Bound media ID 15258 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 124,
+      "title": "মিলাদ শরীফের ক্বাসিদা: মারহাবা ইয়া মারহাবা—তাৎপর্",
+      "slug": "marhaba-ya-marhaba-rahmatullah-alamin-e-marhaba-lyrics",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-4532298606185878708.webp",
+        "Bound media ID 15260 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 125,
+      "title": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লা হু: যিকিরের ম",
+      "slug": "allah-allah-allahu-la-ilaha-illa-hu-lyrics",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-2775432775420017039.webp",
+        "Bound media ID 15262 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 126,
+      "title": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দরূদ",
+      "slug": "allahumma-salli-ala-sayyidina-muhammad-lyrics",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-5357717748217683501.webp",
+        "Bound media ID 15264 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 127,
+      "title": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম: ঐতিহাসিক প্রেক্ষ",
+      "slug": "milad-sharif-salatun-ya-rasulallah-alaikum",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-7292197299976881558.webp",
+        "Bound media ID 15266 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 128,
+      "title": "সামাজিক পরিবর্তন ও রাজনৈতিক উন্নয়ন চূড়ান্ত সাজেশন:",
+      "slug": "masters-social-change-and-political-development-suggestions",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4705377665339185450.webp",
+        "Bound media ID 15268 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 129,
+      "title": "প্রাচ্যের রাষ্ট্রচিন্তা এর পাঠের গুরুত্ব, বৈশিষ্ট্",
+      "slug": "eastern-state-thought-its-importance-characteristics",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-8734268051717655794.webp",
+        "Bound media ID 15270 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 130,
+      "title": "রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের প",
+      "slug": "honours-political-science-book-list",
+      "changes_detected": true,
+      "links_rewritten": 5,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 5 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-4710432391315087780.webp",
+        "Bound media ID 15272 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 131,
+      "title": "নামতা ১ থেকে ২০ | Namta 1 to 20",
+      "slug": "namta-1-to-20",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-3305641112403867224.webp",
+        "Bound media ID 15274 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 132,
+      "title": "Hason Raja Was Born in 1854 | Class 6 English Seen",
+      "slug": "hason-raja-was-born-in-1854-class-six",
+      "changes_detected": true,
+      "links_rewritten": 0,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Found hero image: htbd-official-4269363058446270636.webp",
+        "Bound media ID 15276 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 133,
+      "title": "অলস ও ব্যাকবেঞ্চারদের জন্য চাকরি ও বিসিএস প্রস্তুত",
+      "slug": "simple-guide-to-job-and-bcs-preparation",
+      "changes_detected": true,
+      "links_rewritten": 8,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 8 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-1200879181592128005.webp",
+        "Bound media ID 15278 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 134,
+      "title": "আধুনিক রাষ্ট্রচিন্তা ২০১৯ সালের প্রশ্নের নির্ভুল উ",
+      "slug": "modern-political-thought-answer-sheet-2019-pdf",
+      "changes_detected": true,
+      "links_rewritten": 3,
+      "seo_meta_updated": false,
+      "featured_image_set": true,
+      "actions": [
+        "Rewrote 3 legacy internal links to clean URLs",
+        "Found hero image: htbd-official-2984334472304308439.webp",
+        "Bound media ID 15280 as featured_media"
+      ],
+      "applied": true,
+      "status": "SUCCESS"
     }
   ]
 }
