@@ -24,6 +24,7 @@ require_once get_template_directory() . '/inc/widgets.php';
 require_once get_template_directory() . '/inc/content-cleaner.php';
 require_once get_template_directory() . '/inc/redirect-engine.php';
 require_once get_template_directory() . '/inc/link-rewriter.php';
+require_once get_template_directory() . '/inc/auto-migrator.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
