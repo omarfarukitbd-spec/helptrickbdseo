@@ -54,6 +54,8 @@ HEADERS = {
     "Accept-Language": "bn-BD,bn;q=0.9,en-US;q=0.8,en;q=0.7"
 }
 
+DEFAULT_TIMEOUT = 15
+
 
 def clean_html_text(text):
     clean = re.sub(r'<[^>]+>', ' ', text)
@@ -71,7 +73,7 @@ def scrape_national_university_notices(limit=15):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=12) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\']([^"\']*uploads/notices/[^"\']+)["\'][^>]*>(.*?)</a>'
@@ -116,7 +118,7 @@ def scrape_dhaka_board_notices(limit=10):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         # Scan for PDFs and notice anchors
@@ -165,7 +167,7 @@ def scrape_bteb_notices(limit=8):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
@@ -201,7 +203,7 @@ def scrape_bmeb_notices(limit=8):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
@@ -238,7 +240,7 @@ def scrape_ntrca_notices(limit=6):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\'](/pages/notices/[^"\']+)["\'][^>]*>(.*?)</a>'
@@ -310,7 +312,7 @@ def scrape_du_7college_notices(limit=6):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
@@ -346,7 +348,7 @@ def scrape_dgme_medical_notices(limit=6):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
@@ -382,7 +384,7 @@ def scrape_du_admission_notices(limit=4):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=8) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'
@@ -418,7 +420,7 @@ def scrape_rajshahi_board_notices(limit=6):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\'](/pages/(?:notices|news)/[^"\']+)["\'][^>]*>(.*?)</a>'
@@ -598,7 +600,7 @@ def scrape_bou_open_university_notices(limit=6):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=10) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\']([^"\']*upload/notice/[^"\']+)["\'][^>]*>(.*?)</a>'
@@ -633,7 +635,7 @@ def scrape_bnmc_nursing_notices(limit=4):
     notices = []
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, context=SSL_CTX, timeout=8) as r:
+        with urllib.request.urlopen(req, context=SSL_CTX, timeout=DEFAULT_TIMEOUT) as r:
             html = r.read().decode("utf-8", errors="ignore")
 
         pattern = r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>'

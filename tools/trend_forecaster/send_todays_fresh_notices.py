@@ -94,14 +94,14 @@ def main():
     for idx, n in enumerate(todays_notices, 1):
         card_text, post_url, pdf_url = build_breaking_notice_card(n, idx)
         
-        # Build individual markup
+        # Build individual markup with active URL buttons
         keyboard = [
-            [
-                {"text": n["button_text"], "callback_data": n["callback"]}
-            ],
             [
                 {"text": "অফিসিয়াল PDF ডাউনলোড", "url": n["pdf_url"]},
                 {"text": "Blogger Admin Panel", "url": "https://www.blogger.com/blog/posts/8468755675548028711"}
+            ],
+            [
+                {"text": "HelpTrickBD সাইট", "url": "https://www.helptrickbd.com/"}
             ]
         ]
         markup = {"inline_keyboard": keyboard}

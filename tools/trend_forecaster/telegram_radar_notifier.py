@@ -29,6 +29,8 @@ import json
 import argparse
 import urllib.request
 import urllib.parse
+import html
+import time
 from datetime import datetime, timezone, timedelta
 
 try:
@@ -170,10 +172,19 @@ def load_all_known_posts():
                 if title and title not in seen_titles:
                     seen_titles.add(title)
                     slug = m.get("slug") or m.get("permalink", "")
+                    if slug:
+                        url = f"https://www.helptrickbd.com/{slug}/"
+                    else:
+                        pub_date_str = m.get("published", "") or m.get("date", "")
+                        if pub_date_str and len(pub_date_str) >= 7:
+                            date_path = pub_date_str[:7].replace("-", "/")
+                        else:
+                            date_path = datetime.now().strftime("%Y/%m")
+                        url = f"https://www.helptrickbd.com/{date_path}/{m.get('permalink', '')}.html"
                     posts.append({
                         "id": m.get("post_id", ""),
                         "title": title,
-                        "url": f"https://www.helptrickbd.com/{slug}/",
+                        "url": url,
                         "status": m.get("status", "DRAFT")
                     })
         except Exception:
@@ -233,8 +244,10 @@ def generate_instant_seo_package(notice_title, source):
     Auto-generates recommended title, English slug, labels, audience & search intent.
     """
     t = notice_title
-    now_year = "২০২৬"
-    next_year = "২০২৭"
+    current_year_num = datetime.now().year
+    bn_digits = str.maketrans("0123456789", "০১২৩৪৫৬৭৮৯")
+    now_year = str(current_year_num).translate(bn_digits)
+    next_year = str(current_year_num + 1).translate(bn_digits)
 
     if "অনার্স ২য় বর্ষ" in t or "অনার্স দ্বিতীয় বর্ষ" in t:
         return {
@@ -469,8 +482,9 @@ def build_breaking_notice_card(notice, idx):
     Incorporates all requested features, exact source links, and precise timestamps.
     Strictly Zero Emojis (Rule 12).
     """
-    title = notice["title"].replace("<", "&lt;").replace(">", "&gt;")
-    source = notice.get("source", "শিক্ষা বোর্ড")
+    raw_title = notice.get("title", "")
+    title = html.escape(raw_title, quote=False)
+    source = html.escape(notice.get("source", "শিক্ষা বোর্ড"), quote=False)
     pdf_url = notice.get("pdf_url") or ""
     portal_url = notice.get("portal_url") or ""
     link_url = notice.get("link") or ""
@@ -487,23 +501,29 @@ def build_breaking_notice_card(notice, idx):
     pub_date_str = pub_date_raw if pub_date_raw else "অফিসিয়াল নোটিশ অনুযায়ী"
 
     # 1. Site Coverage Status
-    cov = check_site_coverage(notice["title"])
+    cov = check_site_coverage(raw_title)
     if cov["status"] == "LIVE":
-        cov_badge = f"<b>সাইটে স্ট্যাটাস:</b> লাইভ পোস্ট বিদ্যমান\n  <a href=\"{cov['url']}\">[আমাদের পোস্ট দেখুন: {cov['title'][:45]}...]</a>\n  <i>(অ্যাকশন: পোস্টে নতুন রুটিনের ছবি ও তারিখ আপডেট করুন)</i>"
+        safe_cov_title = html.escape(cov['title'][:45], quote=False)
+        cov_badge = f"<b>সাইটে স্ট্যাটাস:</b> লাইভ পোস্ট বিদ্যমান\n  <a href=\"{cov['url']}\">[আমাদের পোস্ট দেখুন: {safe_cov_title}...]</a>\n  <i>(অ্যাকশন: পোস্টে নতুন রুটিনের ছবি ও তারিখ আপডেট করুন)</i>"
     elif cov["status"] == "DRAFT":
         cov_badge = f"<b>সাইটে স্ট্যাটাস:</b> ব্লগারে ড্রাফট রেডি রয়েছে\n  <a href=\"{cov['url']}\">[ড্রাফট লিঙ্ক]</a>\n  <i>(অ্যাকশন: অবিলম্বে রিভিউ করে লাইভ পাবলিশ করুন!)</i>"
     else:
         cov_badge = "<b>সাইটে স্ট্যাটাস:</b> রেড অ্যালার্ট — আমাদের সাইটে এখনো কোনো পোস্ট নেই!\n  <i>(অ্যাকশন: প্রতিযোগীদের আগে সবার প্রথম ট্রাফিক পেতে দ্রুত পোস্ট রেডি করুন!)</i>"
 
     # 2. Instant SEO Package
-    seo = generate_instant_seo_package(notice["title"], source)
+    seo = generate_instant_seo_package(raw_title, source)
+    proposed_title = html.escape(seo.get('proposed_title', ''), quote=False)
+    english_slug = html.escape(seo.get('english_slug', ''), quote=False)
+    labels = html.escape(seo.get('labels', ''), quote=False)
+    audience = html.escape(seo.get('audience', ''), quote=False)
+    intent = html.escape(seo.get('intent', ''), quote=False)
 
     # 3. Key Dates & Details
-    dates = extract_key_dates_and_details(notice["title"], exact_source_url)
-    dates_str = "\n  • ".join(dates) if dates else "অফিসিয়াল নোটিশে সুনির্দিষ্ট সময় উল্লেখ রয়েছে"
+    dates = extract_key_dates_and_details(raw_title, exact_source_url)
+    dates_str = "\n  • ".join(html.escape(d, quote=False) for d in dates) if dates else "অফিসিয়াল নোটিশে সুনির্দিষ্ট সময় উল্লেখ রয়েছে"
 
     # 4. Queries string
-    queries_str = "\n  • ".join(seo["top_queries"])
+    queries_str = "\n  • ".join(html.escape(q, quote=False) for q in seo.get("top_queries", []))
 
     lines = [
         f"<b>[ব্রেকিং নোটিশ #{idx}] {source}</b>",
@@ -519,15 +539,15 @@ def build_breaking_notice_card(notice, idx):
         f"<b>১. সাইট কভারেজ অডিট:</b>\n  {cov_badge}",
         "----------------------------------------",
         f"<b>২. রেডি-টু-ইউজ পোস্ট টাইটেল ও পারমালিঙ্ক:</b>",
-        f"  • <b>টাইটেল:</b> <code>{seo['proposed_title']}</code>",
-        f"  • <b>পারমালিঙ্ক:</b> <code>{seo['english_slug']}</code>",
-        f"  • <b>লেবেল:</b> <i>{seo['labels']}</i>",
+        f"  • <b>টাইটেল:</b> <code>{proposed_title}</code>",
+        f"  • <b>পারমালিঙ্ক:</b> <code>{english_slug}</code>",
+        f"  • <b>লেবেল:</b> <i>{labels}</i>",
         "----------------------------------------",
         f"<b>৩. এক্সট্রাক্টেড পরীক্ষার তথ্য ও সেশন:</b>\n  • {dates_str}",
         "----------------------------------------",
         f"<b>৪. টার্গেট পাঠক ও সার্চ ইনটেন্ট:</b>",
-        f"  • <b>টার্গেট শিক্ষার্থী:</b> {seo['audience']}",
-        f"  • <b>সার্চ ইনটেন্ট:</b> {seo['intent']}",
+        f"  • <b>টার্গেট শিক্ষার্থী:</b> {audience}",
+        f"  • <b>সার্চ ইনটেন্ট:</b> {intent}",
         f"  • <b>শীর্ষ ৩টি গুগল সার্চ কুয়েরি:</b>\n  • {queries_str}",
         "----------------------------------------",
         "<b>৫. প্রতিযোগী মনিটরিং স্ট্যাটাস:</b>",
@@ -665,22 +685,23 @@ def build_morning_seo_digest(all_notices, urgent_items, now):
     # TOP 3 SEO PRIORITIES
     lines.append("<b>[আজকের শীর্ষ ৩টি কনটেন্ট প্রায়োরিটি — গোল্ডেন উইন্ডো]</b>")
     for idx, item in enumerate(urgent_items[:3], 1):
-        name = item["exam_name"].replace("<", "&lt;").replace(">", "&gt;")
-        keywords = ", ".join(item["target_keywords"][:3]).replace("<", "&lt;").replace(">", "&gt;")
+        name = html.escape(item.get("exam_name", ""), quote=False)
+        keywords = ", ".join(html.escape(k, quote=False) for k in item.get("target_keywords", [])[:3])
         status_tag = "তাৎক্ষণিক সর্বোচ্চ ট্রাফিক" if idx == 1 else "উচ্চ সম্ভাবনা"
+        blueprint = html.escape(item.get("content_blueprint", ""), quote=False)
         lines.append(f"<b>অগ্রাধিকার {idx} ({status_tag}):</b>")
         lines.append(f"• <b>বিষয়:</b> {name}")
         lines.append(f"• <b>সম্ভাব্য সার্চ ভলিউম:</b> {item.get('search_volume', 'উচ্চ')}")
         lines.append(f"• <b>টার্গেট কি-ওয়ার্ড:</b> <i>{keywords}</i>")
-        lines.append(f"• <b>ব্লুপ্রিন্ট:</b> {item['content_blueprint']}")
+        lines.append(f"• <b>ব্লুপ্রিন্ট:</b> {blueprint}")
         lines.append("")
 
     lines.append("----------------------------------------")
     lines.append("<b>[চলতি সপ্তাহের সক্রিয় শীর্ষ ৫টি অফিসিয়াল নোটিশ ও PDF]</b>")
     official_sample = [n for n in all_notices if n.get("pdf_url") and not n.get("pdf_url").endswith("#")][:5]
     for idx, n in enumerate(official_sample, 1):
-        title = n["title"].replace("<", "&lt;").replace(">", "&gt;")
-        source = f"[{n.get('source', 'শিক্ষা বোর্ড')}]"
+        title = html.escape(n.get("title", ""), quote=False)
+        source = f"[{html.escape(n.get('source', 'শিক্ষা বোর্ড'), quote=False)}]"
         lines.append(f"{idx}. {source} {title}\n   <a href=\"{n['pdf_url']}\">[অফিসিয়াল PDF ডাউনলোড]</a>")
 
     lines.append("========================================")

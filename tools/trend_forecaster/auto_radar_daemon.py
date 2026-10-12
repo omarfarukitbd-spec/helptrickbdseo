@@ -63,14 +63,21 @@ def save_seen_notices(data):
 
 
 def make_notice_hash(notice):
-    raw = f"{notice['title']}_{notice.get('pub_date', '')}"
+    source = notice.get("source", "").strip()
+    title = notice.get("title", "").strip()
+    pdf_url = notice.get("pdf_url", "").strip()
+    pub_date = notice.get("pub_date", "").strip()
+    raw = f"{source}_{title}_{pdf_url}_{pub_date}"
     return hashlib.md5(raw.encode("utf-8")).hexdigest()
 
 
 def send_windows_toast_alert(title, message):
     """
-    Sends a native Windows Toast notification using PowerShell.
+    Sends a native Windows Toast notification using PowerShell (Windows only).
     """
+    if sys.platform != "win32":
+        return
+
     safe_title = title.replace('"', '`"').replace("'", "''")
     safe_msg = message.replace('"', '`"').replace("'", "''")
     
