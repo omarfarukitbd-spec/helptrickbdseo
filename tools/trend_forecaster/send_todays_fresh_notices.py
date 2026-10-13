@@ -98,7 +98,7 @@ def main():
         keyboard = [
             [
                 {"text": "অফিসিয়াল PDF ডাউনলোড", "url": n["pdf_url"]},
-                {"text": "Blogger Admin Panel", "url": "https://www.blogger.com/blog/posts/8468755675548028711"}
+                {"text": "WordPress ড্যাশবোর্ড", "url": "https://www.helptrickbd.com/wp-admin/edit.php"}
             ],
             [
                 {"text": "HelpTrickBD সাইট", "url": "https://www.helptrickbd.com/"}
