@@ -28,9 +28,9 @@ function ht_breadcrumbs() {
     }
 
     $sep = ht_m3_icon('arrow_forward', 14, 'ht-crumb-sep', false);
-    $home_title = 'হোম';
+    $home_title = esc_html__('Home', 'helptrickbd');
 
-    echo '<nav class="ht-breadcrumbs" aria-label="ব্রেডক্রাম্ব">';
+    echo '<nav class="ht-breadcrumbs" aria-label="' . esc_attr__('Breadcrumb navigation', 'helptrickbd') . '">';
     echo '<ol itemscope itemtype="https://schema.org/BreadcrumbList">';
 
     // Home item
@@ -87,11 +87,11 @@ function ht_breadcrumbs() {
 
     } elseif (is_search()) {
         echo '<li class="ht-crumb-sep-item">' . $sep . '</li>';
-        echo '<li class="ht-crumb-current" aria-current="page">অনুসন্ধান ফলাফল: "' . esc_html(get_search_query()) . '"</li>';
+        echo '<li class="ht-crumb-current" aria-current="page">' . esc_html__('Search Results: ', 'helptrickbd') . '"' . esc_html(get_search_query()) . '"</li>';
 
     } elseif (is_404()) {
         echo '<li class="ht-crumb-sep-item">' . $sep . '</li>';
-        echo '<li class="ht-crumb-current" aria-current="page">পেজটি পাওয়া যায়নি</li>';
+        echo '<li class="ht-crumb-current" aria-current="page">' . esc_html__('Page Not Found', 'helptrickbd') . '</li>';
     }
 
     echo '</ol>';

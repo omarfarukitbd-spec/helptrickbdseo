@@ -35,6 +35,7 @@
     window.addEventListener('scroll', updateReadingProgress, { passive: true });
 
     // -------------------------------------------------------------
+    // -------------------------------------------------------------
     // 2. Auto Table of Contents (সূচিপত্র) Generator
     // -------------------------------------------------------------
     const tocContainer = document.getElementById('ht-toc-container');
@@ -47,6 +48,21 @@
         if (headings.length < 2) {
             tocContainer.style.display = 'none';
         } else {
+            // Mobile Specific Behavior: Auto-collapse by default on mobile screens (< 768px)
+            const isMobile = window.innerWidth < 768;
+            if (isMobile) {
+                tocContainer.classList.add('ht-collapsed', 'ht-toc-mobile-mode');
+            }
+
+            // Append Chapter/Heading count badge for clear visibility
+            const titleWrap = tocContainer.querySelector('.ht-toc-title-wrap');
+            if (titleWrap && !titleWrap.querySelector('.ht-toc-count-badge')) {
+                const countBadge = document.createElement('span');
+                countBadge.className = 'ht-toc-count-badge';
+                countBadge.textContent = `${headings.length}টি অধ্যায়`;
+                titleWrap.appendChild(countBadge);
+            }
+
             const tocList = document.createElement('ol');
             tocList.className = 'ht-toc-list';
 
@@ -66,8 +82,13 @@
                     e.preventDefault();
                     const target = document.getElementById(id);
                     if (target) {
-                        const topOffset = target.getBoundingClientRect().top + window.pageYOffset - 90;
+                        const topOffset = target.getBoundingClientRect().top + window.pageYOffset - 85;
                         window.scrollTo({ top: topOffset, behavior: 'smooth' });
+
+                        // On mobile: auto-close TOC after tapping a section link so it doesn't block reading
+                        if (window.innerWidth < 768) {
+                            tocContainer.classList.add('ht-collapsed');
+                        }
                     }
                 });
 
@@ -98,6 +119,15 @@
                 });
             }
 
+            // Responsive window resize listener to maintain responsive behavior
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 768) {
+                    tocContainer.classList.remove('ht-toc-mobile-mode');
+                } else {
+                    tocContainer.classList.add('ht-toc-mobile-mode');
+                }
+            }, { passive: true });
+
             // Scrollspy: Highlight Active TOC Link
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -119,37 +149,54 @@
     }
 
     // -------------------------------------------------------------
-    // 3. Font Size Resizer
+    // 3. Dynamic Font Size Resizer (Fully Functional A-, A, A+)
     // -------------------------------------------------------------
     const fontDec = document.getElementById('ht-font-dec');
     const fontReset = document.getElementById('ht-font-reset');
     const fontInc = document.getElementById('ht-font-inc');
 
     function applyFontSize(size) {
-        document.body.classList.remove('ht-font-18', 'ht-font-20');
-        [fontDec, fontReset, fontInc].forEach(b => b && b.classList.remove('ht-active'));
+        document.body.classList.remove('ht-font-sm', 'ht-font-lg', 'ht-font-18', 'ht-font-20');
+        if (fontDec) fontDec.classList.remove('ht-active');
+        if (fontReset) fontReset.classList.remove('ht-active');
+        if (fontInc) fontInc.classList.remove('ht-active');
 
-        if (size === '18') {
-            document.body.classList.add('ht-font-18');
-            if (fontInc) fontInc.classList.add('ht-active');
-        } else if (size === '20') {
-            document.body.classList.add('ht-font-20');
+        if (size === 'sm') {
+            document.body.classList.add('ht-font-sm');
+            if (fontDec) fontDec.classList.add('ht-active');
+        } else if (size === 'lg') {
+            document.body.classList.add('ht-font-lg');
             if (fontInc) fontInc.classList.add('ht-active');
         } else {
+            // Default normal size
             if (fontReset) fontReset.classList.add('ht-active');
         }
         localStorage.setItem('ht_article_font_size', size);
     }
 
-    if (fontDec) fontDec.addEventListener('click', () => applyFontSize('default'));
-    if (fontReset) fontReset.addEventListener('click', () => applyFontSize('default'));
-    if (fontInc) fontInc.addEventListener('click', () => {
-        const current = localStorage.getItem('ht_article_font_size');
-        applyFontSize(current === '18' ? '20' : '18');
-    });
+    if (fontDec) {
+        fontDec.addEventListener('click', function (e) {
+            e.preventDefault();
+            applyFontSize('sm');
+        });
+    }
+    if (fontReset) {
+        fontReset.addEventListener('click', function (e) {
+            e.preventDefault();
+            applyFontSize('md');
+        });
+    }
+    if (fontInc) {
+        fontInc.addEventListener('click', function (e) {
+            e.preventDefault();
+            applyFontSize('lg');
+        });
+    }
 
     const savedFontSize = localStorage.getItem('ht_article_font_size');
-    if (savedFontSize) applyFontSize(savedFontSize);
+    if (savedFontSize) {
+        applyFontSize(savedFontSize);
+    }
 
     // -------------------------------------------------------------
     // 4. Focus Reading Mode Toggle
@@ -261,17 +308,70 @@
     });
 
     // -------------------------------------------------------------
-    // 8. 1-Click APA Citation Copy Tool
+    // 8. Advanced Multi-Standard Citation Switcher & 1-Click Copy
     // -------------------------------------------------------------
-    const apaBtn = document.getElementById('ht-copy-apa-btn');
-    const apaText = document.getElementById('ht-apa-text');
+    const citeModule = document.getElementById('ht-citation-module');
+    const citeDataEl = document.getElementById('ht-citation-data');
+    const citeTextEl = document.getElementById('ht-active-citation-text');
+    const citeCopyBtn = document.getElementById('ht-copy-citation-btn');
 
-    if (apaBtn && apaText) {
-        apaBtn.addEventListener('click', function () {
-            navigator.clipboard.writeText(apaText.textContent).then(() => {
-                if (window.htToast) window.htToast('APA সাইটেশন কপি করা হয়েছে');
+    if (citeModule && citeDataEl && citeTextEl) {
+        let citationData = {};
+        try {
+            citationData = JSON.parse(citeDataEl.textContent);
+        } catch (err) {
+            console.error('Failed to parse citation data', err);
+        }
+
+        const tabBtns = citeModule.querySelectorAll('.ht-cite-tab-btn');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const format = this.getAttribute('data-cite-format');
+                if (format && citationData[format]) {
+                    // Update Active Tab State
+                    tabBtns.forEach(b => {
+                        b.classList.remove('ht-cite-tab-active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    this.classList.add('ht-cite-tab-active');
+                    this.setAttribute('aria-selected', 'true');
+
+                    // Update Text Snippet
+                    citeTextEl.textContent = citationData[format];
+                }
             });
         });
+
+        if (citeCopyBtn) {
+            citeCopyBtn.addEventListener('click', function () {
+                const textToCopy = citeTextEl.textContent.trim();
+                if (!textToCopy) return;
+
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const labelEl = document.getElementById('ht-copy-citation-label');
+                    const readyIcon = citeCopyBtn.querySelector('.ht-copy-icon-ready');
+                    const doneIcon = citeCopyBtn.querySelector('.ht-copy-icon-done');
+
+                    citeCopyBtn.classList.add('ht-copied');
+                    if (labelEl) labelEl.textContent = 'Copied!';
+                    if (readyIcon) readyIcon.style.display = 'none';
+                    if (doneIcon) doneIcon.style.display = 'inline-flex';
+
+                    if (window.htToast) {
+                        window.htToast('Academic citation copied to clipboard!');
+                    }
+
+                    setTimeout(() => {
+                        citeCopyBtn.classList.remove('ht-copied');
+                        if (labelEl) labelEl.textContent = 'Copy Citation';
+                        if (readyIcon) readyIcon.style.display = 'inline-flex';
+                        if (doneIcon) doneIcon.style.display = 'none';
+                    }, 2500);
+                }).catch(err => {
+                    console.error('Copy failed', err);
+                });
+            });
+        }
     }
 
     // -------------------------------------------------------------
@@ -419,5 +519,85 @@
     const observer = new MutationObserver(() => normalizeContentColors());
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
+    // -------------------------------------------------------------
+    // 15. One-Click Social Share Copy Link Tool
+    // -------------------------------------------------------------
+    document.querySelectorAll('.ht-btn-copy-link').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const url = this.getAttribute('data-url') || window.location.href;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(() => {
+                    if (window.htToast) {
+                        window.htToast('Article link copied to clipboard!');
+                    }
+                }).catch(() => {
+                    prompt('Press Ctrl+C to copy link:', url);
+                });
+            } else {
+                prompt('Press Ctrl+C to copy link:', url);
+            }
+        });
+    });
+
+    // -------------------------------------------------------------
+    // 16. Interactive Post Helpful / Like Reaction Tool
+    // -------------------------------------------------------------
+    const reactionCard = document.getElementById('ht-reaction-card');
+    const likeBtn = document.getElementById('ht-btn-like');
+    const countVal = document.getElementById('ht-reaction-count-val');
+
+    if (reactionCard && likeBtn) {
+        const postId = reactionCard.getAttribute('data-id') || (window.htConfig ? window.htConfig.currentPostId : 0);
+        const storageKey = `ht_liked_post_${postId}`;
+
+        // Check if already liked in this browser
+        if (localStorage.getItem(storageKey) === 'true') {
+            likeBtn.classList.add('ht-liked');
+            likeBtn.setAttribute('title', 'You already liked this article');
+        }
+
+        likeBtn.addEventListener('click', function () {
+            if (localStorage.getItem(storageKey) === 'true') {
+                if (window.htToast) {
+                    window.htToast('You already reacted to this article!');
+                }
+                return;
+            }
+
+            if (!window.htConfig || !window.htConfig.ajaxUrl) return;
+
+            // Optimistic UI state
+            likeBtn.classList.add('ht-liked', 'ht-animating');
+            localStorage.setItem(storageKey, 'true');
+
+            const formData = new FormData();
+            formData.append('action', 'ht_like_post');
+            formData.append('nonce', window.htConfig.likeNonce);
+            formData.append('post_id', postId);
+
+            fetch(window.htConfig.ajaxUrl, {
+                method: 'POST',
+                body: formData,
+            })
+                .then(res => res.json())
+                .then(data => {
+                    likeBtn.classList.remove('ht-animating');
+                    if (data.success && data.data) {
+                        if (countVal && data.data.count) {
+                            countVal.textContent = data.data.count;
+                        }
+                        if (window.htToast) {
+                            window.htToast(data.data.message || 'Thank you for your feedback!');
+                        }
+                    }
+                })
+                .catch(() => {
+                    likeBtn.classList.remove('ht-animating');
+                });
+        });
+    }
+
 })();
+
 

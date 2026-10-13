@@ -35,7 +35,7 @@
     // -------------------------------------------------------------
     // 2. Dark / Light Mode Switcher
     // -------------------------------------------------------------
-    const themeToggle = document.getElementById('ht-theme-toggle');
+    const themeToggles = document.querySelectorAll('.ht-theme-toggle');
     const htmlEl = document.documentElement;
 
     function initTheme() {
@@ -49,14 +49,16 @@
         }
     }
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function () {
-            const current = htmlEl.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            htmlEl.setAttribute('data-theme', next);
-            localStorage.setItem('ht_theme', next);
-        });
+    function toggleThemeMode() {
+        const current = htmlEl.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        htmlEl.setAttribute('data-theme', next);
+        localStorage.setItem('ht_theme', next);
     }
+
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', toggleThemeMode);
+    });
 
     initTheme();
 
@@ -114,57 +116,230 @@
 
         const topVal = document.getElementById('ht-countdown-val');
         if (topVal) {
-            topVal.textContent = `${daysBn} দিন বাকি`;
+            topVal.textContent = `${days} Days Left`;
         }
 
         const sideVal = document.getElementById('ht-sidebar-days-val');
         if (sideVal) {
-            sideVal.textContent = daysBn;
+            sideVal.textContent = days;
         }
 
         const drawerVal = document.getElementById('ht-drawer-countdown-val');
         if (drawerVal) {
-            drawerVal.textContent = `${daysBn} দিন বাকি`;
+            drawerVal.textContent = `${days} Days Left`;
         }
     }
 
     initExamCountdown();
 
     // -------------------------------------------------------------
-    // 5. Mobile Drawer Navigation
+    // Accessibility: Keyboard Focus Trap Helper (WCAG 2.1 AA)
+    // -------------------------------------------------------------
+    function trapFocus(containerEl, closeCallback) {
+        if (!containerEl) return () => {};
+        const focusableSelectors = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+        const focusableEls = Array.from(containerEl.querySelectorAll(focusableSelectors));
+        if (focusableEls.length === 0) return () => {};
+        const firstEl = focusableEls[0];
+        const lastEl = focusableEls[focusableEls.length - 1];
+
+        function handleKeyDown(e) {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                if (closeCallback) closeCallback();
+                return;
+            }
+            if (e.key === 'Tab') {
+                if (e.shiftKey) { // Shift + Tab
+                    if (document.activeElement === firstEl) {
+                        e.preventDefault();
+                        lastEl.focus();
+                    }
+                } else { // Tab
+                    if (document.activeElement === lastEl) {
+                        e.preventDefault();
+                        firstEl.focus();
+                    }
+                }
+            }
+        }
+
+        containerEl.addEventListener('keydown', handleKeyDown);
+        firstEl.focus();
+
+        return function cleanup() {
+            containerEl.removeEventListener('keydown', handleKeyDown);
+        };
+    }
+
+    // -------------------------------------------------------------
+    // 5. Mobile Drawer Navigation with Focus Trap
     // -------------------------------------------------------------
     const menuToggle = document.getElementById('ht-menu-toggle');
     const drawer = document.getElementById('ht-mobile-drawer');
     const drawerOverlay = document.getElementById('ht-drawer-overlay');
     const drawerClose = document.getElementById('ht-drawer-close');
     const dockMenuBtn = document.getElementById('ht-dock-menu-btn');
+    let mobileTrapCleanup = null;
+    let lastMenuTrigger = null;
 
-    function openMobileDrawer() {
-        if (drawer) drawer.classList.add('ht-open');
+    function openMobileDrawer(e) {
+        if (e && typeof e.stopPropagation === 'function') {
+            e.stopPropagation();
+        }
+        lastMenuTrigger = e ? e.currentTarget : menuToggle;
+        if (drawer) {
+            drawer.classList.add('ht-open');
+            drawer.setAttribute('aria-hidden', 'false');
+        }
         if (drawerOverlay) drawerOverlay.classList.add('ht-open');
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('ht-drawer-open');
+        if (drawer) mobileTrapCleanup = trapFocus(drawer, closeMobileDrawer);
     }
 
     function closeMobileDrawer() {
-        if (drawer) drawer.classList.remove('ht-open');
+        if (drawer) {
+            drawer.classList.remove('ht-open');
+            drawer.setAttribute('aria-hidden', 'true');
+        }
         if (drawerOverlay) drawerOverlay.classList.remove('ht-open');
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('ht-drawer-open');
+        if (mobileTrapCleanup) {
+            mobileTrapCleanup();
+            mobileTrapCleanup = null;
+        }
+        if (lastMenuTrigger && typeof lastMenuTrigger.focus === 'function') {
+            lastMenuTrigger.focus();
+        }
     }
+
+    window.htCloseMobileDrawer = closeMobileDrawer;
 
     if (menuToggle) menuToggle.addEventListener('click', openMobileDrawer);
     if (dockMenuBtn) dockMenuBtn.addEventListener('click', openMobileDrawer);
     if (drawerClose) drawerClose.addEventListener('click', closeMobileDrawer);
-    if (drawerOverlay) drawerOverlay.addEventListener('click', closeMobileDrawer);
+    
+    if (drawerOverlay) {
+        drawerOverlay.addEventListener('click', closeMobileDrawer);
+        drawerOverlay.addEventListener('pointerdown', closeMobileDrawer);
+    }
+
+    // Auto-close on click or tap anywhere outside the drawer on screen (capture phase)
+    function handleOutsideDrawerDismiss(e) {
+        if (drawer && drawer.classList.contains('ht-open')) {
+            const isClickInsideDrawer = drawer.contains(e.target);
+            const isClickOnToggle = (menuToggle && menuToggle.contains(e.target)) || (dockMenuBtn && dockMenuBtn.contains(e.target));
+            if (!isClickInsideDrawer && !isClickOnToggle) {
+                closeMobileDrawer();
+            }
+        }
+    }
+    document.addEventListener('click', handleOutsideDrawerDismiss, true);
+    document.addEventListener('pointerdown', handleOutsideDrawerDismiss, true);
+
+    // -------------------------------------------------------------
+    // 5b. Header Nav Interactive Arrows & Drag-to-Scroll Engine
+    // -------------------------------------------------------------
+    const siteNav = document.getElementById('site-navigation');
+    const navPrev = document.getElementById('ht-nav-prev');
+    const navNext = document.getElementById('ht-nav-next');
+
+    if (siteNav) {
+        function updateNavScrollButtons() {
+            const tolerance = 6;
+            const maxScroll = siteNav.scrollWidth - siteNav.clientWidth;
+            if (navPrev) {
+                navPrev.style.display = (siteNav.scrollLeft > tolerance) ? 'inline-flex' : 'none';
+            }
+            if (navNext) {
+                navNext.style.display = (siteNav.scrollLeft < maxScroll - tolerance && maxScroll > 0) ? 'inline-flex' : 'none';
+            }
+        }
+
+        if (navNext) {
+            navNext.addEventListener('click', function() {
+                siteNav.scrollBy({ left: 240, behavior: 'smooth' });
+            });
+        }
+
+        if (navPrev) {
+            navPrev.addEventListener('click', function() {
+                siteNav.scrollBy({ left: -240, behavior: 'smooth' });
+            });
+        }
+
+        siteNav.addEventListener('scroll', updateNavScrollButtons);
+        window.addEventListener('resize', updateNavScrollButtons);
+        setTimeout(updateNavScrollButtons, 350);
+
+        // Mouse Wheel Horizontal Scroll
+        siteNav.addEventListener('wheel', function(e) {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                siteNav.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+
+        // Mouse Drag to Scroll (Grab and Drag with threshold protection for link clicks)
+        let isDown = false;
+        let isDragging = false;
+        let startX = 0;
+        let scrollStart = 0;
+
+        siteNav.addEventListener('mousedown', function(e) {
+            isDown = true;
+            isDragging = false;
+            startX = e.pageX - siteNav.offsetLeft;
+            scrollStart = siteNav.scrollLeft;
+        });
+
+        window.addEventListener('mouseup', function() {
+            if (isDown) {
+                isDown = false;
+                siteNav.style.cursor = 'grab';
+                setTimeout(function() {
+                    isDragging = false;
+                }, 60);
+            }
+        });
+
+        siteNav.addEventListener('mousemove', function(e) {
+            if (!isDown) return;
+            const x = e.pageX - siteNav.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            // Only trigger drag scroll if mouse moved more than 6px
+            if (Math.abs(x - startX) > 6) {
+                isDragging = true;
+                e.preventDefault();
+                siteNav.style.cursor = 'grabbing';
+                siteNav.scrollLeft = scrollStart - walk;
+            }
+        });
+
+        // Suppress link click ONLY when user intentionally dragged the container
+        siteNav.addEventListener('click', function(e) {
+            if (isDragging) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+    }
 
     // -------------------------------------------------------------
     // 6. LocalStorage Bookmarks Drawer ("পড়ার তালিকা")
     // -------------------------------------------------------------
     const bmTrigger = document.getElementById('ht-bookmarks-trigger');
     const dockBmBtn = document.getElementById('ht-dock-bookmark-btn');
+    const drawerBmTrigger = document.getElementById('ht-drawer-bookmarks-trigger');
     const bmDrawer = document.getElementById('ht-bookmarks-drawer');
     const bmOverlay = document.getElementById('ht-bm-overlay');
     const bmClose = document.getElementById('ht-bm-close');
     const bmList = document.getElementById('ht-bookmarks-list');
     const bmBadge = document.getElementById('ht-bookmark-badge');
     const dockBmCount = document.getElementById('ht-dock-bm-count');
+    const drawerBmBadge = document.getElementById('ht-drawer-bookmark-badge');
     const clearBmBtn = document.getElementById('ht-clear-bookmarks');
 
     function getBookmarks() {
@@ -183,10 +358,10 @@
     function updateBookmarksUI() {
         const bms = getBookmarks();
         const count = bms.length;
-        const countBn = toBnNumber(count);
 
-        if (bmBadge) bmBadge.textContent = countBn;
-        if (dockBmCount) dockBmCount.textContent = countBn;
+        if (bmBadge) bmBadge.textContent = count;
+        if (dockBmCount) dockBmCount.textContent = count;
+        if (drawerBmBadge) drawerBmBadge.textContent = count;
 
         // Update card buttons
         document.querySelectorAll('.ht-bookmark-toggle').forEach(btn => {
@@ -205,8 +380,8 @@
                 bmList.innerHTML = `
                     <div class="ht-empty-bookmarks">
                         <svg class="ht-m3-icon ht-empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
-                        <p>আপনার পড়ার তালিকায় এখনো কোনো হ্যান্ডনোট নেই।</p>
-                        <span>যেকোনো পোস্টের বুকমার্ক আইকনে ক্লিক করে সংরক্ষণ করুন।</span>
+                        <p>Your reading list is currently empty.</p>
+                        <span>Click the bookmark icon on any post to save it for offline reading.</span>
                     </div>`;
             } else {
                 let html = '<div class="ht-bm-items-wrap">';
@@ -214,7 +389,7 @@
                     html += `
                         <div class="ht-bm-item">
                             <a href="${item.url}" class="ht-bm-title">${item.title}</a>
-                            <button class="ht-bm-remove" data-id="${item.id}" aria-label="মুছে ফেলুন">
+                            <button class="ht-bm-remove" data-id="${item.id}" aria-label="Remove from list">
                                 <svg class="ht-m3-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
                             </button>
                         </div>`;
@@ -228,7 +403,7 @@
                         const id = this.getAttribute('data-id');
                         const updated = getBookmarks().filter(i => i.id != id);
                         saveBookmarks(updated);
-                        window.htToast('পড়ার তালিকা থেকে মুছে ফেলা হয়েছে');
+                        window.htToast('Removed from reading list');
                     });
                 });
             }
@@ -241,11 +416,11 @@
         if (index > -1) {
             bms.splice(index, 1);
             saveBookmarks(bms);
-            window.htToast('পড়ার তালিকা থেকে অপসারিত হয়েছে');
+            window.htToast('Removed from reading list');
         } else {
             bms.unshift({ id, title, url });
             saveBookmarks(bms);
-            window.htToast('পড়ার তালিকায় সফলভাবে সংরক্ষিত হয়েছে');
+            window.htToast('Saved to reading list');
         }
     }
 
@@ -261,27 +436,51 @@
         }
     });
 
-    function openBookmarksDrawer() {
-        if (bmDrawer) bmDrawer.classList.add('ht-open');
+    let bmTrapCleanup = null;
+    let lastBmTrigger = null;
+
+    function openBookmarksDrawer(e) {
+        lastBmTrigger = e ? e.currentTarget : bmTrigger;
+        if (bmDrawer) {
+            bmDrawer.classList.add('ht-open');
+            bmDrawer.setAttribute('aria-hidden', 'false');
+        }
         if (bmOverlay) bmOverlay.classList.add('ht-open');
         updateBookmarksUI();
+        if (bmDrawer) bmTrapCleanup = trapFocus(bmDrawer, closeBookmarksDrawer);
     }
 
     function closeBookmarksDrawer() {
-        if (bmDrawer) bmDrawer.classList.remove('ht-open');
+        if (bmDrawer) {
+            bmDrawer.classList.remove('ht-open');
+            bmDrawer.setAttribute('aria-hidden', 'true');
+        }
         if (bmOverlay) bmOverlay.classList.remove('ht-open');
+        if (bmTrapCleanup) {
+            bmTrapCleanup();
+            bmTrapCleanup = null;
+        }
+        if (lastBmTrigger && typeof lastBmTrigger.focus === 'function') {
+            lastBmTrigger.focus();
+        }
     }
 
     if (bmTrigger) bmTrigger.addEventListener('click', openBookmarksDrawer);
     if (dockBmBtn) dockBmBtn.addEventListener('click', openBookmarksDrawer);
+    if (drawerBmTrigger) {
+        drawerBmTrigger.addEventListener('click', function (e) {
+            closeMobileDrawer();
+            openBookmarksDrawer(e);
+        });
+    }
     if (bmClose) bmClose.addEventListener('click', closeBookmarksDrawer);
     if (bmOverlay) bmOverlay.addEventListener('click', closeBookmarksDrawer);
 
     if (clearBmBtn) {
         clearBmBtn.addEventListener('click', function () {
-            if (confirm('আপনি কি পড়ার তালিকার সকল হ্যান্ডনোট মুছে ফেলতে চান?')) {
+            if (confirm('Are you sure you want to clear your reading list?')) {
                 saveBookmarks([]);
-                window.htToast('সকল বুকমার্ক মুছে ফেলা হয়েছে');
+                window.htToast('All bookmarks cleared');
             }
         });
     }
@@ -444,5 +643,116 @@
         });
     }
 
+    // -------------------------------------------------------------
+    // 10. Secure Client-Side Post View Tracking (Debounced, Bot Filtered)
+    // -------------------------------------------------------------
+    function trackSinglePostView() {
+        if (!window.htConfig || !window.htConfig.currentPostId || !window.htConfig.viewNonce) return;
+        const postId = window.htConfig.currentPostId;
+        if (!postId) return;
+
+        // Wait 2.5 seconds after real engagement before recording view
+        setTimeout(() => {
+            const formData = new URLSearchParams();
+            formData.append('action', 'ht_record_view');
+            formData.append('nonce', window.htConfig.viewNonce);
+            formData.append('post_id', postId);
+
+            fetch(window.htConfig.ajaxUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+                body: formData.toString()
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.success && data.data && data.data.status === 'incremented') {
+                    const viewsEl = document.querySelector('.ht-views');
+                    if (viewsEl && data.data.countBn) {
+                        const icon = viewsEl.querySelector('svg');
+                        const iconHtml = icon ? icon.outerHTML : '';
+                        viewsEl.innerHTML = `${iconHtml} ${data.data.countBn} বার পঠিত`;
+                    }
+                }
+            })
+            .catch(() => {});
+        }, 2500);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', trackSinglePostView);
+    } else {
+        trackSinglePostView();
+    }
+
+    // -------------------------------------------------------------
+    // 11. Dynamic Academic Notice Ticker Controller
+    // -------------------------------------------------------------
+    const tickerWrap = document.getElementById('ht-ticker-wrap');
+    const tickerItems = document.querySelectorAll('.ht-ticker-item');
+    const tickerPrev = document.getElementById('ht-ticker-prev');
+    const tickerNext = document.getElementById('ht-ticker-next');
+
+    if (tickerWrap && tickerItems.length > 1) {
+        let currentTickerIndex = 0;
+        let tickerInterval = null;
+
+        function showTickerItem(index) {
+            tickerItems.forEach((item, idx) => {
+                if (idx === index) {
+                    item.classList.add('ht-ticker-item-active');
+                } else {
+                    item.classList.remove('ht-ticker-item-active');
+                }
+            });
+            currentTickerIndex = index;
+        }
+
+        function nextTicker() {
+            const nextIdx = (currentTickerIndex + 1) % tickerItems.length;
+            showTickerItem(nextIdx);
+        }
+
+        function prevTicker() {
+            const prevIdx = (currentTickerIndex - 1 + tickerItems.length) % tickerItems.length;
+            showTickerItem(prevIdx);
+        }
+
+        function startTickerTimer() {
+            stopTickerTimer();
+            tickerInterval = setInterval(nextTicker, 4500);
+        }
+
+        function stopTickerTimer() {
+            if (tickerInterval) {
+                clearInterval(tickerInterval);
+                tickerInterval = null;
+            }
+        }
+
+        if (tickerNext) {
+            tickerNext.addEventListener('click', function (e) {
+                e.preventDefault();
+                nextTicker();
+                startTickerTimer();
+            });
+        }
+
+        if (tickerPrev) {
+            tickerPrev.addEventListener('click', function (e) {
+                e.preventDefault();
+                prevTicker();
+                startTickerTimer();
+            });
+        }
+
+        tickerWrap.addEventListener('mouseenter', stopTickerTimer);
+        tickerWrap.addEventListener('mouseleave', startTickerTimer);
+        tickerWrap.addEventListener('touchstart', stopTickerTimer, { passive: true });
+        tickerWrap.addEventListener('touchend', startTickerTimer, { passive: true });
+
+        startTickerTimer();
+    }
+
 })();
+
 

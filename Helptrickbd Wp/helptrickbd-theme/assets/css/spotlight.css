@@ -194,10 +194,15 @@
 .ht-drawer-overlay {
     position: fixed;
     inset: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     z-index: 10000;
     display: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .ht-drawer-overlay.ht-open {
@@ -311,72 +316,244 @@
     border-bottom: 1px solid var(--ht-surface-border);
 }
 
-.ht-drawer-countdown {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--ht-warning-light);
-    color: var(--ht-warning);
-    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
+/* Drawer Quick Action Tools Bar (Ctrl+K Search, Bookmarks, Dark/Light Mode) */
+.ht-drawer-tools-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    padding: 12px 16px !important;
+    background: var(--ht-surface) !important;
+    border-bottom: 1px solid var(--ht-surface-border) !important;
+    box-sizing: border-box !important;
 }
 
-.ht-mobile-drawer-body {
-    padding: 16px 20px;
-    flex: 1;
+.ht-drawer-search-btn {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: var(--ht-surface-hover) !important;
+    border: 1px solid var(--ht-surface-border) !important;
+    padding: 7px 12px !important;
+    border-radius: var(--ht-radius-full) !important;
+    color: var(--ht-text-secondary) !important;
+    font-size: 0.84rem !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: var(--ht-transition) !important;
 }
 
-.ht-drawer-section-title {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.ht-drawer-search-btn:hover {
+    border-color: var(--ht-primary);
+    color: var(--ht-primary);
+    background: var(--ht-surface);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+}
+
+.ht-drawer-search-btn .ht-search-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ht-drawer-search-btn .ht-search-kbd {
+    margin-left: auto;
+    font-size: 0.68rem;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: var(--ht-surface);
+    border: 1px solid var(--ht-surface-border);
     color: var(--ht-text-muted);
-    font-weight: 700;
-    margin-bottom: 12px;
+    font-family: var(--ht-font-en);
+    flex-shrink: 0;
 }
 
-.ht-mobile-menu-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+.ht-drawer-actions-right {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
 }
 
-.ht-mobile-menu-list a {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--ht-text-secondary);
-    display: block;
-    padding: 10px 12px;
-    border-radius: var(--ht-radius-sm);
-    transition: var(--ht-transition);
+.ht-drawer-action-btn {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: var(--ht-radius-full) !important;
+    background: var(--ht-surface-hover) !important;
+    border: 1px solid var(--ht-surface-border) !important;
+    color: var(--ht-text-main) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    cursor: pointer !important;
+    transition: var(--ht-transition) !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
 }
 
-.ht-mobile-menu-list a:hover {
+.ht-drawer-action-btn:hover {
+    border-color: var(--ht-primary);
     color: var(--ht-primary);
     background: var(--ht-primary-light);
 }
 
-.ht-drawer-footer {
-    padding: 16px 20px;
-    border-top: 1px solid var(--ht-surface-border);
-    background: var(--ht-surface-hover);
+.ht-drawer-action-btn .ht-badge-count {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 9px;
+    background: var(--ht-primary);
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: 2px solid var(--ht-surface);
 }
 
-.ht-drawer-social {
+.ht-mobile-drawer-body {
+    padding: 14px 16px;
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* Category section header in drawer */
+.ht-drawer-categories-wrap {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.ht-drawer-section-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid var(--ht-surface-border) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.ht-drawer-section-title {
+    display: inline-block !important;
+    font-size: 0.74rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    color: var(--ht-text-muted) !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.ht-drawer-cat-total {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.72rem !important;
+    color: var(--ht-text-muted) !important;
+    font-weight: 700 !important;
+    background: var(--ht-surface-hover) !important;
+    padding: 2px 8px !important;
+    border-radius: var(--ht-radius-full) !important;
+    border: 1px solid var(--ht-surface-border) !important;
+    line-height: 1.2 !important;
+    flex-shrink: 0 !important;
+}
+
+.ht-drawer-cat-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
 }
 
-.ht-btn-sm {
-    padding: 8px 12px;
-    font-size: 0.82rem;
+.ht-drawer-cat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
     border-radius: var(--ht-radius-sm);
+    color: var(--ht-text-secondary);
+    text-decoration: none;
+    font-size: 0.90rem;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid transparent;
+}
+
+.ht-drawer-cat-item:hover {
+    background: var(--cat-bg, var(--ht-surface-hover));
+    color: var(--cat-color, var(--ht-primary));
+    border-color: var(--cat-border, transparent);
+    transform: translateX(3px);
+}
+
+.ht-drawer-cat-icon {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 7px;
+    background: var(--cat-bg, rgba(37, 99, 235, 0.08));
+    color: var(--cat-color, var(--ht-primary));
+    margin-right: 10px;
+    flex-shrink: 0;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: inset 0 0 0 1px var(--cat-border, transparent);
+}
+
+.ht-drawer-cat-icon .ht-m3-icon {
+    display: block;
+}
+
+.ht-drawer-cat-item:hover .ht-drawer-cat-icon {
+    transform: scale(1.1);
+    background: var(--cat-color, var(--ht-primary));
+    color: #ffffff;
+}
+
+.ht-drawer-cat-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+}
+
+.ht-drawer-cat-badge {
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 9999px;
+    background: var(--ht-surface);
+    color: var(--ht-text-muted);
+    border: 1px solid var(--ht-surface-border);
+    transition: all 0.2s ease;
+    font-variant-numeric: tabular-nums;
+}
+
+.ht-drawer-cat-item:hover .ht-drawer-cat-badge {
+    background: var(--cat-bg, var(--ht-primary-light));
+    color: var(--cat-color, var(--ht-primary));
+    border-color: var(--cat-border, var(--ht-primary));
+}
+
+.ht-drawer-categories-wrap {
+    padding-bottom: 30px;
 }
 
 /* -------------------------------------------------------------

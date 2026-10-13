@@ -18,13 +18,13 @@ class HT_Popular_Posts_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'ht_popular_posts_widget',
-            'HelpTrickBD: জনপ্রিয় পোস্ট (Popular Posts)',
-            ['description' => 'র‍্যাংকড ১-৫ নম্বর ব্যাজ এবং থাম্বনেইল সহ সেরা জনপ্রিয় পোস্ট তালিকা']
+            esc_html__('HelpTrickBD: Popular Posts', 'helptrickbd'),
+            ['description' => esc_html__('Ranked 1-5 badge and round thumbnail popular posts list', 'helptrickbd')]
         );
     }
 
     public function widget($args, $instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : 'জনপ্রিয় পোস্ট ও হ্যান্ডনোট';
+        $title = !empty($instance['title']) ? $instance['title'] : esc_html__('Trending Handnotes', 'helptrickbd');
         $number = !empty($instance['number']) ? absint($instance['number']) : 5;
 
         echo $args['before_widget'];
@@ -100,15 +100,15 @@ class HT_Popular_Posts_Widget extends WP_Widget {
     }
 
     public function form($instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : 'জনপ্রিয় পোস্ট ও হ্যান্ডনোট';
+        $title = !empty($instance['title']) ? $instance['title'] : esc_html__('Trending Handnotes', 'helptrickbd');
         $number = !empty($instance['number']) ? absint($instance['number']) : 5;
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">শিরোনাম:</label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'helptrickbd'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('number')); ?>">পোস্ট সংখ্যা:</label>
+            <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php esc_html_e('Number of posts:', 'helptrickbd'); ?></label>
             <input class="tiny-text" id="<?php echo esc_attr($this->get_field_id('number')); ?>" name="<?php echo esc_attr($this->get_field_name('number')); ?>" type="number" step="1" min="1" max="10" value="<?php echo esc_attr($number); ?>" size="3">
         </p>
         <?php
@@ -130,19 +130,19 @@ class HT_Categories_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'ht_categories_widget',
-            'HelpTrickBD: আধুনিক বিষয়শ্রেণী (Category Cards)',
-            ['description' => 'আইকন এবং পোস্ট কাউন্ট সহ আধুনিক কার্ড গ্রিড ক্যাটাগরি তালিকা']
+            esc_html__('HelpTrickBD: Category Cards', 'helptrickbd'),
+            ['description' => esc_html__('Modern category cards grid with vector icons and post count badges', 'helptrickbd')]
         );
     }
 
     public function widget($args, $instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : 'সকল বিষয়শ্রেণী (ক্যাটাগরি)';
+        $title = !empty($instance['title']) ? $instance['title'] : esc_html__('Explore Categories', 'helptrickbd');
         $number = !empty($instance['number']) ? absint($instance['number']) : 10;
 
         echo $args['before_widget'];
 
         echo '<div class="ht-widget-header">';
-        ht_m3_icon('folder', 20, 'ht-widget-icon');
+        ht_m3_icon('category', 20, 'ht-widget-icon');
         echo '<h3 class="ht-widget-title">' . esc_html($title) . '</h3>';
         echo '</div>';
 
@@ -154,17 +154,28 @@ class HT_Categories_Widget extends WP_Widget {
         ]);
         ?>
         <div class="ht-cat-cards-grid">
-            <?php foreach ($categories as $category) : ?>
-                <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" class="ht-cat-card-box">
+            <?php foreach ($categories as $category) : 
+                $cat_icon = function_exists('ht_get_category_icon') ? ht_get_category_icon($category->slug, $category->name) : 'folder';
+                $palette  = function_exists('ht_get_category_palette') ? ht_get_category_palette($category->slug, $category->name) : ['color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'];
+            ?>
+                <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" 
+                   class="ht-cat-card-box" 
+                   title="<?php echo esc_attr($category->name); ?>"
+                   style="--cat-color: <?php echo esc_attr($palette['color']); ?>; --cat-bg: <?php echo esc_attr($palette['bg']); ?>; --cat-border: <?php echo esc_attr($palette['border']); ?>;">
                     <div class="ht-cat-card-left">
                         <span class="ht-cat-card-icon">
-                            <?php ht_m3_icon('school', 18); ?>
+                            <?php ht_m3_icon($cat_icon, 18); ?>
                         </span>
                         <span class="ht-cat-card-name"><?php echo esc_html($category->name); ?></span>
                     </div>
-                    <span class="ht-cat-card-badge">
-                        <?php echo esc_html(ht_bn_number($category->count)); ?>টি
-                    </span>
+                    <div class="ht-cat-card-right">
+                        <span class="ht-cat-stat-badge">
+                            <?php echo esc_html($category->count); ?>
+                        </span>
+                        <span class="ht-cat-arrow-icon" aria-hidden="true">
+                            <?php ht_m3_icon('chevron_right', 16); ?>
+                        </span>
+                    </div>
                 </a>
             <?php endforeach; ?>
         </div>
@@ -174,15 +185,15 @@ class HT_Categories_Widget extends WP_Widget {
     }
 
     public function form($instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : 'সকল বিষয়শ্রেণী (ক্যাটাগরি)';
+        $title = !empty($instance['title']) ? $instance['title'] : esc_html__('Explore Categories', 'helptrickbd');
         $number = !empty($instance['number']) ? absint($instance['number']) : 10;
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">শিরোনাম:</label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'helptrickbd'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('number')); ?>">ক্যাটাগরি সংখ্যা:</label>
+            <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php esc_html_e('Number of categories:', 'helptrickbd'); ?></label>
             <input class="tiny-text" id="<?php echo esc_attr($this->get_field_id('number')); ?>" name="<?php echo esc_attr($this->get_field_name('number')); ?>" type="number" step="1" min="1" max="20" value="<?php echo esc_attr($number); ?>" size="3">
         </p>
         <?php

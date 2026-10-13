@@ -8,6 +8,7 @@
 
     const triggerBtn = document.getElementById('ht-search-trigger');
     const dockSearchBtn = document.getElementById('ht-dock-search-btn');
+    const drawerSearchBtn = document.getElementById('ht-drawer-search-trigger');
     const modal = document.getElementById('ht-spotlight-modal');
     const overlay = document.getElementById('ht-spotlight-overlay');
     const closeBtn = document.getElementById('ht-spotlight-close');
@@ -44,6 +45,20 @@
 
     if (triggerBtn) triggerBtn.addEventListener('click', openSpotlight);
     if (dockSearchBtn) dockSearchBtn.addEventListener('click', openSpotlight);
+    if (drawerSearchBtn) {
+        drawerSearchBtn.addEventListener('click', function () {
+            if (typeof window.htCloseMobileDrawer === 'function') {
+                window.htCloseMobileDrawer();
+            } else {
+                const drawer = document.getElementById('ht-mobile-drawer');
+                if (drawer) drawer.classList.remove('ht-open');
+                const overlay = document.getElementById('ht-drawer-overlay');
+                if (overlay) overlay.classList.remove('ht-open');
+                document.body.classList.remove('ht-drawer-open');
+            }
+            openSpotlight();
+        });
+    }
     if (closeBtn) closeBtn.addEventListener('click', closeSpotlight);
     if (overlay) overlay.addEventListener('click', closeSpotlight);
 
@@ -140,9 +155,24 @@
         selectedIndex = -1;
     }
 
+    function decodeHtmlEntities(str) {
+        if (!str) return '';
+        const txt = document.createElement('textarea');
+        let current = str;
+        for (let i = 0; i < 2; i++) {
+            txt.innerHTML = current;
+            const decoded = txt.value;
+            if (decoded === current) break;
+            current = decoded;
+        }
+        return current;
+    }
+
     function escapeHtml(text) {
+        if (!text) return '';
+        const decoded = decodeHtmlEntities(text);
         const div = document.createElement('div');
-        div.textContent = text;
+        div.textContent = decoded;
         return div.innerHTML;
     }
 

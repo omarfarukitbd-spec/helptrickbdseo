@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
         <div class="ht-widget ht-widget-side-search">
             <div class="ht-widget-header">
                 <?php ht_m3_icon('search', 20, 'ht-widget-icon'); ?>
-                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_search_title', 'অনুসন্ধান করুন')); ?></h3>
+                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_search_title', 'Instant Search')); ?></h3>
             </div>
             <div class="ht-widget-body">
                 <div class="ht-side-search-box">
@@ -33,14 +33,14 @@ if (!defined('ABSPATH')) {
                                 type="search" 
                                 id="ht-side-search-input" 
                                 class="ht-side-search-field" 
-                                placeholder="<?php echo esc_attr(get_theme_mod('ht_sidebar_search_placeholder', 'হ্যান্ডনোট, সাজেশন বা বিষয় খুঁজুন...')); ?>" 
+                                placeholder="<?php echo esc_attr(get_theme_mod('ht_sidebar_search_placeholder', 'Search handnotes, suggestions, or guides...')); ?>" 
                                 value="<?php echo get_search_query(); ?>" 
                                 name="s" 
                                 autocomplete="off"
                                 spellcheck="false"
-                                aria-label="সাইডবার অনুসন্ধান"
+                                aria-label="<?php esc_attr_e('Sidebar Search', 'helptrickbd'); ?>"
                             >
-                            <button type="button" class="ht-side-search-clear" id="ht-side-search-clear" aria-label="মুছে ফেলুন" style="display:none;">
+                            <button type="button" class="ht-side-search-clear" id="ht-side-search-clear" aria-label="<?php esc_attr_e('Clear search', 'helptrickbd'); ?>" style="display:none;">
                                 <?php ht_m3_icon('clear', 16); ?>
                             </button>
                             <span class="ht-side-search-spinner" id="ht-side-search-spinner" aria-hidden="true" style="display:none;"></span>
@@ -58,13 +58,13 @@ if (!defined('ABSPATH')) {
         <div class="ht-widget ht-widget-countdown">
             <div class="ht-widget-header">
                 <?php ht_m3_icon('timer', 20, 'ht-widget-icon'); ?>
-                <h3 class="ht-widget-title">পরীক্ষার দিন গণনা</h3>
+                <h3 class="ht-widget-title"><?php esc_html_e('Exam Countdown', 'helptrickbd'); ?></h3>
             </div>
             <div class="ht-widget-body">
-                <span class="ht-side-countdown-label"><?php echo esc_html(get_theme_mod('ht_countdown_title', 'অনার্স ২য় বর্ষ পরীক্ষা')); ?></span>
+                <span class="ht-side-countdown-label"><?php echo esc_html(get_theme_mod('ht_countdown_title', 'Honours 2nd Year Exam')); ?></span>
                 <div class="ht-side-countdown-display" id="ht-sidebar-countdown-box">
                     <span class="ht-side-days" id="ht-sidebar-days-val">--</span>
-                    <span class="ht-side-unit">দিন বাকি</span>
+                    <span class="ht-side-unit"><?php esc_html_e('Days Left', 'helptrickbd'); ?></span>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@ if (!defined('ABSPATH')) {
         <div class="ht-widget ht-widget-popular">
             <div class="ht-widget-header">
                 <?php ht_m3_icon('trending_up', 20, 'ht-widget-icon'); ?>
-                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_popular_title', 'জনপ্রিয় পোস্ট ও হ্যান্ডনোট')); ?></h3>
+                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_popular_title', 'Trending Handnotes')); ?></h3>
             </div>
             <div class="ht-widget-body">
                 <?php
@@ -120,7 +120,7 @@ if (!defined('ABSPATH')) {
                                     <div class="ht-popular-thumb-circle">
                                         <?php ht_the_thumbnail(get_the_ID(), 'thumbnail', 'ht-popular-thumb-round'); ?>
                                     </div>
-                                    <span class="ht-popular-badge ht-rank-<?php echo esc_attr($rank); ?>" title="র‍্যাঙ্ক #<?php echo esc_attr($rank); ?>"><?php echo esc_html(ht_bn_number($rank)); ?></span>
+                                    <span class="ht-popular-badge ht-rank-<?php echo esc_attr($rank); ?>" title="<?php echo esc_attr('Rank #' . $rank); ?>"><?php echo esc_html($rank); ?></span>
                                 </a>
 
                                 <!-- Post Details -->
@@ -158,12 +158,12 @@ if (!defined('ABSPATH')) {
         <?php ht_render_ad('ht_ad_sticky_sidebar', 'ht-widget ht-sidebar-ad-slot', 280); ?>
     <?php endif; ?>
 
-    <!-- Widget 5: Contextual Categories with Web Icons & Far-Right Stats Badges (Position #5) -->
+    <!-- Widget 5: Contextual Categories with High-End Palette Badges & Micro-Animations (Position #5) -->
     <?php if (get_theme_mod('ht_sidebar_categories_enable', true)) : ?>
         <div class="ht-widget ht-widget-categories">
             <div class="ht-widget-header">
-                <?php ht_m3_icon('folder_open', 20, 'ht-widget-icon'); ?>
-                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_categories_title', 'সকল বিষয়শ্রেণী (ক্যাটাগরি)')); ?></h3>
+                <?php ht_m3_icon('category', 20, 'ht-widget-icon'); ?>
+                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_categories_title', 'Explore Categories')); ?></h3>
             </div>
             <div class="ht-widget-body">
                 <div class="ht-cat-cards-grid">
@@ -181,19 +181,27 @@ if (!defined('ABSPATH')) {
                     ]);
 
                     foreach ($categories as $category) :
-                        $cat_icon = ht_get_category_icon($category->slug, $category->name);
+                        $cat_icon = function_exists('ht_get_category_icon') ? ht_get_category_icon($category->slug, $category->name) : 'folder';
+                        $palette  = function_exists('ht_get_category_palette') ? ht_get_category_palette($category->slug, $category->name) : ['color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'];
                     ?>
-                        <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" class="ht-cat-card-box" title="<?php echo esc_attr($category->name); ?>">
+                        <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" 
+                           class="ht-cat-card-box" 
+                           title="<?php echo esc_attr($category->name); ?>"
+                           style="--cat-color: <?php echo esc_attr($palette['color']); ?>; --cat-bg: <?php echo esc_attr($palette['bg']); ?>; --cat-border: <?php echo esc_attr($palette['border']); ?>;">
                             <div class="ht-cat-card-left">
                                 <span class="ht-cat-card-icon">
                                     <?php ht_m3_icon($cat_icon, 18); ?>
                                 </span>
                                 <span class="ht-cat-card-name"><?php echo esc_html($category->name); ?></span>
                             </div>
-                            <!-- Statistics Badge Pinned Far Right -->
-                            <span class="ht-cat-stat-badge">
-                                <?php echo esc_html(ht_bn_number($category->count)); ?>টি
-                            </span>
+                            <div class="ht-cat-card-right">
+                                <span class="ht-cat-stat-badge">
+                                    <?php echo esc_html($category->count); ?>
+                                </span>
+                                <span class="ht-cat-arrow-icon" aria-hidden="true">
+                                    <?php ht_m3_icon('chevron_right', 16); ?>
+                                </span>
+                            </div>
                         </a>
                     <?php endforeach; ?>
                 </div>

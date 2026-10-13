@@ -1,12 +1,38 @@
 {
   "name": "Help Trick BD - শিক্ষা ও প্রযুক্তি পোর্টাল",
   "short_name": "HelpTrickBD",
-  "description": "জাতীয় বিশ্ববিদ্যালয়, এসএসসি/দাখিল, আইসিটি ও ক্যারিয়ার নির্দেশিকার উন্মুক্ত শিক্ষা পোর্টাল",
+  "description": "জাতীয় বিশ্ববিদ্যালয়, এসএসসি/দাখিল, আইসিটি ও ক্যারিয়ার নির্দেশিকার উন্মুক্ত শিক্ষা পোর্টাল",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#2563eb",
   "orientation": "portrait-primary",
+  "categories": [
+    "education",
+    "news",
+    "reference"
+  ],
+  "shortcuts": [
+    {
+      "name": "জাতীয় বিশ্ববিদ্যালয়",
+      "short_name": "অনার্স গাইড",
+      "description": "অনার্স ও ডিগ্রি পরীক্ষার রুটিন ও প্রমোশন নিয়মাবলী",
+      "url": "/category/national-university/"
+    },
+    {
+      "name": "এসএসসি ও দাখিল",
+      "short_name": "এসএসসি",
+      "description": "এসএসসি ও দাখিল পরীক্ষার সাজেশন ও প্রশ্ন সমাধান",
+      "url": "/category/ssc-dakhil/"
+    },
+    {
+      "name": "সিজিপিএ ক্যালকুলেটর",
+      "short_name": "CGPA Calc",
+      "description": "জাতীয় বিশ্ববিদ্যালয় গ্রেডিং ও সিজিপিএ ক্যালকুলেটর",
+      "url": "/nu-cgpa-calculator/"
+    }
+  ],
   "icons": [
     {
       "src": "/wp-content/themes/helptrickbd-theme/assets/images/icon-192.png",

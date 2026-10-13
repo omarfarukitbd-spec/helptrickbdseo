@@ -20,8 +20,8 @@ if (!defined('ABSPATH')) {
             <div class="ht-pre-footer">
                 <div class="ht-container ht-pre-footer-inner">
                     <div class="ht-pre-footer-text">
-                        <span class="ht-pre-footer-title"><?php echo esc_html(get_theme_mod('ht_pre_footer_title', 'পরীক্ষার রুটিন ও স্পেশাল সাজেশন সবার আগে পেতে চান?')); ?></span>
-                        <span class="ht-pre-footer-sub"><?php echo esc_html(get_theme_mod('ht_pre_footer_sub', 'আমাদের অফিসিয়াল হোয়াটসঅ্যাপ ও টেলিগ্রাম গ্রুপে যুক্ত হোন।')); ?></span>
+                        <span class="ht-pre-footer-title"><?php echo esc_html(get_theme_mod('ht_pre_footer_title', 'Want exam routines & special suggestions first?')); ?></span>
+                        <span class="ht-pre-footer-sub"><?php echo esc_html(get_theme_mod('ht_pre_footer_sub', 'Join our official WhatsApp and Telegram study groups.')); ?></span>
                     </div>
                     <div class="ht-pre-footer-btns">
                         <?php
@@ -30,11 +30,11 @@ if (!defined('ABSPATH')) {
                         ?>
                         <a href="<?php echo esc_url($wa_link); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
                             <?php ht_m3_icon('whatsapp', 18); ?>
-                            <span>WhatsApp গ্রুপ</span>
+                            <span>WhatsApp Group</span>
                         </a>
                         <a href="<?php echo esc_url($tg_link); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-telegram">
                             <?php ht_m3_icon('telegram', 18); ?>
-                            <span>Telegram চ্যানেল</span>
+                            <span>Telegram Channel</span>
                         </a>
                     </div>
                 </div>
@@ -51,48 +51,48 @@ if (!defined('ABSPATH')) {
                         <span class="ht-logo-text">HelpTrick<span class="ht-logo-accent">BD</span></span>
                     </a>
                     <p class="ht-footer-desc">
-                        <?php echo esc_html(get_theme_mod('ht_footer_desc', 'Help Trick BD বাংলাদেশের শিক্ষার্থীদের জন্য জাতীয় বিশ্ববিদ্যালয়, এসএসসি/দাখিল, বিসিএস প্রস্তুতি, রাষ্ট্রবিজ্ঞান অ্যাকাডেমিক হ্যান্ডনোট এবং আধুনিক তথ্যপ্রযুক্তি নির্দেশিকার একটি নির্ভরযোগ্য শিক্ষা পোর্টাল।')); ?>
+                        <?php echo esc_html(get_theme_mod('ht_footer_desc', 'HelpTrickBD is a trusted educational portal providing National University routines, SSC/Dakhil suggestions, BCS preparation, Political Science handnotes, and modern ICT guides for students.')); ?>
                     </p>
                     <div class="ht-footer-trust">
                         <?php ht_m3_icon('verified', 16, 'ht-icon-verified'); ?>
-                        <span><?php echo esc_html(get_theme_mod('ht_footer_trust_text', '১০০% প্রামাণ্য তথ্য ও শিক্ষক-পর্যালোচিত কন্টেন্ট')); ?></span>
+                        <span><?php echo esc_html(get_theme_mod('ht_footer_trust_text', '100% Authentic Information & Expert-Reviewed Content')); ?></span>
                     </div>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div class="ht-footer-col">
-                    <h4 class="ht-footer-title">গুরুত্বপূর্ণ বিষয়</h4>
+                    <h4 class="ht-footer-title"><?php esc_html_e('Important Topics', 'helptrickbd'); ?></h4>
                     <ul class="ht-footer-links">
-                        <li><a href="<?php echo esc_url(home_url('/category/national-university/')); ?>">জাতীয় বিশ্ববিদ্যালয়</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/education-guide/')); ?>">শিক্ষা ও রুটিন গাইড</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/ssc-dakhil/')); ?>">এসএসসি ও দাখিল সাজেশন</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/political-science/')); ?>">রাষ্ট্রবিজ্ঞান হ্যান্ডনোট</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/ict-technology/')); ?>">তথ্য ও যোগাযোগ প্রযুক্তি</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/job-preparation/')); ?>">চাকরি ও বিসিএস স্টাডি</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/national-university/')); ?>"><?php esc_html_e('National University', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/education-guide/')); ?>"><?php esc_html_e('Education & Routines', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/ssc-dakhil/')); ?>"><?php esc_html_e('SSC & Dakhil Suggestions', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/political-science/')); ?>"><?php esc_html_e('Political Science Notes', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/ict-technology/')); ?>"><?php esc_html_e('ICT & Technology', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/job-preparation/')); ?>"><?php esc_html_e('Job & BCS Study', 'helptrickbd'); ?></a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Exam Categories -->
                 <div class="ht-footer-col">
-                    <h4 class="ht-footer-title">রুটিন ও গাইডলাইন</h4>
+                    <h4 class="ht-footer-title"><?php esc_html_e('Routines & Guides', 'helptrickbd'); ?></h4>
                     <ul class="ht-footer-links">
-                        <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-routine-2026/')); ?>">অনার্স ২য় বর্ষ পরীক্ষার রুটিন</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-guide-and/')); ?>">অনার্স ৩য় বর্ষ প্রমোশনের নিয়মাবলী</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/alim-exam-routine-2025/')); ?>">আলিম পরীক্ষার রুটিন ও গাইড</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/dhaka-board-certificate-name-age-correction-guide-2026/')); ?>">সার্টিফিকেট নাম ও বয়স সংশোধন</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/islamic-article/')); ?>">ইসলামিক প্রবন্ধ ও ক্বাসিদা</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-routine-2026/')); ?>"><?php esc_html_e('Honours 2nd Year Routine', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-guide-and/')); ?>"><?php esc_html_e('Honours 3rd Year Promotion Rules', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/alim-exam-routine-2025/')); ?>"><?php esc_html_e('Alim Exam Routine & Guide', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/how-to-correction-certificate-name-2025/')); ?>"><?php esc_html_e('Certificate Correction Guide', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/islamic-article/')); ?>"><?php esc_html_e('Islamic Articles & Qasidah', 'helptrickbd'); ?></a></li>
                     </ul>
                 </div>
 
                 <!-- Column 4: Legal & Pages -->
                 <div class="ht-footer-col">
-                    <h4 class="ht-footer-title">আইনি ও সহায়তা</h4>
+                    <h4 class="ht-footer-title"><?php esc_html_e('Legal & Support', 'helptrickbd'); ?></h4>
                     <ul class="ht-footer-links">
-                        <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>">আমাদের সম্পর্কে</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>">যোগাযোগ</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">গোপনীয়তা নীতি (Privacy Policy)</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/terms-and-conditions/')); ?>">ব্যবহারের শর্তাবলী (Terms)</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>">দাবিত্যাগ (Disclaimer)</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>"><?php esc_html_e('About Us', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php esc_html_e('Contact Us', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('Privacy Policy', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/terms-conditions/')); ?>"><?php esc_html_e('Terms & Conditions', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>"><?php esc_html_e('Disclaimer', 'helptrickbd'); ?></a></li>
                     </ul>
                 </div>
 
@@ -109,11 +109,11 @@ if (!defined('ABSPATH')) {
                         echo esc_html($custom_copy);
                     else :
                     ?>
-                        &copy; <?php echo esc_html(ht_bn_number(date('Y'))); ?> <a href="<?php echo esc_url(home_url('/')); ?>">HelpTrickBD.com</a> — সর্বস্বত্ব সংরক্ষিত।
+                        &copy; <?php echo esc_html(date('Y')); ?> <a href="<?php echo esc_url(home_url('/')); ?>">HelpTrickBD.com</a> &mdash; <?php esc_html_e('All rights reserved.', 'helptrickbd'); ?>
                     <?php endif; ?>
                 </div>
                 <div class="ht-credit">
-                    <?php echo esc_html(get_theme_mod('ht_footer_credit', 'নির্মিত হয়েছে শিক্ষা ও উন্মুক্ত জ্ঞানের প্রসারে')); ?>
+                    <?php echo esc_html(get_theme_mod('ht_footer_credit', esc_html__('Built for educational excellence and open knowledge', 'helptrickbd'))); ?>
                 </div>
             </div>
         </div>
@@ -122,30 +122,30 @@ if (!defined('ABSPATH')) {
 
     <?php if (get_theme_mod('ht_mobile_dock_enable', true)) : ?>
         <!-- Mobile Bottom App Dock -->
-        <nav class="ht-mobile-dock" aria-label="মোবাইল নেভিগেশন বার">
+        <nav class="ht-mobile-dock" aria-label="<?php esc_attr_e('Mobile Navigation Dock', 'helptrickbd'); ?>">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="ht-dock-item <?php echo is_front_page() ? 'ht-active' : ''; ?>">
                 <?php ht_m3_icon('home', 22); ?>
-                <span>হোম</span>
+                <span><?php esc_html_e('Home', 'helptrickbd'); ?></span>
             </a>
-            <button class="ht-dock-item" id="ht-dock-menu-btn" aria-label="বিষয়শ্রেণী">
+            <button class="ht-dock-item" id="ht-dock-menu-btn" aria-label="<?php esc_attr_e('Categories', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('category', 22); ?>
-                <span>ক্যাটাগরি</span>
+                <span><?php esc_html_e('Categories', 'helptrickbd'); ?></span>
             </button>
-            <button class="ht-dock-item" id="ht-dock-bookmark-btn" aria-label="পড়ার তালিকা">
+            <button class="ht-dock-item" id="ht-dock-bookmark-btn" aria-label="<?php esc_attr_e('Reading List', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('bookmark', 22); ?>
-                <span class="ht-dock-badge" id="ht-dock-bm-count">০</span>
-                <span>তালিকা</span>
+                <span class="ht-dock-badge" id="ht-dock-bm-count">0</span>
+                <span><?php esc_html_e('Saved', 'helptrickbd'); ?></span>
             </button>
-            <button class="ht-dock-item" id="ht-dock-search-btn" aria-label="সার্চ">
+            <button class="ht-dock-item" id="ht-dock-search-btn" aria-label="<?php esc_attr_e('Search', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('search', 22); ?>
-                <span>অনুসন্ধান</span>
+                <span><?php esc_html_e('Search', 'helptrickbd'); ?></span>
             </button>
         </nav>
     <?php endif; ?>
 
     <?php if (get_theme_mod('ht_back_to_top_enable', true)) : ?>
         <!-- Circular Scroll-to-Top Progress Indicator -->
-        <button class="ht-scroll-top" id="ht-scroll-top" aria-label="উপরে যান" title="উপরে যান">
+        <button class="ht-scroll-top" id="ht-scroll-top" aria-label="<?php esc_attr_e('Scroll to top', 'helptrickbd'); ?>" title="<?php esc_attr_e('Scroll to top', 'helptrickbd'); ?>">
             <svg class="ht-progress-ring" width="48" height="48" viewBox="0 0 48 48">
                 <circle class="ht-progress-bg" cx="24" cy="24" r="20" fill="none" stroke-width="3"></circle>
                 <circle class="ht-progress-bar" id="ht-progress-circle" cx="24" cy="24" r="20" fill="none" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="125.66"></circle>
@@ -155,20 +155,20 @@ if (!defined('ABSPATH')) {
     <?php endif; ?>
 
     <!-- "Ctrl+K" Spotlight Instant Search Modal -->
-    <div class="ht-modal ht-spotlight-modal" id="ht-spotlight-modal" aria-hidden="true" role="dialog" aria-label="তাৎক্ষণিক সার্চ">
+    <div class="ht-modal ht-spotlight-modal" id="ht-spotlight-modal" aria-hidden="true" role="dialog" aria-label="<?php esc_attr_e('Instant Search', 'helptrickbd'); ?>">
         <div class="ht-spotlight-overlay" id="ht-spotlight-overlay"></div>
         <div class="ht-spotlight-dialog">
             <div class="ht-spotlight-header">
                 <?php ht_m3_icon('search', 22, 'ht-spotlight-icon'); ?>
-                <input type="search" id="ht-spotlight-input" class="ht-spotlight-input" placeholder="যেকোনো বিষয়, সাজেশন বা রুটিন খুঁজুন..." autocomplete="off" enterkeyhint="search">
-                <button class="ht-spotlight-close" id="ht-spotlight-close" aria-label="বন্ধ করুন">
+                <input type="search" id="ht-spotlight-input" class="ht-spotlight-input" placeholder="<?php esc_attr_e('Search handnotes, suggestions, or routines...', 'helptrickbd'); ?>" autocomplete="off" enterkeyhint="search">
+                <button class="ht-spotlight-close" id="ht-spotlight-close" aria-label="<?php esc_attr_e('Close search', 'helptrickbd'); ?>">
                     <kbd>ESC</kbd>
                 </button>
             </div>
             <div class="ht-spotlight-body" id="ht-spotlight-results">
                 <!-- Trending suggestions default state -->
                 <div class="ht-spotlight-trending">
-                    <span class="ht-spotlight-section-title">জনপ্রিয় অনুসন্ধান</span>
+                    <span class="ht-spotlight-section-title"><?php esc_html_e('Trending Searches', 'helptrickbd'); ?></span>
                     <div class="ht-trending-tags">
                         <button class="ht-trending-tag" data-query="অনার্স ২য় বর্ষ রুটিন">অনার্স ২য় বর্ষ রুটিন</button>
                         <button class="ht-trending-tag" data-query="এসএসসি বাংলা ১ম পত্র">এসএসসি বাংলা ১ম পত্র</button>
@@ -186,9 +186,9 @@ if (!defined('ABSPATH')) {
         <div class="ht-drawer-header">
             <div class="ht-drawer-title-wrap">
                 <?php ht_m3_icon('bookmark', 20); ?>
-                <span class="ht-drawer-title">আপনার পড়ার তালিকা</span>
+                <span class="ht-drawer-title"><?php esc_html_e('Your Reading List', 'helptrickbd'); ?></span>
             </div>
-            <button class="ht-drawer-close" id="ht-bm-close" aria-label="বন্ধ করুন">
+            <button class="ht-drawer-close" id="ht-bm-close" aria-label="<?php esc_attr_e('Close drawer', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('close', 20); ?>
             </button>
         </div>
@@ -196,12 +196,12 @@ if (!defined('ABSPATH')) {
             <!-- Dynamically populated from localStorage -->
             <div class="ht-empty-bookmarks">
                 <?php ht_m3_icon('bookmark', 48, 'ht-empty-icon'); ?>
-                <p>আপনার পড়ার তালিকায় এখনো কোনো হ্যান্ডনোট বা রুটিন যুক্ত করা হয়নি।</p>
-                <span>যেকোনো পোস্টের বুকমার্ক আইকনে ক্লিক করে এখানে সেভ রাখতে পারবেন।</span>
+                <p><?php esc_html_e('Your reading list is currently empty.', 'helptrickbd'); ?></p>
+                <span><?php esc_html_e('Click the bookmark icon on any post to save it for offline reading.', 'helptrickbd'); ?></span>
             </div>
         </div>
         <div class="ht-drawer-footer">
-            <button class="ht-btn ht-btn-sm ht-btn-outline" id="ht-clear-bookmarks">তালিকা খালি করুন</button>
+            <button class="ht-btn ht-btn-sm ht-btn-outline" id="ht-clear-bookmarks"><?php esc_html_e('Clear List', 'helptrickbd'); ?></button>
         </div>
     </aside>
     <div class="ht-drawer-overlay" id="ht-bm-overlay"></div>
@@ -211,11 +211,11 @@ if (!defined('ABSPATH')) {
         <div class="ht-modal ht-adblock-modal" id="ht-adblock-modal" aria-hidden="true">
             <div class="ht-adblock-dialog">
                 <?php ht_m3_icon('shield', 44, 'ht-adblock-icon'); ?>
-                <h3 class="ht-adblock-title">একটি বিনীত অনুরোধ</h3>
+                <h3 class="ht-adblock-title"><?php esc_html_e('A Polite Request', 'helptrickbd'); ?></h3>
                 <p class="ht-adblock-desc">
-                    HelpTrickBD একটি সম্পূর্ণ উন্মুক্ত ও বিনামূল্যে সেবা প্রদানকারী শিক্ষা পোর্টাল। আমাদের ওয়েবসাইটের কার্যক্রম পরিচালনা করার জন্য বিজ্ঞাপনের রাজস্ব অত্যন্ত প্রয়োজন। অনুগ্রহ করে আপনার এড-ব্লকারটি এই সাইটের জন্য বন্ধ (Whitelist) রাখুন।
+                    <?php esc_html_e('HelpTrickBD is a free educational portal. Our operations are supported by ethical advertisements. Please consider whitelisting our website in your AdBlocker.', 'helptrickbd'); ?>
                 </p>
-                <button class="ht-btn ht-btn-primary" id="ht-adblock-dismiss">বুঝেছি ও ধন্যবাদ</button>
+                <button class="ht-btn ht-btn-primary" id="ht-adblock-dismiss"><?php esc_html_e('Understood, Thank You', 'helptrickbd'); ?></button>
             </div>
         </div>
     <?php endif; ?>
@@ -225,11 +225,11 @@ if (!defined('ABSPATH')) {
         <div class="ht-cookie-inner">
             <div class="ht-cookie-text">
                 <?php ht_m3_icon('shield', 18, 'ht-cookie-icon'); ?>
-                <span>আমরা আপনার অভিজ্ঞতা উন্নত করতে এবং মানসম্মত বিজ্ঞাপন প্রদর্শনের জন্য কুকি ব্যবহার করি। সাইটটি ব্যবহারের মাধ্যমে আপনি আমাদের নীতিতে সম্মতি জানাচ্ছেন।</span>
+                <span><?php esc_html_e('We use cookies to improve your browsing experience and provide tailored educational content. By continuing to use this site, you agree to our policies.', 'helptrickbd'); ?></span>
             </div>
             <div class="ht-cookie-actions">
-                <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="ht-cookie-link">বিস্তারিত</a>
-                <button class="ht-btn ht-btn-sm ht-btn-primary" id="ht-cookie-accept">সম্মতি দিচ্ছি</button>
+                <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="ht-cookie-link"><?php esc_html_e('Learn More', 'helptrickbd'); ?></a>
+                <button class="ht-btn ht-btn-sm ht-btn-primary" id="ht-cookie-accept"><?php esc_html_e('Accept All', 'helptrickbd'); ?></button>
             </div>
         </div>
     </div>

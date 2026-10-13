@@ -25,6 +25,17 @@ function ht_blogger_301_redirect_engine() {
     if (!$parsed_path) {
         return;
     }
+    // Direct URL exact aliases (prevent 404s for legacy or mistyped paths)
+    $clean_path = trim($parsed_path, '/');
+    $direct_aliases = [
+        'terms-and-conditions'                                  => 'terms-conditions/',
+        'terms-of-service'                                     => 'terms-conditions/',
+        'dhaka-board-certificate-name-age-correction-guide-2026' => 'how-to-correction-certificate-name-2025/',
+    ];
+    if (isset($direct_aliases[$clean_path])) {
+        wp_redirect(home_url('/' . $direct_aliases[$clean_path]), 301);
+        exit;
+    }
 
     // 1. Check for legacy Blogger Post and Page URLs ending in .html
     if (preg_match('#/(?:p/|\d{4}/\d{2}/)?([^/]+)\.html$#i', $parsed_path, $matches)) {
@@ -64,6 +75,19 @@ function ht_blogger_301_redirect_engine() {
             $destination_url = get_permalink($found_posts[0]->ID);
             wp_redirect($destination_url, 301);
             exit;
+        }
+
+        // 3. Prefix matching for Blogger 39-character truncated slugs
+        if (strlen($clean_slug) >= 15) {
+            global $wpdb;
+            $prefix_id = $wpdb->get_var($wpdb->prepare(
+                "SELECT ID FROM {$wpdb->posts} WHERE post_name LIKE %s AND post_status = 'publish' AND post_type IN ('post', 'page') ORDER BY ID ASC LIMIT 1",
+                $wpdb->esc_like(substr($clean_slug, 0, 25)) . '%'
+            ));
+            if ($prefix_id) {
+                wp_redirect(get_permalink($prefix_id), 301);
+                exit;
+            }
         }
 
         // Direct home permalink fallback if slug matches standard format

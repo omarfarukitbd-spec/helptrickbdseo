@@ -2,6 +2,7 @@
 /**
  * WordPress Customizer Settings for HelpTrickBD Pro
  * Complete theme customizer suite: Header & Menu, Sidebar, Footer, Social, Study Tools & AdSense.
+ * Global Standard English configuration.
  *
  * @package HelpTrickBD_Pro
  */
@@ -16,20 +17,28 @@ if (!defined('ABSPATH')) {
  * @param WP_Customize_Manager $wp_customize Customizer manager.
  */
 function ht_customize_register($wp_customize) {
+    // Enable selective refresh postMessage for Core settings
+    if ($wp_customize->get_setting('blogname')) {
+        $wp_customize->get_setting('blogname')->transport = 'postMessage';
+    }
+    if ($wp_customize->get_setting('blogdescription')) {
+        $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
+    }
+
     // -------------------------------------------------------------
     // Main Panel: HelpTrickBD Pro Settings
     // -------------------------------------------------------------
     $wp_customize->add_panel('ht_main_panel', [
-        'title'       => 'HelpTrickBD Pro সেটিংস',
-        'description' => 'থিমের মেনুবার, সাইডবার, ফুটার, সোশ্যাল লিংক, স্টুডেন্ট টুলস ও এডসেন্স কাস্টমাইজেশন',
+        'title'       => esc_html__('HelpTrickBD Theme Settings', 'helptrickbd'),
+        'description' => esc_html__('Configure header navigation, sidebar modules, footer columns, study tools, social links, and Google AdSense slots.', 'helptrickbd'),
         'priority'    => 25,
     ]);
 
     // =============================================================
-    // Section 1: হেডার ও মেনুবার সেটিংস
+    // Section 1: Header & Navigation
     // =============================================================
     $wp_customize->add_section('ht_header_section', [
-        'title'    => 'হেডার ও মেনুবার সেটিংস',
+        'title'    => esc_html__('Header & Navigation', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
         'priority' => 10,
     ]);
@@ -40,18 +49,30 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_ticker_enable', [
-        'label'   => 'টপবার জরুরি বিজ্ঞপ্তি (Ticker) চালু রাখুন',
+        'label'   => esc_html__('Enable Topbar Breaking Notice Ticker', 'helptrickbd'),
         'section' => 'ht_header_section',
         'type'    => 'checkbox',
     ]);
 
-    // Ticker Text
-    $wp_customize->add_setting('ht_ticker_text', [
-        'default'           => 'জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ও পরীক্ষার গাইড ২০২৬ প্রকাশিত',
+    // Ticker Badge Label
+    $wp_customize->add_setting('ht_ticker_badge_label', [
+        'default'           => 'নোটিশ ও আপডেট',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
+    $wp_customize->add_control('ht_ticker_badge_label', [
+        'label'   => esc_html__('Notice Ticker Badge Label', 'helptrickbd'),
+        'section' => 'ht_header_section',
+        'type'    => 'text',
+    ]);
+
+    // Ticker Text
+    $wp_customize->add_setting('ht_ticker_text', [
+        'default'           => esc_html__('National University Honours 2nd Year Exam Routine & Guidelines 2026 Published', 'helptrickbd'),
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ]);
     $wp_customize->add_control('ht_ticker_text', [
-        'label'   => 'জরুরি বিজ্ঞপ্তির টেক্সট',
+        'label'   => esc_html__('Notice Ticker Text', 'helptrickbd'),
         'section' => 'ht_header_section',
         'type'    => 'text',
     ]);
@@ -62,7 +83,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control('ht_ticker_link', [
-        'label'   => 'বিজ্ঞপ্তির লিংক (ঐচ্ছিক)',
+        'label'   => esc_html__('Notice Target URL (Optional)', 'helptrickbd'),
         'section' => 'ht_header_section',
         'type'    => 'url',
     ]);
@@ -73,18 +94,19 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_countdown_enable', [
-        'label'   => 'হেডারে পরীক্ষার দিন গণনা (Countdown) প্রদর্শন করুন',
+        'label'   => esc_html__('Display Exam Countdown in Header', 'helptrickbd'),
         'section' => 'ht_header_section',
         'type'    => 'checkbox',
     ]);
 
     // Exam countdown title
     $wp_customize->add_setting('ht_countdown_title', [
-        'default'           => 'অনার্স ২য় বর্ষ পরীক্ষা ২০২৬',
+        'default'           => esc_html__('Honours 2nd Year Exam 2026', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
     ]);
     $wp_customize->add_control('ht_countdown_title', [
-        'label'   => 'আসন্ন পরীক্ষার নাম / শিরোনাম',
+        'label'   => esc_html__('Exam Countdown Label / Title', 'helptrickbd'),
         'section' => 'ht_header_section',
         'type'    => 'text',
     ]);
@@ -95,8 +117,8 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_countdown_date', [
-        'label'       => 'পরীক্ষার তারিখ (YYYY-MM-DD)',
-        'description' => 'ফরম্যাট: 2026-11-20',
+        'label'       => esc_html__('Target Exam Date (YYYY-MM-DD)', 'helptrickbd'),
+        'description' => esc_html__('Format: 2026-11-20', 'helptrickbd'),
         'section'     => 'ht_header_section',
         'type'        => 'date',
     ]);
@@ -107,7 +129,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_header_search_enable', [
-        'label'   => 'হেডারে লাইভ সার্চ বাটন (Ctrl+K) প্রদর্শন করুন',
+        'label'   => esc_html__('Show Instant Search Button (Ctrl+K) in Header', 'helptrickbd'),
         'section' => 'ht_header_section',
         'type'    => 'checkbox',
     ]);
@@ -118,7 +140,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_header_bookmarks_enable', [
-        'label'   => 'হেডারে বুকমার্ক (পড়ার তালিকা) বাটন প্রদর্শন করুন',
+        'label'   => esc_html__('Show Reading List (Bookmarks) Button in Header', 'helptrickbd'),
         'section' => 'ht_header_section',
         'type'    => 'checkbox',
     ]);
@@ -129,16 +151,102 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_header_theme_toggle_enable', [
-        'label'   => 'হেডারে ডার্ক/লাইট মোড সুইচ প্রদর্শন করুন',
+        'label'   => esc_html__('Show Dark/Light Mode Switcher in Header', 'helptrickbd'),
         'section' => 'ht_header_section',
         'type'    => 'checkbox',
     ]);
 
     // =============================================================
-    // Section 2: সাইডবার সেটিংস
+    // Section 1.5: Homepage 4-Column Multi-Category Grid
+    // =============================================================
+    $wp_customize->add_section('ht_multi_cat_section', [
+        'title'    => esc_html__('Homepage Multi-Category Grid', 'helptrickbd'),
+        'panel'    => 'ht_main_panel',
+        'priority' => 12,
+    ]);
+
+    // Multi-Cat Toggle
+    $wp_customize->add_setting('ht_multi_cat_enable', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('ht_multi_cat_enable', [
+        'label'   => esc_html__('Enable 4-Column Departmental Grid', 'helptrickbd'),
+        'section' => 'ht_multi_cat_section',
+        'type'    => 'checkbox',
+    ]);
+
+    // Section Title
+    $wp_customize->add_setting('ht_multi_cat_title', [
+        'default'           => 'বিভাগ ও বিষয়ভিত্তিক বিশেষ হ্যান্ডনোট',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('ht_multi_cat_title', [
+        'label'   => esc_html__('Section Main Heading', 'helptrickbd'),
+        'section' => 'ht_multi_cat_section',
+        'type'    => 'text',
+    ]);
+
+    // Section Subtitle
+    $wp_customize->add_setting('ht_multi_cat_subtitle', [
+        'default'           => 'জাতীয় বিশ্ববিদ্যালয়, বোর্ড পরীক্ষা ও সাম্প্রতিক একাডেমিক স্টাডিজ',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('ht_multi_cat_subtitle', [
+        'label'   => esc_html__('Section Subtitle', 'helptrickbd'),
+        'section' => 'ht_multi_cat_section',
+        'type'    => 'text',
+    ]);
+
+    // Column 1 Category Slug
+    $wp_customize->add_setting('ht_multi_cat_1', [
+        'default'           => 'national-university',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('ht_multi_cat_1', [
+        'label'   => esc_html__('Column 1 Category Slug', 'helptrickbd'),
+        'section' => 'ht_multi_cat_section',
+        'type'    => 'text',
+    ]);
+
+    // Column 2 Category Slug
+    $wp_customize->add_setting('ht_multi_cat_2', [
+        'default'           => 'political-science',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('ht_multi_cat_2', [
+        'label'   => esc_html__('Column 2 Category Slug', 'helptrickbd'),
+        'section' => 'ht_multi_cat_section',
+        'type'    => 'text',
+    ]);
+
+    // Column 3 Category Slug
+    $wp_customize->add_setting('ht_multi_cat_3', [
+        'default'           => 'education-guide',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('ht_multi_cat_3', [
+        'label'   => esc_html__('Column 3 Category Slug', 'helptrickbd'),
+        'section' => 'ht_multi_cat_section',
+        'type'    => 'text',
+    ]);
+
+    // Column 4 Category Slug
+    $wp_customize->add_setting('ht_multi_cat_4', [
+        'default'           => 'ssc-dakhil',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('ht_multi_cat_4', [
+        'label'   => esc_html__('Column 4 Category Slug', 'helptrickbd'),
+        'section' => 'ht_multi_cat_section',
+        'type'    => 'text',
+    ]);
+
+    // =============================================================
+    // Section 2: Sidebar Modules
     // =============================================================
     $wp_customize->add_section('ht_sidebar_section', [
-        'title'    => 'সাইডবার মডিউল সেটিংস',
+        'title'    => esc_html__('Sidebar Modules', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
         'priority' => 15,
     ]);
@@ -149,28 +257,28 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_sidebar_search_enable', [
-        'label'       => 'সাইডবারের সর্ব উপরে লাইভ সার্চ বক্স চালু রাখুন',
-        'description' => 'ইনস্ট্যান্ট AJAX সাজেশন সহ প্রিমিয়াম সার্চ বক্স',
+        'label'       => esc_html__('Enable Top Live Search Box in Sidebar', 'helptrickbd'),
+        'description' => esc_html__('Provides instant AJAX search suggestions in the sidebar.', 'helptrickbd'),
         'section'     => 'ht_sidebar_section',
         'type'        => 'checkbox',
     ]);
 
     $wp_customize->add_setting('ht_sidebar_search_title', [
-        'default'           => 'অনুসন্ধান করুন',
+        'default'           => esc_html__('Instant Search', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_sidebar_search_title', [
-        'label'   => 'সার্চ বক্সের শিরোনাম',
+        'label'   => esc_html__('Search Box Title', 'helptrickbd'),
         'section' => 'ht_sidebar_section',
         'type'    => 'text',
     ]);
 
     $wp_customize->add_setting('ht_sidebar_search_placeholder', [
-        'default'           => 'হ্যান্ডনোট, সাজেশন বা বিষয় খুঁজুন...',
+        'default'           => esc_html__('Search handnotes, suggestions, or guides...', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_sidebar_search_placeholder', [
-        'label'   => 'সার্চ ফিল্ডের প্লেসহোল্ডার টেক্সট',
+        'label'   => esc_html__('Search Field Placeholder', 'helptrickbd'),
         'section' => 'ht_sidebar_section',
         'type'    => 'text',
     ]);
@@ -181,7 +289,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_sidebar_countdown_enable', [
-        'label'   => 'সাইডবারে পরীক্ষার দিন গণনা কার্ড প্রদর্শন করুন',
+        'label'   => esc_html__('Display Exam Countdown Card in Sidebar', 'helptrickbd'),
         'section' => 'ht_sidebar_section',
         'type'    => 'checkbox',
     ]);
@@ -192,18 +300,18 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_sidebar_popular_enable', [
-        'label'       => 'জনপ্রিয় পোস্ট ও হ্যান্ডনোট সেকশন চালু রাখুন',
-        'description' => 'র‍্যাঙ্ক নম্বর ব্যাজ ও সার্কুলার থাম্বনেইল সহ কম্প্যাক্ট ডিজাইন',
+        'label'       => esc_html__('Enable Popular Posts & Handnotes Widget', 'helptrickbd'),
+        'description' => esc_html__('Displays top viewed posts with numbered ranking badges and circular thumbnails.', 'helptrickbd'),
         'section'     => 'ht_sidebar_section',
         'type'        => 'checkbox',
     ]);
 
     $wp_customize->add_setting('ht_sidebar_popular_title', [
-        'default'           => 'জনপ্রিয় পোস্ট ও হ্যান্ডনোট',
+        'default'           => esc_html__('Trending Handnotes', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_sidebar_popular_title', [
-        'label'   => 'জনপ্রিয় পোস্ট সেকশনের শিরোনাম',
+        'label'   => esc_html__('Popular Posts Section Title', 'helptrickbd'),
         'section' => 'ht_sidebar_section',
         'type'    => 'text',
     ]);
@@ -213,7 +321,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'absint',
     ]);
     $wp_customize->add_control('ht_sidebar_popular_count', [
-        'label'       => 'জনপ্রিয় পোস্টের সংখ্যা (৩ থেকে ১০)',
+        'label'       => esc_html__('Number of Popular Posts (3 to 10)', 'helptrickbd'),
         'section'     => 'ht_sidebar_section',
         'type'        => 'number',
         'input_attrs' => ['min' => 3, 'max' => 10, 'step' => 1],
@@ -225,7 +333,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_sidebar_ad_enable', [
-        'label'   => 'সাইডবারে স্টিকি এডসেন্স স্লট প্রদর্শন করুন',
+        'label'   => esc_html__('Display Sticky AdSlot in Sidebar', 'helptrickbd'),
         'section' => 'ht_sidebar_section',
         'type'    => 'checkbox',
     ]);
@@ -236,18 +344,18 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_sidebar_categories_enable', [
-        'label'       => 'সকল বিষয়শ্রেণী (ক্যাটাগরি) কার্ড সেকশন চালু রাখুন',
-        'description' => 'প্রাসঙ্গিক ভেক্টর আইকন ও সর্ব ডানে পরিসংখ্যান ব্যাজ সহ',
+        'label'       => esc_html__('Enable Category Cards Widget', 'helptrickbd'),
+        'description' => esc_html__('Displays categories with vector icons and post count badges.', 'helptrickbd'),
         'section'     => 'ht_sidebar_section',
         'type'        => 'checkbox',
     ]);
 
     $wp_customize->add_setting('ht_sidebar_categories_title', [
-        'default'           => 'সকল বিষয়শ্রেণী (ক্যাটাগরি)',
+        'default'           => esc_html__('Explore Categories', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_sidebar_categories_title', [
-        'label'   => 'বিষয়শ্রেণী সেকশনের শিরোনাম',
+        'label'   => esc_html__('Categories Section Title', 'helptrickbd'),
         'section' => 'ht_sidebar_section',
         'type'    => 'text',
     ]);
@@ -257,17 +365,17 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'absint',
     ]);
     $wp_customize->add_control('ht_sidebar_categories_count', [
-        'label'       => 'সর্বোচ্চ প্রদর্শিত ক্যাটাগরির সংখ্যা (৪ থেকে ২০)',
+        'label'       => esc_html__('Max Categories to Display (4 to 20)', 'helptrickbd'),
         'section'     => 'ht_sidebar_section',
         'type'        => 'number',
         'input_attrs' => ['min' => 4, 'max' => 20, 'step' => 1],
     ]);
 
     // =============================================================
-    // Section 3: সোশ্যাল ও কমিউনিটি লিংক
+    // Section 3: Social & Community Links
     // =============================================================
     $wp_customize->add_section('ht_community_section', [
-        'title'    => 'সোশ্যাল ও কমিউনিটি লিংক',
+        'title'    => esc_html__('Social & Community Links', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
         'priority' => 20,
     ]);
@@ -277,8 +385,8 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control('ht_whatsapp_url', [
-        'label'       => 'হোয়াটসঅ্যাপ গ্রুপ লিংক',
-        'description' => 'শিক্ষার্থীরা এই লিংকে ক্লিক করে সরাসরি স্টাডি গ্রুপে যুক্ত হবে',
+        'label'       => esc_html__('WhatsApp Group Invite URL', 'helptrickbd'),
+        'description' => esc_html__('Invite link for students to join official study group.', 'helptrickbd'),
         'section'     => 'ht_community_section',
         'type'        => 'url',
     ]);
@@ -288,7 +396,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control('ht_telegram_url', [
-        'label'       => 'টেলিগ্রাম চ্যানেল / গ্রুপ লিংক',
+        'label'       => esc_html__('Telegram Channel / Group URL', 'helptrickbd'),
         'section'     => 'ht_community_section',
         'type'        => 'url',
     ]);
@@ -298,7 +406,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control('ht_facebook_url', [
-        'label'   => 'ফেসবুক পেজ / গ্রুপ লিংক',
+        'label'   => esc_html__('Facebook Page / Group URL', 'helptrickbd'),
         'section' => 'ht_community_section',
         'type'    => 'url',
     ]);
@@ -308,7 +416,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control('ht_youtube_url', [
-        'label'   => 'ইউটিউব চ্যানেল লিংক (ঐচ্ছিক)',
+        'label'   => esc_html__('YouTube Channel URL (Optional)', 'helptrickbd'),
         'section' => 'ht_community_section',
         'type'    => 'url',
     ]);
@@ -318,7 +426,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control('ht_twitter_url', [
-        'label'   => 'টুইটার / এক্স (X) প্রোফাইল লিংক',
+        'label'   => esc_html__('X (Twitter) Profile URL', 'helptrickbd'),
         'section' => 'ht_community_section',
         'type'    => 'url',
     ]);
@@ -328,16 +436,16 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'sanitize_email',
     ]);
     $wp_customize->add_control('ht_contact_email', [
-        'label'   => 'সাপোর্ট ও যোগাযোগ ইমেইল',
+        'label'   => esc_html__('Support & Contact Email', 'helptrickbd'),
         'section' => 'ht_community_section',
         'type'    => 'text',
     ]);
 
     // =============================================================
-    // Section 4: ফুটার ও কপিরাইট সেটিংস
+    // Section 4: Footer & Copyright
     // =============================================================
     $wp_customize->add_section('ht_footer_section', [
-        'title'    => 'ফুটার ও কপিরাইট সেটিংস',
+        'title'    => esc_html__('Footer & Copyright', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
         'priority' => 25,
     ]);
@@ -348,49 +456,49 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_pre_footer_enable', [
-        'label'   => 'ফুটারের উপরের কমিউনিটি বার (WhatsApp/Telegram) চালু রাখুন',
+        'label'   => esc_html__('Enable Pre-Footer Community Bar (WhatsApp/Telegram)', 'helptrickbd'),
         'section' => 'ht_footer_section',
         'type'    => 'checkbox',
     ]);
 
     $wp_customize->add_setting('ht_pre_footer_title', [
-        'default'           => 'পরীক্ষার রুটিন ও স্পেশাল সাজেশন সবার আগে পেতে চান?',
+        'default'           => esc_html__('Want exam routines & special suggestions first?', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_pre_footer_title', [
-        'label'   => 'কমিউনিটি বারের প্রধান শিরোনাম',
+        'label'   => esc_html__('Community Bar Main Title', 'helptrickbd'),
         'section' => 'ht_footer_section',
         'type'    => 'text',
     ]);
 
     $wp_customize->add_setting('ht_pre_footer_sub', [
-        'default'           => 'আমাদের অফিসিয়াল হোয়াটসঅ্যাপ ও টেলিগ্রাম গ্রুপে যুক্ত হোন।',
+        'default'           => esc_html__('Join our official WhatsApp and Telegram study groups.', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_pre_footer_sub', [
-        'label'   => 'কমিউনিটি বারের সাব-টাইটেল',
+        'label'   => esc_html__('Community Bar Subtitle', 'helptrickbd'),
         'section' => 'ht_footer_section',
         'type'    => 'text',
     ]);
 
     // Footer Description
     $wp_customize->add_setting('ht_footer_desc', [
-        'default'           => 'Help Trick BD বাংলাদেশের শিক্ষার্থীদের জন্য জাতীয় বিশ্ববিদ্যালয়, এসএসসি/দাখিল, বিসিএস প্রস্তুতি, রাষ্ট্রবিজ্ঞান অ্যাকাডেমিক হ্যান্ডনোট এবং আধুনিক তথ্যপ্রযুক্তি নির্দেশিকার একটি নির্ভরযোগ্য শিক্ষা পোর্টাল।',
+        'default'           => esc_html__('HelpTrickBD is a trusted educational portal providing National University routines, SSC/Dakhil suggestions, BCS preparation, Political Science handnotes, and modern ICT guides for students.', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_textarea_field',
     ]);
     $wp_customize->add_control('ht_footer_desc', [
-        'label'   => 'ফুটার ব্র্যান্ড পরিচিতি বিবরণ',
+        'label'   => esc_html__('Footer Brand About Description', 'helptrickbd'),
         'section' => 'ht_footer_section',
         'type'    => 'textarea',
     ]);
 
     // Footer Trust Text
     $wp_customize->add_setting('ht_footer_trust_text', [
-        'default'           => '১০০% প্রামাণ্য তথ্য ও শিক্ষক-পর্যালোচিত কন্টেন্ট',
+        'default'           => esc_html__('100% Authentic Information & Expert-Reviewed Content', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_footer_trust_text', [
-        'label'   => 'ফুটার ট্রাস্ট ব্যাজ টেক্সট',
+        'label'   => esc_html__('Footer Trust Badge Text', 'helptrickbd'),
         'section' => 'ht_footer_section',
         'type'    => 'text',
     ]);
@@ -399,20 +507,22 @@ function ht_customize_register($wp_customize) {
     $wp_customize->add_setting('ht_footer_copyright', [
         'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
     ]);
     $wp_customize->add_control('ht_footer_copyright', [
-        'label'       => 'কাস্টম কপিরাইট টেক্সট (ফাঁকা রাখলে স্বয়ংক্রিয় সাল সহ দেখাবে)',
+        'label'       => esc_html__('Custom Copyright Notice (Leave blank for automatic current year)', 'helptrickbd'),
         'section'     => 'ht_footer_section',
         'type'        => 'text',
     ]);
 
     // Footer Credit
     $wp_customize->add_setting('ht_footer_credit', [
-        'default'           => 'নির্মিত হয়েছে শিক্ষা ও উন্মুক্ত জ্ঞানের প্রসারে',
+        'default'           => esc_html__('Built for educational excellence and open knowledge', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
     ]);
     $wp_customize->add_control('ht_footer_credit', [
-        'label'   => 'ফুটার ক্রেডিট লাইন',
+        'label'   => esc_html__('Footer Credit Line', 'helptrickbd'),
         'section' => 'ht_footer_section',
         'type'    => 'text',
     ]);
@@ -423,7 +533,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_back_to_top_enable', [
-        'label'   => 'সার্কুলার স্ক্রোল-টু-টপ বাটন চালু রাখুন',
+        'label'   => esc_html__('Enable Circular Scroll-to-Top Button', 'helptrickbd'),
         'section' => 'ht_footer_section',
         'type'    => 'checkbox',
     ]);
@@ -434,16 +544,16 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_mobile_dock_enable', [
-        'label'   => 'মোবাইল নিচের ফ্লোটিং নেভিগেশন ডক (Mobile Dock) চালু রাখুন',
+        'label'   => esc_html__('Enable Mobile Bottom Navigation Dock', 'helptrickbd'),
         'section' => 'ht_footer_section',
         'type'    => 'checkbox',
     ]);
 
     // =============================================================
-    // Section 5: সিঙ্গেল পোস্ট ও স্টাডি টুলস
+    // Section 5: Single Post & Student Study Tools
     // =============================================================
     $wp_customize->add_section('ht_study_tools_section', [
-        'title'    => 'সিঙ্গেল পোস্ট ও স্টাডি টুলস',
+        'title'    => esc_html__('Single Post & Study Tools', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
         'priority' => 30,
     ]);
@@ -454,7 +564,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_reading_progress_enable', [
-        'label'   => 'লাইভ রিডিং প্রগ্রেস বার (শীর্ষে নীল দাগ) চালু রাখুন',
+        'label'   => esc_html__('Enable Top Live Reading Progress Bar', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
@@ -465,7 +575,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_font_resizer_enable', [
-        'label'   => 'ফন্ট সাইজ পরিবর্তন টুল (A- / A / A+) চালু রাখুন',
+        'label'   => esc_html__('Enable Font Resizer Tool (A- / A / A+)', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
@@ -476,7 +586,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_focus_mode_enable', [
-        'label'   => 'ফোকাস রিডিং মোড বাটন চালু রাখুন',
+        'label'   => esc_html__('Enable Focus Reading Mode Button', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
@@ -487,7 +597,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_bookmark_btn_enable', [
-        'label'   => 'পড়ার তালিকায় রাখুন (বুকমার্ক) বাটন চালু রাখুন',
+        'label'   => esc_html__('Enable Reading List Bookmark Button', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
@@ -498,7 +608,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_print_btn_enable', [
-        'label'   => '১-ক্লিক প্রিন্ট / পিডিএফ সেভ বাটন চালু রাখুন',
+        'label'   => esc_html__('Enable 1-Click Print & PDF Button', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
@@ -509,7 +619,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_toc_enable', [
-        'label'   => 'স্বয়ংক্রিয় সূচিপত্র (Table of Contents) চালু রাখুন',
+        'label'   => esc_html__('Enable Automatic Table of Contents (TOC)', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
@@ -520,7 +630,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_post_community_enable', [
-        'label'   => 'পোস্টের নিচে টেলিগ্রাম ও হোয়াটসঅ্যাপ কার্ড প্রদর্শন করুন',
+        'label'   => esc_html__('Display Telegram & WhatsApp Community Card Below Post', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
@@ -531,7 +641,7 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_citation_enable', [
-        'label'   => 'অ্যাকাডেমিক সাইটেশন কপি বক্স (APA 7th) চালু রাখুন',
+        'label'   => esc_html__('Enable Academic Source Citation Box (APA 7th)', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
@@ -542,19 +652,19 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_related_posts_enable', [
-        'label'   => 'পোস্টের নিচে সম্পর্কিত আর্টিকেল গ্রিড প্রদর্শন করুন',
+        'label'   => esc_html__('Display Related Articles Grid Below Content', 'helptrickbd'),
         'section' => 'ht_study_tools_section',
         'type'    => 'checkbox',
     ]);
 
     // Reviewer Name
     $wp_customize->add_setting('ht_reviewer_name', [
-        'default'           => 'ফারুক স্যার',
+        'default'           => esc_html__('Senior Faculty Panel', 'helptrickbd'),
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_reviewer_name', [
-        'label'       => 'ফ্যাক্ট-চেক পর্যালোচক শিক্ষকের নাম',
-        'description' => 'পোস্টের শীর্ষ E-E-A-T ভেরিফাইড ব্যাজে প্রদর্শিত হবে',
+        'label'       => esc_html__('Fact-Check Reviewer / Educator Name', 'helptrickbd'),
+        'description' => esc_html__('Displayed in the top E-E-A-T verified badge.', 'helptrickbd'),
         'section'     => 'ht_study_tools_section',
         'type'        => 'text',
     ]);
@@ -565,29 +675,76 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'absint',
     ]);
     $wp_customize->add_control('ht_download_timer', [
-        'label'       => 'পিডিএফ ডাউনলোড বাটনের কাউন্টডাউন সেকেন্ড',
-        'description' => '৫ থেকে ১০ সেকেন্ডের মধ্যে রাখুন (ডিফল্ট: ৫)',
+        'label'       => esc_html__('PDF Download Countdown Seconds', 'helptrickbd'),
+        'description' => esc_html__('Between 1 and 30 seconds (Default: 5).', 'helptrickbd'),
         'section'     => 'ht_study_tools_section',
         'type'        => 'number',
         'input_attrs' => ['min' => 1, 'max' => 30, 'step' => 1],
     ]);
 
+    // Author & Researcher Custom Avatar Upload
+    $wp_customize->add_setting('ht_author_custom_avatar', [
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ht_author_custom_avatar', [
+        'label'       => esc_html__('Author Profile Photo (Optional Override)', 'helptrickbd'),
+        'description' => esc_html__('Upload your author profile photo. If empty, automatically uses your WordPress User Profile photo/avatar.', 'helptrickbd'),
+        'section'     => 'ht_study_tools_section',
+    ]));
+
+    // Author & Researcher Custom Name Override
+    $wp_customize->add_setting('ht_author_custom_name', [
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('ht_author_custom_name', [
+        'label'       => esc_html__('Author Public Display Name (Optional Override)', 'helptrickbd'),
+        'description' => esc_html__('Leave empty to automatically pull Display Name from WordPress Users -> Profile.', 'helptrickbd'),
+        'section'     => 'ht_study_tools_section',
+        'type'        => 'text',
+    ]);
+
+    // Author & Researcher Professional Title
+    $wp_customize->add_setting('ht_author_custom_title', [
+        'default'           => esc_html__('Author & Researcher', 'helptrickbd'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('ht_author_custom_title', [
+        'label'       => esc_html__('Author Academic Credential / Title', 'helptrickbd'),
+        'description' => esc_html__('E.g., "Author & Senior Researcher" or "Education Specialist".', 'helptrickbd'),
+        'section'     => 'ht_study_tools_section',
+        'type'        => 'text',
+    ]);
+
+    // Author & Researcher Custom Biography
+    $wp_customize->add_setting('ht_author_custom_bio', [
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ]);
+    $wp_customize->add_control('ht_author_custom_bio', [
+        'label'       => esc_html__('Author Biography (Optional Override)', 'helptrickbd'),
+        'description' => esc_html__('Leave empty to automatically pull from WordPress Users -> Profile -> Biographical Info.', 'helptrickbd'),
+        'section'     => 'ht_study_tools_section',
+        'type'        => 'textarea',
+    ]);
+
     // =============================================================
-    // Section 6: গুগল এডসেন্স বিজ্ঞাপন স্লট
+    // Section 6: Google AdSense & Monetization
     // =============================================================
     $wp_customize->add_section('ht_ads_section', [
-        'title'    => 'গুগল এডসেন্স বিজ্ঞাপন স্লট',
+        'title'    => esc_html__('Google AdSense & Monetization', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
         'priority' => 35,
     ]);
 
     $ad_slots = [
-        'ht_ad_header'        => ['হেডার বিজ্ঞাপন (৭২৮×৯০ বা রেসপন্সিভ)', 'হেডারের নিচে প্রদর্শিত হবে'],
-        'ht_ad_below_title'   => ['আর্টিকেল টাইটেলের নিচে বিজ্ঞাপন', 'পোস্ট টাইটেলের ঠিক নিচে প্রদর্শিত হবে'],
-        'ht_ad_in_content'    => ['আর্টিকেলের মাঝখানে ইন-কন্টেন্ট বিজ্ঞাপন', 'প্যারাগ্রাফ ৩ বা ৪ এর পর স্বয়ংক্রিয়ভাবে প্রবেশ করবে'],
-        'ht_ad_after_content' => ['আর্টিকেলের শেষে বিজ্ঞাপন', 'কনটেন্ট শেষ হওয়ার পর প্রদর্শিত হবে'],
-        'ht_ad_sticky_sidebar'=> ['স্টিকি সাইডবার বিজ্ঞাপন (৩০০×৬০০ / ৩০০×২৫০)', 'ডেস্কটপ সাইডবারে ফিক্সড স্ক্রল হিসেবে থাকবে'],
-        'ht_ad_auto_ads'      => ['গুগল অটো এডস (Auto Ads Script)', '<head> ট্যাগে যোগ করার জন্য'],
+        'ht_ad_header'        => [esc_html__('Header Ad (728x90 or Responsive)', 'helptrickbd'), esc_html__('Displayed directly below primary header', 'helptrickbd')],
+        'ht_ad_below_title'   => [esc_html__('Below Post Title Ad', 'helptrickbd'), esc_html__('Displayed directly beneath article header', 'helptrickbd')],
+        'ht_ad_in_content'    => [esc_html__('In-Content Ad', 'helptrickbd'), esc_html__('Automatically inserted after paragraphs 3 or 4', 'helptrickbd')],
+        'ht_ad_after_content' => [esc_html__('After Post Content Ad', 'helptrickbd'), esc_html__('Displayed after post text concludes', 'helptrickbd')],
+        'ht_ad_sticky_sidebar'=> [esc_html__('Sticky Sidebar Ad (300x600 / 300x250)', 'helptrickbd'), esc_html__('Fixed desktop sidebar ad during scrolling', 'helptrickbd')],
+        'ht_ad_auto_ads'      => [esc_html__('Google Auto Ads Script', 'helptrickbd'), esc_html__('Injected inside head element for Auto Ads', 'helptrickbd')],
     ];
 
     foreach ($ad_slots as $id => $data) {
@@ -609,8 +766,8 @@ function ht_customize_register($wp_customize) {
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
     $wp_customize->add_control('ht_adblock_notice_enable', [
-        'label'       => 'মার্জিত এডব্লকার রিকোয়েস্ট নোটিশ চালু রাখুন',
-        'description' => 'এডব্লকার অন থাকা ভিজিটরদের হোয়াইটলিস্ট করার ভদ্র অনুরোধ প্রদর্শন করবে',
+        'label'       => esc_html__('Enable Polite AdBlocker Notice', 'helptrickbd'),
+        'description' => esc_html__('Politely asks visitors using ad blockers to whitelist the website.', 'helptrickbd'),
         'section'     => 'ht_ads_section',
         'type'        => 'checkbox',
     ]);
@@ -630,3 +787,17 @@ function ht_sanitize_ad_code($input) {
     }
     return wp_kses_post($input);
 }
+
+/**
+ * Enqueue scripts for Customizer Live Preview (postMessage).
+ */
+function ht_customize_preview_js() {
+    wp_enqueue_script(
+        'ht-customizer-preview',
+        get_template_directory_uri() . '/assets/js/customizer-preview.js',
+        ['customize-preview', 'jquery'],
+        HT_THEME_VERSION,
+        true
+    );
+}
+add_action('customize_preview_init', 'ht_customize_preview_js');

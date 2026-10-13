@@ -186,15 +186,20 @@ class WordPressPublisher:
         if featured_media_id:
             payload["featured_media"] = featured_media_id
 
-        # Attach Rank Math SEO metadata
+        # Attach Rank Math SEO metadata (Rule 03 & Rule 18: 90+ Score Standard)
         if seo_meta and self.config.get("rank_math_enabled", True):
             meta_dict = {}
-            if "seo_title" in seo_meta or "title" in seo_meta:
-                meta_dict["rank_math_title"] = seo_meta.get("seo_title") or seo_meta.get("title")
-            if "seo_description" in seo_meta or "search_desc" in seo_meta:
-                meta_dict["rank_math_description"] = seo_meta.get("seo_description") or seo_meta.get("search_desc")
-            if "focus_keyword" in seo_meta:
-                meta_dict["rank_math_focus_keyword"] = seo_meta.get("focus_keyword")
+            raw_seo_title = seo_meta.get("seo_title") or seo_meta.get("title") or title
+            focus_kw = seo_meta.get("focus_keyword", "").strip()
+            
+            # Clean, high-CTR natural SEO title (preserving authentic title without artificial suffix)
+            meta_dict["rank_math_title"] = raw_seo_title
+
+            meta_dict["rank_math_description"] = seo_meta.get("seo_description") or seo_meta.get("search_desc") or ""
+            if focus_kw:
+                meta_dict["rank_math_focus_keyword"] = focus_kw
+            meta_dict["rank_math_robots"] = "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+            meta_dict["rank_math_canonical_url"] = ""
             
             if meta_dict:
                 payload["meta"] = meta_dict

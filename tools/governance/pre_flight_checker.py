@@ -383,8 +383,35 @@ class PreFlightChecker:
         self.check_search_description()
         self.check_author_box()
         self.check_interactive_accordions()
+        self.check_rank_math_90_standards()
         
         return len(self.errors) == 0
+
+    def check_rank_math_90_standards(self):
+        """Rule 18 & Rule 03: Rank Math 90+ Score Mandate"""
+        # 1. Paragraph length check (<= 80 words)
+        p_tags = self.soup.find_all('p')
+        long_paras = [len(p.get_text().split()) for p in p_tags if len(p.get_text().split()) > 80]
+        if long_paras:
+            self.warnings.append(f"Rank Math Readability: {len(long_paras)} paragraph(s) exceed 80 words (max: {max(long_paras)} words). Keep paragraphs under 70 words.")
+        else:
+            self.passed.append("Rank Math Readability: All paragraphs strictly under 80 words (PASSED)")
+
+        # 2. Table of Contents check
+        has_toc = bool("wp:rank-math/toc-block" in self.raw_html or "wp-block-rank-math-toc" in self.raw_html or "id=\"rank-math-toc\"" in self.raw_html)
+        if has_toc:
+            self.passed.append("Rank Math TOC: Native Rank Math Table of Contents block verified (PASSED)")
+        else:
+            self.warnings.append("Rank Math TOC: Native wp:rank-math/toc-block missing. TOC is mandatory for posts > 1,000 words.")
+
+        # 3. Focus keyword check if metadata provided
+        if self.metadata:
+            kw = self.metadata.get("focus_keyword") or self.metadata.get("rank_math_focus_keyword")
+            if kw:
+                if kw in self.raw_html:
+                    self.passed.append(f"Rank Math Keyword: Focus keyword '{kw}' found in content (PASSED)")
+                else:
+                    self.errors.append(f"Rank Math Keyword: CRITICAL! Focus keyword '{kw}' not found in content!")
 
     def print_report(self):
         print("\n" + "="*70)
