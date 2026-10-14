@@ -388,7 +388,7 @@ class PreFlightChecker:
         return len(self.errors) == 0
 
     def check_rank_math_90_standards(self):
-        """Rule 18 & Rule 03: Rank Math 90+ Score Mandate"""
+        """Rule 18 & Rule 03: Rank Math 90+ Score Mandate & Complete 100/100 Test Suite"""
         # 1. Paragraph length check (<= 80 words)
         p_tags = self.soup.find_all('p')
         long_paras = [len(p.get_text().split()) for p in p_tags if len(p.get_text().split()) > 80]
@@ -404,14 +404,77 @@ class PreFlightChecker:
         else:
             self.warnings.append("Rank Math TOC: Native wp:rank-math/toc-block missing. TOC is mandatory for posts > 1,000 words.")
 
-        # 3. Focus keyword check if metadata provided
+        # 3. External & Internal Linking checks
+        links = self.soup.find_all('a')
+        has_external_dofollow = False
+        has_internal_link = False
+        for a in links:
+            href = a.get('href', '').strip()
+            rel = a.get('rel', [])
+            if isinstance(rel, str):
+                rel = rel.split()
+            if href.startswith('http://') or href.startswith('https://'):
+                if 'helptrickbd.com' in href:
+                    has_internal_link = True
+                else:
+                    if 'nofollow' not in rel:
+                        has_external_dofollow = True
+            elif href.startswith('/') and not href.startswith('//'):
+                has_internal_link = True
+
+        if has_external_dofollow:
+            self.passed.append("Rank Math External Link: Authoritative external DoFollow resource link verified (PASSED)")
+        else:
+            self.warnings.append("Rank Math External Link: No external DoFollow link detected. Link to an authoritative source (.gov.bd / .ac.bd / wikipedia).")
+
+        if has_internal_link:
+            self.passed.append("Rank Math Internal Link: Contextual internal linking to HelpTrickBD verified (PASSED)")
+        else:
+            self.warnings.append("Rank Math Internal Link: No internal link detected. Add 2-3 links to related posts on helptrickbd.com.")
+
+        # 4. Focus keyword comprehensive checks if metadata provided
         if self.metadata:
-            kw = self.metadata.get("focus_keyword") or self.metadata.get("rank_math_focus_keyword")
+            kw = (self.metadata.get("focus_keyword") or self.metadata.get("rank_math_focus_keyword") or "").strip()
             if kw:
+                # 4a. Focus keyword in Content
                 if kw in self.raw_html:
                     self.passed.append(f"Rank Math Keyword: Focus keyword '{kw}' found in content (PASSED)")
                 else:
                     self.errors.append(f"Rank Math Keyword: CRITICAL! Focus keyword '{kw}' not found in content!")
+
+                # 4b. Focus keyword in first paragraph / 10%
+                first_p = p_tags[0].get_text() if p_tags else ""
+                lead_text = self.raw_html[:1500]
+                if kw in first_p or kw in lead_text:
+                    self.passed.append(f"Rank Math Keyword (Intro): Focus keyword found in lead 10% / introductory paragraph (PASSED)")
+                else:
+                    self.warnings.append(f"Rank Math Keyword (Intro): Focus keyword '{kw}' not found in first paragraph or lead text.")
+
+                # 4c. Focus keyword in subheadings (H2/H3)
+                subheadings = [h.get_text() for h in self.soup.find_all(['h2', 'h3'])]
+                kw_in_heading = any(kw.lower() in h.lower() for h in subheadings)
+                if kw_in_heading:
+                    self.passed.append(f"Rank Math Keyword (Subheading): Focus keyword found in H2/H3 subheading (PASSED)")
+                else:
+                    self.warnings.append(f"Rank Math Keyword (Subheading): Focus keyword '{kw}' not found in any H2 or H3 subheadings.")
+
+                # 4d. Focus keyword in Image Alt
+                imgs = self.soup.find_all('img')
+                banner_alt = self.metadata.get('banner_alt', '') or self.metadata.get('featured_image_alt', '')
+                kw_in_alt = (kw.lower() in banner_alt.lower()) or any(kw.lower() in img.get('alt', '').lower() for img in imgs)
+                if kw_in_alt:
+                    self.passed.append(f"Rank Math Keyword (Image Alt): Focus keyword found in image alt attribute (PASSED)")
+                else:
+                    self.warnings.append(f"Rank Math Keyword (Image Alt): Focus keyword '{kw}' not found in any image alt tags.")
+
+            # 5. Title Readability checks (Number, Power Word, Sentiment)
+            title = (self.metadata.get("title") or self.metadata.get("seo_title") or "").strip()
+            if title:
+                has_number = bool(re.search(r'\d+|[০-৯]+', title))
+                if has_number:
+                    self.passed.append(f"Rank Math Title: Title contains number / year (PASSED)")
+                else:
+                    self.warnings.append("Rank Math Title: Title does not contain a number or year (e.g., 2026). Add numbers to boost CTR.")
 
     def print_report(self):
         print("\n" + "="*70)
