@@ -563,50 +563,76 @@ def build_breaking_notice_card(notice, idx):
     return "\n".join(lines), cov.get("url"), exact_source_url
 
 
-def build_breaking_alerts_batch(new_notices, now):
-    """Builds full text and inline keyboard for breaking notices batch."""
+def build_single_bulletin_digest(notices, now):
+    """
+    Builds a single, elegant, and professional notice bulletin for Telegram.
+    Consolidates all fresh notices into ONE concise message (under 4096 chars).
+    Focuses strictly on: Notice Title, Board/Source, Date, and Direct PDF/Source Link.
+    Eliminates all SEO clutter and multiple message spam.
+    Strictly Zero Emojis (Rule 12).
+    """
     time_str = now.strftime("%Y-%m-%d | %I:%M %p")
+    total = len(notices)
+
+    def to_bn(val):
+        bn_map = {"0": "০", "1": "১", "2": "২", "3": "৩", "4": "৪", "5": "৫", "6": "৬", "7": "৭", "8": "৮", "9": "৯"}
+        return "".join(bn_map.get(c, c) for c in str(val))
+
     header = [
-        "<b>[হেল্পট্রিকবিডি ৩৬০-ডিগ্রি ব্রেকিং এক্সাম রাডার অ্যালার্ট]</b>",
-        f"<b>নোটিশ স্ক্যান সময়কাল:</b> {time_str} (প্রতি ঘণ্টায় অটো-স্ক্যান)",
+        "<b>[হেল্পট্রিকবিডি এক্সাম রাডার — নতুন অফিসিয়াল নোটিশ]</b>",
+        f"<b>স্ক্যান সময়:</b> {time_str} (বাংলাদেশ মান সময়)",
+        f"<b>শনাক্তকৃত নোটিশ:</b> {to_bn(total)}টি",
         "========================================"
     ]
 
-    cards = []
-    first_source_url = None
-    first_post_url = None
+    items = []
+    # Up to 8 notices per bulletin to stay comfortably below 4000 characters
+    display_notices = notices[:8]
+    for idx, n in enumerate(display_notices, 1):
+        raw_title = n.get("title", "").strip()
+        title = html.escape(raw_title, quote=False)
+        source = html.escape(n.get("source", "শিক্ষা বোর্ড"), quote=False)
+        pdf_url = (n.get("pdf_url") or "").strip()
+        link_url = (n.get("link") or "").strip()
+        portal_url = (n.get("portal_url") or "").strip()
 
-    for idx, n in enumerate(new_notices[:5], 1):
-        card_text, post_url, exact_source_url = build_breaking_notice_card(n, idx)
-        cards.append(card_text)
-        if not first_source_url and exact_source_url:
-            first_source_url = exact_source_url
-        if not first_post_url and post_url:
-            first_post_url = post_url
+        exact_url = pdf_url or link_url or portal_url
+        pub_date = (n.get("pub_date") or "").strip()
+        date_str = pub_date if pub_date else "অফিসিয়াল বিজ্ঞপ্তি অনুযায়ী"
+
+        is_pdf = bool(exact_url and (".pdf" in exact_url.lower()))
+        link_label = "সরাসরি অফিসিয়াল PDF ডাউনলোড" if is_pdf else "সরাসরি মূল সোর্স লিংক"
+
+        card_lines = [
+            f"<b>{to_bn(idx)}. [{source}]</b>",
+            f"• <b>নোটিশ:</b> {title}",
+            f"• <b>তারিখ:</b> {date_str}"
+        ]
+        if exact_url:
+            card_lines.append(f"• <b>সোর্স:</b> <a href=\"{exact_url}\">[{link_label}]</a>")
+
+        items.append("\n".join(card_lines))
+
+    if total > 8:
+        items.append(f"<i>...এবং আরও {to_bn(total - 8)}টি নোটিশ শিক্ষা বোর্ডের আর্কাইভে রয়েছে।</i>")
 
     footer = [
         "========================================",
-        "হেল্পট্রিকবিডি ক্লাউড বট • ২৪ ঘণ্টা স্বয়ংক্রিয় ক্লাউড মনিটরিং"
+        "হেল্পট্রিকবিডি ক্লাউড বট • ২৪ ঘণ্টা স্বয়ংক্রিয় মনিটরিং"
     ]
 
-    full_text = "\n".join(header) + "\n\n" + "\n\n".join(cards) + "\n\n" + "\n".join(footer)
+    divider = "\n\n----------------------------------------\n\n"
+    full_text = "\n".join(header) + "\n\n" + divider.join(items) + "\n\n" + "\n".join(footer)
 
-    # Interactive Telegram Inline Action Buttons
     keyboard = []
-    row1 = []
-    if first_source_url:
-        is_pdf = first_source_url.lower().endswith(".pdf") or ".pdf" in first_source_url.lower()
-        btn_text = "সরাসরি অফিসিয়াল PDF" if is_pdf else "সরাসরি মূল সোর্স লিংক"
-        row1.append({"text": btn_text, "url": first_source_url})
-    if first_post_url:
-        row1.append({"text": "আমাদের পোস্ট দেখুন", "url": first_post_url})
-    else:
-        row1.append({"text": "HelpTrickBD সাইট", "url": "https://www.helptrickbd.com/"})
-
-    if row1:
-        keyboard.append(row1)
+    # If exactly 1 notice and has a direct PDF, add a dedicated 1-click button
+    if total == 1 and display_notices[0].get("pdf_url"):
+        p_url = display_notices[0]["pdf_url"].strip()
+        if p_url:
+            keyboard.append([{"text": "সরাসরি PDF ডাউনলোড", "url": p_url}])
 
     keyboard.append([
+        {"text": "HelpTrickBD সাইট", "url": "https://www.helptrickbd.com/"},
         {"text": "WordPress ড্যাশবোর্ড", "url": "https://www.helptrickbd.com/wp-admin/edit.php"}
     ])
 
@@ -614,60 +640,21 @@ def build_breaking_alerts_batch(new_notices, now):
     return full_text, reply_markup
 
 
+def build_breaking_alerts_batch(new_notices, now):
+    """Backward-compatible alias for build_single_bulletin_digest."""
+    return build_single_bulletin_digest(new_notices, now)
+
+
 def dispatch_breaking_notices(bot_token, chat_id, notices, now):
     """
-    Dispatches breaking notices to Telegram.
-    If 1 notice: sends comprehensive card with its custom direct source buttons.
-    If multiple notices: sends an introductory header followed by individual cards,
-    ensuring messages never exceed Telegram's 4096 character limit and every notice
-    gets its own exact source/PDF download link and action buttons.
+    Dispatches breaking notices to Telegram as ONE SINGLE consolidated message.
+    Completely eliminates multiple repetitive messages and spam.
     """
     if not notices:
         return True
 
-    total = len(notices)
-    time_str = now.strftime("%Y-%m-%d | %I:%M %p")
-
-    if total > 1:
-        intro_text = (
-            "<b>[হেল্পট্রিকবিডি ৩৬০-ডিগ্রি ব্রেকিং এক্সাম রাডার অ্যালার্ট]</b>\n"
-            f"<b>নোটিশ স্ক্যান সময়কাল:</b> {time_str} (বাংলাদেশ মান সময়)\n"
-            f"<b>নতুন শনাক্তকৃত অফিসিয়াল নোটিশ:</b> {total}টি\n"
-            "========================================\n"
-            "প্রতিটি নোটিশের মূল উৎস লিংক, প্রকাশের সময় এবং ইনস্ট্যান্ট এসইও প্যাকেজ নিচে প্রেরণ করা হলো:"
-        )
-        send_telegram_message(bot_token, chat_id, intro_text)
-
-    all_ok = True
-    for idx, n in enumerate(notices[:5], 1):
-        card_text, post_url, exact_source_url = build_breaking_notice_card(n, idx)
-
-        keyboard = []
-        row1 = []
-        if exact_source_url:
-            is_pdf = exact_source_url.lower().endswith(".pdf") or ".pdf" in exact_source_url.lower()
-            btn_text = "সরাসরি অফিসিয়াল PDF" if is_pdf else "সরাসরি মূল সোর্স লিংক"
-            row1.append({"text": btn_text, "url": exact_source_url})
-        if post_url:
-            row1.append({"text": "আমাদের পোস্ট দেখুন", "url": post_url})
-        else:
-            row1.append({"text": "HelpTrickBD সাইট", "url": "https://www.helptrickbd.com/"})
-
-        if row1:
-            keyboard.append(row1)
-        keyboard.append([
-            {"text": "WordPress ড্যাশবোর্ড", "url": "https://www.helptrickbd.com/wp-admin/edit.php"}
-        ])
-
-        reply_markup = {"inline_keyboard": keyboard}
-        ok = send_telegram_message(bot_token, chat_id, card_text, reply_markup=reply_markup)
-        if not ok:
-            all_ok = False
-        if total > 1:
-            import time
-            time.sleep(1)
-
-    return all_ok
+    text, reply_markup = build_single_bulletin_digest(notices, now)
+    return send_telegram_message(bot_token, chat_id, text, reply_markup=reply_markup)
 
 
 def build_morning_seo_digest(all_notices, urgent_items, now):

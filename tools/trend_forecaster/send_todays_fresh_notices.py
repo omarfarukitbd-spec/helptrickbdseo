@@ -23,7 +23,7 @@ if PROJECT_ROOT not in sys.path:
 
 from tools.trend_forecaster.telegram_radar_notifier import (
     get_telegram_credentials,
-    build_breaking_notice_card
+    build_single_bulletin_digest
 )
 
 def send_card(bot_token, chat_id, card_text, reply_markup=None):
@@ -82,33 +82,12 @@ def main():
         }
     ]
 
-    intro_text = (
-        "<b>[হেল্পট্রিকবিডি ৩৬০-ডিগ্রি ব্রেকিং এক্সাম রাডার — আজকের নতুন নোটিশ]</b>\n"
-        f"<b>তারিখ ও সময়:</b> {time_str} (বাংলাদেশ মান সময়)\n"
-        "<b>উৎস:</b> জাতীয় বিশ্ববিদ্যালয় অফিসিয়াল নোটিশ পোর্টাল (nu.ac.bd)\n\n"
-        "আজকে প্রকাশিত নতুন নোটিশের ওপর সাইট কভারেজ অডিট ও পূর্ণাঙ্গ এসইও প্যাকেজ নিচে প্রেরণ করা হলো:"
-    )
-    send_card(bot_token, chat_id, intro_text)
-    time.sleep(1)
-
-    for idx, n in enumerate(todays_notices, 1):
-        card_text, post_url, pdf_url = build_breaking_notice_card(n, idx)
-        
-        # Build individual markup with active URL buttons
-        keyboard = [
-            [
-                {"text": "অফিসিয়াল PDF ডাউনলোড", "url": n["pdf_url"]},
-                {"text": "WordPress ড্যাশবোর্ড", "url": "https://www.helptrickbd.com/wp-admin/edit.php"}
-            ],
-            [
-                {"text": "HelpTrickBD সাইট", "url": "https://www.helptrickbd.com/"}
-            ]
-        ]
-        markup = {"inline_keyboard": keyboard}
-        ok = send_card(bot_token, chat_id, card_text, reply_markup=markup)
-        if ok:
-            print(f"[SUCCESS] নোটিশ #{idx} ({n['category']}) সফলভাবে টেলিগ্রামে ডেলিভারি সম্পন্ন!")
-        time.sleep(1)
+    bulletin_text, reply_markup = build_single_bulletin_digest(todays_notices, bd_now)
+    ok = send_card(bot_token, chat_id, bulletin_text, reply_markup=reply_markup)
+    if ok:
+        print(f"[SUCCESS] {len(todays_notices)}টি নোটিশের একক বুলেটিন সফলভাবে টেলিগ্রামে ডেলিভারি সম্পন্ন!")
+    else:
+        print("[-] টেলিগ্রাম বুলেটিন পাঠানো ব্যর্থ হয়েছে।")
 
 if __name__ == "__main__":
     main()
