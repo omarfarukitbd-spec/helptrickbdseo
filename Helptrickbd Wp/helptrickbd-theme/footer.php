@@ -25,7 +25,10 @@ if (!defined('ABSPATH')) {
                     </div>
                     <div class="ht-pre-footer-btns">
                         <?php
-                        $wa_link = get_theme_mod('ht_whatsapp_url', 'https://chat.whatsapp.com/');
+                        $wa_link = get_theme_mod('ht_whatsapp_url', '');
+                        if (empty($wa_link) || $wa_link === 'https://chat.whatsapp.com/') {
+                            $wa_link = home_url('/contact-us/');
+                        }
                         $tg_link = get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd');
                         ?>
                         <a href="<?php echo esc_url($wa_link); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
@@ -72,16 +75,28 @@ if (!defined('ABSPATH')) {
                     </ul>
                 </div>
 
-                <!-- Column 3: Exam Categories -->
+                <!-- Column 3: Exam Categories & Guides -->
                 <div class="ht-footer-col">
                     <h4 class="ht-footer-title"><?php esc_html_e('Routines & Guides', 'helptrickbd'); ?></h4>
-                    <ul class="ht-footer-links">
-                        <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-routine-2026/')); ?>"><?php esc_html_e('Honours 2nd Year Routine', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-guide-and/')); ?>"><?php esc_html_e('Honours 3rd Year Promotion Rules', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/alim-exam-routine-2025/')); ?>"><?php esc_html_e('Alim Exam Routine & Guide', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/how-to-correction-certificate-name-2025/')); ?>"><?php esc_html_e('Certificate Correction Guide', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/islamic-article/')); ?>"><?php esc_html_e('Islamic Articles & Qasidah', 'helptrickbd'); ?></a></li>
-                    </ul>
+                    <?php if (has_nav_menu('footer-menu')) : ?>
+                        <?php
+                        wp_nav_menu([
+                            'theme_location' => 'footer-menu',
+                            'container'      => false,
+                            'menu_class'     => 'ht-footer-links',
+                            'depth'          => 1,
+                            'fallback_cb'    => false,
+                        ]);
+                        ?>
+                    <?php else : ?>
+                        <ul class="ht-footer-links">
+                            <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-routine-2026/')); ?>"><?php esc_html_e('Honours 2nd Year Routine', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-guide-and/')); ?>"><?php esc_html_e('Honours Promotion Rules', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/dhaka-board-certificate-name-age-correction-guide-2026/')); ?>"><?php esc_html_e('Certificate Correction Guide', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/nu-cgpa-calculator/')); ?>"><?php esc_html_e('NU CGPA Calculator', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/category/islamic-article/')); ?>"><?php esc_html_e('Islamic Articles & Qasidah', 'helptrickbd'); ?></a></li>
+                        </ul>
+                    <?php endif; ?>
                 </div>
 
                 <!-- Column 4: Legal & Pages -->

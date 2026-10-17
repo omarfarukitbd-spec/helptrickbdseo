@@ -41,7 +41,7 @@ get_header();
                     ?>
                         <article class="ht-hero-lead-card">
                             <a href="<?php the_permalink(); ?>" class="ht-hero-lead-thumb-wrap">
-                                <?php ht_the_thumbnail(get_the_ID(), 'ht-hero-large', 'ht-hero-lead-img'); ?>
+                                <?php ht_the_thumbnail(get_the_ID(), 'ht-hero-large', 'ht-hero-lead-img', true); ?>
                             </a>
                             <div class="ht-hero-lead-body">
                                 <div class="ht-hero-badge-wrap">

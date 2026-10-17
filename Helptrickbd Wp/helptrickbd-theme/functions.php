@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '1.4.0');
+define('HT_THEME_VERSION', '1.4.1');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/material-icons.php';
@@ -262,6 +262,9 @@ add_action('wp_enqueue_scripts', 'ht_enqueue_scripts');
 function ht_head_meta() {
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.maateen.me">' . "\n";
+    echo '<link rel="dns-prefetch" href="https://fonts.maateen.me">' . "\n";
+    echo '<link rel="preconnect" href="https://cdn.jsdelivr.net">' . "\n";
     echo '<meta name="theme-color" content="#2563eb">' . "\n";
     echo '<link rel="manifest" href="' . esc_url(get_template_directory_uri() . '/manifest.json') . '">' . "\n";
     echo '<link rel="apple-touch-icon" href="' . esc_url(get_template_directory_uri() . '/assets/images/icon-192.png') . '">' . "\n";
@@ -345,32 +348,42 @@ add_filter('the_content', 'ht_wrap_responsive_tables', 20);
  * @param int $post_id Post ID.
  * @param string $size Image size.
  * @param string $extra_class Additional CSS class.
+ * @param bool $is_lcp Whether this thumbnail is the above-the-fold Largest Contentful Paint hero image.
  */
-function ht_the_thumbnail($post_id = null, $size = 'ht-card-thumb', $extra_class = '') {
+function ht_the_thumbnail($post_id = null, $size = 'ht-card-thumb', $extra_class = '', $is_lcp = false) {
     if (!$post_id) {
         $post_id = get_the_ID();
     }
 
     $class_attr = $extra_class ? ' ' . esc_attr($extra_class) : '';
+    $loading_mode = $is_lcp ? 'eager' : 'lazy';
+    $img_attrs = [
+        'class'    => 'ht-thumbnail-img' . $class_attr,
+        'loading'  => $loading_mode,
+        'decoding' => 'async',
+        'alt'      => esc_attr(get_the_title($post_id)),
+    ];
+
+    if ($is_lcp) {
+        $img_attrs['fetchpriority'] = 'high';
+    }
 
     if (has_post_thumbnail($post_id)) {
-        the_post_thumbnail($size, [
-            'class'   => 'ht-thumbnail-img' . $class_attr,
-            'loading' => 'lazy',
-            'decoding'=> 'async',
-            'alt'     => esc_attr(get_the_title($post_id)),
-        ]);
+        the_post_thumbnail($size, $img_attrs);
         return;
     }
 
     // Check first image in content
     $content = get_post_field('post_content', $post_id);
     if (preg_match('/<img[^>]+src=[\'"]([^\'"]+)[\'"]/', $content, $m)) {
+        $priority_attr = $is_lcp ? ' fetchpriority="high"' : '';
         printf(
-            '<img src="%s" class="ht-thumbnail-img%s" alt="%s" loading="lazy" decoding="async">',
+            '<img src="%s" class="ht-thumbnail-img%s" alt="%s" loading="%s" decoding="async"%s>',
             esc_url($m[1]),
             $class_attr,
-            esc_attr(get_the_title($post_id))
+            esc_attr(get_the_title($post_id)),
+            $loading_mode,
+            $priority_attr
         );
         return;
     }

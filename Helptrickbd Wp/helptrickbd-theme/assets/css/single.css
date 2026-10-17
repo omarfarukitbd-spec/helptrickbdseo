@@ -1549,6 +1549,21 @@ body.ht-focus-mode .ht-article-col {
         font-size: 1.45rem;
         line-height: 1.35;
     }
+    .ht-entry-content h2 {
+        font-size: 1.30rem;
+        line-height: 1.4;
+        margin: 32px 0 16px 0;
+        padding-left: 12px;
+    }
+    .ht-entry-content h3 {
+        font-size: 1.18rem;
+        line-height: 1.42;
+        margin: 24px 0 12px 0;
+        padding-left: 12px;
+    }
+    .ht-entry-content h4 {
+        font-size: 1.05rem;
+    }
     .ht-related-grid {
         grid-template-columns: 1fr;
     }
@@ -1575,6 +1590,27 @@ body.ht-focus-mode .ht-article-col {
         font-size: 1.32rem;
         line-height: 1.35;
         margin-bottom: 14px;
+    }
+    .ht-entry-content h2 {
+        font-size: 1.20rem;
+        line-height: 1.38;
+        margin: 26px 0 12px 0;
+        padding-left: 10px;
+        border-left-width: 4px;
+    }
+    .ht-entry-content h3 {
+        font-size: 1.10rem;
+        line-height: 1.4;
+        margin: 20px 0 10px 0;
+        padding-left: 10px;
+    }
+    .ht-entry-content h4 {
+        font-size: 0.98rem;
+    }
+    .ht-entry-content p {
+        font-size: 1.05rem;
+        line-height: 1.88;
+        margin-bottom: 18px;
     }
     .ht-reading-toolbelt {
         gap: 6px;
