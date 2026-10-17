@@ -14,19 +14,31 @@
 
 ---
 
-## 📤 2. Post-Task Protocol (কাজ শেষে বাধ্যতামূলক স্বয়ংক্রিয় পুশ)
-যেকোনো কাজ, ফাইল এডিট, পোস্ট পরিশোধন, ব্যানার তৈরি বা কোনো মাইলস্টোন সফলভাবে সম্পন্ন হওয়া মাত্র এজেন্ট স্বয়ংক্রিয়ভাবে কমিট করে রিমোট রিপোজিটরিতে পুশ করবে:
+## 📤 2. Immediate Git Add & Post-Task Auto-Sync Protocol (নতুন কিছু করলেই তাৎক্ষণিক গিট অ্যাড ও পুশ)
+> [!IMPORTANT]
+> **নতুন কিছু করলেই তাৎক্ষণিক গিট অ্যাড (Mandatory Immediate Git Add)**:
+> কোডবেসে যেকোনো নতুন ফাইল তৈরি, ফাইল সম্পাদন, ব্যানার তৈরি, স্ক্রিপ্ট আপডেট, বাগ ফিক্স বা কোনো মাইলস্টোন কাজ হওয়া মাত্রই তা **অবিলম্বে গিট-এ অ্যাড (`git add -A`) এবং কমিট** করতে হবে। কোনো কাজই গিট ট্র্যাকিংয়ের বাইরে বা আনকমিটেড অবস্থায় ফেলে রাখা যাবে না।
+
+যেকোনো নতুন পরিবর্তন সম্পন্ন হওয়া মাত্র এজেন্ট স্বয়ংক্রিয়ভাবে নিচের কমান্ডগুলো কার্যকর করবে:
 
 ```bash
 git add -A
 git commit -m "<type>(<scope>): <স্পষ্ট ও অর্থপূর্ণ বার্তা>"
+```
+
+### রিমোট সিঙ্ক ও পুশ ফ্লো (Remote Push & Divergence Resolution):
+- কাজ কমিট করার পর এজেন্ট স্বয়ংক্রিয়ভাবে রিমোট রিপোজিটরিতে পুশ করবে (`git push origin main`)।
+- যদি রিমোট রিপোজিটরিতে অটোমেটেড নোটিশ সিঙ্ক বা অন্য মেশিনের কমিটের কারণে ডাইভারজেন্স থাকে, তবে সেফ রিবেস সম্পন্ন করে পুশ সম্পন্ন করবে:
+```bash
+git pull --rebase origin main
 git push origin main
 ```
 
 ### Commit Types:
+- `feat(theme)`: Updated WordPress theme, template parts, or CSS styling.
 - `feat(content)`: Added new post or expanded thin article.
 - `fix(permalinks)`: Corrected generic slug or broken URL.
-- `fix(images)`: Compressed WebP asset or updated CDN path.
+- `fix(images)`: Compressed WebP asset or updated banner.
 - `docs(rules)`: Updated agent guidelines or project documentation.
 - `chore(sync)`: Synchronized session handover state.
 
