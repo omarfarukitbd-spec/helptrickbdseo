@@ -44,10 +44,10 @@ function ht_render_schema_jsonld() {
         }
 
         $same_as = array_filter([
-            get_theme_mod('ht_facebook_url', ''),
-            get_theme_mod('ht_telegram_url', ''),
-            get_theme_mod('ht_whatsapp_url', ''),
-            get_theme_mod('ht_youtube_url', ''),
+            get_theme_mod('ht_facebook_url', 'https://facebook.com/helptrickbd'),
+            get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd_official'),
+            get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a'),
+            get_theme_mod('ht_youtube_url', 'https://www.youtube.com/@helptrickbd'),
         ]);
 
         $schemas[] = [

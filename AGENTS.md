@@ -10,6 +10,11 @@ This file is automatically loaded by Antigravity IDE into the AI agent's memory 
 - **Primary Goal:** 100% Google AdSense Approval, Core Web Vitals excellence, and fast Google Search Console ranking.
 - **Repository:** `https://github.com/omarfarukitbd-spec/helptrickbdseo.git`
 - **Main Branch:** `main`
+- **Official Social Media Channels:**
+  - **Telegram Channel:** `https://t.me/helptrickbd_official`
+  - **WhatsApp Channel:** `https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a`
+  - **Facebook Page:** `https://facebook.com/helptrickbd`
+  - **YouTube Channel:** `https://www.youtube.com/@helptrickbd`
 - **Full Chat & Pair-Programming History:** See [`docs/CHAT_HISTORY.md`](file:///docs/CHAT_HISTORY.md) for the complete 97-turn conversational transcript between user and Antigravity.
 
 ---

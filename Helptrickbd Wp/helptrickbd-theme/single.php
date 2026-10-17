@@ -238,9 +238,9 @@ get_header();
                             <p class="ht-community-desc"><?php esc_html_e('Join our verified WhatsApp and Telegram study groups today.', 'helptrickbd'); ?></p>
                         </div>
                         <div class="ht-community-links">
-                            <a href="<?php echo esc_url(get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a/')); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
+                            <a href="<?php echo esc_url(get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a')); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
                                 <?php ht_m3_icon('whatsapp', 18); ?>
-                                <span>WhatsApp Group</span>
+                                <span>WhatsApp Channel</span>
                             </a>
                             <a href="<?php echo esc_url(get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd_official')); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-telegram">
                                 <?php ht_m3_icon('telegram', 18); ?>

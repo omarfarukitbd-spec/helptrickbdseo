@@ -25,15 +25,15 @@ if (!defined('ABSPATH')) {
                     </div>
                     <div class="ht-pre-footer-btns">
                         <?php
-                        $wa_link = get_theme_mod('ht_whatsapp_url', '');
+                        $wa_link = get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a');
                         if (empty($wa_link) || $wa_link === 'https://chat.whatsapp.com/') {
-                            $wa_link = home_url('/contact-us/');
+                            $wa_link = 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a';
                         }
-                        $tg_link = get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd');
+                        $tg_link = get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd_official');
                         ?>
                         <a href="<?php echo esc_url($wa_link); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
                             <?php ht_m3_icon('whatsapp', 18); ?>
-                            <span>WhatsApp Group</span>
+                            <span>WhatsApp Channel</span>
                         </a>
                         <a href="<?php echo esc_url($tg_link); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-telegram">
                             <?php ht_m3_icon('telegram', 18); ?>
