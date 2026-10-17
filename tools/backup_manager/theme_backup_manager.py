@@ -20,6 +20,7 @@ import zipfile
 import json
 import re
 from datetime import datetime
+import stat
 
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
@@ -49,15 +50,20 @@ def slugify(text):
 
 def create_theme_zip(source_dir, output_zip_path):
     """
-    Creates a zip archive with explicit directory entries and UNIX POSIX permissions (0755/0644).
+    Creates a zip archive with explicit directory entries and exact WordPress/UNIX POSIX permissions:
+    - Directories: S_IFDIR | 0755 (0x41ed0010)
+    - Files: S_IFREG | 0644 (0x81a40000)
+    - create_system: 3 (UNIX)
     Root folder inside zip is 'helptrickbd-theme/'.
     """
     os.makedirs(os.path.dirname(output_zip_path), exist_ok=True)
+    now = datetime.now().timetuple()[:6]
     with zipfile.ZipFile(output_zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
         # Explicit root folder entry
-        root_dir_entry = zipfile.ZipInfo("helptrickbd-theme/")
-        root_dir_entry.external_attr = 0o755 << 16 | 0o040000
-        root_dir_entry.date_time = datetime.now().timetuple()[:6]
+        root_dir_entry = zipfile.ZipInfo("helptrickbd-theme/", now)
+        root_dir_entry.create_system = 3
+        root_dir_entry.external_attr = ((stat.S_IFDIR | 0o755) << 16) | 0x10
+        root_dir_entry.compress_type = zipfile.ZIP_STORED
         zf.writestr(root_dir_entry, "")
 
         for root, dirs, files in os.walk(source_dir):
@@ -72,21 +78,23 @@ def create_theme_zip(source_dir, output_zip_path):
 
             for d in dirs:
                 dir_path = f"{zip_base}/{d}/"
-                zinfo = zipfile.ZipInfo(dir_path)
-                zinfo.external_attr = 0o755 << 16 | 0o040000
-                zinfo.date_time = datetime.now().timetuple()[:6]
+                zinfo = zipfile.ZipInfo(dir_path, now)
+                zinfo.create_system = 3
+                zinfo.external_attr = ((stat.S_IFDIR | 0o755) << 16) | 0x10
+                zinfo.compress_type = zipfile.ZIP_STORED
                 zf.writestr(zinfo, "")
 
             for f in files:
-                if f.endswith(".zip") or f == ".DS_Store":
+                if f.endswith(".zip") or f in (".DS_Store", "Thumbs.db"):
                     continue
                 file_abs = os.path.join(root, f)
                 file_rel = f"{zip_base}/{f}"
                 with open(file_abs, "rb") as fp:
                     data = fp.read()
-                zinfo = zipfile.ZipInfo(file_rel)
-                zinfo.external_attr = 0o644 << 16 | 0o100000
-                zinfo.date_time = datetime.now().timetuple()[:6]
+                zinfo = zipfile.ZipInfo(file_rel, now)
+                zinfo.create_system = 3
+                zinfo.external_attr = (stat.S_IFREG | 0o644) << 16
+                zinfo.compress_type = zipfile.ZIP_DEFLATED
                 zf.writestr(zinfo, data)
 
 def backup_theme(reason="manual_pre_edit"):
