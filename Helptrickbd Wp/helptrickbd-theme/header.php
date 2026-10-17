@@ -426,16 +426,8 @@ if (!defined('ABSPATH')) {
                 </div>
             <?php endif; ?>
 
-            <!-- Topbar Right: Exam Countdown & Date -->
+            <!-- Topbar Right: Date -->
             <div class="ht-topbar-right">
-                <?php if (get_theme_mod('ht_countdown_enable', true)) : ?>
-                    <div class="ht-top-countdown" id="ht-top-countdown" title="<?php esc_attr_e('Upcoming exam countdown', 'helptrickbd'); ?>">
-                        <?php ht_m3_icon('timer', 15); ?>
-                        <span class="ht-countdown-title"><?php echo esc_html(get_theme_mod('ht_countdown_title', 'Exam Countdown')); ?>:</span>
-                        <span class="ht-countdown-days" id="ht-countdown-val"><?php esc_html_e('Counting down...', 'helptrickbd'); ?></span>
-                    </div>
-                <?php endif; ?>
-
                 <div class="ht-topbar-date">
                     <?php ht_m3_icon('event', 14); ?>
                     <span><?php echo esc_html(date_i18n(get_option('date_format'))); ?></span>

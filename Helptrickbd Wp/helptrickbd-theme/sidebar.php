@@ -15,61 +15,6 @@ if (!defined('ABSPATH')) {
 
 <div class="ht-sidebar-wrapper">
 
-    <!-- Widget 1: Sidebar Top Instant AJAX Live Search (Position #1) -->
-    <?php if (get_theme_mod('ht_sidebar_search_enable', true)) : ?>
-        <div class="ht-widget ht-widget-side-search">
-            <div class="ht-widget-header">
-                <?php ht_m3_icon('search', 20, 'ht-widget-icon'); ?>
-                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_search_title', 'Instant Search')); ?></h3>
-            </div>
-            <div class="ht-widget-body">
-                <div class="ht-side-search-box">
-                    <form role="search" method="get" class="ht-side-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                        <div class="ht-side-search-input-wrap">
-                            <span class="ht-side-search-icon" aria-hidden="true">
-                                <?php ht_m3_icon('search', 18); ?>
-                            </span>
-                            <input 
-                                type="search" 
-                                id="ht-side-search-input" 
-                                class="ht-side-search-field" 
-                                placeholder="<?php echo esc_attr(get_theme_mod('ht_sidebar_search_placeholder', 'Search handnotes, suggestions, or guides...')); ?>" 
-                                value="<?php echo get_search_query(); ?>" 
-                                name="s" 
-                                autocomplete="off"
-                                spellcheck="false"
-                                aria-label="<?php esc_attr_e('Sidebar Search', 'helptrickbd'); ?>"
-                            >
-                            <button type="button" class="ht-side-search-clear" id="ht-side-search-clear" aria-label="<?php esc_attr_e('Clear search', 'helptrickbd'); ?>" style="display:none;">
-                                <?php ht_m3_icon('clear', 16); ?>
-                            </button>
-                            <span class="ht-side-search-spinner" id="ht-side-search-spinner" aria-hidden="true" style="display:none;"></span>
-                        </div>
-                    </form>
-                    <!-- Instant Live AJAX Search Dropdown Results -->
-                    <div class="ht-side-search-results" id="ht-side-search-results" aria-live="polite" style="display:none;"></div>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
-
-    <!-- Widget 2: Exam Countdown Card (If Enabled) -->
-    <?php if (get_theme_mod('ht_sidebar_countdown_enable', true) && get_theme_mod('ht_countdown_enable', true)) : ?>
-        <div class="ht-widget ht-widget-countdown">
-            <div class="ht-widget-header">
-                <?php ht_m3_icon('timer', 20, 'ht-widget-icon'); ?>
-                <h3 class="ht-widget-title"><?php esc_html_e('Exam Countdown', 'helptrickbd'); ?></h3>
-            </div>
-            <div class="ht-widget-body">
-                <span class="ht-side-countdown-label"><?php echo esc_html(get_theme_mod('ht_countdown_title', 'Honours 2nd Year Exam')); ?></span>
-                <div class="ht-side-countdown-display" id="ht-sidebar-countdown-box">
-                    <span class="ht-side-days" id="ht-sidebar-days-val">--</span>
-                    <span class="ht-side-unit"><?php esc_html_e('Days Left', 'helptrickbd'); ?></span>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
-
     <!-- Widget 3: Ranked Compact Popular Posts with Circular Round Thumbs (Position #3) -->
     <?php if (get_theme_mod('ht_sidebar_popular_enable', true)) : ?>
         <div class="ht-widget ht-widget-popular">
