@@ -91,7 +91,7 @@ function ht_breadcrumbs() {
 
     } elseif (is_404()) {
         echo '<li class="ht-crumb-sep-item">' . $sep . '</li>';
-        echo '<li class="ht-crumb-current" aria-current="page">' . esc_html__('Page Not Found', 'helptrickbd') . '</li>';
+        echo '<li class="ht-crumb-current" aria-current="page">' . esc_html__('৪০৪: পৃষ্ঠা পাওয়া যায়নি', 'helptrickbd') . '</li>';
     }
 
     echo '</ol>';

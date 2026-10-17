@@ -18,6 +18,11 @@ if (!defined('ABSPATH')) {
  * @param int $min_height Reserved min-height to prevent CLS.
  */
 function ht_render_ad($slot_id, $extra_class = '', $min_height = 0) {
+    // Strict Google AdSense Policy: NEVER display ads on 404 error pages
+    if (is_404()) {
+        return;
+    }
+
     $ad_code = get_theme_mod($slot_id, '');
     if (empty(trim($ad_code))) {
         return;
