@@ -1,30 +1,49 @@
 [
   {
-    "id": 121,
-    "slug": "important-instructions-for-ssc-candidates",
-    "primary_keyword": "এসএসসি পরীক্ষার্থীদের পরীক্ষার হলের নিয়মাবলী",
-    "native_title": "এসএসসি পরীক্ষার্থীদের জন্য জরুরি নিয়মাবলি ও পরীক্ষার হলের নির্দেশিকা (২০২৬)",
-    "seo_title": "এসএসসি পরীক্ষার্থীদের জন্য জরুরি নিয়মাবলি ও পরীক্ষার হলের নির্দেশিকা (২০২৬)",
-    "meta_description": "এসএসসি পরীক্ষার্থীদের পরীক্ষার হলের নিয়মাবলী সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
+    "id": 1,
+    "slug": "nu-honours-2nd-year-exam-guide-and",
+    "primary_keyword": "অনার্স ২য় বর্ষ পরীক্ষার গাইড",
+    "native_title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার গাইড ও ৩য় বর্ষে প্রমোশনের নিয়মাবলী ২০২৬",
+    "seo_title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার গাইড ও ৩য় বর্ষে প্রমোশনের নিয়মাবলী ২০২৬",
+    "meta_description": "অনার্স ২য় বর্ষ পরীক্ষার গাইড সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
     "modifications": {
       "first_p_updated": false,
-      "h2_updated": 3,
+      "h2_updated": 0,
       "img_alt_updated": 1,
       "external_link_added": false,
       "toc_injected": false,
       "density_boosted": false
     },
-    "applied": true,
-    "dry_run": false,
+    "applied": false,
+    "dry_run": true,
     "expected_score": 95
   },
   {
-    "id": 122,
-    "slug": "how-to-correction-certificate-name-2025",
-    "primary_keyword": "সার্টিফিকেট নাম ও বয়স সংশোধনের নিয়ম",
-    "native_title": "ঢাকা শিক্ষাবোর্ডে সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম ২০২৬ | ঢাকা বোর্ড অনলাইন আবেদন গাইড",
-    "seo_title": "ঢাকা শিক্ষাবোর্ডে সার্টিফিকেট নাম ও বয়স সংশোধনের সঠিক নিয়ম ২০২৬ | ঢাকা বোর্ড অনলাইন আবেদন গাইড",
-    "meta_description": "সার্টিফিকেট নাম ও বয়স সংশোধনের নিয়ম সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
+    "id": 282,
+    "slug": "nu-exam-digitization-aqa-global-mou-2026",
+    "primary_keyword": "জাতীয় বিশ্ববিদ্যালয় পরীক্ষা ডিজিটালাইজেশন",
+    "native_title": "জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষা ডিজিটালাইজেশন ও একিউএ গ্লোবাল চুক্তি: পরীক্ষা ও মূল্যায়নে ঐতিহাসিক পরিবর্তন",
+    "seo_title": "জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষা ডিজিটালাইজেশন ও একিউএ গ্লোবাল চুক্তি: পরীক্ষা ও মূল্যায়নে ঐতিহাসিক পরিবর্তন",
+    "meta_description": "জাতীয় বিশ্ববিদ্যালয় পরীক্ষা ডিজিটালাইজেশন সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
+    "modifications": {
+      "first_p_updated": false,
+      "h2_updated": 0,
+      "img_alt_updated": 1,
+      "external_link_added": false,
+      "toc_injected": false,
+      "density_boosted": false
+    },
+    "applied": false,
+    "dry_run": true,
+    "expected_score": 95
+  },
+  {
+    "id": 283,
+    "slug": "class-6-to-9-annual-exam-marks-distribution-2026",
+    "primary_keyword": "বার্ষিক পরীক্ষার মানবণ্টন ও সিলেবাস",
+    "native_title": "৬ষ্ঠ, ৭ম, ৮ম ও ৯ম শ্রেণির বার্ষিক পরীক্ষার মানবণ্টন ও পূর্ণাঙ্গ প্রস্তুতি গাইড ২০২৬",
+    "seo_title": "৬ষ্ঠ, ৭ম, ৮ম ও ৯ম শ্রেণির বার্ষিক পরীক্ষার মানবণ্টন ও পূর্ণাঙ্গ প্রস্তুতি গাইড ২০২৬",
+    "meta_description": "বার্ষিক পরীক্ষার মানবণ্টন ও সিলেবাস সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
     "modifications": {
       "first_p_updated": false,
       "h2_updated": 2,
@@ -33,93 +52,17 @@
       "toc_injected": false,
       "density_boosted": false
     },
-    "applied": true,
-    "dry_run": false,
+    "applied": false,
+    "dry_run": true,
     "expected_score": 95
   },
   {
-    "id": 123,
-    "slug": "ya-nabi-salaam-alaika-ya-rasul-salaam-alaika-lyrics",
-    "primary_keyword": "ইয়া নবী সালাম আলাইকা লিরিক্স ও ব্যাখ্যা",
-    "native_title": "মিলাদ শরীফ এর ক্বাসিদা &#8211; ইয়া নবী সালাম আলাইকা, ইয়া রসূল সালাম আলাইকা",
-    "seo_title": "মিলাদ শরীফ এর ক্বাসিদা &#8211; ইয়া নবী সালাম আলাইকা, ইয়া রসূল সালাম আলাইকা",
-    "meta_description": "ইয়া নবী সালাম আলাইকা লিরিক্স ও ব্যাখ্যা সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 3,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 124,
-    "slug": "marhaba-ya-marhaba-rahmatullah-alamin-e-marhaba-lyrics",
-    "primary_keyword": "মিলাদ শরীফের ক্বাসিদা মারহাবা লিরিক্স",
-    "native_title": "মিলাদ শরীফের ক্বাসিদা: মারহাবা ইয়া মারহাবা—তাৎপর্য, ব্যাখ্যা ও পূর্ণাঙ্গ লিরিক্স",
-    "seo_title": "মিলাদ শরীফের ক্বাসিদা: মারহাবা ইয়া মারহাবা—তাৎপর্য, ব্যাখ্যা ও পূর্ণাঙ্গ লিরিক্স",
-    "meta_description": "মিলাদ শরীফের ক্বাসিদা মারহাবা লিরিক্স সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 0,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 125,
-    "slug": "allah-allah-allahu-la-ilaha-illa-hu-lyrics",
-    "primary_keyword": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লাহু লিরিক্স",
-    "native_title": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লা হু: যিকিরের মহিমা, অর্থ ও পূর্ণাঙ্গ লিরিক্স",
-    "seo_title": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লা হু: যিকিরের মহিমা, অর্থ ও পূর্ণাঙ্গ লিরিক্স",
-    "meta_description": "আল্লাহ আল্লাহ আল্লাহু লা ইলাহা ইল্লাহু লিরিক্স সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 0,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 126,
-    "slug": "allahumma-salli-ala-sayyidina-muhammad-lyrics",
-    "primary_keyword": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ লিরিক্স",
-    "native_title": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দরূদ শরীফের ফজিলত, অর্থ ও পূর্ণাঙ্গ ক্বাসিদা লিরিক্স",
-    "seo_title": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ: দরূদ শরীফের ফজিলত, অর্থ ও পূর্ণাঙ্গ ক্বাসিদা লিরিক্স",
-    "meta_description": "আল্লাহুম্মা সাল্লি আলা সাইয়্যিদিনা মুহাম্মাদ লিরিক্স সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 3,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 127,
-    "slug": "milad-sharif-salatun-ya-rasulallah-alaikum",
-    "primary_keyword": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম লিরিক্স",
-    "native_title": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম: ঐতিহাসিক প্রেক্ষিত, তাৎপর্য ও পূর্ণাঙ্গ লিরিক্স",
-    "seo_title": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম: ঐতিহাসিক প্রেক্ষিত, তাৎপর্য ও পূর্ণাঙ্গ লিরিক্স",
-    "meta_description": "সালাতুন ইয়া রাসুলুল্লাহ আলাইকুম লিরিক্স সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
+    "id": 284,
+    "slug": "nu-degree-2nd-year-in-course-and-exam",
+    "primary_keyword": "ডিগ্রি ২য় বর্ষ ইনকোর্স ও পরীক্ষার গাইড",
+    "native_title": "জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি ও পরীক্ষার গাইড ২০২৬ | NU Degree 2nd Year In-Course ও Exam Routine",
+    "seo_title": "জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ২য় বর্ষ ইনকোর্স নম্বর এন্ট্রি ও পরীক্ষার গাইড ২০২৬ | NU Degree 2nd Year In-Course ও Exam Routine",
+    "meta_description": "ডিগ্রি ২য় বর্ষ ইনকোর্স ও পরীক্ষার গাইড সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
     "modifications": {
       "first_p_updated": false,
       "h2_updated": 2,
@@ -128,17 +71,17 @@
       "toc_injected": false,
       "density_boosted": false
     },
-    "applied": true,
-    "dry_run": false,
+    "applied": false,
+    "dry_run": true,
     "expected_score": 95
   },
   {
-    "id": 128,
-    "slug": "masters-social-change-and-political-development-suggestions",
-    "primary_keyword": "সামাজিক পরিবর্তন ও রাজনৈতিক উন্নয়ন চূড়ান্ত সাজেশন",
-    "native_title": "সামাজিক পরিবর্তন ও রাজনৈতিক উন্নয়ন চূড়ান্ত সাজেশন: বিষয়কোড ৩১১৯০৩ (২০২৬)",
-    "seo_title": "সামাজিক পরিবর্তন ও রাজনৈতিক উন্নয়ন চূড়ান্ত সাজেশন: বিষয়কোড ৩১১৯০৩ (২০২৬)",
-    "meta_description": "সামাজিক পরিবর্তন ও রাজনৈতিক উন্নয়ন চূড়ান্ত সাজেশন সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
+    "id": 285,
+    "slug": "nu-honours-2nd-year-exam-routine-2026",
+    "primary_keyword": "অনার্স ২য় বর্ষ পরীক্ষার রুটিন",
+    "native_title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine ও Subject Code",
+    "seo_title": "জাতীয় বিশ্ববিদ্যালয় অনার্স ২য় বর্ষ পরীক্ষার রুটিন ২০২৬ (সকল বিভাগ) | NU Honours 2nd Year Exam Routine ও Subject Code",
+    "meta_description": "অনার্স ২য় বর্ষ পরীক্ষার রুটিন সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
     "modifications": {
       "first_p_updated": false,
       "h2_updated": 3,
@@ -147,122 +90,8 @@
       "toc_injected": false,
       "density_boosted": false
     },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 129,
-    "slug": "eastern-state-thought-its-importance-characteristics",
-    "primary_keyword": "প্রাচ্যের রাষ্ট্রচিন্তা পাঠের গুরুত্ব ও বৈশিষ্ট্য",
-    "native_title": "প্রাচ্যের রাষ্ট্রচিন্তা এর পাঠের গুরুত্ব, বৈশিষ্ট্য, পরিধি ও বিষয়বস্তু",
-    "seo_title": "প্রাচ্যের রাষ্ট্রচিন্তা এর পাঠের গুরুত্ব, বৈশিষ্ট্য, পরিধি ও বিষয়বস্তু",
-    "meta_description": "প্রাচ্যের রাষ্ট্রচিন্তা পাঠের গুরুত্ব ও বৈশিষ্ট্য সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 0,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 130,
-    "slug": "honours-political-science-book-list",
-    "primary_keyword": "রাষ্ট্রবিজ্ঞান অনার্স পাঠ্য বইয়ের তালিকা",
-    "native_title": "রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)",
-    "seo_title": "রাষ্ট্রবিজ্ঞান অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের পাঠ্য বইয়ের তালিকা ও বিষয় কোড (২০২৬)",
-    "meta_description": "রাষ্ট্রবিজ্ঞান অনার্স পাঠ্য বইয়ের তালিকা সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 2,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 131,
-    "slug": "namta-1-to-20",
-    "primary_keyword": "নামতা ১ থেকে ২০ পড়ার নিয়ম",
-    "native_title": "নামতা ১ থেকে ২০ | Namta 1 to 20",
-    "seo_title": "নামতা ১ থেকে ২০ | Namta 1 to 20",
-    "meta_description": "নামতা ১ থেকে ২০ পড়ার নিয়ম সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন নামতা ১ থেকে ২০ সংক্রান্ত।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 3,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 132,
-    "slug": "hason-raja-was-born-in-1854-class-six",
-    "primary_keyword": "Class 6 English Hason Raja Passage",
-    "native_title": "Hason Raja Was Born in 1854 | Class 6 English Seen Comprehension, Meaning ও Model Questions",
-    "seo_title": "Hason Raja Was Born in 1854 | Class 6 English Seen Comprehension, Meaning ও Model Questions",
-    "meta_description": "Class 6 English Hason Raja Passage সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 3,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 133,
-    "slug": "simple-guide-to-job-and-bcs-preparation",
-    "primary_keyword": "চাকরি ও বিসিএস প্রস্তুতির সহজ গাইড",
-    "native_title": "অলস ও ব্যাকবেঞ্চারদের জন্য চাকরি ও বিসিএস প্রস্তুতির সহজ গাইড (২০২৬)",
-    "seo_title": "অলস ও ব্যাকবেঞ্চারদের জন্য চাকরি ও বিসিএস প্রস্তুতির সহজ গাইড (২০২৬)",
-    "meta_description": "চাকরি ও বিসিএস প্রস্তুতির সহজ গাইড সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 0,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
-    "expected_score": 95
-  },
-  {
-    "id": 134,
-    "slug": "modern-political-thought-answer-sheet-2019-pdf",
-    "primary_keyword": "আধুনিক রাষ্ট্রচিন্তা ২০১৯ সালের প্রশ্ন সমাধান",
-    "native_title": "আধুনিক রাষ্ট্রচিন্তা ২০১৯ সালের প্রশ্নের নির্ভুল উত্তরমালা ও সমাধান (২০২৬)",
-    "seo_title": "আধুনিক রাষ্ট্রচিন্তা ২০১৯ সালের প্রশ্নের নির্ভুল উত্তরমালা ও সমাধান (২০২৬)",
-    "meta_description": "আধুনিক রাষ্ট্রচিন্তা ২০১৯ সালের প্রশ্ন সমাধান সংক্রান্ত প্রয়োজনীয় সমস্ত নিয়মাবলী, সিলেবাস ও পূর্ণাঙ্গ নির্দেশিকা সম্পর্কে বিস্তারিত জানুন।",
-    "modifications": {
-      "first_p_updated": false,
-      "h2_updated": 3,
-      "img_alt_updated": 1,
-      "external_link_added": false,
-      "toc_injected": false,
-      "density_boosted": false
-    },
-    "applied": true,
-    "dry_run": false,
+    "applied": false,
+    "dry_run": true,
     "expected_score": 95
   }
 ]

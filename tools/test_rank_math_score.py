@@ -4,10 +4,13 @@ import sys
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-with open('output_posts/ntrca-school-level-assistant-teacher-syllabus-2026.html', 'r', encoding='utf-8') as f:
+html_file = sys.argv[1] if len(sys.argv) > 1 else 'output_posts/ntrca-school-level-assistant-teacher-syllabus-2026.html'
+meta_file = sys.argv[2] if len(sys.argv) > 2 else html_file.replace('.html', '_meta.json')
+
+with open(html_file, 'r', encoding='utf-8') as f:
     content = f.read()
 
-with open('output_posts/ntrca-school-level-assistant-teacher-syllabus-2026_meta.json', 'r', encoding='utf-8') as f:
+with open(meta_file, 'r', encoding='utf-8') as f:
     meta = json.load(f)
 
 title = meta.get('title', '')
