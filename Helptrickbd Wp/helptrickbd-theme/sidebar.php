@@ -71,10 +71,30 @@ if (!defined('ABSPATH')) {
                                 <!-- Post Details -->
                                 <div class="ht-popular-details">
                                     <?php
-                                    $cats = get_the_category();
-                                    if (!empty($cats)) : ?>
+                                    $primary_cat_name = '';
+                                    $primary_cat_id = get_post_meta(get_the_ID(), 'rank_math_primary_category', true);
+                                    if ($primary_cat_id) {
+                                        $p_cat = get_term($primary_cat_id, 'category');
+                                        if ($p_cat && !is_wp_error($p_cat)) {
+                                            $primary_cat_name = $p_cat->name;
+                                        }
+                                    }
+                                    if (empty($primary_cat_name)) {
+                                        $cats = get_the_category();
+                                        if (!empty($cats)) {
+                                            $chosen_cat = $cats[0];
+                                            foreach ($cats as $c) {
+                                                if ($c->slug !== 'education-guide') {
+                                                    $chosen_cat = $c;
+                                                    break;
+                                                }
+                                            }
+                                            $primary_cat_name = $chosen_cat->name;
+                                        }
+                                    }
+                                    if (!empty($primary_cat_name)) : ?>
                                         <div class="ht-popular-cat-wrap">
-                                            <span class="ht-popular-cat-chip"><?php echo esc_html($cats[0]->name); ?></span>
+                                            <span class="ht-popular-cat-chip"><?php echo esc_html($primary_cat_name); ?></span>
                                         </div>
                                     <?php endif; ?>
                                     <h4 class="ht-popular-title">

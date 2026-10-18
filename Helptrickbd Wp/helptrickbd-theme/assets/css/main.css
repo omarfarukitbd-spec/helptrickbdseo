@@ -1015,10 +1015,10 @@ button {
 }
 
 .ht-col-lead-title {
-    font-size: 0.96rem;
+    font-size: 1.15rem;
     font-weight: 700;
     line-height: 1.45;
-    margin: 0 0 6px 0;
+    margin: 0 0 8px 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -1086,10 +1086,10 @@ button {
 }
 
 .ht-col-sub-title {
-    font-size: 0.88rem;
+    font-size: 1.0rem;
     font-weight: 600;
-    line-height: 1.4;
-    margin: 0 0 4px 0;
+    line-height: 1.45;
+    margin: 0 0 6px 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -1798,6 +1798,7 @@ button {
     width: 66px;
     height: 66px;
     min-width: 66px;
+    min-height: 66px;
     flex-shrink: 0;
     display: block;
 }
@@ -1806,10 +1807,12 @@ button {
     width: 100%;
     height: 100%;
     border-radius: 50% !important;
-    overflow: hidden;
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden !important;
     background: var(--ht-surface-hover);
-    border: 2.5px solid var(--ht-surface-border);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    border: 2.5px solid var(--ht-surface-border) !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black); /* Webkit circular clipping fix */
     transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
@@ -1818,9 +1821,12 @@ button {
 .ht-popular-thumb-round {
     width: 100% !important;
     height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
     object-fit: cover !important;
     border-radius: 50% !important;
-    display: block;
+    display: block !important;
     transition: transform 0.3s ease;
 }
 
@@ -2420,6 +2426,9 @@ button {
 }
 
 @media (max-width: 991px) {
+    .ht-site-content {
+        margin-top: 14px;
+    }
     .ht-nav-wrapper {
         display: none !important;
     }
@@ -2561,10 +2570,15 @@ button {
     }
 
     .ht-scroll-top {
-        bottom: 76px;
-        right: 14px;
+        bottom: 84px !important;
+        right: 16px !important;
         width: 44px;
         height: 44px;
+        z-index: 45 !important;
+    }
+
+    .ht-site-footer {
+        padding-bottom: 95px !important;
     }
 
     .ht-widget {
@@ -2573,12 +2587,22 @@ button {
     }
 
     .ht-popular-thumb-wrap {
-        width: 60px;
-        height: 60px;
+        width: 62px !important;
+        height: 62px !important;
+        min-width: 62px !important;
+        min-height: 62px !important;
+    }
+
+    .ht-popular-thumb-circle,
+    .ht-popular-thumb-circle img,
+    .ht-popular-thumb-round {
+        border-radius: 50% !important;
+        aspect-ratio: 1 / 1 !important;
+        overflow: hidden !important;
     }
 
     .ht-popular-title {
-        font-size: 0.88rem;
+        font-size: 0.94rem;
     }
 
     .ht-cat-card-box {

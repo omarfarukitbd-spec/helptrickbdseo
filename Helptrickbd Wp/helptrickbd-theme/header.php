@@ -34,88 +34,7 @@ if (!defined('ABSPATH')) {
                 pointer-events: auto !important;
             }
         }
-        /* Mobile Drawer Quick Tools Bar - Strictly Horizontal */
-        .ht-drawer-tools-bar {
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            gap: 8px !important;
-            flex-wrap: nowrap !important;
-            padding: 10px 14px !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            background: var(--ht-surface) !important;
-            border-bottom: 1px solid var(--ht-surface-border) !important;
-        }
-        .ht-drawer-tools-bar .ht-drawer-search-btn {
-            width: auto !important;
-            height: 38px !important;
-            flex: 1 1 auto !important;
-            min-width: 0 !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 8px !important;
-            padding: 0 12px !important;
-            border-radius: 9999px !important;
-            background: var(--ht-surface-hover) !important;
-            border: 1px solid var(--ht-surface-border) !important;
-            color: var(--ht-text-secondary) !important;
-            cursor: pointer !important;
-        }
-        .ht-drawer-tools-bar .ht-drawer-search-btn .ht-search-text {
-            display: inline-block !important;
-            font-size: 0.84rem !important;
-            white-space: nowrap !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-        }
-        .ht-drawer-tools-bar .ht-drawer-actions-right {
-            display: inline-flex !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            gap: 8px !important;
-            flex-shrink: 0 !important;
-            margin: 0 !important;
-        }
-        .ht-drawer-tools-bar .ht-drawer-action-btn {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 36px !important;
-            height: 36px !important;
-            flex-shrink: 0 !important;
-            border-radius: 50% !important;
-            position: relative !important;
-            background: var(--ht-surface-hover) !important;
-            border: 1px solid var(--ht-surface-border) !important;
-            color: var(--ht-text-primary) !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            cursor: pointer !important;
-        }
-        /* Bookmark Badge Positioning */
-        .ht-drawer-action-btn .ht-badge-count,
-        .ht-bookmarks-trigger .ht-badge-count {
-            position: absolute !important;
-            top: -4px !important;
-            right: -4px !important;
-            min-width: 18px !important;
-            height: 18px !important;
-            padding: 0 4px !important;
-            border-radius: 9999px !important;
-            background: var(--ht-primary, #0284c7) !important;
-            color: #ffffff !important;
-            font-size: 0.65rem !important;
-            font-weight: 700 !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            line-height: 1 !important;
-            border: 2px solid var(--ht-surface) !important;
-            box-sizing: border-box !important;
-        }
-        /* Category Section Header in Drawer */
+        /* Mobile Drawer Section Header */
         .ht-drawer-section-header {
             display: flex !important;
             flex-direction: row !important;
@@ -569,40 +488,13 @@ if (!defined('ABSPATH')) {
                 </button>
             </div>
             
-            <!-- Quick Action Tools Bar (Search Ctrl+K, Bookmarks Reading List, Dark/Light Mode) -->
-            <div class="ht-drawer-tools-bar">
-                <?php if (get_theme_mod('ht_header_search_enable', true)) : ?>
-                    <button class="ht-search-btn ht-drawer-search-btn" id="ht-drawer-search-trigger" aria-label="<?php esc_attr_e('Search (Ctrl+K)', 'helptrickbd'); ?>">
-                        <?php ht_m3_icon('search', 18); ?>
-                        <span class="ht-search-text"><?php esc_html_e('Search...', 'helptrickbd'); ?></span>
-                        <kbd class="ht-search-kbd">Ctrl+K</kbd>
-                    </button>
-                <?php endif; ?>
-
-                <div class="ht-drawer-actions-right">
-                    <?php if (get_theme_mod('ht_header_bookmarks_enable', true)) : ?>
-                        <button class="ht-action-btn ht-drawer-action-btn ht-bookmarks-trigger" id="ht-drawer-bookmarks-trigger" aria-label="<?php esc_attr_e('Reading List (Bookmarks)', 'helptrickbd'); ?>" title="<?php esc_attr_e('Reading List', 'helptrickbd'); ?>">
-                            <?php ht_m3_icon('bookmark', 20); ?>
-                            <span class="ht-badge-count" id="ht-drawer-bookmark-badge">0</span>
-                        </button>
-                    <?php endif; ?>
-
-                    <?php if (get_theme_mod('ht_header_theme_toggle_enable', true)) : ?>
-                        <button class="ht-action-btn ht-drawer-action-btn ht-theme-toggle" id="ht-drawer-theme-toggle" aria-label="<?php esc_attr_e('Toggle Dark / Light Mode', 'helptrickbd'); ?>" title="<?php esc_attr_e('Toggle Theme', 'helptrickbd'); ?>">
-                            <span class="ht-theme-icon-light"><?php ht_m3_icon('dark_mode', 20); ?></span>
-                            <span class="ht-theme-icon-dark"><?php ht_m3_icon('light_mode', 20); ?></span>
-                        </button>
-                    <?php endif; ?>
-                </div>
-            </div>
-
             <div class="ht-mobile-drawer-body">
                 <!-- Dynamic All Categories Engine (Entire Drawer dedicated to categories) -->
                 <div class="ht-drawer-categories-wrap">
                     <div class="ht-drawer-section-header">
-                        <span class="ht-drawer-section-title"><?php esc_html_e('All Categories', 'helptrickbd'); ?></span>
+                        <span class="ht-drawer-section-title"><?php esc_html_e('সকল ক্যাটাগরি', 'helptrickbd'); ?></span>
                         <?php 
-                        $cat_count_total = wp_count_terms(['taxonomy' => 'category', 'hide_empty' => false]);
+                        $cat_count_total = wp_count_terms(['taxonomy' => 'category', 'hide_empty' => true]);
                         if (!is_wp_error($cat_count_total) && $cat_count_total > 0) :
                         ?>
                             <span class="ht-drawer-cat-total"><?php echo esc_html($cat_count_total); ?></span>
@@ -613,8 +505,9 @@ if (!defined('ABSPATH')) {
                         $drawer_cats = get_categories([
                             'orderby'    => 'count',
                             'order'      => 'DESC',
-                            'hide_empty' => false,
-                            'number'     => 0, // Show all categories
+                            'hide_empty' => true,
+                            'exclude'    => [1], // Hide Uncategorized
+                            'number'     => 0,   // Show all active categories
                         ]);
                         if (!empty($drawer_cats)) :
                             foreach ($drawer_cats as $d_cat) :
