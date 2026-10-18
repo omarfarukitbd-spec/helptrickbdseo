@@ -1,0 +1,672 @@
+import os
+import sys
+import json
+import re
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output_posts")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+HTML_PATH = os.path.join(OUTPUT_DIR, "nu-degree-1st-year-rescheduled-routine-2026.html")
+META_PATH = os.path.join(OUTPUT_DIR, "nu-degree-1st-year-rescheduled-routine-2026_meta.json")
+
+with open(META_PATH, "r", encoding="utf-8") as f:
+    meta = json.load(f)
+
+kw = "ডিগ্রি ১ম বর্ষ পরীক্ষার পরিবর্তিত সময়সূচি 2026"
+banner_url = meta.get("banner_url", "https://www.helptrickbd.com/wp-content/uploads/2026/10/nu_degree_1st_year_rescheduled_routine_2026.webp")
+pdf_url = meta.get("pdf_url", "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/pdf/nu/nu_degree_1st_year_rescheduled_routine_2026.pdf")
+
+html = f"""<!-- Byte-0 Hero Banner Placement -->
+<figure class="htbd-featured-hero" style="margin: 0 0 25px 0; text-align: center;">
+  <img src="{banner_url}" alt="{kw} ও নতুন রুটিন" title="{kw}" style="width: 100%; max-width: 1000px; height: auto; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.12); display: block; margin: 0 auto;" loading="eager" />
+  <figcaption style="font-family: 'SolaimanLipi', sans-serif; font-size: 14px; color: #64748b; margin-top: 8px; text-align: center;">
+    জাতীয় বিশ্ববিদ্যালয় ডিগ্রি পাস ও সার্টিফিকেট কোর্স ১ম বর্ষের স্থগিত পরীক্ষার সংশোধিত সময়সূচি ২০২৬ | ছবি: HelpTrickBD
+  </figcaption>
+</figure>
+
+<!-- Modern Typography & Layout Styling -->
+<link href="https://cdn.jsdelivr.net/gh/maateen/ekushey-cdn@1.0/fonts/solaiman-lipi/stylesheet.css" rel="stylesheet" type="text/css" />
+<style>
+  .htbd-nu-content {{
+    font-family: 'SolaimanLipi', Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.85;
+    font-size: 16.5px;
+  }}
+  .htbd-nu-content h2 {{
+    font-family: 'SolaimanLipi', sans-serif;
+    color: #0b2046;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+    border-bottom: 2.5px solid #0b2046;
+    padding-bottom: 10px;
+  }}
+  .htbd-nu-content h3 {{
+    font-family: 'SolaimanLipi', sans-serif;
+    color: #1e3a8a;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px 0 15px 0;
+  }}
+  .htbd-nu-content p {{
+    margin-bottom: 18px;
+    text-align: justify;
+  }}
+  .htbd-table {{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15.5px;
+  }}
+  .htbd-table th, .htbd-table td {{
+    border: 1px solid #cbd5e1;
+    padding: 12px 14px;
+    text-align: left;
+  }}
+  .htbd-table th {{
+    background-color: #0b2046;
+    color: #ffffff;
+    font-weight: 700;
+  }}
+  .htbd-table tr:nth-child(even) {{
+    background-color: #f8fafc;
+  }}
+  .htbd-callout {{
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 25px 0;
+  }}
+  .htbd-callout-info {{
+    background-color: #eff6ff;
+    border-left: 5px solid #2563eb;
+    color: #1e40af;
+  }}
+  .htbd-callout-warning {{
+    background-color: #fffbeb;
+    border-left: 5px solid #f59e0b;
+    color: #92400e;
+  }}
+  .htbd-callout-alert {{
+    background-color: #fef2f2;
+    border-left: 5px solid #ef4444;
+    color: #991b1b;
+  }}
+  .dark .htbd-nu-content, [data-theme="dark"] .htbd-nu-content {{
+    color: #cbd5e1;
+  }}
+  .dark .htbd-nu-content h2, [data-theme="dark"] .htbd-nu-content h2 {{
+    color: #93c5fd;
+    border-bottom-color: #3b82f6;
+  }}
+  .dark .htbd-nu-content h3, [data-theme="dark"] .htbd-nu-content h3 {{
+    color: #bfdbfe;
+  }}
+  .dark .htbd-table th, [data-theme="dark"] .htbd-table th {{
+    background-color: #1e3a8a;
+    color: #ffffff;
+  }}
+  .dark .htbd-table tr:nth-child(even), [data-theme="dark"] .htbd-table tr:nth-child(even) {{
+    background-color: #0f172a;
+  }}
+  .dark .htbd-table td, [data-theme="dark"] .htbd-table td {{
+    border-color: #334155;
+    color: #e2e8f0;
+  }}
+  .dark .htbd-callout-info, [data-theme="dark"] .htbd-callout-info {{
+    background-color: #172554;
+    color: #bfdbfe;
+  }}
+  .dark .htbd-callout-warning, [data-theme="dark"] .htbd-callout-warning {{
+    background-color: #451a03;
+    color: #fde68a;
+  }}
+  .dark .htbd-callout-alert, [data-theme="dark"] .htbd-callout-alert {{
+    background-color: #450a0a;
+    color: #fecaca;
+  }}
+</style>
+
+<div class="htbd-nu-content">
+
+<!-- Lead Introduction in First 100 Words -->
+<p>
+জাতীয় বিশ্ববিদ্যালয়ের অধিভুক্ত সকল কলেজের শিক্ষার্থীদের জন্য <strong>{kw}</strong> আনুষ্ঠানিকভাবে প্রকাশ করেছে জাতীয় বিশ্ববিদ্যালয় পরীক্ষা নিয়ন্ত্রণ দপ্তর। অনিবার্য প্রশাসনিক কারণবশত স্থগিত ঘোষিত ১৮ অক্টোবর ও ১৯ অক্টোবর ২০২৬ তারিখের পরীক্ষাগুলোর নতুন তারিখ ও বিষয়ভিত্তিক সময়সূচি নির্ধারণ করা হয়েছে। প্রতিদিনের পরীক্ষা পূর্বনির্ধারিত সময় অনুযায়ী দুপুর ১টা ৩০ মিনিট থেকে শুরু হবে।
+</p>
+
+<!-- Jump Break Tag for WordPress Excerpt & RSS Feed -->
+<!--more-->
+
+<p>
+ডিগ্রি (পাস) ও সার্টিফিকেট কোর্স ১ম বর্ষ পরীক্ষার কোড হলো ১১০১। পরীক্ষা নিয়ন্ত্রক মো. এনামুল করিম স্বাক্ষরিত জরুরি বিজ্ঞপ্তিতে স্পষ্টভাবে উল্লেখ করা হয়েছে যে, স্থগিত পরীক্ষা দুটি আগামী ২ নভেম্বর ও ৩ নভেম্বর ২০২৬ তারিখে অনুষ্ঠিত হবে।
+</p>
+
+<p>
+তবে ২০ অক্টোবর ২০২৬ থেকে পরবর্তী অন্য সকল পরীক্ষা পূর্বঘোষিত মূল সময়সূচি অনুযায়ী যথা নিয়মে অনুষ্ঠিত থাকবে। আজকের এই পূর্ণাঙ্গ নির্দেশিকা আর্টিকেলে আমরা {kw}, বিষয়ভিত্তিক কোড, পরীক্ষার কেন্দ্র ব্যবস্থাপনা এবং ফারুক স্যারের বিশেষ পাস করার টেকনিক বিস্তারিতভাবে তুলে ধরব।
+</p>
+
+<!-- Quick Highlights Overview Box -->
+<div class="htbd-callout htbd-callout-info" style="box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+  <h3 style="margin-top: 0; color: #1e40af; font-size: 19px; font-weight: 700; margin-bottom: 12px;">{kw} একনজরে | Highlights at a Glance</h3>
+  <ul style="margin: 0; padding-left: 20px; line-height: 1.85; font-size: 15.5px;">
+    <li><strong>কর্তৃপক্ষ:</strong> পরীক্ষা নিয়ন্ত্রণ দপ্তর, জাতীয় বিশ্ববিদ্যালয় (<a href="https://www.nu.ac.bd" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: underline; font-weight: bold;">NU Website</a>), গাজীপুর-১৭০৪।</li>
+    <li><strong>পরীক্ষার নাম ও কোড:</strong> ডিগ্রি (পাস) ও সার্টিফিকেট কোর্স ১ম বর্ষ পরীক্ষা ২০২৬ (পরীক্ষা কোড: ১১০১)।</li>
+    <li><strong>স্থগিত পরীক্ষার তারিখ:</strong> ১৮ অক্টোবর ও ১৯ অক্টোবর ২০২৬।</li>
+    <li><strong>সংশোধিত নতুন তারিখ:</strong> ২ নভেম্বর ২০২৬ (সোমবার) ও ৩ নভেম্বর ২০২৬ (মঙ্গলবার)।</li>
+    <li><strong>পরীক্ষা শুরুর সময়:</strong> প্রতিদিন দুপুর ১:৩০ মিনিট (প্রশ্নপত্রে উল্লেখিত সময় পর্যন্ত চলবে)।</li>
+    <li><strong>প্রবেশপত্র সংক্রান্ত নিয়ম:</strong> পুরাতন প্রবেশপত্র ও রেজিস্ট্রেশন কার্ড দিয়েই পরীক্ষায় অংশ নেওয়া যাবে (নতুন প্রবেশপত্রের প্রয়োজন নেই)।</li>
+    <li><strong>কেন্দ্র ও সিট প্ল্যান:</strong> পূর্বের নির্ধারিত কেন্দ্র ও আসন বিন্যাস সম্পূর্ণ অপরিবর্তিত থাকবে।</li>
+    <li><strong>সহায়ক অন্যান্য গাইডলাইন:</strong> ডিগ্রি সম্পন্ন করার পরবর্তী প্রস্তুতির জন্য আমাদের <a href="https://www.helptrickbd.com/nu-degree-2nd-year-in-course-and-exam/" style="color: #2563eb; text-decoration: underline; font-weight: bold;">ডিগ্রি ২য় বর্ষ ইনকোর্স ও পরীক্ষার গাইড</a>, <a href="https://www.helptrickbd.com/nu-honours-2nd-year-exam-routine-2026/" style="color: #2563eb; text-decoration: underline; font-weight: bold;">অনার্স ২য় বর্ষ পরীক্ষার রুটিন</a> এবং শিক্ষা সেকশনের <a href="https://www.helptrickbd.com/primary-scholarship-exam-routine-2026/" style="color: #2563eb; text-decoration: underline; font-weight: bold;">প্রাথমিক বৃত্তি পরীক্ষার রুটিন ২০২৬</a> দেখতে পারেন।</li>
+  </ul>
+</div>
+
+<!-- Table of Contents Box (Rank Math Gutenberg Clean Block) -->
+<div class="htbd-toc-box wp-block-rank-math-toc-block" id="rank-math-toc" style="background: #f8fafc; border: 1.5px solid #0b2046; border-radius: 12px; padding: 22px 25px; margin: 30px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+  <div style="font-weight: 700; font-size: 19px; color: #0b2046; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+    <span>সূচিপত্র (Table of Contents)</span>
+  </div>
+  <nav>
+    <ul style="margin: 0; padding-left: 20px; line-height: 1.85; font-size: 15.5px; color: #334155;">
+      <li><a href="#section-1" style="color: #0b2046; text-decoration: none;">{kw}: নতুন ও স্থগিত পরীক্ষার চূড়ান্ত রুটিন</a></li>
+      <li><a href="#section-2" style="color: #0b2046; text-decoration: none;">অফিসিয়াল সংশোধিত রুটিন PDF ডাউনলোড ও অনলাইন ভিউয়ার</a></li>
+      <li><a href="#section-3" style="color: #0b2046; text-decoration: none;">২০ অক্টোবর থেকে পরবর্তী পরীক্ষাসমূহের অবস্থা</a></li>
+      <li><a href="#section-4" style="color: #0b2046; text-decoration: none;">প্রবেশপত্র ও পরীক্ষা কেন্দ্র সংক্রান্ত জরুরি নির্দেশনা</a></li>
+      <li><a href="#section-5" style="color: #0b2046; text-decoration: none;">ডিগ্রি ১ম বর্ষ পরীক্ষার মানবণ্টন ও গ্রেডিং সিস্টেম</a></li>
+      <li><a href="#section-6" style="color: #0b2046; text-decoration: none;">ফারুক স্যারের ডিগ্রি ১ম বর্ষ পরীক্ষায় ১ম শ্রেণি / ভালো সিজিপিএ পাওয়ার ৫টি গোল্ডেন ট্রিকস</a></li>
+      <li><a href="#section-7" style="color: #0b2046; text-decoration: none;">স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস বিষয়ের দ্রুত রিভিশন কৌশল</a></li>
+      <li><a href="#section-8" style="color: #0b2046; text-decoration: none;">পরীক্ষার হলে ৩ ঘণ্টা ৩০ মিনিটের কার্যকর সময় বণ্টন</a></li>
+      <li><a href="#section-9" style="color: #0b2046; text-decoration: none;">প্রমোশন ও পরবর্তী বর্ষে উত্তীর্ণ হওয়ার আবশ্যক শর্তাবলী</a></li>
+      <li><a href="#section-10" style="color: #0b2046; text-decoration: none;">পরীক্ষার হলে যে ৪টি ভুল করলে ফলাফল স্থগিত বা বহিষ্কার হতে পারেন</a></li>
+      <li><a href="#section-11" style="color: #0b2046; text-decoration: none;">{kw} সংক্রান্ত সাধারণ প্রশ্নোত্তর (FAQs)</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- ========================================== -->
+<!-- SECTION 1: LEADING H2 STARTING WITH FOCUS KW-->
+<!-- ========================================== -->
+<h2 id="section-1">{kw}: নতুন ও স্থগিত পরীক্ষার চূড়ান্ত রুটিন</h2>
+
+<p>
+জাতীয় বিশ্ববিদ্যালয় পরীক্ষা নিয়ন্ত্রণ দপ্তরের স্মারক নং জা:বি:/প:নি:/ডিগ্রি(পাস)/২০২৬/১১০১ অনুযায়ী স্থগিত হওয়া পরীক্ষাগুলোর নতুন সময়সূচি আনুষ্ঠানিকভাবে কার্যকর করা হয়েছে। {kw} অনুযায়ী ১৮ ও ১৯ অক্টোবরের পরীক্ষা দুটি পেছানোর ফলে শিক্ষার্থীরা রিভিশন দেওয়ার জন্য অতিরিক্ত দুই সপ্তাহ সময় হাতে পেয়েছেন।
+</p>
+
+<p>
+বিজ্ঞপ্তির তথ্যানুযায়ী, {kw} অনুসরণ করে পরীক্ষার্থীরা এখন নতুন উদ্যমে প্রস্তুতি নিতে পারছেন। নিচের টেবিলে পূর্বনির্ধারিত স্থগিত তারিখ, সংশোধিত নতুন তারিখ, সংশ্লিষ্ট বিষয় ও বিষয় কোডের পূর্ণাঙ্গ তালিকা তুলে ধরা হলো:
+</p>
+
+<div style="overflow-x: auto;">
+<table class="htbd-table">
+  <thead>
+    <tr>
+      <th style="width: 22%;">পূর্বনির্ধারিত স্থগিত তারিখ</th>
+      <th style="width: 24%;">সংশোধিত নতুন পরীক্ষার তারিখ</th>
+      <th style="width: 38%;">বিষয় ও পত্র</th>
+      <th style="width: 16%;">বিষয় কোড</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="color: #b91c1c; font-weight: 600;">
+        ১৮ অক্টোবর ২০২৬<br>(রবিবার)
+      </td>
+      <td style="background-color: #ecfdf5; color: #047857; font-weight: 700;">
+        ০২ নভেম্বর ২০২৬<br>(সোমবার)
+      </td>
+      <td>
+        <strong>১. গণিত (Mathematics)</strong> — ২য় পত্র<br>
+        <strong>২. উচ্চাঙ্গ সংগীত</strong> — ২য় পত্র
+      </td>
+      <td style="font-weight: 600;">
+        ১১৩৭০৩<br>১১৪৫০২
+      </td>
+    </tr>
+    <tr>
+      <td style="color: #b91c1c; font-weight: 600;">
+        ১৯ অক্টোবর ২০২৬<br>(সোমবার)
+      </td>
+      <td style="background-color: #ecfdf5; color: #047857; font-weight: 700;">
+        ০৩ নভেম্বর ২০২৬<br>(মঙ্গলবার)
+      </td>
+      <td>
+        <strong>১. বাংলা সাহিত্য (ঐচ্ছিক)</strong> — ২য় পত্র<br>
+        <strong>২. ইংরেজি (ঐচ্ছিক)</strong> — ২য় পত্র<br>
+        <strong>৩. আরবি</strong> — ২য় পত্র<br>
+        <strong>৪. সংস্কৃত</strong> — ২য় পত্র<br>
+        <strong>৫. পালি</strong> — ২য় পত্র<br>
+        <strong>৬. বেসিক হোম ইকোনমিকস</strong> — ২য় পত্র
+      </td>
+      <td style="font-weight: 600;">
+        ১১১০০৩<br>১১১১০৩<br>১১১২০৩<br>১১১৩০৩<br>১১১৪০৩<br>১১৩৬০৩
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="htbd-callout htbd-callout-warning">
+  <strong>[বিশেষ জ্ঞাতব্য]:</strong> প্রতিদিন পরীক্ষা দুপুর ১:৩০ মিনিটে একযোগে সারাদেশে নির্ধারিত পরীক্ষা কেন্দ্রসমূহে শুরু হবে। {kw} অনুযায়ী প্রশ্নপত্রে উল্লেখিত পূর্ণ সময় পর্যন্ত পরীক্ষা চলবে।
+</div>
+
+<!-- ========================================== -->
+<!-- SECTION 2: PDF VIEWER & DOWNLOAD           -->
+<!-- ========================================== -->
+<h2 id="section-2">অফিসিয়াল সংশোধিত রুটিন PDF ডাউনলোড ও অনলাইন ভিউয়ার</h2>
+
+<p>
+শিক্ষার্থী ও কলেজ কর্তৃপক্ষের সুবিধার্থে জাতীয় বিশ্ববিদ্যালয় কর্তৃক প্রকাশিত মূল নোটিশটির হুবহু প্রিন্ট-রেডি সংস্করণ আমরা প্রস্তুত করেছি। {kw} এর অফিশিয়াল নোটিশটি সরাসরি আপনার ফোনে বা কম্পিউটারে ডাউনলোড করে সংরক্ষণ করতে পারেন অথবা নিচে অনলাইনে দেখে নিতে পারেন।
+</p>
+
+<!-- Interactive PDF Viewer Container -->
+<div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; margin: 30px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
+    <div>
+      <h4 style="margin: 0; color: #0b2046; font-size: 18px; font-weight: 700;">জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ১ম বর্ষ স্থগিত পরীক্ষার সংশোধিত নোটিশ</h4>
+      <span style="font-size: 13.5px; color: #64748b;">ফরমেট: হাই-কোয়ালিটি প্রিন্ট রেডি PDF (স্মারক: ১১০১)</span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <a href="{pdf_url}" target="_blank" rel="noopener" style="background: #0b2046; color: #ffffff; padding: 9px 18px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 6px;">
+        ডাউনলোড করুন (Download PDF)
+      </a>
+      <a href="{pdf_url}" target="_blank" rel="noopener" style="background: #f1f5f9; color: #0b2046; border: 1px solid #cbd5e1; padding: 9px 18px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">
+        পূর্ণ স্ক্রিনে দেখুন
+      </a>
+    </div>
+  </div>
+
+  <div style="position: relative; width: 100%; height: 520px; border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0;">
+    <iframe src="{pdf_url}" style="width: 100%; height: 100%; border: none;" title="জাতীয় বিশ্ববিদ্যালয় ডিগ্রি ১ম বর্ষ রুটিন PDF">
+      আপনার ব্রাউজারে সরাসরি PDF প্রদর্শিত হচ্ছে না। দয়া করে উপরের ডাউনলোড বাটনে ক্লিক করে ফাইলটি ওপেন করুন।
+    </iframe>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SECTION 3: OTHER EXAM DATES STATUS         -->
+<!-- ========================================== -->
+<h2 id="section-3">২০ অক্টোবর থেকে পরবর্তী পরীক্ষাসমূহের অবস্থা</h2>
+
+<p>
+অনেক শিক্ষার্থীর মনে বিভ্রান্তি তৈরি হতে পারে যে শুধু কি ১৮ ও ১৯ অক্টোবরের পরীক্ষাই স্থগিত হয়েছে নাকি পুরো রুটিন পরিবর্তন করা হয়েছে। জাতীয় বিশ্ববিদ্যালয়ের নোটিশে সুস্পষ্ট ভাষায় পরিষ্কার করা হয়েছে:
+</p>
+
+<div class="htbd-callout htbd-callout-info">
+  <p style="margin: 0;">
+    <strong>সিদ্ধান্ত:</strong> ২০ অক্টোবর ২০২৬ তারিখ হতে পূর্বঘোষিত মূল রুটিনের অন্য সকল পরীক্ষা সম্পূর্ণ অপরিবর্তিত থাকবে। অর্থাৎ ২০ অক্টোবর, ২১ অক্টোবর বা পরবর্তী তারিখগুলোতে যে বিষয়ের পরীক্ষা হওয়ার কথা ছিল, তা পূর্বনির্ধারিত দিন ও সময়েই অনুষ্ঠিত হবে। শুধুমাত্র স্থগিতকৃত দুটি পরীক্ষা যথাক্রমে ২ ও ৩ নভেম্বর অনুষ্ঠিত হবে।
+  </p>
+</div>
+
+<p>
+অতএব পরীক্ষার্থীদের অনুরোধ করা হচ্ছে, আপনারা কোনো প্রকার গুজবে কান না দিয়ে ২০ অক্টোবর থেকে শুরু হওয়া নিয়মিত পরীক্ষার জন্য পূর্ণ মনোযোগ দিন। {kw} শুধুমাত্র ১৮ ও ১৯ অক্টোবরের স্থগিত বিষয়ের জন্যই প্রযোজ্য।
+</p>
+
+<!-- ========================================== -->
+<!-- SECTION 4: ADMIT CARD & CENTRE REGULATIONS -->
+<!-- ========================================== -->
+<h2 id="section-4">প্রবেশপত্র ও পরীক্ষা কেন্দ্র সংক্রান্ত জরুরি নির্দেশনা</h2>
+
+<p>
+স্থগিত পরীক্ষা নতুন তারিখে অনুষ্ঠিত হওয়ার প্রেক্ষিতে প্রবেশপত্র এবং কেন্দ্র সম্পর্কিত বেশ কিছু গুরুত্বপূর্ণ নির্দেশনা জাতীয় বিশ্ববিদ্যালয় কর্তৃপক্ষ জারি করেছে:
+</p>
+
+<ul style="padding-left: 20px; line-height: 1.85;">
+  <li><strong>নতুন প্রবেশপত্র লাগবে না:</strong> স্থগিতকৃত পরীক্ষার জন্য কলেজ থেকে পুনরায় কোনো নতুন প্রবেশপত্র (Admit Card) তোলার প্রয়োজন নেই। পূর্বে শিক্ষার্থীদের যে মূল প্রবেশপত্র দেওয়া হয়েছে, সেই একই প্রবেশপত্র প্রদর্শন করে ২ ও ৩ নভেম্বরের পরীক্ষায় অংশ নিতে হবে।</li>
+  <li><strong>রেজিস্ট্রেশন কার্ড প্রদর্শন:</strong> পরীক্ষার হলে প্রবেশপত্র ও মূল রেজিস্ট্রেশন কার্ড সার্বক্ষণিক সঙ্গে রাখতে হবে। পরিদর্শক চাওয়ামাত্র তা দেখাতে হবে। {kw} এর দিনও এই নিয়ম অপরিবর্তিত থাকবে।</li>
+  <li><strong>পরীক্ষার কেন্দ্র অপরিবর্তিত:</strong> আপনার কলেজ যে পরীক্ষা কেন্দ্রের অধীনে নির্ধারিত ছিল, সংশোধিত পরীক্ষার দিনও আপনাকে সেই একই কেন্দ্রে গিয়ে পরীক্ষা দিতে হবে। কোনো শিক্ষার্থীর কেন্দ্র পরিবর্তন করা হয়নি।</li>
+  <li><strong>সময়ানুবর্তিতা:</strong> পরীক্ষা দুপুর ১:৩০ মিনিটে শুরু হলেও কেন্দ্র কর্তৃপক্ষের তল্লাশি ও ওএমআর শিট বিতরণের সুবিধার্থে পরীক্ষা শুরুর অন্তত ৩০ থেকে ৪৫ মিনিট পূর্বে নিজ নিজ নির্ধারিত আসনে বসতে হবে।</li>
+</ul>
+
+<!-- ========================================== -->
+<!-- SECTION 5: MARKS & GRADING SYSTEM          -->
+<!-- ========================================== -->
+<h2 id="section-5">ডিগ্রি ১ম বর্ষ পরীক্ষার মানবণ্টন ও গ্রেডিং সিস্টেম</h2>
+
+<p>
+ডিগ্রি (পাস) কোর্সে প্রতিটি তত্ত্বীয় পরীক্ষার প্রশ্নপত্র সাধারণত ৮০ নম্বরের হয়ে থাকে এবং অবশিষ্ট ২০ নম্বর ইনকোর্স মূল্যায়নের অন্তর্ভুক্ত থাকে। তত্ত্বীয় ৮০ নম্বরের প্রশ্ন কাঠামো ৩টি প্রধান বিভাগে বিন্যস্ত থাকে:
+</p>
+
+<div style="overflow-x: auto;">
+<table class="htbd-table">
+  <thead>
+    <tr>
+      <th style="width: 25%;">বিভাগ (Section)</th>
+      <th style="width: 25%;">মোট প্রশ্ন ও উত্তর</th>
+      <th style="width: 25%;">প্রতি প্রশ্নের মান</th>
+      <th style="width: 25%;">মোট নম্বর</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>'ক' বিভাগ (অতি সংক্ষিপ্ত)</strong></td>
+      <td>১২টি থেকে যেকোনো ১০টি</td>
+      <td>১ নম্বর</td>
+      <td>১০ নম্বর</td>
+    </tr>
+    <tr>
+      <td><strong>'খ' বিভাগ (সংক্ষিপ্ত প্রশ্ন)</strong></td>
+      <td>৮টি থেকে যেকোনো ৫টি</td>
+      <td>৪ নম্বর</td>
+      <td>২০ নম্বর</td>
+    </tr>
+    <tr>
+      <td><strong>'গ' বিভাগ (রচনামূলক প্রশ্ন)</strong></td>
+      <td>৮টি থেকে যেকোনো ৫টি</td>
+      <td>১০ নম্বর</td>
+      <td>৫০ নম্বর</td>
+    </tr>
+    <tr style="background-color: #f1f5f9; font-weight: 700;">
+      <td>সর্বমোট তত্ত্বীয় নম্বর</td>
+      <td>২৫টি প্রশ্ন</td>
+      <td>-</td>
+      <td>৮০ নম্বর</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>
+জাতীয় বিশ্ববিদ্যালয়ের ডিগ্রি গ্রেডিং পদ্ধতিতে ৪০% নম্বর পেলে 'D' গ্রেড পেয়ে পাস গণ্য করা হয়। তবে ভালো চাকরি ও ক্যারিয়ারের জন্য অন্তত ৬০% নম্বর (B+ বা ৩.০০+ সিজিপিএ) অর্জন করা আবশ্যক। {kw} মাথায় রেখে প্রতিটি বিষয়ের লিখিত অংশে সর্বোচ্চ নম্বর তোলার পরিকল্পনা করা বুদ্ধিমানের কাজ।
+</p>
+
+<!-- ========================================== -->
+<!-- SECTION 6: FARUK SIR'S PREPARATION HACKS   -->
+<!-- ========================================== -->
+<h2 id="section-6">ফারুক স্যারের ডিগ্রি ১ম বর্ষ পরীক্ষায় ১ম শ্রেণি / ভালো সিজিপিএ পাওয়ার ৫টি গোল্ডেন ট্রিকস</h2>
+
+<p>
+বিগত এক দশকেরও বেশি সময় ধরে জাতীয় বিশ্ববিদ্যালয়ের ডিগ্রি ও অনার্স শিক্ষার্থীদের পড়ানোর অভিজ্ঞতায় ফারুক স্যার লক্ষ্য করেছেন, ডিগ্রি পরীক্ষায় ভালো ফলাফল করা মেধার চেয়েও বেশি নির্ভর করে খাতা উপস্থাপনের কৌশলের ওপর। {kw} পেছানোর কারণে পাওয়া এই অতিরিক্ত সময়কে কাজে লাগিয়ে নিচের ৫টি কৌশল অবলম্বন করলে অনায়াসে প্রথম শ্রেণি অর্জন করা সম্ভব:
+</p>
+
+<div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 22px; margin: 25px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+  <h4 style="color: #0b2046; margin-top: 0; font-size: 18px;">[১] 'ক' বিভাগের ১০ এ ১০ নিশ্চিত করার টেকনিক:</h4>
+  <p style="color: #334155; font-size: 15.5px; line-height: 1.8;">
+    বিগত ৫ থেকে ৭ বছরের (২০১৭–২০২৩) জাতীয় বিশ্ববিদ্যালয়ের বোর্ড প্রশ্ন সমাধান করলে 'ক' বিভাগের ১০টি প্রশ্ন প্রায় শতভাগ কমন পাওয়া যায়। অতি সংক্ষিপ্ত প্রশ্নে কোনো অপ্রয়োজনীয় ভূমিকা ছাড়া এক শব্দ বা এক বাক্যে সোজাসাপ্টা সঠিক উত্তর লিখবেন। এখানে পূর্ণ ১০ নম্বর পাওয়া গেলে পরীক্ষকের মনে আপনার সম্পর্কে চমৎকার ধারণা তৈরি হয়।
+  </p>
+
+  <h4 style="color: #0b2046; font-size: 18px;">[২] 'খ' বিভাগে পয়েন্টভিত্তিক উপস্থাপনা:</h4>
+  <p style="color: #334155; font-size: 15.5px; line-height: 1.8;">
+    ৪ নম্বরের সংক্ষিপ্ত প্রশ্নে টানা প্যারাগ্রাফ না লিখে অন্তত ৪টি থেকে ৫টি অর্থপূর্ণ পয়েন্ট আকারে লিখবেন। নীল কালির কলম দিয়ে পয়েন্টের শিরোনাম লিখে কালো কলমে বর্ণনা দিন। এতে উত্তর স্পষ্ট ও আকর্ষণীয় হয় এবং ৪ এ ৩ থেকে ৪ নম্বর পাওয়া নিশ্চিত হয়। {kw} এর ফাঁকে পয়েন্ট লেখার নিয়মিত অনুশীলন চালিয়ে যান।
+  </p>
+
+  <h4 style="color: #0b2046; font-size: 18px;">[৩] 'গ' বিভাগে প্রামাণ্য সংজ্ঞা ও কোটেশন সংযোজন:</h4>
+  <p style="color: #334155; font-size: 15.5px; line-height: 1.8;">
+    ১০ নম্বরের বড় প্রশ্নে প্রাসঙ্গিক রাষ্ট্রবিজ্ঞানী, সমাজবিজ্ঞানী, অর্থনীতিবিদ বা ঐতিহাসিকদের অন্তত ১–২টি প্রামাণ্য উক্তি বা সংজ্ঞা কোট করুন। এছাড়া যেখানে সম্ভব সেখানে ছোট ডায়াগ্রাম, ফ্লোচার্ট বা বক্স ব্যবহার করুন। সাদামাটা রচনার চেয়ে এই ধরনের কাঠামোবদ্ধ উত্তরে পরীক্ষক অনেক বেশি নম্বর দিয়ে থাকেন।
+  </p>
+
+  <h4 style="color: #0b2046; font-size: 18px;">[৪] কোনো প্রশ্ন কখনোই ফাঁকা না রাখা:</h4>
+  <p style="color: #334155; font-size: 15.5px; line-height: 1.8;">
+    ডিগ্রি পরীক্ষায় খাতা খালি রেখে আসা হলো সবচেয়ে বড় ভুল। কোনো প্রশ্নের উত্তর সামান্য জানা থাকলেও বিষয়টির প্রাসঙ্গিক ধারণা থেকে সুন্দর পয়েন্ট তৈরি করে পূর্ণ নির্ধারিত পৃষ্ঠা লিখে আসুন। কিছু লিখলে পরীক্ষক নম্বর দেওয়ার সুযোগ পান, কিন্তু ফাঁকা রাখলে শূন্য ছাড়া কোনো উপায় থাকে না। {kw} এর এই মূল্যবান সময়ে উত্তর লেখার গতি বৃদ্ধি করুন।
+  </p>
+
+  <h4 style="color: #0b2046; font-size: 18px;">[৫] হাতের লেখার পরিচ্ছন্নতা ও মার্জিন সতর্কতা:</h4>
+  <p style="color: #334155; font-size: 15.5px; line-height: 1.8; margin-bottom: 0;">
+    খাতার বামে ও উপরে অন্তত ১ ইঞ্চি মার্জিন রাখুন। অনেকে নিচে ও ডানেও অতিরিক্ত মার্জিন টেনে খাতার লেখার জায়গা ছোট করে ফেলেন, যা পরীক্ষকদের বিরক্ত করে। পরিচ্ছন্ন হাতের লেখা এবং প্যারাগ্রাফগুলোর মধ্যে পরিমিত ফাঁকা জায়গা বজায় রাখুন।
+  </p>
+</div>
+
+<!-- ========================================== -->
+<!-- SECTION 7: HISTORY REVISION STRATEGY       -->
+<!-- ========================================== -->
+<h2 id="section-7">স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস বিষয়ের দ্রুত রিভিশন কৌশল</h2>
+
+<p>
+ডিগ্রি ১ম বর্ষের সকল বিভাগের (বিএ, বিএসএস, বিবিএস, বিএসসি) শিক্ষার্থীদের জন্য 'স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস' (বিষয় কোড: ১১১৫০১) একটি আবশ্যিক বিষয়। এই বিষয়ে ভালো সিজিপিএ তোলা তুলনামূলক সহজ যদি কিছু নির্ধারিত ঐতিহাসিক অধ্যায়ে বিশেষ জোর দেওয়া যায়:
+</p>
+
+<ul style="padding-left: 20px; line-height: 1.85;">
+  <li><strong>অধ্যায় ১: দেশ ও জনগোষ্ঠীর পরিচয়:</strong> ভূ-প্রকৃতির বৈশিষ্ট্য ও এর প্রভাব।</li>
+  <li><strong>অধ্যায় ৩ ও ৪: ১৯৫২-এর ভাষা আন্দোলন ও যুক্তফ্রন্ট নির্বাচন:</strong> ভাষা আন্দোলনের পটভূমি, তাৎপর্য এবং ১৯৫৪ সালের যুক্তফ্রন্টের ২১ দফা।</li>
+  <li><strong>অধ্যায় ৬: ৬ দফা আন্দোলন (১৯৬৬):</strong> বাঙালির ম্যাগনাকার্টা হিসেবে ৬ দফার দফাভিত্তিক বিশ্লেষণ ও এর গুরুত্ব।</li>
+  <li><strong>অধ্যায় ৭: ১৯৬৯-এর গণঅভ্যুত্থান ও ১১ দফা কর্মসূচি:</strong> গণঅভ্যুত্থানের কারণ ও ফলাফল।</li>
+  <li><strong>অধ্যায় ৮ ও ৯: ১৯৭০-এর নির্বাচন ও মুক্তিযুদ্ধ ১৯৭১:</strong> ৭ মার্চের ঐতিহাসিক ভাষণের রাজনৈতিক ও আন্তর্জাতিক গুরুত্ব, ২৫ মার্চের কালরাত এবং অস্থায়ী মুজিবনগর সরকারের কাঠামো।</li>
+</ul>
+
+<p>
+{kw} এর প্রস্তুতি পর্বে এই মূল অধ্যায়গুলোর বিগত ৫ বছরের প্রশ্ন ভালোভাবে রিভিশন দিলে ইতিহাস বিষয়ে এ প্লাস বা এ গ্রেড পাওয়া খুবই সহজ হবে। এছাড়া {kw} কার্যকরভাবে কাজে লাগিয়ে অন্য ঐচ্ছিক বিষয়গুলোর ঘাটতি পূরণ করা সম্ভব।
+</p>
+
+<!-- ========================================== -->
+<!-- SECTION 8: TIME MANAGEMENT IN EXAM HALL    -->
+<!-- ========================================== -->
+<h2 id="section-8">পরীক্ষার হলে ৩ ঘণ্টা ৩০ মিনিটের কার্যকর সময় বণ্টন</h2>
+
+<p>
+জাতীয় বিশ্ববিদ্যালয়ের ডিগ্রি পরীক্ষায় অনেক শিক্ষার্থী সময় শেষ হয়ে যাওয়ার কারণে শেষ প্রশ্নের উত্তর পুরোপুরি শেষ করতে পারেন না। {kw} অনুযায়ী দুপুর ১:৩০ মিনিটে শুরু হওয়া ৩ ঘণ্টা ৩০ মিনিট (মোট ২১০ মিনিট) সময়কে যেভাবে সুষমভাবে ভাগ করা উচিত:
+</p>
+
+<div style="overflow-x: auto;">
+<table class="htbd-table">
+  <thead>
+    <tr>
+      <th>কার্যক্রম</th>
+      <th>বরাদ্দকৃত সময়</th>
+      <th>কীভাবে পরিচালনা করবেন</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>প্রশ্ন নির্বাচন ও পরিকল্পনা</strong></td>
+      <td>১০ মিনিট</td>
+      <td>প্রশ্নপত্র হাতে পেয়ে দাগিয়ে নিন কোন ৫টি খ ও গ বিভাগের প্রশ্ন আপনি সবচেয়ে ভালো পারেন।</td>
+    </tr>
+    <tr>
+      <td><strong>'ক' বিভাগ (১০টি উত্তর)</strong></td>
+      <td>২০ মিনিট</td>
+      <td>প্রতিটি অতি সংক্ষিপ্ত উত্তরের জন্য সর্বোচ্চ ২ মিনিট ব্যয় করুন।</td>
+    </tr>
+    <tr>
+      <td><strong>'খ' বিভাগ (৫টি সংক্ষিপ্ত উত্তর)</strong></td>
+      <td>৪০ মিনিট</td>
+      <td>প্রতি প্রশ্নের জন্য ৮ মিনিট (দেড় থেকে দুই পৃষ্ঠা লিখবেন)।</td>
+    </tr>
+    <tr>
+      <td><strong>'গ' বিভাগ (৫টি বড় প্রশ্ন)</strong></td>
+      <td>১২৫ মিনিট</td>
+      <td>প্রতি প্রশ্নের জন্য ২৫ মিনিট করে ব্যয় করুন (সাড়ে তিন থেকে চার পৃষ্ঠা লিখবেন)।</td>
+    </tr>
+    <tr>
+      <td><strong>রিভিশন ও রোল/রেজিস্ট্রেশন চেক</strong></td>
+      <td>১৫ মিনিট</td>
+      <td>সব প্রশ্নের দাগ নম্বর ঠিক আছে কিনা এবং অতিরিক্ত পৃষ্ঠা ঠিকমতো সেলাই হয়েছে কিনা তা যাচাই করুন।</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>
+সঠিক সময় ব্যবস্থাপনা অনুসরণ করলে {kw} এর পরীক্ষায় কোনো প্রশ্ন অপূর্ণ থাকবে না এবং পরীক্ষায় পূর্ণ ৮০ নম্বরের উত্তর দেওয়া সম্ভব হবে।
+</p>
+
+<!-- ========================================== -->
+<!-- SECTION 9: PROMOTION RULES                 -->
+<!-- ========================================== -->
+<h2 id="section-9">প্রমোশন ও পরবর্তী বর্ষে উত্তীর্ণ হওয়ার আবশ্যক শর্তাবলী</h2>
+
+<p>
+জাতীয় বিশ্ববিদ্যালয়ের ডিগ্রি (পাস) কোর্সের প্রবিধান অনুযায়ী ১ম বর্ষ থেকে ২য় বর্ষে উত্তীর্ণ হওয়ার জন্য নির্দিষ্ট কিছু একাডেমিক শর্ত পূরণ করতে হয়:
+</p>
+
+<div class="htbd-callout htbd-callout-warning">
+  <ul style="margin: 0; padding-left: 20px; line-height: 1.85;">
+    <li><strong>ন্যূনতম পাস বিষয়:</strong> ১ম বর্ষের পরীক্ষায় অংশ নিয়ে অন্তত ৩টি তাত্ত্বিক কোর্সে ন্যূনতম 'D' গ্রেড (৪০ নম্বর) পেয়ে উত্তীর্ণ হতে হবে।</li>
+    <li><strong>ন্যূনতম সিজিপিএ:</strong> পরবর্তী বর্ষে প্রমোশন পাওয়ার জন্য সামগ্রিক ফলাফল ন্যূনতম জিপিএ ২.০০ (GPA 2.00) হতে হবে।</li>
+    <li><strong>নট প্রমোটেড (Not Promoted):</strong> যদি কোনো শিক্ষার্থী নির্ধারিত সংখ্যক কোর্সে উত্তীর্ণ হতে না পারে বা অনুপস্থিত থাকে, তবে সে পরবর্তী বর্ষে উত্তীর্ণ হতে পারবে না এবং তাকে ১ম বর্ষেই পুনরায় পরীক্ষা দিতে হবে।</li>
+  </ul>
+</div>
+
+<p>
+{kw} পেছানোর কারণে পাওয়া অতিরিক্ত সময়কে কাজে লাগিয়ে যেসব বিষয়ে আপনার প্রস্তুতি কিছুটা দুর্বল ছিল, সেগুলোতে পূর্ণ প্রস্তুতি সম্পন্ন করে নিশ্চিত প্রমোশন অর্জন করুন। {kw} এর সুযোগকে কাজে লাগিয়ে প্রতিটি পত্রে ভালো গ্রেড অর্জন করা সম্ভব।
+</p>
+
+<!-- ========================================== -->
+<!-- SECTION 10: COMMON EXAM MISTAKES           -->
+<!-- ========================================== -->
+<h2 id="section-10">পরীক্ষার হলে যে ৪টি ভুল করলে ফলাফল স্থগিত বা বহিষ্কার হতে পারেন</h2>
+
+<p>
+জাতীয় বিশ্ববিদ্যালয় পরীক্ষা চলাকালীন কোনো অনিয়ম সহ্য করে না। নিচের ৪টি মারাত্মক ভুল থেকে শিক্ষার্থীদের সর্বদা সতর্ক থাকতে হবে:
+</p>
+
+<div class="htbd-callout htbd-callout-alert">
+  <ul style="margin: 0; padding-left: 20px; line-height: 1.85;">
+    <li><strong>ওএমআর শিটে রোল ও রেজিস্ট্রেশন ভুল ভরাট:</strong> রোল বা রেজিস্ট্রেশন বৃত্ত পূরণে ভুল হলে কম্পিউটার খাতা রিড করতে পারে না এবং ফলাফল 'Withheld' (স্থগিত) হয়ে যায়।</li>
+    <li><strong>মোবাইল ফোন ও ইলেকট্রনিক ডিভাইস:</strong> পরীক্ষার হলে বন্ধ অবস্থাতেও মোবাইল ফোন সঙ্গে পাওয়া গেলে সরাসরি বহিষ্কারের (Expel) বিধান রয়েছে। {kw} এর দিনেও কেন্দ্রে কড়া নিরাপত্তা তল্লাশি থাকবে।</li>
+    <li><strong>খাতার ভেতরে কোনো মোবাইল নম্বর বা অনৈতিক অনুরোধ লেখা:</strong> অনেক শিক্ষার্থী পাশ করিয়ে দেওয়ার অনুরোধ জানিয়ে খাতার মধ্যে মোবাইল নম্বর বা আবেগপ্রবণ লেখা লিখে আসেন। এমনটি করলে খাতা সরাসরি বাতিল ও রেজিস্ট্রেশন বাতিল হতে পারে।</li>
+    <li><strong>উপস্থিতি শিটে (Attendance Sheet) স্বাক্ষর না করা:</strong> পরীক্ষার হলে দায়িত্বরত শিক্ষক যখন স্বাক্ষর শিট নিয়ে আসবেন, তখন অবশ্যই আপনার রোল ও খাতার নম্বর মিলিয়ে স্বাক্ষর নিশ্চিত করতে হবে। স্বাক্ষর না থাকলে আপনাকে অনুপস্থিত হিসেবে বিবেচনা করা হবে।</li>
+  </ul>
+</div>
+
+<p>
+পরীক্ষার হলে এই সতর্কতাগুলো যথাযথভাবে মেনে চললে {kw} অনুযায়ী অনুষ্ঠিত পরীক্ষায় কোনো অনাকাঙ্ক্ষিত ঝামেলা ছাড়াই সুন্দরভাবে পরীক্ষা সম্পন্ন করা যাবে।
+</p>
+
+<!-- ========================================== -->
+<!-- SECTION 11: FAQS ACCORDION                 -->
+<!-- ========================================== -->
+<h2 id="section-11">{kw} সংক্রান্ত সাধারণ প্রশ্নোত্তর (FAQs)</h2>
+
+<div style="margin: 25px 0;">
+  <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; cursor: pointer;">
+    <summary style="font-weight: 700; font-size: 17px; color: #0b2046;">প্রশ্ন ১: {kw} অনুযায়ী স্থগিত পরীক্ষাগুলো কোন তারিখে অনুষ্ঠিত হবে?</summary>
+    <p style="margin: 10px 0 0 0; color: #334155; font-size: 15.5px; line-height: 1.75;">
+      উত্তর: স্থগিতকৃত ১৮ অক্টোবরের পরীক্ষা আগামী ২ নভেম্বর ২০২৬ (সোমবার) এবং ১৯ অক্টোবরের পরীক্ষা আগামী ৩ নভেম্বর ২০২৬ (মঙ্গলবার) দুপুর ১টা ৩০ মিনিটে অনুষ্ঠিত হবে।
+    </p>
+  </details>
+
+  <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; cursor: pointer;">
+    <summary style="font-weight: 700; font-size: 17px; color: #0b2046;">প্রশ্ন ২: ২০ অক্টোবর থেকে কি সকল পরীক্ষা আগের রুটিনেই হবে?</summary>
+    <p style="margin: 10px 0 0 0; color: #334155; font-size: 15.5px; line-height: 1.75;">
+      উত্তর: হ্যাঁ, ২০ অক্টোবর ২০২৬ হতে পরবর্তী সকল পরীক্ষা পূর্বঘোষিত মূল রুটিন অনুযায়ী সম্পূর্ণ অপরিবর্তিত থাকবে এবং নির্ধারিত সময়ে অনুষ্ঠিত হবে। {kw} শুধুমাত্র স্থগিত বিষয়ের জন্য প্রযোজ্য।
+    </p>
+  </details>
+
+  <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; cursor: pointer;">
+    <summary style="font-weight: 700; font-size: 17px; color: #0b2046;">প্রশ্ন ৩: স্থগিত পরীক্ষার জন্য কি কলেজ থেকে নতুন প্রবেশপত্র নিতে হবে?</summary>
+    <p style="margin: 10px 0 0 0; color: #334155; font-size: 15.5px; line-height: 1.75;">
+      উত্তর: না, কোনো নতুন প্রবেশপত্র সংগ্রহ করতে হবে না। পূর্বে ইস্যুকৃত প্রবেশপত্র এবং রেজিস্ট্রেশন কার্ড দিয়েই সংশোধিত তারিখের পরীক্ষায় অংশগ্রহণ করা যাবে।
+    </p>
+  </details>
+
+  <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; cursor: pointer;">
+    <summary style="font-weight: 700; font-size: 17px; color: #0b2046;">প্রশ্ন ৪: ডিগ্রি ১ম বর্ষ পরীক্ষায় কত নম্বর পেলে পাস করা যায়?</summary>
+    <p style="margin: 10px 0 0 0; color: #334155; font-size: 15.5px; line-height: 1.75;">
+      উত্তর: প্রতিটি কোর্সে তত্ত্বীয় ৮০ নম্বরের মধ্যে ন্যূনতম ৪০% নম্বর (৩২ নম্বর) এবং ইনকোর্সে পাস মার্ক পেলে ডি গ্রেড পেয়ে পাস গণ্য করা হয়।
+    </p>
+  </details>
+
+  <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; cursor: pointer;">
+    <summary style="font-weight: 700; font-size: 17px; color: #0b2046;">প্রশ্ন ৫: {kw} এর অফিশিয়াল নোটিশ PDF কীভাবে ডাউনলোড করব?</summary>
+    <p style="margin: 10px 0 0 0; color: #334155; font-size: 15.5px; line-height: 1.75;">
+      উত্তর: আমাদের আর্টিকেলে দেওয়া 'ডাউনলোড করুন (Download PDF)' বাটনে ক্লিক করে সরাসরি জাতীয় বিশ্ববিদ্যালয়ের মূল নোটিশের প্রিন্ট-রেডি PDF সংরক্ষণ করতে পারবেন।
+    </p>
+  </details>
+</div>
+
+<!-- ========================================== -->
+<!-- AUTHOR E-E-A-T CARD                        -->
+<!-- ========================================== -->
+<div class="htbd-author-card htbd-author-box" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 22px; margin: 40px 0; display: flex; align-items: center; gap: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-family: 'SolaimanLipi', sans-serif;">
+  <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp" alt="ফারুক স্যার" loading="lazy" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #0b2046;" />
+  <div>
+    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 19px;">লেখক পরিচিতি: ফারুক স্যার (মো. ওমর ফারুক)</h4>
+    <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.6;">
+      প্রতিষ্ঠাতা ও প্রধান সম্পাদক, HelpTrickBD। জাতীয় বিশ্ববিদ্যালয় ও বিসিএস শিক্ষা সহায়তা ও সঠিক ক্যারিয়ার নির্দেশনায় বিগত এক দশকেরও বেশি সময় ধরে নিবেদিতপ্রাণ শিক্ষক ও লেখক।
+    </p>
+  </div>
+</div>
+
+<!-- Schema.org Microdata -->
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{kw}: নতুন রুটিন ও Best Complete Guide (PDF সহ)",
+  "description": "{kw} প্রকাশিত। স্থগিত পরীক্ষার নতুন সময় ও তারিখ, কেন্দ্র তালিকা এবং অফিসিয়াল রুটিন PDF ডাউনলোড নির্দেশিকা।",
+  "image": "{banner_url}",
+  "author": {{
+    "@type": "Person",
+    "name": "ফারুক স্যার (Faruk Sir)"
+  }},
+  "publisher": {{
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "logo": {{
+      "@type": "ImageObject",
+      "url": "https://www.helptrickbd.com/wp-content/uploads/2026/10/helptrickbd_logo.png"
+    }}
+  }},
+  "mainEntityOfPage": {{
+    "@type": "WebPage",
+    "@id": "https://www.helptrickbd.com/nu-degree-1st-year-rescheduled-routine-2026/"
+  }}
+}}
+</script>
+
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{
+      "@type": "Question",
+      "name": "ডিগ্রি ১ম বর্ষের স্থগিত পরীক্ষাগুলো কোন তারিখে অনুষ্ঠিত হবে?",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "স্থগিতকৃত ১৮ অক্টোবরের পরীক্ষা আগামী ২ নভেম্বর ২০২৬ (সোমবার) এবং ১৯ অক্টোবরের পরীক্ষা আগামী ৩ নভেম্বর ২০২৬ (মঙ্গলবার) দুপুর ১টা ৩০ মিনিটে অনুষ্ঠিত হবে।"
+      }}
+    }},
+    {{
+      "@type": "Question",
+      "name": "২০ অক্টোবর থেকে কি সকল পরীক্ষা আগের রুটিনেই হবে?",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "হ্যাঁ, ২০ অক্টোবর ২০২৬ হতে পরবর্তী সকল পরীক্ষা পূর্বঘোষিত মূল রুটিন অনুযায়ী সম্পূর্ণ অপরিবর্তিত থাকবে এবং নির্ধারিত সময়ে অনুষ্ঠিত হবে।"
+      }}
+    }},
+    {{
+      "@type": "Question",
+      "name": "স্থগিত পরীক্ষার জন্য কি কলেজ থেকে নতুন প্রবেশপত্র নিতে হবে?",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "না, কোনো নতুন প্রবেশপত্র সংগ্রহ করতে হবে না। পূর্বে ইস্যুকৃত প্রবেশপত্র এবং রেজিস্ট্রেশন কার্ড দিয়েই সংশোধিত তারিখের পরীক্ষায় অংশগ্রহণ করা যাবে।"
+      }}
+    }},
+    {{
+      "@type": "Question",
+      "name": "ডিগ্রি ১ম বর্ষ পরীক্ষায় কত নম্বর পেলে পাস করা যায়?",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "প্রতিটি কোর্সে তত্ত্বীয় ৮০ নম্বরের মধ্যে ন্যূনতম ৪০% নম্বর (৩২ নম্বর) এবং ইনকোর্সে পাস মার্ক পেলে ডি গ্রেড পেয়ে পাস গণ্য করা হয়।"
+      }}
+    }},
+    {{
+      "@type": "Question",
+      "name": "অফিসিয়াল সংশোধিত রুটিন PDF কীভাবে ডাউনলোড করব?",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "আমাদের আর্টিকেলে দেওয়া 'ডাউনলোড করুন (Download PDF)' বাটনে ক্লিক করে সরাসরি জাতীয় বিশ্ববিদ্যালয়ের মূল নোটিশের প্রিন্ট-রেডি PDF সংরক্ষণ করতে পারবেন।"
+      }}
+    }}
+  ]
+}}
+</script>
+
+</div>
+"""
+
+with open(HTML_PATH, "w", encoding="utf-8") as f:
+    f.write(html)
+
+clean_text = re.sub(r'<[^>]+>', ' ', html)
+words = clean_text.split()
+total_words = len(words)
+kw_count = clean_text.count(kw)
+density = (kw_count / total_words) * 100 if total_words else 0
+
+print(f"[SUCCESS] Generated complete post HTML: {HTML_PATH}")
+print(f"[*] Total Words: {total_words}")
+print(f"[*] Keyword '{kw}' Occurrences: {kw_count}")
+print(f"[*] Keyword Density: {density:.2f}% (Target: 0.85% - 1.15%)")
