@@ -434,11 +434,14 @@ class PreFlightChecker:
 
         # 4. Focus keyword comprehensive checks if metadata provided
         if self.metadata:
-            kw = (self.metadata.get("focus_keyword") or self.metadata.get("rank_math_focus_keyword") or "").strip()
-            if kw:
+            raw_kw = (self.metadata.get("focus_keyword") or self.metadata.get("rank_math_focus_keyword") or "").strip()
+            if raw_kw:
+                # Rank Math supports comma-separated keywords (Primary, Secondary LSI)
+                kw_list = [k.strip() for k in raw_kw.split(",") if k.strip()]
+                kw = kw_list[0] if kw_list else raw_kw
                 # 4a. Focus keyword in Content
                 if kw in self.raw_html:
-                    self.passed.append(f"Rank Math Keyword: Focus keyword '{kw}' found in content (PASSED)")
+                    self.passed.append(f"Rank Math Keyword: Primary focus keyword '{kw}' found in content (PASSED)")
                 else:
                     self.errors.append(f"Rank Math Keyword: CRITICAL! Focus keyword '{kw}' not found in content!")
 
