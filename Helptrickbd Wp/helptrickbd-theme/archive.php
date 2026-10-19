@@ -23,7 +23,7 @@ get_header();
         <header class="ht-archive-header">
             <div class="ht-archive-header-badge">
                 <?php ht_m3_icon('category', 20); ?>
-                <span><?php esc_html_e('Category Archive', 'helptrickbd'); ?></span>
+                <span><?php esc_html_e('বিভাগ ও বিষয়ভিত্তিক আর্কাইভ', 'helptrickbd'); ?></span>
             </div>
             <h1 class="ht-archive-title"><?php the_archive_title(); ?></h1>
             <?php
@@ -60,8 +60,8 @@ get_header();
                     <div class="ht-pagination-wrap">
                         <?php
                         the_posts_pagination([
-                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . esc_html__('Previous', 'helptrickbd'),
-                            'next_text' => esc_html__('Next', 'helptrickbd') . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
+                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . esc_html__('পূর্ববর্তী', 'helptrickbd'),
+                            'next_text' => esc_html__('পরবর্তী', 'helptrickbd') . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
                         ]);
                         ?>
                     </div>

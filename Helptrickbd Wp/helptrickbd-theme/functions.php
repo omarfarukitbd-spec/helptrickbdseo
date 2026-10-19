@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '1.4.2');
+define('HT_THEME_VERSION', '1.4.3');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/material-icons.php';

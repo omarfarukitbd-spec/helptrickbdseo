@@ -45,7 +45,14 @@ LATEST_BACKUP_DIR = os.path.join(THEME_BACKUPS_DIR, "latest")
 
 
 def get_theme_source_dir():
-    """Returns the active working theme directory."""
+    """Returns the active working theme directory, prioritizing whichever has newer modifications."""
+    if os.path.exists(UPDATED_THEME_SOURCE) and os.path.exists(PRIMARY_WORKING_THEME):
+        up_style = os.path.join(UPDATED_THEME_SOURCE, "style.css")
+        wp_style = os.path.join(PRIMARY_WORKING_THEME, "style.css")
+        if os.path.exists(up_style) and os.path.exists(wp_style):
+            if os.path.getmtime(up_style) > os.path.getmtime(wp_style):
+                return UPDATED_THEME_SOURCE
+            return PRIMARY_WORKING_THEME
     if os.path.exists(PRIMARY_WORKING_THEME):
         return PRIMARY_WORKING_THEME
     if os.path.exists(UPDATED_THEME_SOURCE):

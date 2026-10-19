@@ -1,10 +1,10 @@
 {
-  "timestamp": "20261019_131113",
-  "date_human": "2026-10-19 13:11:13",
+  "timestamp": "20261019_133530",
+  "date_human": "2026-10-19 13:35:30",
   "theme_version": "1.4.2",
-  "reason": "two_folder_architecture_baseline",
+  "reason": "phase1_and_phase2_mobile_fixes_and_localization",
   "total_files": 51,
   "total_size_bytes": 796396,
   "zip_size_kb": 209.03,
-  "backup_zip_name": "helptrickbd-theme-v1.4.2-20261019_131113.zip"
+  "backup_zip_name": "helptrickbd-theme-v1.4.2-20261019_133530.zip"
 }

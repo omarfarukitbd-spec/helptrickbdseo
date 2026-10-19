@@ -64,35 +64,35 @@ get_header();
                     <div class="ht-reading-toolbelt">
                         <?php if (get_theme_mod('ht_font_resizer_enable', true)) : ?>
                             <!-- Font Size Resizer -->
-                            <div class="ht-toolbelt-group ht-font-resizer" title="<?php esc_attr_e('Adjust font size', 'helptrickbd'); ?>">
-                                <span class="ht-tool-label"><?php ht_m3_icon('format_size', 16); ?> <?php esc_html_e('Size:', 'helptrickbd'); ?></span>
-                                <button class="ht-resizer-btn" id="ht-font-dec" aria-label="<?php esc_attr_e('Decrease font size', 'helptrickbd'); ?>">A-</button>
-                                <button class="ht-resizer-btn ht-active" id="ht-font-reset" aria-label="<?php esc_attr_e('Reset font size', 'helptrickbd'); ?>">A</button>
-                                <button class="ht-resizer-btn" id="ht-font-inc" aria-label="<?php esc_attr_e('Increase font size', 'helptrickbd'); ?>">A+</button>
+                            <div class="ht-toolbelt-group ht-font-resizer" title="<?php esc_attr_e('ফন্টের আকার পরিবর্তন করুন', 'helptrickbd'); ?>">
+                                <span class="ht-tool-label"><?php ht_m3_icon('format_size', 16); ?> <?php esc_html_e('ফন্ট:', 'helptrickbd'); ?></span>
+                                <button class="ht-resizer-btn" id="ht-font-dec" aria-label="<?php esc_attr_e('ফন্ট ছোট করুন', 'helptrickbd'); ?>">A-</button>
+                                <button class="ht-resizer-btn ht-active" id="ht-font-reset" aria-label="<?php esc_attr_e('স্বাভাবিক আকার', 'helptrickbd'); ?>">A</button>
+                                <button class="ht-resizer-btn" id="ht-font-inc" aria-label="<?php esc_attr_e('ফন্ট বড় করুন', 'helptrickbd'); ?>">A+</button>
                             </div>
                         <?php endif; ?>
 
                         <?php if (get_theme_mod('ht_focus_mode_enable', true)) : ?>
                             <!-- Focus Mode Toggle -->
-                            <button class="ht-toolbelt-btn" id="ht-focus-toggle" aria-label="<?php esc_attr_e('Focus reading mode', 'helptrickbd'); ?>">
+                            <button class="ht-toolbelt-btn" id="ht-focus-toggle" aria-label="<?php esc_attr_e('ফোকাস রিডিং মোড', 'helptrickbd'); ?>">
                                 <?php ht_m3_icon('auto_stories', 16); ?>
-                                <span><?php esc_html_e('Focus Mode', 'helptrickbd'); ?></span>
+                                <span><?php esc_html_e('ফোকাস মোড', 'helptrickbd'); ?></span>
                             </button>
                         <?php endif; ?>
 
                         <?php if (get_theme_mod('ht_bookmark_btn_enable', true)) : ?>
                             <!-- Bookmark / Save for Later -->
-                            <button class="ht-toolbelt-btn ht-bookmark-toggle" data-id="<?php the_ID(); ?>" data-title="<?php echo esc_attr(get_the_title()); ?>" data-url="<?php the_permalink(); ?>" aria-label="<?php esc_attr_e('Save to reading list', 'helptrickbd'); ?>">
+                            <button class="ht-toolbelt-btn ht-bookmark-toggle" data-id="<?php the_ID(); ?>" data-title="<?php echo esc_attr(get_the_title()); ?>" data-url="<?php the_permalink(); ?>" aria-label="<?php esc_attr_e('পড়ার তালিকায় সেভ করুন', 'helptrickbd'); ?>">
                                 <?php ht_m3_icon('bookmark', 16); ?>
-                                <span class="ht-bm-text"><?php esc_html_e('Save Post', 'helptrickbd'); ?></span>
+                                <span class="ht-bm-text"><?php esc_html_e('পোস্ট সেভ করুন', 'helptrickbd'); ?></span>
                             </button>
                         <?php endif; ?>
 
                         <?php if (get_theme_mod('ht_print_btn_enable', true)) : ?>
                             <!-- 1-Click Print & PDF -->
-                            <button class="ht-toolbelt-btn" id="ht-print-btn" aria-label="<?php esc_attr_e('Print or save PDF', 'helptrickbd'); ?>">
+                            <button class="ht-toolbelt-btn" id="ht-print-btn" aria-label="<?php esc_attr_e('প্রিন্ট বা পিডিএফ সেভ করুন', 'helptrickbd'); ?>">
                                 <?php ht_m3_icon('print', 16); ?>
-                                <span><?php esc_html_e('Print / PDF', 'helptrickbd'); ?></span>
+                                <span><?php esc_html_e('প্রিন্ট বা পিডিএফ', 'helptrickbd'); ?></span>
                             </button>
                         <?php endif; ?>
                     </div>
@@ -106,13 +106,13 @@ get_header();
                             <div class="ht-toc-header" id="ht-toc-header">
                                 <div class="ht-toc-title-wrap">
                                     <?php ht_m3_icon('format_list_bulleted', 18); ?>
-                                    <span class="ht-toc-title"><?php esc_html_e('Table of Contents', 'helptrickbd'); ?></span>
+                                    <span class="ht-toc-title"><?php esc_html_e('সূচিপত্র', 'helptrickbd'); ?></span>
                                 </div>
-                                <button class="ht-toc-toggle" id="ht-toc-toggle-btn" aria-label="<?php esc_attr_e('Toggle table of contents', 'helptrickbd'); ?>">
+                                <button class="ht-toc-toggle" id="ht-toc-toggle-btn" aria-label="<?php esc_attr_e('সূচিপত্র খুলুন বা বন্ধ করুন', 'helptrickbd'); ?>">
                                     <?php ht_m3_icon('keyboard_arrow_down', 18); ?>
                                 </button>
                             </div>
-                            <nav class="ht-toc-nav" id="ht-toc-nav" aria-label="<?php esc_attr_e('Table of Contents', 'helptrickbd'); ?>"></nav>
+                            <nav class="ht-toc-nav" id="ht-toc-nav" aria-label="<?php esc_attr_e('সূচিপত্র', 'helptrickbd'); ?>"></nav>
                         </div>
                     <?php endif; ?>
 
@@ -124,7 +124,7 @@ get_header();
                     the_content();
 
                     wp_link_pages([
-                        'before'      => '<div class="ht-page-links"><span class="ht-page-links-title">' . esc_html__('Pages:', 'helptrickbd') . '</span>',
+                        'before'      => '<div class="ht-page-links"><span class="ht-page-links-title">' . esc_html__('পৃষ্ঠাসমূহ:', 'helptrickbd') . '</span>',
                         'after'       => '</div>',
                         'link_before' => '<span class="ht-page-number">',
                         'link_after'  => '</span>',
@@ -150,45 +150,45 @@ get_header();
                     $cite_title = get_the_title();
                     $cite_url = get_permalink();
                     ?>
-                    <section class="ht-citation-card" id="ht-citation-module" aria-label="<?php esc_attr_e('Academic Citation and Official Sources', 'helptrickbd'); ?>">
+                    <section class="ht-citation-card" id="ht-citation-module" aria-label="<?php esc_attr_e('একাডেমিক সূত্র ও অফিসিয়াল রেফারেন্স নির্দেশিকা', 'helptrickbd'); ?>">
                         <div class="ht-citation-header">
                             <div class="ht-citation-title-wrap">
                                 <span class="ht-citation-icon-badge">
                                     <?php ht_m3_icon('school', 20); ?>
                                 </span>
                                 <div>
-                                    <h3 class="ht-citation-title"><?php esc_html_e('Academic Source & Citation', 'helptrickbd'); ?></h3>
-                                    <span class="ht-citation-subtitle"><?php esc_html_e('Curriculum Gazette & Bibliographic Reference', 'helptrickbd'); ?></span>
+                                    <h3 class="ht-citation-title"><?php esc_html_e('একাডেমিক সূত্র ও উদ্ধৃতি (Citation)', 'helptrickbd'); ?></h3>
+                                    <span class="ht-citation-subtitle"><?php esc_html_e('অফিসিয়াল পাঠ্যক্রম ও রেফারেন্স নির্দেশিকা', 'helptrickbd'); ?></span>
                                 </div>
                             </div>
-                            <div class="ht-citation-verified-badge" title="<?php esc_attr_e('Curriculum & Academic Standards Verified', 'helptrickbd'); ?>">
+                            <div class="ht-citation-verified-badge" title="<?php esc_attr_e('পাঠ্যক্রম ও একাডেমিক মানদণ্ড যাচাইকৃত', 'helptrickbd'); ?>">
                                 <?php ht_m3_icon('verified', 15); ?>
-                                <span><?php esc_html_e('Curriculum Verified', 'helptrickbd'); ?></span>
+                                <span><?php esc_html_e('পাঠ্যক্রম অনুমোদিত', 'helptrickbd'); ?></span>
                             </div>
                         </div>
 
                         <!-- Source Authority Details -->
                         <div class="ht-citation-meta-grid">
                             <div class="ht-cite-meta-item">
-                                <span class="ht-cite-meta-label"><?php esc_html_e('Authoritative Standard:', 'helptrickbd'); ?></span>
-                                <span class="ht-cite-meta-val"><?php esc_html_e('National Curriculum (NCTB) & National University (NU) Regulations', 'helptrickbd'); ?></span>
+                                <span class="ht-cite-meta-label"><?php esc_html_e('মানদণ্ড ও কর্তৃপক্ষ:', 'helptrickbd'); ?></span>
+                                <span class="ht-cite-meta-val"><?php esc_html_e('জাতীয় শিক্ষাক্রম (NCTB) ও জাতীয় বিশ্ববিদ্যালয় (NU) সিলেবাস কাঠামো', 'helptrickbd'); ?></span>
                             </div>
                             <div class="ht-cite-meta-item">
-                                <span class="ht-cite-meta-label"><?php esc_html_e('Published Date:', 'helptrickbd'); ?></span>
+                                <span class="ht-cite-meta-label"><?php esc_html_e('প্রকাশের তারিখ:', 'helptrickbd'); ?></span>
                                 <span class="ht-cite-meta-val"><?php echo esc_html($post_date_formatted); ?></span>
                             </div>
                             <div class="ht-cite-meta-item">
-                                <span class="ht-cite-meta-label"><?php esc_html_e('Last Verified Revision:', 'helptrickbd'); ?></span>
+                                <span class="ht-cite-meta-label"><?php esc_html_e('সর্বশেষ হালনাগাদ:', 'helptrickbd'); ?></span>
                                 <span class="ht-cite-meta-val"><?php echo esc_html($post_modified_formatted); ?></span>
                             </div>
                             <div class="ht-cite-meta-item">
-                                <span class="ht-cite-meta-label"><?php esc_html_e('Resource Identifier:', 'helptrickbd'); ?></span>
+                                <span class="ht-cite-meta-label"><?php esc_html_e('রিসোর্স আইডি:', 'helptrickbd'); ?></span>
                                 <span class="ht-cite-meta-val"><code>HTBD-<?php the_ID(); ?></code></span>
                             </div>
                         </div>
 
                         <!-- Citation Format Selection Tabs -->
-                        <div class="ht-citation-tabs-nav" role="tablist" aria-label="<?php esc_attr_e('Citation Format Standards', 'helptrickbd'); ?>">
+                        <div class="ht-citation-tabs-nav" role="tablist" aria-label="<?php esc_attr_e('সাইটেশন ফরম্যাট মানদণ্ড', 'helptrickbd'); ?>">
                             <button type="button" class="ht-cite-tab-btn ht-cite-tab-active" data-cite-format="apa" role="tab" aria-selected="true">APA (7th Ed.)</button>
                             <button type="button" class="ht-cite-tab-btn" data-cite-format="mla" role="tab" aria-selected="false">MLA (9th Ed.)</button>
                             <button type="button" class="ht-cite-tab-btn" data-cite-format="harvard" role="tab" aria-selected="false">Harvard</button>
@@ -201,10 +201,10 @@ get_header();
                                 <?php echo esc_html($cite_author_name . '. (' . $post_year . '). ' . $cite_title . '. HelpTrickBD Academic Portal. Retrieved from ' . $cite_url); ?>
                             </div>
                             <div class="ht-citation-actions">
-                                <button type="button" class="ht-btn-copy-citation" id="ht-copy-citation-btn" aria-label="<?php esc_attr_e('Copy Citation', 'helptrickbd'); ?>">
+                                <button type="button" class="ht-btn-copy-citation" id="ht-copy-citation-btn" aria-label="<?php esc_attr_e('উদ্ধৃতি কপি করুন', 'helptrickbd'); ?>">
                                     <span class="ht-copy-icon-ready"><?php ht_m3_icon('content_copy', 15); ?></span>
                                     <span class="ht-copy-icon-done" style="display:none;"><?php ht_m3_icon('check', 15); ?></span>
-                                    <span id="ht-copy-citation-label"><?php esc_html_e('Copy Citation', 'helptrickbd'); ?></span>
+                                    <span id="ht-copy-citation-label"><?php esc_html_e('উদ্ধৃতি কপি করুন', 'helptrickbd'); ?></span>
                                 </button>
                             </div>
                         </div>
@@ -234,8 +234,8 @@ get_header();
                             <?php ht_m3_icon('campaign', 28); ?>
                         </div>
                         <div class="ht-community-info">
-                            <h4 class="ht-community-title"><?php esc_html_e('Never miss an exam routine or special suggestion!', 'helptrickbd'); ?></h4>
-                            <p class="ht-community-desc"><?php esc_html_e('Join our verified WhatsApp and Telegram study groups today.', 'helptrickbd'); ?></p>
+                            <h4 class="ht-community-title"><?php esc_html_e('সবার আগে পরীক্ষার রুটিন ও স্পেশাল সাজেশন পেতে চান?', 'helptrickbd'); ?></h4>
+                            <p class="ht-community-desc"><?php esc_html_e('যুক্ত হোন আমাদের অফিসিয়াল হোয়াটসঅ্যাপ ও টেলিগ্রাম স্টাডি চ্যানেলে।', 'helptrickbd'); ?></p>
                         </div>
                         <div class="ht-community-links">
                             <a href="<?php echo esc_url(get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a')); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
@@ -255,8 +255,8 @@ get_header();
                 $tags = get_the_tags();
                 if ($tags) :
                 ?>
-                    <div class="ht-tags-list" aria-label="<?php esc_attr_e('Tags', 'helptrickbd'); ?>">
-                        <span class="ht-tags-label"><?php esc_html_e('Tags:', 'helptrickbd'); ?></span>
+                    <div class="ht-tags-list" aria-label="<?php esc_attr_e('বিষয়ভিত্তিক ট্যাগসমূহ', 'helptrickbd'); ?>">
+                        <span class="ht-tags-label"><?php esc_html_e('ট্যাগ:', 'helptrickbd'); ?></span>
                         <?php foreach ($tags as $tag) : ?>
                             <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" class="ht-tag-chip">
                                 #<?php echo esc_html($tag->name); ?>
@@ -309,10 +309,10 @@ get_header();
                         ]);
                         if ($cached_query->have_posts()) :
                     ?>
-                        <section class="ht-related-section" aria-label="<?php esc_attr_e('Related Articles', 'helptrickbd'); ?>">
+                        <section class="ht-related-section" aria-label="<?php esc_attr_e('সম্পর্কিত হ্যান্ডনোট ও গাইড', 'helptrickbd'); ?>">
                             <h3 class="ht-related-heading">
                                 <?php ht_m3_icon('menu_book', 20); ?>
-                                <span><?php esc_html_e('Related Handnotes & Guides', 'helptrickbd'); ?></span>
+                                <span><?php esc_html_e('সম্পর্কিত হ্যান্ডনোট ও গাইড', 'helptrickbd'); ?></span>
                             </h3>
                             <div class="ht-related-grid">
                                 <?php
@@ -365,20 +365,20 @@ get_header();
 
 <!-- Medium-style Text Highlight Floating Dock -->
 <div class="ht-highlight-dock" id="ht-highlight-dock" aria-hidden="true">
-    <button class="ht-dock-btn" id="ht-dock-copy" aria-label="<?php esc_attr_e('Copy selection', 'helptrickbd'); ?>">
+    <button class="ht-dock-btn" id="ht-dock-copy" aria-label="<?php esc_attr_e('নির্বাচিত অংশ কপি করুন', 'helptrickbd'); ?>">
         <?php ht_m3_icon('content_copy', 15); ?>
-        <span><?php esc_html_e('Copy', 'helptrickbd'); ?></span>
+        <span><?php esc_html_e('কপি', 'helptrickbd'); ?></span>
     </button>
-    <button class="ht-dock-btn" id="ht-dock-share-wa" aria-label="<?php esc_attr_e('Share on WhatsApp', 'helptrickbd'); ?>">
+    <button class="ht-dock-btn" id="ht-dock-share-wa" aria-label="<?php esc_attr_e('হোয়াটসঅ্যাপে শেয়ার করুন', 'helptrickbd'); ?>">
         <?php ht_m3_icon('whatsapp', 15); ?>
-        <span><?php esc_html_e('Share', 'helptrickbd'); ?></span>
+        <span><?php esc_html_e('শেয়ার', 'helptrickbd'); ?></span>
     </button>
 </div>
 
 <!-- Print Watermark Container (Visible Only During Print) -->
 <div class="ht-print-watermark" aria-hidden="true">
     <div class="ht-print-logo">HelpTrickBD.com</div>
-    <div class="ht-print-subtitle">Educational & Technology Portal | <?php the_permalink(); ?></div>
+    <div class="ht-print-subtitle">শিক্ষা ও তথ্যপ্রযুক্তি রিসোর্স পোর্টাল | <?php the_permalink(); ?></div>
 </div>
 
 <?php

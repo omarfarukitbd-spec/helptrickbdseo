@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
         <div class="ht-widget ht-widget-popular">
             <div class="ht-widget-header">
                 <?php ht_m3_icon('trending_up', 20, 'ht-widget-icon'); ?>
-                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_popular_title', 'Trending Handnotes')); ?></h3>
+                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_popular_title', 'জনপ্রিয় ও আলোচিত হ্যান্ডনোট')); ?></h3>
             </div>
             <div class="ht-widget-body">
                 <?php
@@ -92,9 +92,11 @@ if (!defined('ABSPATH')) {
                                             $primary_cat_name = $chosen_cat->name;
                                         }
                                     }
-                                    if (!empty($primary_cat_name)) : ?>
+                                    if (!empty($primary_cat_name)) : 
+                                        $cat_pal = function_exists('ht_get_category_palette') ? ht_get_category_palette($primary_cat_slug, $primary_cat_name) : ['color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'];
+                                    ?>
                                         <div class="ht-popular-cat-wrap">
-                                            <span class="ht-popular-cat-chip"><?php echo esc_html($primary_cat_name); ?></span>
+                                            <span class="ht-popular-cat-chip" style="color: <?php echo esc_attr($cat_pal['color']); ?> !important;"><?php echo esc_html($primary_cat_name); ?></span>
                                         </div>
                                     <?php endif; ?>
                                     <h4 class="ht-popular-title">
@@ -102,7 +104,6 @@ if (!defined('ABSPATH')) {
                                     </h4>
                                     <div class="ht-popular-meta">
                                         <span class="ht-popular-date">
-                                            <?php ht_m3_icon('event', 13, 'ht-meta-icon'); ?>
                                             <?php ht_post_date(); ?>
                                         </span>
                                     </div>
@@ -128,7 +129,7 @@ if (!defined('ABSPATH')) {
         <div class="ht-widget ht-widget-categories">
             <div class="ht-widget-header">
                 <?php ht_m3_icon('category', 20, 'ht-widget-icon'); ?>
-                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_categories_title', 'Explore Categories')); ?></h3>
+                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_categories_title', 'সকল বিভাগ ও বিষয়')); ?></h3>
             </div>
             <div class="ht-widget-body">
                 <div class="ht-cat-cards-grid">
