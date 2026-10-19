@@ -19,9 +19,14 @@ if (!defined('ABSPATH')) {
         <?php if (get_theme_mod('ht_pre_footer_enable', true)) : ?>
             <div class="ht-pre-footer">
                 <div class="ht-container ht-pre-footer-inner">
-                    <div class="ht-pre-footer-text">
-                        <span class="ht-pre-footer-title"><?php echo esc_html(get_theme_mod('ht_pre_footer_title', 'সবার আগে পরীক্ষার রুটিন ও স্পেশাল সাজেশন পেতে চান?')); ?></span>
-                        <span class="ht-pre-footer-sub"><?php echo esc_html(get_theme_mod('ht_pre_footer_sub', 'আমাদের অফিশিয়াল হোয়াটসঅ্যাপ ও টেলিগ্রাম স্টাডি গ্রুপে এখনই যুক্ত হোন।')); ?></span>
+                    <div class="ht-pre-footer-content">
+                        <div class="ht-pre-footer-icon-badge" aria-hidden="true">
+                            <?php ht_m3_icon('campaign', 26); ?>
+                        </div>
+                        <div class="ht-pre-footer-text">
+                            <span class="ht-pre-footer-title"><?php echo esc_html(get_theme_mod('ht_pre_footer_title', 'সবার আগে পরীক্ষার রুটিন ও স্পেশাল সাজেশন পেতে চান?')); ?></span>
+                            <span class="ht-pre-footer-sub"><?php echo esc_html(get_theme_mod('ht_pre_footer_sub', 'আমাদের অফিসিয়াল হোয়াটসঅ্যাপ ও টেলিগ্রাম স্টাডি চ্যানেলে যুক্ত হোন।')); ?></span>
+                        </div>
                     </div>
                     <div class="ht-pre-footer-btns">
                         <?php

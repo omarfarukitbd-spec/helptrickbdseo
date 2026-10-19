@@ -1568,13 +1568,22 @@ body.ht-focus-mode .ht-article-col {
         grid-template-columns: 1fr;
     }
     .ht-single-community-card {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 20px 14px !important;
+        gap: 14px !important;
     }
     .ht-community-links {
-        margin-left: 0;
-        width: 100%;
-        justify-content: center;
+        margin-left: 0 !important;
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    .ht-community-links .ht-btn {
+        width: 100% !important;
+        min-height: 44px !important;
+        justify-content: center !important;
+        border-radius: var(--ht-radius-md) !important;
     }
     .ht-table-scroll-hint {
         display: flex;
