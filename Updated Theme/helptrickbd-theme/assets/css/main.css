@@ -2227,7 +2227,7 @@ button {
 }
 
 .ht-pre-footer {
-    background: var(--ht-surface-hover);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(56, 189, 248, 0.03) 100%), var(--ht-surface-hover);
     border-bottom: 1px solid var(--ht-surface-border);
     padding: 24px 0;
 }
@@ -2237,6 +2237,24 @@ button {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+}
+
+.ht-pre-footer-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ht-pre-footer-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--ht-primary);
+    flex-shrink: 0;
 }
 
 .ht-pre-footer-title {
@@ -2547,15 +2565,70 @@ button {
         grid-template-columns: 1fr;
     }
 
+    .ht-pre-footer {
+        padding: 22px 0 24px 0 !important;
+        background: linear-gradient(180deg, var(--ht-surface-hover) 0%, var(--ht-surface) 100%) !important;
+    }
+
     .ht-pre-footer-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 14px !important;
+        width: 100% !important;
+    }
+
+    .ht-pre-footer-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .ht-pre-footer-icon-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 50% !important;
+        background: rgba(37, 99, 235, 0.1) !important;
+        color: var(--ht-primary) !important;
+        margin-bottom: 2px !important;
+    }
+
+    .ht-pre-footer-title {
+        font-size: 1.15rem !important;
+        font-weight: 700 !important;
+        line-height: 1.45 !important;
+        color: var(--ht-text-primary) !important;
+        margin: 0 !important;
+    }
+
+    .ht-pre-footer-sub {
+        font-size: 0.88rem !important;
+        line-height: 1.5 !important;
+        color: var(--ht-text-secondary) !important;
+        margin: 0 !important;
+        max-width: 440px !important;
     }
 
     .ht-pre-footer-btns {
-        width: 100%;
-        justify-content: center;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        justify-content: center !important;
+    }
+
+    .ht-pre-footer-btns .ht-btn {
+        width: 100% !important;
+        min-height: 46px !important;
+        justify-content: center !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        border-radius: var(--ht-radius-md) !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+        box-sizing: border-box !important;
     }
 
     .ht-footer-grid {
@@ -2636,9 +2709,59 @@ button {
     }
 }
 
+@media (max-width: 640px) {
+    /* Auto-Wide Container & Flush Edges */
+    .ht-container {
+        padding: 0 10px !important;
+    }
+
+    /* Auto-Wide Multi-Category Section */
+    .ht-multi-cat-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        margin-top: 14px !important;
+    }
+
+    .ht-multi-cat-col {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 12px 12px 14px 12px !important;
+        border-radius: var(--ht-radius-md) !important;
+        box-sizing: border-box !important;
+    }
+
+    .ht-col-lead-card {
+        margin-bottom: 12px !important;
+    }
+
+    .ht-col-lead-body {
+        padding: 10px 0 0 0 !important;
+    }
+
+    .ht-col-sub-item {
+        padding: 8px 0 !important;
+    }
+
+    /* Auto-Wide Article Cards Grid */
+    .ht-cards-grid {
+        gap: 14px !important;
+    }
+
+    .ht-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .ht-hero-lead-body,
+    .ht-hero-lead-overlay {
+        padding: 14px 12px 14px !important;
+    }
+}
+
 @media (max-width: 480px) {
     .ht-container {
-        padding: 0 14px;
+        padding: 0 8px !important;
     }
 
     .ht-search-btn {

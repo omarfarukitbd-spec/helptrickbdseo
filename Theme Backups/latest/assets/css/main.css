@@ -1809,6 +1809,8 @@ button {
     border-radius: 50% !important;
     aspect-ratio: 1 / 1 !important;
     overflow: hidden !important;
+    -webkit-clip-path: circle(50% at 50% 50%) !important;
+    clip-path: circle(50% at 50% 50%) !important;
     background: var(--ht-surface-hover);
     border: 2.5px solid var(--ht-surface-border) !important;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
@@ -1826,6 +1828,8 @@ button {
     aspect-ratio: 1 / 1 !important;
     object-fit: cover !important;
     border-radius: 50% !important;
+    -webkit-clip-path: circle(50% at 50% 50%) !important;
+    clip-path: circle(50% at 50% 50%) !important;
     display: block !important;
     transition: transform 0.3s ease;
 }
@@ -2570,15 +2574,24 @@ button {
     }
 
     .ht-scroll-top {
-        bottom: 84px !important;
-        right: 16px !important;
-        width: 44px;
-        height: 44px;
+        bottom: calc(75px + env(safe-area-inset-bottom, 10px)) !important;
+        right: 14px !important;
+        width: 42px !important;
+        height: 42px !important;
+        opacity: 0.88;
         z-index: 45 !important;
     }
 
-    .ht-site-footer {
-        padding-bottom: 95px !important;
+    .ht-scroll-top:hover,
+    .ht-scroll-top:active {
+        opacity: 1 !important;
+    }
+
+    .ht-footer,
+    .ht-footer-bottom,
+    .ht-site-footer,
+    #colophon {
+        padding-bottom: calc(85px + env(safe-area-inset-bottom, 15px)) !important;
     }
 
     .ht-widget {
@@ -2599,6 +2612,19 @@ button {
         border-radius: 50% !important;
         aspect-ratio: 1 / 1 !important;
         overflow: hidden !important;
+        -webkit-clip-path: circle(50% at 50% 50%) !important;
+        clip-path: circle(50% at 50% 50%) !important;
+    }
+
+    .ht-dock-item.ht-dock-telegram {
+        color: #0088cc !important;
+    }
+    .ht-dock-item.ht-dock-telegram:hover,
+    .ht-dock-item.ht-dock-telegram:focus {
+        color: #006699 !important;
+    }
+    [data-theme="dark"] .ht-dock-item.ht-dock-telegram {
+        color: #38bdf8 !important;
     }
 
     .ht-popular-title {

@@ -29,7 +29,7 @@ get_header();
         if ($hero_query->have_posts()) :
             $post_count = 0;
         ?>
-        <section class="ht-hero-section" aria-label="<?php esc_attr_e('Featured and Latest Guides', 'helptrickbd'); ?>">
+        <section class="ht-hero-section" aria-label="<?php esc_attr_e('নির্বাচিত ও সর্বশেষ হ্যান্ডনোট', 'helptrickbd'); ?>">
             <div class="ht-hero-grid">
                 <?php
                 while ($hero_query->have_posts()) :
@@ -245,7 +245,7 @@ get_header();
                 <div class="ht-section-header">
                     <h2 class="ht-section-title">
                         <?php ht_m3_icon('auto_stories', 22, 'ht-icon-primary'); ?>
-                        <span><?php esc_html_e('Recent Publications & Full Handnotes', 'helptrickbd'); ?></span>
+                        <span><?php esc_html_e('সাম্প্রতিক প্রকাশনা ও সম্পূর্ণ হ্যান্ডনোট', 'helptrickbd'); ?></span>
                     </h2>
                 </div>
 
@@ -285,8 +285,8 @@ get_header();
                         echo paginate_links([
                             'total'     => $feed_query->max_num_pages,
                             'current'   => $paged,
-                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . esc_html__('Previous', 'helptrickbd'),
-                            'next_text' => esc_html__('Next', 'helptrickbd') . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
+                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . esc_html__('পূর্ববর্তী', 'helptrickbd'),
+                            'next_text' => esc_html__('পরবর্তী', 'helptrickbd') . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
                         ]);
                         ?>
                     </div>
@@ -294,7 +294,7 @@ get_header();
                 <?php
                     wp_reset_postdata();
                 else :
-                    echo '<p class="ht-no-posts">' . esc_html__('No publications found.', 'helptrickbd') . '</p>';
+                    echo '<p class="ht-no-posts">' . esc_html__('কোনো প্রকাশনা বা পোস্ট পাওয়া যায়নি।', 'helptrickbd') . '</p>';
                 endif;
                 ?>
 

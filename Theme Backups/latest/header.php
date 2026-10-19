@@ -286,12 +286,12 @@ if (!defined('ABSPATH')) {
 <?php wp_body_open(); ?>
 
 <!-- Skip to content for accessibility -->
-<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'helptrickbd'); ?></a>
+<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('সরাসরি মূল কনটেন্টে যান', 'helptrickbd'); ?></a>
 
 <div id="page" class="ht-site-wrapper">
 
     <!-- Top Bar: Breaking Notice, Countdown & Date -->
-    <aside class="ht-topbar" aria-label="<?php esc_attr_e('Notice and time ticker', 'helptrickbd'); ?>">
+    <aside class="ht-topbar" aria-label="<?php esc_attr_e('জরুরি নোটিশ ও সময়সূচি', 'helptrickbd'); ?>">
         <div class="ht-container ht-topbar-inner">
             
             <!-- Breaking Notice & Routine Ticker (Dynamic Rotator) -->
@@ -335,10 +335,10 @@ if (!defined('ABSPATH')) {
                         </ul>
                     </div>
                     <div class="ht-ticker-controls">
-                        <button type="button" class="ht-ticker-ctrl-btn" id="ht-ticker-prev" aria-label="<?php esc_attr_e('Previous notice', 'helptrickbd'); ?>" title="<?php esc_attr_e('Previous notice', 'helptrickbd'); ?>">
+                        <button type="button" class="ht-ticker-ctrl-btn" id="ht-ticker-prev" aria-label="<?php esc_attr_e('পূর্ববর্তী নোটিশ', 'helptrickbd'); ?>" title="<?php esc_attr_e('পূর্ববর্তী নোটিশ', 'helptrickbd'); ?>">
                             <?php ht_m3_icon('keyboard_arrow_left', 16); ?>
                         </button>
-                        <button type="button" class="ht-ticker-ctrl-btn" id="ht-ticker-next" aria-label="<?php esc_attr_e('Next notice', 'helptrickbd'); ?>" title="<?php esc_attr_e('Next notice', 'helptrickbd'); ?>">
+                        <button type="button" class="ht-ticker-ctrl-btn" id="ht-ticker-next" aria-label="<?php esc_attr_e('পরবর্তী নোটিশ', 'helptrickbd'); ?>" title="<?php esc_attr_e('পরবর্তী নোটিশ', 'helptrickbd'); ?>">
                             <?php ht_m3_icon('keyboard_arrow_right', 16); ?>
                         </button>
                     </div>
@@ -361,7 +361,7 @@ if (!defined('ABSPATH')) {
         <div class="ht-container ht-header-inner">
 
             <!-- Off-Canvas Drawer Hamburger Button (Desktop & Mobile) -->
-            <button class="ht-menu-toggle" id="ht-menu-toggle" aria-label="<?php esc_attr_e('Explore All Categories & Menu', 'helptrickbd'); ?>" title="<?php esc_attr_e('Explore All Categories & Menu', 'helptrickbd'); ?>" aria-expanded="false">
+            <button class="ht-menu-toggle" id="ht-menu-toggle" aria-label="<?php esc_attr_e('সকল ক্যাটাগরি ও মেনু ব্রাউজ করুন', 'helptrickbd'); ?>" title="<?php esc_attr_e('সকল ক্যাটাগরি ও মেনু', 'helptrickbd'); ?>" aria-expanded="false">
                 <?php ht_m3_icon('menu', 24, 'ht-icon-menu'); ?>
                 <?php ht_m3_icon('close', 24, 'ht-icon-close'); ?>
             </button>
@@ -379,7 +379,7 @@ if (!defined('ABSPATH')) {
                 <?php else : ?>
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="ht-logo-link" rel="home">
                         <span class="ht-logo-text">HelpTrick<span class="ht-logo-accent">BD</span></span>
-                        <span class="ht-logo-tagline"><?php esc_html_e('Education & Technology Resource Portal', 'helptrickbd'); ?></span>
+                        <span class="ht-logo-tagline"><?php esc_html_e('শিক্ষা ও তথ্যপ্রযুক্তি রিসোর্স পোর্টাল', 'helptrickbd'); ?></span>
                     </a>
                 <?php endif; ?>
 
@@ -392,10 +392,10 @@ if (!defined('ABSPATH')) {
 
             <!-- Primary Navigation Menu with Interactive Left & Right Scroll Controls -->
             <div class="ht-nav-wrapper">
-                <button type="button" class="ht-nav-scroll-btn ht-nav-scroll-prev" id="ht-nav-prev" aria-label="<?php esc_attr_e('Scroll navigation left', 'helptrickbd'); ?>" style="display: none;">
+                <button type="button" class="ht-nav-scroll-btn ht-nav-scroll-prev" id="ht-nav-prev" aria-label="<?php esc_attr_e('মেনু বামে স্ক্রোল করুন', 'helptrickbd'); ?>" style="display: none;">
                     <?php ht_m3_icon('keyboard_arrow_left', 18); ?>
                 </button>
-                <nav id="site-navigation" class="ht-nav" aria-label="<?php esc_attr_e('Primary Navigation', 'helptrickbd'); ?>">
+                <nav id="site-navigation" class="ht-nav" aria-label="<?php esc_attr_e('মূল নেভিগেশন মেনু', 'helptrickbd'); ?>">
                     <?php
                     if (has_nav_menu('primary-menu')) {
                         wp_nav_menu([
@@ -408,17 +408,17 @@ if (!defined('ABSPATH')) {
                     } else {
                         // Default fallback menu based on HelpTrickBD categories with rich icons & palette styling
                         $default_nav_items = [
-                            ['url' => home_url('/'), 'label' => __('Home', 'helptrickbd'), 'slug' => 'home', 'name' => 'Home', 'color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'],
-                            ['url' => home_url('/category/education-guide/'), 'label' => __('Education Guide', 'helptrickbd'), 'slug' => 'education-guide', 'name' => 'Education Guide'],
-                            ['url' => home_url('/category/national-university/'), 'label' => __('National University', 'helptrickbd'), 'slug' => 'national-university', 'name' => 'National University'],
-                            ['url' => home_url('/category/ssc-dakhil/'), 'label' => __('SSC & Dakhil', 'helptrickbd'), 'slug' => 'ssc-dakhil', 'name' => 'SSC & Dakhil'],
-                            ['url' => home_url('/category/political-science/'), 'label' => __('Political Science', 'helptrickbd'), 'slug' => 'political-science', 'name' => 'Political Science'],
-                            ['url' => home_url('/category/bangla-1st-paper/'), 'label' => __('Bangla', 'helptrickbd'), 'slug' => 'bangla-1st-paper', 'name' => 'Bangla'],
-                            ['url' => home_url('/category/islamic-article/'), 'label' => __('Islamic Article', 'helptrickbd'), 'slug' => 'islamic-article', 'name' => 'Islamic Article'],
-                            ['url' => home_url('/category/english-2nd-paper/'), 'label' => __('English', 'helptrickbd'), 'slug' => 'english-2nd-paper', 'name' => 'English'],
-                            ['url' => home_url('/category/ict-technology/'), 'label' => __('ICT & Tech', 'helptrickbd'), 'slug' => 'ict-technology', 'name' => 'ICT & Tech'],
-                            ['url' => home_url('/category/job-preparation/'), 'label' => __('Job Preparation', 'helptrickbd'), 'slug' => 'job-preparation', 'name' => 'Job Preparation'],
-                            ['url' => home_url('/category/university-admission/'), 'label' => __('Admission', 'helptrickbd'), 'slug' => 'university-admission', 'name' => 'Admission'],
+                            ['url' => home_url('/'), 'label' => 'প্রচ্ছদ', 'slug' => 'home', 'name' => 'Home', 'color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'],
+                            ['url' => home_url('/category/education-guide/'), 'label' => 'এডুকেশন গাইড', 'slug' => 'education-guide', 'name' => 'Education Guide'],
+                            ['url' => home_url('/category/national-university/'), 'label' => 'জাতীয় বিশ্ববিদ্যালয়', 'slug' => 'national-university', 'name' => 'National University'],
+                            ['url' => home_url('/category/ssc-dakhil/'), 'label' => 'এসএসসি ও দাখিল', 'slug' => 'ssc-dakhil', 'name' => 'SSC & Dakhil'],
+                            ['url' => home_url('/category/political-science/'), 'label' => 'রাষ্ট্রবিজ্ঞান', 'slug' => 'political-science', 'name' => 'Political Science'],
+                            ['url' => home_url('/category/bangla-1st-paper/'), 'label' => 'বাংলা ১ম পত্র', 'slug' => 'bangla-1st-paper', 'name' => 'Bangla'],
+                            ['url' => home_url('/category/islamic-article/'), 'label' => 'ইসলামিক প্রবন্ধ', 'slug' => 'islamic-article', 'name' => 'Islamic Article'],
+                            ['url' => home_url('/category/english-2nd-paper/'), 'label' => 'ইংরেজি', 'slug' => 'english-2nd-paper', 'name' => 'English'],
+                            ['url' => home_url('/category/ict-technology/'), 'label' => 'আইসিটি ও প্রযুক্তি', 'slug' => 'ict-technology', 'name' => 'ICT & Tech'],
+                            ['url' => home_url('/category/job-preparation/'), 'label' => 'চাকরি প্রস্তুতি', 'slug' => 'job-preparation', 'name' => 'Job Preparation'],
+                            ['url' => home_url('/category/university-admission/'), 'label' => 'বিশ্ববিদ্যালয় ভর্তি', 'slug' => 'university-admission', 'name' => 'Admission'],
                         ];
                         ?>
                         <ul class="ht-menu-list">
@@ -439,7 +439,7 @@ if (!defined('ABSPATH')) {
                     }
                     ?>
                 </nav>
-                <button type="button" class="ht-nav-scroll-btn ht-nav-scroll-next" id="ht-nav-next" aria-label="<?php esc_attr_e('Scroll navigation right', 'helptrickbd'); ?>">
+                <button type="button" class="ht-nav-scroll-btn ht-nav-scroll-next" id="ht-nav-next" aria-label="<?php esc_attr_e('মেনু ডানে স্ক্রোল করুন', 'helptrickbd'); ?>">
                     <?php ht_m3_icon('keyboard_arrow_right', 18); ?>
                 </button>
             </div>
@@ -449,24 +449,24 @@ if (!defined('ABSPATH')) {
                 
                 <?php if (get_theme_mod('ht_header_search_enable', true)) : ?>
                     <!-- Instant Search Trigger (Ctrl+K) -->
-                    <button class="ht-search-btn" id="ht-search-trigger" aria-label="<?php esc_attr_e('Search (Ctrl+K)', 'helptrickbd'); ?>">
+                    <button class="ht-search-btn" id="ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান করুন (Ctrl+K)', 'helptrickbd'); ?>">
                         <?php ht_m3_icon('search', 20); ?>
-                        <span class="ht-search-text"><?php esc_html_e('Search...', 'helptrickbd'); ?></span>
+                        <span class="ht-search-text"><?php esc_html_e('অনুসন্ধান...', 'helptrickbd'); ?></span>
                         <kbd class="ht-search-kbd">Ctrl+K</kbd>
                     </button>
                 <?php endif; ?>
 
                 <?php if (get_theme_mod('ht_header_bookmarks_enable', true)) : ?>
                     <!-- Saved Bookmarks Drawer Trigger -->
-                    <button class="ht-action-btn ht-bookmarks-trigger" id="ht-bookmarks-trigger" aria-label="<?php esc_attr_e('Reading List (Bookmarks)', 'helptrickbd'); ?>" title="<?php esc_attr_e('Reading List', 'helptrickbd'); ?>">
+                    <button class="ht-action-btn ht-bookmarks-trigger" id="ht-bookmarks-trigger" aria-label="<?php esc_attr_e('পড়ার তালিকা (বুকমার্ক)', 'helptrickbd'); ?>" title="<?php esc_attr_e('পড়ার তালিকা', 'helptrickbd'); ?>">
                         <?php ht_m3_icon('bookmark', 20); ?>
-                        <span class="ht-badge-count" id="ht-bookmark-badge">0</span>
+                        <span class="ht-badge-count" id="ht-bookmark-badge">০</span>
                     </button>
                 <?php endif; ?>
 
                 <?php if (get_theme_mod('ht_header_theme_toggle_enable', true)) : ?>
                     <!-- Dark / Light Mode Switcher -->
-                    <button class="ht-action-btn ht-theme-toggle" id="ht-theme-toggle" aria-label="<?php esc_attr_e('Toggle Dark / Light Mode', 'helptrickbd'); ?>" title="<?php esc_attr_e('Toggle Theme', 'helptrickbd'); ?>">
+                    <button class="ht-action-btn ht-theme-toggle" id="ht-theme-toggle" aria-label="<?php esc_attr_e('ডার্ক / লাইট মোড পরিবর্তন করুন', 'helptrickbd'); ?>" title="<?php esc_attr_e('থিম মোড পরিবর্তন', 'helptrickbd'); ?>">
                         <span class="ht-theme-icon-light"><?php ht_m3_icon('dark_mode', 20); ?></span>
                         <span class="ht-theme-icon-dark"><?php ht_m3_icon('light_mode', 20); ?></span>
                     </button>
@@ -483,7 +483,7 @@ if (!defined('ABSPATH')) {
                 <div class="ht-drawer-brand">
                     <span class="ht-logo-text">HelpTrick<span class="ht-logo-accent">BD</span></span>
                 </div>
-                <button class="ht-drawer-close" id="ht-drawer-close" aria-label="<?php esc_attr_e('Close Menu', 'helptrickbd'); ?>">
+                <button class="ht-drawer-close" id="ht-drawer-close" aria-label="<?php esc_attr_e('মেনু বন্ধ করুন', 'helptrickbd'); ?>">
                     <?php ht_m3_icon('close', 20); ?>
                 </button>
             </div>
@@ -492,12 +492,12 @@ if (!defined('ABSPATH')) {
                 <!-- Dynamic All Categories Engine (Entire Drawer dedicated to categories) -->
                 <div class="ht-drawer-categories-wrap">
                     <div class="ht-drawer-section-header">
-                        <span class="ht-drawer-section-title"><?php esc_html_e('সকল ক্যাটাগরি', 'helptrickbd'); ?></span>
+                        <span class="ht-drawer-section-title"><?php esc_html_e('সকল ক্যাটাগরি ও বিষয়', 'helptrickbd'); ?></span>
                         <?php 
                         $cat_count_total = wp_count_terms(['taxonomy' => 'category', 'hide_empty' => true]);
                         if (!is_wp_error($cat_count_total) && $cat_count_total > 0) :
                         ?>
-                            <span class="ht-drawer-cat-total"><?php echo esc_html($cat_count_total); ?></span>
+                            <span class="ht-drawer-cat-total"><?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($cat_count_total) : $cat_count_total); ?></span>
                         <?php endif; ?>
                     </div>
                     <div class="ht-drawer-cat-list">
@@ -511,6 +511,7 @@ if (!defined('ABSPATH')) {
                         ]);
                         if (!empty($drawer_cats)) :
                             foreach ($drawer_cats as $d_cat) :
+                                if ($d_cat->slug === 'uncategorized' || $d_cat->count <= 0 || $d_cat->term_id == 1) continue;
                                 $cat_icon = function_exists('ht_get_category_icon') ? ht_get_category_icon($d_cat->slug, $d_cat->name) : 'folder';
                                 $cat_pal  = function_exists('ht_get_category_palette') ? ht_get_category_palette($d_cat->slug, $d_cat->name) : ['color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'];
                         ?>
@@ -519,7 +520,7 @@ if (!defined('ABSPATH')) {
                                    style="--cat-color: <?php echo esc_attr($cat_pal['color']); ?>; --cat-bg: <?php echo esc_attr($cat_pal['bg']); ?>; --cat-border: <?php echo esc_attr($cat_pal['border']); ?>;">
                                     <span class="ht-drawer-cat-icon"><?php ht_m3_icon($cat_icon, 18); ?></span>
                                     <span class="ht-drawer-cat-name"><?php echo esc_html($d_cat->name); ?></span>
-                                    <span class="ht-drawer-cat-badge"><?php echo esc_html($d_cat->count); ?></span>
+                                    <span class="ht-drawer-cat-badge"><?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($d_cat->count) : $d_cat->count); ?></span>
                                 </a>
                         <?php
                             endforeach;
