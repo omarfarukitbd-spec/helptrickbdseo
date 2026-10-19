@@ -106,13 +106,13 @@ if (!defined('ABSPATH')) {
 
                 <!-- Column 4: Legal & Pages -->
                 <div class="ht-footer-col">
-                    <h4 class="ht-footer-title"><?php esc_html_e('আইনি ও সহায়তা', 'helptrickbd'); ?></h4>
+                    <h4 class="ht-footer-title"><?php esc_html_e('Legal & Support', 'helptrickbd'); ?></h4>
                     <ul class="ht-footer-links">
-                        <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>"><?php esc_html_e('আমাদের সম্পর্কে', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php esc_html_e('যোগাযোগ', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('গোপনীয়তা নীতিমালা', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/terms-conditions/')); ?>"><?php esc_html_e('শর্তাবলী', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>"><?php esc_html_e('দাবিত্যাগ (Disclaimer)', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>"><?php esc_html_e('About Us', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php esc_html_e('Contact Us', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('Privacy Policy', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/terms-conditions/')); ?>"><?php esc_html_e('Terms & Conditions', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>"><?php esc_html_e('Disclaimer', 'helptrickbd'); ?></a></li>
                     </ul>
                 </div>
 

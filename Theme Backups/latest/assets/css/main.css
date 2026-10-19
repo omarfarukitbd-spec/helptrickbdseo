@@ -2631,6 +2631,16 @@ button {
         box-sizing: border-box !important;
     }
 
+    .ht-footer-main {
+        padding-top: 36px !important;
+        padding-bottom: 28px !important;
+    }
+
+    .ht-footer-col-brand .ht-footer-logo {
+        margin-top: 2px !important;
+        margin-bottom: 12px !important;
+    }
+
     .ht-footer-grid {
         grid-template-columns: 1fr;
         gap: 28px;
@@ -2710,9 +2720,10 @@ button {
 }
 
 @media (max-width: 640px) {
-    /* Auto-Wide Container & Flush Edges */
+    /* Auto-Wide Container & Flush Edges (Preserving Vertical Padding) */
     .ht-container {
-        padding: 0 10px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 
     /* Auto-Wide Multi-Category Section */
@@ -2761,7 +2772,13 @@ button {
 
 @media (max-width: 480px) {
     .ht-container {
-        padding: 0 8px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .ht-footer-main {
+        padding-top: 32px !important;
+        padding-bottom: 24px !important;
     }
 
     .ht-search-btn {

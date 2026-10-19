@@ -2671,10 +2671,14 @@ button {
     }
 
     .ht-footer,
-    .ht-footer-bottom,
     .ht-site-footer,
     #colophon {
-        padding-bottom: calc(85px + env(safe-area-inset-bottom, 15px)) !important;
+        padding-bottom: 0 !important;
+    }
+
+    .ht-footer-bottom {
+        padding-top: 14px !important;
+        padding-bottom: 14px !important;
     }
 
     .ht-widget {
