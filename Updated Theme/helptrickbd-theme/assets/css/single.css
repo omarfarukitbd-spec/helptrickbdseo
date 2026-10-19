@@ -1350,10 +1350,10 @@ body.ht-font-lg .ht-entry-content blockquote {
 .ht-related-title {
     font-size: 0.95rem;
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.38;
     margin-bottom: 6px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -2390,13 +2390,13 @@ body.ht-focus-mode .ht-article-col {
 }
 
 .ht-nav-card-title {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 700;
-    line-height: 1.45;
+    line-height: 1.38;
     color: var(--ht-text-primary);
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     transition: color 0.2s ease;

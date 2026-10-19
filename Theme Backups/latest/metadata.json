@@ -1,10 +1,10 @@
 {
-  "timestamp": "20261019_171640",
-  "date_human": "2026-10-19 17:16:40",
-  "theme_version": "1.4.5",
-  "reason": "footer_legal_english_and_mobile_bottom_space_v1.4.6",
+  "timestamp": "20261019_180854",
+  "date_human": "2026-10-19 18:08:54",
+  "theme_version": "1.4.6",
+  "reason": "context_smart_title_expansion_v1.4.7",
   "total_files": 51,
-  "total_size_bytes": 811418,
-  "zip_size_kb": 212.18,
-  "backup_zip_name": "helptrickbd-theme-v1.4.5-20261019_171640.zip"
+  "total_size_bytes": 811327,
+  "zip_size_kb": 212.15,
+  "backup_zip_name": "helptrickbd-theme-v1.4.6-20261019_180854.zip"
 }

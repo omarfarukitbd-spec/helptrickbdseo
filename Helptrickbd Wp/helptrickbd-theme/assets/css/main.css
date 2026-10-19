@@ -724,10 +724,10 @@ button {
 .ht-hero-lead-title {
     font-size: 1.25rem;
     font-weight: 700;
-    line-height: 1.45;
+    line-height: 1.4;
     margin: 0 0 10px 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -847,12 +847,12 @@ button {
 }
 
 .ht-hero-sub-title {
-    font-size: 1.05rem;
+    font-size: 1.0rem;
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.36;
     margin: 4px 0 6px 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1015,12 +1015,12 @@ button {
 }
 
 .ht-col-lead-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    line-height: 1.45;
+    line-height: 1.38;
     margin: 0 0 8px 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1086,12 +1086,12 @@ button {
 }
 
 .ht-col-sub-title {
-    font-size: 1.0rem;
+    font-size: 0.94rem;
     font-weight: 600;
-    line-height: 1.45;
+    line-height: 1.38;
     margin: 0 0 6px 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1295,12 +1295,12 @@ button {
 }
 
 .ht-card-title {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     font-weight: 700;
-    line-height: 1.45;
+    line-height: 1.38;
     margin-bottom: 8px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1915,10 +1915,10 @@ button {
 .ht-popular-title {
     font-size: 0.92rem;
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.36;
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: var(--ht-text-primary);

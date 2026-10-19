@@ -177,7 +177,7 @@ get_header();
                                         </a>
                                         <div class="ht-col-lead-body">
                                             <h4 class="ht-col-lead-title">
-                                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                                             </h4>
                                             <div class="ht-col-lead-meta">
                                                 <?php ht_post_date(); ?>
@@ -194,7 +194,7 @@ get_header();
                                         <span class="ht-col-sub-num"><?php echo esc_html($col_count); ?></span>
                                         <div class="ht-col-sub-body">
                                             <h5 class="ht-col-sub-title">
-                                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                                             </h5>
                                             <div class="ht-col-sub-meta">
                                                 <time datetime="<?php echo esc_attr(get_the_date('c')); ?>">

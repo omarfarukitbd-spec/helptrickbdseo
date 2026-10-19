@@ -325,7 +325,7 @@ get_header();
                                         </a>
                                         <div class="ht-related-body">
                                             <h4 class="ht-related-title">
-                                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                                             </h4>
                                             <span class="ht-related-date"><?php ht_post_date(); ?></span>
                                         </div>

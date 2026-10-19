@@ -78,7 +78,7 @@ class HT_Popular_Posts_Widget extends WP_Widget {
                                 </div>
                             <?php endif; ?>
                             <h4 class="ht-popular-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                             </h4>
                             <div class="ht-popular-meta">
                                 <span class="ht-popular-date">
