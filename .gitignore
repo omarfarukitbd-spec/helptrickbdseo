@@ -65,6 +65,7 @@ Thumbs.db
 scratch/
 .whatsapp_web_profile/
 *.zip
+!Updated Theme/*.zip
 backups/remediation_backups/
 backups/rank_math_backups/
 backups/title_clean_backups/

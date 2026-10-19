@@ -31,7 +31,7 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 7. **[06_COMMUNICATION_AND_REPORTING_PROTOCOL.md](file:///.agents/rules/06_COMMUNICATION_AND_REPORTING_PROTOCOL.md)**: Mandatory Live Bengali Reporting & 100% Bengali Artifacts (Plans, Walkthroughs & Audits).
 8. **[07_POST_BACKUP_AND_RESTORE_PROTOCOL.md](file:///.agents/rules/07_POST_BACKUP_AND_RESTORE_PROTOCOL.md)**: Mandatory Pre-Edit Full Post Backup & Rollback Protocol (Original HTML, Image Manifest, Categories & Metadata).
 9. **[08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md](file:///.agents/rules/08_INQUISITIVE_DISCOVERY_AND_TRUTH_PROTOCOL.md)**: Mandatory Inquisitive Clarification Gate (Zero guesswork on short prompts), Lightning-Fast Execution Once Clear, and Zero Sycophancy (Challenge mistakes with facts, policy & reality; Never blindly agree).
-10. **[09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md](file:///.agents/rules/09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md)**: Mandatory Single Theme Source of Truth (Zero separate snippet files; all edits directly inside `Helptrickbd Wp/helptrickbd-theme/`; zero code duplication; dark mode WCAG 2.1 AA contrast; **Mandatory Pre-Edit Full Theme Backup & Instant Rollback Gate before any theme modification**).
+10. **[09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md](file:///.agents/rules/09_SINGLE_THEME_SOURCE_OF_TRUTH_PROTOCOL.md)**: Two-Folder Theme Governance Architecture (Folder 1: `Theme Backups/` for mandatory pre-edit snapshots; Folder 2: `Updated Theme/` for production-ready code & installable zip; zero code duplication; dark mode WCAG 2.1 AA contrast).
 11. **[10_PDF_INGESTION_AND_EXTRACTION_PROTOCOL.md](file:///.agents/rules/10_PDF_INGESTION_AND_EXTRACTION_PROTOCOL.md)**: Mandatory PDF Ingestion, Rapid Extraction & Editorial Correction Protocol (Zero manual page slicing/disk loops; auto-detect Born-Digital vs Scanned; PyMuPDF4LLM & In-Memory Vision Pipeline; mandatory Bengali conjunct/table editorial proofreading).
 12. **[11_POST_PUBLISH_INDEXING_AND_VERIFICATION_PROTOCOL.md](file:///.agents/rules/11_POST_PUBLISH_INDEXING_AND_VERIFICATION_PROTOCOL.md)**: Mandatory Post-Publish Indexing, Multi-Engine Push (Google Indexing API v3, WebSub, IndexNow) & Proof Verification Gate (Zero premature reporting; 100% live status confirmation required before notifying user).
 
@@ -43,8 +43,10 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
   *Every agent MUST run this before publishing. If any check fails, publishing is strictly BLOCKED.*
 - **Mandatory Pre-Edit Theme Backup & Rollback Tool:**
   ```bash
-  # Before editing any theme file (MANDATORY STOP-GATE):
+  # Before editing any theme file (MANDATORY STOP-GATE - saves into 'Theme Backups/'):
   python tools/backup_manager/theme_backup_manager.py backup --reason "<REASON>"
+  # After completing edits, package & sync into 'Updated Theme/':
+  python tools/backup_manager/theme_backup_manager.py package
   # Instant 1-click restore if any issue occurs:
   python tools/backup_manager/theme_backup_manager.py restore
   ```
@@ -60,7 +62,10 @@ This project enforces a fail-safe, multi-machine agent governance system. Antigr
 ### A. Typography & Fonts:
 - **Default Font:** `SolaimanLipi` (applied cleanly via CSS `@font-face` from Ekushey CDN / jsDelivr).
 - **Reason:** Hind Siliguri had broken conjunct/glyph rendering issues (e.g., numeral ১ and specific Bengali ligatures had distorted spacing). SolaimanLipi renders standard Bengali newspaper-grade typography across all modern browsers and mobile viewports.
-- **Master Theme Directory:** [`Helptrickbd Wp/helptrickbd-theme/`](file:///Helptrickbd%20Wp/helptrickbd-theme/) (HelpTrickBD Pro v1.4.1 — Single source of truth).
+- **Two-Folder Theme Governance Architecture:**
+  * **[Folder 1: `Theme Backups/`](file:///Theme%20Backups/)**: প্রতিটি কাজের শুরুর পূর্বে বাধ্যতামূলক প্রি-এডিট টাইমস্ট্যাম্পড ব্যাকআপ ভল্ট (আনপ্যাকড কোড + সিপ্যানেল/ওয়ার্ডপ্রেস রেডি রোলব্যাক জিপ + মেটাডাটা)।
+  * **[Folder 2: `Updated Theme/`](file:///Updated%20Theme/)**: সর্বশেষ হালনাগাদকৃত প্রোডাকশন ভল্ট (`helptrickbd-theme/` কোডবেস এবং ওয়ার্ডপ্রেস ড্যাশবোর্ডে সরাসরি আপলোড করার রেডি জিপ `helptrickbd-theme.zip` — HelpTrickBD Pro v1.4.2)।
+- **Master Theme Directory:** [`Helptrickbd Wp/helptrickbd-theme/`](file:///Helptrickbd%20Wp/helptrickbd-theme/) (HelpTrickBD Pro v1.4.2 — Single source of truth).
 
 ### B. Content & Article Architecture Standard:
 Every revived or new article MUST strictly adhere to:

@@ -3,12 +3,14 @@
 """
 tools/backup_manager/theme_backup_manager.py
 ---------------------------------------------
-HelpTrickBD Pro - Automated WordPress Theme Pre-Edit Backup & Instant Rollback System.
-Enforces Rule 09: Always take a full snapshot & installable zip of the active theme
-before modifying any theme file.
+HelpTrickBD Pro - Automated WordPress Theme Pre-Edit Backup, Packaging & Instant Rollback System.
+Enforces Rule 09: 2-Folder Theme Governance Architecture.
+  Folder 1: 'Theme Backups' - Pre-edit full snapshots and rollback archives.
+  Folder 2: 'Updated Theme' - Production-ready updated theme files & installable zip.
 
 Usage:
     python tools/backup_manager/theme_backup_manager.py backup --reason "mobile_heading_fix"
+    python tools/backup_manager/theme_backup_manager.py package
     python tools/backup_manager/theme_backup_manager.py list
     python tools/backup_manager/theme_backup_manager.py restore [--timestamp YYYYMMDD_HHMMSS]
 """
@@ -28,13 +30,33 @@ if hasattr(sys.stderr, 'reconfigure'):
     sys.stderr.reconfigure(encoding='utf-8')
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-THEME_DIR = os.path.join(PROJECT_ROOT, "Helptrickbd Wp", "helptrickbd-theme")
-BACKUP_BASE_DIR = os.path.join(PROJECT_ROOT, "backups", "theme")
-LATEST_DIR = os.path.join(BACKUP_BASE_DIR, "latest")
 
-def get_theme_version():
+# 2 Designated Theme Folders:
+THEME_BACKUPS_DIR = os.path.join(PROJECT_ROOT, "Theme Backups")
+UPDATED_THEME_DIR = os.path.join(PROJECT_ROOT, "Updated Theme")
+
+# Working Theme Directories:
+PRIMARY_WORKING_THEME = os.path.join(PROJECT_ROOT, "Helptrickbd Wp", "helptrickbd-theme")
+UPDATED_THEME_SOURCE = os.path.join(UPDATED_THEME_DIR, "helptrickbd-theme")
+
+# Legacy Fallback Directory (preserves backward compatibility):
+LEGACY_BACKUP_DIR = os.path.join(PROJECT_ROOT, "backups", "theme")
+LATEST_BACKUP_DIR = os.path.join(THEME_BACKUPS_DIR, "latest")
+
+
+def get_theme_source_dir():
+    """Returns the active working theme directory."""
+    if os.path.exists(PRIMARY_WORKING_THEME):
+        return PRIMARY_WORKING_THEME
+    if os.path.exists(UPDATED_THEME_SOURCE):
+        return UPDATED_THEME_SOURCE
+    return PRIMARY_WORKING_THEME
+
+
+def get_theme_version(source_dir=None):
     """Extract theme version from style.css."""
-    style_css = os.path.join(THEME_DIR, "style.css")
+    src = source_dir or get_theme_source_dir()
+    style_css = os.path.join(src, "style.css")
     if os.path.exists(style_css):
         with open(style_css, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
@@ -43,10 +65,12 @@ def get_theme_version():
                     return m.group(1)
     return "unknown"
 
+
 def slugify(text):
     """Sanitize string for folder names."""
     text = re.sub(r"[^\w\s-]", "", text).strip().lower()
     return re.sub(r"[-\s]+", "_", text)[:40]
+
 
 def create_theme_zip(source_dir, output_zip_path):
     """
@@ -97,39 +121,41 @@ def create_theme_zip(source_dir, output_zip_path):
                 zinfo.compress_type = zipfile.ZIP_DEFLATED
                 zf.writestr(zinfo, data)
 
+
 def backup_theme(reason="manual_pre_edit"):
-    """Takes a complete timestamped snapshot of helptrickbd-theme."""
-    if not os.path.exists(THEME_DIR):
-        print(f"[!] Error: Theme directory not found at {THEME_DIR}")
+    """Takes a complete timestamped snapshot into 'Theme Backups'."""
+    src = get_theme_source_dir()
+    if not os.path.exists(src):
+        print(f"[!] Error: Theme source directory not found at {src}")
         return False
 
-    version = get_theme_version()
+    version = get_theme_version(src)
     now = datetime.now()
     timestamp = now.strftime("%Y%m%d_%H%M%S")
     reason_slug = slugify(reason) if reason else "pre_edit"
-    
+
     backup_folder_name = f"wp_theme_{timestamp}_v{version}_{reason_slug}"
-    target_backup_dir = os.path.join(BACKUP_BASE_DIR, backup_folder_name)
+    target_backup_dir = os.path.join(THEME_BACKUPS_DIR, backup_folder_name)
     theme_copy_dir = os.path.join(target_backup_dir, "helptrickbd-theme")
 
-    print(f"[*] Starting Theme Pre-Edit Backup...")
-    print(f"    Source:  {THEME_DIR}")
+    print(f"[*] Starting Theme Pre-Edit Backup (Folder 1: Theme Backups)...")
+    print(f"    Source:  {src}")
     print(f"    Version: v{version}")
     print(f"    Reason:  {reason}")
 
-    # 1. Copy full directory
+    # 1. Copy full directory to Theme Backups
     os.makedirs(target_backup_dir, exist_ok=True)
-    shutil.copytree(THEME_DIR, theme_copy_dir, dirs_exist_ok=True)
+    shutil.copytree(src, theme_copy_dir, dirs_exist_ok=True)
 
     # 2. Package installable backup zip
     backup_zip_path = os.path.join(target_backup_dir, f"helptrickbd-theme-v{version}-{timestamp}.zip")
-    create_theme_zip(THEME_DIR, backup_zip_path)
+    create_theme_zip(src, backup_zip_path)
     zip_size_kb = os.path.getsize(backup_zip_path) / 1024
 
     # 3. Count files & total size
     total_files = 0
     total_bytes = 0
-    for root, _, files in os.walk(THEME_DIR):
+    for root, _, files in os.walk(src):
         total_files += len(files)
         for f in files:
             total_bytes += os.path.getsize(os.path.join(root, f))
@@ -148,48 +174,132 @@ def backup_theme(reason="manual_pre_edit"):
     with open(os.path.join(target_backup_dir, "metadata.json"), "w", encoding="utf-8") as f:
         json.dump(metadata, f, indent=2, ensure_ascii=False)
 
-    # 5. Update latest mirror
-    if os.path.exists(LATEST_DIR):
-        shutil.rmtree(LATEST_DIR)
-    shutil.copytree(theme_copy_dir, LATEST_DIR, dirs_exist_ok=True)
-    # copy zip and metadata to latest as well
-    shutil.copy2(backup_zip_path, os.path.join(LATEST_DIR, "helptrickbd-theme-latest.zip"))
-    shutil.copy2(os.path.join(target_backup_dir, "metadata.json"), os.path.join(LATEST_DIR, "metadata.json"))
+    # 5. Update latest mirror in Theme Backups
+    if os.path.exists(LATEST_BACKUP_DIR):
+        shutil.rmtree(LATEST_BACKUP_DIR)
+    shutil.copytree(theme_copy_dir, LATEST_BACKUP_DIR, dirs_exist_ok=True)
+    shutil.copy2(backup_zip_path, os.path.join(LATEST_BACKUP_DIR, "helptrickbd-theme-latest.zip"))
+    shutil.copy2(os.path.join(target_backup_dir, "metadata.json"), os.path.join(LATEST_BACKUP_DIR, "metadata.json"))
 
-    print(f"\n[+] Theme Backup Completed Successfully!")
+    print(f"\n[+] Theme Backup Completed Successfully in 'Theme Backups'!")
     print(f"    Backup Folder: {target_backup_dir}")
-    print(f"    Installable Zip: {backup_zip_path} ({zip_size_kb:.2f} KB)")
-    print(f"    Latest Snapshot: {LATEST_DIR}")
-    print(f"    Safety Status: Ready for safe editing.\n")
+    print(f"    Installable Rollback Zip: {backup_zip_path} ({zip_size_kb:.2f} KB)")
+    print(f"    Safety Status: Verified. Ready for safe theme editing.\n")
     return True
 
-def list_backups():
-    """Lists all available theme backups."""
-    if not os.path.exists(BACKUP_BASE_DIR):
-        print(f"[!] No backups found in {BACKUP_BASE_DIR}")
-        return
 
+def package_theme():
+    """
+    Synchronizes and packages the latest theme into 'Updated Theme'.
+    Outputs:
+      - Updated Theme/helptrickbd-theme/ (latest code)
+      - Updated Theme/helptrickbd-theme.zip (ready for WP dashboard upload)
+      - Updated Theme/helptrickbd-theme-v<version>.zip (version release zip)
+      - Helptrickbd Wp/helptrickbd-theme.zip (root bundle)
+    """
+    src = get_theme_source_dir()
+    if not os.path.exists(src):
+        print(f"[!] Error: Theme source directory not found at {src}")
+        return False
+
+    version = get_theme_version(src)
+    print(f"[*] Packaging and Synchronizing Updated Theme (Folder 2: Updated Theme)...")
+    print(f"    Source:  {src}")
+    print(f"    Version: v{version}")
+
+    # 1. Sync files to Updated Theme/helptrickbd-theme/
+    os.makedirs(UPDATED_THEME_DIR, exist_ok=True)
+    shutil.copytree(src, UPDATED_THEME_SOURCE, dirs_exist_ok=True)
+
+    # Also keep Primary Working Theme in sync if different
+    if os.path.abspath(src) != os.path.abspath(PRIMARY_WORKING_THEME):
+        shutil.copytree(src, PRIMARY_WORKING_THEME, dirs_exist_ok=True)
+
+    # 2. Generate clean production zips
+    prod_zip_generic = os.path.join(UPDATED_THEME_DIR, "helptrickbd-theme.zip")
+    prod_zip_versioned = os.path.join(UPDATED_THEME_DIR, f"helptrickbd-theme-v{version}.zip")
+    wp_legacy_zip = os.path.join(PROJECT_ROOT, "Helptrickbd Wp", "helptrickbd-theme.zip")
+
+    create_theme_zip(UPDATED_THEME_SOURCE, prod_zip_generic)
+    shutil.copy2(prod_zip_generic, prod_zip_versioned)
+    shutil.copy2(prod_zip_generic, wp_legacy_zip)
+
+    zip_size_kb = os.path.getsize(prod_zip_generic) / 1024
+
+    # 3. Update Updated Theme/README.md
+    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    readme_content = f"""# 🚀 Updated Theme (সর্বশেষ হালনাগাদকৃত প্রোডাকশন থিম ভল্ট)
+
+এই ফোল্ডারে হেল্পট্রিকবিডি প্রো ওয়ার্ডপ্রেস থিমের **সর্বশেষ আপডেট ও ভ্যালিডেট করা প্রোডাকশন ফাইল** সংরক্ষিত থাকে।
+
+---
+
+## 📦 বর্তমান রিলিজ তথ্য:
+- **থিম সংস্করণ (Version):** v{version}
+- **প্যাকেজিং সময়:** {now_str}
+- **ইনস্টলেবল জিপ ফাইল:** `helptrickbd-theme.zip` ({zip_size_kb:.2f} KB)
+- **ভার্সন জিপ ফাইল:** `helptrickbd-theme-v{version}.zip`
+
+---
+
+## 🌐 ওয়ার্ডপ্রেসে লাইভ আপডেট করার নিয়ম:
+1. ওয়ার্ডপ্রেস অ্যাডমিন প্যানেলে লগইন করুন: `https://www.helptrickbd.com/wp-admin`
+2. বামপাশের মেনু থেকে যান: **Appearance > Themes**
+3. উপরে ক্লিক করুন: **Add New Theme > Upload Theme**
+4. এই ফোল্ডার থেকে **`helptrickbd-theme.zip`** ফাইলটি সিলেক্ট করে **Install Now** বাটনে ক্লিক করুন।
+5. প্রম্পট আসলে ক্লিক করুন: **"Replace active with uploaded"** (বর্তমানটির স্থলে নতুনটি প্রতিস্থাপন করুন)।
+6. ব্যস! সাইটের ক্যাশ ক্লিয়ার করুন। আপনার সাইট মুহূর্তেই সর্বশেষ থিমে আপডেট হয়ে যাবে।
+
+---
+
+## 🛠️ কমান্ড লাইন সিঙ্ক:
+```bash
+python tools/backup_manager/theme_backup_manager.py package
+```
+"""
+    with open(os.path.join(UPDATED_THEME_DIR, "README.md"), "w", encoding="utf-8") as f:
+        f.write(readme_content)
+
+    print(f"\n[+] Updated Theme Successfully Packaged!")
+    print(f"    Source: {UPDATED_THEME_SOURCE}")
+    print(f"    WordPress Ready Zip: {prod_zip_generic} ({zip_size_kb:.2f} KB)")
+    print(f"    Versioned Release Zip: {prod_zip_versioned}")
+    print(f"    Status: Ready for 1-click live upload.\n")
+    return True
+
+
+def list_backups():
+    """Lists all available theme backups across Theme Backups and legacy directories."""
+    search_dirs = [THEME_BACKUPS_DIR, LEGACY_BACKUP_DIR]
     backups = []
-    for item in os.listdir(BACKUP_BASE_DIR):
-        full_path = os.path.join(BACKUP_BASE_DIR, item)
-        if os.path.isdir(full_path) and item.startswith("wp_theme_"):
-            meta_path = os.path.join(full_path, "metadata.json")
-            if os.path.exists(meta_path):
-                with open(meta_path, "r", encoding="utf-8") as f:
-                    meta = json.load(f)
-                    backups.append((item, meta))
-            else:
-                backups.append((item, {"date_human": "N/A", "reason": "No metadata", "theme_version": "N/A"}))
+    seen = set()
+
+    for b_dir in search_dirs:
+        if not os.path.exists(b_dir):
+            continue
+        for item in os.listdir(b_dir):
+            if item in seen:
+                continue
+            full_path = os.path.join(b_dir, item)
+            if os.path.isdir(full_path) and item.startswith("wp_theme_"):
+                seen.add(item)
+                meta_path = os.path.join(full_path, "metadata.json")
+                if os.path.exists(meta_path):
+                    with open(meta_path, "r", encoding="utf-8") as f:
+                        meta = json.load(f)
+                        backups.append((item, meta, full_path))
+                else:
+                    backups.append((item, {"date_human": "N/A", "reason": "No metadata", "theme_version": "N/A"}, full_path))
 
     backups.sort(key=lambda x: x[0], reverse=True)
 
     print("\n======================================================================")
-    print(" [*] HELPTRICKBD PRO - WORDPRESS THEME BACKUP REPOSITORY")
+    print(" [*] HELPTRICKBD PRO - THEME BACKUPS REPOSITORY (Folder 1: Theme Backups)")
     print("======================================================================")
     if not backups:
         print(" [!] No WordPress theme backups found yet.")
     else:
-        for i, (name, meta) in enumerate(backups, 1):
+        for i, (name, meta, full_path) in enumerate(backups, 1):
             date = meta.get("date_human", "N/A")
             ver = meta.get("theme_version", "N/A")
             reason = meta.get("reason", "N/A")
@@ -200,81 +310,88 @@ def list_backups():
             print("----------------------------------------------------------------------")
     print(f" Total backups: {len(backups)}\n")
 
+
 def restore_theme(target_identifier=None):
     """Restores the theme from latest or a specific timestamp folder."""
     source_dir = None
+    search_dirs = [THEME_BACKUPS_DIR, LEGACY_BACKUP_DIR]
+
     if not target_identifier or target_identifier.lower() == "latest":
-        if os.path.exists(LATEST_DIR):
-            source_dir = LATEST_DIR
+        if os.path.exists(LATEST_BACKUP_DIR):
+            source_dir = LATEST_BACKUP_DIR
         else:
-            print("[!] Latest backup directory does not exist.")
-            return False
+            legacy_latest = os.path.join(LEGACY_BACKUP_DIR, "latest")
+            if os.path.exists(legacy_latest):
+                source_dir = legacy_latest
     else:
-        # Search by folder name or timestamp
-        for item in os.listdir(BACKUP_BASE_DIR):
-            if target_identifier in item:
-                cand = os.path.join(BACKUP_BASE_DIR, item, "helptrickbd-theme")
-                if os.path.exists(cand):
-                    source_dir = cand
-                    break
+        for b_dir in search_dirs:
+            if not os.path.exists(b_dir):
+                continue
+            for item in os.listdir(b_dir):
+                if target_identifier in item:
+                    cand = os.path.join(b_dir, item, "helptrickbd-theme")
+                    if os.path.exists(cand):
+                        source_dir = cand
+                        break
+            if source_dir:
+                break
 
     if not source_dir or not os.path.exists(source_dir):
         print(f"[!] Could not locate valid backup matching: {target_identifier}")
         return False
 
-    # Safety: Take temporary emergency snapshot before overwriting
-    temp_safety = os.path.join(BACKUP_BASE_DIR, "_pre_restore_safety_backup")
-    if os.path.exists(THEME_DIR):
-        if os.path.exists(temp_safety):
-            shutil.rmtree(temp_safety)
-        shutil.copytree(THEME_DIR, temp_safety)
-
+    dest_theme = PRIMARY_WORKING_THEME
     print(f"[*] Restoring theme from: {source_dir}")
-    print(f"    Target: {THEME_DIR}")
+    print(f"    Target: {dest_theme}")
 
     # Copy files
     for root, _, files in os.walk(source_dir):
         rel = os.path.relpath(root, source_dir)
-        dest_root = os.path.join(THEME_DIR, rel)
+        dest_root = os.path.join(dest_theme, rel)
         os.makedirs(dest_root, exist_ok=True)
         for f in files:
             if f.endswith(".zip") or f == "metadata.json":
                 continue
             shutil.copy2(os.path.join(root, f), os.path.join(dest_root, f))
 
-    # Regenerate primary theme zip
-    zip_out = os.path.join(PROJECT_ROOT, "Helptrickbd Wp", "helptrickbd-theme.zip")
-    create_theme_zip(THEME_DIR, zip_out)
+    # Package into Updated Theme automatically
+    package_theme()
 
-    print(f"[+] Theme successfully restored!")
-    print(f"    Live files restored in: {THEME_DIR}")
-    print(f"    Re-packaged installable zip: {zip_out}\n")
+    print(f"[+] Theme successfully restored and synchronized across both folders!")
+    print(f"    Restored files: {dest_theme}")
+    print(f"    Updated Theme Zip: {os.path.join(UPDATED_THEME_DIR, 'helptrickbd-theme.zip')}\n")
     return True
+
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="HelpTrickBD Theme Pre-Edit Backup & Rollback Tool")
+    parser = argparse.ArgumentParser(description="HelpTrickBD Theme 2-Folder Governance & Backup Tool")
     subparsers = parser.add_subparsers(dest="command")
 
     # backup
-    backup_p = subparsers.add_parser("backup", help="Create a pre-edit theme backup")
+    backup_p = subparsers.add_parser("backup", help="Create a pre-edit theme backup in 'Theme Backups'")
     backup_p.add_argument("--reason", default="pre_edit_safety_snapshot", help="Reason or description of upcoming edits")
+
+    # package / sync
+    package_p = subparsers.add_parser("package", help="Package and update latest theme files in 'Updated Theme'")
 
     # list
     subparsers.add_parser("list", help="List all theme backups")
 
     # restore
-    restore_p = subparsers.add_parser("restore", help="Restore theme from backup")
+    restore_p = subparsers.add_parser("restore", help="Restore theme from backup and repackage")
     restore_p.add_argument("--timestamp", default="latest", help="Backup timestamp or folder name (default: latest)")
 
     args = parser.parse_args()
 
     if args.command == "backup":
         backup_theme(args.reason)
+    elif args.command == "package":
+        package_theme()
     elif args.command == "list":
         list_backups()
     elif args.command == "restore":
         restore_theme(args.timestamp)
     else:
-        # Default behavior if no argument: backup
-        backup_theme("default_snapshot")
+        # Default behavior: package
+        package_theme()

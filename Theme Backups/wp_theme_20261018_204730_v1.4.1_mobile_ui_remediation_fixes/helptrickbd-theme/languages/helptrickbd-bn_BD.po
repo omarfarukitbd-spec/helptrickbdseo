@@ -1,0 +1,162 @@
+# Bengali (Bangladesh) translation for HelpTrickBD Pro.
+# Copyright (C) 2026 HelpTrickBD Team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: HelpTrickBD Pro 1.2.5\n"
+"Report-Msgid-Bugs-To: https://www.helptrickbd.com\n"
+"POT-Creation-Date: 2026-10-08 02:20:00+00:00\n"
+"PO-Revision-Date: 2026-10-08 02:20:00+00:00\n"
+"Last-Translator: HelpTrickBD Team <support@helptrickbd.com>\n"
+"Language-Team: Bengali (Bangladesh)\n"
+"Language: bn_BD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: HelpTrickBD Pro Localization Engine\n"
+"X-Domain: helptrickbd\n"
+
+#: functions.php:49
+msgid "প্রধান মেনু (Primary Header Menu)"
+msgstr "প্রধান মেনু (Primary Header Menu)"
+
+#: functions.php:50
+msgid "ফুটার মেনু (Footer Menu)"
+msgstr "ফুটার মেনু (Footer Menu)"
+
+#: functions.php:51
+msgid "মোবাইল ড্রয়ার মেনু (Mobile Menu)"
+msgstr "মোবাইল ড্রয়ার মেনু (Mobile Menu)"
+
+#: functions.php:97
+msgid "মূল সাইডবার (Primary Sidebar)"
+msgstr "মূল সাইডবার (Primary Sidebar)"
+
+#: header.php:25
+msgid "মূল বিষয়বস্তুতে যান"
+msgstr "মূল বিষয়বস্তুতে যান"
+
+#: header.php:30
+msgid "জরুরি বিজ্ঞপ্তি ও সময়"
+msgstr "জরুরি বিজ্ঞপ্তি ও সময়"
+
+#: header.php:38
+msgid "বিজ্ঞপ্তি"
+msgstr "বিজ্ঞপ্তি"
+
+#: header.php:77
+msgid "মেনু খুলুন"
+msgstr "মেনু খুলুন"
+
+#: header.php:95
+msgid "প্রধান নেভিগেশন"
+msgstr "প্রধান নেভিগেশন"
+
+#: header.php:109
+msgid "হোম"
+msgstr "হোম"
+
+#: header.php:127
+msgid "অনুসন্ধান করুন (Ctrl+K)"
+msgstr "অনুসন্ধান করুন (Ctrl+K)"
+
+#: header.php:129
+msgid "খুঁজুন..."
+msgstr "খুঁজুন..."
+
+#: header.php:136
+msgid "পড়ার তালিকা (বুকমার্ক)"
+msgstr "পড়ার তালিকা (বুকমার্ক)"
+
+#: header.php:144
+msgid "ডার্ক/লাইট মোড পরিবর্তন করুন"
+msgstr "ডার্ক/লাইট মোড পরিবর্তন করুন"
+
+#: header.php:160
+msgid "মেনু বন্ধ করুন"
+msgstr "মেনু বন্ধ করুন"
+
+#: header.php:174
+msgid "মূল নেভিগেশন ও বিষয়সমূহ"
+msgstr "মূল নেভিগেশন ও বিষয়সমূহ"
+
+#: single.php:76
+msgid "ফোকাস মোড"
+msgstr "ফোকাস মোড"
+
+#: single.php:84
+msgid "পড়ার তালিকায় রাখুন"
+msgstr "পড়ার তালিকায় রাখুন"
+
+#: single.php:92
+msgid "প্রিন্ট / পিডিএফ"
+msgstr "প্রিন্ট / পিডিএফ"
+
+#: single.php:213
+msgid "সম্পর্কিত আরও আর্টিকেল"
+msgstr "সম্পর্কিত আরও আর্টিকেল"
+
+#: single.php:215
+msgid "আরও পড়ুন (সম্পর্কিত নির্দেশিকা)"
+msgstr "আরও পড়ুন (সম্পর্কিত নির্দেশিকা)"
+
+#: comments.php:30
+msgid "১টি মন্তব্য &ldquo;%1$s&rdquo;-এর উপর"
+msgstr "১টি মন্তব্য &ldquo;%1$s&rdquo;-এর উপর"
+
+#: comments.php:37
+msgid "%1$sটি মন্তব্য &ldquo;%2$s&rdquo;-এর উপর"
+msgstr "%1$sটি মন্তব্য &ldquo;%2$s&rdquo;-এর উপর"
+
+#: comments.php:55
+msgid "এই পোস্টের জন্য মন্তব্য প্রদান বন্ধ রয়েছে।"
+msgstr "এই পোস্টের জন্য মন্তব্য প্রদান বন্ধ রয়েছে।"
+
+#: comments.php:62
+msgid "একটি মন্তব্য বা প্রশ্ন লিখুন"
+msgstr "একটি মন্তব্য বা প্রশ্ন লিখুন"
+
+#: comments.php:63
+msgid "%s-এর মন্তব্যের উত্তর দিন"
+msgstr "%s-এর মন্তব্যের উত্তর দিন"
+
+#: comments.php:64
+msgid "উত্তর বাতিল করুন"
+msgstr "উত্তর বাতিল করুন"
+
+#: comments.php:65
+msgid "মন্তব্য প্রকাশ করুন"
+msgstr "মন্তব্য প্রকাশ করুন"
+
+#: comments.php:66
+msgid "আপনার ইমেইল ঠিকানাটি প্রকাশ করা হবে না।"
+msgstr "আপনার ইমেইল ঠিকানাটি প্রকাশ করা হবে না।"
+
+#: 404.php:26
+msgid "৪০৪: কাঙ্ক্ষিত পৃষ্ঠাটি পাওয়া যায়নি"
+msgstr "৪০৪: কাঙ্ক্ষিত পৃষ্ঠাটি পাওয়া যায়নি"
+
+#: 404.php:51
+msgid "হোমপেজে ফিরে যান"
+msgstr "হোমপেজে ফিরে যান"
+
+#: search.php:26
+msgid "অনুসন্ধান ফলাফল"
+msgstr "অনুসন্ধান ফলাফল"
+
+#: search.php:32
+msgid "মোট %s টি ফলাফল পাওয়া গেছে"
+msgstr "মোট %s টি ফলাফল পাওয়া গেছে"
+
+#: search.php:89
+msgid "কোনো ফলাফল পাওয়া যায়নি"
+msgstr "কোনো ফলাফল পাওয়া যায়নি"
+
+#: index.php:27
+msgid "সর্বশেষ প্রকাশনাসমূহ"
+msgstr "সর্বশেষ প্রকাশনাসমূহ"
+
+#: index.php:83
+msgid "কোনো প্রকাশনা পাওয়া যায়নি।"
+msgstr "কোনো প্রকাশনা পাওয়া যায়নি।"

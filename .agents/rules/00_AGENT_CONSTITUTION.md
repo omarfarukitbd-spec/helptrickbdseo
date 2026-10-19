@@ -31,6 +31,7 @@ The agent is strictly FORBIDDEN from performing any of the following actions wit
 | 7 | **Pulling Updates from Git (`git pull` / `git fetch`)** | Unprompted pulls cause unwanted merge conflicts, rebase locks, or unexpected local overwrites. | Only execute `git pull` when the user explicitly instructs in chat (e.g., "গিট থেকে পুল করো" / "pull koro"). |
 | 8 | **Editing Existing Posts Without Pre-Backup** | Overwriting content without a snapshot prevents rollback if mistakes occur. | Agent MUST verify that a 100% snapshot (HTML, labels, images, metadata) is created in `backups/posts/` before any update. |
 | 9 | **Using Outdated, Stale, or Factually Discarded Information** | Publishing cancelled circulars (e.g., discarded draft mark distributions, obsolete curricula, stale fees) misinforms readers and destroys E-E-A-T and AdSense trust. | Agent MUST verify that all policies, marks distributions, and dates match the latest official gazettes/circulars (`.gov.bd`). Never rely on third-party blogs or viral internet myths. |
+| 10 | **Modifying Theme Files Without Pre-Backup in 'Theme Backups/'** | Modifying theme PHP/CSS/JS without pre-backup risks breaking site rendering or causing WSOD with no rollback capability. | Agent MUST execute `theme_backup_manager.py backup` into `Theme Backups/` before modifying any theme file, and package finished work to `Updated Theme/`. |
 
 ---
 
@@ -99,6 +100,9 @@ The agent is encouraged and expected to perform the following actions autonomous
     - শিক্ষা বোর্ড, বিশ্ববিদ্যালয়, অধিদপ্তর, মন্ত্রণালয়, পিএসসি বা সরকারি-বেসরকারি প্রতিষ্ঠানের যেসব নোটিশ, সার্কুলার, রুটিন, রেজাল্ট বা সিলেবাসের **অফিসিয়াল পিডিএফ (Official PDF)** বিদ্যমান রয়েছে, সেসব বিষয়ে নতুন পোস্ট তৈরির ক্ষেত্রে এজেন্টকে বাধ্যতামূলকভাবে সেই আসল ও স্বাক্ষরিত অফিসিয়াল পিডিএফটি সংগ্রহ করতে হবে।
     - **আমাদের ওয়েবসাইটে সরাসরি হোস্টিং (Direct Hosting on Helptrickbd):** সংগৃহীত আসল পিডিএফটি কোনো বাহ্যিক ভঙ্গুর লিংকের (External Dead/Temporary Link) ওপর নির্ভর না করে সরাসরি হেল্পট্রিকবিডি ওয়েবসাইটে (WordPress Media Library বা অফিসিয়াল সিডিএন/গিটহাব) আপলোড ও হোস্ট করতে হবে।
     - **পোস্টে সরাসরি ডাউনলোড ও ভিউ কার্ড (In-Post Download & View Card):** পোস্টের ভেতরে পাঠকদের জন্য একটি আকর্ষণীয় ও মার্জিত অফিশিয়াল পিডিএফ বক্স (`.htbd-pdf-card` / `.htbd-download-card`) যুক্ত করতে হবে, যেখানে স্মারক নম্বর, প্রকাশের তারিখ, সাইজ এবং এক ক্লিকে সরাসরি আমাদের ওয়েবসাইট থেকে পিডিএফ দেখার (View) এবং ডাউনলোড (Download) করার বাটন থাকবে।
+24. **Two-Folder Theme Governance Architecture (দ্বি-ফোল্ডার থিম গভর্ন্যান্স প্রটোকল — Theme Backups ও Updated Theme)**:
+    - ওয়ার্ডপ্রেস থিমে যেকোনো ধরনের কাজ (ফিচার, সিএসএস, পিএইচপি বা বাগ ফিক্স) শুরু করার পূর্বে এজেন্টকে বাধ্যতামূলকভাবে **`Theme Backups/`** ফোল্ডারে সম্পূর্ণ টাইমস্ট্যাম্পড প্রি-এডিট ব্যাকআপ (`python tools/backup_manager/theme_backup_manager.py backup --reason "..."`) সংরক্ষণ করতে হবে। ব্যাকআপ ব্যতিরেকে থিম স্পর্শ করা কঠোরভাবে নিষিদ্ধ।
+    - প্রতিটি কাজ শেষ হওয়া মাত্রই এজেন্টকে বাধ্যতামূলকভাবে **`Updated Theme/`** ফোল্ডারে সর্বশেষ আপডেট হওয়া আনপ্যাকড কোড এবং ওয়ার্ডপ্রেস ড্যাশবোর্ডে সরাসরি আপলোড করার রেডি জিপ `helptrickbd-theme.zip` প্যাকেজিং ও সিঙ্ক করতে হবে (`python tools/backup_manager/theme_backup_manager.py package`)।
 
 
 ---
