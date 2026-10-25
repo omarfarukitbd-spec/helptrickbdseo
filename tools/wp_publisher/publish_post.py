@@ -52,22 +52,25 @@ def publish_from_files(html_path: str, meta_path: str, status: str = "draft"):
     print(f"Target WP : {publisher.client.base_url}")
     print("-----------------------------------------------------------------")
 
-    # 1. Upload Featured Image to WordPress Media Library
-    featured_media_id = None
-    banner_path = meta.get("banner_path")
-    if banner_path and os.path.exists(banner_path):
-        print(f"[*] Uploading Featured Image: {banner_path}...")
-        featured_media_id = publisher.upload_featured_image(
-            file_path=banner_path,
-            alt_text=focus_kw,
-            title=title
-        )
-        if featured_media_id:
-            print(f"[SUCCESS] Featured Image uploaded to Media Library! ID: {featured_media_id}")
-        else:
-            print("[WARN] Featured image upload failed. Continuing without attachment.")
-    elif banner_path:
-        print(f"[WARN] Banner file does not exist locally: {banner_path}")
+    # 1. Upload or reuse Featured Image
+    featured_media_id = meta.get("featured_media_id")
+    if featured_media_id:
+        print(f"[+] Reusing existing Featured Media ID from metadata: {featured_media_id}")
+    else:
+        banner_path = meta.get("banner_path")
+        if banner_path and os.path.exists(banner_path):
+            print(f"[*] Uploading Featured Image: {banner_path}...")
+            featured_media_id = publisher.upload_featured_image(
+                file_path=banner_path,
+                alt_text=focus_kw,
+                title=title
+            )
+            if featured_media_id:
+                print(f"[SUCCESS] Featured Image uploaded to Media Library! ID: {featured_media_id}")
+            else:
+                print("[WARN] Featured image upload failed. Continuing without attachment.")
+        elif banner_path:
+            print(f"[WARN] Banner file does not exist locally: {banner_path}")
 
     # 2. Resolve Categories
     cat_ids = []
