@@ -52,7 +52,7 @@ function ht_render_schema_jsonld() {
 
         $schemas[] = [
             '@context'    => 'https://schema.org',
-            '@type'       => 'EducationalOrganization',
+            '@type'       => ['Organization', 'EducationalOrganization'],
             '@id'         => home_url('/#organization'),
             'name'        => get_bloginfo('name'),
             'url'         => home_url('/'),
@@ -62,6 +62,21 @@ function ht_render_schema_jsonld() {
             ] : null,
             'sameAs'      => array_values($same_as),
             'description' => get_bloginfo('description'),
+        ];
+
+        // BreadcrumbList for Homepage
+        $schemas[] = [
+            '@context'        => 'https://schema.org',
+            '@type'           => 'BreadcrumbList',
+            '@id'             => home_url('/#breadcrumb'),
+            'itemListElement' => [
+                [
+                    '@type'    => 'ListItem',
+                    'position' => 1,
+                    'name'     => get_bloginfo('name') ?: 'HelpTrickBD',
+                    'item'     => home_url('/'),
+                ],
+            ],
         ];
     }
 

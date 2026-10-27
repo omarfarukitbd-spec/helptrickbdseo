@@ -1,10 +1,10 @@
 {
-  "timestamp": "20261028_014928",
-  "date_human": "2026-10-28 01:49:28",
+  "timestamp": "20261028_020105",
+  "date_human": "2026-10-28 02:01:05",
   "theme_version": "1.4.8",
-  "reason": "Add user-request AI bots to geo-engine",
+  "reason": "Add Organization and BreadcrumbList schema to homepage",
   "total_files": 52,
-  "total_size_bytes": 815475,
-  "zip_size_kb": 214.41,
-  "backup_zip_name": "helptrickbd-theme-v1.4.8-20261028_014928.zip"
+  "total_size_bytes": 816009,
+  "zip_size_kb": 214.47,
+  "backup_zip_name": "helptrickbd-theme-v1.4.8-20261028_020105.zip"
 }

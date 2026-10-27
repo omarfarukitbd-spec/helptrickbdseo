@@ -5,14 +5,15 @@
   "positioning": null,
   "competitors": [],
   "metrics": {
-    "bluf_avg": 69,
+    "bluf_avg": 53,
     "def_lang_avg": 0.0,
-    "visible_facts_avg": 24
+    "visible_facts_avg": 26
   },
   "findings_count": {
     "S1": 1,
     "EE1": 1,
     "EE3": 1,
+    "CHM1": 1,
     "CHM2": 1,
     "CR-INFO3": 1
   }
