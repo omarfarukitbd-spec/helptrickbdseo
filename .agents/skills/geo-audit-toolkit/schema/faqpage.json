@@ -1,0 +1,23 @@
+{
+  "$comment": "FAQPage schema — only use when the page genuinely contains user-relevant FAQs (not synthetic SEO Q&As — those trigger Google's E-E-A-T penalty). Reference: https://schema.org/FAQPage",
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "First question (verbatim, exactly as users would ask it)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First-paragraph answer in BLUF style: lead with the conclusion / key fact, then context. Use the same wording as the visible page — schema and body should match."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Second question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Second answer."
+      }
+    }
+  ]
+}

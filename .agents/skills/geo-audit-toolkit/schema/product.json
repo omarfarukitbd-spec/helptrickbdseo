@@ -1,0 +1,41 @@
+{
+  "$comment": "Product schema — for e-commerce or any single-item listing. Reference: https://schema.org/Product",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Product Name",
+  "image": [
+    "https://www.example.com/product-1.jpg",
+    "https://www.example.com/product-2.jpg"
+  ],
+  "description": "Concrete description of the product.",
+  "sku": "SKU-12345",
+  "brand": {
+    "@type": "Brand",
+    "name": "Brand Name"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.example.com/products/product-slug",
+    "priceCurrency": "EUR",
+    "price": "129.00",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0.00",
+        "currency": "EUR"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "FR"
+      }
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "82"
+  }
+}

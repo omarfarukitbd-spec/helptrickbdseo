@@ -1,0 +1,23 @@
+{
+  "$comment": "Person schema — author / team-member entity. Critical for Article and About pages (E-E-A-T signal). Reference: https://schema.org/Person",
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Full Name",
+  "url": "https://www.example.com/team/person-slug",
+  "image": "https://www.example.com/team/person-photo.jpg",
+  "jobTitle": "Job Title",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Organization Name",
+    "url": "https://www.example.com"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/person",
+    "https://twitter.com/person",
+    "https://github.com/person"
+  ],
+  "knowsAbout": [
+    "Topic 1",
+    "Topic 2"
+  ]
+}

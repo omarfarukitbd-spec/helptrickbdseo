@@ -1,0 +1,32 @@
+{
+  "$comment": "Article schema — for blog posts, news, editorial content. Use NewsArticle, BlogPosting, or TechArticle as more specific subtypes when relevant. Reference: https://schema.org/Article",
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Article title (≤ 110 chars for Google)",
+  "description": "One-paragraph summary of the article.",
+  "image": [
+    "https://www.example.com/article-hero-1x1.jpg",
+    "https://www.example.com/article-hero-4x3.jpg",
+    "https://www.example.com/article-hero-16x9.jpg"
+  ],
+  "datePublished": "2026-01-15T10:00:00+01:00",
+  "dateModified": "2026-04-26T14:30:00+02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Author Full Name",
+    "url": "https://www.example.com/team/author-slug",
+    "sameAs": [
+      "https://www.linkedin.com/in/author",
+      "https://twitter.com/author"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Publisher Name",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.example.com/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.example.com/article-slug"
+}

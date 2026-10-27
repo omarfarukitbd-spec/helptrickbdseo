@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) {
 
     <div class="ht-card-body">
         <h2 class="ht-card-title">
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
         </h2>
         <p class="ht-card-excerpt">
             <?php echo esc_html(wp_trim_words(get_the_excerpt(), 18)); ?>

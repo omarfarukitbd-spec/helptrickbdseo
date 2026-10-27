@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "date": "2026-10-28",
+  "domain": "helptrickbd.com",
+  "positioning": null,
+  "competitors": [],
+  "metrics": {
+    "bluf_avg": 69,
+    "def_lang_avg": 0.0,
+    "visible_facts_avg": 24
+  },
+  "findings_count": {
+    "S1": 1,
+    "EE1": 1,
+    "EE3": 1,
+    "CHM2": 1,
+    "CR-INFO3": 1
+  }
+}

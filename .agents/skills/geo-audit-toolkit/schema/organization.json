@@ -1,0 +1,29 @@
+{
+  "$comment": "Organization schema — minimal starter. Adapt the fields to your entity. Reference: https://schema.org/Organization",
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Your Organization Name",
+  "url": "https://www.example.com",
+  "logo": "https://www.example.com/logo.png",
+  "description": "One-sentence description of what the organization does.",
+  "sameAs": [
+    "https://www.linkedin.com/company/your-org",
+    "https://en.wikipedia.org/wiki/Your_Org",
+    "https://www.wikidata.org/wiki/Q123456"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+33-1-23-45-67-89",
+    "contactType": "customer support",
+    "email": "contact@example.com",
+    "availableLanguage": ["fr", "en"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 rue de l'Exemple",
+    "addressLocality": "Paris",
+    "postalCode": "75001",
+    "addressCountry": "FR"
+  },
+  "foundingDate": "2020-01-01"
+}

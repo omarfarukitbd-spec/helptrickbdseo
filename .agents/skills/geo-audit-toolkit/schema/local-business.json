@@ -1,0 +1,34 @@
+{
+  "$comment": "LocalBusiness schema — for businesses with a physical location. Pick a more specific subtype if applicable (Restaurant, ProfessionalService, Store, etc.). Reference: https://schema.org/LocalBusiness",
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Your Business Name",
+  "image": "https://www.example.com/storefront.jpg",
+  "url": "https://www.example.com",
+  "telephone": "+33-1-23-45-67-89",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 rue de l'Exemple",
+    "addressLocality": "Paris",
+    "postalCode": "75001",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.8566,
+    "longitude": 2.3522
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.google.com/maps/place/your-business",
+    "https://www.facebook.com/your-business"
+  ]
+}

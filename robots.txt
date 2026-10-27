@@ -45,6 +45,22 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
+# User-Initiated AI Agents & Browsing (Real-Time Search Inquiries)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Agent
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
 # Sitemaps & LLMs Manifest
 Sitemap: https://www.helptrickbd.com/sitemap_index.xml
 Sitemap: https://www.helptrickbd.com/sitemap.xml
