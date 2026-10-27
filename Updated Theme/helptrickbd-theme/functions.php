@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '1.4.7');
+define('HT_THEME_VERSION', '1.4.8');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/material-icons.php';
@@ -26,6 +26,7 @@ require_once get_template_directory() . '/inc/content-cleaner.php';
 require_once get_template_directory() . '/inc/redirect-engine.php';
 require_once get_template_directory() . '/inc/link-rewriter.php';
 require_once get_template_directory() . '/inc/auto-migrator.php';
+require_once get_template_directory() . '/inc/geo-engine.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "gsc-mcp": {
+      "command": "mcp-search-console",
+      "args": [],
+      "env": {
+        "GSC_CREDENTIALS_PATH": "${WORKSPACE_ROOT}/service_account.json",
+        "GSC_SKIP_OAUTH": "true"
+      }
+    }
+  }
+}

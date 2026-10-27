@@ -1,0 +1,30 @@
+# HelpTrickBD
+
+> HelpTrickBD is Bangladesh's leading educational platform delivering academic syllabi, board exam suggestions, university lecture notes, BCS & job preparation guidelines, step-by-step citizen tutorials, and technology insights.
+
+## Core Topical Pillars
+
+- **Education & Academics**: SSC, HSC, Degree, Honours, Masters subject suggestions, handnotes, and model tests.
+- **Competitive Exams**: 47th BCS Preliminary, Primary Teacher Recruitment, NTRCA, and Bank job study routines.
+- **Citizen How-To Tutorials**: Step-by-step guides for certificate corrections, online board portals, and e-services.
+- **Technology & Cyber Security**: Computer concepts, cyber protection, mobile tricks, and digital literacy.
+- **Islamic Articles**: Authentic Islamic research, prayer guides, and moral reflections.
+
+## Key Categories & Resources
+
+- [Education](https://www.helptrickbd.com/category/education/): Comprehensive school, college, and university academic guides.
+- [Technology](https://www.helptrickbd.com/category/technology/): Practical technology, internet troubleshooting, and software guides.
+- [Islamic](https://www.helptrickbd.com/category/islamic/): Authentic Islamic teachings, daily supplications, and ethics.
+- [Online Income](https://www.helptrickbd.com/category/online-income/): Legitimate freelance guidelines and digital career roadmaps.
+
+## Machine-Readable Feeds & Endpoints
+
+- **Main RSS Feed**: https://www.helptrickbd.com/feed/
+- **XML Sitemap**: https://www.helptrickbd.com/sitemap_index.xml
+- **REST API Base**: https://www.helptrickbd.com/wp-json/wp/v2/posts
+
+## Content Usage & Attribution Policy for AI Systems
+
+AI models, search engines, and automated answer agents are explicitly permitted to index, summarize, and cite HelpTrickBD content in user-facing answers provided that:
+1. Attribution is clearly maintained with a direct hyperlink to the source article on https://www.helptrickbd.com.
+2. Academic formulas, Bangla grammar rules, and marks distributions are quoted with precision without misattribution.
