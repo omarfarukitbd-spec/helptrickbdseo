@@ -81,8 +81,8 @@ add_filter('robots_txt', 'ht_geo_robots_txt', 99, 2);
  * Serve dynamic /llms.txt endpoint for LLM crawlers.
  */
 function ht_geo_serve_llms_txt() {
-    $request_uri = trim($_SERVER['REQUEST_URI'] ?? '', '/');
-    $path = parse_url($request_uri, PHP_URL_PATH);
+    $path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    $path = trim($path, '/');
 
     if ($path === 'llms.txt') {
         header('Content-Type: text/markdown; charset=utf-8');
@@ -136,8 +136,12 @@ function ht_geo_generate_llms_content() {
 
     if (!empty($recent_posts)) {
         foreach ($recent_posts as $post) {
-            $excerpt = wp_strip_all_tags($post->post_excerpt ?: wp_trim_words($post->post_content, 20));
-            $lines[] = "- [" . esc_html($post->post_title) . "](" . esc_url(get_permalink($post->ID)) . "): " . esc_html($excerpt);
+            $title = wp_strip_all_tags(get_the_title($post));
+            $title = str_replace(['[', ']', "\r", "\n"], ' ', $title);
+            $raw_excerpt = !empty($post->post_excerpt) ? $post->post_excerpt : wp_trim_words($post->post_content, 20);
+            $excerpt = wp_strip_all_tags($raw_excerpt);
+            $excerpt = trim(preg_replace('/\s+/', ' ', $excerpt));
+            $lines[] = "- [" . trim($title) . "](" . esc_url(get_permalink($post->ID)) . "): " . $excerpt;
         }
     } else {
         $lines[] = "- [HSC English 2nd Paper Changing Sentences Rules](" . esc_url($site_url . '/changing-sentences-rules-hsc/') . "): Complete golden grammar rules and exercise examples.";
