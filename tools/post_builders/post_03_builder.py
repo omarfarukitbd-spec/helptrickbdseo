@@ -1,0 +1,326 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Post 3 Builder: নিরীক্ষকের আইনগত দায়: দেওয়ানি ও ফৌজদারি দায় এবং ঐতিহাসিক মামলার রায়
+"""
+
+import os
+import json
+
+def get_post_data(banner_path):
+    title = "নিরীক্ষকের আইনগত দায়: দেওয়ানি ও ফৌজদারি দায় এবং ঐতিহাসিক মামলার রায়"
+    slug = "auditor-legal-liability-companies-act"
+    focus_kw = "নিরীক্ষকের আইনগত দায়"
+    meta_desc = "১৯৯৪ সালের কোম্পানি আইন অনুযায়ী নিরীক্ষকের আইনগত দায়, দেওয়ানি ও ফৌজদারি দায়সমূহ। কিংস্টন কটন মিলস ও আল্ট্রামারিস মামলার বিস্তারিত বিশ্লেষণ।"
+    
+    html = f"""<!-- Byte-0 Hero Banner Placement -->
+<figure class="htbd-featured-hero" style="margin: 0 0 25px 0; text-align: center;">
+  <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/thumbnails/audit_post_3_banner.webp" alt="{focus_kw}" title="{title}" style="width: 100%; max-width: 1000px; height: auto; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.12); display: block; margin: 0 auto;" loading="eager" />
+  <figcaption style="font-family: 'SolaimanLipi', sans-serif; font-size: 14px; color: #64748b; margin-top: 8px; text-align: center;">
+    ১৯৯৪ সালের কোম্পানি আইন ও সাধারণ আইন অনুযায়ী নিরীক্ষকের আইনগত দায়ের পূর্ণাঙ্গ কাঠামো | সূত্র: HelpTrickBD
+  </figcaption>
+</figure>
+
+<!-- Modern Typography & Layout Styling -->
+<link href="https://cdn.jsdelivr.net/gh/maateen/ekushey-cdn@1.0/fonts/solaiman-lipi/stylesheet.css" rel="stylesheet" type="text/css" />
+<style>
+  .htbd-nu-content {{
+    font-family: 'SolaimanLipi', Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.85;
+    font-size: 16.5px;
+  }}
+  .htbd-nu-content h2 {{
+    font-family: 'SolaimanLipi', sans-serif;
+    color: #0b2046;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+    border-bottom: 2.5px solid #0b2046;
+    padding-bottom: 10px;
+  }}
+  .htbd-nu-content h3 {{
+    font-family: 'SolaimanLipi', sans-serif;
+    color: #1e3a8a;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px 0 15px 0;
+  }}
+  .htbd-nu-content p {{
+    margin-bottom: 18px;
+    text-align: justify;
+  }}
+  .htbd-table {{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15.5px;
+  }}
+  .htbd-table th, .htbd-table td {{
+    border: 1px solid #cbd5e1;
+    padding: 12px 14px;
+    text-align: left;
+  }}
+  .htbd-table th {{
+    background-color: #0b2046;
+    color: #ffffff;
+    font-weight: 700;
+  }}
+  .htbd-table tr:nth-child(even) {{
+    background-color: #f8fafc;
+  }}
+  .htbd-callout {{
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 25px 0;
+  }}
+  .htbd-callout-info {{
+    background-color: #eff6ff;
+    border-left: 5px solid #2563eb;
+    color: #1e40af;
+  }}
+  .htbd-callout-warning {{
+    background-color: #fffbeb;
+    border-left: 5px solid #f59e0b;
+    color: #92400e;
+  }}
+  .htbd-case-box {{
+    background: #fff8f6;
+    border-left: 4px solid #c2410c;
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+  }}
+  .dark .htbd-nu-content, [data-theme="dark"] .htbd-nu-content {{
+    color: #cbd5e1;
+  }}
+</style>
+
+<div class="htbd-nu-content">
+  <!-- Position 0 Quick Answer Box -->
+  <div class="htbd-callout htbd-callout-info">
+    <p style="margin: 0; font-weight: 600; font-size: 17.5px;">
+      <strong>এক নজরে সারসংক্ষেপ:</strong> <strong>{focus_kw}</strong> বলতে পেশাগত দায়িত্ব পালনে যুক্তিসঙ্গত সতর্কতা ও দক্ষতার অভাবের জন্য আইনানুযায়ী নিরীক্ষককে যে দায়বদ্ধতার মুখোমুখি হতে হয় তাকে বোঝায়। কোম্পানি আইন ১৯৯৪ এবং প্রথাগত আইন অনুসারে এই দায় মূলত দুই প্রকার: (১) দেওয়ানি দায় (আর্থিক ক্ষতিপূরণ দিতে বাধ্য থাকা—যেমন অবহেলা ও বিশ্বাসভঙ্গের জন্য), এবং (২) ফৌজদারি দায় (ইচ্ছাকৃত জালিয়াতি বা মিথ্যা বিবরণী তৈরির জন্য অর্থদণ্ড ও কারাদণ্ড)। নিরীক্ষার ইতিহাসে কিংস্টন কটন মিলস মামলা (Watchdog principle) এবং আল্ট্রামারিস মামলা এই দায়ের সীমারেখা নির্ধারণ করে দিয়েছে।
+    </p>
+  </div>
+
+  <!--more-->
+
+  <!-- wp:rank-math/toc-block -->
+  <div class="htbd-callout htbd-callout-warning" style="margin: 20px 0;">
+    <h3 style="margin-top:0;">সূচিপত্র (Table of Contents)</h3>
+    <ul>
+      <li><a href="#section-1">১. নিরীক্ষকের আইনগত দায় বলতে কী বোঝায়?</a></li>
+      <li><a href="#section-2">২. নিরীক্ষকের দেওয়ানি দায় (Civil Liability of an Auditor)</a></li>
+      <li><a href="#section-3">৩. নিরীক্ষকের ফৌজদারি দায় (Criminal Liability of an Auditor)</a></li>
+      <li><a href="#section-4">৪. দেওয়ানি দায় বনাম ফৌজদারি দায়ের পূর্ণাঙ্গ তুলনামূলক টেবিল</a></li>
+      <li><a href="#section-5">৫. তৃতীয় পক্ষের প্রতি নিরীক্ষকের দায় (Liability to Third Parties)</a></li>
+      <li><a href="#section-6">৬. নিরীক্ষা ইতিহাসের ৩টি বিশ্বখ্যাত মামলার রায় ও তাৎপর্য</a></li>
+      <li><a href="#section-7">৭. প্রায়শই জিজ্ঞাসিত প্রশ্নাবলি (FAQ)</a></li>
+    </ul>
+  </div>
+  <!-- /wp:rank-math/toc-block -->
+
+  <p>
+    যেকোনো পেশার মতো নিরীক্ষা পেশাতেও ভুলত্রুটি বা দায়িত্বহীনতার পরিণাম মারাত্মক হতে পারে। নিরীক্ষক যদি অসতর্কভাবে একটি ভুল আর্থিক বিবরণীকে সঠিক বলে প্রত্যয়ন করেন, তবে হাজার হাজার বিনিয়োগকারী ক্ষতিগ্রস্ত হতে পারেন। এ কারণেই দেশের কোম্পানি আইন, দণ্ডবিধি এবং প্রথাগত সাধারণ আইনে নিরীক্ষককে কঠোর দায়বদ্ধতার আওতায় আনা হয়েছে। আজকের লেখায় আমরা আলোচনা করব <strong>{focus_kw}</strong>, এর প্রকারভেদ এবং বিখ্যাত ঐতিহাসিক মামলার রায়ের তাৎপর্য। জাতীয় বিশ্ববিদ্যালয়ের আরও অ্যাকাউন্টিং নোটসের জন্য আমাদের <a href="https://www.helptrickbd.com/category/education-guide/national-university/">জাতীয় বিশ্ববিদ্যালয় পোর্টাল</a> ঘুরে আসুন।
+  </p>
+
+  <h2 id="section-1">১. নিরীক্ষকের আইনগত দায় বলতে কী বোঝায়?</h2>
+  <p>
+    কোম্পানির শেয়ারহোল্ডাররা তাদের কষ্টার্জিত মূলধনের নিরাপত্তা নিশ্চিত করতে নিরীক্ষককে নিয়োগ দেন। নিরীক্ষকের সাথে কোম্পানির এই সম্পর্ক মূলত একটি পেশাগত চুক্তির (Contract of Employment) মাধ্যমে সৃষ্টি হয়। চুক্তির প্রধান শর্ত হলো—নিরীক্ষক একজন সাধারণ বিচক্ষণ ও দক্ষ পেশাজীবী হিসেবে যতখানি সতর্কতা অবলম্বন করা প্রয়োজন, ঠিক ততখানি সতর্কতা ও প্রজ্ঞা প্রয়োগ করে হিসাব নিরীক্ষা করবেন। এই সতর্কতা ও দক্ষতার ন্যূনতম মানদণ্ড পূরণে ব্যর্থ হলে <strong>নিরীক্ষকের আইনগত দায়</strong> উদ্ভব হয়।
+  </p>
+
+  <h2 id="section-2">২. নিরীক্ষকের দেওয়ানি দায় (Civil Liability of an Auditor)</h2>
+  <p>
+    দেওয়ানি দায় হলো এমন দায় যার ফলে নিরীক্ষককে ক্ষতিগ্রস্ত পক্ষকে আর্থিক ক্ষতিপূরণ (Damages) দিতে বাধ্য করা হয়। ১৯৯৪ সালের কোম্পানি আইন ও সাধারণ আইন অনুসারে নিরীক্ষকের দেওয়ানি দায় প্রধানত ২ প্রকার:
+  </p>
+
+  <h3>ক. অবহেলাজনিত দায় (Liability for Negligence)</h3>
+  <p>
+    নিরীক্ষক যদি তাঁর কাজ সম্পাদনে পেশাগত যত্ন ও সতর্কতার সাধারণ মান (Reasonable Care and Skill) প্রদর্শনে ব্যর্থ হন এবং এর ফলে কোম্পানির কোনো আর্থিক ক্ষতি হয়, তবে তাকে অবহেলার জন্য দায়ী করা হয়। যেমন: ভাউচার পরীক্ষা না করে অন্ধের মতো হিসাব পাস করে দেওয়া। তবে নিরীক্ষককে দায়ী করার জন্য বাদী পক্ষকে প্রমাণ করতে হবে যে:
+  </p>
+  <ul>
+    <li>নিরীক্ষকের ওপর নির্দিষ্ট দায়িত্ব ন্যস্ত ছিল।</li>
+    <li>নিরীক্ষক তাঁর দায়িত্ব পালনে যুক্তিসঙ্গত অবহেলা করেছেন।</li>
+    <li>উক্ত অবহেলার কারণেই প্রতিষ্ঠানের সরাসরি আর্থিক ক্ষতি সাধিত হয়েছে।</li>
+  </ul>
+
+  <h3>খ. বিশ্বাসভঙ্গ বা কর্তব্যচ্যুতির দায় (Liability for Misfeasance)</h3>
+  <p>
+    কোম্পানি আইন ১৯৯৪-এর ৩৯৬ ধারা অনুসারে, কোম্পানির অবসায়নের (Winding Up) সময় যদি দেখা যায় যে কোনো নিরীক্ষক কোম্পানির তহবিল অপব্যবহার করেছেন, বিশ্বাসভঙ্গ করেছেন বা গুরুতর কর্তব্যচ্যুতি ঘটিয়েছেন—তবে আদালত নিরীক্ষককে ক্ষতিপূরণ বাবদ অর্থ কোম্পানির তহবিলে জমা দেওয়ার নির্দেশ দিতে পারেন।
+  </p>
+
+  <h2 id="section-3">৩. নিরীক্ষকের ফৌজদারি দায় (Criminal Liability of an Auditor)</h2>
+  <p>
+    ফৌজদারি দায় হলো রাষ্ট্রের আইন অমান্য করে অপরাধমূলক কর্মকাণ্ডে জড়ানোর দায়। নিরীক্ষক যদি কোনো দেওয়ানি ক্ষতি ছাড়াও ইচ্ছাকৃতভাবে জালিয়াতি, তথ্য গোপন বা রাষ্ট্রকে প্রতারিত করেন, তবে তিনি ফৌজদারি অপরাধে দণ্ডিত হন। ফৌজদারি দায়ের ক্ষেত্রে শুধু জরিমানা নয়, সশ্রম কারাদণ্ডও হতে পারে।
+  </p>
+  <p>
+    ১৯৯৪ সালের কোম্পানি আইনের ৩৯৭ ধারা অনুযায়ী, কোনো বিবরণী, ব্যালান্স শিট বা নথিপত্রে কোনো নিরীক্ষক যদি জেনেশুনে কোনো গুরুত্বপূর্ণ তথ্য গোপন করেন বা অসত্য বিবরণী দাখিল করেন, তবে তিনি সর্বোচ্চ ৫ বছর পর্যন্ত কারাদণ্ড এবং অর্থদণ্ডে দণ্ডিত হবেন। এছাড়া দণ্ডবিধির ৪৬৩ ও ৪৬৫ ধারা অনুযায়ী জাল দলিলের জন্যেও নিরীক্ষকের বিরুদ্ধে মামলা চলতে পারে।
+  </p>
+
+  <h2 id="section-4">৪. দেওয়ানি দায় বনাম ফৌজদারি দায়ের পূর্ণাঙ্গ তুলনামূলক টেবিল</h2>
+  <p>
+    শিক্ষার্থীদের পরীক্ষার জন্য এই দুটি দায়ের মধ্যকার মূল পার্থক্যগুলো নিচে একটি টেবিলের মাধ্যমে তুলে ধরা হলো:
+  </p>
+
+  <table class="htbd-table">
+    <thead>
+      <tr>
+        <th>তুলনার ভিত্তি</th>
+        <th>দেওয়ানি দায় (Civil Liability)</th>
+        <th>ফৌজদারি দায় (Criminal Liability)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>আইনের ধরন</strong></td>
+        <td>দেওয়ানি আইন ও চুক্তি আইন ভঙ্গজনিত দায়।</td>
+        <td>কোম্পানি আইন ও রাষ্ট্রীয় ফৌজদারি আইন ভঙ্গজনিত দায়।</td>
+      </tr>
+      <tr>
+        <td><strong>মামলার পক্ষ</strong></td>
+        <td>ক্ষতিগ্রস্ত প্রতিষ্ঠান বা শেয়ারহোল্ডাররা মামলা করেন।</td>
+        <td>রাষ্ট্র বা সরকার বাদী হয়ে মামলা দায়ের করে।</td>
+      </tr>
+      <tr>
+        <td><strong>মূল উদ্দেশ্য</strong></td>
+        <td>ক্ষতিগ্রস্ত পক্ষকে আর্থিক ক্ষতিপূরণ প্রদান করা।</td>
+        <td>অপরাধীকে দৃষ্টান্তমূলক শাস্তি দিয়ে আইনের শাসন বজায় রাখা।</td>
+      </tr>
+      <tr>
+        <td><strong>শাস্তির ধরন</strong></td>
+        <td>আদালতের নির্দেশে নির্দিষ্ট আর্থিক ক্ষতিপূরণ।</td>
+        <td>অর্থদণ্ড (জরিমানা) এবং সর্বোচ্চ ৫ বছরের সশ্রম কারাদণ্ড।</td>
+      </tr>
+      <tr>
+        <td><strong>আপসযোগ্যতা</strong></td>
+        <td>উভয় পক্ষ চাইলে আদালতের বাইরে আপস করতে পারে।</td>
+        <td>এটি অ-আপসযোগ্য (Non-compoundable) অপরাধ।</td>
+      </tr>
+      <tr>
+        <td><strong>প্রমাণের মান</strong></td>
+        <td>সম্ভাবনার ভারসাম্য (Balance of Probabilities)।</td>
+        <td>যুক্তিসঙ্গত সন্দেহের ঊর্ধ্বে প্রমাণ (Beyond Reasonable Doubt)।</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="section-5">৫. তৃতীয় পক্ষের প্রতি নিরীক্ষকের দায় (Liability to Third Parties)</h2>
+  <p>
+    তৃতীয় পক্ষ বলতে বোঝায়—যাদের সাথে নিরীক্ষকের কোনো সরাসরি লিখিত চুক্তি নেই (যেমন: ব্যাংক, ঋণদাতা, ভবিষ্যৎ বিনিয়োগকারী ও সরবরাহকারী)। 
+    প্রথাগত আইন অনুযায়ী, Privity of Contract নীতির কারণে তৃতীয় পক্ষের প্রতি সাধারণ অবহেলার জন্য নিরীক্ষক দায়ী নন। কারণ নিরীক্ষক শুধুমাত্র কোম্পানির শেয়ারহোল্ডারদের জন্য হিসাব পরীক্ষা করেন। তবে যদি নিরীক্ষকের আচরণে ইচ্ছাকৃত প্রতারণা (Fraud) বা চরম অবহেলা থাকে—তবে তৃতীয় পক্ষের ক্ষতির জন্যও নিরীক্ষককে ক্ষতিপূরণ দিতে হতে পারে।
+  </p>
+
+  <h2 id="section-6">৬. নিরীক্ষা ইতিহাসের ৩টি বিশ্বখ্যাত মামলার রায় ও তাৎপর্য</h2>
+
+  <div class="htbd-case-box">
+    <h3 style="margin-top:0; color:#c2410c;">১. কিংস্টন কটন মিলস মামলা (Kingston Cotton Mills Case, 1896)</h3>
+    <p>
+      <strong>ঘটনা:</strong> কোম্পানির ব্যবস্থাপনা পরিচালক মজুদ পণ্যের ভুয়া মূল্যায়ন দেখিয়ে বেশি মুনাফা প্রদর্শন করেন এবং লভ্যাংশ বণ্টন করেন। নিরীক্ষক ব্যবস্থাপনা পরিচালকের স্বাক্ষরিত সার্টিফিকেটের ওপর বিশ্বাস রেখে নিজে গুদামে গিয়ে স্টক যাচাই করেননি। পরবর্তীতে প্রতিষ্ঠান দেউলিয়া হলে নিরীক্ষকের বিরুদ্ধে মামলা হয়।<br />
+      <strong>ঐতিহাসিক রায়:</strong> মহামান্য লর্ড জাস্টিস লোপস তাঁর বিশ্ববিখ্যাত রায়ে বলেন: 
+      <em>"An auditor is a watchdog, but not a bloodhound."</em> (নিরীক্ষক হলেন পাহারাদার কুকুর, শিকারী কুকুর নন)। অর্থাৎ নিরীক্ষক সততার সাথে শুরু করবেন; সন্দেহ করার মতো সুনির্দিষ্ট কারণ না থাকলে তিনি সবাইকে চোর ভেবে গোয়েন্দাগিরি করতে বাধ্য নন। ফলে নিরীক্ষক অবহেলার দায় থেকে অব্যাহতি পান।
+    </p>
+  </div>
+
+  <div class="htbd-case-box">
+    <h3 style="margin-top:0; color:#c2410c;">২. লন্ডন অ্যান্ড জেনারেল ব্যাংক মামলা (London & General Bank Case, 1895)</h3>
+    <p>
+      <strong>ঐতিহাসিক রায়:</strong> লর্ড জাস্টিস লিন্ডলি বলেন: <em>"An auditor is not bound to be a detective."</em> নিরীক্ষক হিসাবের প্রকৃত অবস্থা প্রকাশ করতে বাধ্য, কিন্তু তিনি গ্যারান্টার নন যে ব্যালান্স শিট ১০০% সঠিক। তবে তিনি পরিচালনা পর্ষদকে যে সতর্কবার্তা দিয়েছিলেন, তা শেয়ারহোল্ডারদের প্রতিবেদনে উল্লেখ না করায় তাকে কর্তব্যচ্যুতির জন্য দায়ী করা হয়।
+    </p>
+  </div>
+
+  <div class="htbd-case-box">
+    <h3 style="margin-top:0; color:#c2410c;">৩. আল্ট্রামারিস মামলা (Ultramares Corporation vs. Touche, 1931)</h3>
+    <p>
+      <strong>ঐতিহাসিক রায়:</strong> বিচারপতি কার্ডোজো তাঁর ঐতিহাসিক রায়ে বলেন—নিরীক্ষকের সাধারণ অবহেলার জন্য অজ্ঞাত তৃতীয় পক্ষের নিকট দায় চাপানো হলে পেশাজীবীদের অস্তিত্ব বিপন্ন হবে। তবে প্রতারণামূলক বা চরম অবহেলার প্রমাণ পাওয়া গেলে তৃতীয় পক্ষের নিকটও দায় বর্তাবে। একেই ইতিহাসে আল্ট্রামারিস ডকট্রিন বলা হয়। নিরীক্ষা নীতি সংক্রান্ত আরও তথ্যের জন্য <a href="https://www.icab.org.bd/" target="_blank" rel="noopener noreferrer">ICAB গাইডলাইন</a> দেখতে পারেন।
+    </p>
+  </div>
+
+  <h2 id="section-7">৭. প্রায়শই জিজ্ঞাসিত প্রশ্নাবলি (FAQ)</h2>
+  <div style="margin-top: 15px;">
+    <h3>প্রশ্ন ১: কোম্পানি আইনে নিরীক্ষকের সর্বোচ্চ শাস্তি কী হতে পারে?</h3>
+    <p>উত্তর: কোম্পানি আইন ১৯৯৪-এর ৩৯৭ ধারা মোতাবেক ভুয়া হিসাব ও মিথ্যা প্রত্যয়নের জন্য নিরীক্ষকের সর্বোচ্চ ৫ বছরের কারাদণ্ড ও অর্থদণ্ড হতে পারে। নিয়মিত স্টাডি টিপসের জন্য আমাদের <a href="https://www.helptrickbd.com/">HelpTrickBD মেইন ওয়েবসাইট</a> ফলো করুন।</p>
+
+    <h3>প্রশ্ন ২: নিরীক্ষক কি মজুদ পণ্য ফিজিক্যালি গণনা করতে বাধ্য?</h3>
+    <p>উত্তর: আন্তর্জাতিক মান ISA 501 অনুযায়ী বর্তমান সময়ে বস্তুগত মজুদ পণ্যের ক্ষেত্রে নিরীক্ষক বা তাঁর প্রতিনিধির সশরীরে মজুদ গণনা পর্যবেক্ষণে উপস্থিত থাকা বাধ্যতামূলক।</p>
+  </div>
+
+  <!-- Mandatory Author Box -->
+  <div class="htbd-author-card htbd-author-box" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 22px; margin: 40px 0; display: flex; align-items: center; gap: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-family: 'SolaimanLipi', sans-serif;">
+    <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp" alt="ফারুক স্যার" loading="lazy" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #0f766e;" />
+    <div>
+      <h4 style="margin: 0 0 6px 0; color: #0f766e; font-size: 19px;">লেখক পরিচিতি: ফারুক স্যার (মো. ওমর ফারুক)</h4>
+      <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.6;">
+        প্রতিষ্ঠাতা ও প্রধান সম্পাদক, HelpTrickBD। বিগত এক দশকেরও বেশি সময় ধরে জাতীয় বিশ্ববিদ্যালয়, ডিগ্রি ও অনার্স পর্যায়ের শিক্ষার্থীদের পরীক্ষা প্রস্তুতি ও শিক্ষা নির্দেশনায় নিবেদিতপ্রাণ শিক্ষক ও কনটেন্ট স্ট্র্যাটেজিস্ট।
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Structured Data Microdata (JSON-LD) -->
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{title}",
+  "description": "{meta_desc}",
+  "image": "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/thumbnails/audit_post_3_banner.webp",
+  "author": {{
+    "@type": "Person",
+    "name": "ফারুক স্যার (Faruk Sir)"
+  }},
+  "publisher": {{
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "logo": {{
+      "@type": "ImageObject",
+      "url": "https://www.helptrickbd.com/wp-content/uploads/2026/09/cropped-helptrickbd_logo.png"
+    }}
+  }},
+  "datePublished": "2026-10-29T03:34:00+06:00",
+  "dateModified": "2026-10-29T03:34:00+06:00",
+  "mainEntityOfPage": {{
+    "@type": "WebPage",
+    "@id": "https://www.helptrickbd.com/{slug}/"
+  }}
+}}
+</script>
+
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{
+      "@type": "Question",
+      "name": "কোম্পানি আইনে নিরীক্ষকের সর্বোচ্চ শাস্তি কী হতে পারে?",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "কোম্পানি আইন ১৯৯৪-এর ৩৯৭ ধারা মোতাবেক ভুয়া হিসাব ও মিথ্যা প্রত্যয়নের জন্য নিরীক্ষকের সর্বোচ্চ ৫ বছরের কারাদণ্ড ও অর্থদণ্ড হতে পারে।"
+      }}
+    }},
+    {{
+      "@type": "Question",
+      "name": "নিরীক্ষক কি মজুদ পণ্য ফিজিক্যালি গণনা করতে বাধ্য?",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "আন্তর্জাতিক মান ISA 501 অনুযায়ী বর্তমান সময়ে বস্তুগত মজুদ পণ্যের ক্ষেত্রে নিরীক্ষক বা তাঁর প্রতিনিধির সশরীরে মজুদ গণনা পর্যবেক্ষণে উপস্থিত থাকা বাধ্যতামূলক।"
+      }}
+    }}
+  ]
+}}
+</script>
+"""
+
+    meta = {
+        "title": title,
+        "slug": slug,
+        "focus_keyword": focus_kw,
+        "meta_description": meta_desc,
+        "categories": ["Education Guide", "National University"],
+        "tags": ["নিরীক্ষকের আইনগত দায়", "কোম্পানি আইন ১৯৯৪", "কিংস্টন কটন মিলস", "দেওয়ানি দায়", "ফৌজদারি দায়"],
+        "banner_path": banner_path,
+        "status": "draft"
+    }
+
+    return html, meta
