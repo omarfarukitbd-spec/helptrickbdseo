@@ -106,8 +106,7 @@ def get_post_data(banner_path):
 
   <!--more-->
 
-  <!-- wp:rank-math/toc-block -->
-  <div class="htbd-callout htbd-callout-warning" style="margin: 20px 0;">
+  <div id="rank-math-toc" class="htbd-callout htbd-callout-warning wp-block-rank-math-toc" style="margin: 20px 0;">
     <h3 style="margin-top:0;">সূচিপত্র (Table of Contents)</h3>
     <ul>
       <li><a href="#section-1">১. নিরীক্ষা প্রতিবেদন কি ও এর আইনগত ভিত্তি</a></li>
@@ -118,7 +117,6 @@ def get_post_data(banner_path):
       <li><a href="#section-6">৬. প্রায়শই জিজ্ঞাসিত প্রশ্নাবলি (FAQ)</a></li>
     </ul>
   </div>
-  <!-- /wp:rank-math/toc-block -->
 
   <p>
     যেকোনো যৌথ মূলধনী কোম্পানি বা করপোরেট প্রতিষ্ঠানের হিসাব পরীক্ষার চূড়ান্ত পরিণতি হলো <strong>নিরীক্ষা প্রতিবেদন (Audit Report)</strong>। নিরীক্ষক মাসব্যাপী পরিশ্রম করে কোম্পানির লেনদেন, ভাউচার ও খতিয়ান যাচাই করেন—তার চূড়ান্ত ফল প্রকাশ পায় এই বিধিবদ্ধ দলিলে। বিনিয়োগকারী, ব্যাংক, কর কর্তৃপক্ষ এবং শেয়ারহোল্ডাররা কোনো কোম্পানির আর্থিক স্বাস্থ্যের অবস্থা জানতে এই অডিট রিপোর্টের ওপর শতভাগ নির্ভর করেন। আরও বিশদ প্রস্তুতির জন্য আমাদের <a href="https://www.helptrickbd.com/category/education-guide/national-university/">জাতীয় বিশ্ববিদ্যালয় লেকচার সিরিজ</a> দেখতে পারেন।

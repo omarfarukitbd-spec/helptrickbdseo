@@ -106,8 +106,7 @@ def get_post_data(banner_path):
 
   <!--more-->
 
-  <!-- wp:rank-math/toc-block -->
-  <div class="htbd-callout htbd-callout-warning" style="margin: 20px 0;">
+  <div id="rank-math-toc" class="htbd-callout htbd-callout-warning wp-block-rank-math-toc" style="margin: 20px 0;">
     <h3 style="margin-top:0;">সূচিপত্র (Table of Contents)</h3>
     <ul>
       <li><a href="#section-1">১. নিরীক্ষকের আইনগত দায় বলতে কী বোঝায়?</a></li>
@@ -119,7 +118,6 @@ def get_post_data(banner_path):
       <li><a href="#section-7">৭. প্রায়শই জিজ্ঞাসিত প্রশ্নাবলি (FAQ)</a></li>
     </ul>
   </div>
-  <!-- /wp:rank-math/toc-block -->
 
   <p>
     যেকোনো পেশার মতো নিরীক্ষা পেশাতেও ভুলত্রুটি বা দায়িত্বহীনতার পরিণাম মারাত্মক হতে পারে। নিরীক্ষক যদি অসতর্কভাবে একটি ভুল আর্থিক বিবরণীকে সঠিক বলে প্রত্যয়ন করেন, তবে হাজার হাজার বিনিয়োগকারী ক্ষতিগ্রস্ত হতে পারেন। এ কারণেই দেশের কোম্পানি আইন, দণ্ডবিধি এবং প্রথাগত সাধারণ আইনে নিরীক্ষককে কঠোর দায়বদ্ধতার আওতায় আনা হয়েছে। আজকের লেখায় আমরা আলোচনা করব <strong>{focus_kw}</strong>, এর প্রকারভেদ এবং বিখ্যাত ঐতিহাসিক মামলার রায়ের তাৎপর্য। জাতীয় বিশ্ববিদ্যালয়ের আরও অ্যাকাউন্টিং নোটসের জন্য আমাদের <a href="https://www.helptrickbd.com/category/education-guide/national-university/">জাতীয় বিশ্ববিদ্যালয় পোর্টাল</a> ঘুরে আসুন।

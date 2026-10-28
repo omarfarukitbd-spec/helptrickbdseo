@@ -99,8 +99,7 @@ def get_post_data(banner_path):
 
   <!--more-->
 
-  <!-- wp:rank-math/toc-block -->
-  <div class="htbd-callout htbd-callout-warning" style="margin: 20px 0;">
+  <div id="rank-math-toc" class="htbd-callout htbd-callout-warning wp-block-rank-math-toc" style="margin: 20px 0;">
     <h3 style="margin-top:0;">সূচিপত্র (Table of Contents)</h3>
     <ul>
       <li><a href="#section-1">১. নিরীক্ষা ও অনুসন্ধান কাকে বলে? (মৌলিক ধারণা)</a></li>
@@ -113,7 +112,6 @@ def get_post_data(banner_path):
       <li><a href="#section-8">৮. প্রায়শই জিজ্ঞাসিত প্রশ্নাবলি (FAQ)</a></li>
     </ul>
   </div>
-  <!-- /wp:rank-math/toc-block -->
 
   <p>
     বাণিজ্যিক প্রতিষ্ঠান ও করপোরেট জগতে হিসাব সংক্রান্ত জটিলতা নিরসনে দুটি শব্দ খুব বেশি ব্যবহৃত হয়—একটি হলো 'অডিট' বা নিরীক্ষা এবং অপরটি হলো 'ইনভেস্টিগেশন' বা অনুসন্ধান। আপাতদৃষ্টিতে দুটিকে একই রকম মনে হলেও অ্যাকাউন্টিং ও অডিটিং শাস্ত্রে এ দুটির দর্শন, কর্মপদ্ধতি ও আইনি বাধ্যবাধকতা সম্পূর্ণ আলাদা। জাতীয় বিশ্ববিদ্যালয়ের বিবিএ ৩য় বর্ষের পরীক্ষায় এটি একটি অতি গুরুত্বপূর্ণ রচনামূলক প্রশ্ন। নিচে <strong>{focus_kw}</strong> এবং নিরীক্ষার সার্বিক উদ্দেশ্যসমূহের পূর্ণাঙ্গ বিশ্লেষণ দেওয়া হলো। জাতীয় বিশ্ববিদ্যালয়ের আরও অ্যাকাউন্টিং নোটসের জন্য আমাদের <a href="https://www.helptrickbd.com/category/education-guide/national-university/">অনার্স স্টাডি গাইড</a> পড়ুন।
