@@ -48,35 +48,35 @@ os.makedirs(THUMBNAIL_DIR, exist_ok=True)
 POSTS_CONFIG = [
     {
         "id": 1,
-        "title": "অনার্স ৩য় বর্ষ নিরীক্ষা ও নিশ্চয়তা চূড়ান্ত সাজেশন ২০২৬",
-        "subtitle": "National University BBA 3rd Year Audit & Assurance Final Suggestion",
+        "title": "অনার্স ৩য় বর্ষ নিরীক্ষা ও নিশ্চয়তা সাজেশন 2026: Best Complete Exam Guide",
+        "subtitle": "National University BBA 3rd Year Audit & Assurance Final Suggestion 2026",
         "thumb_name": "audit_post_1_banner.png",
         "builder": get_p1,
     },
     {
         "id": 2,
-        "title": "নিরীক্ষা প্রতিবেদন কি? অডিট রিপোর্টের প্রকারভেদ ও নমুনা ছক",
+        "title": "নিরীক্ষা প্রতিবেদনের প্রকারভেদ: Best Complete Guide 2026 (ISA 700 ও 705 নমুনা ছক)",
         "subtitle": "Audit Report Types, Components & Specimen under ISA 700 & 705",
         "thumb_name": "audit_post_2_banner.png",
         "builder": get_p2,
     },
     {
         "id": 3,
-        "title": "নিরীক্ষকের আইনগত দায়: দেওয়ানি ও ফৌজদারি দায় এবং ঐতিহাসিক মামলার রায়",
+        "title": "নিরীক্ষকের আইনগত দায়: Best Complete Legal Analysis 2026 (দেওয়ানি ও ফৌজদারি দায়)",
         "subtitle": "Auditor Legal Liability under Companies Act 1994 & Landmark Cases",
         "thumb_name": "audit_post_3_banner.png",
         "builder": get_p3,
     },
     {
         "id": 4,
-        "title": "কোম্পানি নিরীক্ষকের অধিকার, কর্তব্য ও অপসারণের আইনি বিধান",
+        "title": "কোম্পানি নিরীক্ষকের অধিকার ও কর্তব্য: Best Complete Guide 2026 (ধারা ২১৩ ও অপসারণ)",
         "subtitle": "Rights, Duties & Removal of Company Auditor under Section 213",
         "thumb_name": "audit_post_4_banner.png",
         "builder": get_p4,
     },
     {
         "id": 5,
-        "title": "নিরীক্ষা ও অনুসন্ধানের মধ্যে পার্থক্য এবং নিরীক্ষার উদ্দেশ্যসমূহ ২০২৬",
+        "title": "নিরীক্ষা ও অনুসন্ধানের মধ্যে পার্থক্য: Best Complete Comparison 2026 (উদ্দেশ্য ও ছক)",
         "subtitle": "Difference between Auditing & Investigation with Objectives 2026",
         "thumb_name": "audit_post_5_banner.png",
         "builder": get_p5,
@@ -161,13 +161,13 @@ def main():
         existing_res = publisher.client.get("posts", params={"slug": slug, "status": "any"})
         existing_posts = existing_res.json() if existing_res.status_code == 200 else []
 
-        seo_meta = {
-            "title": meta_data["title"],
-            "seo_title": f"{meta_data['title']} | HelpTrickBD",
-            "seo_description": meta_data["meta_description"],
-            "focus_keyword": meta_data["focus_keyword"],
-            "canonical_url": f"https://www.helptrickbd.com/{slug}/",
-            "robots": ["index", "follow"]
+        focus_kw = meta_data.get("rank_math_focus_keyword") or meta_data["focus_keyword"]
+        meta_dict = {
+            "rank_math_title": meta_data["title"],
+            "rank_math_description": meta_data["meta_description"],
+            "rank_math_focus_keyword": focus_kw,
+            "rank_math_robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+            "rank_math_canonical_url": ""
         }
 
         if existing_posts and len(existing_posts) > 0:
@@ -178,7 +178,8 @@ def main():
                 "content": html_content,
                 "status": "draft",
                 "categories": cat_ids,
-                "tags": tag_ids
+                "tags": tag_ids,
+                "meta": meta_dict
             }
             if featured_media_id:
                 update_payload["featured_media"] = featured_media_id
@@ -188,6 +189,14 @@ def main():
             wp_edit_link = f"{publisher.client.base_url}/wp-admin/post.php?post={wp_id}&action=edit"
         else:
             print(f"[*] Creating Post in WordPress (Status: DRAFT)...")
+            seo_meta = {
+                "title": meta_data["title"],
+                "seo_title": meta_data["title"],
+                "seo_description": meta_data["meta_description"],
+                "focus_keyword": focus_kw,
+                "canonical_url": f"https://www.helptrickbd.com/{slug}/",
+                "robots": ["index", "follow"]
+            }
             result = publisher.create_post(
                 title=meta_data["title"],
                 content=html_content,
