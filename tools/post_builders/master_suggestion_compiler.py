@@ -38,7 +38,9 @@ def parse_question_file(filepath):
     body = '---'.join(parts[2:]).strip()
     
     sec = fm.get('section', '').strip()
-    q_no = fm.get('question_number', 0)
+    if sec == 'খ/গ':
+        sec = 'গ'
+    q_no = fm.get('question_number') or fm.get('q_no') or 0
     imp = fm.get('importance', 2)
     
     # Normalize importance
@@ -68,7 +70,7 @@ def parse_question_file(filepath):
             if isinstance(ey, dict):
                 uni = str(ey.get('university', '')).strip()
                 yr = str(ey.get('year', '')).strip()
-                qno = str(ey.get('q_no', '')).strip()
+                qno = str(ey.get('question_number', '') or ey.get('q_no', '')).strip()
                 piece = f"{uni} {yr}".strip()
                 if qno:
                     piece += f" ({qno})"
@@ -81,17 +83,17 @@ def parse_question_file(filepath):
         year_badge = f'<span class="htbd-badge-year">{", ".join(year_strings)}</span>'
         
     # Split question from answer
-    ans_split = re.split(r'\n##\s*(?:উত্তর\s*/\s*সমাধান|উত্তর|সমাধান)[\s:]*', body, flags=re.IGNORECASE)
+    ans_split = re.split(r'\n##\s*(?:সমাধান\s*/\s*উত্তর|উত্তর\s*/\s*সমাধান|উত্তর|সমাধান)[\s:]*', body, flags=re.IGNORECASE)
     if len(ans_split) >= 2:
         q_raw = ans_split[0].strip()
         ans_text = ans_split[1].strip()
-        q_raw = re.sub(r'^#\s*(?:প্রশ্ন|Question)?[\s:]*', '', q_raw, flags=re.IGNORECASE).strip()
+        q_raw = re.sub(r'^##?\s*(?:প্রশ্ন|Question)?[\s:]*', '', q_raw, flags=re.IGNORECASE).strip()
         q_raw = re.sub(r'^(?:[0-9]+|[০-৯]+)[\.\)]\s*', '', q_raw).strip()
         q_text = q_raw
     else:
         lines = body.split('\n')
         first_line = lines[0]
-        q_text = re.sub(r'^#+\s*(?:প্রশ্ন|Question)?[\s:]*', '', first_line, flags=re.IGNORECASE).strip()
+        q_text = re.sub(r'^##?\s*(?:প্রশ্ন|Question)?[\s:]*', '', first_line, flags=re.IGNORECASE).strip()
         q_text = re.sub(r'^(?:[0-9]+|[০-৯]+)[\.\)]\s*', '', q_text).strip()
         ans_text = '\n'.join(lines[1:]).strip()
         
@@ -892,20 +894,99 @@ def compile_adv1_post():
         canonical_url="https://www.helptrickbd.com/honours-3rd-year-advanced-accounting-1-suggestion/"
     )
 
+def compile_cost_post():
+    """Compiles the complete 312-question Cost Accounting post."""
+    units_config = [
+        {"dir": "cost_unit01", "num": "০১", "title": "উৎপাদন ব্যয় হিসাববিজ্ঞান ও ব্যয় হিসাবরক্ষক (Cost Accounting & Cost Accountant)", "weight": "১০–১২ নম্বর"},
+        {"dir": "cost_unit02", "num": "০২", "title": "বিভিন্ন প্রকার ব্যয়ের পরিচিতি এবং উদ্দেশ্যসমূহ (Cost Terms & Purposes)", "weight": "১৫–২০ নম্বর"},
+        {"dir": "cost_unit03", "num": "০৩", "title": "ব্যয় আচরণ বিশ্লেষণ (Cost Behaviour Analysis)", "weight": "১২–১৫ নম্বর"},
+        {"dir": "cost_unit04", "num": "০৪", "title": "কাঁচামাল নিয়ন্ত্রণ ও হিসাবরক্ষণ (Materials Control & Valuations)", "weight": "১৫–২০ নম্বর"},
+        {"dir": "cost_unit05", "num": "০৫", "title": "শ্রম ব্যয় ও মজুরি পরিকল্পনা (Labor Cost & Wage Incentive Plans)", "weight": "১৫–২০ নম্বর"},
+        {"dir": "cost_unit06", "num": "০৬", "title": "কারখানা উপরি-ব্যয় বণ্টন (Factory Overhead Allocation & Rates)", "weight": "১২–১৫ নম্বর"},
+    ]
+    
+    marks_table_html = """<div class="htbd-table-wrapper">
+    <table class="htbd-styled-table">
+      <thead>
+        <tr>
+          <th>বিভাগ ও প্রশ্নের ধরন</th>
+          <th>মোট প্রশ্নের সংখ্যা</th>
+          <th>উত্তর দিতে হবে</th>
+          <th>প্রতি প্রশ্নের নম্বর</th>
+          <th>মোট নম্বর</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ক-বিভাগ (অতি সংক্ষিপ্ত প্রশ্ন)</strong></td>
+          <td>১২টি প্রশ্ন</td>
+          <td>১০টি প্রশ্ন</td>
+          <td>১ নম্বর</td>
+          <td><strong>১০ নম্বর</strong></td>
+        </tr>
+        <tr>
+          <td><strong>খ-বিভাগ (সংক্ষিপ্ত ও গাণিতিক সমস্যা)</strong></td>
+          <td>৮টি প্রশ্ন</td>
+          <td>৫টি প্রশ্ন</td>
+          <td>৪ নম্বর</td>
+          <td><strong>২০ নম্বর</strong></td>
+        </tr>
+        <tr>
+          <td><strong>গ-বিভাগ (রচনামূলক ও ব্যবহারিক অংক)</strong></td>
+          <td>৮টি প্রশ্ন</td>
+          <td>৫টি প্রশ্ন</td>
+          <td>১০ নম্বর</td>
+          <td><strong>৫০ নম্বর</strong></td>
+        </tr>
+        <tr style="background: #e0f2fe; font-weight: bold;">
+          <td colspan="4" style="text-align: right;">সর্বমোট লিখিত পরীক্ষার নম্বর =</td>
+          <td><strong>৮০ নম্বর</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>"""
+
+    faq_items = [
+        {
+            "q": "অনার্স ৩য় বর্ষ উৎপাদন ব্যয় হিসাববিজ্ঞান পরীক্ষায় অংক কত নম্বরের আসে?",
+            "a": "উৎপাদন ব্যয় হিসাববিজ্ঞান একটি অত্যন্ত উচ্চমানের ব্যবহারিক কোর্স। জাতীয় বিশ্ববিদ্যালয়ের বিগত বছরগুলোর প্রশ্ন বিশ্লেষণে দেখা যায়, খ ও গ বিভাগে প্রায় ৭০% থেকে ৮০% প্রশ্ন সরাসরি গাণিতিক সমস্যা (কস্ট শিট, ইওকিউ, হলসে-রোয়ান প্ল্যান ও মেশিন আওয়ার রেট) থেকে আসে।"
+        },
+        {
+            "q": "গাণিতিক সমস্যাবলিতে পূর্ণ নম্বর পাওয়ার মূল উপায় কী?",
+            "a": "প্রতিটি অংকের শুরুতে স্পষ্ট ফর্মুলা উল্লেখ করুন এবং নিচে পরিচ্ছন্ন Working Notes (গণনাকার্য) উপস্থাপন করুন। ছকগুলো স্কেল দিয়ে নিখুঁতভাবে আঁকলে এবং দশমিক বা টাকার একক উল্লেখ করলে পরীক্ষক সম্পূর্ণ নম্বর প্রদান করেন।"
+        },
+        {
+            "q": "এই সাজেশনের প্রশ্নগুলো জাতীয় বিশ্ববিদ্যালয়ের কোন শিক্ষাবর্ষের জন্য প্রযোজ্য?",
+            "a": "এই সাজেশনটি জাতীয় বিশ্ববিদ্যালয়ের অনার্স ৩য় বর্ষ (হিসাববিজ্ঞান বিভাগ) পরীক্ষা ২০২৪-২০২৫ (অনুষ্ঠিতব্য ২০২৬) শিক্ষাবর্ষের সর্বশেষ অনুমোদিত সিলেবাস অনুযায়ী প্রণীত।"
+        }
+    ]
+
+    intro_p1 = "জাতীয় বিশ্ববিদ্যালয়ের BBA অনার্স ৩য় বর্ষ হিসাববিজ্ঞান বিভাগের অন্যতম সর্বোচ্চ স্কোরিং ও কৌশলগত কোর্স হলো <strong>উৎপাদন ব্যয় হিসাববিজ্ঞান (Cost Accounting - Course Code: 232505)</strong>। কস্ট কনসেপ্ট, ব্যয় বিবরণী প্রস্তুতকরণ, কাঁচামালের সঠিক মূল্যায়ন (FIFO, LIFO, Weighted Average), শ্রম মজুরি নির্ধারণ (Halsey, Rowan & Taylor) এবং কারখানা উপরিব্যয় বণ্টনের নিখুঁত দক্ষতার ওপর প্রথম শ্রেণি বা এ-প্লাস (A+) অর্জন নির্ভর করে। হিসাববিজ্ঞান বিভাগের অন্যান্য আবশ্যিক বিষয়ের জন্য পড়ুন আমাদের <a href=\"https://www.helptrickbd.com/honours-3rd-year-advanced-accounting-1-suggestion/\">অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান ১ সাজেশন 2026</a> এবং <a href=\"https://www.helptrickbd.com/honours-3rd-year-audit-and-assurance-suggestion/\">অনার্স ৩য় বর্ষ নিরীক্ষা ও নিশ্চয়তা সাজেশন 2026</a>।"
+    intro_p2 = "শিক্ষার্থীদের চূড়ান্ত প্রস্তুতির পূর্ণাঙ্গ সহায়তায় HelpTrickBD প্রস্তুত করেছে দেশের সর্বাধিক সমৃদ্ধ <strong>অনার্স ৩য় বর্ষ উৎপাদন ব্যয় হিসাববিজ্ঞান সাজেশন 2026</strong>। এখানে কোনো আংশিক প্রশ্ন বা অসম্পূর্ণ সমাধান নয়, বরং সিলেবাসের ৬টি অধ্যায়ের ক, খ ও গ বিভাগের মোট ৩১২টি প্রশ্ন ও অংকের পুঙ্খানুপুঙ্খ সমাধান অন্তর্ভুক্ত করা হয়েছে।"
+
+    return generate_subject_html(
+        subject_title="উৎপাদন ব্যয় হিসাববিজ্ঞান (Cost Accounting)",
+        subject_code="232505",
+        focus_kw="অনার্স ৩য় বর্ষ উৎপাদন ব্যয় হিসাববিজ্ঞান সাজেশন",
+        seo_title="অনার্স ৩য় বর্ষ উৎপাদন ব্যয় হিসাববিজ্ঞান সাজেশন 2026: Best Complete Exam Guide",
+        banner_url="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/thumbnails/cost_accounting_banner.webp",
+        units_config=units_config,
+        prefix="cost_unit",
+        marks_table_html=marks_table_html,
+        faq_items=faq_items,
+        intro_p1=intro_p1,
+        intro_p2=intro_p2,
+        canonical_url="https://www.helptrickbd.com/honours-3rd-year-cost-accounting-suggestion/"
+    )
+
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding='utf-8')
     os.makedirs(os.path.join(PROJECT_ROOT, "scratch"), exist_ok=True)
     
-    print("Compiling Audit & Assurance post (all 288 questions)...")
-    audit_html = compile_audit_post()
-    audit_path = os.path.join(PROJECT_ROOT, "scratch", "audit_master_288.html")
-    with open(audit_path, "w", encoding="utf-8") as f:
-        f.write(audit_html)
-    print(f"Audit HTML written: {audit_path} (Length: {len(audit_html)} chars)")
-    
-    print("\nCompiling Advanced Accounting-I post (all 245 questions)...")
-    adv1_html = compile_adv1_post()
-    adv1_path = os.path.join(PROJECT_ROOT, "scratch", "adv1_master_245.html")
-    with open(adv1_path, "w", encoding="utf-8") as f:
-        f.write(adv1_html)
-    print(f"Adv1 HTML written: {adv1_path} (Length: {len(adv1_html)} chars)")
+    print("Compiling Cost Accounting post (all 312 questions)...")
+    cost_html = compile_cost_post()
+    cost_path = os.path.join(PROJECT_ROOT, "scratch", "cost_master_312.html")
+    with open(cost_path, "w", encoding="utf-8") as f:
+        f.write(cost_html)
+    print(f"Cost Accounting HTML written: {cost_path} (Length: {len(cost_html)} chars)")
+
