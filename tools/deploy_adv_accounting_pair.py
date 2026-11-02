@@ -45,7 +45,7 @@ def deploy_pair():
         15997,
         title=p1_title,
         content=p1_content,
-        categories=[4, 9],
+        categories=[4, 9, 127],
         featured_media=15996,
         meta={
             "rank_math_title": p1_title,
@@ -86,7 +86,7 @@ def deploy_pair():
             p2_id,
             title=p2_title,
             content=p2_content,
-            categories=[4, 9],
+            categories=[4, 9, 127],
             featured_media=16004,
             meta={
                 "rank_math_title": p2_title,
@@ -103,7 +103,7 @@ def deploy_pair():
             title=p2_title,
             content=p2_content,
             slug=p2_slug,
-            categories=[4, 9],
+            categories=[4, 9, 127],
             status="draft",
             featured_media_id=16004,
             seo_meta={
@@ -131,3 +131,4 @@ def deploy_pair():
 
 if __name__ == "__main__":
     deploy_pair()
+

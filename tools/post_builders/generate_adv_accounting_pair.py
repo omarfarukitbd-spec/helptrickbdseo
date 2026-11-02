@@ -14,15 +14,13 @@ Post 2: বিগত ৬ বছরের বোর্ড প্রশ্ন ও 
         Slug: honours-3rd-year-advanced-accounting-1-board-questions
         PDF: HelpTrickBD_232503_Advanced_Accounting_1_Board_Questions_2019_2024.pdf
 
-Both posts feature:
-- 100% Zero Emojis (Text badges like [৩-স্টার গোল্ডেন], [বোর্ড প্রশ্ন])
-- Position 0 Summary Lead Box
-- Native Rank Math TOC (id="rank-math-toc")
-- Direct Native WordPress PDF Download Hub Cards
-- Prominent Bidirectional Inter-linking (Cluster Architecture)
-- SolaimanLipi & Dual Light/Dark Mode CSS
-- E-E-A-T Faruk Sir Author Card
-- Schema.org (BlogPosting & FAQPage) JSON-LD Microdata
+Enhancements:
+- Click-to-reveal Interactive Accordions (<details><summary>):
+  Answers are hidden by default with '[উত্তর / সমাধান দেখুন]'.
+- Bulletproof Author Box with native WordPress image URL (ID 16007).
+- Categories: Education Guide (4), National University (9), NU Question Bank (127).
+- 100% Zero-Emoji Policy.
+- Position 0 Lead Box, Rank Math TOC, Schema microdata, and dark mode styling.
 """
 
 import os
@@ -41,6 +39,9 @@ PUB_BOOKS_BASE = r'D:\android\Project\Publication Books\questions\advanced_accou
 
 PDF_MASTER_URL = "https://www.helptrickbd.com/wp-content/uploads/2026/11/HelpTrickBD_232503_Advanced_Accounting_1_Master_Book.pdf"
 PDF_BOARD_URL = "https://www.helptrickbd.com/wp-content/uploads/2026/11/HelpTrickBD_232503_Advanced_Accounting_1_Board_Questions_2019_2024.pdf"
+
+AUTHOR_IMG_URL = "https://www.helptrickbd.com/wp-content/uploads/2026/11/faruk_sir.webp"
+AUTHOR_IMG_FALLBACK = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp"
 
 URL_SUGGESTION_POST = "https://www.helptrickbd.com/honours-3rd-year-advanced-accounting-1-suggestion/"
 URL_BOARD_POST = "https://www.helptrickbd.com/honours-3rd-year-advanced-accounting-1-board-questions/"
@@ -393,14 +394,62 @@ def get_shared_css():
     line-height: 1.6;
     margin: 6px 0 12px 0;
   }
+
+  /* Interactive Click-to-Reveal Accordion Styles */
+  details.htbd-ans-details {
+    margin-top: 12px;
+  }
+  summary.htbd-ans-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1f5f9;
+    color: #1e3a8a;
+    border: 1.5px solid #cbd5e1;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    list-style: none;
+  }
+  summary.htbd-ans-toggle::-webkit-details-marker {
+    display: none;
+  }
+  summary.htbd-ans-toggle:hover {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+    color: #0f172a;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  details[open] summary.htbd-ans-toggle {
+    background: #e0f2fe;
+    border-color: #7dd3fc;
+    color: #0369a1;
+    margin-bottom: 12px;
+  }
+  details[open] summary.htbd-ans-toggle .htbd-toggle-text::after {
+    content: " (লুকাতে ক্লিক করুন)";
+    font-weight: normal;
+    font-size: 13px;
+  }
+
   .htbd-ans-box {
     background: #f8fafc;
     border-radius: 8px;
-    padding: 16px 18px;
-    border-top: 1px dashed #cbd5e1;
+    padding: 18px 20px;
+    border: 1px solid #e2e8f0;
+    border-top: 2.5px solid #2563eb;
     font-size: 15.5px;
     color: #334155;
-    line-height: 1.8;
+    line-height: 1.85;
+    animation: htbdFadeIn 0.3s ease-in-out;
+  }
+  @keyframes htbdFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   .htbd-ans-box p {
     margin-bottom: 12px;
@@ -528,9 +577,24 @@ def get_shared_css():
     .dark-mode .htbd-q-title, body.dark-theme .htbd-q-title {
       color: #f1f5f9;
     }
+    .dark-mode summary.htbd-ans-toggle, body.dark-theme summary.htbd-ans-toggle {
+      background: #1e293b;
+      border-color: #334155;
+      color: #93c5fd;
+    }
+    .dark-mode summary.htbd-ans-toggle:hover, body.dark-theme summary.htbd-ans-toggle:hover {
+      background: #334155;
+      color: #f8fafc;
+    }
+    .dark-mode details[open] summary.htbd-ans-toggle, body.dark-theme details[open] summary.htbd-ans-toggle {
+      background: #0c4a6e;
+      border-color: #0284c7;
+      color: #e0f2fe;
+    }
     .dark-mode .htbd-ans-box, body.dark-theme .htbd-ans-box {
       background: #0f172a;
-      border-top-color: #334155;
+      border-color: #334155;
+      border-top-color: #38bdf8;
       color: #cbd5e1;
     }
     .dark-mode .htbd-author-box, body.dark-theme .htbd-author-box {
@@ -547,16 +611,16 @@ def get_shared_css():
 </style>"""
 
 def get_author_box_html():
-    return """<div class="htbd-author-box">
-  <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/authors/faruk_sir.webp" alt="মো: ওমর ফারুক" class="htbd-author-avatar" width="80" height="80" loading="lazy" />
+    return f"""<div class="htbd-author-box" style="display: flex; gap: 20px; align-items: center; background: #f8fafc; border: 1.5px solid #e2e8f0; padding: 24px; border-radius: 12px; margin: 40px 0;">
+  <img src="{AUTHOR_IMG_URL}" onerror="this.src='{AUTHOR_IMG_FALLBACK}'" alt="মো: ওমর ফারুক" class="htbd-author-avatar" width="80" height="80" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2.5px solid #2563eb;" loading="lazy" />
   <div class="htbd-author-info">
-    <h4>মো: ওমর ফারুক (Faruk Sir)</h4>
-    <p>প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD। জাতীয় বিশ্ববিদ্যালয়ের হিসাববিজ্ঞান ও ব্যবসায় শিক্ষা অনুষদের শিক্ষার্থীদের জন্য দীর্ঘ ৮+ বছর যাবত মানসম্মত একাডেমিক গাইড, হ্যান্ডনোট ও চূড়ান্ত সাজেশন প্রণয়ন করছেন।</p>
+    <h4 style="margin: 0 0 6px 0; font-size: 18px; color: #0f172a; font-weight: 700;">মো: ওমর ফারুক (Faruk Sir)</h4>
+    <p style="margin: 0; font-size: 14.5px; color: #64748b; line-height: 1.6;">প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD। জাতীয় বিশ্ববিদ্যালয়ের হিসাববিজ্ঞান ও ব্যবসায় শিক্ষা অনুষদের শিক্ষার্থীদের জন্য দীর্ঘ ৮+ বছর যাবত মানসম্মত একাডেমিক গাইড, হ্যান্ডনোট ও চূড়ান্ত সাজেশন প্রণয়ন করছেন।</p>
   </div>
 </div>"""
 
 def generate_post_1_chapter_suggestion():
-    """Generates Post 1: Chapter-wise Suggestion (All 7 Units, 320 Questions)."""
+    """Generates Post 1: Chapter-wise Suggestion (All 7 Units, 320 Questions with click-to-reveal answers)."""
     units_config = [
         {"dir": "unit01", "num": "০১", "title": "শেয়ারহোল্ডারদের ইকুইটির হিসাবরক্ষণ (Accounting for Stockholders' Equity)", "weight": "১৫–২০ নম্বর"},
         {"dir": "unit02", "num": "০২", "title": "কোম্পানির আর্থিক বিবরণীসমূহ (Financial Statements of Companies)", "weight": "২০–২৫ নম্বর"},
@@ -623,18 +687,17 @@ def generate_post_1_chapter_suggestion():
   </ol>
 </div>"""
 
-    # Units Body
+    # Units Body with Click-to-Reveal Accordions
     units_body_html = []
     for u in all_units_data:
         anchor_id = f"unit-{u['num']}"
         u_html = [f'<div class="htbd-unit-block" id="{anchor_id}">']
         u_html.append(f'<h2>অধ্যায় {u["num"]}: {u["title"]}</h2>')
-        u_html.append(f'<p style="color: #475569; font-weight: 500;"><strong>সিলেবাস গুরুত্ব ও মানবণ্টন:</strong> জাতীয় বিশ্ববিদ্যালয়ের বিগত বছরের প্রশ্ন বিশ্লেষণে এ অধ্যায়টি থেকে পরীক্ষায় প্রায় {u["weight"]} প্রশ্ন কমন পাওয়া যায়। নিম্নে ক, খ ও গ বিভাগের সকল প্রশ্ন ও সমাধান দেওয়া হলো:</p>')
+        u_html.append(f'<p style="color: #475569; font-weight: 500;"><strong>সিলেবাস গুরুত্ব ও মানবণ্টন:</strong> জাতীয় বিশ্ববিদ্যালয়ের বিগত বছরের প্রশ্ন বিশ্লেষণে এ অধ্যায়টি থেকে পরীক্ষায় প্রায় {u["weight"]} প্রশ্ন কমন পাওয়া যায়। উত্তর দেখতে প্রতিটি প্রশ্নের নিচের [উত্তর / সমাধান দেখুন] বাটনে ক্লিক করুন:</p>')
         
         # Section A
         if u['secs']['ক']:
             u_html.append(f'<h3>ক-বিভাগ: অতি সংক্ষিপ্ত প্রশ্নাবলি ({u["title"]})</h3>')
-            u_html.append(f'<p>অতি সংক্ষিপ্ত প্রশ্নের নির্ভুল ও টু-দ্য-পয়েন্ট উত্তর নিচে দেওয়া হলো। পরীক্ষায় পূর্ণ ১ নম্বর পেতে মূল টার্ম ও ধারা সঠিকভাবে লিখুন:</p>')
             for q in u['secs']['ক']:
                 u_html.append(f"""<div class="htbd-q-card">
   <div class="htbd-q-header">
@@ -643,15 +706,19 @@ def generate_post_1_chapter_suggestion():
     {q['year_badge']}
   </div>
   <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <div class="htbd-ans-box">
-    <strong>উত্তর:</strong> {q['ans_html']}
-  </div>
+  <details class="htbd-ans-details">
+    <summary class="htbd-ans-toggle">
+      <span class="htbd-toggle-text">[উত্তর দেখুন]</span>
+    </summary>
+    <div class="htbd-ans-box">
+      <strong>উত্তর:</strong> {q['ans_html']}
+    </div>
+  </details>
 </div>""")
 
         # Section B
         if u['secs']['খ']:
             u_html.append(f'<h3>খ-বিভাগ: সংক্ষিপ্ত প্রশ্নাবলি ও গাণিতিক সমস্যাবলি ({u["title"]})</h3>')
-            u_html.append(f'<p>খ-বিভাগের প্রতি প্রশ্নের মান ৪ নম্বর। পয়েন্টভিত্তিক স্পষ্ট উপস্থাপন ও প্রয়োজনীয় গণনাকার্য বা জার্নাল এন্ট্রি নিচে দেওয়া হলো:</p>')
             for q in u['secs']['খ']:
                 u_html.append(f"""<div class="htbd-q-card card-b">
   <div class="htbd-q-header">
@@ -660,15 +727,19 @@ def generate_post_1_chapter_suggestion():
     {q['year_badge']}
   </div>
   <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <div class="htbd-ans-box">
-    {q['ans_html']}
-  </div>
+  <details class="htbd-ans-details">
+    <summary class="htbd-ans-toggle">
+      <span class="htbd-toggle-text">[সমাধান দেখুন]</span>
+    </summary>
+    <div class="htbd-ans-box">
+      {q['ans_html']}
+    </div>
+  </details>
 </div>""")
 
         # Section C
         if u['secs']['গ']:
             u_html.append(f'<h3>গ-বিভাগ: রচনামূলক ও গাণিতিক বিশ্লেষণ ({u["title"]})</h3>')
-            u_html.append(f'<p>গ-বিভাগের প্রতিটি প্রশ্নের মান ১০ নম্বর। পূর্ণাঙ্গ পরীক্ষার নম্বর অর্জনের জন্য ভূমিকা, ধারাবাহিক জাবেদা, ছক এবং ওয়ার্কিং নোটসের সমাধান নিচে দেওয়া হলো:</p>')
             for q in u['secs']['গ']:
                 u_html.append(f"""<div class="htbd-q-card card-c">
   <div class="htbd-q-header">
@@ -677,9 +748,14 @@ def generate_post_1_chapter_suggestion():
     {q['year_badge']}
   </div>
   <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <div class="htbd-ans-box">
-    {q['ans_html']}
-  </div>
+  <details class="htbd-ans-details">
+    <summary class="htbd-ans-toggle">
+      <span class="htbd-toggle-text">[সম্পূর্ণ সমাধান দেখুন]</span>
+    </summary>
+    <div class="htbd-ans-box">
+      {q['ans_html']}
+    </div>
+  </details>
 </div>""")
                 
         u_html.append('</div>')
@@ -911,7 +987,7 @@ def generate_post_1_chapter_suggestion():
 
 
 def generate_post_2_board_questions():
-    """Generates Post 2: Board Questions (2019-2024, 168 Questions)."""
+    """Generates Post 2: Board Questions (2019-2024, 168 Questions with click-to-reveal answers)."""
     board_dir = os.path.join(PUB_BOOKS_BASE, "board")
     years = ["2024", "2023", "2022", "2021", "2020", "2019"]
     
@@ -928,7 +1004,6 @@ def generate_post_2_board_questions():
         files = glob.glob(os.path.join(yp, '*.md'))
         
         secs = {'ক': [], 'খ': [], 'গ': []}
-        held_date_found = ""
         for f in files:
             res = parse_board_file(f)
             if res:
@@ -964,13 +1039,13 @@ def generate_post_2_board_questions():
   </ol>
 </div>"""
 
-    # Years Body
+    # Years Body with Click-to-Reveal Accordions
     years_body_html = []
     for y in all_years_data:
         anchor_id = f"board-{y['year']}"
         y_html = [f'<div class="htbd-year-block" id="{anchor_id}">']
         y_html.append(f'<h2>জাতীয় বিশ্ববিদ্যালয় অনার্স ৩য় বর্ষ পরীক্ষা {y["year"]} — প্রশ্ন ও পূর্ণাঙ্গ সমাধান</h2>')
-        y_html.append(f'<p style="color: #475569; font-weight: 500;"><strong>প্রশ্ন কাঠামো:</strong> জাতীয় বিশ্ববিদ্যালয় {y["year"]} শিক্ষাবর্ষের লিখিত পরীক্ষায় মোট ৮০ নম্বরের প্রশ্নপত্র নিচে ক, খ ও গ বিভাগে নিখুঁতভাবে সমাধান করা হলো:</p>')
+        y_html.append(f'<p style="color: #475569; font-weight: 500;"><strong>প্রশ্ন কাঠামো:</strong> জাতীয় বিশ্ববিদ্যালয় {y["year"]} শিক্ষাবর্ষের লিখিত পরীক্ষায় মোট ৮০ নম্বরের প্রশ্নপত্র নিচে ক, খ ও গ বিভাগে নিখুঁতভাবে সমাধান করা হলো। সমাধান দেখতে নিচের [উত্তর / সমাধান দেখুন] বাটনে ক্লিক করুন:</p>')
         
         # Section A
         if y['secs']['ক']:
@@ -983,9 +1058,14 @@ def generate_post_2_board_questions():
     {q['year_badge']}
   </div>
   <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <div class="htbd-ans-box">
-    <strong>উত্তর:</strong> {q['ans_html']}
-  </div>
+  <details class="htbd-ans-details">
+    <summary class="htbd-ans-toggle">
+      <span class="htbd-toggle-text">[উত্তর দেখুন]</span>
+    </summary>
+    <div class="htbd-ans-box">
+      <strong>উত্তর:</strong> {q['ans_html']}
+    </div>
+  </details>
 </div>""")
 
         # Section B
@@ -999,9 +1079,14 @@ def generate_post_2_board_questions():
     {q['year_badge']}
   </div>
   <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <div class="htbd-ans-box">
-    {q['ans_html']}
-  </div>
+  <details class="htbd-ans-details">
+    <summary class="htbd-ans-toggle">
+      <span class="htbd-toggle-text">[সমাধান দেখুন]</span>
+    </summary>
+    <div class="htbd-ans-box">
+      {q['ans_html']}
+    </div>
+  </details>
 </div>""")
 
         # Section C
@@ -1015,9 +1100,14 @@ def generate_post_2_board_questions():
     {q['year_badge']}
   </div>
   <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <div class="htbd-ans-box">
-    {q['ans_html']}
-  </div>
+  <details class="htbd-ans-details">
+    <summary class="htbd-ans-toggle">
+      <span class="htbd-toggle-text">[সম্পূর্ণ সমাধান দেখুন]</span>
+    </summary>
+    <div class="htbd-ans-box">
+      {q['ans_html']}
+    </div>
+  </details>
 </div>""")
                 
         y_html.append('</div>')
@@ -1251,14 +1341,14 @@ if __name__ == "__main__":
     sys.stdout.reconfigure(encoding='utf-8')
     os.makedirs(os.path.join(PROJECT_ROOT, "scratch"), exist_ok=True)
     
-    print("Compiling Post 1: Chapter Suggestion (320 Questions)...")
+    print("Compiling Post 1: Chapter Suggestion with Click-to-Reveal (320 Questions)...")
     post1_html = generate_post_1_chapter_suggestion()
     p1_path = os.path.join(PROJECT_ROOT, "scratch", "adv1_suggestion_320.html")
     with open(p1_path, "w", encoding="utf-8") as f:
         f.write(post1_html)
     print(f"Post 1 HTML written: {p1_path} (Length: {len(post1_html)} chars)")
     
-    print("\nCompiling Post 2: Board Questions 2019-2024 (168 Questions)...")
+    print("\nCompiling Post 2: Board Questions with Click-to-Reveal (168 Questions)...")
     post2_html = generate_post_2_board_questions()
     p2_path = os.path.join(PROJECT_ROOT, "scratch", "adv1_board_168.html")
     with open(p2_path, "w", encoding="utf-8") as f:
