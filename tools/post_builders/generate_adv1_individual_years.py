@@ -62,13 +62,13 @@ def parse_board_file(filepath):
     exam_year = fm.get('exam_year', '')
     
     if imp == 3 or '3' in str(imp):
-        imp_badge = '<span class="htbd-badge-star golden">[৩-স্টার গোল্ডেন]</span>'
+        imp_badge = '<span class="htbd-badge-star golden" style="font-size: 12.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: #fef3c7; color: #92400e; border: 1px solid #fde68a;">[৩-স্টার গোল্ডেন]</span>'
     elif imp == 2 or '2' in str(imp):
-        imp_badge = '<span class="htbd-badge-star super">[২-স্টার সুপার]</span>'
+        imp_badge = '<span class="htbd-badge-star super" style="font-size: 12.5px; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0;">[২-স্টার সুপার]</span>'
     else:
-        imp_badge = '<span class="htbd-badge-star regular">[বোর্ড প্রশ্ন]</span>'
+        imp_badge = '<span class="htbd-badge-star regular" style="font-size: 12.5px; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1;">[বোর্ড প্রশ্ন]</span>'
         
-    year_badge = f'<span class="htbd-badge-year">জাতীয় বিশ্ববিদ্যালয় {exam_year}</span>'
+    year_badge = f'<span class="htbd-badge-year" style="font-size: 12.5px; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: #e2e8f0; color: #334155; border: 1px solid #cbd5e1;">জাতীয় বিশ্ববিদ্যালয় {exam_year}</span>'
         
     # Robust split between question and answer
     split_match = re.split(r'\n\s*(?:##\s*)?(?:উত্তর\s*/\s*সমাধান|সমাধান\s*/\s*উত্তর|উত্তর|সমাধান)[\s:]*\n?', body, flags=re.IGNORECASE)
@@ -112,7 +112,6 @@ def get_shared_css():
     return """<style>
 /* Helptrickbd SolaimanLipi Font & Clean Design System */
 @import url('https://cdn.jsdelivr.net/gh/ekushey/solaimanlipi@latest/solaimanlipi.css');
-
 .htbd-nu-content {
   font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 17.5px;
@@ -326,6 +325,10 @@ def get_shared_css():
 .htbd-ans-details {
   margin: 0 22px 18px 22px;
 }
+summary::-webkit-details-marker { display: none !important; }
+summary { list-style: none !important; }
+.htbd-ans-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+details[open] summary .htbd-toggle-arrow { transform: rotate(180deg); }
 .htbd-ans-toggle {
   cursor: pointer;
   user-select: none;
@@ -443,7 +446,6 @@ def get_shared_css():
   color: #475569;
   font-size: 15px;
 }
-
 /* Dark Mode Support (.dark, [data-theme="dark"], and prefers-color-scheme) */
 .dark .htbd-nu-content,
 [data-theme="dark"] .htbd-nu-content {
@@ -493,7 +495,11 @@ def get_shared_css():
   color: #34d399;
 }
 .dark .htbd-ans-toggle,
-[data-theme="dark"] .htbd-ans-toggle {
+[data-theme="dark"] summary::-webkit-details-marker { display: none !important; }
+summary { list-style: none !important; }
+.htbd-ans-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+details[open] summary .htbd-toggle-arrow { transform: rotate(180deg); }
+.htbd-ans-toggle {
   background: #064e3b33;
   border-color: #059669;
   color: #a7f3d0;
@@ -537,7 +543,6 @@ def get_shared_css():
 [data-theme="dark"] .htbd-faq-a {
   color: #cbd5e1;
 }
-
 @media (prefers-color-scheme: dark) {
   .htbd-nu-content { color: #e2e8f0; }
   .htbd-hero-box { background: #064e3b22; border-color: #059669; }
@@ -549,7 +554,11 @@ def get_shared_css():
   .htbd-q-english { color: #94a3b8; border-color: #475569; }
   .htbd-ans-box { background: #0f172a; border-color: #334155; border-left-color: #10b981; }
   .htbd-ans-label { color: #34d399; }
-  .htbd-ans-toggle { background: #064e3b33; border-color: #059669; color: #a7f3d0; }
+  summary::-webkit-details-marker { display: none !important; }
+summary { list-style: none !important; }
+.htbd-ans-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+details[open] summary .htbd-toggle-arrow { transform: rotate(180deg); }
+.htbd-ans-toggle { background: #064e3b33; border-color: #059669; color: #a7f3d0; }
   .htbd-download-card { background: #064e3b33; border-color: #059669; }
   .htbd-styled-table th { background: #1e293b; color: #f8fafc; border-color: #334155; }
   .htbd-styled-table td { border-color: #334155; }
@@ -561,12 +570,13 @@ def get_shared_css():
 }
 </style>"""
 
+
 def get_author_box_html():
-    return f"""<div class="htbd-author-box">
-  <img src="{AUTHOR_IMG_URL}" alt="মো: ওমর ফারুক" class="htbd-author-avatar" width="80" height="80" loading="lazy" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; display: block;" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp';" />
-  <div>
-    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 18.5px;">মো: ওমর ফারুক (Faruk Sir)</h4>
-    <p style="margin: 0; color: #64748b; font-size: 14.5px; line-height: 1.6;">প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD। জাতীয় বিশ্ববিদ্যালয়ের হিসাববিজ্ঞান ও ব্যবসায় শিক্ষা অনুষদের শিক্ষার্থীদের জন্য দীর্ঘ ৮+ বছর যাবত মানসম্মত একাডেমিক গাইড, হ্যান্ডনোট ও চূড়ান্ত সাজেশন প্রণয়ন করছেন।</p>
+    return f"""<div class="htbd-author-box" style="display: flex; align-items: center; gap: 20px; margin: 35px 0 25px 0; padding: 22px 26px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 5px solid #2563eb; border-radius: 12px; font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <img src="{AUTHOR_IMG_URL}" alt="মো: ওমর ফারুক (Faruk Sir)" class="htbd-author-avatar" width="80" height="80" loading="lazy" style="width: 80px !important; height: 80px !important; min-width: 80px !important; max-width: 80px !important; border-radius: 50% !important; object-fit: cover !important; border: 2.5px solid #2563eb !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; box-shadow: 0 3px 8px rgba(0,0,0,0.1) !important;" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp';" />
+  <div style="flex: 1 1 auto; min-width: 0;">
+    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 19px; font-weight: 700; line-height: 1.3;">মো: ওমর ফারুক (Faruk Sir)</h4>
+    <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.6;">প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD। শিক্ষার্থীদের জন্য দীর্ঘ ৮+ বছর যাবত মানসম্মত একাডেমিক গাইড, হ্যান্ডনোট ও চূড়ান্ত সাজেশন প্রণয়ন করছেন।</p>
   </div>
 </div>"""
 
@@ -609,49 +619,54 @@ def generate_individual_year_post(year_en: str, media_info: dict):
   </div>
 </div>"""
 
-    def build_card(q, sec_badge, card_class, sec_bg, sec_color):
+    def build_card(q, sec_badge, card_class, sec_bg, sec_color, accent_color, btn_gradient, btn_shadow, btn_text):
         eng_block = ""
         if q['eng_text']:
-            eng_block = f"""    <div class="htbd-q-english">
+            eng_block = f"""    <div class="htbd-q-english" style="font-size: 15px; color: #475569; font-style: italic; background: #f8fafc; padding: 10px 14px; border-radius: 6px; border-left: 3px solid #94a3b8; margin-top: 8px; margin-bottom: 6px; line-height: 1.5;">
       <strong>English:</strong> {q['eng_text']}
     </div>"""
             
-        return f"""<div class="htbd-q-card {card_class}">
-  <div class="htbd-q-header">
-    <div class="htbd-q-header-left">
-      <span class="htbd-badge-sec" style="background: {sec_bg}; color: {sec_color};">{sec_badge}</span>
-      <span class="htbd-q-num">প্রশ্ন নং {q['q_no']}</span>
+        return f"""<div class="htbd-q-card {card_class}" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-left: 5px solid {accent_color}; border-radius: 12px; margin-bottom: 26px; box-shadow: 0 4px 14px rgba(0,0,0,0.04); overflow: hidden;">
+  <div class="htbd-q-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; background: #f8fafc; padding: 12px 18px; border-bottom: 1px solid #e2e8f0;">
+    <div class="htbd-q-header-left" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <span class="htbd-badge-sec" style="font-size: 13.5px; font-weight: 700; padding: 4px 12px; border-radius: 6px; background: {sec_bg}; color: {sec_color}; letter-spacing: 0.2px;">{sec_badge}</span>
+      <span class="htbd-q-num" style="font-size: 16px; font-weight: 700; color: #0b2046;">প্রশ্ন নং {q['q_no']}</span>
     </div>
-    <div class="htbd-q-header-right">
+    <div class="htbd-q-header-right" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
       {q['imp_badge']}
       {q['year_badge']}
     </div>
   </div>
-  <div class="htbd-q-body">
-    <div class="htbd-q-bengali">
+  <div class="htbd-q-body" style="padding: 18px 20px;">
+    <div class="htbd-q-bengali" style="font-size: 17.5px; font-weight: 700; color: #0f172a; line-height: 1.65; margin-bottom: 10px;">
       {q['bn_text']}
     </div>
 {eng_block}
   </div>
-  <details class="htbd-ans-details">
-    <summary class="htbd-ans-toggle">
-      <span class="htbd-toggle-text">[উত্তর / সমাধান দেখুন]</span>
+  <details class="htbd-ans-details" style="margin: 0; border: none; background: transparent;">
+    <summary class="htbd-ans-btn" style="display: inline-flex; align-items: center; gap: 8px; background: {btn_gradient}; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; box-shadow: 0 3px 10px {btn_shadow}; list-style: none; user-select: none; outline: none; margin: 0 0 16px 20px; transition: transform 0.15s ease, box-shadow 0.15s ease;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span style="letter-spacing: 0.3px;">[{btn_text}]</span>
+      <span class="htbd-toggle-arrow" style="font-size: 11px; margin-left: 4px; opacity: 0.85;">▼</span>
     </summary>
-    <div class="htbd-ans-box">
-      <div class="htbd-ans-label">[প্রামাণ্য সমাধান ও নির্ভুল ব্যাখ্যা]:</div>
+    <div class="htbd-ans-box" style="background: #f8fafc; border-top: 1.5px solid #e2e8f0; border-left: 5px solid {accent_color}; padding: 20px 24px; font-size: 16.5px; color: #1e293b; line-height: 1.8;">
+      <div class="htbd-ans-label" style="font-weight: 700; color: {accent_color}; margin-bottom: 12px; font-size: 16px; display: flex; align-items: center; gap: 6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>[প্রামাণ্য সমাধান ও নির্ভুল ব্যাখ্যা]:</span>
+      </div>
       {q['ans_html']}
     </div>
   </details>
 </div>"""
 
-    # Section A rendered
-    sec_a_html = [build_card(q, "ক-বিভাগ (১ নম্বর)", "card-a", "#0284c7", "#ffffff") for q in secs['ক']]
+    # Section A rendered (Blue Button)
+    sec_a_html = [build_card(q, "ক-বিভাগ (১ নম্বর)", "card-a", "#0284c7", "#ffffff", "#0284c7", "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)", "rgba(2, 132, 199, 0.3)", "উত্তর দেখুন") for q in secs['ক']]
 
-    # Section B rendered
-    sec_b_html = [build_card(q, "খ-বিভাগ (৪ নম্বর)", "card-b", "#059669", "#ffffff") for q in secs['খ']]
+    # Section B rendered (Emerald Green Button)
+    sec_b_html = [build_card(q, "খ-বিভাগ (৪ নম্বর)", "card-b", "#059669", "#ffffff", "#059669", "linear-gradient(135deg, #059669 0%, #047857 100%)", "rgba(5, 150, 105, 0.3)", "সমাধান দেখুন") for q in secs['খ']]
 
-    # Section C rendered
-    sec_c_html = [build_card(q, "গ-বিভাগ (১০ নম্বর)", "card-c", "#7c3aed", "#ffffff") for q in secs['গ']]
+    # Section C rendered (Royal Purple Button)
+    sec_c_html = [build_card(q, "গ-বিভাগ (১০ নম্বর)", "card-c", "#7c3aed", "#ffffff", "#7c3aed", "linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)", "rgba(124, 58, 237, 0.3)", "সম্পূর্ণ সমাধান দেখুন") for q in secs['গ']]
 
     # PDF Card
     pdf_card_html = f"""<div class="htbd-download-card">

@@ -364,30 +364,29 @@ python tools/governance/pre_flight_checker.py <PATH_TO_POST_HTML>
 > [!IMPORTANT]
 > **গুগল এডসেন্স ও সার্চ কোয়ালিটি রেটার গাইডলাইন্স (Google Search Quality Rater Guidelines) অনুযায়ী প্রতিটি পোস্টে বাস্তব প্রামাণ্য লেখকের উপস্থিতি (Experience, Expertise, Authoritativeness, Trustworthiness - E-E-A-T) শতভাগ বাধ্যতামূলক।** কোনো পরিচয়হীন বা নামহীন পোস্ট পাবলিশ করা সম্পূর্ণ নিষিদ্ধ।
 
-### ক. লেখক পরিচিতির অনুমোদিত প্রমিত বিবরণ (Standard Author Metadata):
-- **নাম:** ফারুক স্যার (মো. ওমর ফারুক)
-- **পদবি ও পরিচয়:** শিক্ষাবিদ ও অ্যাকাডেমিক গবেষক | প্রতিষ্ঠাতা, HelpTrickBD
-- **বিশেষজ্ঞতা ও অভিজ্ঞতা (Universal Bio):**
-  > "অ্যাকাডেমিক পাঠ্যক্রম এবং স্নাতক ও স্নাতকোত্তর পর্যায়ের রাষ্ট্রবিজ্ঞান, আধুনিক রাষ্ট্রচিন্তা ও সাহিত্য বিশ্লেষণে এক দশকের বাস্তব শিক্ষকতার অভিজ্ঞতাসম্পন্ন একজন অ্যাকাডেমিক মেন্টর।"
-- *বিশেষ দ্রষ্টব্য:* হেল্পট্রিকবিডিতে স্কুল, কলেজ ছাড়াও জাতীয় বিশ্ববিদ্যালয়ের অনার্স ও মাস্টার্স রাষ্ট্রবিজ্ঞানের প্রচুর পোস্ট রয়েছে; তাই লেখকের পরিচয় কেবল "মাধ্যমিক শিক্ষক"-এ সীমাবদ্ধ না রেখে সার্বজনীন ও উচ্চতর অ্যাকাডেমিক গবেষক হিসেবে বজায় রাখতে হবে।
+### ক. লেখক পরিচিতির অনুমোদিত প্রমিত বিবরণ (Standard Author Metadata - MANDATORY USER RULE):
+- **নাম:** মো: ওমর ফারুক (Faruk Sir)
+- **পদবি ও প্রাতিষ্ঠানিক পরিচয়:** প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD
+- **সর্বজনীন প্রমিত পরিচিতি (Universal Bio - Fixed User Rule):**
+  > "প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD। শিক্ষার্থীদের জন্য দীর্ঘ ৮+ বছর যাবত মানসম্মত একাডেমিক গাইড, হ্যান্ডনোট ও চূড়ান্ত সাজেশন প্রণয়ন করছেন।"
 
-### খ. স্ট্যান্ডার্ড এইচটিএমএল আর্কিটেকচার ও বাধ্যতামূলক রিয়েল অবতার ইমেজ:
+### খ. স্ট্যান্ডার্ড এইচটিএমএল আর্কিটেকচার ও ডুয়াল-হোস্টেড অবতার ইমেজ:
 > [!CAUTION]
-> **জিরো ডামি ইমেজ পলিসি (Zero Dummy/Broken Image Policy):** লেখক পরিচিতি বক্সে কোনো অবস্থাতেই ডামি বা ফেক ইউআরএল (যেমন `blogger.googleusercontent.com/img/a/AVvXs...` বা অন্য কোনো প্লেসহোল্ডার) ব্যবহার করা সম্পূর্ণ নিষিদ্ধ। অবশ্যই অফিসিয়াল সিডিএন হোস্ট করা `faruk_sir.webp` অবতার ব্যবহার করতে হবে।
+> **জিরো ডামি ইমেজ পলিসি (Zero Dummy/Broken Image Policy):** লেখক পরিচিতি বক্সে কোনো অবস্থাতেই ডামি বা ফেক ইউআরএল ব্যবহার করা সম্পূর্ণ নিষিদ্ধ। ওয়ার্ডপ্রেস মিডিয়া লাইব্রেরিতে আপলোড করা অফিসিয়াল ওয়েবপি (`https://www.helptrickbd.com/wp-content/uploads/2026/11/faruk_sir.webp` - Media ID: `16007`) এবং ব্যাকআপ হিসেবে সিডিএন (`https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp`) ফলব্যাক ব্যবহার করতে হবে।
 
 ```html
-<div class="htbd-author-box" style="display: flex; align-items: center; gap: 18px; margin: 35px 0 25px 0; padding: 18px 22px; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #1e3a8a; border-radius: 10px; font-family: 'SolaimanLipi', Arial, sans-serif;">
-  <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp" 
-       alt="ফারুক স্যার (মো. ওমর ফারুক)" 
+<div class="htbd-author-box" style="display: flex; align-items: center; gap: 20px; margin: 35px 0 25px 0; padding: 22px 26px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 5px solid #2563eb; border-radius: 12px; font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <img src="https://www.helptrickbd.com/wp-content/uploads/2026/11/faruk_sir.webp" 
+       onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/author/faruk_sir.webp';"
+       alt="মো: ওমর ফারুক (Faruk Sir)" 
        class="htbd-author-avatar" 
-       width="75" height="75" 
+       width="80" height="80" 
        loading="lazy" 
-       style="width: 75px !important; height: 75px !important; min-width: 75px !important; max-width: 75px !important; border-radius: 50% !important; object-fit: cover !important; border: 2px solid #2563eb !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;" />
+       style="width: 80px !important; height: 80px !important; min-width: 80px !important; max-width: 80px !important; border-radius: 50% !important; object-fit: cover !important; border: 2.5px solid #2563eb !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; box-shadow: 0 3px 8px rgba(0,0,0,0.1) !important;" />
   <div class="htbd-author-info" style="flex: 1 1 auto; min-width: 0;">
-    <h4 style="margin: 0 0 4px 0; color: #1e3a8a; font-size: 18px; font-weight: 700; line-height: 1.3;">ফারুক স্যার (মো. ওমর ফারুক)</h4>
-    <div class="htbd-author-meta" style="font-size: 13px; color: #64748b; margin-bottom: 6px; font-weight: 600;">শিক্ষাবিদ ও অ্যাকাডেমিক গবেষক | প্রতিষ্ঠাতা, HelpTrickBD</div>
-    <p class="htbd-author-bio" style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0;">
-      অ্যাকাডেমিক পাঠ্যক্রম এবং স্নাতক ও স্নাতকোত্তর পর্যায়ের রাষ্ট্রবিজ্ঞান, আধুনিক রাষ্ট্রচিন্তা ও সাহিত্য বিশ্লেষণে এক দশকের বাস্তব শিক্ষকতার অভিজ্ঞতাসম্পন্ন একজন অ্যাকাডেমিক মেন্টর।
+    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 19px; font-weight: 700; line-height: 1.3;">মো: ওমর ফারুক (Faruk Sir)</h4>
+    <p class="htbd-author-bio" style="font-size: 14.5px; color: #475569; line-height: 1.6; margin: 0;">
+      প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD। শিক্ষার্থীদের জন্য দীর্ঘ ৮+ বছর যাবত মানসম্মত একাডেমিক গাইড, হ্যান্ডনোট ও চূড়ান্ত সাজেশন প্রণয়ন করছেন।
     </p>
   </div>
 </div>
@@ -395,31 +394,39 @@ python tools/governance/pre_flight_checker.py <PATH_TO_POST_HTML>
 
 ### গ. বসানোর নিয়ম ও অটোমেটেড কোয়ালিটি গেটকিপার:
 1. প্রতিটি পোস্টের মূল আলোচনার শেষে এবং এফএকিউ/মন্তব্য সেকশনের পূর্বে এটি বসবে।
-2. **বাধ্যতামূলক অবতার ইউআরএল চেক:** `tools/governance/pre_flight_checker.py` স্বয়ংক্রিয়ভাবে লেখক পরিচিতির ইমেজ সোর্স পরীক্ষা করে। যদি ইমেজটি অনুপস্থিত থাকে বা কোনো ডামি ইউআরএল (`AVvXs...` বা `placeholder`) পায়, তবে পোস্ট পাবলিশ সম্পূর্ণ ব্লকড হবে।
+2. **বাধ্যতামূলক অবতার ইউআরএল চেক:** `tools/governance/pre_flight_checker.py` স্বয়ংক্রিয়ভাবে লেখক পরিচিতির ইমেজ সোর্স পরীক্ষা করে।
 3. **ডুয়াল মোড কম্প্যাটিবিলিটি:** ডার্ক মোডেও যেন ফ্রেমের কনট্রাস্ট ও নাম পরিষ্কার থাকে তা নিশ্চিত করতে হবে।
 
 ---
 
-## 💡 14. Interactive Click-to-Reveal Accordion Architecture (ড্রপডাউন প্রশ্নোত্তর ও কুইজ আর্কিটেকচার)
+## 💡 14. Interactive Click-to-Reveal Accordion Architecture (কালারফুল বাটন ও প্রশ্নোত্তর আর্কিটেকচার)
 > [!IMPORTANT]
-> **Dwell Time & Engagement Maximization:** কোনো পোস্টে যদি মডেল টেস্ট, বহুনির্বাচনি প্রশ্ন (MCQ), বোর্ড প্রশ্ন, জ্ঞানমূলক বা অনুধাবনমূলক প্রশ্ন-উত্তর থাকে, তবে সরাসরি খোলা উত্তর দিয়ে পাতা ভরিয়ে ফেলা যাবে না। শিক্ষার্থীদের সক্রিয় ইন্টারঅ্যাকশন ও সাইটে অবস্থানের সময় (Dwell Time) বৃদ্ধির জন্য নেটিভ `<details><summary>` ড্রপডাউন অ্যাকর্ডিয়ন ব্যবহার করা বাধ্যতামূলক।
+> **Dwell Time & Clear Clickable Affordance (কালারিং বাটন স্ট্যান্ডার্ড):** উত্তর দেখার ড্রপডাউন কোনো সাধারণ টেক্সট বা সাদামাটা লিংক হবে না। শিক্ষার্থী যেন প্রথম দেখাতেই সুস্পষ্টভাবে বুঝতে পারে যে এখানে ক্লিক করতে হবে, সেজন্য প্রতিটি ড্রপডাউন টগলকে একটি **উজ্জ্বল, প্রফেশনাল, কালারফুল বাটন (Vibrant Coloring Button)** হিসেবে ডিজাইন করা বাধ্যতামূলক।
 
-### ক. অ্যাকর্ডিয়ন ব্যবহারের স্ট্যান্ডার্ড ফরম্যাট:
+### ক. বিভাগভিত্তিক কালারিং বাটন স্ট্যান্ডার্ড (Color-Coded Buttons):
+1. **ক-বিভাগ (১ নম্বর / জ্ঞানমূলক):** ভাইব্রেন্ট ব্লু বাটন (`background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);`) সাথে চোখের আইকন ও অ্যারো ইন্ডিকেটর।
+2. **খ-বিভাগ (৪ নম্বর / সংক্ষিপ্ত):** ভাইব্রেন্ট এমারেল্ড গ্রিন বাটন (`background: linear-gradient(135deg, #059669 0%, #047857 100%);`)।
+3. **গ-বিভাগ (১০ নম্বর / রচনামূলক বা গাণিতিক):** ভাইব্রেন্ট রয়্যাল পার্পল বাটন (`background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);`)।
+
+### খ. স্ট্যান্ডার্ড এইচটিএমএল ও ইনলাইন সিএসএস আর্কিটেকচার:
 ```html
-<details style="margin: 12px 0; padding: 14px 18px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; font-family: 'SolaimanLipi', Arial, sans-serif; cursor: pointer;">
-  <summary style="font-weight: 600; color: #1e3a8a; font-size: 16px; outline: none;">
-    প্রশ্ন: জাতীয় বিশ্ববিদ্যালয়ের বিগত সালের প্রশ্ন বিশ্লেষণ দেখতে ক্লিক করুন
+<details class="htbd-ans-details" style="margin: 0; border: none; background: transparent;">
+  <summary class="htbd-ans-btn" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3); list-style: none; user-select: none; outline: none; margin: 0 0 16px 20px; transition: transform 0.15s ease;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    <span>[উত্তর দেখুন]</span>
+    <span style="font-size: 11px; margin-left: 4px; opacity: 0.85;">▼</span>
   </summary>
-  <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1; color: #334155; font-size: 15px; line-height: 1.7;">
-    এখানে বিস্তারিত নির্ভুল ব্যাখ্যা ও সমাধান সন্নিবেশিত থাকবে।
+  <div class="htbd-ans-box" style="background: #f8fafc; border-top: 1.5px solid #e2e8f0; border-left: 5px solid #0284c7; padding: 20px 24px; font-size: 16.5px; color: #1e293b; line-height: 1.8;">
+    <div class="htbd-ans-label" style="font-weight: 700; color: #0284c7; margin-bottom: 12px; font-size: 16px;">[প্রামাণ্য সমাধান ও নির্ভুল ব্যাখ্যা]:</div>
+    এখানে পূর্ণাঙ্গ উত্তর ও ব্যাখ্যা থাকবে।
   </div>
 </details>
 ```
 
-### খ. সুবিধা ও বাধ্যবাধকতা:
-1. ব্রাউজারে অতিরিক্ত কোনো ভারী জাভাস্ক্রিপ্ট লাইব্রেরি ছাড়াই এইচটিএমএল-এর নেটিভ ইঞ্জিনে দ্রুত ও স্মুথলি কাজ করে।
-2. গুগল সার্চ রোবট বন্ধ ড্রপডাউনের ভেতরের কনটেন্টও শতভাগ ইন্ডেক্স করতে পারে।
-3. শিক্ষার্থী ক্লিক করে উত্তর মেলানোর ফলে গুগলের কাছে শক্তিশালী ইউজার এনগেজমেন্ট সিগন্যাল যায়।
+### গ. সুবিধা ও বাধ্যবাধকতা:
+1. **জিরো কনফিউশন:** শিক্ষার্থী দূর থেকেই বুঝতে পারে এটি একটি ক্লিকেবল বাটন।
+2. **ওয়ার্ডপ্রেস wpautop সুরক্ষা:** ইনলাইন সিএসএস থাকায় ওয়ার্ডপ্রেসের কোনো থিম বা প্যারাগ্রাফ ফিল্টার এই বাটন ও কার্ড স্টাইল নষ্ট করতে পারে না।
+3. **গুগল এসইও রোবট:** বন্ধ ড্রপডাউনের ভেতরের কনটেন্টও গুগল ১০০% ক্রল ও ইনডেক্স করতে পারে।
 
 ---
 

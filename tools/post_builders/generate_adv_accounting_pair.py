@@ -611,11 +611,11 @@ def get_shared_css():
 </style>"""
 
 def get_author_box_html():
-    return f"""<div class="htbd-author-box" style="display: flex; gap: 20px; align-items: center; background: #f8fafc; border: 1.5px solid #e2e8f0; padding: 24px; border-radius: 12px; margin: 40px 0;">
-  <img src="{AUTHOR_IMG_URL}" onerror="this.src='{AUTHOR_IMG_FALLBACK}'" alt="মো: ওমর ফারুক" class="htbd-author-avatar" width="80" height="80" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2.5px solid #2563eb;" loading="lazy" />
-  <div class="htbd-author-info">
-    <h4 style="margin: 0 0 6px 0; font-size: 18px; color: #0f172a; font-weight: 700;">মো: ওমর ফারুক (Faruk Sir)</h4>
-    <p style="margin: 0; font-size: 14.5px; color: #64748b; line-height: 1.6;">প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD। জাতীয় বিশ্ববিদ্যালয়ের হিসাববিজ্ঞান ও ব্যবসায় শিক্ষা অনুষদের শিক্ষার্থীদের জন্য দীর্ঘ ৮+ বছর যাবত মানসম্মত একাডেমিক গাইড, হ্যান্ডনোট ও চূড়ান্ত সাজেশন প্রণয়ন করছেন।</p>
+    return f"""<div class="htbd-author-box" style="display: flex; align-items: center; gap: 20px; margin: 35px 0 25px 0; padding: 22px 26px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 5px solid #2563eb; border-radius: 12px; font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <img src="{AUTHOR_IMG_URL}" onerror="this.src='{AUTHOR_IMG_FALLBACK}'" alt="মো: ওমর ফারুক (Faruk Sir)" class="htbd-author-avatar" width="80" height="80" loading="lazy" style="width: 80px !important; height: 80px !important; min-width: 80px !important; max-width: 80px !important; border-radius: 50% !important; object-fit: cover !important; border: 2.5px solid #2563eb !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; box-shadow: 0 3px 8px rgba(0,0,0,0.1) !important;" />
+  <div style="flex: 1 1 auto; min-width: 0;">
+    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 19px; font-weight: 700; line-height: 1.3;">মো: ওমর ফারুক (Faruk Sir)</h4>
+    <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.6;">প্রতিষ্ঠাতা ও প্রধান শিক্ষা সম্পাদক, HelpTrickBD। শিক্ষার্থীদের জন্য দীর্ঘ ৮+ বছর যাবত মানসম্মত একাডেমিক গাইড, হ্যান্ডনোট ও চূড়ান্ত সাজেশন প্রণয়ন করছেন।</p>
   </div>
 </div>"""
 
