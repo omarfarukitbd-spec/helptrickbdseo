@@ -90,3 +90,4 @@ with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 
 print(f"\n[DONE] Saved media metadata for {len(results)} banners to {OUTPUT_JSON}")
+

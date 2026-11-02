@@ -59,7 +59,6 @@ def parse_board_file(filepath):
     sec = str(fm.get('section', '')).strip()
     q_no = fm.get('question_number', '')
     imp = fm.get('importance', 3)
-    held_date = fm.get('held_date', '')
     exam_year = fm.get('exam_year', '')
     
     if imp == 3 or '3' in str(imp):
@@ -67,27 +66,36 @@ def parse_board_file(filepath):
     elif imp == 2 or '2' in str(imp):
         imp_badge = '<span class="htbd-badge-star super">[২-স্টার সুপার]</span>'
     else:
-        imp_badge = '<span class="htbd-badge-star regular">[১-স্টার সাধারণ]</span>'
+        imp_badge = '<span class="htbd-badge-star regular">[বোর্ড প্রশ্ন]</span>'
         
     year_badge = f'<span class="htbd-badge-year">জাতীয় বিশ্ববিদ্যালয় {exam_year}</span>'
-    if held_date:
-        year_badge += f' <span class="htbd-badge-year" style="background:#eff6ff; color:#1e40af; border-color:#bfdbfe;">অনুষ্ঠিত: {held_date}</span>'
         
-    ans_split = re.split(r'\n##\s*(?:উত্তর\s*/\s*সমাধান|সমাধান\s*/\s*উত্তর|উত্তর|সমাধান)[\s:]*', body, flags=re.IGNORECASE)
-    if len(ans_split) >= 2:
-        q_raw = ans_split[0].strip()
-        ans_text = ans_split[1].strip()
-        q_raw = re.sub(r'^##?\s*(?:প্রশ্ন|Question)?[\s:]*', '', q_raw, flags=re.IGNORECASE).strip()
-        q_text = q_raw
+    # Robust split between question and answer
+    split_match = re.split(r'\n\s*(?:##\s*)?(?:উত্তর\s*/\s*সমাধান|সমাধান\s*/\s*উত্তর|উত্তর|সমাধান)[\s:]*\n?', body, flags=re.IGNORECASE)
+    if len(split_match) >= 2:
+        q_raw = split_match[0].strip()
+        ans_text = '\n'.join(split_match[1:]).strip()
     else:
         lines = body.split('\n')
-        first_line = lines[0]
-        q_text = re.sub(r'^##?\s*(?:প্রশ্ন|Question)?[\s:]*', '', first_line, flags=re.IGNORECASE).strip()
+        q_raw = lines[0]
         ans_text = '\n'.join(lines[1:]).strip()
+        
+    # Remove leading 'প্রশ্ন:'
+    q_raw = re.sub(r'^(?:##\s*)?প্রশ্ন[\s:]*\n?', '', q_raw, flags=re.IGNORECASE).strip()
+    
+    # Extract English question if present
+    eng_match = re.search(r'\*\*English:\*\*[\s]*(.*)', q_raw, re.DOTALL)
+    if eng_match:
+        eng_text = eng_match.group(1).strip()
+        bn_text = re.sub(r'\*\*English:\*\*.*', '', q_raw, flags=re.DOTALL).strip()
+    else:
+        eng_text = ""
+        bn_text = q_raw
         
     ans_html = md_engine.render(ans_text)
     ans_html = ans_html.replace('★', '').replace('⭐', '').replace('✨', '')
-    q_text = q_text.replace('★', '').replace('⭐', '').replace('✨', '')
+    bn_text = bn_text.replace('★', '').replace('⭐', '').replace('✨', '')
+    eng_text = eng_text.replace('★', '').replace('⭐', '').replace('✨', '')
     
     return {
         'id': fm.get('id', ''),
@@ -95,7 +103,8 @@ def parse_board_file(filepath):
         'q_no': q_no,
         'imp_badge': imp_badge,
         'year_badge': year_badge,
-        'q_text': q_text,
+        'bn_text': bn_text,
+        'eng_text': eng_text,
         'ans_html': ans_html
     }
 
@@ -218,23 +227,51 @@ def get_shared_css():
 .htbd-q-card.card-b {
   border-left: 4px solid #10b981;
 }
+.htbd-q-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+.htbd-q-card.card-a {
+  border-left: 5px solid #0284c7;
+}
+.htbd-q-card.card-b {
+  border-left: 5px solid #10b981;
+}
 .htbd-q-card.card-c {
-  border-left: 4px solid #8b5cf6;
+  border-left: 5px solid #8b5cf6;
 }
 .htbd-q-header {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.htbd-q-header-left, .htbd-q-header-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 10px;
 }
 .htbd-badge-sec {
-  background: #e0f2fe;
-  color: #0369a1;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 4px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.2px;
+}
+.htbd-q-num {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0b2046;
 }
 .htbd-badge-star {
   font-size: 13px;
@@ -245,14 +282,17 @@ def get_shared_css():
 .htbd-badge-star.golden {
   background: #fef3c7;
   color: #b45309;
+  border: 1px solid #fde68a;
 }
 .htbd-badge-star.super {
   background: #dbeafe;
   color: #1e40af;
+  border: 1px solid #bfdbfe;
 }
 .htbd-badge-star.regular {
   background: #f1f5f9;
   color: #475569;
+  border: 1px solid #cbd5e1;
 }
 .htbd-badge-year {
   background: #f3e8ff;
@@ -263,40 +303,63 @@ def get_shared_css():
   border-radius: 4px;
   border: 1px solid #e9d5ff;
 }
-.htbd-q-title {
-  font-size: 18px;
+.htbd-q-body {
+  padding: 20px 22px 14px 22px;
+}
+.htbd-q-bengali {
+  font-size: 18.5px;
   font-weight: 700;
-  color: #0b2046;
-  margin-bottom: 12px;
+  color: #0f172a;
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+.htbd-q-english {
+  font-size: 15px;
+  color: #64748b;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-style: italic;
+  margin-bottom: 14px;
+  padding-left: 12px;
+  border-left: 2px solid #cbd5e1;
+  line-height: 1.5;
 }
 .htbd-ans-details {
-  margin-top: 10px;
-  border-top: 1px dashed #cbd5e1;
-  padding-top: 10px;
+  margin: 0 22px 18px 22px;
 }
 .htbd-ans-toggle {
   cursor: pointer;
   user-select: none;
   font-weight: 700;
-  color: #0284c7;
+  color: #065f46;
   outline: none;
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: #f0f9ff;
-  border: 1px solid #bae6fd;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 8px;
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  font-size: 14.5px;
+  transition: all 0.2s ease;
 }
 .htbd-ans-toggle:hover {
-  background: #e0f2fe;
-  color: #0369a1;
+  background: #dcfce7;
+  color: #047857;
 }
 .htbd-ans-box {
   margin-top: 12px;
-  padding: 14px 18px;
+  padding: 18px 20px;
   background: #f8fafc;
   border-radius: 8px;
-  border-left: 3px solid #0284c7;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #10b981;
   overflow-x: auto;
+}
+.htbd-ans-label {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 10px;
 }
 .htbd-ans-box p {
   margin: 0 0 10px 0;
@@ -401,16 +464,39 @@ def get_shared_css():
   background: #1e293b;
   border-color: #334155;
 }
+.dark .htbd-q-header,
+[data-theme="dark"] .htbd-q-header {
+  background: #0f172a;
+  border-color: #334155;
+}
+.dark .htbd-q-num,
+[data-theme="dark"] .htbd-q-num {
+  color: #f8fafc;
+}
+.dark .htbd-q-bengali,
+[data-theme="dark"] .htbd-q-bengali {
+  color: #f8fafc;
+}
+.dark .htbd-q-english,
+[data-theme="dark"] .htbd-q-english {
+  color: #94a3b8;
+  border-color: #475569;
+}
 .dark .htbd-ans-box,
 [data-theme="dark"] .htbd-ans-box {
   background: #0f172a;
-  border-color: #38bdf8;
+  border-color: #334155;
+  border-left-color: #10b981;
+}
+.dark .htbd-ans-label,
+[data-theme="dark"] .htbd-ans-label {
+  color: #34d399;
 }
 .dark .htbd-ans-toggle,
 [data-theme="dark"] .htbd-ans-toggle {
-  background: #0c4a6e;
-  border-color: #0284c7;
-  color: #bae6fd;
+  background: #064e3b33;
+  border-color: #059669;
+  color: #a7f3d0;
 }
 .dark .htbd-download-card,
 [data-theme="dark"] .htbd-download-card {
@@ -457,8 +543,13 @@ def get_shared_css():
   .htbd-hero-box { background: #064e3b22; border-color: #059669; }
   .htbd-toc-container { background: #1e293b; border-color: #334155; }
   .htbd-q-card { background: #1e293b; border-color: #334155; }
-  .htbd-ans-box { background: #0f172a; border-color: #38bdf8; }
-  .htbd-ans-toggle { background: #0c4a6e; border-color: #0284c7; color: #bae6fd; }
+  .htbd-q-header { background: #0f172a; border-color: #334155; }
+  .htbd-q-num { color: #f8fafc; }
+  .htbd-q-bengali { color: #f8fafc; }
+  .htbd-q-english { color: #94a3b8; border-color: #475569; }
+  .htbd-ans-box { background: #0f172a; border-color: #334155; border-left-color: #10b981; }
+  .htbd-ans-label { color: #34d399; }
+  .htbd-ans-toggle { background: #064e3b33; border-color: #059669; color: #a7f3d0; }
   .htbd-download-card { background: #064e3b33; border-color: #059669; }
   .htbd-styled-table th { background: #1e293b; color: #f8fafc; border-color: #334155; }
   .htbd-styled-table td { border-color: #334155; }
@@ -518,65 +609,49 @@ def generate_individual_year_post(year_en: str, media_info: dict):
   </div>
 </div>"""
 
-    # Section A rendered
-    sec_a_html = []
-    for q in secs['ক']:
-        sec_a_html.append(f"""<div class="htbd-q-card">
+    def build_card(q, sec_badge, card_class, sec_bg, sec_color):
+        eng_block = ""
+        if q['eng_text']:
+            eng_block = f"""    <div class="htbd-q-english">
+      <strong>English:</strong> {q['eng_text']}
+    </div>"""
+            
+        return f"""<div class="htbd-q-card {card_class}">
   <div class="htbd-q-header">
-    <span class="htbd-badge-sec">ক-বিভাগ (১ নম্বর)</span>
-    {q['imp_badge']}
-    {q['year_badge']}
+    <div class="htbd-q-header-left">
+      <span class="htbd-badge-sec" style="background: {sec_bg}; color: {sec_color};">{sec_badge}</span>
+      <span class="htbd-q-num">প্রশ্ন নং {q['q_no']}</span>
+    </div>
+    <div class="htbd-q-header-right">
+      {q['imp_badge']}
+      {q['year_badge']}
+    </div>
   </div>
-  <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
+  <div class="htbd-q-body">
+    <div class="htbd-q-bengali">
+      {q['bn_text']}
+    </div>
+{eng_block}
+  </div>
   <details class="htbd-ans-details">
     <summary class="htbd-ans-toggle">
-      <span class="htbd-toggle-text">[উত্তর দেখুন]</span>
+      <span class="htbd-toggle-text">[উত্তর / সমাধান দেখুন]</span>
     </summary>
     <div class="htbd-ans-box">
-      <strong>উত্তর:</strong> {q['ans_html']}
+      <div class="htbd-ans-label">[প্রামাণ্য সমাধান ও নির্ভুল ব্যাখ্যা]:</div>
+      {q['ans_html']}
     </div>
   </details>
-</div>""")
+</div>"""
+
+    # Section A rendered
+    sec_a_html = [build_card(q, "ক-বিভাগ (১ নম্বর)", "card-a", "#0284c7", "#ffffff") for q in secs['ক']]
 
     # Section B rendered
-    sec_b_html = []
-    for q in secs['খ']:
-        sec_b_html.append(f"""<div class="htbd-q-card card-b">
-  <div class="htbd-q-header">
-    <span class="htbd-badge-sec" style="background: #d1fae5; color: #065f46;">খ-বিভাগ (৪ নম্বর)</span>
-    {q['imp_badge']}
-    {q['year_badge']}
-  </div>
-  <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <details class="htbd-ans-details">
-    <summary class="htbd-ans-toggle">
-      <span class="htbd-toggle-text">[সমাধান দেখুন]</span>
-    </summary>
-    <div class="htbd-ans-box">
-      {q['ans_html']}
-    </div>
-  </details>
-</div>""")
+    sec_b_html = [build_card(q, "খ-বিভাগ (৪ নম্বর)", "card-b", "#059669", "#ffffff") for q in secs['খ']]
 
     # Section C rendered
-    sec_c_html = []
-    for q in secs['গ']:
-        sec_c_html.append(f"""<div class="htbd-q-card card-c">
-  <div class="htbd-q-header">
-    <span class="htbd-badge-sec" style="background: #ede9fe; color: #5b21b6;">গ-বিভাগ (১০ নম্বর)</span>
-    {q['imp_badge']}
-    {q['year_badge']}
-  </div>
-  <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <details class="htbd-ans-details">
-    <summary class="htbd-ans-toggle">
-      <span class="htbd-toggle-text">[সম্পূর্ণ সমাধান দেখুন]</span>
-    </summary>
-    <div class="htbd-ans-box">
-      {q['ans_html']}
-    </div>
-  </details>
-</div>""")
+    sec_c_html = [build_card(q, "গ-বিভাগ (১০ নম্বর)", "card-c", "#7c3aed", "#ffffff") for q in secs['গ']]
 
     # PDF Card
     pdf_card_html = f"""<div class="htbd-download-card">

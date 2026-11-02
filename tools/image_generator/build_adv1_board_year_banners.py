@@ -370,3 +370,4 @@ def generate_all_year_banners():
 
 if __name__ == "__main__":
     generate_all_year_banners()
+
