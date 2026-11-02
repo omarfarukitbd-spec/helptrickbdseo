@@ -110,3 +110,4 @@ def deploy_cost_post():
 
 if __name__ == "__main__":
     deploy_cost_post()
+
