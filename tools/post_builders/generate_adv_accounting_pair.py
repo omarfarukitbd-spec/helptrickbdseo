@@ -148,19 +148,19 @@ def parse_board_file(filepath):
         imp_badge = '<span class="htbd-badge-star regular">[১-স্টার সাধারণ]</span>'
         
     year_badge = f'<span class="htbd-badge-year">জাতীয় বিশ্ববিদ্যালয় {exam_year}</span>'
-    if held_date:
-        year_badge += f' <span class="htbd-badge-year" style="background:#eff6ff; color:#1e40af; border-color:#bfdbfe;">অনুষ্ঠিত: {held_date}</span>'
+    # Per strict user directive: Never show held_date (অনুষ্ঠিত: তারিখ) on question cards
         
-    ans_split = re.split(r'\n##\s*(?:উত্তর\s*/\s*সমাধান|সমাধান\s*/\s*উত্তর|উত্তর|সমাধান)[\s:]*', body, flags=re.IGNORECASE)
+    ans_split = re.split(r'\n\s*(?:##\s*)?(?:উত্তর\s*/\s*সমাধান|সমাধান\s*/\s*উত্তর|উত্তর|সমাধান)[\s:]*\n?', body, flags=re.IGNORECASE)
     if len(ans_split) >= 2:
         q_raw = ans_split[0].strip()
-        ans_text = ans_split[1].strip()
-        q_raw = re.sub(r'^##?\s*(?:প্রশ্ন|Question)?[\s:]*', '', q_raw, flags=re.IGNORECASE).strip()
+        ans_text = '\n'.join(ans_split[1:]).strip()
+        q_raw = re.sub(r'^(?:##\s*)?প্রশ্ন[\s:]*\n?', '', q_raw, flags=re.IGNORECASE).strip()
         q_text = q_raw
     else:
         lines = body.split('\n')
-        first_line = lines[0]
-        q_text = re.sub(r'^##?\s*(?:প্রশ্ন|Question)?[\s:]*', '', first_line, flags=re.IGNORECASE).strip()
+        q_raw = lines[0]
+        q_raw = re.sub(r'^(?:##\s*)?প্রশ্ন[\s:]*\n?', '', q_raw, flags=re.IGNORECASE).strip()
+        q_text = q_raw
         ans_text = '\n'.join(lines[1:]).strip()
         
     ans_html = md_engine.render(ans_text)
