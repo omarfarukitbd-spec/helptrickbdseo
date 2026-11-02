@@ -72,10 +72,10 @@ def deploy_pair():
     with open(p2_html_path, "r", encoding="utf-8") as f:
         p2_content = f.read()
         
-    p2_title = "উন্নত হিসাববিজ্ঞান ১ বিগত বছরের বোর্ড প্রশ্ন সমাধান (2019-2024): Best Solution Guide"
+    p2_title = "প্রশ্নব্যাংক ২০১৯-২০২৪: উন্নত হিসাববিজ্ঞান ১ (Advanced Accounting 1 Question Bank 2026): Best Complete Solution"
     p2_slug = "honours-3rd-year-advanced-accounting-1-board-questions"
-    p2_focus_kw = "উন্নত হিসাববিজ্ঞান ১ বিগত বছরের বোর্ড প্রশ্ন"
-    p2_meta_desc = "উন্নত হিসাববিজ্ঞান ১ বিগত বছরের বোর্ড প্রশ্ন সমাধান (2019-2024): জাতীয় বিশ্ববিদ্যালয় BBA অনার্স ৩য় বর্ষের ১৬৮টি প্রশ্ন ও গাণিতিক সমাধান।"
+    p2_focus_kw = "প্রশ্নব্যাংক ২০১৯-২০২৪: উন্নত হিসাববিজ্ঞান ১"
+    p2_meta_desc = "প্রশ্নব্যাংক ২০১৯-২০২৪: উন্নত হিসাববিজ্ঞান ১ (Advanced Accounting 1): জাতীয় বিশ্ববিদ্যালয় BBA ৩য় বর্ষের ১৬৮টি বোর্ড প্রশ্ন ও সমাধান।"
     
     existing_check = pub.client.get("posts", params={"slug": p2_slug, "status": "any"})
     if existing_check.status_code == 200 and existing_check.json():
@@ -87,11 +87,11 @@ def deploy_pair():
             title=p2_title,
             content=p2_content,
             categories=[4, 9, 127],
-            featured_media=16004,
+            featured_media=16011,
             meta={
                 "rank_math_title": p2_title,
                 "rank_math_description": p2_meta_desc,
-                "rank_math_focus_keyword": f"{p2_focus_kw}, Advanced Accounting 1 Board Questions",
+                "rank_math_focus_keyword": f"{p2_focus_kw}, Advanced Accounting 1 Question Bank, উন্নত হিসাববিজ্ঞান ১ বিগত বছরের বোর্ড প্রশ্ন, অনার্স ৩য় বর্ষ প্রশ্নব্যাংক",
                 "rank_math_robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
             }
         )
@@ -105,7 +105,7 @@ def deploy_pair():
             slug=p2_slug,
             categories=[4, 9, 127],
             status="draft",
-            featured_media_id=16004,
+            featured_media_id=16011,
             seo_meta={
                 "title": p2_title,
                 "seo_title": p2_title,

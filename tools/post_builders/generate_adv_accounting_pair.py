@@ -991,9 +991,9 @@ def generate_post_2_board_questions():
     board_dir = os.path.join(PUB_BOOKS_BASE, "board")
     years = ["2024", "2023", "2022", "2021", "2020", "2019"]
     
-    focus_kw = "উন্নত হিসাববিজ্ঞান ১ বিগত বছরের বোর্ড প্রশ্ন"
-    seo_title = "উন্নত হিসাববিজ্ঞান ১ বিগত বছরের বোর্ড প্রশ্ন সমাধান (2019-2024): Best Solution Guide"
-    banner_url = "https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/assets/images/thumbnails/adv_accounting_1_board_banner.webp"
+    focus_kw = "প্রশ্নব্যাংক ২০১৯-২০২৪: উন্নত হিসাববিজ্ঞান ১"
+    seo_title = "প্রশ্নব্যাংক ২০১৯-২০২৪: উন্নত হিসাববিজ্ঞান ১ (Advanced Accounting 1 Question Bank 2026): Best Complete Solution"
+    banner_url = "https://www.helptrickbd.com/wp-content/uploads/2026/11/adv_accounting_1_board_banner-1.webp"
     
     all_years_data = []
     total_q_count = 0
@@ -1027,6 +1027,7 @@ def generate_post_2_board_questions():
     for y in all_years_data:
         anchor_id = f"board-{y['year']}"
         toc_links.append(f'<li><a href="#{anchor_id}">জাতীয় বিশ্ববিদ্যালয় {y["year"]} সালের প্রশ্ন ও সমাধান ({y["count"]}টি প্রশ্ন)</a></li>')
+    toc_links.append('<li><a href="#nu-search-keywords">জাতীয় বিশ্ববিদ্যালয় প্রশ্নব্যাংক: গুগল শীর্ষ সার্চ কোয়েরি ও টপিক ক্লাস্টার</a></li>')
     toc_links.append('<li><a href="#board-analysis-tips">বোর্ড পরীক্ষার প্রশ্ন পুনরাবৃত্তি (Question Pattern Analysis) ও এ-প্লাস কৌশল</a></li>')
     toc_links.append('<li><a href="#faq-section">সচরাচর জিজ্ঞাসিত প্রশ্নোত্তর (FAQ)</a></li>')
     
@@ -1118,8 +1119,8 @@ def generate_post_2_board_questions():
     # PDF Download Card
     pdf_card_html = f"""<div class="htbd-download-card">
   <div style="flex: 1; min-width: 260px;">
-    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 18.5px; font-weight: 700;">[বোর্ড প্রশ্নব্যাংক] উন্নত হিসাববিজ্ঞান ১ বিগত ৬ বছরের সমাধান PDF</h4>
-    <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.6;">জাতীয় বিশ্ববিদ্যালয়ের ২০১৯ থেকে ২০২৪ সাল পর্যন্ত সকল সেশনের ক, খ ও গ বিভাগের ১৬৮টি প্রশ্ন ও গাণিতিক ব্যাখ্যার অফিশিয়াল প্রিন্টেবল PDF (২.৪২ MB)।</p>
+    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 18.5px; font-weight: 700;">[প্রশ্নব্যাংক PDF] {focus_kw} (2019-2024 Full Solution)</h4>
+    <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.6;">জাতীয় বিশ্ববিদ্যালয়ের ২০১৯ থেকে ২০২৪ সাল পর্যন্ত বিগত ৬ বছরের ক, খ ও গ বিভাগের ১৬৮টি প্রশ্ন ও গাণিতিক ব্যাখ্যার অফিশিয়াল প্রিন্ট-উপযোগী PDF (২.৪২ MB)।</p>
   </div>
   <a href="{PDF_BOARD_URL}" target="_blank" rel="noopener noreferrer" class="htbd-download-btn">
     [ডাউনলোড] বিগত ৬ বছরের বোর্ড সমাধান PDF সংগ্রহ করুন
@@ -1128,23 +1129,27 @@ def generate_post_2_board_questions():
 
     # Cross-link to Chapter Suggestion
     crosslink_card_html = f"""<div class="htbd-crosslink-card">
-  <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 18px; font-weight: 700;">[চূড়ান্ত অধ্যায়ভিত্তিক সাজেশন] সিলেবাসের সকল অধ্যায়ের প্রস্তুতি চান?</h4>
+  <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 18px; font-weight: 700;">[অধ্যায়ভিত্তিক চূড়ান্ত সাজেশন] সিলেবাসের সকল অধ্যায়ের পূর্ণাঙ্গ প্রস্তুতি চান?</h4>
   <p style="margin: 0 0 12px 0; color: #334155; font-size: 15.5px; line-height: 1.7;">জাতীয় বিশ্ববিদ্যালয়ের সংশোধিত সিলেবাস অনুযায়ী সম্পূর্ণ ৭টি অধ্যায়ের ৩২০টি বাছাইকৃত প্রশ্ন ও নির্ভুল গাণিতিক সমাধানের জন্য পড়ুন আমাদের মূল সাজেশন গাইড:</p>
   <a href="{URL_SUGGESTION_POST}" style="color: #1d4ed8; font-weight: 700; text-decoration: underline; font-size: 16px;">[এখানে ক্লিক করুন] জাতীয় বিশ্ববিদ্যালয় অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান ১ অধ্যায়ভিত্তিক পূর্ণাঙ্গ সাজেশন 2026</a>
 </div>"""
 
     faq_items = [
         {
-            "q": "উন্নত হিসাববিজ্ঞান ১ পরীক্ষায় বিগত বছরের বোর্ড প্রশ্ন থেকে কত শতাংশ কমন আসে?",
-            "a": "জাতীয় বিশ্ববিদ্যালয়ের হিসাববিজ্ঞান বিভাগে বিগত ৫-৬ বছরের বোর্ড প্রশ্ন সমাধান করলে প্রায় ৬০% থেকে ৭০% প্রশ্ন সরাসরি বা সমজাতীয় নিয়মে কমন পাওয়া যায়। বিশেষ করে ক-বিভাগে প্রায় ৮০% প্রশ্ন পূর্ববর্তী সালের প্রশ্নাবলি থেকেই পুনরাবৃত্তি ঘটে।"
+            "q": "প্রশ্নব্যাংক ২০১৯-২০২৪: উন্নত হিসাববিজ্ঞান ১ থেকে জাতীয় বিশ্ববিদ্যালয় ফাইনাল পরীক্ষায় কত শতাংশ প্রশ্ন কমন আসে?",
+            "a": "বিগত ৬ বছরের বোর্ড প্রশ্ন গভীরভাবে পর্যালোচনা করলে দেখা যায়, প্রতি বছর ক-বিভাগে প্রায় ৮০% থেকে ৯০% অতি সংক্ষিপ্ত প্রশ্ন পূর্ববর্তী সালের প্রশ্নব্যাংক থেকেই হুবহু পুনরাবৃত্তি হয়। এছাড়া খ ও গ বিভাগের গাণিতিক সমস্যাগুলোতে প্রায় ৬০% থেকে ৭০% অংক বিগত সালের একই ফরম্যাট ও নিয়মে টাকার অংক বা নাম পরিবর্তন করে পরীক্ষায় আসে।"
         },
         {
-            "q": "বোর্ড পরীক্ষার অংকের ক্ষেত্রে কোন বিষয়গুলোতে সতর্ক থাকা জরুরি?",
-            "a": "স্টক ডিভিডেন্ড, লিজ একাউন্টিং ও ব্যালেন্স শিটের অংকগুলোতে টাকার অংক বা তারিখের পরিবর্তন হলেও মূল জাবেদা ও আন্তর্জাতিক হিসাবমানের নিয়ম অপরিবর্তিত থাকে। তাই মুখস্থ না করে প্রতিটি অংকের গণনাকার্য (Working Notes) আয়ত্ত করা শ্রেয়।"
+            "q": "Advanced Accounting 1 Question Bank 2026-এর বড় গাণিতিক সমস্যাগুলোর গণনাকার্য (Working Notes) কি দেওয়া আছে?",
+            "a": "হ্যাঁ, HelpTrickBD-এর এই প্রশ্নব্যাংকে প্রতিটি গাণিতিক সমস্যার জন্য প্রয়োজনীয় জাবেদা, ছক ও খসড়া গণনাকার্য (Working Notes) প্রতিটি ধাপ অনুযায়ী পৃথকভাবে প্রদান করা হয়েছে, যেন শিক্ষার্থীরা পরীক্ষার খাতায় শতভাগ নির্ভুলভাবে সমাধান করে পূর্ণ নম্বর অর্জন করতে পারেন।"
         },
         {
-            "q": "এই বোর্ড সমাধানগুলো কোন কোন সালের পরীক্ষার অন্তর্ভুক্ত?",
-            "a": "এখানে ২০১৯, ২০২০, ২০২১, ২০২২, ২০২৩ এবং সর্বশেষ অনুষ্ঠিত ২০২৪ সালের পরীক্ষার ক, খ ও গ বিভাগের ১৬৮টি প্রশ্নের পূর্ণাঙ্গ ও নির্ভুল সমাধান অন্তর্ভুক্ত রয়েছে।"
+            "q": "প্রশ্নব্যাংক ২০১৯-২০২৪: উন্নত হিসাববিজ্ঞান ১-এর অফিশিয়াল PDF ফাইল কীভাবে ফ্রিতে ডাউনলোড করব?",
+            "a": "পোস্টের উপরে ও নিচে দেওয়া '[ডাউনলোড] বিগত ৬ বছরের বোর্ড সমাধান PDF সংগ্রহ করুন' বাটনে ক্লিক করলেই ১৬৮টি প্রশ্নের পূর্ণাঙ্গ ও প্রিন্ট-উপযোগী অফিশিয়াল PDF সরাসরি বিনামূল্যে গুগল ড্রাইভ / মিডিয়া সার্ভার থেকে ডাউনলোড করা যাবে।"
+        },
+        {
+            "q": "জাতীয় বিশ্ববিদ্যালয় অনার্স ৩য় বর্ষ হিসাববিজ্ঞান বিভাগের অন্যান্য বিষয়ের প্রশ্নব্যাংক ও সাজেশন কোথায় পাওয়া যাবে?",
+            "a": "আমাদের ওয়েবসাইটের 'শিক্ষা সহায়িকা ও স্টাডি গাইড' এবং 'NU Question Bank' ক্যাটাগরিতে নিরীক্ষা ও নিশ্চয়তা, উৎপাদন ব্যয় হিসাববিজ্ঞান, ব্যবস্থাপনা হিসাববিজ্ঞানসহ সকল বিষয়ের অধ্যায়ভিত্তিক পূর্ণাঙ্গ সাজেশন ও বিগত বছরের প্রশ্ন সমাধান পেয়ে যাবেন।"
         }
     ]
 
@@ -1176,7 +1181,7 @@ def generate_post_2_board_questions():
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": seo_title,
-        "description": f"{focus_kw} সমাধান (2019-2024): জাতীয় বিশ্ববিদ্যালয় অনার্স ৩য় বর্ষ হিসাববিজ্ঞানের ১৬৮টি প্রশ্ন ও গাণিতিক সমাধান।",
+        "description": f"{focus_kw} (Advanced Accounting 1 Question Bank 2026): জাতীয় বিশ্ববিদ্যালয় BBA অনার্স ৩য় বর্ষ হিসাববিজ্ঞানের বিগত ৬ বছরের ১৬৮টি বোর্ড প্রশ্ন ও গাণিতিক সমাধান।",
         "image": banner_url,
         "author": {
             "@type": "Person",
@@ -1199,9 +1204,9 @@ def generate_post_2_board_questions():
 
     full_html = f"""<!-- Byte-0 Hero Banner Placement -->
 <figure class="htbd-featured-hero" style="margin: 0 0 25px 0; text-align: center;">
-  <img src="{banner_url}" alt="{focus_kw}" title="{seo_title}" style="width: 100%; max-width: 1000px; height: auto; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.12); display: block; margin: 0 auto;" loading="eager" width="1200" height="675" />
+  <img src="{banner_url}" alt="{focus_kw} (Advanced Accounting 1 Question Bank)" title="{seo_title}" style="width: 100%; max-width: 1000px; height: auto; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.12); display: block; margin: 0 auto;" loading="eager" width="1200" height="675" />
   <figcaption style="font-family: 'SolaimanLipi', sans-serif; font-size: 14px; color: #64748b; margin-top: 8px; text-align: center;">
-    জাতীয় বিশ্ববিদ্যালয় অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান-১ বিগত ৬ বছরের বোর্ড প্রশ্ন সমাধান (2019-2024) | প্রকাশনা: HelpTrickBD
+    জাতীয় বিশ্ববিদ্যালয় BBA অনার্স ৩য় বর্ষ {focus_kw} (Advanced Accounting 1 Question Bank 2026) | প্রকাশনা: HelpTrickBD
   </figcaption>
 </figure>
 
@@ -1211,27 +1216,107 @@ def generate_post_2_board_questions():
 
   <!-- Breadcrumb & Topic Metadata -->
   <div style="font-size: 13.5px; color: #64748b; margin-bottom: 20px;">
-    হোম / শিক্ষা ও সাজেশন / অনার্স ৩য় বর্ষ / <strong>উন্নত হিসাববিজ্ঞান ১ বোর্ড প্রশ্ন সমাধান</strong> (কোর্স কোড: 232503)
+    হোম / শিক্ষা ও সাজেশন / অনার্স ৩য় বর্ষ / <strong>{focus_kw}</strong> (কোর্স কোড: 232503)
   </div>
 
   <!-- Position 0 Quick Answer Box -->
   <div class="htbd-hero-box">
-    <h3 style="margin-top: 0; color: #065f46; font-size: 19px;">[বোর্ড ওভারভিউ] একনজরে {focus_kw} সমাধান (2019-2024)</h3>
-    <p><strong>{focus_kw}</strong> খুঁজছেন এমন জাতীয় বিশ্ববিদ্যালয়ের শিক্ষার্থীদের জন্য এটি একটি নির্ভরযোগ্য ও প্রামাণ্য ডিজিটাল সমাধান ভাণ্ডার। জাতীয় বিশ্ববিদ্যালয়ের ২০১৯, ২০২০, ২০২১, ২০২২, ২০২৩ এবং ২০২৪ সালের চূড়ান্ত পরীক্ষায় আসা মোট <strong>{total_q_count}টি বোর্ড প্রশ্ন ও নির্ভুল গাণিতিক সমাধান</strong> এখানে সংকলিত হয়েছে।</p>
-    <p>সংকলনটিতে ক-বিভাগের <strong>{total_sec_counts['ক']}টি অতি সংক্ষিপ্ত প্রশ্ন</strong>, খ-বিভাগের <strong>{total_sec_counts['খ']}টি সংক্ষিপ্ত ও গাণিতিক সমস্যা</strong> এবং গ-বিভাগের <strong>{total_sec_counts['গ']}টি বিশ্লেষণধর্মী ও বড় অংকের</strong> পুঙ্খানুপুঙ্খ সমাধান রয়েছে।</p>
+    <h3 style="margin-top: 0; color: #065f46; font-size: 19px;">[প্রশ্নব্যাংক ওভারভিউ] একনজরে {focus_kw} (2019-2024 Solution)</h3>
+    <p><strong>{focus_kw}</strong> (Advanced Accounting 1 Question Bank 2026) খুঁজছেন এমন জাতীয় বিশ্ববিদ্যালয়ের BBA অনার্স ৩য় বর্ষের হিসাববিজ্ঞান বিভাগের শিক্ষার্থীদের জন্য এটি একটি নির্ভরযোগ্য ও প্রামাণ্য ডিজিটাল সমাধান ভাণ্ডার। জাতীয় বিশ্ববিদ্যালয়ের ২০১৯, ২০২০, ২০২১, ২০২২, ২০২৩ এবং সর্বশেষ ২০২৪ সালের চূড়ান্ত পরীক্ষায় আসা মোট <strong>{total_q_count}টি বোর্ড প্রশ্ন ও নির্ভুল গাণিতিক সমাধান</strong> এখানে প্রতিটি বিষয়ের সঠিক ওয়ার্কিং নোটসসহ সংকলিত হয়েছে।</p>
+    <p>সংকলনটিতে ক-বিভাগের <strong>{total_sec_counts['ক']}টি অতি সংক্ষিপ্ত প্রশ্ন</strong>, খ-বিভাগের <strong>{total_sec_counts['খ']}টি সংক্ষিপ্ত ও গাণিতিক সমস্যা</strong> এবং গ-বিভাগের <strong>{total_sec_counts['গ']}টি বিশ্লেষণধর্মী ও বড় অংকের</strong> পুঙ্খানুপুঙ্খ সমাধান রয়েছে। সমাধান দেখতে প্রতিটি প্রশ্নের নিচের [উত্তর / সমাধান দেখুন] বাটনে ক্লিক করুন।</p>
   </div>
 
   <!-- Mandatory Jump Break for Archive Summary -->
   <!--more-->
 
-  <p>জাতীয় বিশ্ববিদ্যালয়ের BBA অনার্স ৩য় বর্ষের হিসাববিজ্ঞান বিভাগের সবচেয়ে গুরুত্বপূর্ণ ব্যবহারিক বিষয় হলো <strong>উন্নত হিসাববিজ্ঞান-১ (Advanced Accounting-I - Course Code: 232503)</strong>। পরীক্ষায় এ-প্লাস (A+) নিশ্চিত করতে পূর্ববর্তী বছরগুলোর প্রশ্ন প্যাটার্ন আয়ত্ত করার কোনো বিকল্প নেই। হিসাববিজ্ঞান বিভাগের অধ্যায়ভিত্তিক চূড়ান্ত সাজেশনের জন্য পড়ুন আমাদের <a href="{URL_SUGGESTION_POST}">অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান ১ সাজেশন 2026</a>।</p>
-  <p>শিক্ষার্থীদের রিভিশনকে সহজ ও ত্রুটিমুক্ত করতে HelpTrickBD প্রস্তুত করেছে দেশের সর্বাধিক নিখুঁত <strong>উন্নত হিসাববিজ্ঞান ১ বিগত বছরের বোর্ড প্রশ্ন সমাধান (2019-2024)</strong>। এখানে ২০১৯ সাল থেকে শুরু করে সর্বশেষ ২০২৪ সালের পরীক্ষার প্রতিটি প্রশ্নের সমাধান পর্যায়ক্রমে তুলে ধরা হলো।</p>
+  <p>জাতীয় বিশ্ববিদ্যালয়ের BBA অনার্স ৩য় বর্ষের হিসাববিজ্ঞান বিভাগের শিক্ষার্থীদের জন্য সবচেয়ে বেশি গাণিতিক চ্যালেঞ্জপূর্ণ ও সর্বোচ্চ নম্বর নির্ধারক ব্যবহারিক বিষয় হলো <strong>উন্নত হিসাববিজ্ঞান-১ (Advanced Accounting-I - Course Code: 232503)</strong>। পরীক্ষায় ফার্স্ট ক্লাস ও নিশ্চিত এ-প্লাস (A+) অর্জনের জন্য পূর্ববর্তী বছরগুলোর প্রশ্ন প্যাটার্ন ও জাতীয় বিশ্ববিদ্যালয়ের বোর্ড প্রশ্ন সমাধান আয়ত্ত করার কোনো বিকল্প নেই। অনার্স ৩য় বর্ষ হিসাববিজ্ঞানের সম্পূর্ণ অধ্যায়ভিত্তিক সাজেশন ও মডেল টেস্টের জন্য পড়ুন আমাদের <a href="{URL_SUGGESTION_POST}">অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান ১ সাজেশন 2026</a>।</p>
+  <p>শিক্ষার্থীদের বিগত ৬ বছরের পরীক্ষার প্রস্তুতিকে সহজ, নির্ভুল ও সময়োপযোগী করতে HelpTrickBD প্রস্তুত করেছে দেশের সর্বাধিক মানসম্মত <strong>{focus_kw} (Advanced Accounting 1 Question Bank 2026)</strong>। এখানে ২০১৯ সাল থেকে শুরু করে সর্বশেষ ২০২৪ সালের পরীক্ষার ক, খ ও গ বিভাগের প্রতিটি প্রশ্নের পুঙ্খানুপুঙ্খ সমাধান ও গণনাকার্য ধাপে ধাপে উপস্থাপন করা হলো।</p>
 
   {pdf_card_html}
 
   {crosslink_card_html}
 
   {toc_html}
+
+  <div id="nu-search-keywords">
+    <h2>জাতীয় বিশ্ববিদ্যালয় অনার্স ৩য় বর্ষ প্রশ্নব্যাংক: গুগল শীর্ষ সার্চ কোয়েরি ও টপিক ক্লাস্টার</h2>
+    <p>জাতীয় বিশ্ববিদ্যালয়ের BBA অনার্স ৩য় বর্ষের শিক্ষার্থীরা পরীক্ষার প্রস্তুতি ও রিভিশনের সময় গুগলে যে সকল হাই-র‌্যাংকিং কি-ওয়ার্ড ও অনুসন্ধান কোয়েরি সবচেয়ে বেশি সার্চ করেন, তার একটি প্রামাণ্য বিশ্লেষণ নিচে তুলে ধরা হলো। এই প্রশ্নব্যাংকে প্রতিটি সার্চ কোয়েরির বিপরীতে পূর্ণাঙ্গ সমাধান ও গাণিতিক ব্যাখ্যা দেওয়া হয়েছে:</p>
+
+    <div class="htbd-table-wrapper">
+      <table class="htbd-styled-table">
+        <thead>
+          <tr>
+            <th>শিক্ষার্থীদের শীর্ষ সার্চ কোয়েরি (Search Queries)</th>
+            <th>মূল অধ্যায় ও আলোচিত বিষয়বস্তু (Topic Cluster)</th>
+            <th>প্রশ্ন সংখ্যা ও বিভাগ</th>
+            <th>পরীক্ষার গুরুত্ব ও কমন সম্ভাবনা</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>উন্নত হিসাববিজ্ঞান ১ বিগত বছরের বোর্ড প্রশ্ন সমাধান (2019-2024)</strong></td>
+            <td>জাতীয় বিশ্ববিদ্যালয়ের ২০১৯ থেকে ২০২৪ সাল পর্যন্ত ৬টি শিক্ষাবর্ষের সকল প্রশ্নপত্র ও পূর্ণাঙ্গ সমাধান।</td>
+            <td>১৬৮টি প্রশ্ন (ক, খ, গ বিভাগ)</td>
+            <td><span class="htbd-badge-star golden">[১০০% প্রামাণ্য সল্যুশন]</span></td>
+          </tr>
+          <tr>
+            <td><strong>Advanced Accounting 1 Question Bank 2026 Solution PDF</strong></td>
+            <td>National University BBA 3rd Year Accounting Department Previous Years Questions with Working Notes.</td>
+            <td>Full 6 Years (2019-2024)</td>
+            <td><span class="htbd-badge-star golden">[টপ সার্চ ভলিউম]</span></td>
+          </tr>
+          <tr>
+            <td><strong>অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান ১ ক বিভাগ অতি সংক্ষিপ্ত প্রশ্নব্যাংক</strong></td>
+            <td>সংজ্ঞা, বৈশিষ্ট্য, পার্থক্য, IFRS/IAS নীতিমালা ও সংক্ষিপ্ত সমীকরণভিত্তিক প্রশ্নাবলি।</td>
+            <td>৭২টি অতি সংক্ষিপ্ত প্রশ্ন</td>
+            <td><span class="htbd-badge-star super">[১০ এ ১০ নম্বর কমন]</span></td>
+          </tr>
+          <tr>
+            <td><strong>স্টকহোল্ডার্স ইকুইটি জাবেদা ও ছক সমাধান (Stockholders' Equity)</strong></td>
+            <td>Common Stock, Preferred Stock, Stock Dividends, Cash Dividends, Treasury Stock ও Retained Earnings Statement.</td>
+            <td>খ ও গ বিভাগের অংক</td>
+            <td><span class="htbd-badge-star golden">[১৫-২০ নম্বর নিশ্চিত]</span></td>
+          </tr>
+          <tr>
+            <td><strong>ইজারা বা লিজ হিসাববিজ্ঞান জাবেদা ও অ্যামরটাইজেশন টেবিল (Lease Accounting)</strong></td>
+            <td>Finance Lease vs Operating Lease, Lessee and Lessor Accounting, Guaranteed Residual Value ও ছক।</td>
+            <td>খ ও গ বিভাগের অংক</td>
+            <td><span class="htbd-badge-star golden">[১৪-১৮ নম্বর নিশ্চিত]</span></td>
+          </tr>
+          <tr>
+            <td><strong>কোম্পানির আর্থিক বিবরণী বিশদ আয় বিবরণী ও ব্যালেন্স শিট</strong></td>
+            <td>Comprehensive Income Statement, Classified Balance Sheet, Cost of Goods Sold ও সমন্বয় দাখিলা।</td>
+            <td>গ বিভাগের বড় অংক</td>
+            <td><span class="htbd-badge-star golden">[১০ নম্বর গ্যারান্টিড]</span></td>
+          </tr>
+          <tr>
+            <td><strong>রেভিনিউ রিকগনিশন ও চুক্তি হিসাববিজ্ঞান (Revenue Recognition)</strong></td>
+            <td>IFRS 15 Five-Step Model, Percentage of Completion Method ও Completed Contract Method.</td>
+            <td>খ ও গ বিভাগের অংক</td>
+            <td><span class="htbd-badge-star super">[খ/গ বিভাগে কমন]</span></td>
+          </tr>
+          <tr>
+            <td><strong>হিসাববিজ্ঞান পরিবর্তন ও ভুল সংশোধন (Accounting Changes & Errors)</strong></td>
+            <td>Change in Accounting Principle, Change in Accounting Estimate, Error Analysis ও পূর্ববর্তী সমন্বয়।</td>
+            <td>খ ও গ বিভাগের বিশ্লেষণ</td>
+            <td><span class="htbd-badge-star super">[নিয়মিত বোর্ড প্রশ্ন]</span></td>
+          </tr>
+          <tr>
+            <td><strong>অপারেটিং সেগমেন্ট ও অন্তর্বর্তীকালীন প্রতিবেদন (Operating Segments)</strong></td>
+            <td>10% Significance Test (Revenue, Profit/Loss, Assets), 75% Consolidated Revenue Test ও Disclosure.</td>
+            <td>খ ও গ বিভাগের অংক</td>
+            <td><span class="htbd-badge-star regular">[পরীক্ষায় বারবার আসা]</span></td>
+          </tr>
+          <tr>
+            <td><strong>দেউলিয়া ও অবসায়ন হিসাববিজ্ঞান (Bankruptcy & Liquidation)</strong></td>
+            <td>Statement of Affairs, Deficiency Account, Secured vs Unsecured Creditors ও লিকুইডেশন হিসাব।</td>
+            <td>গ বিভাগের গাণিতিক সমস্যা</td>
+            <td><span class="htbd-badge-star regular">[গুরুত্বপূর্ণ বোর্ড টপিক]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <h2>জাতীয় বিশ্ববিদ্যালয় বিগত ৬ বছরের পরীক্ষার প্রশ্ন প্যাটার্ন ও মানবণ্টন বিশ্লেষণ</h2>
   <p>জাতীয় বিশ্ববিদ্যালয়ের লিখিত পরীক্ষায় মোট ৮০ নম্বরের প্রশ্নপত্র থাকে। বিগত ৬ বছরের বোর্ড প্রশ্ন বিশ্লেষণে দেখা যায় যে প্রশ্ন কাঠামোর ধারাবাহিকতা নিচের নিয়মে আবর্তিত হয়:</p>
