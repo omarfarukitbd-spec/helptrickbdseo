@@ -1040,77 +1040,34 @@ def generate_post_2_board_questions():
   </ol>
 </div>"""
 
-    # Years Body with Click-to-Reveal Accordions
+    # Years Body - Master Topic Cluster Hub with Dedicated Year Cards
     years_body_html = []
     for y in all_years_data:
         anchor_id = f"board-{y['year']}"
-        y_html = [f'<div class="htbd-year-block" id="{anchor_id}">']
-        y_html.append(f'<h2>জাতীয় বিশ্ববিদ্যালয় অনার্স ৩য় বর্ষ পরীক্ষা {y["year"]} — প্রশ্ন ও পূর্ণাঙ্গ সমাধান</h2>')
-        y_html.append(f'<p style="color: #475569; font-weight: 500;"><strong>প্রশ্ন কাঠামো:</strong> জাতীয় বিশ্ববিদ্যালয় {y["year"]} শিক্ষাবর্ষের লিখিত পরীক্ষায় মোট ৮০ নম্বরের প্রশ্নপত্র নিচে ক, খ ও গ বিভাগে নিখুঁতভাবে সমাধান করা হলো। সমাধান দেখতে নিচের [উত্তর / সমাধান দেখুন] বাটনে ক্লিক করুন:</p>')
+        yr_bn = {"2024": "২০২৪", "2023": "২০২৩", "2022": "২০২২", "2021": "২০২১", "2020": "২০২০", "2019": "২০১৯"}.get(y['year'], y['year'])
+        yr_slug = f"honours-3rd-year-advanced-accounting-1-board-{y['year']}"
+        yr_url = f"https://www.helptrickbd.com/{yr_slug}/"
         
-        # Section A
-        if y['secs']['ক']:
-            y_html.append(f'<h3>ক-বিভাগ: অতি সংক্ষিপ্ত প্রশ্নোত্তর (সাল {y["year"]})</h3>')
-            for q in y['secs']['ক']:
-                y_html.append(f"""<div class="htbd-q-card">
+        y_html = [f'<div class="htbd-year-block" id="{anchor_id}" style="margin-bottom: 30px;">']
+        y_html.append(f"""<div class="htbd-q-card card-b" style="border-left: 5px solid #0284c7; padding: 22px 26px;">
   <div class="htbd-q-header">
-    <span class="htbd-badge-sec">ক-বিভাগ (১ নম্বর)</span>
-    {q['imp_badge']}
-    {q['year_badge']}
+    <span class="htbd-badge-sec" style="background: #024a4d; color: #ffffff; font-size: 14px;">জাতীয় বিশ্ববিদ্যালয় {yr_bn}</span>
+    <span class="htbd-badge-star golden">[২৮টি প্রশ্ন সম্পূর্ণ]</span>
+    <span class="htbd-badge-year">ক, খ ও গ বিভাগ</span>
   </div>
-  <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <details class="htbd-ans-details">
-    <summary class="htbd-ans-toggle">
-      <span class="htbd-toggle-text">[উত্তর দেখুন]</span>
-    </summary>
-    <div class="htbd-ans-box">
-      <strong>উত্তর:</strong> {q['ans_html']}
-    </div>
-  </details>
-</div>""")
-
-        # Section B
-        if y['secs']['খ']:
-            y_html.append(f'<h3>খ-বিভাগ: সংক্ষিপ্ত প্রশ্ন ও গাণিতিক সমস্যাবলি (সাল {y["year"]})</h3>')
-            for q in y['secs']['খ']:
-                y_html.append(f"""<div class="htbd-q-card card-b">
-  <div class="htbd-q-header">
-    <span class="htbd-badge-sec" style="background: #d1fae5; color: #065f46;">খ-বিভাগ (৪ নম্বর)</span>
-    {q['imp_badge']}
-    {q['year_badge']}
+  <h3 style="margin: 0 0 10px 0; color: #0b2046; font-size: 22px; font-weight: 700;">
+    জাতীয় বিশ্ববিদ্যালয় অনার্স ৩য় বর্ষ পরীক্ষা {yr_bn} — প্রশ্ন ও পূর্ণাঙ্গ সমাধান
+  </h3>
+  <p style="margin: 0 0 14px 0; color: #475569; font-size: 15.5px; line-height: 1.7;">
+    জাতীয় বিশ্ববিদ্যালয় {yr_bn} শিক্ষাবর্ষের লিখিত পরীক্ষায় আসা ক-বিভাগের ১২টি অতি সংক্ষিপ্ত প্রশ্ন, খ-বিভাগের ৮টি সংক্ষিপ্ত ও গাণিতিক সমস্যা এবং গ-বিভাগের ৮টি বিশদ অংকের প্রতিটি ধাপ নির্ভুল ওয়ার্কিং নোটসসহ পৃথক ডেডিকেটেড গাইডে সমাধান করা হয়েছে।
+  </p>
+  <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 18px; margin-bottom: 16px; font-size: 15px; color: #166534;">
+    <strong>পরীক্ষার কাঠামো ও মানবণ্টন:</strong> ক-বিভাগ (১০ নম্বর) + খ-বিভাগ (২০ নম্বর) + গ-বিভাগ (৫০ নম্বর) = সর্বমোট ৮০ নম্বর লিখিত পরীক্ষা।
   </div>
-  <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <details class="htbd-ans-details">
-    <summary class="htbd-ans-toggle">
-      <span class="htbd-toggle-text">[সমাধান দেখুন]</span>
-    </summary>
-    <div class="htbd-ans-box">
-      {q['ans_html']}
-    </div>
-  </details>
+  <a href="{yr_url}" style="display: inline-block; background: #0284c7; color: #ffffff !important; font-weight: 700; font-size: 15.5px; padding: 10px 22px; border-radius: 8px; text-decoration: none !important; box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);">
+    [এখানে ক্লিক করুন] {yr_bn} সালের ক, খ ও গ বিভাগের সম্পূর্ণ সমাধান দেখুন &rarr;
+  </a>
 </div>""")
-
-        # Section C
-        if y['secs']['গ']:
-            y_html.append(f'<h3>গ-বিভাগ: রচনামূলক প্রশ্ন ও ব্যবহারিক গাণিতিক বিশ্লেষণ (সাল {y["year"]})</h3>')
-            for q in y['secs']['গ']:
-                y_html.append(f"""<div class="htbd-q-card card-c">
-  <div class="htbd-q-header">
-    <span class="htbd-badge-sec" style="background: #ede9fe; color: #5b21b6;">গ-বিভাগ (১০ নম্বর)</span>
-    {q['imp_badge']}
-    {q['year_badge']}
-  </div>
-  <div class="htbd-q-title">প্রশ্ন {q['q_no']}. {q['q_text']}</div>
-  <details class="htbd-ans-details">
-    <summary class="htbd-ans-toggle">
-      <span class="htbd-toggle-text">[সম্পূর্ণ সমাধান দেখুন]</span>
-    </summary>
-    <div class="htbd-ans-box">
-      {q['ans_html']}
-    </div>
-  </details>
-</div>""")
-                
         y_html.append('</div>')
         years_body_html.append('\n'.join(y_html))
 
