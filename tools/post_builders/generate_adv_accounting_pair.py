@@ -763,15 +763,41 @@ def generate_post_1_chapter_suggestion():
 
     all_units_rendered = '\n\n'.join(units_body_html)
 
-    # PDF Download Card
-    pdf_card_html = f"""<div class="htbd-download-card">
-  <div style="flex: 1; min-width: 260px;">
-    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 18.5px; font-weight: 700;">[অফিশিয়াল গাইড বুক] উন্নত হিসাববিজ্ঞান ১ পূর্ণাঙ্গ মাস্টার PDF</h4>
-    <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.6;">জাতীয় বিশ্ববিদ্যালয়ের সংশোধিত সিলেবাস অনুযায়ী সম্পূর্ণ ৭টি অধ্যায়ের ৩২০টি প্রশ্ন ও নির্ভুল গাণিতিক সমাধানের অফিশিয়াল প্রিন্টেবল মাস্টার কপি (৫.১৮ MB)।</p>
+    # Professional Dual-Button PDF Download Section
+    pdf_card_html = f"""<div class="htbd-pdf-section" style="margin: 40px 0 35px 0; background: #ffffff; border: 1.5px solid #e2e8f0; border-top: 5px solid #dc2626; border-radius: 14px; padding: 28px 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+    <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #fee2e2; border-radius: 10px; color: #dc2626;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </span>
+    <div>
+      <h2 id="pdf-download" style="color: #0b2046; font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">অফিশিয়াল PDF ডাউনলোড: অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান ১ মাস্টার সাজেশন ২০২৬</h2>
+      <div style="color: #64748b; font-size: 13.5px; font-weight: 600; margin-top: 3px;">ফাইল ফরম্যাট: প্রামাণ্য A4 প্রিন্ট-রেডি ই-বুক • সংস্করণ: ২০২৬ স্পেশাল</div>
+    </div>
   </div>
-  <a href="{PDF_MASTER_URL}" target="_blank" rel="noopener noreferrer" class="htbd-download-btn">
-    [ডাউনলোড] সম্পূর্ণ মাস্টার PDF ফাইল সংগ্রহ করুন
-  </a>
+
+  <p style="color: #475569; font-size: 15.5px; line-height: 1.85; margin: 0 0 22px 0;">
+    জাতীয় বিশ্ববিদ্যালয়ের অনার্স ৩য় বর্ষ হিসাববিজ্ঞান বিভাগের পরীক্ষার্থীদের চূড়ান্ত প্রস্তুতি ও অফলাইন রিভিশনের সুবিধার্থে <strong>উন্নত হিসাববিজ্ঞান ১ (Advanced Accounting-I, বিষয় কোড: ২৩২৫০৩)</strong>-এর অধ্যায় ০১ থেকে ০৭ পর্যন্ত সকল অধ্যায়ের ক, খ ও গ বিভাগের মোট ৩২০টি প্রশ্নোত্তর সংবলিত প্রামাণ্য ই-বুক PDF (৫.১৮ MB) নিচে সংযুক্ত করা হলো। নিচের দুটি অপশনের যেকোনো একটি বেছে নিয়ে আপনি ফাইলটি সংগ্রহ করতে পারেন:
+  </p>
+
+  <div class="htbd-download-buttons-grid" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+    <!-- Button 2: 30-Second Countdown High-Speed Timer Download -->
+    <div id="htbd-timer-wrap-sugg2026" style="display: inline-block;">
+      <button id="htbd-timer-btn-sugg2026" onclick="startPdfCountdown('sugg2026', '{PDF_MASTER_URL}')" class="htbd-btn-timer" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff !important; padding: 13px 26px; border-radius: 9px; font-weight: 700; font-size: 15.5px; cursor: pointer; border: none; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28); user-select: none; transition: transform 0.15s ease, box-shadow 0.15s ease;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>⏳ ৩০ সেকেন্ডে হাই-স্পিড ডাউনলোড (Countdown)</span>
+      </button>
+      <div id="htbd-timer-box-sugg2026" style="display: none; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 9px; padding: 14px 22px; font-size: 15px; font-weight: 700; color: #1e40af; text-align: center;">
+        <div id="htbd-timer-text-sugg2026">হাই-স্পিড ক্লাউড লিংক তৈরি হচ্ছে... অনুগ্রহ করে <span id="htbd-countdown-sugg2026" style="color: #dc2626; font-size: 19px; font-weight: 800;">30</span> সেকেন্ড অপেক্ষা করুন</div>
+        <div style="width: 100%; height: 7px; background: #dbeafe; border-radius: 4px; margin-top: 10px; overflow: hidden;">
+          <div id="htbd-progress-sugg2026" style="width: 100%; height: 100%; background: #2563eb; transition: width 1s linear;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 16px; font-size: 13.5px; color: #64748b; display: flex; align-items: center; gap: 6px;">
+    <span>🔒 ১০০% ভাইরাস-মুক্ত ও সুরক্ষিত সরাসরি গুগল ড্রাইভ / ক্লাউড সার্ভার মিরর লিংক।</span>
+  </div>
 </div>"""
 
     # Cross-link to Board Questions
@@ -975,6 +1001,32 @@ def generate_post_1_chapter_suggestion():
 
 </div>
 
+<script>
+function startPdfCountdown(yr, url) {{
+  var btn = document.getElementById('htbd-timer-btn-' + yr);
+  var box = document.getElementById('htbd-timer-box-' + yr);
+  var countSpan = document.getElementById('htbd-countdown-' + yr);
+  var progress = document.getElementById('htbd-progress-' + yr);
+  if (!btn || !box) return;
+  btn.style.display = 'none';
+  box.style.display = 'block';
+  var timeLeft = 30;
+  var totalTime = 30;
+  var interval = setInterval(function() {{
+    timeLeft--;
+    if (countSpan) countSpan.innerText = timeLeft;
+    if (progress) progress.style.width = ((timeLeft / totalTime) * 100) + '%';
+    if (timeLeft <= 0) {{
+      clearInterval(interval);
+      box.style.background = '#ecfdf5';
+      box.style.borderColor = '#a7f3d0';
+      box.innerHTML = '<span style="color: #065f46; font-size: 15.5px;">✅ আপনার হাই-স্পিড ডাউনলোড লিংক সম্পূর্ণ প্রস্তুত!</span> <a href="' + url + '" target="_blank" rel="noopener noreferrer" download style="display: inline-block; margin-left: 12px; background: #059669; color: #ffffff !important; padding: 7px 18px; border-radius: 6px; text-decoration: none; font-size: 14.5px; font-weight: 700;">📥 এখনই PDF ডাউনলোড করুন</a>';
+      window.open(url, '_blank');
+    }}
+  }}, 1000);
+}}
+</script>
+
 <!-- Schema.org Microdata -->
 <script type="application/ld+json">
 {blog_schema_json}
@@ -1073,15 +1125,41 @@ def generate_post_2_board_questions():
 
     all_years_rendered = '\n\n'.join(years_body_html)
 
-    # PDF Download Card
-    pdf_card_html = f"""<div class="htbd-download-card">
-  <div style="flex: 1; min-width: 260px;">
-    <h4 style="margin: 0 0 6px 0; color: #0b2046; font-size: 18.5px; font-weight: 700;">[প্রশ্নব্যাংক PDF] {focus_kw} (2019-2024 Full Solution)</h4>
-    <p style="margin: 0; color: #475569; font-size: 14.5px; line-height: 1.6;">জাতীয় বিশ্ববিদ্যালয়ের ২০১৯ থেকে ২০২৪ সাল পর্যন্ত বিগত ৬ বছরের ক, খ ও গ বিভাগের ১৬৮টি প্রশ্ন ও গাণিতিক ব্যাখ্যার অফিশিয়াল প্রিন্ট-উপযোগী PDF (২.৪২ MB)।</p>
+    # Professional Dual-Button PDF Download Section
+    pdf_card_html = f"""<div class="htbd-pdf-section" style="margin: 40px 0 35px 0; background: #ffffff; border: 1.5px solid #e2e8f0; border-top: 5px solid #dc2626; border-radius: 14px; padding: 28px 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+    <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #fee2e2; border-radius: 10px; color: #dc2626;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </span>
+    <div>
+      <h2 id="pdf-download" style="color: #0b2046; font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">অফিশিয়াল PDF ডাউনলোড: উন্নত হিসাববিজ্ঞান ১ প্রশ্নব্যাংক ২০১৯-২০২৪ (মাস্টার সল্যুশন)</h2>
+      <div style="color: #64748b; font-size: 13.5px; font-weight: 600; margin-top: 3px;">ফাইল ফরম্যাট: প্রামাণ্য A4 প্রিন্ট-রেডি ই-বুক • সংস্করণ: ২০২৬ স্পেশাল</div>
+    </div>
   </div>
-  <a href="{PDF_BOARD_URL}" target="_blank" rel="noopener noreferrer" class="htbd-download-btn">
-    [ডাউনলোড] বিগত ৬ বছরের বোর্ড সমাধান PDF সংগ্রহ করুন
-  </a>
+
+  <p style="color: #475569; font-size: 15.5px; line-height: 1.85; margin: 0 0 22px 0;">
+    জাতীয় বিশ্ববিদ্যালয়ের অনার্স ৩য় বর্ষ হিসাববিজ্ঞান বিভাগের বিগত ৬ বছরের (২০১৯-২০২৪) অনুষ্ঠিত সকল বোর্ড পরীক্ষার ক, খ ও গ বিভাগের মোট ১৬৮টি প্রশ্ন এবং বিশ্ববিদ্যালয় অ্যাকাডেমিক কাউন্সিলের দিকনির্দেশনা অনুযায়ী প্রণীত শতভাগ নির্ভুল প্রামাণ্য সমাধানের সম্পূর্ণ অফিশিয়াল মাস্টার প্রশ্নব্যাংক ই-বুক PDF (২.৪২ MB) নিচে সংযুক্ত করা হলো। আপনি সরাসরি কিংবা ৩০ সেকেন্ড কাউন্টডাউন টাইমার ব্যবহার করে এটি সংগ্রহ করতে পারেন:
+  </p>
+
+  <div class="htbd-download-buttons-grid" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+    <!-- Button 2: 30-Second Countdown High-Speed Timer Download -->
+    <div id="htbd-timer-wrap-hub2026" style="display: inline-block;">
+      <button id="htbd-timer-btn-hub2026" onclick="startPdfCountdown('hub2026', '{PDF_BOARD_URL}')" class="htbd-btn-timer" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff !important; padding: 13px 26px; border-radius: 9px; font-weight: 700; font-size: 15.5px; cursor: pointer; border: none; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28); user-select: none; transition: transform 0.15s ease, box-shadow 0.15s ease;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>⏳ ৩০ সেকেন্ডে হাই-স্পিড ডাউনলোড (Countdown)</span>
+      </button>
+      <div id="htbd-timer-box-hub2026" style="display: none; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 9px; padding: 14px 22px; font-size: 15px; font-weight: 700; color: #1e40af; text-align: center;">
+        <div id="htbd-timer-text-hub2026">হাই-স্পিড ক্লাউড লিংক তৈরি হচ্ছে... অনুগ্রহ করে <span id="htbd-countdown-hub2026" style="color: #dc2626; font-size: 19px; font-weight: 800;">30</span> সেকেন্ড অপেক্ষা করুন</div>
+        <div style="width: 100%; height: 7px; background: #dbeafe; border-radius: 4px; margin-top: 10px; overflow: hidden;">
+          <div id="htbd-progress-hub2026" style="width: 100%; height: 100%; background: #2563eb; transition: width 1s linear;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 16px; font-size: 13.5px; color: #64748b; display: flex; align-items: center; gap: 6px;">
+    <span>🔒 ১০০% ভাইরাস-মুক্ত ও সুরক্ষিত সরাসরি গুগল ড্রাইভ / ক্লাউড সার্ভার মিরর লিংক।</span>
+  </div>
 </div>"""
 
     # Cross-link to Chapter Suggestion
@@ -1368,6 +1446,32 @@ def generate_post_2_board_questions():
   {get_author_box_html()}
 
 </div>
+
+<script>
+function startPdfCountdown(yr, url) {{
+  var btn = document.getElementById('htbd-timer-btn-' + yr);
+  var box = document.getElementById('htbd-timer-box-' + yr);
+  var countSpan = document.getElementById('htbd-countdown-' + yr);
+  var progress = document.getElementById('htbd-progress-' + yr);
+  if (!btn || !box) return;
+  btn.style.display = 'none';
+  box.style.display = 'block';
+  var timeLeft = 30;
+  var totalTime = 30;
+  var interval = setInterval(function() {{
+    timeLeft--;
+    if (countSpan) countSpan.innerText = timeLeft;
+    if (progress) progress.style.width = ((timeLeft / totalTime) * 100) + '%';
+    if (timeLeft <= 0) {{
+      clearInterval(interval);
+      box.style.background = '#ecfdf5';
+      box.style.borderColor = '#a7f3d0';
+      box.innerHTML = '<span style="color: #065f46; font-size: 15.5px;">✅ আপনার হাই-স্পিড ডাউনলোড লিংক সম্পূর্ণ প্রস্তুত!</span> <a href="' + url + '" target="_blank" rel="noopener noreferrer" download style="display: inline-block; margin-left: 12px; background: #059669; color: #ffffff !important; padding: 7px 18px; border-radius: 6px; text-decoration: none; font-size: 14.5px; font-weight: 700;">📥 এখনই PDF ডাউনলোড করুন</a>';
+      window.open(url, '_blank');
+    }}
+  }}, 1000);
+}}
+</script>
 
 <!-- Schema.org Microdata -->
 <script type="application/ld+json">
