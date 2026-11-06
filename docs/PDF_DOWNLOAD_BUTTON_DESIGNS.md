@@ -91,3 +91,4 @@ pdf_section_html = render_pdf_download_section(
 - **`.agents/rules/00_AGENT_CONSTITUTION.md`**: Stop-Gate Matrix Rule.
 - **`.agents/rules/01_CONTENT_STANDARDS.md`**: Section 17.
 - **`AGENTS.md`**: Rule 32.
+

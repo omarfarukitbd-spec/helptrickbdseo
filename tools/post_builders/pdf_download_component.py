@@ -60,14 +60,14 @@ def render_pdf_download_section(
     # 1. Button Design A: Instant Direct Download (সাথে সাথে ডাউনলোড)
     btn_direct_html = f"""<a href="{clean_pdf_url}" target="_blank" rel="noopener noreferrer" download class="htbd-btn-direct" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff !important; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 15.5px; text-decoration: none !important; box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3); transition: transform 0.15s ease, box-shadow 0.15s ease; border: none; cursor: pointer; user-select: none;">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      <span>⚡ সরাসরি PDF ডাউনলোড (Instant Download)</span>
+      <span>সরাসরি PDF ডাউনলোড (Instant Download)</span>
     </a>"""
 
     # 2. Button Design B: 30-Second Countdown High-Speed Timer Download (কাউন্টডাউন টাইমার)
     btn_timer_html = f"""<div id="htbd-timer-wrap-{unique_id}" style="display: inline-block;">
       <button id="htbd-timer-btn-{unique_id}" onclick="startPdfCountdown('{unique_id}', '{clean_pdf_url}')" class="htbd-btn-timer" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff !important; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 15.5px; cursor: pointer; border: none; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); user-select: none; transition: transform 0.15s ease, box-shadow 0.15s ease;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span>⏳ ৩০ সেকেন্ডে হাই-স্পিড ডাউনলোড (Countdown Timer)</span>
+        <span>৩০ সেকেন্ডে হাই-স্পিড ডাউনলোড (Countdown Timer)</span>
       </button>
       <div id="htbd-timer-box-{unique_id}" style="display: none; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; padding: 16px 24px; font-size: 15.5px; font-weight: 700; color: #1e40af; text-align: center;">
         <div id="htbd-timer-text-{unique_id}">হাই-স্পিড ক্লাউড লিংক তৈরি হচ্ছে... অনুগ্রহ করে <span id="htbd-countdown-{unique_id}" style="color: #dc2626; font-size: 20px; font-weight: 800;">30</span> সেকেন্ড অপেক্ষা করুন</div>
@@ -109,7 +109,7 @@ if (typeof startPdfCountdown !== 'function') {{
         clearInterval(interval);
         box.style.background = '#ecfdf5';
         box.style.borderColor = '#a7f3d0';
-        box.innerHTML = '<span style="color: #065f46; font-size: 15.5px;">✅ আপনার হাই-স্পিড ডাউনলোড লিংক সম্পূর্ণ প্রস্তুত!</span> <a href="' + url + '" target="_blank" rel="noopener noreferrer" download style="display: inline-block; margin-left: 12px; background: #059669; color: #ffffff !important; padding: 8px 20px; border-radius: 7px; text-decoration: none; font-size: 15px; font-weight: 700; box-shadow: 0 3px 10px rgba(5,150,105,0.25);">📥 এখনই PDF ডাউনলোড করুন</a>';
+        box.innerHTML = '<span style="color: #065f46; font-size: 15.5px;">[প্রস্তুত] আপনার হাই-স্পিড ডাউনলোড লিংক সক্রিয় হয়েছে!</span> <a href="' + url + '" target="_blank" rel="noopener noreferrer" download style="display: inline-block; margin-left: 12px; background: #059669; color: #ffffff !important; padding: 8px 20px; border-radius: 7px; text-decoration: none; font-size: 15px; font-weight: 700; box-shadow: 0 3px 10px rgba(5,150,105,0.25);">এখনই PDF ডাউনলোড করুন</a>';
         window.open(url, '_blank');
       }}
     }}, 1000);
@@ -169,3 +169,4 @@ if __name__ == "__main__":
     assert "startPdfCountdown" in res_dual
 
     print("\n✅ All 3 PDF Download Component modes verified successfully!")
+

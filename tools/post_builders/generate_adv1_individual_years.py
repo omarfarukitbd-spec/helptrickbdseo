@@ -32,6 +32,7 @@ if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
 from tools.post_builders.academic_answer_enricher import enrich_answer_markdown
+from tools.post_builders.pdf_download_component import render_pdf_download_section
 
 md_engine = MarkdownIt('commonmark').enable('table').enable('strikethrough')
 PUB_BOOKS_BASE = r'D:\android\Project\Publication Books\questions\advanced_accounting_1'
@@ -681,42 +682,16 @@ def generate_individual_year_post(year_en: str, media_info: dict):
     # Section C rendered (Royal Purple Button)
     sec_c_html = [build_card(q, "গ-বিভাগ (১০ নম্বর)", "card-c", "#7c3aed", "#ffffff", "#7c3aed", "linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)", "rgba(124, 58, 237, 0.3)", "সম্পূর্ণ সমাধান দেখুন") for q in secs['গ']]
 
-    # Professional Dual-Button PDF Download Section (Instant + 30s Countdown Timer)
-    pdf_card_html = f"""<div class="htbd-pdf-section" style="margin: 40px 0 35px 0; background: #ffffff; border: 1.5px solid #e2e8f0; border-top: 5px solid #dc2626; border-radius: 14px; padding: 28px 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); font-family: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
-    <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #fee2e2; border-radius: 10px; color: #dc2626;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-    </span>
-    <div>
-      <h2 id="pdf-download" style="color: #0b2046; font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">অফিশিয়াল PDF ডাউনলোড: {focus_kw} (ক, খ ও গ বিভাগের পূর্ণাঙ্গ সমাধান)</h2>
-      <div style="color: #64748b; font-size: 13.5px; font-weight: 600; margin-top: 3px;">ফাইল ফরম্যাট: প্রামাণ্য A4 প্রিন্ট-রেডি ই-বুক • ফাইল সাইজ: ২.৪২ MB • সংস্করণ: ২০২৬ স্পেশাল</div>
-    </div>
-  </div>
-
-  <p style="color: #475569; font-size: 15.5px; line-height: 1.85; margin: 0 0 22px 0;">
-    জাতীয় বিশ্ববিদ্যালয়ের অনার্স ৩য় বর্ষ হিসাববিজ্ঞান বিভাগের পরীক্ষার্থীদের চূড়ান্ত প্রস্তুতি ও অফলাইন রিভিশনের সুবিধার্থে <strong>উন্নত হিসাববিজ্ঞান ১ (Advanced Accounting-I, বিষয় কোড: ২৩২৫০৩)</strong>-এর {year_bn} সালের ক, খ ও গ বিভাগের মোট ২৮টি প্রশ্ন এবং বিশ্ববিদ্যালয় অ্যাকাডেমিক কাউন্সিলের মূল্যায়ন নির্দেশিকা অনুযায়ী রচিত শতভাগ নির্ভুল প্রামাণ্য সমাধানের অফিসিয়াল মাস্টার পিডিএফ হ্যান্ডনোট নিচে সংযুক্ত করা হলো। শিক্ষার্থীদের সুবিধার জন্য নিচে ডেডিকেটেড হাই-স্পিড কাউন্টডাউন টাইমার বাটন প্রদান করা হয়েছে—বাটনে ক্লিক করে ৩০ সেকেন্ড অপেক্ষা করলেই আপনার নিরবচ্ছিন্ন ক্লাউড ডাউনলোড লিংক সক্রিয় হবে:
-  </p>
-
-  <div class="htbd-download-buttons-grid" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
-    <!-- Active Button: 30-Second Countdown High-Speed Timer Download -->
-    <div id="htbd-timer-wrap-{year_en}" style="display: inline-block;">
-      <button id="htbd-timer-btn-{year_en}" onclick="startPdfCountdown('{year_en}', '{PDF_BOARD_URL}')" class="htbd-btn-timer" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff !important; padding: 14px 30px; border-radius: 10px; font-weight: 700; font-size: 16px; cursor: pointer; border: none; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); user-select: none; transition: transform 0.15s ease, box-shadow 0.15s ease;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span>⏳ ৩০ সেকেন্ডে হাই-স্পিড ডাউনলোড (Countdown Timer)</span>
-      </button>
-      <div id="htbd-timer-box-{year_en}" style="display: none; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; padding: 16px 24px; font-size: 15.5px; font-weight: 700; color: #1e40af; text-align: center;">
-        <div id="htbd-timer-text-{year_en}">হাই-স্পিড ক্লাউড লিংক তৈরি হচ্ছে... অনুগ্রহ করে <span id="htbd-countdown-{year_en}" style="color: #dc2626; font-size: 20px; font-weight: 800;">30</span> সেকেন্ড অপেক্ষা করুন</div>
-        <div style="width: 100%; height: 8px; background: #dbeafe; border-radius: 4px; margin-top: 10px; overflow: hidden;">
-          <div id="htbd-progress-{year_en}" style="width: 100%; height: 100%; background: #2563eb; transition: width 1s linear;"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top: 16px; font-size: 13.5px; color: #64748b; display: flex; align-items: center; gap: 6px;">
-    <span>🔒 ১০০% ভাইরাস-মুক্ত ও সুরক্ষিত সরাসরি গুগল ড্রাইভ / ক্লাউড সার্ভার মিরর লিংক।</span>
-  </div>
-</div>"""
+    # Professional PDF Download Section (30s Countdown Timer Mode - End of Post)
+    pdf_card_html = render_pdf_download_section(
+        pdf_url=PDF_BOARD_URL,
+        heading_title=f"{focus_kw} (ক, খ ও গ বিভাগের পূর্ণাঙ্গ সমাধান)",
+        file_spec="ফাইল ফরম্যাট: প্রামাণ্য A4 প্রিন্ট-রেডি ই-বুক • ফাইল সাইজ: ২.৪২ MB • সংস্করণ: ২০২৬ স্পেশাল",
+        description_text=f"জাতীয় বিশ্ববিদ্যালয়ের অনার্স ৩য় বর্ষ হিসাববিজ্ঞান বিভাগের পরীক্ষার্থীদের চূড়ান্ত প্রস্তুতি ও অফলাইন রিভিশনের সুবিধার্থে <strong>উন্নত হিসাববিজ্ঞান ১ (Advanced Accounting-I, বিষয় কোড: ২৩২৫০৩)</strong>-এর {year_bn} সালের ক, খ ও গ বিভাগের মোট ২৮টি প্রশ্ন এবং বিশ্ববিদ্যালয় অ্যাকাডেমিক কাউন্সিলের মূল্যায়ন নির্দেশিকা অনুযায়ী রচিত শতভাগ নির্ভুল প্রামাণ্য সমাধানের অফিসিয়াল মাস্টার পিডিএফ হ্যান্ডনোট নিচে সংযুক্ত করা হলো। আপনার সুবিধার্থে ৩০ সেকেন্ডের কাউন্টডাউন টাইমার ব্যবহার করে প্রামাণ্য ই-বুকটি সংগ্রহ করতে পারবেন:",
+        mode="timer",
+        unique_id=year_en,
+        include_script=False
+    )
 
     faq_items = [
         {
@@ -811,8 +786,6 @@ def generate_individual_year_post(year_en: str, media_info: dict):
 
   <p>জাতীয় বিশ্ববিদ্যালয়ের BBA অনার্স ৩য় বর্ষ হিসাববিজ্ঞান বিভাগের শিক্ষার্থীদের জন্য সবচেয়ে বেশি গাণিতিক চ্যালেঞ্জপূর্ণ ও সর্বোচ্চ নম্বর নির্ধারক ব্যবহারিক বিষয় হলো <strong>উন্নত হিসাববিজ্ঞান-১ (Advanced Accounting-I - Course Code: 232503)</strong>। পরীক্ষায় এ-প্লাস (A+) নিশ্চিত করতে পূর্ববর্তী বছরগুলোর প্রশ্ন প্যাটার্ন ও জাতীয় বিশ্ববিদ্যালয়ের বোর্ড প্রশ্ন সমাধান আয়ত্ত করার কোনো বিকল্প নেই। অনার্স ৩য় বর্ষের সম্পূর্ণ অধ্যায়ভিত্তিক সাজেশনের জন্য পড়ুন আমাদের <a href="{URL_SUGGESTION_POST}">অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান ১ সাজেশন 2026</a> এবং বিগত ৬ বছরের সমন্বিত তালিকার জন্য দেখুন <a href="{URL_BOARD_HUB}">উন্নত হিসাববিজ্ঞান ১ বোর্ড প্রশ্নব্যাংক (২০১৯-২০২৪)</a>।</p>
   <p>শিক্ষার্থীদের {year_bn} সালের পরীক্ষার প্রস্তুতিকে সহজ ও ত্রুটিমুক্ত করতে HelpTrickBD প্রস্তুত করেছে দেশের সর্বাধিক মানসম্মত <strong>{focus_kw} (Advanced Accounting 1 Solution {year_en})</strong>। এখানে {year_bn} সালের পরীক্ষার ক, খ ও গ বিভাগের প্রতিটি প্রশ্নের পুঙ্খানুপুঙ্খ সমাধান ও গণনাকার্য ধাপে ধাপে উপস্থাপন করা হলো।</p>
-
-  {pdf_card_html}
 
   {nav_html}
 
@@ -930,7 +903,7 @@ function startPdfCountdown(yr, url) {{
       clearInterval(interval);
       box.style.background = '#ecfdf5';
       box.style.borderColor = '#a7f3d0';
-      box.innerHTML = '<span style="color: #065f46; font-size: 15.5px;">✅ আপনার হাই-স্পিড ডাউনলোড লিংক সম্পূর্ণ প্রস্তুত!</span> <a href="' + url + '" target="_blank" rel="noopener noreferrer" download style="display: inline-block; margin-left: 12px; background: #059669; color: #ffffff !important; padding: 7px 18px; border-radius: 6px; text-decoration: none; font-size: 14.5px; font-weight: 700;">📥 এখনই PDF ডাউনলোড করুন</a>';
+      box.innerHTML = '<span style="color: #065f46; font-size: 15.5px;">[প্রস্তুত] আপনার হাই-স্পিড ডাউনলোড লিংক সক্রিয় হয়েছে!</span> <a href="' + url + '" target="_blank" rel="noopener noreferrer" download style="display: inline-block; margin-left: 12px; background: #059669; color: #ffffff !important; padding: 7px 18px; border-radius: 6px; text-decoration: none; font-size: 14.5px; font-weight: 700;">এখনই PDF ডাউনলোড করুন</a>';
       window.open(url, '_blank');
     }}
   }}, 1000);
