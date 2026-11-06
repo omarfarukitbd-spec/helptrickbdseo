@@ -1065,9 +1065,7 @@ def generate_post_2_board_questions():
   <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 18px; margin-bottom: 16px; font-size: 15px; color: #166534;">
     <strong>পরীক্ষার কাঠামো ও মানবণ্টন:</strong> ক-বিভাগ (১০ নম্বর) + খ-বিভাগ (২০ নম্বর) + গ-বিভাগ (৫০ নম্বর) = সর্বমোট ৮০ নম্বর লিখিত পরীক্ষা।
   </div>
-  <a href="{yr_url}" style="display: inline-block; background: #0284c7; color: #ffffff !important; font-weight: 700; font-size: 15.5px; padding: 10px 22px; border-radius: 8px; text-decoration: none !important; box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);">
-    [এখানে ক্লিক করুন] {yr_bn} সালের ক, খ ও গ বিভাগের সম্পূর্ণ সমাধান দেখুন &rarr;
-  </a>
+  <a href="{yr_url}" class="htbd-year-link-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #0284c7; color: #ffffff !important; font-weight: 700; font-size: 14px; padding: 8px 18px; border-radius: 8px; text-decoration: none !important; box-shadow: 0 2px 8px rgba(2, 132, 199, 0.22); margin-top: 8px; transition: all 0.2s ease;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>{yr_bn} সালের সম্পূর্ণ সমাধান দেখুন &rarr;</span></a>
 </div>""")
         y_html.append('</div>')
         years_body_html.append('\n'.join(y_html))

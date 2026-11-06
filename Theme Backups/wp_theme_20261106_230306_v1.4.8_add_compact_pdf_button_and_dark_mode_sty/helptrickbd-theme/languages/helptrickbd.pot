@@ -1,0 +1,161 @@
+# Copyright (C) 2026 HelpTrickBD Team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: HelpTrickBD Pro 1.2.5\n"
+"Report-Msgid-Bugs-To: https://www.helptrickbd.com\n"
+"POT-Creation-Date: 2026-10-08 02:20:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: HelpTrickBD <support@helptrickbd.com>\n"
+"Language: bn_BD\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: HelpTrickBD Pro POT Generator 1.0\n"
+"X-Domain: helptrickbd\n"
+
+#: functions.php:49
+msgid "প্রধান মেনু (Primary Header Menu)"
+msgstr ""
+
+#: functions.php:50
+msgid "ফুটার মেনু (Footer Menu)"
+msgstr ""
+
+#: functions.php:51
+msgid "মোবাইল ড্রয়ার মেনু (Mobile Menu)"
+msgstr ""
+
+#: functions.php:97
+msgid "মূল সাইডবার (Primary Sidebar)"
+msgstr ""
+
+#: header.php:25
+msgid "মূল বিষয়বস্তুতে যান"
+msgstr ""
+
+#: header.php:30
+msgid "জরুরি বিজ্ঞপ্তি ও সময়"
+msgstr ""
+
+#: header.php:38
+msgid "বিজ্ঞপ্তি"
+msgstr ""
+
+#: header.php:77
+msgid "মেনু খুলুন"
+msgstr ""
+
+#: header.php:95
+msgid "প্রধান নেভিগেশন"
+msgstr ""
+
+#: header.php:109
+msgid "হোম"
+msgstr ""
+
+#: header.php:127
+msgid "অনুসন্ধান করুন (Ctrl+K)"
+msgstr ""
+
+#: header.php:129
+msgid "খুঁজুন..."
+msgstr ""
+
+#: header.php:136
+msgid "পড়ার তালিকা (বুকমার্ক)"
+msgstr ""
+
+#: header.php:144
+msgid "ডার্ক/লাইট মোড পরিবর্তন করুন"
+msgstr ""
+
+#: header.php:160
+msgid "মেনু বন্ধ করুন"
+msgstr ""
+
+#: header.php:174
+msgid "মূল নেভিগেশন ও বিষয়সমূহ"
+msgstr ""
+
+#: single.php:76
+msgid "ফোকাস মোড"
+msgstr ""
+
+#: single.php:84
+msgid "পড়ার তালিকায় রাখুন"
+msgstr ""
+
+#: single.php:92
+msgid "প্রিন্ট / পিডিএফ"
+msgstr ""
+
+#: single.php:213
+msgid "সম্পর্কিত আরও আর্টিকেল"
+msgstr ""
+
+#: single.php:215
+msgid "আরও পড়ুন (সম্পর্কিত নির্দেশিকা)"
+msgstr ""
+
+#: comments.php:30
+msgid "১টি মন্তব্য &ldquo;%1$s&rdquo;-এর উপর"
+msgstr ""
+
+#: comments.php:37
+msgid "%1$sটি মন্তব্য &ldquo;%2$s&rdquo;-এর উপর"
+msgstr ""
+
+#: comments.php:55
+msgid "এই পোস্টের জন্য মন্তব্য প্রদান বন্ধ রয়েছে।"
+msgstr ""
+
+#: comments.php:62
+msgid "একটি মন্তব্য বা প্রশ্ন লিখুন"
+msgstr ""
+
+#: comments.php:63
+msgid "%s-এর মন্তব্যের উত্তর দিন"
+msgstr ""
+
+#: comments.php:64
+msgid "উত্তর বাতিল করুন"
+msgstr ""
+
+#: comments.php:65
+msgid "মন্তব্য প্রকাশ করুন"
+msgstr ""
+
+#: comments.php:66
+msgid "আপনার ইমেইল ঠিকানাটি প্রকাশ করা হবে না।"
+msgstr ""
+
+#: 404.php:26
+msgid "৪০৪: কাঙ্ক্ষিত পৃষ্ঠাটি পাওয়া যায়নি"
+msgstr ""
+
+#: 404.php:51
+msgid "হোমপেজে ফিরে যান"
+msgstr ""
+
+#: search.php:26
+msgid "অনুসন্ধান ফলাফল"
+msgstr ""
+
+#: search.php:32
+msgid "মোট %s টি ফলাফল পাওয়া গেছে"
+msgstr ""
+
+#: search.php:89
+msgid "কোনো ফলাফল পাওয়া যায়নি"
+msgstr ""
+
+#: index.php:27
+msgid "সর্বশেষ প্রকাশনাসমূহ"
+msgstr ""
+
+#: index.php:83
+msgid "কোনো প্রকাশনা পাওয়া যায়নি।"
+msgstr ""
