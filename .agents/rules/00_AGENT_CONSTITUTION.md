@@ -32,6 +32,7 @@ The agent is strictly FORBIDDEN from performing any of the following actions wit
 | 8 | **Editing Existing Posts Without Pre-Backup** | Overwriting content without a snapshot prevents rollback if mistakes occur. | Agent MUST verify that a 100% snapshot (HTML, labels, images, metadata) is created in `backups/posts/` before any update. |
 | 9 | **Using Outdated, Stale, or Factually Discarded Information** | Publishing cancelled circulars (e.g., discarded draft mark distributions, obsolete curricula, stale fees) misinforms readers and destroys E-E-A-T and AdSense trust. | Agent MUST verify that all policies, marks distributions, and dates match the latest official gazettes/circulars (`.gov.bd`). Never rely on third-party blogs or viral internet myths. |
 | 10 | **Modifying Theme Files Without Pre-Backup in 'Theme Backups/'** | Modifying theme PHP/CSS/JS without pre-backup risks breaking site rendering or causing WSOD with no rollback capability. | Agent MUST execute `theme_backup_manager.py backup` into `Theme Backups/` before modifying any theme file, and package finished work to `Updated Theme/`. |
+| 11 | **Unilaterally Deciding PDF Sharing & Download Button Design** | Uninformed PDF sharing or choosing the wrong button design disrupts user conversion and dwell-time strategy. | Before creating/updating any PDF-sharing post (suggestions, question banks, routines, syllabi), agent MUST ask user: (1) Whether to include a PDF section, (2) Which button design to use (Instant, 30s Countdown Timer, or Dual), and (3) The PDF download URL. |
 
 ---
 
@@ -103,6 +104,11 @@ The agent is encouraged and expected to perform the following actions autonomous
 24. **Two-Folder Theme Governance Architecture (দ্বি-ফোল্ডার থিম গভর্ন্যান্স প্রটোকল — Theme Backups ও Updated Theme)**:
     - ওয়ার্ডপ্রেস থিমে যেকোনো ধরনের কাজ (ফিচার, সিএসএস, পিএইচপি বা বাগ ফিক্স) শুরু করার পূর্বে এজেন্টকে বাধ্যতামূলকভাবে **`Theme Backups/`** ফোল্ডারে সম্পূর্ণ টাইমস্ট্যাম্পড প্রি-এডিট ব্যাকআপ (`python tools/backup_manager/theme_backup_manager.py backup --reason "..."`) সংরক্ষণ করতে হবে। ব্যাকআপ ব্যতিরেকে থিম স্পর্শ করা কঠোরভাবে নিষিদ্ধ।
     - প্রতিটি কাজ শেষ হওয়া মাত্রই এজেন্টকে বাধ্যতামূলকভাবে **`Updated Theme/`** ফোল্ডারে সর্বশেষ আপডেট হওয়া আনপ্যাকড কোড এবং ওয়ার্ডপ্রেস ড্যাশবোর্ডে সরাসরি আপলোড করার রেডি জিপ `helptrickbd-theme.zip` প্যাকেজিং ও সিঙ্ক করতে হবে (`python tools/backup_manager/theme_backup_manager.py package`)।
+25. **Standard Multi-Mode PDF Download Section & Pre-Publish Clarification Gate (পিডিএফ ডাউনলোড ও বাটন নির্বাচন প্রটোকল)**:
+    - যেকোনো পিডিএফ হ্যান্ডনোট বা গাইড ডাউনলোডের ক্ষেত্রে `tools/post_builders/pdf_download_component.py` মডিউল ব্যবহার করা বাধ্যতামূলক।
+    - প্রতিটি ডাউনলোডের শুরুতে সুস্পষ্ট `<h2>` হেডিং, ফাইল স্পেসিফিকেশন মেটা এবং বিশদ ব্যাখ্যামূলক অনুচ্ছেদ থাকতে হবে।
+    - বাটন মোড ৩টি: (১) **সরাসরি ডাউনলোড (Direct Mode)**, (২) **৩০ সেকেন্ড কাউন্টডাউন টাইমার (Timer Mode)**, এবং (৩) **ডুয়াল মোড (Dual Mode)**।
+    - যেকোনো পিডিএফ শেয়ারিং পোস্টের কাজ শুরুর আগে এজেন্ট অবশ্যই ব্যবহারকারীকে জিজ্ঞাসা করবে পোস্টে পিডিএফ দেওয়া হবে কি না, কোন বাটন ডিজাইন ব্যবহার করা হবে এবং ফাইলের লিঙ্ক কোনটি।
 
 
 ---
