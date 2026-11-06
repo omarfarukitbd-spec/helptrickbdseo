@@ -884,32 +884,6 @@ def generate_individual_year_post(year_en: str, media_info: dict):
 
 </div>
 
-<script>
-function startPdfCountdown(yr, url) {{
-  var btn = document.getElementById('htbd-timer-btn-' + yr);
-  var box = document.getElementById('htbd-timer-box-' + yr);
-  var countSpan = document.getElementById('htbd-countdown-' + yr);
-  var progress = document.getElementById('htbd-progress-' + yr);
-  if (!btn || !box) return;
-  btn.style.display = 'none';
-  box.style.display = 'block';
-  var timeLeft = 30;
-  var totalTime = 30;
-  var interval = setInterval(function() {{
-    timeLeft--;
-    if (countSpan) countSpan.innerText = timeLeft;
-    if (progress) progress.style.width = ((timeLeft / totalTime) * 100) + '%';
-    if (timeLeft <= 0) {{
-      clearInterval(interval);
-      box.style.background = '#ecfdf5';
-      box.style.borderColor = '#a7f3d0';
-      box.innerHTML = '<span style="color: #065f46; font-size: 15.5px;">[প্রস্তুত] আপনার হাই-স্পিড ডাউনলোড লিংক সক্রিয় হয়েছে!</span> <a href="' + url + '" target="_blank" rel="noopener noreferrer" download style="display: inline-block; margin-left: 12px; background: #059669; color: #ffffff !important; padding: 7px 18px; border-radius: 6px; text-decoration: none; font-size: 14.5px; font-weight: 700;">এখনই PDF ডাউনলোড করুন</a>';
-      window.open(url, '_blank');
-    }}
-  }}, 1000);
-}}
-</script>
-
 <!-- Schema.org Microdata -->
 <script type="application/ld+json">
 {blog_schema_json}
