@@ -1,0 +1,178 @@
+<?php
+/**
+ * The Sidebar containing the primary widget area
+ * Sidebar Top AJAX Live Search, Exam Countdown, Ranked Popular Posts with Circular Thumbs,
+ * Sticky Ad Slot, Contextual Category Cards with Far-Right Stats.
+ * Completely purged of legacy core widgets (Recent Posts, Archives, Comments, raw bullet Categories).
+ *
+ * @package HelpTrickBD_Pro
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+?>
+
+<div class="ht-sidebar-wrapper">
+
+    <!-- Widget 3: Ranked Compact Popular Posts with Circular Round Thumbs (Position #3) -->
+    <?php if (get_theme_mod('ht_sidebar_popular_enable', true)) : ?>
+        <div class="ht-widget ht-widget-popular">
+            <div class="ht-widget-header">
+                <?php ht_m3_icon('trending_up', 20, 'ht-widget-icon'); ?>
+                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_popular_title', 'জনপ্রিয় ও আলোচিত হ্যান্ডনোট')); ?></h3>
+            </div>
+            <div class="ht-widget-body">
+                <?php
+                $pop_count = absint(get_theme_mod('ht_sidebar_popular_count', 5));
+                if ($pop_count < 3 || $pop_count > 10) {
+                    $pop_count = 5;
+                }
+
+                // Query top popular posts by views
+                $popular_query = new WP_Query([
+                    'posts_per_page'      => $pop_count,
+                    'post_status'         => 'publish',
+                    'ignore_sticky_posts' => 1,
+                    'meta_key'            => 'ht_post_views_count',
+                    'orderby'             => 'meta_value_num date',
+                    'order'               => 'DESC',
+                ]);
+
+                // Fallback to recent posts if views are not yet accumulated
+                if (!$popular_query->have_posts()) {
+                    $popular_query = new WP_Query([
+                        'posts_per_page'      => $pop_count,
+                        'post_status'         => 'publish',
+                        'ignore_sticky_posts' => 1,
+                        'orderby'             => 'date',
+                        'order'               => 'DESC',
+                    ]);
+                }
+
+                if ($popular_query->have_posts()) :
+                ?>
+                    <div class="ht-popular-list">
+                        <?php
+                        $rank = 0;
+                        while ($popular_query->have_posts()) :
+                            $popular_query->the_post();
+                            $rank++;
+                        ?>
+                            <article class="ht-popular-item">
+                                <!-- Compact Round Circular Post Thumbnail with Floating Rank Badge -->
+                                <a href="<?php the_permalink(); ?>" class="ht-popular-thumb-wrap" aria-label="<?php the_title_attribute(); ?>">
+                                    <div class="ht-popular-thumb-circle">
+                                        <?php ht_the_thumbnail(get_the_ID(), 'thumbnail', 'ht-popular-thumb-round'); ?>
+                                    </div>
+                                    <span class="ht-popular-badge ht-rank-<?php echo esc_attr($rank); ?>" title="<?php echo esc_attr('Rank #' . $rank); ?>"><?php echo esc_html($rank); ?></span>
+                                </a>
+
+                                <!-- Post Details -->
+                                <div class="ht-popular-details">
+                                    <?php
+                                    $primary_cat_name = '';
+                                    $primary_cat_id = get_post_meta(get_the_ID(), 'rank_math_primary_category', true);
+                                    if ($primary_cat_id) {
+                                        $p_cat = get_term($primary_cat_id, 'category');
+                                        if ($p_cat && !is_wp_error($p_cat)) {
+                                            $primary_cat_name = $p_cat->name;
+                                        }
+                                    }
+                                    if (empty($primary_cat_name)) {
+                                        $cats = get_the_category();
+                                        if (!empty($cats)) {
+                                            $chosen_cat = $cats[0];
+                                            foreach ($cats as $c) {
+                                                if ($c->slug !== 'education-guide') {
+                                                    $chosen_cat = $c;
+                                                    break;
+                                                }
+                                            }
+                                            $primary_cat_name = $chosen_cat->name;
+                                        }
+                                    }
+                                    if (!empty($primary_cat_name)) : 
+                                        $cat_pal = function_exists('ht_get_category_palette') ? ht_get_category_palette($primary_cat_slug, $primary_cat_name) : ['color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'];
+                                    ?>
+                                        <div class="ht-popular-cat-wrap">
+                                            <span class="ht-popular-cat-chip" style="color: <?php echo esc_attr($cat_pal['color']); ?> !important;"><?php echo esc_html($primary_cat_name); ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                    <h4 class="ht-popular-title">
+                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </h4>
+                                    <div class="ht-popular-meta">
+                                        <span class="ht-popular-date">
+                                            <?php ht_post_date(); ?>
+                                        </span>
+                                    </div>
+                                </div>
+                            </article>
+                        <?php
+                        endwhile;
+                        wp_reset_postdata();
+                        ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <!-- Widget 4: Sticky Sidebar Google AdSlot (Position #4) -->
+    <?php if (get_theme_mod('ht_sidebar_ad_enable', true)) : ?>
+        <?php ht_render_ad('ht_ad_sticky_sidebar', 'ht-widget ht-sidebar-ad-slot', 280); ?>
+    <?php endif; ?>
+
+    <!-- Widget 5: Contextual Categories with High-End Palette Badges & Micro-Animations (Position #5) -->
+    <?php if (get_theme_mod('ht_sidebar_categories_enable', true)) : ?>
+        <div class="ht-widget ht-widget-categories">
+            <div class="ht-widget-header">
+                <?php ht_m3_icon('category', 20, 'ht-widget-icon'); ?>
+                <h3 class="ht-widget-title"><?php echo esc_html(get_theme_mod('ht_sidebar_categories_title', 'সকল বিভাগ ও বিষয়')); ?></h3>
+            </div>
+            <div class="ht-widget-body">
+                <div class="ht-cat-cards-grid">
+                    <?php
+                    $cat_limit = absint(get_theme_mod('ht_sidebar_categories_count', 10));
+                    if ($cat_limit < 4 || $cat_limit > 20) {
+                        $cat_limit = 10;
+                    }
+
+                    $categories = get_categories([
+                        'orderby'    => 'count',
+                        'order'      => 'DESC',
+                        'number'     => $cat_limit,
+                        'hide_empty' => true,
+                    ]);
+
+                    foreach ($categories as $category) :
+                        $cat_icon = function_exists('ht_get_category_icon') ? ht_get_category_icon($category->slug, $category->name) : 'folder';
+                        $palette  = function_exists('ht_get_category_palette') ? ht_get_category_palette($category->slug, $category->name) : ['color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'];
+                    ?>
+                        <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" 
+                           class="ht-cat-card-box" 
+                           title="<?php echo esc_attr($category->name); ?>"
+                           style="--cat-color: <?php echo esc_attr($palette['color']); ?>; --cat-bg: <?php echo esc_attr($palette['bg']); ?>; --cat-border: <?php echo esc_attr($palette['border']); ?>;">
+                            <div class="ht-cat-card-left">
+                                <span class="ht-cat-card-icon">
+                                    <?php ht_m3_icon($cat_icon, 18); ?>
+                                </span>
+                                <span class="ht-cat-card-name"><?php echo esc_html($category->name); ?></span>
+                            </div>
+                            <div class="ht-cat-card-right">
+                                <span class="ht-cat-stat-badge">
+                                    <?php echo esc_html($category->count); ?>
+                                </span>
+                                <span class="ht-cat-arrow-icon" aria-hidden="true">
+                                    <?php ht_m3_icon('chevron_right', 16); ?>
+                                </span>
+                            </div>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+</div><!-- .ht-sidebar-wrapper -->

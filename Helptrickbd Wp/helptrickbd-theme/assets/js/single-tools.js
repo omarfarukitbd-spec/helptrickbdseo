@@ -598,6 +598,62 @@
         });
     }
 
+    // -------------------------------------------------------------
+    // 9. Official PDF Download Countdown Timer (.pdf-download-btn[data-timer])
+    // -------------------------------------------------------------
+    const pdfButtons = document.querySelectorAll('.pdf-download-btn[data-timer]');
+    pdfButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            if (btn.classList.contains('is-ready')) {
+                const directUrl = btn.getAttribute('data-url') || btn.getAttribute('href');
+                if (directUrl && directUrl !== '#' && !directUrl.startsWith('javascript:')) {
+                    window.open(directUrl, '_blank', 'noopener,noreferrer');
+                }
+                return;
+            }
+
+            e.preventDefault();
+            if (btn.classList.contains('is-counting')) return;
+
+            btn.classList.add('is-counting');
+            const targetUrl = btn.getAttribute('data-url') || btn.getAttribute('href');
+            let seconds = parseInt(btn.getAttribute('data-timer'), 10) || 30;
+
+            const titleEl = btn.querySelector('.pdf-title');
+            const actionEl = btn.querySelector('.pdf-download-action');
+
+            if (titleEl) {
+                titleEl.textContent = 'লিংক প্রস্তুত হচ্ছে...';
+            }
+            if (actionEl) {
+                actionEl.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span>' + seconds + 's</span>';
+            }
+
+            const interval = setInterval(() => {
+                seconds--;
+                if (seconds > 0) {
+                    if (actionEl) {
+                        const span = actionEl.querySelector('span');
+                        if (span) span.textContent = seconds + 's';
+                    }
+                } else {
+                    clearInterval(interval);
+                    btn.classList.remove('is-counting');
+                    btn.classList.add('is-ready');
+                    if (titleEl) {
+                        titleEl.textContent = 'ফাইল প্রস্তুত! এখনই নিন';
+                    }
+                    if (actionEl) {
+                        actionEl.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg> <span>Download</span>';
+                    }
+                    if (targetUrl && targetUrl !== '#' && !targetUrl.startsWith('javascript:')) {
+                        btn.setAttribute('href', targetUrl);
+                    }
+                }
+            }, 1000);
+        });
+    });
+
 })();
 
 
