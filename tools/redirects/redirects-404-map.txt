@@ -1,0 +1,32 @@
+# redirects-404-map.txt — HelpTrickBD 301 রিডাইরেক্ট ম্যাপ
+# তৈরি: ২০২৬-১১-০৯ | যাচাই: ২০২৬-১১-০৯ (লাইভ সাইট খুলে দেখা হয়েছে)
+#
+# গুরুত্বপূর্ণ: সাইট এখন WordPress (Blogger থেকে মাইগ্রেট করা হয়েছে)।
+# এই রিডাইরেক্টগুলো WordPress-এ বসাতে হবে — যেমন Redirection প্লাগইন দিয়ে,
+# অথবা হোস্টিংয়ের 301 রুল দিয়ে। Blogger-এর "Custom redirects"-এ নয়।
+#
+# ফরম্যাট নিয়ে নোট:
+# - প্রতি লাইনে একটা রিডাইরেক্ট: "পুরনো URL -> নতুন URL" (301, স্থায়ী)।
+# - রিপোর tools/redirects/generate_redirects.py স্ক্রিপ্টে এই ফরম্যাট সরাসরি
+#   খাওয়ানো যাবে না — ওই স্ক্রিপ্ট শুধু 404 URL-এর তালিকা নেয় (প্রতি লাইনে
+#   একটা URL) আর টার্গেট নিজে থেকে ঠিক করে (smart category বা --default-to)।
+#   আলাদা আলাদা টার্গেট দেওয়ার সুবিধা ওতে নেই। তাই এই ফাইলটাই আসল ম্যাপ;
+#   স্ক্রিপ্ট ব্যবহার করতে চাইলে প্রতিটা টার্গেটের জন্য আলাদা করে চালাতে হবে,
+#   যেমন: python tools/redirects/generate_redirects.py --input <ফাইল> --default-to /about-us/
+#   অথবা এই ম্যাপের জোড়াগুলো সরাসরি Redirection প্লাগইনে বসাতে হবে।
+#
+# যাচাইয়ের ফল (২০২৬-১১-০৯):
+# - /p/about-us.html এখনো চালু আছে এবং /about-us/ পাতার হুবহু একই কনটেন্ট দেখায় (ডুপ্লিকেট)।
+# - /p/contact-us.html এখনো চালু আছে এবং /contact-us/ পাতার হুবহু একই কনটেন্ট দেখায় (ডুপ্লিকেট)।
+# - /p/terms-conditions.html এখনো চালু আছে এবং /terms-and-conditions/ পাতার হুবহু একই কনটেন্ট দেখায় (ডুপ্লিকেট)।
+# - নিচের 404 ঠিকানার কোনো লাইভ টার্গেট নেই — তাই এটার জন্য কোনো রিডাইরেক্ট লেখা হয়নি।
+#   পোস্টটি বানাতে হবে, অথবা অডিট পোস্ট থেকে লিংকটি সরাতে হবে। হোমপেজে ঠেলে দেওয়া ঠিক নয়।
+
+https://www.helptrickbd.com/p/about-us.html -> https://www.helptrickbd.com/about-us/
+https://www.helptrickbd.com/p/contact-us.html -> https://www.helptrickbd.com/contact-us/
+https://www.helptrickbd.com/p/terms-conditions.html -> https://www.helptrickbd.com/terms-and-conditions/
+
+# 404 — টার্গেট নেই, রিডাইরেক্ট নয় (2026-11-09 যাচাই: HTTP 404):
+# http://www.helptrickbd.com/honours-3rd-year-advanced-accounting-1-suggestion/
+# উৎস লিংক: https://www.helptrickbd.com/honours-3rd-year-audit-and-assurance-suggestion/ পোস্টের
+# "অনার্স ৩য় বর্ষ উন্নত হিসাববিজ্ঞান ১ সাজেশন 2026" লিংকটি।
