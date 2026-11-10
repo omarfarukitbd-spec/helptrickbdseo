@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '1.4.9');
+define('HT_THEME_VERSION', '1.4.10');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/material-icons.php';
@@ -206,6 +206,14 @@ function ht_enqueue_scripts() {
     wp_enqueue_style(
         'ht-google-fonts',
         'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
+        [],
+        null
+    );
+    // v1.4.10 (F19): Fira Code was declared in --ht-font-code but never
+    // enqueued on the front end, so code blocks fell back to Consolas.
+    wp_enqueue_style(
+        'ht-fira-code',
+        'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap',
         [],
         null
     );

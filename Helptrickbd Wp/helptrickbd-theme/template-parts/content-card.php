@@ -19,7 +19,18 @@ if (!defined('ABSPATH')) {
             <?php ht_m3_icon('bookmark', 18); ?>
         </button>
         <div class="ht-card-cat-float">
-            <?php ht_category_badge(); ?>
+            <?php
+            // v1.4.10 (F8): on a category archive, badge the card with the
+            // archive's own category instead of the post's first category.
+            $ht_badge_preferred = null;
+            if (is_category()) {
+                $ht_badge_qo = get_queried_object();
+                if ($ht_badge_qo && isset($ht_badge_qo->term_id)) {
+                    $ht_badge_preferred = $ht_badge_qo;
+                }
+            }
+            ht_category_badge(null, $ht_badge_preferred);
+            ?>
         </div>
     </div>
 

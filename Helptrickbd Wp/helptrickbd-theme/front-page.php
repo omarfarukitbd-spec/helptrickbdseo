@@ -20,6 +20,9 @@ get_header();
         <!-- 1. FEATURED HERO MAGAZINE GRID (1 LARGE + 3 SUB)          -->
         <!-- ========================================================= -->
         <?php
+        // v1.4.10 (F2): track every post already shown on this page so the
+        // category columns and the feed below never repeat a post.
+        $ht_seen_ids = [];
         $hero_query = new WP_Query([
             'posts_per_page'      => 4,
             'post_status'         => 'publish',
@@ -34,6 +37,7 @@ get_header();
                 <?php
                 while ($hero_query->have_posts()) :
                     $hero_query->the_post();
+                    $ht_seen_ids[] = get_the_ID();
                     $post_count++;
 
                     if ($post_count === 1) :
@@ -135,12 +139,16 @@ get_header();
                     $cat_icon  = function_exists('ht_get_category_icon') ? ht_get_category_icon($cat_slug, $cat_name) : 'folder';
                     $cat_pal   = function_exists('ht_get_category_palette') ? ht_get_category_palette($cat_slug, $cat_name) : ['color' => '#2563eb', 'bg' => 'rgba(37,99,235,0.08)', 'border' => 'rgba(37,99,235,0.2)'];
 
+                    // v1.4.10 (F2): fetch a few extra posts and exclude every
+                    // post already shown (hero + earlier columns); only the
+                    // first 4 unseen posts are displayed below.
                     $col_query = new WP_Query([
                         'cat'                 => $cat_id,
-                        'posts_per_page'      => 4,
+                        'posts_per_page'      => 8,
                         'post_status'         => 'publish',
                         'ignore_sticky_posts' => 1,
                         'no_found_rows'       => true,
+                        'post__not_in'        => $ht_seen_ids,
                     ]);
 
                     if ($col_query->have_posts()) :
@@ -151,9 +159,9 @@ get_header();
                         <div class="ht-col-header">
                             <div class="ht-col-title-wrap">
                                 <span class="ht-col-icon"><?php ht_m3_icon($cat_icon, 18); ?></span>
-                                <h3 class="ht-col-title">
+                                <h2 class="ht-col-title">
                                     <a href="<?php echo esc_url($cat_link); ?>"><?php echo esc_html($cat_name); ?></a>
-                                </h3>
+                                </h2>
                             </div>
                             <a href="<?php echo esc_url($cat_link); ?>" class="ht-col-more-link" aria-label="<?php echo esc_attr($cat_name); ?> - সকল পোস্ট">
                                 <span>আরও</span>
@@ -167,6 +175,14 @@ get_header();
                             while ($col_query->have_posts()) :
                                 $col_query->the_post();
                                 $col_count++;
+                                // Show at most 4 posts per column.
+                                if ($col_count > 4) {
+                                    break;
+                                }
+                                // Only displayed posts are marked seen — the
+                                // 5th-8th fetched posts stay available for
+                                // the feed below instead of vanishing.
+                                $ht_seen_ids[] = get_the_ID();
 
                                 if ($col_count === 1) :
                                     // 1st Post: Big Lead Post Card with Image
@@ -176,9 +192,9 @@ get_header();
                                             <?php ht_the_thumbnail(get_the_ID(), 'ht-card-thumb', 'ht-col-lead-img'); ?>
                                         </a>
                                         <div class="ht-col-lead-body">
-                                            <h4 class="ht-col-lead-title">
+                                            <h3 class="ht-col-lead-title">
                                                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                                            </h4>
+                                            </h3>
                                             <div class="ht-col-lead-meta">
                                                 <?php ht_post_date(); ?>
                                                 <?php ht_reading_time(); ?>
@@ -193,9 +209,9 @@ get_header();
                                     <article class="ht-col-sub-item">
                                         <span class="ht-col-sub-num"><?php echo esc_html($col_count); ?></span>
                                         <div class="ht-col-sub-body">
-                                            <h5 class="ht-col-sub-title">
+                                            <h3 class="ht-col-sub-title">
                                                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                                            </h5>
+                                            </h3>
                                             <div class="ht-col-sub-meta">
                                                 <time datetime="<?php echo esc_attr(get_the_date('c')); ?>">
                                                     <?php echo esc_html(get_the_date('j F, Y')); ?>
@@ -251,13 +267,18 @@ get_header();
 
                 <!-- Articles Grid Feed -->
                 <?php
-                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                // v1.4.10 (F1): on a static front page WordPress uses 'page',
+                // not 'paged' — read both so /page/2/ no longer repeats page 1.
+                // (F2): the feed excludes every post already shown above
+                // (hero + columns), so no 'offset' hack is needed and
+                // pagination stays consistent across pages.
+                $paged = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
                 $feed_query = new WP_Query([
                     'post_type'           => 'post',
                     'post_status'         => 'publish',
                     'paged'               => $paged,
                     'posts_per_page'      => 10,
-                    'offset'              => ($paged === 1) ? 4 : 0, // Offset first 4 hero posts on page 1
+                    'post__not_in'        => $ht_seen_ids,
                     'ignore_sticky_posts' => 1,
                 ]);
 

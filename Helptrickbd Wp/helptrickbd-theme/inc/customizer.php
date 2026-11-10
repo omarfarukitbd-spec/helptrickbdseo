@@ -251,49 +251,6 @@ function ht_customize_register($wp_customize) {
         'priority' => 15,
     ]);
 
-    // Sidebar Top Live Search
-    $wp_customize->add_setting('ht_sidebar_search_enable', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('ht_sidebar_search_enable', [
-        'label'       => esc_html__('Enable Top Live Search Box in Sidebar', 'helptrickbd'),
-        'description' => esc_html__('Provides instant AJAX search suggestions in the sidebar.', 'helptrickbd'),
-        'section'     => 'ht_sidebar_section',
-        'type'        => 'checkbox',
-    ]);
-
-    $wp_customize->add_setting('ht_sidebar_search_title', [
-        'default'           => esc_html__('Instant Search', 'helptrickbd'),
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('ht_sidebar_search_title', [
-        'label'   => esc_html__('Search Box Title', 'helptrickbd'),
-        'section' => 'ht_sidebar_section',
-        'type'    => 'text',
-    ]);
-
-    $wp_customize->add_setting('ht_sidebar_search_placeholder', [
-        'default'           => esc_html__('Search handnotes, suggestions, or guides...', 'helptrickbd'),
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('ht_sidebar_search_placeholder', [
-        'label'   => esc_html__('Search Field Placeholder', 'helptrickbd'),
-        'section' => 'ht_sidebar_section',
-        'type'    => 'text',
-    ]);
-
-    // Sidebar Countdown Widget
-    $wp_customize->add_setting('ht_sidebar_countdown_enable', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('ht_sidebar_countdown_enable', [
-        'label'   => esc_html__('Display Exam Countdown Card in Sidebar', 'helptrickbd'),
-        'section' => 'ht_sidebar_section',
-        'type'    => 'checkbox',
-    ]);
-
     // Sidebar Popular Posts
     $wp_customize->add_setting('ht_sidebar_popular_enable', [
         'default'           => true,

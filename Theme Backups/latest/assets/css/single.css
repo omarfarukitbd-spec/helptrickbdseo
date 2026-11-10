@@ -2859,4 +2859,367 @@ body.ht-focus-mode .ht-article-col {
     }
 }
 
+/* ==========================================================================
+   HelpTrickBD Official Button Standards (v1.4.9)
+   1. Official PDF Download Pill Button (.pdf-download-btn)
+   2. Official Source Link / Navigation Pill Button (.source-link-btn)
+   ========================================================================== */
+
+/* 1. PDF DOWNLOAD PILL BUTTON */
+.pdf-download-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.pdf-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 470px;
+  min-height: 60px;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e0e5ef;
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(30, 50, 90, 0.14);
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.pdf-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(30, 50, 90, 0.20);
+  background: #ffffff;
+}
+
+.pdf-file-icon {
+  width: 38px;
+  height: 42px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.pdf-divider {
+  width: 2px;
+  height: 38px;
+  background: #cbd3e2;
+  flex-shrink: 0;
+  transition: background 0.25s ease;
+}
+
+.pdf-info {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.pdf-title {
+  display: block;
+  color: #17233d !important;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.25s ease;
+}
+
+.pdf-download-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #f02d35, #cf101c);
+  color: #ffffff !important;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(210, 20, 30, 0.20);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.pdf-download-btn:hover .pdf-download-action {
+  background: linear-gradient(135deg, #e01b23, #b80914);
+  box-shadow: 0 3px 8px rgba(210, 20, 30, 0.35);
+  color: #ffffff !important;
+}
+
+.pdf-download-action svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+/* PDF Button Dark Mode */
+[data-theme="dark"] .pdf-download-btn,
+.dark .pdf-download-btn {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .pdf-download-btn:hover,
+.dark .pdf-download-btn:hover {
+  background: #243147 !important;
+  border-color: #475569 !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .pdf-divider,
+.dark .pdf-divider {
+  background: #334155 !important;
+}
+
+[data-theme="dark"] .pdf-title,
+.dark .pdf-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .pdf-download-action,
+.dark .pdf-download-action {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35) !important;
+}
+
+[data-theme="dark"] .pdf-download-btn:hover .pdf-download-action,
+.dark .pdf-download-btn:hover .pdf-download-action {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+}
+
+/* Timer State Overrides */
+.pdf-download-btn.is-counting .pdf-download-action {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3) !important;
+}
+.pdf-download-btn.is-ready .pdf-download-action {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* 2. SOURCE LINK PILL BUTTON */
+.source-link-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.source-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 480px;
+  min-height: 66px;
+  padding: 9px 12px 9px 16px;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  background: linear-gradient(120deg, #f4f6ff, #e5ecff);
+  border: 1px solid #d5ddff;
+  border-radius: 18px;
+  box-shadow: 0 4px 8px rgba(50, 75, 160, 0.20),
+              0 1px 3px rgba(50, 75, 160, 0.10);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.source-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(50, 75, 160, 0.25);
+  background: linear-gradient(120deg, #edf1ff, #dce6ff);
+}
+
+.source-link-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  color: #4935e9;
+  display: block;
+  transition: color 0.25s ease;
+}
+
+.source-link-divider {
+  width: 2px;
+  height: 38px;
+  background: #8294ff;
+  flex-shrink: 0;
+  transition: background 0.25s ease;
+}
+
+.source-link-content {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.source-link-title {
+  display: block;
+  color: #10265c !important;
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.25s ease;
+}
+
+.source-link-desc {
+  display: block;
+  color: #263d79 !important;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.25s ease;
+}
+
+.source-link-arrow {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d8e2ff;
+  border-radius: 11px;
+  color: #174edb !important;
+  transition: all 0.2s ease;
+}
+
+.source-link-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.source-link-btn:hover .source-link-arrow {
+  background: #2563eb;
+  color: #ffffff !important;
+  transform: scale(1.04);
+}
+
+/* Hover Protection Shield against Theme Collisions */
+.source-link-btn:hover,
+.source-link-btn:hover .source-link-title,
+.source-link-btn:hover .source-link-desc,
+.pdf-download-btn:hover,
+.pdf-download-btn:hover .pdf-title {
+  text-decoration: none !important;
+}
+
+/* Source Link Dark Mode */
+[data-theme="dark"] .source-link-btn,
+.dark .source-link-btn {
+  background: linear-gradient(120deg, #1e293b, #172554) !important;
+  border-color: #312e81 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .source-link-btn:hover,
+.dark .source-link-btn:hover {
+  background: linear-gradient(120deg, #243147, #1e3a8a) !important;
+  border-color: #4338ca !important;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.45) !important;
+}
+
+[data-theme="dark"] .source-link-icon,
+.dark .source-link-icon {
+  color: #818cf8 !important;
+}
+
+[data-theme="dark"] .source-link-divider,
+.dark .source-link-divider {
+  background: #4338ca !important;
+}
+
+[data-theme="dark"] .source-link-title,
+.dark .source-link-title {
+  color: #e0e7ff !important;
+}
+
+[data-theme="dark"] .source-link-desc,
+.dark .source-link-desc {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .source-link-arrow,
+.dark .source-link-arrow {
+  background: rgba(37, 99, 235, 0.22) !important;
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .source-link-btn:hover .source-link-arrow,
+.dark .source-link-btn:hover .source-link-arrow {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+/* Responsive Scaling for Mobile Screens (down to 320px) */
+@media (max-width: 480px) {
+  .pdf-download-btn {
+    gap: 7px;
+    padding: 6px 7px;
+    min-height: 52px;
+  }
+  .pdf-file-icon {
+    width: 32px;
+    height: 36px;
+  }
+  .pdf-divider {
+    height: 32px;
+  }
+  .pdf-title {
+    font-size: 14px;
+  }
+  .pdf-download-action {
+    padding: 8px 10px;
+    font-size: 12px;
+    gap: 5px;
+  }
+  .pdf-download-action svg {
+    width: 16px;
+    height: 16px;
+  }
+  .source-link-btn {
+    min-height: 56px;
+    gap: 10px;
+    padding: 7px 9px 7px 12px;
+  }
+  .source-link-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .source-link-divider {
+    height: 32px;
+  }
+  .source-link-title {
+    font-size: 14px;
+  }
+  .source-link-desc {
+    font-size: 11px;
+  }
+  .source-link-arrow {
+    width: 34px;
+    height: 34px;
+  }
+  .source-link-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
 

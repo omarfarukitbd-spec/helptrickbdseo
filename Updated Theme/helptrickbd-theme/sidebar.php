@@ -1,7 +1,7 @@
 <?php
 /**
  * The Sidebar containing the primary widget area
- * Sidebar Top AJAX Live Search, Exam Countdown, Ranked Popular Posts with Circular Thumbs,
+ * Ranked Popular Posts with Rounded Square Thumbs,
  * Sticky Ad Slot, Contextual Category Cards with Far-Right Stats.
  * Completely purged of legacy core widgets (Recent Posts, Archives, Comments, raw bullet Categories).
  *
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 
 <div class="ht-sidebar-wrapper">
 
-    <!-- Widget 3: Ranked Compact Popular Posts with Circular Round Thumbs (Position #3) -->
+    <!-- Widget 3: Ranked Compact Popular Posts with Rounded Square Thumbs (Position #3) -->
     <?php if (get_theme_mod('ht_sidebar_popular_enable', true)) : ?>
         <div class="ht-widget ht-widget-popular">
             <div class="ht-widget-header">
@@ -60,10 +60,10 @@ if (!defined('ABSPATH')) {
                             $rank++;
                         ?>
                             <article class="ht-popular-item">
-                                <!-- Compact Round Circular Post Thumbnail with Floating Rank Badge -->
+                                <!-- Compact Rounded Square Post Thumbnail with Floating Rank Badge -->
                                 <a href="<?php the_permalink(); ?>" class="ht-popular-thumb-wrap" aria-label="<?php the_title_attribute(); ?>">
-                                    <div class="ht-popular-thumb-circle">
-                                        <?php ht_the_thumbnail(get_the_ID(), 'thumbnail', 'ht-popular-thumb-round'); ?>
+                                    <div class="ht-popular-thumb-square">
+                                        <?php ht_the_thumbnail(get_the_ID(), 'thumbnail', 'ht-popular-thumb-square-img'); ?>
                                     </div>
                                     <span class="ht-popular-badge ht-rank-<?php echo esc_attr($rank); ?>" title="<?php echo esc_attr('Rank #' . $rank); ?>"><?php echo esc_html($rank); ?></span>
                                 </a>

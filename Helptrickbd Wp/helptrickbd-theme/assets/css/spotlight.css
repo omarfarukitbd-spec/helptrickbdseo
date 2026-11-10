@@ -735,6 +735,20 @@
     display: none;
 }
 
+/* v1.4.10 (F5): while the fixed banner is visible, JS adds
+   .ht-cookie-banner-visible to <body> and sets --ht-cookie-banner-height
+   to the banner's measured height, so the footer copyright is never
+   covered. On mobile the dock's 70px is added on top. */
+body.ht-cookie-banner-visible {
+    padding-bottom: var(--ht-cookie-banner-height, 56px);
+}
+
+@media (max-width: 768px) {
+    body.ht-cookie-banner-visible {
+        padding-bottom: calc(70px + var(--ht-cookie-banner-height, 56px));
+    }
+}
+
 .ht-cookie-inner {
     max-width: var(--ht-max-width);
     margin: 0 auto;

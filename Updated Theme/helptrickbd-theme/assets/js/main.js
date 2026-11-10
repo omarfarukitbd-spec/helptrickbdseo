@@ -493,9 +493,24 @@
     const cookieBanner = document.getElementById('ht-cookie-banner');
     const cookieAcceptBtn = document.getElementById('ht-cookie-accept');
 
+    // v1.4.10 (F5): while the fixed banner is visible, reserve its measured
+    // height as body padding so it never covers the footer copyright.
+    function updateCookieBannerPadding() {
+        if (!cookieBanner) return;
+        var visible = cookieBanner.style.display !== 'none' && cookieBanner.offsetHeight > 0;
+        if (visible) {
+            document.body.classList.add('ht-cookie-banner-visible');
+            document.body.style.setProperty('--ht-cookie-banner-height', cookieBanner.offsetHeight + 'px');
+        } else {
+            document.body.classList.remove('ht-cookie-banner-visible');
+            document.body.style.removeProperty('--ht-cookie-banner-height');
+        }
+    }
+
     if (cookieBanner && !localStorage.getItem('ht_cookie_accepted')) {
         setTimeout(() => {
             cookieBanner.style.display = 'block';
+            updateCookieBannerPadding();
         }, 1500);
     }
 
@@ -503,8 +518,11 @@
         cookieAcceptBtn.addEventListener('click', function () {
             localStorage.setItem('ht_cookie_accepted', 'true');
             if (cookieBanner) cookieBanner.style.display = 'none';
+            updateCookieBannerPadding();
         });
     }
+
+    window.addEventListener('resize', updateCookieBannerPadding);
 
     // Polite AdBlocker Check
     const adblockModal = document.getElementById('ht-adblock-modal');

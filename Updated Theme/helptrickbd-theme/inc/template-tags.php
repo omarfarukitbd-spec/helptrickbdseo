@@ -154,21 +154,53 @@ function ht_eeat_badge() {
  *
  * @param int $post_id Post ID.
  */
-function ht_category_badge($post_id = null) {
+function ht_category_badge($post_id = null, $preferred_cat = null) {
     if (!$post_id) {
         $post_id = get_the_ID();
     }
 
     $categories = get_the_category($post_id);
-    if (!empty($categories)) {
-        $primary_cat = $categories[0];
-        printf(
-            '<a href="%s" class="ht-cat-badge ht-cat-%s">%s</a>',
-            esc_url(get_category_link($primary_cat->term_id)),
-            esc_attr($primary_cat->slug),
-            esc_html($primary_cat->name)
-        );
+    if (empty($categories)) {
+        return;
     }
+
+    // v1.4.10 (F8): badge priority — (1) an explicitly passed category,
+    // (2) the queried category on a category archive, (3) the Rank Math
+    // primary category, (4) the post's first category.
+    $primary_cat = $categories[0];
+
+    if ($preferred_cat instanceof WP_Term) {
+        $primary_cat = $preferred_cat;
+    } elseif (is_category()) {
+        $queried = get_queried_object();
+        if ($queried instanceof WP_Term) {
+            foreach ($categories as $cat) {
+                if ((int) $cat->term_id === (int) $queried->term_id) {
+                    $primary_cat = $cat;
+                    break;
+                }
+            }
+        }
+    }
+
+    if ($primary_cat === $categories[0]) {
+        $rank_math_primary = (int) get_post_meta($post_id, 'rank_math_primary_category', true);
+        if ($rank_math_primary > 0) {
+            foreach ($categories as $cat) {
+                if ((int) $cat->term_id === $rank_math_primary) {
+                    $primary_cat = $cat;
+                    break;
+                }
+            }
+        }
+    }
+
+    printf(
+        '<a href="%s" class="ht-cat-badge ht-cat-%s">%s</a>',
+        esc_url(get_category_link($primary_cat->term_id)),
+        esc_attr($primary_cat->slug),
+        esc_html($primary_cat->name)
+    );
 }
 
 /**

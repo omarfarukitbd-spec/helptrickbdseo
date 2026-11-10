@@ -64,8 +64,8 @@ class HT_Popular_Posts_Widget extends WP_Widget {
                 ?>
                     <article class="ht-popular-item">
                         <a href="<?php the_permalink(); ?>" class="ht-popular-thumb-wrap" aria-label="<?php the_title_attribute(); ?>">
-                            <div class="ht-popular-thumb-circle">
-                                <?php ht_the_thumbnail(get_the_ID(), 'thumbnail', 'ht-popular-thumb-round'); ?>
+                            <div class="ht-popular-thumb-square">
+                                <?php ht_the_thumbnail(get_the_ID(), 'thumbnail', 'ht-popular-thumb-square-img'); ?>
                             </div>
                             <span class="ht-popular-badge ht-rank-<?php echo esc_attr($rank); ?>" title="র‍্যাঙ্ক #<?php echo esc_attr($rank); ?>"><?php echo esc_html(ht_bn_number($rank)); ?></span>
                         </a>
