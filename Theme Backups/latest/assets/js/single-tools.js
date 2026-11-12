@@ -43,9 +43,19 @@
     const tocToggle = document.getElementById('ht-toc-header');
 
     if (tocContainer && tocNav) {
-        const headings = articleBody.querySelectorAll('h2, h3');
+        // v1.4.10 (F6): ignore headings the reader never sees — the hidden
+        // Rank Math TOC block (display:none) leaves its "সূচিপত্র" H2 in the
+        // DOM, which used to become TOC item #1 and inflate the count.
+        const allHeadings = articleBody.querySelectorAll('h2, h3');
+        const headings = Array.from(allHeadings).filter(function (h) {
+            if (h.closest('.rank-math-toc, .wp-block-rank-math-toc-block, #rank-math-toc')) return false;
+            return h.offsetParent !== null;
+        });
+        // The badge counts numbered chapters (H2s) only — H3s are nested
+        // sub-items, so counting them produced "১৫টি অধ্যায়" for 8 chapters.
+        const h2Count = headings.filter(function (h) { return h.tagName.toLowerCase() === 'h2'; }).length;
 
-        if (headings.length < 2) {
+        if (headings.length < 2 || h2Count < 1) {
             tocContainer.style.display = 'none';
         } else {
             // Mobile Specific Behavior: Auto-collapse by default on mobile screens (< 768px)
@@ -59,7 +69,7 @@
             if (titleWrap && !titleWrap.querySelector('.ht-toc-count-badge')) {
                 const countBadge = document.createElement('span');
                 countBadge.className = 'ht-toc-count-badge';
-                countBadge.textContent = `${headings.length}টি অধ্যায়`;
+                countBadge.textContent = `${h2Count}টি অধ্যায়`;
                 titleWrap.appendChild(countBadge);
             }
 
@@ -472,6 +482,22 @@
     // -------------------------------------------------------------
     // 13. Responsive Table Wrapper Automation
     // -------------------------------------------------------------
+    // v1.4.10 (F12): the "scroll left-right" hint shows only when the table
+    // actually overflows its wrapper (CSS hides it by default; the
+    // ht-table-overflows class reveals it). Re-checked on resize and after
+    // fonts load, because a table that fits on desktop may overflow on a phone.
+    function updateTableOverflowHints() {
+        articleBody.querySelectorAll('.ht-table-responsive, .ht-table-wrapper').forEach(function (wrapper) {
+            var table = wrapper.querySelector('table');
+            if (!table) return;
+            if (wrapper.scrollWidth > wrapper.clientWidth + 1) {
+                wrapper.classList.add('ht-table-overflows');
+            } else {
+                wrapper.classList.remove('ht-table-overflows');
+            }
+        });
+    }
+
     articleBody.querySelectorAll('table').forEach(table => {
         if (!table.parentElement.classList.contains('ht-table-wrapper') && !table.parentElement.classList.contains('ht-table-responsive')) {
             const wrapper = document.createElement('div');
@@ -490,6 +516,12 @@
             wrapper.appendChild(table);
         }
     });
+
+    updateTableOverflowHints();
+    window.addEventListener('resize', updateTableOverflowHints);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(updateTableOverflowHints);
+    }
 
     // -------------------------------------------------------------
     // 14. Dark Mode Content Color Normalization for Migrated Articles

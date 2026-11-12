@@ -195,10 +195,11 @@
   }
 
   function updateDashboard(cgpa, credits, points, trendData, trendConfig) {
-    const formattedCgpa = cgpa.toFixed(2);
-    dashCgpaVal.textContent = formattedCgpa;
-    dashTotalCredits.textContent = credits;
-    dashTotalPoints.textContent = points.toFixed(2);
+    // v1.4.11: empty state shows a dash, not 0.00, until the user enters a GPA.
+    const isEmpty = (credits === 0);
+    dashCgpaVal.textContent = isEmpty ? '\u2013' : cgpa.toFixed(2);
+    dashTotalCredits.textContent = isEmpty ? '\u2013' : credits;
+    dashTotalPoints.textContent = isEmpty ? '\u2013' : points.toFixed(2);
 
     // Update Circular Gauge
     const circumference = 314.16;

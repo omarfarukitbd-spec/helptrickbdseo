@@ -192,7 +192,12 @@ add_action('wp_head', 'ht_render_schema_jsonld', 2);
 
 /**
  * Helper to auto-extract FAQs from content.
- * Matches headings containing 'প্রশ্ন', 'FAQ', '?' followed by paragraphs.
+ * Only reads the explicit FAQ section (a heading containing 'প্রশ্নোত্তর'
+ * or 'FAQ'); inside it, question headings (containing '?') followed by a
+ * paragraph become FAQ items. Headings outside the FAQ section are ignored.
+ * NOTE: the "Q: সূচিপত্র" text some crawlers render is NOT produced here —
+ * this extractor never outputs it; its generator lives elsewhere
+ * (Rank Math / another plugin), so do not "fix" this function for it.
  *
  * @param string $content Post content HTML.
  * @return array Schema.org Question array.
@@ -202,14 +207,33 @@ function ht_extract_faqs_from_content($content) {
         return [];
     }
 
+    // 1. Find the explicit FAQ section heading.
+    if (!preg_match('/<h[2-4][^>]*>(.*?(?:প্রশ্নোত্তর|FAQ).*?)<\/h[2-4]>/ius', $content, $section, PREG_OFFSET_CAPTURE)) {
+        return [];
+    }
+
+    $faq_section = substr($content, $section[0][1]);
+
+    // 2. Stop at the next top-level (H2) section heading after the FAQ heading.
+    $after_heading = substr($faq_section, strlen($section[0][0]));
+    if (preg_match('/<h2[^>]*>/i', $after_heading, $next_h2, PREG_OFFSET_CAPTURE)) {
+        $faq_section = substr($faq_section, 0, strlen($section[0][0]) + $next_h2[0][1]);
+    }
+
+    // 3. Within the FAQ section, only question headings (containing "?")
+    // followed by a paragraph become FAQ items.
     $faqs = [];
-    // Match h2/h3/h4 followed by paragraph
-    $pattern = '/<(h[2-4])[^>]*>(.*?(?:\?|প্রশ্ন|FAQ).*?)<\/\1>\s*<p[^>]*>(.*?)<\/p>/ius';
-    if (preg_match_all($pattern, $content, $matches, PREG_SET_ORDER)) {
+    $pattern = '/<(h[2-4])[^>]*>(.*?\?.*?)<\/\1>\s*<p[^>]*>(.*?)<\/p>/ius';
+    if (preg_match_all($pattern, $faq_section, $matches, PREG_SET_ORDER)) {
         $count = 0;
         foreach ($matches as $match) {
             if ($count >= 6) {
                 break; // Max 6 FAQs for rich snippet
+            }
+            // Skip the section heading itself if it contains a "?" — it is
+            // the section title, not a question.
+            if (wp_strip_all_tags($match[2]) === wp_strip_all_tags($section[1][0])) {
+                continue;
             }
             $question = wp_strip_all_tags($match[2]);
             $answer   = wp_strip_all_tags($match[3]);

@@ -309,6 +309,10 @@ body.ht-font-lg .ht-entry-content blockquote {
     margin: 24px 0 32px 0;
     overflow: hidden;
     transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    /* v1.4.10 (F6): stay visible while reading a long article. */
+    position: sticky;
+    top: 90px;
+    z-index: 5;
 }
 
 .ht-toc-container:hover {
@@ -372,6 +376,10 @@ body.ht-font-lg .ht-entry-content blockquote {
 .ht-toc-nav {
     padding: 16px 20px 20px 24px;
     background: var(--ht-surface);
+    /* v1.4.10 (F6): cap the height on desktop so a long TOC no longer
+       pushes the featured image below the fold; it scrolls internally. */
+    max-height: 420px;
+    overflow-y: auto;
 }
 
 .ht-toc-list {
@@ -416,6 +424,8 @@ body.ht-font-lg .ht-entry-content blockquote {
         border-radius: 14px;
         border-left-width: 3.5px;
         box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+        /* v1.4.10 (F6): no sticky TOC on mobile (it auto-collapses). */
+        position: static;
     }
 
     .ht-toc-header {
@@ -455,8 +465,9 @@ body.ht-font-lg .ht-entry-content blockquote {
  * 6. Article Body Typography & Gutenberg Blocks
  * ------------------------------------------------------------- */
 .ht-entry-content {
-    font-size: 1.12rem;
-    line-height: 1.95;
+    /* v1.4.10 (F13): 17px/1.8 — the old 17.9px/1.95 was very loose. */
+    font-size: 1.0625rem;
+    line-height: 1.8;
     color: var(--ht-text-primary);
     font-family: var(--ht-font-bn) !important;
     word-break: break-word;
@@ -489,15 +500,15 @@ body.ht-font-lg .ht-entry-content blockquote {
 
 .ht-entry-content p {
     margin-bottom: 22px;
-    font-size: 1.12rem;
-    line-height: 1.95;
+    font-size: 1.0625rem;
+    line-height: 1.8;
     color: var(--ht-text-primary);
 }
 
 /* First lead paragraph with elegant prominence */
 .ht-entry-content > p:first-of-type {
-    font-size: 1.18rem;
-    line-height: 2.0;
+    font-size: 1.125rem;
+    line-height: 1.9;
     color: var(--ht-text-secondary);
     font-weight: 500;
 }
@@ -693,7 +704,9 @@ body.ht-font-lg .ht-entry-content blockquote {
 }
 
 .ht-table-scroll-hint {
-    display: flex;
+    /* v1.4.10 (F12): hidden by default — JS adds .ht-table-overflows to the
+       wrapper only when the table is genuinely wider than its container. */
+    display: none;
     align-items: center;
     gap: 6px;
     font-size: 0.8rem;
@@ -704,12 +717,17 @@ body.ht-font-lg .ht-entry-content blockquote {
     border-bottom: 1px solid var(--ht-primary-border);
 }
 
+.ht-table-responsive.ht-table-overflows .ht-table-scroll-hint,
+.ht-table-wrapper.ht-table-overflows .ht-table-scroll-hint {
+    display: flex;
+}
+
 .ht-entry-content table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
     font-size: 1rem;
-    min-width: 580px;
+    min-width: 480px;
     border: 1px solid var(--ht-surface-border);
     border-radius: 12px;
     overflow: hidden;
@@ -1702,7 +1720,8 @@ body.ht-focus-mode .ht-article-col {
         justify-content: center !important;
         border-radius: var(--ht-radius-md) !important;
     }
-    .ht-table-scroll-hint {
+    .ht-table-responsive.ht-table-overflows .ht-table-scroll-hint,
+    .ht-table-wrapper.ht-table-overflows .ht-table-scroll-hint {
         display: flex;
     }
 }

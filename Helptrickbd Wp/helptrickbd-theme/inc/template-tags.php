@@ -65,7 +65,17 @@ function ht_get_reading_time($post_id = null) {
     }
 
     $content = get_post_field('post_content', $post_id);
-    $clean_content = wp_strip_all_tags(strip_shortcodes($content));
+    // v1.4.11: count the RENDERED content, not the raw post_content.
+    // Tables served from a shortcode or a reusable block render thousands
+    // of words but store only ~36 words in post_content, so the old raw
+    // count showed "৩৬ শব্দ · ১ মিনিট" on a 2,081-word post. do_blocks()
+    // + do_shortcode() expand those without running the the_content ad
+    // inserter, so ads never inflate the count.
+    $rendered = do_blocks($content);
+    $rendered = do_shortcode($rendered);
+    $rendered = preg_replace('/<script\b[^>]*>.*?<\/script>/is', '', $rendered);
+    $rendered = preg_replace('/<style\b[^>]*>.*?<\/style>/is', '', $rendered);
+    $clean_content = wp_strip_all_tags($rendered);
     $word_count = count(preg_split('/\s+/u', $clean_content, -1, PREG_SPLIT_NO_EMPTY));
 
     // Average reading speed: 180 words per minute for Bengali/academic content
