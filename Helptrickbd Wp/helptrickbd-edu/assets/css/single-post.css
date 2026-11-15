@@ -184,3 +184,123 @@
 .ht-related-card h4 a:hover {
   color: var(--ht-primary);
 }
+
+/* -------------------------------------------------------------------------
+ * Rank Math PRO TOC & Native Table of Contents
+ * ------------------------------------------------------------------------- */
+#ht-toc,
+.wp-block-rank-math-toc {
+  background: var(--ht-surface);
+  border: 2px solid var(--ht-rule);
+  border-radius: var(--ht-radius-md);
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+
+#ht-toc h2,
+.wp-block-rank-math-toc h2 {
+  font-family: var(--ht-font-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 12px;
+  border-bottom: 1px solid var(--ht-border);
+  padding-bottom: 8px;
+}
+
+#ht-toc nav ul,
+.wp-block-rank-math-toc nav ul {
+  list-style: decimal !important;
+  padding-left: 20px !important;
+  margin: 0;
+}
+
+#ht-toc li,
+.wp-block-rank-math-toc li {
+  margin-bottom: 6px;
+}
+
+#ht-toc li a,
+.wp-block-rank-math-toc li a {
+  font-weight: 600;
+  color: var(--ht-text-primary);
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+#ht-toc li a:hover,
+.wp-block-rank-math-toc li a:hover {
+  color: var(--ht-primary);
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------
+ * Zero-CLS Single Post Ad Slots
+ * ------------------------------------------------------------------------- */
+.htbd-ad-slot-single {
+  min-height: 250px;
+  max-width: 336px;
+  margin: 28px auto;
+}
+
+/* -------------------------------------------------------------------------
+ * Print Optimization (@media print) for Students
+ * ------------------------------------------------------------------------- */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    font-family: "SolaimanLipi", serif;
+  }
+
+  .n-dateline,
+  .n-masthead,
+  .n-navwrap,
+  .n-ticker,
+  .n-social-cta,
+  .ht-footer,
+  .ht-related-section,
+  .htbd-ad-slot,
+  .ht-search-modal,
+  .ht-drawer,
+  #ht-back-to-top,
+  .ht-icon-btn,
+  .ht-copy-btn,
+  .ht-bookmark-btn,
+  #ht-reading-progress,
+  button {
+    display: none !important;
+  }
+
+  .ht-single-layout {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ht-single-title {
+    font-size: 20pt;
+    color: #000000 !important;
+  }
+
+  .ht-entry-content {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #000000 !important;
+  }
+
+  table {
+    page-break-inside: avoid;
+    border: 1px solid #000000 !important;
+  }
+
+  th, td {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  a {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+}

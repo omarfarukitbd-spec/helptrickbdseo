@@ -13,6 +13,9 @@ if (!defined('ABSPATH')) {
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <?php wp_head(); ?>
 </head>

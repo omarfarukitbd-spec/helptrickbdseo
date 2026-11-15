@@ -27,6 +27,9 @@ if (!defined('ABSPATH')) {
       </div>
     </form>
 
+    <!-- Live AJAX Search Suggestions Container -->
+    <div id="ht-live-search-results" class="ht-live-search-results" style="display:none;" aria-live="polite"></div>
+
     <div class="ht-search-hints">
       <span><?php esc_html_e('জনপ্রিয় অনুসন্ধান:', 'helptrickbd-edu'); ?></span>
       <a href="<?php echo esc_url(home_url('/?s=রাষ্ট্রবিজ্ঞান')); ?>">রাষ্ট্রবিজ্ঞান</a>

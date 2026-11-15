@@ -70,6 +70,40 @@ if (!function_exists('htbd_edu_enqueue_scripts')) {
             $filter_js_ver = filemtime($theme_dir . '/assets/js/home-filter.js');
             wp_enqueue_script('htbd-home-filter-js', $theme_uri . '/assets/js/home-filter.js', array(), $filter_js_ver, true);
         }
+
+        // 10. Live AJAX Instant Search JS
+        if (file_exists($theme_dir . '/assets/js/ajax-search.js')) {
+            $ajax_js_ver = filemtime($theme_dir . '/assets/js/ajax-search.js');
+            wp_enqueue_script('htbd-ajax-search-js', $theme_uri . '/assets/js/ajax-search.js', array(), $ajax_js_ver, true);
+            wp_localize_script('htbd-ajax-search-js', 'htbdEduSettings', array(
+                'restUrl' => esc_url_raw(rest_url('wp/v2/')),
+                'nonce'   => wp_create_nonce('wp_rest'),
+            ));
+        }
+
+        // 11. Offline Bookmarks Engine JS
+        if (file_exists($theme_dir . '/assets/js/bookmarks.js')) {
+            $bm_js_ver = filemtime($theme_dir . '/assets/js/bookmarks.js');
+            wp_enqueue_script('htbd-bookmarks-js', $theme_uri . '/assets/js/bookmarks.js', array(), $bm_js_ver, true);
+        }
+
+        // 12. Real-Time Exam Countdown JS (Home only)
+        if ((is_front_page() || is_home()) && file_exists($theme_dir . '/assets/js/exam-countdown.js')) {
+            $exam_js_ver = filemtime($theme_dir . '/assets/js/exam-countdown.js');
+            wp_enqueue_script('htbd-exam-countdown-js', $theme_uri . '/assets/js/exam-countdown.js', array(), $exam_js_ver, true);
+        }
+
+        // 13. Reading Progress Indicator JS (Single posts)
+        if (is_singular() && file_exists($theme_dir . '/assets/js/reading-progress.js')) {
+            $read_js_ver = filemtime($theme_dir . '/assets/js/reading-progress.js');
+            wp_enqueue_script('htbd-reading-progress-js', $theme_uri . '/assets/js/reading-progress.js', array(), $read_js_ver, true);
+        }
+
+        // 14. 1-Click Code & Question Copy Engine JS (Single posts)
+        if (is_singular() && file_exists($theme_dir . '/assets/js/copy-question.js')) {
+            $copy_js_ver = filemtime($theme_dir . '/assets/js/copy-question.js');
+            wp_enqueue_script('htbd-copy-question-js', $theme_uri . '/assets/js/copy-question.js', array(), $copy_js_ver, true);
+        }
     }
 }
 add_action('wp_enqueue_scripts', 'htbd_edu_enqueue_scripts');
@@ -78,7 +112,16 @@ add_action('wp_enqueue_scripts', 'htbd_edu_enqueue_scripts');
  * Add defer attribute to enqueued scripts for performance.
  */
 function htbd_edu_defer_scripts($tag, $handle) {
-    $defer_handles = array('htbd-main-js', 'htbd-font-resizer-js', 'htbd-home-filter-js');
+    $defer_handles = array(
+        'htbd-main-js',
+        'htbd-font-resizer-js',
+        'htbd-home-filter-js',
+        'htbd-ajax-search-js',
+        'htbd-bookmarks-js',
+        'htbd-exam-countdown-js',
+        'htbd-reading-progress-js',
+        'htbd-copy-question-js',
+    );
     if (in_array($handle, $defer_handles, true)) {
         return str_replace(' src', ' defer="defer" src', $tag);
     }

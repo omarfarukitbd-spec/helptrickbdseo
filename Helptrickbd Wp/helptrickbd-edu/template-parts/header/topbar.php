@@ -28,8 +28,14 @@ if (!defined('ABSPATH')) {
         </div>
 
         <!-- Spotlight Search Trigger -->
-        <button type="button" class="ht-icon-btn ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান করুন', 'helptrickbd-edu'); ?>">
+        <button type="button" class="ht-icon-btn ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান করুন', 'helptrickbd-edu'); ?>" title="<?php esc_attr_e('অনুসন্ধান', 'helptrickbd-edu'); ?>">
           <?php htbd_icon('search', array('width' => 16, 'height' => 16)); ?>
+        </button>
+
+        <!-- Saved Bookmarks Drawer Trigger -->
+        <button type="button" id="ht-bookmark-trigger" class="ht-icon-btn" aria-label="<?php esc_attr_e('সংরক্ষিত হ্যান্ডনোট', 'helptrickbd-edu'); ?>" title="<?php esc_attr_e('সংরক্ষিত হ্যান্ডনোট', 'helptrickbd-edu'); ?>" style="position:relative;">
+          <?php htbd_icon('bookmark', array('width' => 16, 'height' => 16)); ?>
+          <span id="ht-bookmark-badge" style="display:none;position:absolute;top:-4px;right:-4px;background:var(--ht-accent);color:#ffffff;font-size:0.65rem;font-weight:700;padding:1px 5px;border-radius:999px;line-height:1.2;">0</span>
         </button>
 
         <!-- Dark / Light Theme Toggle -->

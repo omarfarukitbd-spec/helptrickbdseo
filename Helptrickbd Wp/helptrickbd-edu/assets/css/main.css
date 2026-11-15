@@ -294,6 +294,25 @@ p {
   display: none;
 }
 
+/* Hardened menu support for wp_nav_menu() unordered lists */
+.n-nav-track ul,
+.n-nav-track ol {
+  display: flex !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 8px !important;
+}
+
+.n-nav-track li {
+  display: inline-flex !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.n-nav-track li a,
 .n-nav-item {
   display: inline-flex;
   align-items: center;
@@ -304,8 +323,12 @@ p {
   border-radius: var(--ht-radius-full);
   background: transparent;
   transition: var(--ht-transition);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
+.n-nav-track li a:hover,
+.n-nav-track li.current-menu-item a,
 .n-nav-item:hover,
 .n-nav-item.active {
   background: var(--ht-primary-soft);
@@ -721,4 +744,228 @@ p {
   gap: 12px;
   font-size: 0.8125rem;
   color: var(--ht-text-muted);
+}
+
+/* -------------------------------------------------------------------------
+ * 12. Accessibility & Screen Reader Classes (WCAG 2.1 AA)
+ * ------------------------------------------------------------------------- */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 999999;
+  background: var(--ht-primary);
+  color: #ffffff !important;
+  padding: 12px 20px;
+  border-radius: var(--ht-radius-md);
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  outline: 3px solid #ffffff;
+  clip: auto !important;
+  clip-path: none !important;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------
+ * 13. Student Engagement Engine: Reading Progress Bar
+ * ------------------------------------------------------------------------- */
+#ht-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--ht-primary-light);
+  z-index: 99999;
+  transition: width 0.1s linear;
+}
+
+/* -------------------------------------------------------------------------
+ * 14. 1-Click Copy Toast Notification
+ * ------------------------------------------------------------------------- */
+#ht-copy-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: var(--ht-radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#ht-copy-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ht-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--ht-surface-alt);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-sm);
+  color: var(--ht-text-secondary);
+  cursor: pointer;
+  transition: var(--ht-transition);
+}
+
+.ht-copy-btn:hover {
+  background: var(--ht-primary-soft);
+  color: var(--ht-primary);
+  border-color: var(--ht-primary);
+}
+
+/* -------------------------------------------------------------------------
+ * 15. Live AJAX Search Results Box in Modal
+ * ------------------------------------------------------------------------- */
+.ht-live-search-results {
+  max-height: 380px;
+  overflow-y: auto;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ht-live-search-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--ht-surface);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-sm);
+  text-decoration: none;
+  color: var(--ht-text-primary);
+  transition: var(--ht-transition);
+}
+
+.ht-live-search-item:hover,
+.ht-live-search-item:focus {
+  background: var(--ht-primary-soft);
+  border-color: var(--ht-primary);
+  transform: translateX(4px);
+}
+
+.ht-live-search-thumb {
+  width: 48px;
+  height: 36px;
+  border-radius: var(--ht-radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--ht-surface-alt);
+}
+
+.ht-live-search-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.4;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ht-live-search-meta {
+  font-size: 0.75rem;
+  color: var(--ht-text-muted);
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------------------------
+ * 16. Bookmark Button & Drawer
+ * ------------------------------------------------------------------------- */
+.ht-bookmark-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ht-surface);
+  border: 1px solid var(--ht-border);
+  color: var(--ht-text-muted);
+  cursor: pointer;
+  transition: var(--ht-transition);
+}
+
+.ht-bookmark-btn:hover,
+.ht-bookmark-btn.bookmarked {
+  color: var(--ht-accent);
+  border-color: var(--ht-accent);
+  background: var(--ht-accent-soft);
+}
+
+.ht-bookmark-drawer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ht-bookmark-drawer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--ht-surface-alt);
+  border-radius: var(--ht-radius-sm);
+  gap: 10px;
+}
+
+.ht-bookmark-drawer-item a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ht-text-primary);
+  text-decoration: none;
+  flex: 1;
+}
+
+.ht-bookmark-drawer-item a:hover {
+  color: var(--ht-primary);
+}
+
+.ht-bookmark-remove {
+  background: none;
+  border: none;
+  color: var(--ht-text-muted);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.ht-bookmark-remove:hover {
+  color: var(--ht-accent);
 }

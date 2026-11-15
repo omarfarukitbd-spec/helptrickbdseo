@@ -160,9 +160,11 @@ def check_core_web_vitals(file_path, content):
     
     # In template-parts, check <img> tags have loading or aspect-ratio or sizes
     if file_path.endswith('.php'):
-        img_tags = re.findall(r'<img\b[^>]*>', content, re.IGNORECASE)
+        # Strip PHP tags first so ?> does not break the HTML tag boundary
+        clean_html = re.sub(r'<\?php[\s\S]*?\?>', '""', content)
+        img_tags = re.findall(r'<img\b[^>]*>', clean_html, re.IGNORECASE)
         for img in img_tags:
-            if 'loading=' not in img and 'class="skip-lazy"' not in img:
+            if 'loading=' not in img and 'class="skip-lazy"' not in img and 'fetchpriority=' not in img:
                 errors.append(f"Image tag missing loading=\"lazy\": {img[:50]}...")
             if 'width=' not in img and 'height=' not in img and 'style=' not in img and 'aspect-ratio' not in img:
                 errors.append(f"Image tag missing width/height/aspect-ratio: {img[:50]}...")

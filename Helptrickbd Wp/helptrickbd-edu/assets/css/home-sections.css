@@ -808,3 +808,66 @@
   color: var(--ht-accent);
   white-space: nowrap;
 }
+
+/* -------------------------------------------------------------------------
+ * Zero-CLS Responsive AdSlot Containers
+ * ------------------------------------------------------------------------- */
+.htbd-ad-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  text-align: center;
+  background: var(--ht-surface-alt);
+  border: 1px dashed var(--ht-border);
+  border-radius: var(--ht-radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.htbd-ad-slot::before {
+  content: 'বিজ্ঞাপন';
+  font-size: 0.6875rem;
+  color: var(--ht-text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.htbd-ad-header { min-height: 90px; max-width: 728px; width: 100%; }
+.htbd-ad-infeed { min-height: 120px; width: 100%; }
+.htbd-ad-single { min-height: 250px; max-width: 336px; width: 100%; }
+
+/* -------------------------------------------------------------------------
+ * Live Exam Countdown Ticking Card (Zero CLS, Horizontal Grid)
+ * ------------------------------------------------------------------------- */
+.ht-countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.ht-countdown-cell {
+  background: var(--ht-surface-alt);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-sm);
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.ht-countdown-val {
+  font-family: var(--ht-font-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ht-accent);
+  display: block;
+  line-height: 1;
+}
+
+.ht-countdown-label {
+  font-size: 0.7rem;
+  color: var(--ht-text-muted);
+  margin-top: 4px;
+  display: block;
+}

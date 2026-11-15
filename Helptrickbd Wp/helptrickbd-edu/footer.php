@@ -30,6 +30,20 @@ if (!defined('ABSPATH')) {
   // 4. Mobile Off-Canvas Drawer Navigation
   get_template_part('template-parts/footer/mobile-drawer');
 
+  // 5. Offline Bookmarks Drawer Overlay
+  get_template_part('template-parts/footer/bookmark-drawer');
+  ?>
+
+  <!-- Reading Progress Bar (Single Posts) -->
+  <div id="ht-reading-progress" aria-hidden="true"></div>
+
+  <!-- 1-Click Copy Toast Alert -->
+  <div id="ht-copy-toast" role="status" aria-live="polite">
+    <span>✓</span>
+    <span id="ht-copy-toast-msg"><?php esc_html_e('সফলভাবে কপি হয়েছে!', 'helptrickbd-edu'); ?></span>
+  </div>
+
+  <?php
   // WordPress Core Footer Hook
   wp_footer();
   ?>

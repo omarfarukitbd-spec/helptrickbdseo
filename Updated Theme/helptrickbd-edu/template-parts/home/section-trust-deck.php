@@ -92,14 +92,41 @@ $categories = get_categories(array(
 
       <!-- Academic Exam Countdown Calendar -->
       <div class="n-exambox">
-        <h4><?php esc_html_e('আসন্ন পরীক্ষার সম্ভাব্য দিনপঞ্জি', 'helptrickbd-edu'); ?></h4>
-        <div class="row">
-          <span><?php esc_html_e('এসএসসি ও দাখিল পরীক্ষা ২০২৭', 'helptrickbd-edu'); ?></span>
-          <b><?php esc_html_e('ফেব্রুয়ারি ২০২৭', 'helptrickbd-edu'); ?></b>
+        <h4><?php esc_html_e('আসন্ন পরীক্ষার লাইভ দিনপঞ্জি ও কাউন্টডাউন', 'helptrickbd-edu'); ?></h4>
+        
+        <!-- Live Ticking Exam Countdown (Zero CLS, Horizontal Grid) -->
+        <div class="ht-exam-timer-card" data-countdown-date="2027-02-01T09:00:00" style="margin-bottom:14px;padding:12px;background:var(--ht-surface);border:1px solid var(--ht-border);border-radius:var(--ht-radius-sm);">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;">
+            <span style="font-weight:700;font-size:0.9rem;color:var(--ht-text-primary);">
+              <?php esc_html_e('এসএসসি ও দাখিল পরীক্ষা ২০২৭', 'helptrickbd-edu'); ?>
+            </span>
+            <span style="font-size:0.75rem;color:var(--ht-accent);font-weight:700;background:var(--ht-accent-soft);padding:2px 8px;border-radius:999px;">
+              <?php esc_html_e('বাকি সময়', 'helptrickbd-edu'); ?>
+            </span>
+          </div>
+          <div class="ht-countdown-grid">
+            <div class="ht-countdown-cell">
+              <span class="ht-countdown-val" data-cd-days>--</span>
+              <span class="ht-countdown-label"><?php esc_html_e('দিন', 'helptrickbd-edu'); ?></span>
+            </div>
+            <div class="ht-countdown-cell">
+              <span class="ht-countdown-val" data-cd-hours>--</span>
+              <span class="ht-countdown-label"><?php esc_html_e('ঘণ্টা', 'helptrickbd-edu'); ?></span>
+            </div>
+            <div class="ht-countdown-cell">
+              <span class="ht-countdown-val" data-cd-minutes>--</span>
+              <span class="ht-countdown-label"><?php esc_html_e('মিনিট', 'helptrickbd-edu'); ?></span>
+            </div>
+            <div class="ht-countdown-cell">
+              <span class="ht-countdown-val" data-cd-seconds>--</span>
+              <span class="ht-countdown-label"><?php esc_html_e('সেকেন্ড', 'helptrickbd-edu'); ?></span>
+            </div>
+          </div>
         </div>
+
         <div class="row">
           <span><?php esc_html_e('জাতীয় বিশ্ববিদ্যালয় ডিগ্রি পরীক্ষা', 'helptrickbd-edu'); ?></span>
-          <b><?php esc_html_e('চলমান / রুটিন দেখুন', 'helptrickbd-edu'); ?></b>
+          <b style="color:var(--ht-primary);"><?php esc_html_e('চলমান / রুটিন দেখুন', 'helptrickbd-edu'); ?></b>
         </div>
         <div class="row">
           <span><?php esc_html_e('৪৭তম বিসিএস প্রিলিমিনারি', 'helptrickbd-edu'); ?></span>

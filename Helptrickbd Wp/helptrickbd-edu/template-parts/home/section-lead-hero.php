@@ -62,11 +62,11 @@ if (!$lead_post) {
       <figure>
         <?php
         echo get_the_post_thumbnail($lead_post->ID, 'ht-lead-banner', array(
-            'loading'  => 'lazy',
-            'decoding' => 'async',
-            'width'    => 800,
-            'height'   => 450,
-            'alt'      => esc_attr(get_the_title($lead_post->ID)),
+            'fetchpriority' => 'high',
+            'decoding'      => 'async',
+            'width'         => 800,
+            'height'        => 450,
+            'alt'           => esc_attr(get_the_title($lead_post->ID)),
         ));
         ?>
       </figure>

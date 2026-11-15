@@ -13,6 +13,10 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('ht_theme', theme);
+    const metaScheme = document.querySelector('meta[name="color-scheme"]');
+    if (metaScheme) {
+      metaScheme.setAttribute('content', theme);
+    }
   }
 
   // Apply default light mode or saved choice
