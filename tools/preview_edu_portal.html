@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpTrickBD EduPortal - লাইভ প্রোটোটাইপ ডেমো</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Helptrickbd Wp/helptrickbd-edu/style.css">
+  <link rel="stylesheet" href="../Helptrickbd Wp/helptrickbd-edu/assets/css/main.css">
+  <link rel="stylesheet" href="../Helptrickbd Wp/helptrickbd-edu/assets/css/home-sections.css">
+  <link rel="stylesheet" href="../Helptrickbd Wp/helptrickbd-edu/assets/css/dark-mode.css">
+  <style>
+    /* Inlined critical CSS for demonstration */
+    body {
+      font-family: var(--ht-font-sans);
+      background-color: var(--ht-bg);
+      color: var(--ht-text-primary);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body class="htbd-edu-portal htbd-home-newspaper">
+
+<div id="page" class="site-wrapper">
+  <!-- 1. Header Topbar -->
+  <div class="n-dateline">
+    <div class="ht-container">
+      <div class="n-dateline-inner">
+        <div class="n-dateline-left">
+          <span class="n-date-text">শুক্রবার, ১৩ নভেম্বর ২০২৬</span>
+        </div>
+        <div class="n-dateline-right">
+          <div class="n-fsbar" role="group" aria-label="ফন্ট সাইজ পরিবর্তন">
+            <span>হরফ:</span>
+            <button type="button" class="n-fsbtn" data-scale="sm">ছোট</button>
+            <button type="button" class="n-fsbtn active" data-scale="md">মাঝারি</button>
+            <button type="button" class="n-fsbtn" data-scale="lg">বড়</button>
+          </div>
+          <button type="button" class="ht-icon-btn ht-search-trigger" aria-label="অনুসন্ধান করুন">
+            <svg class="ht-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          </button>
+          <button type="button" id="ht-theme-toggle" class="ht-icon-btn" aria-label="ডার্ক ও লাইট মোড পরিবর্তন">
+            <svg class="ht-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Masthead -->
+  <header class="n-masthead">
+    <div class="ht-container">
+      <div class="n-masthead-inner">
+        <h1 class="n-brand-wordmark">
+          <a href="#">হেল্পট্রিকবিডি</a>
+        </h1>
+        <div class="n-brand-subdomain">HELPTRICKBD.COM</div>
+        <p class="n-brand-tagline">সহজ ভাষায় লেখা শিক্ষামূলক কনটেন্ট ও একাডেমিক হ্যান্ডনোট</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Sticky Newspaper Nav -->
+  <div class="n-navwrap">
+    <div class="ht-container">
+      <nav class="n-nav-inner" aria-label="প্রধান ন্যাভিগেশন">
+        <button type="button" id="ht-drawer-toggle" class="n-mobile-toggle" aria-label="মেনু খুলুন">
+          <svg class="ht-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+        <div class="n-nav-track">
+          <a href="#" class="n-nav-item active">প্রচ্ছদ</a>
+          <a href="#" class="n-nav-item">জাতীয় বিশ্ববিদ্যালয়</a>
+          <a href="#" class="n-nav-item">এসএসসি ও দাখিল</a>
+          <a href="#" class="n-nav-item">রাষ্ট্রবিজ্ঞান</a>
+          <a href="#" class="n-nav-item">বাংলা ১ম পত্র</a>
+          <a href="#" class="n-nav-item">ইসলামিক প্রবন্ধ</a>
+          <a href="#" class="n-nav-item">ইংরেজি</a>
+          <a href="#" class="n-nav-item">আইসিটি</a>
+          <a href="#" class="n-nav-item">চাকরি প্রস্তুতি</a>
+          <a href="#" class="n-nav-item">বিশ্ববিদ্যালয় ভর্তি</a>
+        </div>
+        <button type="button" class="n-nav-search-trigger ht-search-trigger" aria-label="অনুসন্ধান বক্স খুলুন">
+          <svg class="ht-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <span>অনুসন্ধান...</span>
+          <kbd class="n-kbd-shortcut">Ctrl+K</kbd>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <main id="primary" class="site-main">
+    <div class="ht-container">
+      <!-- Section 1: Ticker -->
+      <section class="n-ticker" aria-label="জরুরি নোটিশ">
+        <div class="n-ticker-badge">
+          <span class="n-ticker-dot" aria-hidden="true"></span>
+          <span>জরুরি নোটিশ</span>
+        </div>
+        <div class="n-ticker-track">
+          <div class="n-ticker-move">
+            <a href="#" class="n-ticker-item"><span>এসএসসি পরীক্ষা ২০২৭: সংশোধিত সিলেবাস ও ১২ প্রশ্নের মানবণ্টন প্রকাশিত</span></a>
+            <span class="n-ticker-sep" aria-hidden="true">&bull;</span>
+            <a href="#" class="n-ticker-item"><span>জাতীয় বিশ্ববিদ্যালয় ডিগ্রি পাস ১ম বর্ষের পরীক্ষার সংশোধিত সময়সূচি</span></a>
+            <span class="n-ticker-sep" aria-hidden="true">&bull;</span>
+            <a href="#" class="n-ticker-item"><span>রাষ্ট্রবিজ্ঞান ৩য় বর্ষ: শান্তি ও সংঘর্ষ অধ্যয়ন পূর্ণাঙ্গ ফাইনাল সাজেশন</span></a>
+            <span class="n-ticker-sep" aria-hidden="true">&bull;</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Social CTA -->
+      <section class="n-social-cta" aria-label="সোশ্যাল চ্যানেল">
+        <div class="n-social-cta-text">
+          <h4>সবার আগে পরীক্ষার রুটিন ও স্পেশাল সাজেশন পেতে চান?</h4>
+          <p>আমাদের অফিসিয়াল হোয়াটসঅ্যাপ ও টেলিগ্রাম স্টাডি চ্যানেলে যুক্ত হন।</p>
+        </div>
+        <div class="n-social-cta-btns">
+          <a href="https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
+            <svg class="ht-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.99-1.38-.99-2.63 0-1.26.62-1.87.85-2.12.23-.25.5-.31.66-.31.17 0 .33 0 .48.01.15.01.36-.06.56.42.21.49.71 1.76.77 1.89.06.13.1.28.01.45-.08.17-.13.27-.25.42-.13.15-.27.34-.39.46-.13.13-.26.27-.11.53.15.25.65 1.08 1.4 1.74.96.86 1.78 1.13 2.03 1.25.26.13.4.11.55-.06.15-.18.66-.76.83-1.03.17-.26.35-.22.58-.13zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+            <span>হোয়াটসঅ্যাপ চ্যানেল</span>
+          </a>
+          <a href="https://t.me/helptrickbd_official" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-telegram">
+            <svg class="ht-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            <span>টেলিগ্রাম চ্যানেল</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 3: Lead Hero -->
+      <section class="n-lead" aria-label="প্রধান সংবাদ">
+        <article>
+          <span class="n-kicker">বাছাই করা হ্যান্ডনোট · এসএসসি ও দাখিল প্রস্তুতি</span>
+          <h2 class="n-lead-title">
+            <a href="#">এসএসসি ২০২৭: সংশোধিত ১২ প্রশ্নের ধরনেই হবে পরীক্ষা — কোন প্রশ্নে কত নম্বর, জানুন বিস্তারিত গাইড</a>
+          </h2>
+          <div class="n-byline">
+            <span>ফারুক স্যার (প্রধান সম্পাদক)</span>
+            <span>১৩ নভেম্বর ২০২৬</span>
+            <span>১২ মিনিট পাঠ</span>
+          </div>
+          <figure>
+            <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;aspect-ratio:16/9;border-radius:8px;">
+              <defs>
+                <linearGradient id="leadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1e3a8a"/>
+                  <stop offset="100%" stop-color="#1e40af"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="450" fill="url(#leadGrad)"/>
+              <rect x="40" y="40" width="720" height="370" rx="12" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+              <rect x="60" y="60" width="180" height="36" rx="18" fill="#b3271e"/>
+              <text x="150" y="84" font-family="'Hind Siliguri', sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">বোর্ড স্পেশাল ২০২৭</text>
+              <text x="60" y="170" font-family="'Noto Serif Bengali', serif" font-size="34" font-weight="800" fill="#ffffff">এসএসসি ও দাখিল পরীক্ষা ২০২৭</text>
+              <text x="60" y="220" font-family="'Hind Siliguri', sans-serif" font-size="24" font-weight="600" fill="#93c5fd">সংশোধিত ১২ প্রশ্নের পূর্ণাঙ্গ মানবণ্টন ও গাইড</text>
+              <rect x="60" y="270" width="480" height="2" fill="rgba(255,255,255,0.2)"/>
+              <text x="60" y="320" font-family="'Hind Siliguri', sans-serif" font-size="18" fill="#e2e8f0">• ব্যাকরণ অংশে ৬০ নম্বর • রচনা অংশে ৪০ নম্বর</text>
+              <text x="60" y="355" font-family="'Hind Siliguri', sans-serif" font-size="18" fill="#e2e8f0">• প্রতিটি অধ্যায়ভিত্তিক প্রস্তুতি পরিকল্পনা</text>
+            </svg>
+          </figure>
+          <div class="n-cols">
+            <p>জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ডের (NCTB) সংশোধিত সিলেবাস অনুযায়ী এসএসসি ২০২৭ পরীক্ষায় ইংরেজিতে মোট ১২টি প্রশ্ন থাকবে — ব্যাকরণ অংশে ৬০ নম্বর ও রচনা অংশে ৪০ নম্বর। আগের ১৫ প্রশ্নের ধরন এই ব্যাচের জন্য আর প্রযোজ্য নয়।</p>
+            <p>নতুন ধরনে Gap filling with clues থেকে ১০ নম্বর, Substitution table থেকে ৫, Right form of verbs থেকে ১০ এবং Composition থেকে থাকছে ২০ নম্বর। প্রতিটি অধ্যায় ধরে বিস্তারিত প্রস্তুতি পরিকল্পনা নিচে দেওয়া হলো।</p>
+          </div>
+        </article>
+
+        <aside class="n-side">
+          <div class="n-side-card">
+            <span class="sk">জাতীয় বিশ্ববিদ্যালয়</span>
+            <h4><a href="#">ডিগ্রি পাস ১ম বর্ষ পরীক্ষা: স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস চূড়ান্ত সাজেশন ২০২৬</a></h4>
+            <p>ক-বিভাগ অতি সংক্ষিপ্ত, খ-বিভাগ সংক্ষিপ্ত ও গ-বিভাগ রচনামূলক প্রশ্নের ১০০% কমন হ্যান্ডনোট।</p>
+          </div>
+          <div class="n-side-card">
+            <span class="sk">রাষ্ট্রবিজ্ঞান</span>
+            <h4><a href="#">রাজনীতি অধ্যয়নের দৃষ্টিভঙ্গি ও আধুনিক রাষ্ট্রচিন্তার মূল উপাদানসমূহ</a></h4>
+            <p>অনার্স ২য় বর্ষের রাষ্ট্রবিজ্ঞান বিভাগের শিক্ষার্থীদের জন্য সহায়ক লেকচার নোট।</p>
+          </div>
+          <div class="n-side-card">
+            <span class="sk">ইংরেজি</span>
+            <h4><a href="#">Right Form of Verbs: ১০টি ম্যাজিক রুলস ও বিগত ১০ বছরের বোর্ড প্রশ্ন সমাধান</a></h4>
+            <p>সহজ ব্যাখ্যা ও উদাহরণসহ ইংরেজি ২য় পত্রের পূর্ণাঙ্গ প্রস্তুতি সহায়িকা।</p>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Section 4: 3-Col Subject Grid -->
+      <section class="n-sec" aria-label="বিভাগ ও বিষয়ভিত্তিক বিশেষায়িত হ্যান্ডনোট">
+        <div class="n-sec-head">
+          <h3>বিভাগ ও বিষয়ভিত্তিক বিশেষায়িত হ্যান্ডনোট</h3>
+          <span class="rule" aria-hidden="true"></span>
+          <a href="#">সব লেখা →</a>
+        </div>
+        <div class="n-grid3">
+          <div class="n-item">
+            <span class="sk">হ্যান্ডনোট · রাষ্ট্রবিজ্ঞান</span>
+            <h4><a href="#">পাশ্চাত্য রাষ্ট্রচিন্তা: প্লেটোর আদর্শ রাষ্ট্র ও ন্যায়বিচার তত্ত্বের তুলনামূলক বিশ্লেষণ</a></h4>
+            <p>দার্শনিক রাজার শাসন এবং রিপাবলিক গ্রন্থের মূল শিক্ষার সহজ ব্যাখ্যা।</p>
+            <div class="meta"><span>১২ নভেম্বর ২০২৬</span> &bull; <span>৮ মিনিট পাঠ</span></div>
+          </div>
+          <div class="n-item">
+            <span class="sk">হ্যান্ডনোট · বাংলা ১ম পত্র</span>
+            <h4><a href="#">হাসন রাজা ও লালন শাহের আধ্যাত্মিক দর্শনের তুলনামূলক সাহিত্য বিচার</a></h4>
+            <p>বাঙালির লোকসাহিত্যের অমর স্রষ্টাদের মরমি ভাবধারার প্রাতিষ্ঠানিক লেকচার নোট।</p>
+            <div class="meta"><span>১১ নভেম্বর ২০২৬</span> &bull; <span>১০ মিনিট পাঠ</span></div>
+          </div>
+          <div class="n-item">
+            <span class="sk">হ্যান্ডনোট · আইসিটি ও প্রযুক্তি</span>
+            <h4><a href="#">লজিক গেট ও বুলিয়ান অ্যালজেব্রা: ট্রুথ টেবিল ও সার্কিট ডিজাইনের সহজ নিয়ম</a></h4>
+            <p>একাদশ-দ্বাদশ শ্রেণি ও চাকরি পরীক্ষার্থীদের জন্য পূর্ণাঙ্গ গাইডলাইন।</p>
+            <div class="meta"><span>১০ নভেম্বর ২০২৬</span> &bull; <span>৭ মিনিট পাঠ</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Filter Rows -->
+      <section class="n-sec" aria-label="দ্রুত রিভিশন ও অধ্যায়ভিত্তিক ডাইজেস্ট">
+        <div class="n-sec-head">
+          <h3>দ্রুত রিভিশন ও অধ্যায়ভিত্তিক ডাইজেস্ট</h3>
+          <span class="rule" aria-hidden="true"></span>
+          <a href="#">সব লেখা →</a>
+        </div>
+        <div class="n-thumb-tabs">
+          <button type="button" class="n-thumb-tab-btn active" data-cat="all">সব বিষয়</button>
+          <button type="button" class="n-thumb-tab-btn" data-cat="ssc-dakhil">এসএসসি ও দাখিল</button>
+          <button type="button" class="n-thumb-tab-btn" data-cat="national-university">জাতীয় বিশ্ববিদ্যালয়</button>
+          <button type="button" class="n-thumb-tab-btn" data-cat="political-science">রাষ্ট্রবিজ্ঞান</button>
+          <button type="button" class="n-thumb-tab-btn" data-cat="english">ইংরেজি</button>
+        </div>
+        <div class="n-thumb-list">
+          <a href="#" class="n-trow" data-cats="ssc-dakhil english">
+            <div class="th">
+              <svg width="132" height="92" viewBox="0 0 132 92" xmlns="http://www.w3.org/2000/svg">
+                <rect width="132" height="92" fill="#1e3a8a"/>
+                <text x="66" y="42" font-family="'Hind Siliguri', sans-serif" font-size="14" font-weight="700" fill="#93c5fd" text-anchor="middle">English 2nd</text>
+                <text x="66" y="64" font-family="'Hind Siliguri', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Tag Questions</text>
+              </svg>
+            </div>
+            <div class="info">
+              <span class="tag">এসএসসি ও দাখিল</span>
+              <h4>Tag Questions-এর ১০টি গোল্ডেন রুলস ও শর্টকাট টেকনিক</h4>
+              <div class="meta"><span>৯ নভেম্বর ২০২৬</span> &bull; <span>৫ মিনিট পাঠ</span></div>
+            </div>
+            <div class="arr" aria-hidden="true">&rarr;</div>
+          </a>
+          <a href="#" class="n-trow" data-cats="national-university political-science">
+            <div class="th">
+              <svg width="132" height="92" viewBox="0 0 132 92" xmlns="http://www.w3.org/2000/svg">
+                <rect width="132" height="92" fill="#065f46"/>
+                <text x="66" y="42" font-family="'Hind Siliguri', sans-serif" font-size="14" font-weight="700" fill="#a7f3d0" text-anchor="middle">জাতীয় বিশ্ববিদ্যালয়</text>
+                <text x="66" y="64" font-family="'Hind Siliguri', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">স্থানীয় সরকার</text>
+              </svg>
+            </div>
+            <div class="info">
+              <span class="tag">জাতীয় বিশ্ববিদ্যালয়</span>
+              <h4>অনার্স ৪র্থ বর্ষ: বাংলাদেশের স্থানীয় সরকার ও পল্লী উন্নয়ন হ্যান্ডনোট</h4>
+              <div class="meta"><span>৮ নভেম্বর ২০২৬</span> &bull; <span>১১ মিনিট পাঠ</span></div>
+            </div>
+            <div class="arr" aria-hidden="true">&rarr;</div>
+          </a>
+          <a href="#" class="n-trow" data-cats="ssc-dakhil">
+            <div class="th">
+              <svg width="132" height="92" viewBox="0 0 132 92" xmlns="http://www.w3.org/2000/svg">
+                <rect width="132" height="92" fill="#831843"/>
+                <text x="66" y="42" font-family="'Hind Siliguri', sans-serif" font-size="14" font-weight="700" fill="#fbcfe8" text-anchor="middle">পদার্থবিজ্ঞান</text>
+                <text x="66" y="64" font-family="'Hind Siliguri', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">গতি ও বল সূত্র</text>
+              </svg>
+            </div>
+            <div class="info">
+              <span class="tag">এসএসসি ও দাখিল</span>
+              <h4>পদার্থবিজ্ঞান গতি ও বল অধ্যায়ের গুরুত্বপূর্ণ গাণিতিক সূত্র ও সমাধান</h4>
+              <div class="meta"><span>৭ নভেম্বর ২০২৬</span> &bull; <span>৬ মিনিট পাঠ</span></div>
+            </div>
+            <div class="arr" aria-hidden="true">&rarr;</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 6: Special Focus Desk -->
+      <section class="n-sec" aria-label="জাতীয় বিশ্ববিদ্যালয় ও বোর্ড স্পেশাল ফোকাস ডেস্ক">
+        <div class="n-sec-head">
+          <h3>জাতীয় বিশ্ববিদ্যালয় ও বোর্ড স্পেশাল ফোকাস ডেস্ক</h3>
+          <span class="rule" aria-hidden="true"></span>
+          <a href="#">সব হ্যান্ডনোট →</a>
+        </div>
+        <div class="n-labelbox">
+          <div class="n-label-head">
+            <span class="n-label-title">ফোকাস ডেস্ক: <b>জাতীয় বিশ্ববিদ্যালয় ও বোর্ড</b></span>
+            <span class="n-label-dots" aria-hidden="true"></span>
+            <svg class="n-label-ic" viewBox="0 0 27 21" fill="currentColor" aria-hidden="true">
+              <circle cx="3" cy="3" r="2"/><circle cx="10" cy="3" r="2"/><circle cx="17" cy="3" r="2"/><circle cx="24" cy="3" r="2"/>
+              <circle cx="3" cy="10.5" r="2"/><circle cx="10" cy="10.5" r="2"/><circle cx="17" cy="10.5" r="2"/><circle cx="24" cy="10.5" r="2"/>
+              <circle cx="3" cy="18" r="2"/><circle cx="10" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><circle cx="24" cy="18" r="2"/>
+            </svg>
+          </div>
+          <p class="n-label-sub">নির্বাচিত বিভাগের সর্বশেষ হ্যান্ডনোট, সাজেশন ও পূর্ণাঙ্গ মডেল টেস্ট</p>
+          <div class="n-label-grid">
+            <a href="#" class="n-lrow">
+              <svg width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg" style="border-radius:6px;flex:0 0 54px;">
+                <rect width="54" height="54" fill="#1e40af"/>
+                <text x="27" y="32" font-family="'Hind Siliguri', sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">NU</text>
+              </svg>
+              <div class="n-lrow-text">
+                <span class="lt-t">ডিগ্রি ১ম বর্ষ রুটিন ও পরীক্ষার বিশেষ নির্দেশিকা ২০২৬</span>
+                <span class="lt-m">৬ নভেম্বর ২০২৬</span>
+              </div>
+            </a>
+            <a href="#" class="n-lrow">
+              <svg width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg" style="border-radius:6px;flex:0 0 54px;">
+                <rect width="54" height="54" fill="#b3271e"/>
+                <text x="27" y="32" font-family="'Hind Siliguri', sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">SSC</text>
+              </svg>
+              <div class="n-lrow-text">
+                <span class="lt-t">এসএসসি পরীক্ষার ফরম পূরণের ফি ও শেষ তারিখ নোটিশ</span>
+                <span class="lt-m">৫ নভেম্বর ২০২৬</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Photo Grid -->
+      <section class="n-sec" aria-label="ইনফোগ্রাফিক ও ভিজ্যুয়াল স্টাডি গ্যালারি">
+        <div class="n-sec-head">
+          <h3>ইনফোগ্রাফিক ও ভিজ্যুয়াল স্টাডি গ্যালারি</h3>
+          <span class="rule" aria-hidden="true"></span>
+          <a href="#">সকল গ্যালারি →</a>
+        </div>
+        <div class="n-photogrid">
+          <a href="#" class="n-pcard">
+            <div class="pim">
+              <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;aspect-ratio:16/10;">
+                <rect width="300" height="200" fill="#0f172a"/>
+                <text x="150" y="95" font-family="'Hind Siliguri', sans-serif" font-size="18" font-weight="700" fill="#38bdf8" text-anchor="middle">নেটওয়ার্ক টপোলজি</text>
+                <text x="150" y="125" font-family="'Hind Siliguri', sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">৫টি টপোলজির চিত্র চার্ট</text>
+              </svg>
+            </div>
+            <h4>কম্পিউটার নেটওয়ার্ক টপোলজি: ৫টি টপোলজির চিত্রসহ সহজ পরিচিতি</h4>
+          </a>
+          <a href="#" class="n-pcard">
+            <div class="pim">
+              <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;aspect-ratio:16/10;">
+                <rect width="300" height="200" fill="#14532d"/>
+                <text x="150" y="95" font-family="'Hind Siliguri', sans-serif" font-size="18" font-weight="700" fill="#4ade80" text-anchor="middle">মুক্তিযুদ্ধের ১১টি সেক্টর</text>
+                <text x="150" y="125" font-family="'Hind Siliguri', sans-serif" font-size="14" fill="#bbf7d0" text-anchor="middle">সেক্টর কমান্ডারদের পূর্ণ তালিকা</text>
+              </svg>
+            </div>
+            <h4>মুক্তিযুদ্ধের ১১টি সেক্টর ও সেক্টর কমান্ডারদের তালিকা চার্ট</h4>
+          </a>
+          <a href="#" class="n-pcard">
+            <div class="pim">
+              <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;aspect-ratio:16/10;">
+                <rect width="300" height="200" fill="#701a75"/>
+                <text x="150" y="95" font-family="'Hind Siliguri', sans-serif" font-size="18" font-weight="700" fill="#e879f9" text-anchor="middle">পর্যায় সারণি টেকনিক</text>
+                <text x="150" y="125" font-family="'Hind Siliguri', sans-serif" font-size="14" fill="#f5d0fe" text-anchor="middle">ইলেকট্রন বিন্যাস সহজে মনে রাখা</text>
+              </svg>
+            </div>
+            <h4>পর্যায় সারণি ও মৌলের ইলেকট্রন বিন্যাস মনে রাখার টেকনিক</h4>
+          </a>
+          <a href="#" class="n-pcard">
+            <div class="pim">
+              <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;aspect-ratio:16/10;">
+                <rect width="300" height="200" fill="#1e3a8a"/>
+                <text x="150" y="95" font-family="'Hind Siliguri', sans-serif" font-size="18" font-weight="700" fill="#93c5fd" text-anchor="middle">HTML5 বেসিক ট্যাগ</text>
+                <text x="150" y="125" font-family="'Hind Siliguri', sans-serif" font-size="14" fill="#e2e8f0" text-anchor="middle">প্রধান ট্যাগসমূহের চিটশিট</text>
+              </svg>
+            </div>
+            <h4>HTML বেসিক স্ট্রাকচার ও প্রধান ট্যাগসমূহের ভিজ্যুয়াল চিটশিট</h4>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 8: Trust Deck -->
+      <section class="n-sec" aria-label="প্রাতিষ্ঠানিক সম্পাদকীয় নীতি ও তথ্য ভাণ্ডার">
+        <div class="n-two">
+          <div>
+            <div class="n-sec-head">
+              <h3>হেল্পট্রিকবিডি প্রাতিষ্ঠানিক তথ্য যাচাই ও সম্পাদকীয় নীতি</h3>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <div class="n-trust-box">
+              <p>প্রতিটি সাজেশন, প্রশ্নব্যাংক ও সমাধান প্রকাশের পূর্বে আমরা সংশ্লিষ্ট শিক্ষা বোর্ড ও বিশ্ববিদ্যালয়ের অফিসিয়াল সার্কুলারের সঙ্গে পুঙ্খানুপুঙ্খভাবে মিলিয়ে দেখি। পুরনো বা বাতিল তথ্য যেন নতুন মোড়কে শিক্ষার্থীদের বিভ্রান্ত না করে — সেদিকে আমাদের সম্পাদকীয় টিমের সার্বক্ষণিক নজর থাকে।</p>
+              <p>শিক্ষার্থীদের পরীক্ষার প্রস্তুতিকে শতভাগ নির্ভুল ও সময়োপযোগী রাখা আমাদের প্রাতিষ্ঠানিক অঙ্গীকার। কোনো তথ্যগত ভুল পরিলক্ষিত হলে আমাদের সম্পাদকীয় ডেস্কে জানান — আমরা দ্রুততম সময়ে তা যাচাই করে হালনাগাদ করব।</p>
+              <div class="ht-meta-bar" style="margin-top:14px;">
+                <span class="ht-meta-item">
+                  <strong>ভেরিফাইড প্রাতিষ্ঠানিক রিসোর্স</strong>
+                </span>
+                <span class="ht-meta-item">
+                  <a href="mailto:contact@helptrickbd.com">contact@helptrickbd.com</a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="n-popbox">
+              <h4>সর্বাধিক পঠিত হ্যান্ডনোট</h4>
+              <ol>
+                <li>
+                  <a href="#">এসএসসি ২০২৭ ইংরেজি ২য় পত্র মডেল টেস্ট ও পূর্ণাঙ্গ সমাধান</a>
+                  <div class="meta"><span>৯ মিনিট পাঠ</span></div>
+                </li>
+                <li>
+                  <a href="#">ডিগ্রি ১ম বর্ষ স্বাধীন বাংলাদেশের অভ্যুদয়ের ইতিহাস ফাইনাল হ্যান্ডনোট</a>
+                  <div class="meta"><span>১২ মিনিট পাঠ</span></div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="n-sec-head" style="margin-top:24px;">
+              <h3 style="font-size:1.15rem;">সকল বিষয় ও বিভাগ</h3>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <div class="n-pillgrid">
+              <a href="#" class="n-pill"><span class="pn">জাতীয় বিশ্ববিদ্যালয়</span><span class="pc">২৮</span></a>
+              <a href="#" class="n-pill"><span class="pn">এসএসসি ও দাখিল</span><span class="pc">৩৬</span></a>
+              <a href="#" class="n-pill"><span class="pn">রাষ্ট্রবিজ্ঞান</span><span class="pc">১৯</span></a>
+              <a href="#" class="n-pill"><span class="pn">ইংরেজি গ্রামার</span><span class="pc">১৫</span></a>
+            </div>
+
+            <div class="n-exambox">
+              <h4>আসন্ন পরীক্ষার সম্ভাব্য দিনপঞ্জি</h4>
+              <div class="row"><span>এসএসসি ও দাখিল পরীক্ষা ২০২৭</span><b>ফেব্রুয়ারি ২০২৭</b></div>
+              <div class="row"><span>জাতীয় বিশ্ববিদ্যালয় ডিগ্রি পরীক্ষা</span><b>চলমান / রুটিন দেখুন</b></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="ht-footer">
+    <div class="ht-container">
+      <div class="ht-footer-widgets">
+        <div class="ht-footer-col">
+          <h3 class="ht-footer-title">হেল্পট্রিকবিডি সম্পর্কে</h3>
+          <p>হেল্পট্রিকবিডি বাংলাদেশের শিক্ষার্থীদের জন্য নির্ভরযোগ্য শিক্ষা ও তথ্যপ্রযুক্তি রিসোর্স পোর্টাল। জাতীয় বিশ্ববিদ্যালয়, বোর্ড পরীক্ষা ও ক্যারিয়ার সংক্রান্ত তথ্যনির্ভর হ্যান্ডনোট সরবরাহ করাই আমাদের মূল অঙ্গীকার।</p>
+          <p class="ht-footer-contact"><strong>ইমেইল:</strong> <a href="mailto:contact@helptrickbd.com">contact@helptrickbd.com</a></p>
+        </div>
+        <div class="ht-footer-col">
+          <h3 class="ht-footer-title">একাডেমিক হ্যান্ডনোট</h3>
+          <ul class="ht-footer-links">
+            <li><a href="#">জাতীয় বিশ্ববিদ্যালয়</a></li>
+            <li><a href="#">এসএসসি ও দাখিল প্রস্তুতি</a></li>
+            <li><a href="#">রাষ্ট্রবিজ্ঞান হ্যান্ডনোট</a></li>
+          </ul>
+        </div>
+        <div class="ht-footer-col">
+          <h3 class="ht-footer-title">প্রাতিষ্ঠানিক নীতি</h3>
+          <ul class="ht-footer-links">
+            <li><a href="#">আমাদের সম্পর্কে</a></li>
+            <li><a href="#">যোগাযোগ</a></li>
+            <li><a href="#">গোপনীয়তা নীতি</a></li>
+          </ul>
+        </div>
+        <div class="ht-footer-col">
+          <h3 class="ht-footer-title">স্টাডি চ্যানেলে যুক্ত থাকুন</h3>
+          <p>সবার আগে পরীক্ষার রুটিন, নোটিশ ও স্পেশাল সাজেশন পেতে আমাদের অফিসিয়াল চ্যানেলগুলোতে যুক্ত হন:</p>
+          <div class="ht-footer-social-btns">
+            <a href="https://t.me/helptrickbd_official" class="ht-btn ht-btn-telegram">টেলিগ্রাম চ্যানেল</a>
+            <a href="https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a" class="ht-btn ht-btn-whatsapp">হোয়াটসঅ্যাপ চ্যানেল</a>
+          </div>
+        </div>
+      </div>
+      <div class="ht-copyright-bar">
+        <div>&copy; ২০২৬ হেল্পট্রিকবিডি। সর্বস্বত্ব সংরক্ষিত।</div>
+        <button type="button" id="ht-back-to-top" class="ht-back-btn">উপরে যান &uarr;</button>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="../Helptrickbd Wp/helptrickbd-edu/assets/js/main.js"></script>
+<script src="../Helptrickbd Wp/helptrickbd-edu/assets/js/font-resizer.js"></script>
+<script src="../Helptrickbd Wp/helptrickbd-edu/assets/js/home-filter.js"></script>
+</body>
+</html>

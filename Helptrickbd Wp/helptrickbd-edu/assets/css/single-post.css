@@ -1,0 +1,186 @@
+/*
+ * HelpTrickBD EduPortal - Single Post & Page Specific Stylesheet
+ * Strict Legacy Content Protection & Core Web Vitals Standard
+ */
+
+.ht-single-layout {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.ht-single-header {
+  margin-bottom: 24px;
+}
+
+.ht-single-category {
+  margin-bottom: 12px;
+}
+
+.ht-single-title {
+  font-family: var(--ht-font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--ht-text-primary);
+  margin-bottom: 16px;
+}
+
+.ht-single-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--ht-border);
+  border-bottom: 1px solid var(--ht-border);
+  font-size: 0.875rem;
+  color: var(--ht-text-muted);
+}
+
+.ht-date-read {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ht-single-banner {
+  margin: 20px 0 32px;
+  border-radius: var(--ht-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--ht-border);
+}
+
+.ht-single-banner img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* Article Body Typography */
+.ht-entry-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--ht-text-secondary);
+}
+
+.ht-entry-content h2 {
+  font-family: var(--ht-font-serif);
+  font-size: 1.625rem;
+  font-weight: 800;
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--ht-border);
+  color: var(--ht-text-primary);
+}
+
+.ht-entry-content h3 {
+  font-family: var(--ht-font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 28px 0 12px;
+  color: var(--ht-text-primary);
+}
+
+.ht-entry-content p {
+  margin-bottom: 20px;
+}
+
+.ht-entry-content blockquote {
+  border-left: 4px solid var(--ht-primary);
+  background: var(--ht-surface-alt);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 var(--ht-radius-md) var(--ht-radius-md) 0;
+  font-style: italic;
+  color: var(--ht-text-primary);
+}
+
+/* Legacy Table Protection & Responsive Horizontal Scroll */
+.ht-entry-content table,
+.scroll-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.9375rem;
+  background: var(--ht-surface);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-sm);
+  overflow: hidden;
+}
+
+.ht-entry-content th,
+.scroll-wrapper th {
+  background: var(--ht-surface-alt);
+  color: var(--ht-text-primary);
+  font-weight: 700;
+  padding: 12px 14px;
+  border: 1px solid var(--ht-border);
+  text-align: left;
+}
+
+.ht-entry-content td,
+.scroll-wrapper td {
+  padding: 10px 14px;
+  border: 1px solid var(--ht-border);
+}
+
+.ht-entry-content tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+[data-theme="dark"] .ht-entry-content tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Callout Boxes */
+.htbd-callout, .callout-box {
+  background: var(--ht-primary-soft);
+  border-left: 4px solid var(--ht-primary);
+  padding: 16px 20px;
+  border-radius: 0 var(--ht-radius-md) var(--ht-radius-md) 0;
+  margin: 24px 0;
+}
+
+/* Related Posts Section */
+.ht-related-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid var(--ht-rule);
+}
+
+.ht-related-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ht-related-thumb {
+  border-radius: var(--ht-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--ht-border);
+  margin-bottom: 10px;
+}
+
+.ht-related-thumb img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.ht-related-card:hover .ht-related-thumb img {
+  transform: scale(1.03);
+}
+
+.ht-related-card h4 {
+  font-family: var(--ht-font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0 0 6px;
+}
+
+.ht-related-card h4 a:hover {
+  color: var(--ht-primary);
+}

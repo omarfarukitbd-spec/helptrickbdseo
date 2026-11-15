@@ -1,0 +1,61 @@
+<?php
+/**
+ * Off-Canvas Mobile Drawer Component
+ *
+ * @package HelpTrickBD_EduPortal
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+$categories = get_categories(array(
+    'orderby'    => 'count',
+    'order'      => 'DESC',
+    'number'     => 12,
+    'hide_empty' => false,
+));
+?>
+<div id="ht-mobile-drawer" class="ht-drawer" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('মোবাইল মেনু', 'helptrickbd-edu'); ?>">
+  <div class="ht-drawer-backdrop" id="ht-drawer-backdrop"></div>
+  <div class="ht-drawer-panel">
+    <div class="ht-drawer-header">
+      <div class="ht-drawer-brand">
+        <span class="ht-drawer-logo">হেল্পট্রিকবিডি</span>
+        <span class="ht-drawer-sub">HELPTRICKBD.COM</span>
+      </div>
+      <button type="button" id="ht-drawer-close" class="ht-icon-btn" aria-label="<?php esc_attr_e('মেনু বন্ধ করুন', 'helptrickbd-edu'); ?>">
+        <?php htbd_icon('close', array('width' => 20, 'height' => 20)); ?>
+      </button>
+    </div>
+
+    <div class="ht-drawer-body">
+      <div class="ht-drawer-section-title"><?php esc_html_e('বিষয় ও বিভাগসমূহ', 'helptrickbd-edu'); ?></div>
+      <ul class="ht-drawer-menu">
+        <li>
+          <a href="<?php echo esc_url(home_url('/')); ?>">
+            <?php htbd_icon('book', array('width' => 16, 'height' => 16)); ?>
+            <span><?php esc_html_e('হোম / প্রচ্ছদ', 'helptrickbd-edu'); ?></span>
+          </a>
+        </li>
+        <?php if (!empty($categories)) : ?>
+          <?php foreach ($categories as $cat) : ?>
+            <li>
+              <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>">
+                <?php htbd_icon('graduation-cap', array('width' => 16, 'height' => 16)); ?>
+                <span><?php echo esc_html($cat->name); ?></span>
+                <span class="ht-drawer-count"><?php echo esc_html(htbd_bengali_number($cat->count)); ?></span>
+              </a>
+            </li>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </ul>
+    </div>
+
+    <div class="ht-drawer-footer">
+      <a href="<?php echo esc_url(home_url('/about-us/')); ?>"><?php esc_html_e('আমাদের সম্পর্কে', 'helptrickbd-edu'); ?></a>
+      <a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php esc_html_e('যোগাযোগ', 'helptrickbd-edu'); ?></a>
+      <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('প্রাইভেসি পলিসি', 'helptrickbd-edu'); ?></a>
+    </div>
+  </div>
+</div>

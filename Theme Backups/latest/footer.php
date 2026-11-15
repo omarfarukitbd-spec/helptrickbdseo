@@ -63,7 +63,7 @@ if (!defined('ABSPATH')) {
                     </p>
                     <div class="ht-footer-trust">
                         <?php ht_m3_icon('verified', 16, 'ht-icon-verified'); ?>
-                        <span><?php echo esc_html(get_theme_mod('ht_footer_trust_text', '১০০% বিশ্বস্ত ও শিক্ষাবিদ দ্বারা যাচাইকৃত কনটেন্ট')); ?></span>
+                        <span><?php echo esc_html(get_theme_mod('ht_footer_trust_text', 'সহজ ভাষায় লেখা শিক্ষামূলক কনটেন্ট')); ?></span>
                     </div>
                 </div>
 

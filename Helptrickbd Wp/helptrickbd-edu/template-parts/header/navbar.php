@@ -1,0 +1,62 @@
+<?php
+/**
+ * Header Navigation Component (Sticky Newspaper Nav, Category Pills, Search Pill, Mobile Toggle)
+ *
+ * @package HelpTrickBD_EduPortal
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+$categories = get_categories(array(
+    'orderby'    => 'count',
+    'order'      => 'DESC',
+    'number'     => 10,
+    'hide_empty' => false,
+));
+?>
+<div class="n-navwrap">
+  <div class="ht-container">
+    <nav class="n-nav-inner" aria-label="<?php esc_attr_e('প্রধান ন্যাভিগেশন', 'helptrickbd-edu'); ?>">
+      <!-- Mobile Drawer Toggle Button -->
+      <button type="button" id="ht-drawer-toggle" class="n-mobile-toggle" aria-label="<?php esc_attr_e('মেনু খুলুন', 'helptrickbd-edu'); ?>">
+        <?php htbd_icon('menu', array('width' => 22, 'height' => 22)); ?>
+      </button>
+
+      <!-- Category Pill Track (Horizontal Touch Scrollable) -->
+      <div class="n-nav-track">
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="n-nav-item <?php echo is_front_page() ? 'active' : ''; ?>">
+          <?php esc_html_e('প্রচ্ছদ', 'helptrickbd-edu'); ?>
+        </a>
+
+        <?php if (has_nav_menu('primary-nav')) : ?>
+          <?php
+          wp_nav_menu(array(
+              'theme_location' => 'primary-nav',
+              'container'      => false,
+              'items_wrap'     => '%3$s',
+              'fallback_cb'    => false,
+              'depth'          => 1,
+          ));
+          ?>
+        <?php else : ?>
+          <?php if (!empty($categories)) : ?>
+            <?php foreach ($categories as $cat) : ?>
+              <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="n-nav-item">
+                <?php echo esc_html($cat->name); ?>
+              </a>
+            <?php endforeach; ?>
+          <?php endif; ?>
+        <?php endif; ?>
+      </div>
+
+      <!-- Quick Search Trigger with Keyboard Pill -->
+      <button type="button" class="n-nav-search-trigger ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান বক্স খুলুন', 'helptrickbd-edu'); ?>">
+        <?php htbd_icon('search', array('width' => 16, 'height' => 16)); ?>
+        <span><?php esc_html_e('অনুসন্ধান...', 'helptrickbd-edu'); ?></span>
+        <kbd class="n-kbd-shortcut">Ctrl+K</kbd>
+      </button>
+    </nav>
+  </div>
+</div>

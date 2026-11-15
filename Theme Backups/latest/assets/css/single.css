@@ -740,6 +740,12 @@ body.ht-font-lg .ht-entry-content blockquote {
     border-right: 1px solid var(--ht-surface-border);
     text-align: left;
     font-family: var(--ht-font-bn) !important;
+    /* v1.4.11: never break a word mid-way in a table cell. The parent
+       .ht-entry-content sets word-break: break-word, which split e.g.
+       "Question 01" into "Questio n 01" in narrow columns. Tables have
+       min-width + a scroll wrapper, so cells have room to wrap on spaces. */
+    word-break: normal;
+    overflow-wrap: normal;
 }
 
 .ht-entry-content th:last-child,

@@ -1,0 +1,79 @@
+/*
+Theme Name: HelpTrickBD EduPortal
+Theme URI: https://www.helptrickbd.com/
+Author: HelpTrickBD Engineering Team
+Author URI: https://www.helptrickbd.com/
+Description: Ultra-fast, responsive Newspaper & Educational Portal WordPress theme designed for high Core Web Vitals, E-E-A-T academic authority, and seamless mobile learning experience.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: helptrickbd-edu
+Tags: education, newspaper, blog, grid-layout, two-columns, custom-menu, featured-images, full-width-template, theme-options
+*/
+
+/* Base CSS Tokens & Design Variables */
+:root {
+  /* Brand Palette - Royal Blue & Newspaper Red */
+  --ht-primary: #1e40af;
+  --ht-primary-hover: #1d4ed8;
+  --ht-primary-light: #2563eb;
+  --ht-primary-soft: rgba(37, 99, 235, 0.08);
+  --ht-primary-glow: rgba(37, 99, 235, 0.2);
+  --ht-accent: #b3271e;
+  --ht-accent-hover: #991b1b;
+  --ht-accent-soft: rgba(179, 39, 30, 0.08);
+  --ht-success: #16a34a;
+  --ht-success-soft: rgba(22, 163, 74, 0.1);
+  --ht-warning: #d97706;
+
+  /* Light Theme (Clean Academic Slate) */
+  --ht-bg: #f8fafc;
+  --ht-surface: #ffffff;
+  --ht-surface-alt: #f1f5f9;
+  --ht-surface-hover: #f8fafc;
+  --ht-border: #e2e8f0;
+  --ht-border-dark: #cbd5e1;
+  --ht-rule: #0f172a;
+  --ht-text-primary: #0f172a;
+  --ht-text-secondary: #334155;
+  --ht-text-muted: #64748b;
+  --ht-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --ht-card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+
+  /* Typography Scale */
+  --ht-font-sans: "SolaimanLipi", "Hind Siliguri", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ht-font-serif: "Noto Serif Bengali", "SolaimanLipi", Georgia, serif;
+  
+  /* Font Resizer Dynamic Multipliers (Default Medium = 100%) */
+  --ht-font-scale: 1;
+
+  /* Layout Containers (Mobile & Desktop Auto 100% Screen - Rule 12 Section 4) */
+  --ht-max-width: 1240px;
+  --ht-container-pad: 0;
+  --ht-radius-sm: 4px;
+  --ht-radius-md: 8px;
+  --ht-radius-lg: 12px;
+  --ht-radius-full: 9999px;
+  --ht-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Tokens (WCAG 2.1 AA Compliant) */
+[data-theme="dark"] {
+  --ht-bg: #0b0f19;
+  --ht-surface: #131b2e;
+  --ht-surface-alt: #1a243b;
+  --ht-surface-hover: #1f2c47;
+  --ht-border: rgba(255, 255, 255, 0.08);
+  --ht-border-dark: rgba(255, 255, 255, 0.16);
+  --ht-rule: rgba(255, 255, 255, 0.25);
+  --ht-text-primary: #f8fafc;
+  --ht-text-secondary: #cbd5e1;
+  --ht-text-muted: #94a3b8;
+  --ht-primary-soft: rgba(96, 165, 250, 0.12);
+  --ht-accent-soft: rgba(248, 113, 113, 0.12);
+  --ht-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --ht-card-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.4);
+}

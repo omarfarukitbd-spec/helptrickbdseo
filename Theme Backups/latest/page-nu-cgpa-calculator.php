@@ -23,7 +23,7 @@ get_header();
         <!-- App Hero Card -->
         <header class="ht-app-header-card">
             <h1>জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর (NU CGPA & SGPA Calculator)</h1>
-            <p>স্নাতক (সম্মান) ৪ বছর, ডিগ্রি (পাস) ৩ বছর ও মাস্টার্স ১/২ বছর মেয়াদী কোর্সের নির্ভুল সিজিপিএ, বিষয়ভিত্তিক জিপিএ, টার্গেট ফার্স্ট ক্লাস প্ল্যানার ও মানোন্নয়ন সিমুলেটর।</p>
+            <p>স্নাতক (সম্মান) ৪ বছর, ডিগ্রি (পাস) ৩ বছর ও মাস্টার্স ১/২ বছর মেয়াদী কোর্সের সঠিক সিজিপিএ, বিষয়ভিত্তিক জিপিএ, টার্গেট ফার্স্ট ক্লাস প্ল্যানার ও মানোন্নয়ন সিমুলেটর।</p>
         </header>
 
         <!-- App Control Toolbar -->
@@ -83,7 +83,7 @@ get_header();
       জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর ২০২৬
     </h2>
 <p class="htbd-app-subtitle" style="margin: 0; color: #64748b; font-size: 15px;">
-      অনার্স, ডিগ্রি পাস ও মাস্টার্স শিক্ষার্থীদের জন্য আধুনিক, নির্ভুল ও তাৎক্ষণিক রেজাল্ট মূল্যায়ন ব্যবস্থা
+      অনার্স, ডিগ্রি পাস ও মাস্টার্স শিক্ষার্থীদের জন্য আধুনিক, সঠিক ও তাৎক্ষণিক রেজাল্ট মূল্যায়ন ব্যবস্থা
     </p>
 <!-- Program Selector Pills -->
 <div style="display: flex; justify-content: center; gap: 10px; margin-top: 18px; flex-wrap: wrap;">
@@ -344,7 +344,7 @@ get_header();
                 + আরেকটি বিষয় যোগ করুন
               </button>
 </div>
-<div style="font-size: 11.5px; color: #64748b; margin-top: 8px; line-height: 1.5;">*এনইউ নিয়ম অনুযায়ী ইমপ্রুভমেন্টে সর্বোচ্চ B+ (৩.২৫) পর্যন্ত গণনা করা হয়। আপনি সরাসরি আপনার প্রত্যাশিত ফ্র্যাকশনাল বা পূর্ণ গ্রেড পয়েন্ট (যেমন: ৩.২৫, ৩.১০, ২.৮৫ ইত্যাদি) টাইপ করতে পারেন।</div>
+<div style="font-size: 11.5px; color: #64748b; margin-top: 8px; line-height: 1.5;">*এনইউ নিয়ম অনুযায়ী মানোন্নয়নে B+ সর্বোচ্চ সীমা প্রযোজ্য নয় (সংশোধিত রেগুলেশন ২০২৫, ধারা ১৪) — শুধু F গ্রেডের কোর্সে সর্বোচ্চ A-। আপনি সরাসরি আপনার প্রত্যাশিত ফ্র্যাকশনাল বা পূর্ণ গ্রেড পয়েন্ট (যেমন: ৩.২৫, ৩.১০, ২.৮৫ ইত্যাদি) টাইপ করতে পারেন।</div>
 </div>
 <!-- Improvement Output -->
 <div class="htbd-imp-result-box">
@@ -628,18 +628,33 @@ get_header();
 </figcaption>
 </figure>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
-জাতীয় বিশ্ববিদ্যালয় (National University, Bangladesh)-এর অধীনে স্নাতক (সম্মান), ডিগ্রি (পাস) এবং মাস্টার্স কোর্সের শিক্ষার্থীদের ফলাফল প্রকাশের পর সবচেয়ে গুরুত্বপূর্ণ বিষয় হলো সঠিক পদ্ধতিতে জিপিএ (GPA) ও সম্মিলিত সিজিপিএ (CGPA) গণনা করা। ক্রেডিট পদ্ধতির জটিল নিয়ম, নন-ক্রেডিট আবশ্যিক ইংরেজি বিষয় এবং ইনকোর্স ও ব্যবহারিক নম্বরের প্রভাবে ম্যানুয়ালি রেজাল্ট হিসাব করতে গিয়ে অধিকাংশ শিক্ষার্থীই বিভ্রান্ত হন। শিক্ষার্থীদের এই ভোগান্তি দূর করতে হেল্পট্রিকবিডি নিয়ে এলো দেশের প্রথম <strong>সম্পূর্ণ ইন্টারেক্টিভ ও স্বয়ংক্রিয় জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর ২০২৬</strong>। এই টুলের মাধ্যমে শিক্ষার্থী কেবল তাদের প্রাপ্ত লেটার গ্রেড বা নম্বর ইনপুট দিয়েই নয়, বরং ডিপার্টমেন্টভিত্তিক অফিসিয়াল সিলেবাস অটো-লোড এবং রেজাল্ট টেক্সট কপি-পেস্ট করে মুহূর্তে নির্ভুল সিজিপিএ ও ক্লাস (First Class / Second Class) যাচাই করতে পারবেন।
+জাতীয় বিশ্ববিদ্যালয় (National University, Bangladesh)-এর অধীনে স্নাতক (সম্মান), ডিগ্রি (পাস) এবং মাস্টার্স কোর্সের শিক্ষার্থীদের ফলাফল প্রকাশের পর সবচেয়ে গুরুত্বপূর্ণ বিষয় হলো সঠিক পদ্ধতিতে জিপিএ (GPA) ও সম্মিলিত সিজিপিএ (CGPA) গণনা করা। ক্রেডিট পদ্ধতির জটিল নিয়ম, নন-ক্রেডিট আবশ্যিক ইংরেজি বিষয় এবং ইনকোর্স ও ব্যবহারিক নম্বরের প্রভাবে ম্যানুয়ালি রেজাল্ট হিসাব করতে গিয়ে অধিকাংশ শিক্ষার্থীই বিভ্রান্ত হন। শিক্ষার্থীদের এই ভোগান্তি দূর করতে হেল্পট্রিকবিডি নিয়ে এলো <strong>সম্পূর্ণ ইন্টারেক্টিভ ও স্বয়ংক্রিয় জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর ২০২৬</strong>। এই টুলের মাধ্যমে শিক্ষার্থী কেবল তাদের প্রাপ্ত লেটার গ্রেড বা নম্বর ইনপুট দিয়েই নয়, বরং ডিপার্টমেন্টভিত্তিক অফিসিয়াল সিলেবাস অটো-লোড এবং রেজাল্ট টেক্সট কপি-পেস্ট করে মুহূর্তে সঠিক সিজিপিএ ও ক্লাস (First Class / Second Class) যাচাই করতে পারবেন।
 </p>
 <!-- Quick Overview Callout Box -->
 <div class="htbd-overview-box" style="background: #eff6ff; border-left: 5px solid #2563eb; border-radius: 8px; padding: 20px 24px; margin: 25px 0; font-family: 'SolaimanLipi', sans-serif;">
 <h3 class="htbd-overview-title" style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 19px; font-weight: 700;">এনইউ সিজিপিএ ক্যালকুলেটরের মূল বৈশিষ্ঠ্য একনজরে | Tool Overview</h3>
 <p class="htbd-overview-text" style="margin: 0; color: #1e293b; font-size: 16px; line-height: 1.85;">
-জাতীয় বিশ্ববিদ্যালয়ের ৪.০০ স্কেল ভিত্তিক এই ক্যালকুলেটরে রয়েছে: <strong>১. ইয়ার-ওয়াইজ লাইভ স্লাইডার সিজিপিএ ক্যালকুলেটর</strong>, <strong>২. ডিপার্টমেন্ট ও সিলেবাস অটো-লোড সুবিধা সহ বিষয়ভিত্তিক জিপিএ গণনা</strong>, <strong>৩. টার্গেট ফার্স্ট ক্লাস (৩.০০) প্ল্যানার</strong> এবং <strong>৪. মানোন্নয়ন (Improvement) পরীক্ষার প্রভাব সিমুলেটর</strong>। এছাড়া ফলাফল সরাসরি অফিসিয়াল প্রাতিষ্ঠানিক একাডেমিক ট্রান্সক্রিপ্ট ও গ্রেড শিট আকারে <strong>শতভাগ প্রফেশনাল ১-পাতা A4 PDF</strong> হিসেবে প্রিন্ট বা সংরক্ষণের সুবিধা যুক্ত রয়েছে।
+জাতীয় বিশ্ববিদ্যালয়ের ৪.০০ স্কেল ভিত্তিক এই ক্যালকুলেটরে রয়েছে: <strong>১. ইয়ার-ওয়াইজ লাইভ স্লাইডার সিজিপিএ ক্যালকুলেটর</strong>, <strong>২. ডিপার্টমেন্ট ও সিলেবাস অটো-লোড সুবিধা সহ বিষয়ভিত্তিক জিপিএ গণনা</strong>, <strong>৩. টার্গেট ফার্স্ট ক্লাস (৩.০০) প্ল্যানার</strong> এবং <strong>৪. মানোন্নয়ন (Improvement) পরীক্ষার প্রভাব সিমুলেটর</strong>। এছাড়া ফলাফল সরাসরি অফিসিয়াল প্রাতিষ্ঠানিক একাডেমিক ট্রান্সক্রিপ্ট ও গ্রেড শিট আকারে <strong>পেশাদার ১-পাতা A4 PDF</strong> হিসেবে প্রিন্ট বা সংরক্ষণের সুবিধা যুক্ত রয়েছে।
 </p>
 <div class="htbd-overview-source" style="margin-top: 12px; font-size: 14.5px; color: #1d4ed8; font-weight: 600;">
-তথ্যসূত্র: জাতীয় বিশ্ববিদ্যালয় পরীক্ষা নিয়ন্ত্রণ দপ্তর ও স্নাতক (সম্মান) অর্ডিন্যান্স অনুযায়ী শতভাগ পরীক্ষিত
+তথ্যসূত্র: জাতীয় বিশ্ববিদ্যালয় পরীক্ষা নিয়ন্ত্রণ দপ্তর ও স্নাতক (সম্মান) অর্ডিন্যান্স অনুযায়ী যাচাইকৃত
 </div>
 </div>
+
+<!-- v1.4.11: Table of Contents (page had 8 H2 guide sections but no TOC) -->
+<nav class="htbd-cgpa-toc" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px 22px; margin: 25px 0; font-family: 'SolaimanLipi', sans-serif;" aria-label="সূচিপত্র">
+<h3 style="margin: 0 0 10px 0; color: #0c2340; font-size: 18px; font-weight: 700;">সূচিপত্র</h3>
+<ol style="margin: 0; padding-left: 20px; color: #1e293b; font-size: 16px; line-height: 2;">
+<li><a href="#cgpa-ki-kano" style="color: #1d4ed8; text-decoration: none;">সিজিপিএ ক্যালকুলেটর কী ও কেন এটি ব্যবহার করবেন?</a></li>
+<li><a href="#cgpa-grading-scale" style="color: #1d4ed8; text-decoration: none;">জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল গ্রেডিং স্কেল ও মার্কস বণ্টন ২০২৬</a></li>
+<li><a href="#cgpa-class-division" style="color: #1d4ed8; text-decoration: none;">জাতীয় বিশ্ববিদ্যালয়ের ক্লাস ও ডিভিশন নির্ধারণের নীতিমালা</a></li>
+<li><a href="#cgpa-formula" style="color: #1d4ed8; text-decoration: none;">সিজিপিএ হিসাব করার গাণিতিক ফর্মুলা ও বাস্তব উদাহরণ</a></li>
+<li><a href="#cgpa-non-credit" style="color: #1d4ed8; text-decoration: none;">নন-ক্রেডিট আবশ্যিক ইংরেজি ও ব্যবহারিক বিষয়ের নিয়মাবলী</a></li>
+<li><a href="#cgpa-improvement" style="color: #1d4ed8; text-decoration: none;">মানোন্নয়ন (Improvement) পরীক্ষার সুযোগ ও নিয়মাবলী</a></li>
+<li><a href="#cgpa-tips" style="color: #1d4ed8; text-decoration: none;">সিজিপিএ ৩.০০+ (ফার্স্ট ক্লাস) পাওয়ার ৫টি পরীক্ষিত টিপস</a></li>
+<li><a href="#cgpa-faq" style="color: #1d4ed8; text-decoration: none;">জাতীয় বিশ্ববিদ্যালয় সিজিপিএ সংক্রান্ত সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)</a></li>
+</ol>
+</nav>
 
 <!-- ========================================================================== -->
 <!-- INTERACTIVE WEB APPLICATION: NU ADVANCED CGPA CALCULATOR ENGINE           -->
@@ -652,19 +667,19 @@ get_header();
 <!-- ========================================================================== -->
 <!-- COMPREHENSIVE ACADEMIC CONTENT & SEO SHIELD (1,500+ WORDS)                 -->
 <!-- ========================================================================== -->
-<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
+<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;" id="cgpa-ki-kano">
 জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর কী ও কেন এটি ব্যবহার করবেন?
 </h2>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
 জাতীয় বিশ্ববিদ্যালয়ের চার বছর মেয়াদি স্নাতক (সম্মান), তিন বছর মেয়াদি ডিগ্রি (পাস) এবং এক বা দুই বছর মেয়াদি মাস্টার্স পরীক্ষায় গ্রেডিং পদ্ধতি চালু হওয়ার পর থেকে শিক্ষার্থীদের ফলাফল মূল্যায়নে মৌলিক পরিবর্তন এসেছে। সনাতন শতকরা নম্বরের পরিবর্তে এখন প্রতিটি কোর্সে গ্রেড পয়েন্ট (GP) এবং বছর শেষে গ্রেড পয়েন্ট এভারেজ (GPA) হিসাব করা হয়। চার বছরের সমস্ত কোর্সের সমন্বয়ে তৈরি হয় ফাইনাল কিউমুলেটিভ গ্রেড পয়েন্ট এভারেজ বা সিজিপিএ (CGPA)।
 </p>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
-অনেক শিক্ষার্থী মনে করেন, চার বছরের জিপিএ সাধারণ যোগ করে চার দিয়ে ভাগ করলেই বুঝি সিজিপিএ পাওয়া যায়। এটি একটি মারাত্মক ভুল ধারণা! কারণ জাতীয় বিশ্ববিদ্যালয়ের প্রতিটি কোর্সের ক্রেডিট সমান নয়। কোনো কোর্স ৪ ক্রেডিটের (১০০ নম্বর), কোনো কোর্স ২ ক্রেডিটের (৫০ নম্বর) আবার ব্যবহারিক ও মৌখিক পরীক্ষার ক্রেডিট ভিন্ন হয়ে থাকে। ক্রেডিট-ওয়েটেড পদ্ধতি অনুসরণ না করে হিসাব করলে ফলাফলে বড় ধরনের গরমিল দেখা দেয়। হেল্পট্রিকবিডির এই ক্যালকুলেটরটি জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল একাডেমিক অর্ডিন্যান্স অনুযায়ী <strong>ক্রেডিট-ওয়েটেড এভারেজ ফর্মুলা</strong> ব্যবহার করে স্বয়ংক্রিয়ভাবে শতভাগ নির্ভুল ফলাফল প্রদর্শন করে।
+অনেক শিক্ষার্থী মনে করেন, চার বছরের জিপিএ সাধারণ যোগ করে চার দিয়ে ভাগ করলেই বুঝি সিজিপিএ পাওয়া যায়। এটি একটি মারাত্মক ভুল ধারণা! কারণ জাতীয় বিশ্ববিদ্যালয়ের প্রতিটি কোর্সের ক্রেডিট সমান নয়। কোনো কোর্স ৪ ক্রেডিটের (১০০ নম্বর), কোনো কোর্স ২ ক্রেডিটের (৫০ নম্বর) আবার ব্যবহারিক ও মৌখিক পরীক্ষার ক্রেডিট ভিন্ন হয়ে থাকে। ক্রেডিট-ওয়েটেড পদ্ধতি অনুসরণ না করে হিসাব করলে ফলাফলে বড় ধরনের গরমিল দেখা দেয়। হেল্পট্রিকবিডির এই ক্যালকুলেটরটি জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল একাডেমিক অর্ডিন্যান্স অনুযায়ী <strong>ক্রেডিট-ওয়েটেড এভারেজ ফর্মুলা</strong> ব্যবহার করে স্বয়ংক্রিয়ভাবে ক্রেডিট-ওয়েটেড সিজিপিএ নির্ণয় করে।
 </p>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
-<strong>সরাসরি ফ্র্যাকশনাল বা কাস্টম পয়েন্ট ইনপুট সুবিধা:</strong> অনেক শিক্ষার্থী তাদের নির্দিষ্ট পরীক্ষার নম্বরপত্র অনুযায়ী বা মানোন্নয়ন পর্যালোচনায় ড্রপডাউনের বাঁধা-ধরা লেটার গ্রেডের বাইরে যেকোনো কাস্টম ফ্র্যাকশনাল পয়েন্ট (যেমন: ৩.৪৫, ৩.১৮, ৩.৬০ ইত্যাদি) সরাসরি ইনপুট দিয়ে রেজাল্ট পরীক্ষা করতে চান। হেল্পট্রিকবিডি ক্যালকুলেটরে প্রতিটি কোর্সের পাশে <strong>লেটার গ্রেডের পাশাপাশি সরাসরি পয়েন্ট (GP) টাইপ করার স্বতন্ত্র ঘর</strong> যুক্ত করা হয়েছে। লেটার গ্রেড সিলেক্ট করলে পয়েন্ট ঘরে স্বয়ংক্রিয়ভাবে পয়েন্ট বসে যায়, আবার সরাসরি পয়েন্ট টাইপ করলে ক্যালকুলেটর স্বয়ংক্রিয়ভাবে সেই সুনির্দিষ্ট পয়েন্টের ভিত্তিতে শতভাগ নির্ভুল ক্রেডিট-ওয়েটেড সিজিপিএ নির্ধারণ করে।
+<strong>সরাসরি ফ্র্যাকশনাল বা কাস্টম পয়েন্ট ইনপুট সুবিধা:</strong> অনেক শিক্ষার্থী তাদের নির্দিষ্ট পরীক্ষার নম্বরপত্র অনুযায়ী বা মানোন্নয়ন পর্যালোচনায় ড্রপডাউনের বাঁধা-ধরা লেটার গ্রেডের বাইরে যেকোনো কাস্টম ফ্র্যাকশনাল পয়েন্ট (যেমন: ৩.৪৫, ৩.১৮, ৩.৬০ ইত্যাদি) সরাসরি ইনপুট দিয়ে রেজাল্ট পরীক্ষা করতে চান। হেল্পট্রিকবিডি ক্যালকুলেটরে প্রতিটি কোর্সের পাশে <strong>লেটার গ্রেডের পাশাপাশি সরাসরি পয়েন্ট (GP) টাইপ করার স্বতন্ত্র ঘর</strong> যুক্ত করা হয়েছে। লেটার গ্রেড সিলেক্ট করলে পয়েন্ট ঘরে স্বয়ংক্রিয়ভাবে পয়েন্ট বসে যায়, আবার সরাসরি পয়েন্ট টাইপ করলে ক্যালকুলেটর স্বয়ংক্রিয়ভাবে সেই সুনির্দিষ্ট পয়েন্টের ভিত্তিতে ক্রেডিট-ওয়েটেড সিজিপিএ নির্ধারণ করে।
 </p>
-<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
+<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;" id="cgpa-grading-scale">
 জাতীয় বিশ্ববিদ্যালয়ের অফিসিয়াল গ্রেডিং স্কেল ও মার্কস বণ্টন ২০২৬
 </h2>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
@@ -672,7 +687,7 @@ get_header();
 </p>
 <!-- Grading Table -->
 <div style="overflow-x: auto; margin: 25px 0;">
-<table class="htbd-grade-table" style="width: 100%; border-collapse: collapse; font-family: 'SolaimanLipi', sans-serif; font-size: 16px; text-align: center; border: 1px solid #cbd5e1;">
+<table class="htbd-grade-table" style="width: 100%; min-width: 560px; border-collapse: collapse; font-family: 'SolaimanLipi', sans-serif; font-size: 16px; text-align: center; border: 1px solid #cbd5e1;">
 <thead>
 <tr style="background: #1e3a8a; color: #ffffff;">
 <th style="padding: 12px; border: 1px solid #cbd5e1;">শতকরা নম্বর (%)</th>
@@ -745,7 +760,7 @@ get_header();
 </tbody>
 </table>
 </div>
-<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
+<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;" id="cgpa-class-division">
 জাতীয় বিশ্ববিদ্যালয়ের ক্লাস ও ডিভিশন নির্ধারণের নীতিমালা
 </h2>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
@@ -757,7 +772,7 @@ get_header();
 <li style="margin-bottom: 10px;"><strong>তৃতীয় শ্রেণি (Third Class):</strong> সিজিপিএ ২.০০ থেকে ২.২৪ (CGPA 2.00 to 2.24)। এটি স্নাতক ডিগ্রি অর্জনের ন্যূনতম পাস মানদণ্ড।</li>
 <li style="margin-bottom: 10px;"><strong>ফেল বা ডিগ্রি অপ্রাপ্ত:</strong> সিজিপিএ ২.০০-এর নিচে পেলে শিক্ষার্থী কোনো ডিগ্রি অর্জন করতে পারবেন না। তাকে মানোন্নয়ন বা রি-অ্যাডমিশনের মাধ্যমে সিজিপিএ ২.০০ এ উন্নীত করতে হবে।</li>
 </ul>
-<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
+<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;" id="cgpa-formula">
 সিজিপিএ হিসাব করার গাণিতিক ফর্মুলা ও বাস্তব উদাহরণ
 </h2>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
@@ -775,9 +790,9 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 • ৩য় বর্ষ (৩২ ক্রেডিট): জিপিএ ৩.০০ → ক্রেডিট পয়েন্ট = ৩২ × ৩.০০ = ৯৬.০০<br/>
 • ৪র্থ বর্ষ (৩২ ক্রেডিট): জিপিএ ৩.২০ → ক্রেডিট পয়েন্ট = ৩২ × ৩.২০ = ১০২.৪০<br/>
 <strong>মোট ক্রেডিট পয়েন্ট:</strong> ৯৯.২০ + ৯১.২০ + ৯৬.০০ + ১০২.৪০ = ৩৮৮.৮০<br/>
-<strong>ফাইনাল CGPA:</strong> ৩৮৮.৮০ ÷ ১২৮ = <strong>৩.০৩ (First Class / ১ম শ্রেণি)</strong>!
+<strong>ফাইনাল CGPA:</strong> ৩৮৮.৮০ ÷ ১২৮ = <strong>৩.০৪ (First Class / ১ম শ্রেণি)</strong>!
 </p>
-<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
+<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;" id="cgpa-non-credit">
 নন-ক্রেডিট আবশ্যিক ইংরেজি ও ব্যবহারিক বিষয়ের নিয়মাবলী
 </h2>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
@@ -788,31 +803,31 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 <li style="margin-bottom: 10px;">তবে পরীক্ষায় ন্যূনতম ৩৩ নম্বর পেয়ে পাস করা বাধ্যতামূলক। কোনো শিক্ষার্থী ফেল করলে তাকে পরবর্তী ব্যাচের সাথে পরীক্ষা দিয়ে পাস করতে হবে। অন্যথায় অনার্স পাসের চূড়ান্ত মূল সনদপত্র প্রদান করা হবে না।</li>
 <li style="margin-bottom: 10px;">বিজ্ঞান অনুষদের ক্ষেত্রে ব্যবহারিক ও ইনকোর্স পরীক্ষা অত্যন্ত গুরুত্বপূর্ণ। প্র্যাকটিক্যাল সাধারণত ২ বা ৪ ক্রেডিটের হয়ে থাকে এবং এতে ভালো গ্রেড (A বা A+) পাওয়া অপেক্ষাকৃত সহজ, যা সামগ্রিক সিজিপিএ অনেক বৃদ্ধি করে।</li>
 </ul>
-<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
-মানোন্নয়ন (Improvement) পরীক্ষার সুযোগ ও সর্বোচ্চ গ্রেড সীমা
+<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;" id="cgpa-improvement">
+মানোন্নয়ন (Improvement) পরীক্ষার সুযোগ ও নিয়মাবলী
 </h2>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
 জাতীয় বিশ্ববিদ্যালয়ে কোনো কোর্সে খারাপ ফলাফল হলে তা শুধরে নেওয়ার জন্য মানোন্নয়ন পরীক্ষার সুযোগ রয়েছে। তবে এর কিছু কড়া নিয়ম রয়েছে:
 </p>
 <ul style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 25px; padding-left: 20px;">
-<li style="margin-bottom: 10px;">শুধুমাত্র C (২.২৫), D (২.০০) অথবা F (০.০০) গ্রেড প্রাপ্ত কোর্সেই মানোন্নয়ন পরীক্ষা দেওয়া যায়। কোনো বিষয়ে C+ (২.৫০) বা তার বেশি গ্রেড থাকলে আর মানোন্নয়ন দেওয়া যায় না।</li>
-<li style="margin-bottom: 10px;">মানোন্নয়ন পরীক্ষায় যত ভালো নম্বরই পান না কেন, জাতীয় বিশ্ববিদ্যালয়ের অর্ডিন্যান্স অনুযায়ী <strong>সর্বোচ্চ B+ গ্রেড (গ্রেড পয়েন্ট ৩.২৫)</strong> প্রদান করা হবে। শিক্ষার্থী ১০০ তে ৯০ পেলেও তার গ্রেড B+ হিসেবেই গণনায় আসবে।</li>
+<li style="margin-bottom: 10px;">C, C+ অথবা D গ্রেড প্রাপ্ত কোর্সে মানোন্নয়ন পরীক্ষা দেওয়া যায় — এক শিক্ষাবর্ষে সর্বোচ্চ ২টি কোর্সে। F গ্রেডের কোর্সেও মানোন্নয়ন দেওয়া যায়।</li>
+<li style="margin-bottom: 10px;">মানোন্নয়নে B+ সর্বোচ্চ সীমা আর প্রযোজ্য নয় — জাতীয় বিশ্ববিদ্যালয়ের সংশোধিত রেগুলেশন ২০২৫ (ধারা ১৪) অনুযায়ী প্রাপ্ত নম্বর অনুযায়ী গ্রেড গণনা করা হয়; শুধু F গ্রেডের কোর্সে মানোন্নয়নের সর্বোচ্চ গ্রেড A-।</li>
 <li style="margin-bottom: 10px;">যদি মানোন্নয়ন পরীক্ষায় আগের চেয়ে কম গ্রেড আসে, তবে পূর্বের ভালো গ্রেডটিই রেজাল্ট শিটে বহাল রাখা হয়।</li>
 </ul>
-<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
-সিজিপিএ ৩.০০+ (ফার্স্ট ক্লাস) নিশ্চিত করার ৫টি পরীক্ষিত মাস্টার টিপস
+<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;" id="cgpa-tips">
+সিজিপিএ ৩.০০+ (ফার্স্ট ক্লাস) পাওয়ার ৫টি পরীক্ষিত টিপস
 </h2>
 <p style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 20px;">
-চার বছরের অনার্স যাত্রায় অনেক শিক্ষার্থী শুরুতে হেলাফেলা করে ৩য় বা ৪র্থ বর্ষে এসে সিজিপিএ বাড়ানোর জন্য দিশেহারা হয়ে পড়েন। আপনি যদি প্রথম শ্রেণি নিশ্চিত করতে চান, তবে নিচের কৌশলগুলো মেনে চলুন:
+চার বছরের অনার্স যাত্রায় অনেক শিক্ষার্থী শুরুতে হেলাফেলা করে ৩য় বা ৪র্থ বর্ষে এসে সিজিপিএ বাড়ানোর জন্য দিশেহারা হয়ে পড়েন। আপনি যদি প্রথম শ্রেণি পেতে চান, তবে নিচের কৌশলগুলো মেনে চলুন:
 </p>
 <ol style="font-family: 'SolaimanLipi', sans-serif; font-size: 17px; line-height: 1.85; color: #1e293b; margin-bottom: 25px; padding-left: 20px;">
 <li style="margin-bottom: 12px;"><strong>১ম ও ২য় বর্ষ থেকেই ৩.০০ টার্গেট রাখুন:</strong> ১ম ও ২য় বর্ষের সিলেবাস তুলনামূলক সহজ থাকে। এই সময়ে ৩.১০ থেকে ৩.২০ তুলে রাখলে পরবর্তীতে কঠিন বর্ষগুলোতেও সিজিপিএ ৩.০০-এর নিচে নামে না।</li>
-<li style="margin-bottom: 12px;"><strong>ইনকোর্স ও টার্ম পেপারে পুরো নম্বর আদায়:</strong> প্রতিটি ১০০ নম্বরের বিষয়ে ২০ নম্বর থাকে ইনকোর্সে। শিক্ষকদের সাথে সুসম্পর্ক রেখে এবং যথাসময়ে অ্যাসাইনমেন্ট জমা দিয়ে ২০-এ ১৮-১৯ নিশ্চিত করতে হবে।</li>
-<li style="margin-bottom: 12px;"><strong>'F' গ্রেড কোনো অবস্থাতেই আসতে দেবেন না:</strong> একটি F গ্রেড পুরো বছরের জিপিএ এক ধাক্কায় ০.৪০ থেকে ০.৫০ নামিয়ে দেয়। ন্যূনতম পাস মার্ক ৪০ যেকোনো মূল্যে নিশ্চিত করতে হবে।</li>
+<li style="margin-bottom: 12px;"><strong>ইনকোর্স ও টার্ম পেপারে পুরো নম্বর আদায়:</strong> প্রতিটি ১০০ নম্বরের বিষয়ে ২০ নম্বর থাকে ইনকোর্সে। শিক্ষকদের সাথে সুসম্পর্ক রেখে এবং যথাসময়ে অ্যাসাইনমেন্ট জমা দিয়ে ২০-এ ১৮-১৯ পাওয়ার লক্ষ্য রাখুন।</li>
+<li style="margin-bottom: 12px;"><strong>'F' গ্রেড কোনো অবস্থাতেই আসতে দেবেন না:</strong> একটি F গ্রেড পুরো বছরের জিপিএ এক ধাক্কায় ০.৪০ থেকে ০.৫০ নামিয়ে দেয়। ন্যূনতম পাস মার্ক ৪০ অবশ্যই অর্জন করতে হবে।</li>
 <li style="margin-bottom: 12px;"><strong>বোর্ডের বিগত ৫ বছরের প্রশ্ন বিশ্লেষণ:</strong> জাতীয় বিশ্ববিদ্যালয়ের লিখিত পরীক্ষায় প্রায় ৬০-৭০% প্রশ্ন পূর্ববর্তী বছরগুলোর ফাইনাল পরীক্ষা থেকে ঘুরেফিরে আসে। বিগত ৫ বছরের বোর্ড প্রশ্ন মুখস্থের মতো আয়ত্ত করুন।</li>
 <li style="margin-bottom: 12px;"><strong>পয়েন্ট ও চার্টভিত্তিক খাতা উপস্থাপন:</strong> ঢালাও প্যারাগ্রাফ লেখার চেয়ে উত্তরপত্রে সাব-হেডিং, বুলেট পয়েন্ট, ডাটা চার্ট এবং উদ্ধৃতি ব্যবহার করলে পরীক্ষক সর্বোচ্চ নম্বর প্রদান করেন।</li>
 </ol>
-<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;">
+<h2 class="htbd-content-h2" style="font-family: 'SolaimanLipi', sans-serif; color: #0c2340; font-size: 24px; font-weight: 700; margin: 40px 0 18px 0; border-left: 5px solid #1e3a8a; padding-left: 14px;" id="cgpa-faq">
 জাতীয় বিশ্ববিদ্যালয় সিজিপিএ সংক্রান্ত সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)
 </h2>
 <!-- FAQ 1 -->
@@ -840,7 +855,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
 <div class="htbd-faq-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 14px; font-family: 'SolaimanLipi', sans-serif;">
 <h3 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 18px; font-weight: 700;">৪. ইমপ্রুভমেন্ট পরীক্ষা দিলে কি A+ পাওয়া সম্ভব?</h3>
 <p style="margin: 0; color: #334155; font-size: 16px; line-height: 1.8;">
-না, জাতীয় বিশ্ববিদ্যালয়ের অর্ডিন্যান্স অনুযায়ী মানোন্নয়ন পরীক্ষায় কোনো বিষয়ে ৯০ নম্বর পেলেও সর্বোচ্চ B+ গ্রেড (গ্রেড পয়েন্ট ৩.২৫) প্রদান করা হয়।
+হ্যাঁ, সম্ভব — C, C+ বা D গ্রেডের কোর্সে মানোন্নয়ন দিলে প্রাপ্ত নম্বর অনুযায়ী A+ পর্যন্ত পাওয়া যায়; B+ সর্বোচ্চ সীমা আর প্রযোজ্য নয় (সংশোধিত রেগুলেশন ২০২৫, ধারা ১৪)। শুধু F গ্রেডের কোর্সে মানোন্নয়নের সর্বোচ্চ গ্রেড A-।
 </p>
 </div>
 <!-- FAQ 5 -->
@@ -979,7 +994,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       "name": "ইমপ্রুভমেন্ট পরীক্ষা দিলে সর্বোচ্চ কত গ্রেড পাওয়া যায়?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "জাতীয় বিশ্ববিদ্যালয়ের অর্ডিন্যান্স অনুযায়ী মানোন্নয়ন পরীক্ষায় কোনো বিষয়ে ৯০ নম্বর পেলেও সর্বোচ্চ B+ গ্রেড (গ্রেড পয়েন্ট ৩.২৫) প্রদান করা হয়।"
+        "text": "সংশোধিত রেগুলেশন ২০২৫ (ধারা ১৪) অনুযায়ী মানোন্নয়নে B+ সর্বোচ্চ সীমা আর প্রযোজ্য নয় — C, C+ বা D গ্রেডের কোর্সে প্রাপ্ত নম্বর অনুযায়ী A+ পর্যন্ত পাওয়া যায়; শুধু F গ্রেডের কোর্সে সর্বোচ্চ গ্রেড A-।"
       }
     },
     {
@@ -995,7 +1010,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
       "name": "লেটার গ্রেড ছাড়া কি সরাসরি দশমিক বা কাস্টম পয়েন্ট দিয়ে সিজিপিএ হিসাব করা যায়?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "হ্যাঁ, হেল্পট্রিকবিডি ক্যালকুলেটরে প্রতিটি বিষয়ের জন্য লেটার গ্রেডের পাশাপাশি সরাসরি পয়েন্ট (GP) ঘর রয়েছে। আপনি যেকোনো ফ্র্যাকশনাল বা সুনির্দিষ্ট পয়েন্ট সরাসরি লিখে নির্ভুল সিজিপিএ গণনা করতে পারবেন।"
+        "text": "হ্যাঁ, হেল্পট্রিকবিডি ক্যালকুলেটরে প্রতিটি বিষয়ের জন্য লেটার গ্রেডের পাশাপাশি সরাসরি পয়েন্ট (GP) ঘর রয়েছে। আপনি যেকোনো ফ্র্যাকশনাল বা সুনির্দিষ্ট পয়েন্ট সরাসরি লিখে সঠিক সিজিপিএ গণনা করতে পারবেন।"
       }
     }
   ]

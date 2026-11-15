@@ -10,7 +10,7 @@
 When processing any task or prompt, the agent MUST resolve conflicts in the following strict order:
 1. **Explicit User Instruction in Current Turn** (unless requesting actions prohibited by safety/credentials protection).
 2. **This Agent Constitution (`.agents/rules/00_AGENT_CONSTITUTION.md`)**.
-3. **Domain Rulebooks (`.agents/rules/01_*.md` to `08_*.md`)**.
+3. **Domain Rulebooks (`.agents/rules/01_*.md` to `12_*.md`)**.
 4. **Project Skill (`.agents/skills/seo-blogger-adsense/SKILL.md`)**.
 5. **Project Overview (`AGENTS.md`)**.
 6. **Agent's Internal/Pre-trained Default Instincts** (Lowest Priority).
@@ -109,6 +109,12 @@ The agent is encouraged and expected to perform the following actions autonomous
     - প্রতিটি ডাউনলোডের শুরুতে সুস্পষ্ট `<h2>` হেডিং, ফাইল স্পেসিফিকেশন মেটা এবং বিশদ ব্যাখ্যামূলক অনুচ্ছেদ থাকতে হবে।
     - বাটন মোড ৩টি: (১) **সরাসরি ডাউনলোড (Direct Mode)**, (২) **৩০ সেকেন্ড কাউন্টডাউন টাইমার (Timer Mode)**, এবং (৩) **ডুয়াল মোড (Dual Mode)**।
     - যেকোনো পিডিএফ শেয়ারিং পোস্টের কাজ শুরুর আগে এজেন্ট অবশ্যই ব্যবহারকারীকে জিজ্ঞাসা করবে পোস্টে পিডিএফ দেওয়া হবে কি না, কোন বাটন ডিজাইন ব্যবহার করা হবে এবং ফাইলের লিঙ্ক কোনটি।
+26. **Enterprise Theme Engineering, Micro-Modular Architecture & 100/100 Core Web Vitals Governance (এন্টারপ্রাইজ থিম ডেভেলপমেন্ট ও মাইক্রো-মডুলার আর্কিটেকচার নীতি — Rule 12)**:
+    - কোনো দুর্বল লজিক, ভুল পিএইচপি কোড বা ডামি টেক্সট লেখা সম্পূর্ণ নিষিদ্ধ।
+    - কোনো মনোলিথিক বা ঢাউস ফাইল নিষিদ্ধ; প্রতিটি সেকশনের জন্য আলাদা আলাদা মাইক্রো-মডুলার ফাইল (`template-parts/home/...`, `inc/...`) তৈরি করতে হবে।
+    - মোবাইল এবং ডেস্কটপ উভয় ভিউতে ১০০% নিখুঁত ফুল-উইডথ রেসপনসিভনেস নিশ্চিত করতে হবে; কোনো ওভারফ্লো বা আনস্টাইলড গ্লিচ থাকা চলবে না।
+    - থিমের গতি মোবাইলে ও ডেস্কটপে ১০০ তে ১০০ হতে হবে। ভেক্টর এসভিজি, ক্রিটিক্যাল ইনলাইন সিএসএস এবং `filemtime()` ডাইনামিক ক্যাশ বাস্টিং বাধ্যতামূলক।
+    - কোড রচনার প্রতিটি ধাপে স্বয়ংক্রিয় সেলফ-রিচেক ও ভ্যালিডেশন সম্পন্ন করতে হবে। এই রুল অমান্য করা হলে কাজ ক্ষতিগ্রস্ত ("DAMAGED") হিসেবে গণ্য হবে।
 
 
 ---
