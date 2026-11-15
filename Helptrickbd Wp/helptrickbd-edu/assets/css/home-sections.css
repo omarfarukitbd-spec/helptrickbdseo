@@ -753,6 +753,12 @@
   margin-top: 12px;
 }
 
+@media (max-width: 480px) {
+  .n-pillgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .n-pill {
   display: flex;
   align-items: center;
@@ -841,11 +847,33 @@
 /* -------------------------------------------------------------------------
  * Live Exam Countdown Ticking Card (Zero CLS, Horizontal Grid)
  * ------------------------------------------------------------------------- */
+.ht-exam-timer-card {
+  background: var(--ht-surface);
+  border: 1px solid var(--ht-border);
+  border-radius: var(--ht-radius-md);
+  padding: 16px 18px;
+  margin-top: 16px;
+  box-shadow: var(--ht-card-shadow);
+}
+
 .ht-countdown-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6px;
   margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .ht-countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 340px) {
+  .ht-countdown-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .ht-countdown-cell {

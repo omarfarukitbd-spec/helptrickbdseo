@@ -13,6 +13,12 @@ get_header();
 ?>
 
 <div class="ht-container">
+  <nav class="ht-breadcrumb" aria-label="<?php esc_attr_e('ব্রেডক্রাম্ব', 'helptrickbd-edu'); ?>">
+    <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('হোম', 'helptrickbd-edu'); ?></a>
+    <span aria-hidden="true"> › </span>
+    <span aria-current="page"><?php esc_html_e('৪০৪ ত্রুটি', 'helptrickbd-edu'); ?></span>
+  </nav>
+
   <div class="ht-404-wrap" style="max-width: 680px; margin: 48px auto; text-align: center; padding: 32px 16px;">
     <div class="ht-404-badge" style="font-size: 5rem; font-family: var(--ht-font-serif); font-weight: 900; color: var(--ht-accent); line-height: 1;">
       <?php echo esc_html(htbd_bengali_number(404)); ?>

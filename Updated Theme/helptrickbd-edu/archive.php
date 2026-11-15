@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive & Category Template (Modeled after Demo 2 Classic Category Page)
+ * Archive Template — General Fallback (Author, Post-Type, etc.)
  *
  * @package HelpTrickBD_EduPortal
  */
@@ -11,13 +11,35 @@ if (!defined('ABSPATH')) {
 
 get_header();
 ?>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": <?php echo wp_json_encode(wp_strip_all_tags(get_the_archive_title())); ?>,
+  "url": "<?php echo esc_url(get_pagenum_link()); ?>",
+  "inLanguage": "bn-BD",
+  "publisher": {
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "url": "<?php echo esc_url(home_url('/')); ?>"
+  }
+}
+</script>
 
 <div class="ht-container">
+  <nav class="ht-breadcrumb" aria-label="<?php esc_attr_e('ব্রেডক্রাম্ব', 'helptrickbd-edu'); ?>">
+    <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('হোম', 'helptrickbd-edu'); ?></a>
+    <span aria-hidden="true"> › </span>
+    <span><?php esc_html_e('আর্কাইভ', 'helptrickbd-edu'); ?></span>
+    <span aria-hidden="true"> › </span>
+    <span aria-current="page"><?php echo esc_html(wp_strip_all_tags(get_the_archive_title())); ?></span>
+  </nav>
   <div class="n-catpage">
     <div class="n-sec-head" style="border-top:0;padding-top:4px;">
-      <h3>
+      <h1>
         <?php the_archive_title(); ?>
-      </h3>
+      </h1>
+      <?php the_archive_description('<p class="ht-archive-desc">', '</p>'); ?>
       <span class="rule" aria-hidden="true"></span>
     </div>
 

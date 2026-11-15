@@ -39,6 +39,18 @@
   color: var(--ht-text-muted);
 }
 
+@media (max-width: 600px) {
+  .ht-single-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .ht-date-read {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
 .ht-date-read {
   display: flex;
   align-items: center;
@@ -243,9 +255,16 @@
 }
 
 /* -------------------------------------------------------------------------
- * Print Optimization (@media print) for Students
+ * Print Optimization (@media print) for Academic Study & Revision
  * ------------------------------------------------------------------------- */
 @media print {
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
   body {
     background: #ffffff !important;
     color: #000000 !important;
@@ -253,6 +272,11 @@
     font-family: "SolaimanLipi", serif;
   }
 
+  /* Hide Header, Footer, Sidebar, Ads, Comments, and Non-Content UI */
+  header,
+  footer,
+  .site-header,
+  .site-footer,
   .n-dateline,
   .n-masthead,
   .n-navwrap,
@@ -260,42 +284,91 @@
   .n-social-cta,
   .ht-footer,
   .ht-related-section,
+  .ht-breadcrumb,
+  #secondary,
+  .sidebar,
+  .htbd-sidebar,
+  .ht-sidebar-wrap,
   .htbd-ad-slot,
+  .htbd-ad-header,
+  .htbd-ad-infeed,
+  .htbd-ad-single,
+  .htbd-ad-slot-single,
+  [class*="ad-slot"],
+  #comments,
+  .ht-comments-area,
+  .comment-respond,
   .ht-search-modal,
   .ht-drawer,
+  .htbd-bookmark-drawer,
+  #ht-bookmark-drawer,
   #ht-back-to-top,
   .ht-icon-btn,
   .ht-copy-btn,
   .ht-bookmark-btn,
   #ht-reading-progress,
+  #ht-copy-toast,
+  .n-nav-track,
+  .n-mobile-toggle,
+  .n-fsbar,
   button {
     display: none !important;
   }
 
-  .ht-single-layout {
+  /* Show Content Only */
+  .ht-single-layout,
+  .ht-entry-content {
     max-width: 100% !important;
+    width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    float: none !important;
   }
 
   .ht-single-title {
     font-size: 20pt;
+    line-height: 1.25;
     color: #000000 !important;
+    margin-bottom: 12pt;
   }
 
   .ht-entry-content {
     font-size: 11pt;
-    line-height: 1.5;
+    line-height: 1.6;
     color: #000000 !important;
   }
 
-  table {
+  .ht-entry-content h2,
+  .ht-entry-content h3 {
+    color: #000000 !important;
+    border-bottom: 1px solid #000000 !important;
+    page-break-after: avoid;
+  }
+
+  table,
+  blockquote,
+  figure,
+  .htbd-callout,
+  .callout-box {
     page-break-inside: avoid;
+  }
+
+  table {
+    width: 100% !important;
     border: 1px solid #000000 !important;
+    margin: 14pt 0;
   }
 
   th, td {
     border: 1px solid #000000 !important;
+    color: #000000 !important;
+    background: transparent !important;
+    padding: 6pt 8pt;
+  }
+
+  blockquote {
+    border-left: 3pt solid #000000 !important;
+    background: transparent !important;
     color: #000000 !important;
   }
 

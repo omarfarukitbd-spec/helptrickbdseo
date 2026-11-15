@@ -4,20 +4,41 @@
  */
 
 [data-theme="dark"] {
-  --ht-bg: #0b0f19;
-  --ht-surface: #131b2e;
-  --ht-surface-alt: #1a243b;
-  --ht-surface-hover: #1f2c47;
-  --ht-border: rgba(255, 255, 255, 0.1);
-  --ht-border-dark: rgba(255, 255, 255, 0.2);
-  --ht-rule: rgba(255, 255, 255, 0.3);
-  --ht-text-primary: #f8fafc;
-  --ht-text-secondary: #cbd5e1;
-  --ht-text-muted: #94a3b8;
-  --ht-primary-soft: rgba(96, 165, 250, 0.15);
-  --ht-accent-soft: rgba(248, 113, 113, 0.15);
-  --ht-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --ht-card-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.5);
+  /* Core Theme Tokens */
+  --htbd-bg: #0b0f19;
+  --htbd-surface: #131b2e;
+  --htbd-surface-alt: #1a243b;
+  --htbd-surface-hover: #1f2c47;
+  --htbd-border: rgba(255, 255, 255, 0.1);
+  --htbd-border-dark: rgba(255, 255, 255, 0.2);
+  --htbd-rule: rgba(255, 255, 255, 0.3);
+  --htbd-text: #f8fafc;
+  --htbd-text-primary: #f8fafc;
+  --htbd-text-secondary: #cbd5e1;
+  --htbd-text-muted: #94a3b8;
+  --htbd-text-inverse: #0f172a;
+  --htbd-primary-soft: rgba(96, 165, 250, 0.15);
+  --htbd-accent-soft: rgba(248, 113, 113, 0.15);
+  --htbd-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --htbd-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --htbd-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
+
+  /* Legacy & Internal Aliases */
+  --ht-bg: var(--htbd-bg);
+  --ht-surface: var(--htbd-surface);
+  --ht-surface-alt: var(--htbd-surface-alt);
+  --ht-surface-hover: var(--htbd-surface-hover);
+  --ht-border: var(--htbd-border);
+  --ht-border-dark: var(--htbd-border-dark);
+  --ht-rule: var(--htbd-rule);
+  --ht-text-primary: var(--htbd-text-primary);
+  --ht-text-secondary: var(--htbd-text-secondary);
+  --ht-text-muted: var(--htbd-text-muted);
+  --ht-text-inverse: var(--htbd-text-inverse);
+  --ht-primary-soft: var(--htbd-primary-soft);
+  --ht-accent-soft: var(--htbd-accent-soft);
+  --ht-card-shadow: var(--htbd-shadow-sm);
+  --ht-card-shadow-hover: var(--htbd-shadow-lg);
 }
 
 [data-theme="dark"] body {
@@ -142,4 +163,312 @@
 
 [data-theme="dark"] .ht-copyright-bar {
   border-top-color: var(--ht-border);
+}
+
+/* -------------------------------------------------------------------------
+ * Offline Bookmarks System (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .ht-bookmark-btn {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+  color: var(--htbd-text-muted);
+}
+
+[data-theme="dark"] .ht-bookmark-btn:hover,
+[data-theme="dark"] .ht-bookmark-btn.bookmarked {
+  color: #f87171;
+  border-color: #f87171;
+  background: rgba(248, 113, 113, 0.15);
+}
+
+[data-theme="dark"] .htbd-bookmark-drawer .ht-drawer-panel,
+[data-theme="dark"] #ht-bookmark-drawer .ht-drawer-panel,
+[data-theme="dark"] .ht-drawer-panel {
+  background: var(--htbd-surface);
+  border-left: 1px solid var(--htbd-border);
+}
+
+[data-theme="dark"] .ht-drawer-header,
+[data-theme="dark"] .ht-drawer-footer {
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .ht-bookmark-drawer-item {
+  background: var(--htbd-surface-alt);
+  border: 1px solid var(--htbd-border);
+}
+
+[data-theme="dark"] .ht-bookmark-drawer-item a {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .ht-bookmark-drawer-item a:hover {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .ht-bookmark-remove {
+  color: var(--htbd-text-muted);
+}
+
+[data-theme="dark"] .ht-bookmark-remove:hover {
+  color: #f87171;
+}
+
+/* -------------------------------------------------------------------------
+ * Live Exam Countdown & Timer Card (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .ht-countdown-cell {
+  background: var(--htbd-surface-alt);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .ht-countdown-val {
+  color: #f87171;
+}
+
+[data-theme="dark"] .ht-countdown-label {
+  color: var(--htbd-text-muted);
+}
+
+[data-theme="dark"] .ht-exam-timer-card {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+}
+
+/* -------------------------------------------------------------------------
+ * Live AJAX Search Modal & Dropdown (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .ht-search-dialog {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .ht-search-input-wrap {
+  background: var(--htbd-surface-alt);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .ht-search-input-wrap:focus-within {
+  border-color: #60a5fa;
+}
+
+[data-theme="dark"] .ht-search-field {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .ht-live-search-item {
+  background: var(--htbd-surface-alt);
+  border-color: var(--htbd-border);
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .ht-live-search-item:hover,
+[data-theme="dark"] .ht-live-search-item:focus {
+  background: var(--htbd-surface-hover);
+  border-color: #60a5fa;
+}
+
+[data-theme="dark"] .ht-live-search-thumb {
+  background: var(--htbd-surface);
+}
+
+[data-theme="dark"] .ht-live-search-title {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .ht-live-search-meta {
+  color: var(--htbd-text-muted);
+}
+
+[data-theme="dark"] .ht-search-hints a {
+  background: var(--htbd-surface-alt);
+  border-color: var(--htbd-border);
+  color: var(--htbd-text-secondary);
+}
+
+[data-theme="dark"] .ht-search-hints a:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+/* -------------------------------------------------------------------------
+ * Student Engagement: Reading Progress & Copy Toast (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] #ht-reading-progress {
+  background: #60a5fa;
+}
+
+[data-theme="dark"] #ht-copy-toast {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid var(--htbd-border);
+}
+
+[data-theme="dark"] .ht-copy-btn {
+  background: var(--htbd-surface-alt);
+  border-color: var(--htbd-border);
+  color: var(--htbd-text-secondary);
+}
+
+[data-theme="dark"] .ht-copy-btn:hover {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+/* -------------------------------------------------------------------------
+ * Comments & Discussion Section (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .ht-comments-area {
+  border-top-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .comment-body {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .comment-respond {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .comment-form input[type="text"],
+[data-theme="dark"] .comment-form input[type="email"],
+[data-theme="dark"] .comment-form input[type="url"],
+[data-theme="dark"] .comment-form textarea {
+  background: var(--htbd-surface-alt);
+  border-color: var(--htbd-border);
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .comment-form input:focus,
+[data-theme="dark"] .comment-form textarea:focus {
+  border-color: #60a5fa;
+}
+
+[data-theme="dark"] .comment-list .children {
+  border-left-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .reply a {
+  color: #60a5fa;
+}
+
+/* -------------------------------------------------------------------------
+ * Author Page & Profiles (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .author-profile-card,
+[data-theme="dark"] .n-author-card {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .author-profile-card h1,
+[data-theme="dark"] .n-author-card h1 {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .author-posts-grid .n-catcard,
+[data-theme="dark"] .n-catgrid .n-catcard,
+[data-theme="dark"] .n-catcard {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .n-catcard h2 a,
+[data-theme="dark"] .n-catcard h3 a {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .n-catcard h2 a:hover,
+[data-theme="dark"] .n-catcard h3 a:hover {
+  color: #60a5fa !important;
+}
+
+/* -------------------------------------------------------------------------
+ * Search Results Page & Empty State (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .search-empty-state,
+[data-theme="dark"] .n-empty-search {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .ht-search-form input,
+[data-theme="dark"] .n-toolbar input {
+  background: var(--htbd-surface-alt);
+  border-color: var(--htbd-border);
+  color: #f8fafc;
+}
+
+/* -------------------------------------------------------------------------
+ * Category, Tag, Date, Taxonomy & Archives (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .ht-breadcrumb {
+  color: var(--htbd-text-muted);
+}
+
+[data-theme="dark"] .ht-breadcrumb a {
+  color: var(--htbd-text-secondary);
+}
+
+[data-theme="dark"] .ht-breadcrumb a:hover {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .ht-breadcrumb [aria-current="page"] {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .ht-archive-desc {
+  color: var(--htbd-text-secondary);
+}
+
+[data-theme="dark"] .n-toolbar {
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .n-toolbar .cnt {
+  color: var(--htbd-text-secondary);
+}
+
+[data-theme="dark"] .page-numbers {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .page-numbers.current {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* -------------------------------------------------------------------------
+ * 404 & Attachment Templates (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .ht-404-wrap {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .ht-404-badge {
+  color: #f87171;
+}
+
+[data-theme="dark"] .ht-attachment-article {
+  background: var(--htbd-surface);
+  border-color: var(--htbd-border);
+}
+
+/* -------------------------------------------------------------------------
+ * Zero-CLS Responsive AdSlot Containers (Dark Mode)
+ * ------------------------------------------------------------------------- */
+[data-theme="dark"] .htbd-ad-slot {
+  background: var(--htbd-surface-alt);
+  border-color: var(--htbd-border);
+}
+
+[data-theme="dark"] .htbd-ad-slot::before {
+  color: var(--htbd-text-muted);
 }

@@ -11,12 +11,46 @@ if (!defined('ABSPATH')) {
 
 get_header();
 ?>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": <?php echo wp_json_encode(get_bloginfo('name') . ' — সর্বশেষ হ্যান্ডনোট ও প্রকাশনা'); ?>,
+  "url": "<?php echo esc_url(get_pagenum_link()); ?>",
+  "inLanguage": "bn-BD",
+  "publisher": {
+    "@type": "Organization",
+    "name": "HelpTrickBD",
+    "url": "<?php echo esc_url(home_url('/')); ?>"
+  }
+}
+</script>
 
 <div class="ht-container">
+  <nav class="ht-breadcrumb" aria-label="<?php esc_attr_e('ব্রেডক্রাম্ব', 'helptrickbd-edu'); ?>">
+    <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('হোম', 'helptrickbd-edu'); ?></a>
+    <span aria-hidden="true"> › </span>
+    <span aria-current="page"><?php esc_html_e('সর্বশেষ প্রকাশনা', 'helptrickbd-edu'); ?></span>
+  </nav>
+
   <div class="n-catpage">
     <div class="n-sec-head" style="border-top:0;padding-top:4px;">
-      <h3><?php esc_html_e('সর্বশেষ হ্যান্ডনোট ও প্রকাশনা', 'helptrickbd-edu'); ?></h3>
+      <h1><?php esc_html_e('সর্বশেষ হ্যান্ডনোট ও প্রকাশনা', 'helptrickbd-edu'); ?></h1>
       <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="n-toolbar">
+      <span class="lab"><?php esc_html_e('আর্টিকেল তালিকা:', 'helptrickbd-edu'); ?></span>
+      <span class="cnt">
+        <?php
+        global $wp_query;
+        printf(
+            /* translators: %s: number of posts */
+            esc_html__('মোট %sটি আর্টিকেল', 'helptrickbd-edu'),
+            esc_html(htbd_bengali_number($wp_query->found_posts))
+        );
+        ?>
+      </span>
     </div>
 
     <?php if (have_posts()) : ?>
@@ -47,11 +81,11 @@ get_header();
               <?php endif; ?>
 
               <div class="info">
-                <h4>
+                <h2 class="ht-list-title">
                   <a href="<?php the_permalink(); ?>">
                     <?php the_title(); ?>
                   </a>
-                </h4>
+                </h2>
                 <p><?php echo esc_html(wp_trim_words(get_the_excerpt(), 22, '...')); ?></p>
                 <div class="meta">
                   <span><?php echo esc_html(get_the_date('j F, Y')); ?></span> &bull; 
