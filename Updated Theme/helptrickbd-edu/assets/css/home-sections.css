@@ -485,10 +485,7 @@
   font-weight: 700;
   line-height: 1.45;
   margin: 0 0 4px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  /* Full title display — no truncation */
 }
 
 .n-trow:hover h4 {
@@ -606,10 +603,7 @@
   font-weight: 700;
   font-size: 0.9375rem;
   line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  /* Full title display — no truncation */
 }
 
 .n-lrow .lt-m {
