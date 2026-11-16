@@ -662,10 +662,7 @@
   font-weight: 700;
   line-height: 1.45;
   margin: 8px 0 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  word-break: break-word;
 }
 
 .n-pcard:hover h4 {

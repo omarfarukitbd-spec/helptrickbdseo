@@ -27,7 +27,7 @@ $categories = get_categories(array(
       <!-- Category Pill Track (Horizontal Touch Scrollable) -->
       <div class="n-nav-track">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="n-nav-item <?php echo is_front_page() ? 'active' : ''; ?>">
-          <?php esc_html_e('প্রচ্ছদ', 'helptrickbd-edu'); ?>
+          <?php echo esc_html(get_theme_mod('htbd_nav_home_text', 'All Posts')); ?>
         </a>
 
         <?php if (has_nav_menu('primary-nav')) : ?>
@@ -50,13 +50,6 @@ $categories = get_categories(array(
           <?php endif; ?>
         <?php endif; ?>
       </div>
-
-      <!-- Quick Search Trigger with Keyboard Pill -->
-      <button type="button" class="n-nav-search-trigger ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান বক্স খুলুন', 'helptrickbd-edu'); ?>">
-        <?php htbd_icon('search', array('width' => 16, 'height' => 16)); ?>
-        <span><?php esc_html_e('অনুসন্ধান...', 'helptrickbd-edu'); ?></span>
-        <kbd class="n-kbd-shortcut">Ctrl+K</kbd>
-      </button>
     </nav>
   </div>
 </div>

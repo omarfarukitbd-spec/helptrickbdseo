@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage Section 7: Infographic & Visual Study Photo Gallery
+ * Homepage Section 6: Photo Guides & Gallery (Configurable from Admin Panel)
  *
  * @package HelpTrickBD_EduPortal
  */
@@ -9,29 +9,41 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$photo_query = new WP_Query(array(
-    'posts_per_page'      => 4,
-    'offset'              => 21,
+if (!get_theme_mod('htbd_show_sec_gallery', true)) {
+    return;
+}
+
+$sec_title  = get_theme_mod('htbd_sec_gallery_title', 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড');
+$cat_id     = (int) get_theme_mod('htbd_sec_gallery_category', 0);
+$post_count = (int) get_theme_mod('htbd_sec_gallery_count', 4);
+$link_text  = get_theme_mod('htbd_sec_gallery_link_text', 'সকল গ্যালারি →');
+
+$query_args = array(
+    'posts_per_page'      => $post_count > 0 ? $post_count : 4,
     'post_status'         => 'publish',
     'ignore_sticky_posts' => 1,
     'no_found_rows'       => true,
-));
+);
+
+if ($cat_id > 0) {
+    $query_args['cat'] = $cat_id;
+    $target_link = get_category_link($cat_id);
+} else {
+    $target_link = home_url('/blog/');
+}
+
+$photo_query = new WP_Query($query_args);
 
 if (!$photo_query->have_posts()) {
-    $photo_query = new WP_Query(array(
-        'posts_per_page'      => 4,
-        'post_status'         => 'publish',
-        'ignore_sticky_posts' => 1,
-        'no_found_rows'       => true,
-    ));
+    return;
 }
 ?>
-<section class="n-sec" aria-label="<?php esc_attr_e('ইনফোগ্রাফিক ও ভিজ্যুয়াল স্টাডি গ্যালারি', 'helptrickbd-edu'); ?>">
+<section class="n-sec" aria-label="<?php echo esc_attr($sec_title); ?>">
   <div class="n-sec-head">
-    <h3><?php esc_html_e('ইনফোগ্রাফিক ও ভিজ্যুয়াল স্টাডি গ্যালারি', 'helptrickbd-edu'); ?></h3>
+    <h3><?php echo esc_html($sec_title); ?></h3>
     <span class="rule" aria-hidden="true"></span>
-    <a href="<?php echo esc_url(home_url('/blog/')); ?>">
-      <?php esc_html_e('সকল গ্যালারি →', 'helptrickbd-edu'); ?>
+    <a href="<?php echo esc_url($target_link); ?>">
+      <?php echo esc_html($link_text); ?>
     </a>
   </div>
 

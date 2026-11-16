@@ -302,34 +302,135 @@ if (!function_exists('htbd_edu_customize_register')) {
         ));
 
         // =========================================================================
-        // 7. HOMEPAGE MODULES & SETTINGS SECTION
+        // 7. HOMEPAGE MASTER SECTIONS PANEL (Full Admin Panel Customizability)
         // =========================================================================
-        $wp_customize->add_section('htbd_homepage_sections', array(
-            'title'    => esc_html__('হোমপেজ মডিউল ও সেটিংস', 'helptrickbd-edu'),
+        $cat_choices = array('0' => esc_html__('— সকল ক্যাটাগরি (Latest Posts) —', 'helptrickbd-edu'));
+        $all_cats    = get_categories(array('hide_empty' => false));
+        if (!empty($all_cats) && !is_wp_error($all_cats)) {
+            foreach ($all_cats as $c) {
+                $cat_choices[$c->term_id] = esc_html($c->name) . ' (' . $c->count . ')';
+            }
+        }
+
+        $wp_customize->add_panel('htbd_panel_homepage', array(
+            'title'       => esc_html__('হোমপেজ ও সেকশন কাস্টমাইজেশন', 'helptrickbd-edu'),
+            'description' => esc_html__('হোমপেজের প্রতিটি সেকশনের নাম, ক্যাটাগরি, পোস্ট সংখ্যা ও দৃশ্যমানতা নিয়ন্ত্রণ করুন।', 'helptrickbd-edu'),
+            'priority'    => 30,
+        ));
+
+        // --- 7.1 Ticker Section ---
+        $wp_customize->add_section('htbd_sec_ctrl_ticker', array(
+            'title'    => esc_html__('১. ব্রেকিং নোটিশ টিকার', 'helptrickbd-edu'),
+            'panel'    => 'htbd_panel_homepage',
+            'priority' => 10,
+        ));
+        $wp_customize->add_setting('htbd_show_ticker', array('default' => true, 'sanitize_callback' => 'wp_validate_boolean'));
+        $wp_customize->add_control('htbd_show_ticker', array('label' => esc_html__('টিকার প্রদর্শন করুন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ticker', 'type' => 'checkbox'));
+        $wp_customize->add_setting('htbd_ticker_badge_text', array('default' => 'সর্বশেষ', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_ticker_badge_text', array('label' => esc_html__('টিকার ব্যাজ টেক্সট', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ticker', 'type' => 'text'));
+        $wp_customize->add_setting('htbd_ticker_count', array('default' => 5, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_ticker_count', array('label' => esc_html__('প্রদর্শিত পোস্ট সংখ্যা', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ticker', 'type' => 'number'));
+        $wp_customize->add_setting('htbd_ticker_category', array('default' => 0, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_ticker_category', array('label' => esc_html__('ক্যাটাগরি ফিল্টার', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ticker', 'type' => 'select', 'choices' => $cat_choices));
+
+        // --- 7.2 Navbar Section ---
+        $wp_customize->add_section('htbd_sec_ctrl_nav', array(
+            'title'    => esc_html__('২. প্রধান মেনু ও ন্যাভিগেশন বার', 'helptrickbd-edu'),
+            'panel'    => 'htbd_panel_homepage',
+            'priority' => 15,
+        ));
+        $wp_customize->add_setting('htbd_nav_home_text', array('default' => 'All Posts', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_nav_home_text', array('label' => esc_html__('প্রথম ট্যাবের নাম (হোম)', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_nav', 'type' => 'text'));
+
+        // --- 7.3 Lead Hero Section ---
+        $wp_customize->add_section('htbd_sec_ctrl_hero', array(
+            'title'    => esc_html__('৩. ম্যাগাজিন লিড হিরো স্টোরি', 'helptrickbd-edu'),
+            'panel'    => 'htbd_panel_homepage',
+            'priority' => 20,
+        ));
+        $wp_customize->add_setting('htbd_show_lead_hero', array('default' => true, 'sanitize_callback' => 'wp_validate_boolean'));
+        $wp_customize->add_control('htbd_show_lead_hero', array('label' => esc_html__('লিড হিরো সেকশন প্রদর্শন করুন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_hero', 'type' => 'checkbox'));
+        $wp_customize->add_setting('htbd_hero_badge_text', array('default' => 'নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_hero_badge_text', array('label' => esc_html__('হিরো স্টোরি ব্যাজ টেক্সট', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_hero', 'type' => 'text'));
+        $wp_customize->add_setting('htbd_hero_category', array('default' => 0, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_hero_category', array('label' => esc_html__('হিরো সেকশন ক্যাটাগরি', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_hero', 'type' => 'select', 'choices' => $cat_choices));
+
+        // --- 7.4 SSC / Dakhil Section ---
+        $wp_customize->add_section('htbd_sec_ctrl_ssc', array(
+            'title'    => esc_html__('৪. এসএসসি / দাখিল সেকশন', 'helptrickbd-edu'),
+            'panel'    => 'htbd_panel_homepage',
+            'priority' => 25,
+        ));
+        $wp_customize->add_setting('htbd_show_sec_ssc', array('default' => true, 'sanitize_callback' => 'wp_validate_boolean'));
+        $wp_customize->add_control('htbd_show_sec_ssc', array('label' => esc_html__('এই সেকশন প্রদর্শন করুন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ssc', 'type' => 'checkbox'));
+        $wp_customize->add_setting('htbd_sec_ssc_title', array('default' => 'এসএসসি / দাখিল', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_sec_ssc_title', array('label' => esc_html__('সেকশন শিরোনাম', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ssc', 'type' => 'text'));
+        $wp_customize->add_setting('htbd_sec_ssc_category', array('default' => 0, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_sec_ssc_category', array('label' => esc_html__('ক্যাটাগরি নির্বাচন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ssc', 'type' => 'select', 'choices' => $cat_choices));
+        $wp_customize->add_setting('htbd_sec_ssc_count', array('default' => 5, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_sec_ssc_count', array('label' => esc_html__('পোস্ট সংখ্যা', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ssc', 'type' => 'number'));
+        $wp_customize->add_setting('htbd_sec_ssc_link_text', array('default' => 'সব লেখা →', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_sec_ssc_link_text', array('label' => esc_html__('ভিউ অল লিংক টেক্সট', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_ssc', 'type' => 'text'));
+
+        // --- 7.5 Filter Rows Section ---
+        $wp_customize->add_section('htbd_sec_ctrl_filter', array(
+            'title'    => esc_html__('৫. দ্রুত রিভিশন ও বিষয়ভিত্তিক ডাইজেস্ট', 'helptrickbd-edu'),
+            'panel'    => 'htbd_panel_homepage',
             'priority' => 30,
         ));
+        $wp_customize->add_setting('htbd_show_sec_filter', array('default' => true, 'sanitize_callback' => 'wp_validate_boolean'));
+        $wp_customize->add_control('htbd_show_sec_filter', array('label' => esc_html__('ফিল্টার ডাইজেস্ট সেকশন প্রদর্শন করুন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_filter', 'type' => 'checkbox'));
+        $wp_customize->add_setting('htbd_sec_filter_title', array('default' => 'দ্রুত রিভিশন ও বিষয়ভিত্তিক ডাইজেস্ট', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_sec_filter_title', array('label' => esc_html__('সেকশন শিরোনাম', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_filter', 'type' => 'text'));
+        $wp_customize->add_setting('htbd_sec_filter_count', array('default' => 12, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_sec_filter_count', array('label' => esc_html__('সর্বোচ্চ পোস্ট সংখ্যা', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_filter', 'type' => 'number'));
+        $wp_customize->add_setting('htbd_sec_filter_link_text', array('default' => 'সব লেখা →', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_sec_filter_link_text', array('label' => esc_html__('লিংক টেক্সট', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_filter', 'type' => 'text'));
 
-        // Ticker Enable Toggle
-        $wp_customize->add_setting('htbd_show_ticker', array(
-            'default'           => true,
-            'sanitize_callback' => 'wp_validate_boolean',
+        // --- 7.6 National University & Special Focus ---
+        $wp_customize->add_section('htbd_sec_ctrl_nu', array(
+            'title'    => esc_html__('৬. জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা', 'helptrickbd-edu'),
+            'panel'    => 'htbd_panel_homepage',
+            'priority' => 35,
         ));
-        $wp_customize->add_control('htbd_show_ticker', array(
-            'label'    => esc_html__('ব্রেকিং নোটিশ টিকার প্রদর্শন করুন', 'helptrickbd-edu'),
-            'section'  => 'htbd_homepage_sections',
-            'type'     => 'checkbox',
-        ));
+        $wp_customize->add_setting('htbd_show_sec_nu', array('default' => true, 'sanitize_callback' => 'wp_validate_boolean'));
+        $wp_customize->add_control('htbd_show_sec_nu', array('label' => esc_html__('এই সেকশন প্রদর্শন করুন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_nu', 'type' => 'checkbox'));
+        $wp_customize->add_setting('htbd_sec_nu_title', array('default' => 'জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_sec_nu_title', array('label' => esc_html__('সেকশন শিরোনাম', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_nu', 'type' => 'text'));
+        $wp_customize->add_setting('htbd_sec_nu_category', array('default' => 0, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_sec_nu_category', array('label' => esc_html__('ক্যাটাগরি নির্বাচন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_nu', 'type' => 'select', 'choices' => $cat_choices));
+        $wp_customize->add_setting('htbd_sec_nu_count', array('default' => 6, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_sec_nu_count', array('label' => esc_html__('পোস্ট সংখ্যা', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_nu', 'type' => 'number'));
+        $wp_customize->add_setting('htbd_sec_nu_link_text', array('default' => 'সব হ্যান্ডনোট →', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_sec_nu_link_text', array('label' => esc_html__('লিংক টেক্সট', 'helptrickbd-edu'), 'section' => 'htbd_sec_nu', 'type' => 'text'));
 
-        // Social CTA Bar Enable Toggle
-        $wp_customize->add_setting('htbd_show_social_cta', array(
-            'default'           => true,
-            'sanitize_callback' => 'wp_validate_boolean',
+        // --- 7.7 Photo Guides & Gallery ---
+        $wp_customize->add_section('htbd_sec_ctrl_gallery', array(
+            'title'    => esc_html__('৭. পরীক্ষা প্রস্তুতি ও সচিত্র গাইড', 'helptrickbd-edu'),
+            'panel'    => 'htbd_panel_homepage',
+            'priority' => 40,
         ));
-        $wp_customize->add_control('htbd_show_social_cta', array(
-            'label'    => esc_html__('টেলিগ্রাম/হোয়াটসঅ্যাপ সিটিএ বার প্রদর্শন করুন', 'helptrickbd-edu'),
-            'section'  => 'htbd_homepage_sections',
-            'type'     => 'checkbox',
+        $wp_customize->add_setting('htbd_show_sec_gallery', array('default' => true, 'sanitize_callback' => 'wp_validate_boolean'));
+        $wp_customize->add_control('htbd_show_sec_gallery', array('label' => esc_html__('সচিত্র গাইড সেকশন প্রদর্শন করুন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_gallery', 'type' => 'checkbox'));
+        $wp_customize->add_setting('htbd_sec_gallery_title', array('default' => 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_sec_gallery_title', array('label' => esc_html__('সেকশন শিরোনাম', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_gallery', 'type' => 'text'));
+        $wp_customize->add_setting('htbd_sec_gallery_category', array('default' => 0, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_sec_gallery_category', array('label' => esc_html__('ক্যাটাগরি নির্বাচন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_gallery', 'type' => 'select', 'choices' => $cat_choices));
+        $wp_customize->add_setting('htbd_sec_gallery_count', array('default' => 4, 'sanitize_callback' => 'absint'));
+        $wp_customize->add_control('htbd_sec_gallery_count', array('label' => esc_html__('পোস্ট সংখ্যা', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_gallery', 'type' => 'number'));
+        $wp_customize->add_setting('htbd_sec_gallery_link_text', array('default' => 'সকল গ্যালারি →', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_sec_gallery_link_text', array('label' => esc_html__('লিংক টেক্সট', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_gallery', 'type' => 'text'));
+
+        // --- 7.8 Trust Deck & Countdown ---
+        $wp_customize->add_section('htbd_sec_ctrl_trust', array(
+            'title'    => esc_html__('৮. ট্রাস্ট ডেক ও পরীক্ষার কাউন্টডাউন', 'helptrickbd-edu'),
+            'panel'    => 'htbd_panel_homepage',
+            'priority' => 45,
         ));
+        $wp_customize->add_setting('htbd_show_sec_trust', array('default' => true, 'sanitize_callback' => 'wp_validate_boolean'));
+        $wp_customize->add_control('htbd_show_sec_trust', array('label' => esc_html__('ট্রাস্ট ডেক প্রদর্শন করুন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_trust', 'type' => 'checkbox'));
+        $wp_customize->add_setting('htbd_exam_date_ssc', array('default' => '2027-02-01T09:00:00', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control('htbd_exam_date_ssc', array('label' => esc_html__('এসএসসি পরীক্ষার তারিখ (ISO ফরম্যাট)', 'helptrickbd-edu'), 'description' => esc_html__('যেমন: 2027-02-01T09:00:00', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_trust', 'type' => 'text'));
     }
 }
 add_action('customize_register', 'htbd_edu_customize_register');

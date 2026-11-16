@@ -9,6 +9,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+if (!get_theme_mod('htbd_show_sec_trust', true)) {
+    return;
+}
+
+$exam_date_ssc = get_theme_mod('htbd_exam_date_ssc', '2027-02-01T09:00:00');
+
 // Query 4 popular/recent posts for trust sidebar
 $popular_query = new WP_Query(array(
     'posts_per_page'      => 4,
@@ -95,7 +101,7 @@ $categories = get_categories(array(
         <h4><?php esc_html_e('আসন্ন পরীক্ষার লাইভ দিনপঞ্জি ও কাউন্টডাউন', 'helptrickbd-edu'); ?></h4>
         
         <!-- Live Ticking Exam Countdown (Zero CLS, Horizontal Grid) -->
-        <div class="ht-exam-timer-card" data-countdown-date="2027-02-01T09:00:00" style="margin-bottom:14px;padding:12px;background:var(--ht-surface);border:1px solid var(--ht-border);border-radius:var(--ht-radius-sm);">
+        <div class="ht-exam-timer-card" data-countdown-date="<?php echo esc_attr($exam_date_ssc); ?>" style="margin-bottom:14px;padding:12px;background:var(--ht-surface);border:1px solid var(--ht-border);border-radius:var(--ht-radius-sm);">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;">
             <span style="font-weight:700;font-size:0.9rem;color:var(--ht-text-primary);">
               <?php esc_html_e('এসএসসি ও দাখিল পরীক্ষা ২০২৭', 'helptrickbd-edu'); ?>

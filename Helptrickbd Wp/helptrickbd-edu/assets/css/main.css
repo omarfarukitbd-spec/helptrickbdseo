@@ -46,9 +46,9 @@
   --htbd-radius-lg: 12px;
   --htbd-radius-full: 9999px;
 
-  /* Fonts */
-  --htbd-font-base: "SolaimanLipi", "Hind Siliguri", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --htbd-font-heading: "Noto Serif Bengali", "SolaimanLipi", Georgia, serif;
+  /* Fonts - Prothom-alo.com Official Shurjo Typography */
+  --htbd-font-base: "Shurjo", "Siyam Rupali", "SolaimanLipi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --htbd-font-heading: "Shurjo", "Siyam Rupali", "SolaimanLipi", Georgia, serif;
   --htbd-font-sans: var(--htbd-font-base);
   --htbd-font-serif: var(--htbd-font-heading);
 
@@ -90,8 +90,24 @@
 }
 
 /* -------------------------------------------------------------------------
- * 1. Typography & Web Font Declarations
+ * 1. Typography & Web Font Declarations (Prothom-alo.com Official Font)
  * ------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Shurjo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ShurjoWeb_400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shurjo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/ShurjoWeb_700.woff2') format('woff2');
+}
+
 @font-face {
   font-family: 'SolaimanLipi';
   src: url('https://cdn.jsdelivr.net/gh/maateen/solaimanlipi@master/font/SolaimanLipi.woff2') format('woff2'),

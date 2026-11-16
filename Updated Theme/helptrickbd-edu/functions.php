@@ -77,6 +77,18 @@ function htbd_edu_excerpt_more($more) {
 add_filter('excerpt_more', 'htbd_edu_excerpt_more');
 
 /**
+ * Sets exactly 10 posts per page on category archive pages with pagination.
+ *
+ * @param WP_Query $query Main query.
+ */
+function htbd_edu_category_posts_per_page($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_category()) {
+        $query->set('posts_per_page', 10);
+    }
+}
+add_action('pre_get_posts', 'htbd_edu_category_posts_per_page');
+
+/**
  * Add responsive body classes for styling and newspaper layout.
  *
  * @param array $classes Existing body classes.

@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage Section 4: 3-Column Specialized Subject Grid
+ * Homepage Section 3: Specialized Subject Grid (Configurable from Admin Panel)
  *
  * @package HelpTrickBD_EduPortal
  */
@@ -9,24 +9,48 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$grid_query = new WP_Query(array(
-    'posts_per_page'      => 3,
-    'offset'              => 4,
+if (!get_theme_mod('htbd_show_sec_ssc', true)) {
+    return;
+}
+
+$sec_title     = get_theme_mod('htbd_sec_ssc_title', 'এসএসসি / দাখিল');
+$cat_id        = (int) get_theme_mod('htbd_sec_ssc_category', 0);
+$post_count    = (int) get_theme_mod('htbd_sec_ssc_count', 5);
+$link_text     = get_theme_mod('htbd_sec_ssc_link_text', 'সব লেখা →');
+
+$query_args = array(
+    'posts_per_page'      => $post_count > 0 ? $post_count : 5,
     'post_status'         => 'publish',
     'ignore_sticky_posts' => 1,
     'no_found_rows'       => true,
-));
+);
+
+if ($cat_id > 0) {
+    $query_args['cat'] = $cat_id;
+    $target_link = get_category_link($cat_id);
+} else {
+    // Default to 'ssc-dakhil' category
+    $ssc_term = get_category_by_slug('ssc-dakhil');
+    if ($ssc_term) {
+        $query_args['cat'] = $ssc_term->term_id;
+        $target_link = get_category_link($ssc_term->term_id);
+    } else {
+        $target_link = home_url('/category/ssc-dakhil/');
+    }
+}
+
+$grid_query = new WP_Query($query_args);
 
 if (!$grid_query->have_posts()) {
     return;
 }
 ?>
-<section class="n-sec" aria-label="<?php esc_attr_e('বিভাগ ও বিষয়ভিত্তিক বিশেষায়িত হ্যান্ডনোট', 'helptrickbd-edu'); ?>">
+<section class="n-sec" aria-label="<?php echo esc_attr($sec_title); ?>">
   <div class="n-sec-head">
-    <h3><?php esc_html_e('বিভাগ ও বিষয়ভিত্তিক বিশেষায়িত হ্যান্ডনোট', 'helptrickbd-edu'); ?></h3>
+    <h3><?php echo esc_html($sec_title); ?></h3>
     <span class="rule" aria-hidden="true"></span>
-    <a href="<?php echo esc_url(home_url('/blog/')); ?>">
-      <?php esc_html_e('সব লেখা →', 'helptrickbd-edu'); ?>
+    <a href="<?php echo esc_url($target_link); ?>">
+      <?php echo esc_html($link_text); ?>
     </a>
   </div>
 

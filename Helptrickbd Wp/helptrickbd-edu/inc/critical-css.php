@@ -17,13 +17,27 @@ if (!function_exists('htbd_inline_critical_css')) {
     function htbd_inline_critical_css() {
         ?>
 <style id="htbd-critical-css">
+@font-face {
+  font-family: 'Shurjo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('<?php echo esc_url(get_template_directory_uri() . '/assets/fonts/ShurjoWeb_400.woff2'); ?>') format('woff2');
+}
+@font-face {
+  font-family: 'Shurjo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('<?php echo esc_url(get_template_directory_uri() . '/assets/fonts/ShurjoWeb_700.woff2'); ?>') format('woff2');
+}
 /* ==========================================================================
    1. CSS Custom Properties (Tokens)
    ========================================================================== */
 :root {
-  --ht-font-sans: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --ht-font-serif: 'SolaimanLipi', 'Noto Serif Bengali', Georgia, serif;
-  --ht-font-heading: 'SolaimanLipi', 'Hind Siliguri', sans-serif;
+  --ht-font-sans: 'Shurjo', 'Siyam Rupali', 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ht-font-serif: 'Shurjo', 'SolaimanLipi', Georgia, serif;
+  --ht-font-heading: 'Shurjo', 'SolaimanLipi', sans-serif;
   --ht-bg: #f8fafc;
   --ht-surface: #ffffff;
   --ht-surface-alt: #f1f5f9;

@@ -9,12 +9,25 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$hero_query = new WP_Query(array(
+if (!get_theme_mod('htbd_show_lead_hero', true)) {
+    return;
+}
+
+$hero_cat   = (int) get_theme_mod('htbd_hero_category', 0);
+$badge_text = get_theme_mod('htbd_hero_badge_text', 'নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড');
+
+$query_args = array(
     'posts_per_page'      => 4,
     'post_status'         => 'publish',
     'ignore_sticky_posts' => 1,
     'no_found_rows'       => true,
-));
+);
+
+if ($hero_cat > 0) {
+    $query_args['cat'] = $hero_cat;
+}
+
+$hero_query = new WP_Query($query_args);
 
 if (!$hero_query->have_posts()) {
     return;
@@ -43,7 +56,7 @@ if (!$lead_post) {
   <!-- Main Lead Article (Left 65%) -->
   <article>
     <span class="n-kicker">
-      <?php esc_html_e('নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড', 'helptrickbd-edu'); ?>
+      <?php echo esc_html($badge_text); ?>
     </span>
 
     <h2 class="n-lead-title">
