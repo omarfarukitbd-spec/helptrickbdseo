@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
       <li><a href="<?php echo esc_url(home_url('/category/ssc-dakhil/')); ?>"><?php esc_html_e('এসএসসি ও দাখিল প্রস্তুতি', 'helptrickbd-edu'); ?></a></li>
       <li><a href="<?php echo esc_url(home_url('/category/political-science/')); ?>"><?php esc_html_e('রাষ্ট্রবিজ্ঞান হ্যান্ডনোট', 'helptrickbd-edu'); ?></a></li>
       <li><a href="<?php echo esc_url(home_url('/category/english/')); ?>"><?php esc_html_e('ইংরেজি গ্রামার ও রুলস', 'helptrickbd-edu'); ?></a></li>
-      <li><a href="<?php echo esc_url(home_url('/category/ict/')); ?>"><?php esc_html_e('আইসিটি ও কম্পিউটার', 'helptrickbd-edu'); ?></a></li>
+      <li><a href="<?php echo esc_url(home_url('/nu-cgpa-calculator/')); ?>"><?php esc_html_e('NU সিজিপিএ ক্যালকুলেটর', 'helptrickbd-edu'); ?></a></li>
     </ul>
   </div>
 
@@ -41,8 +41,10 @@ if (!defined('ABSPATH')) {
       <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>"><?php esc_html_e('আমাদের সম্পর্কে', 'helptrickbd-edu'); ?></a></li>
       <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php esc_html_e('যোগাযোগ', 'helptrickbd-edu'); ?></a></li>
       <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('গোপনীয়তা নীতি', 'helptrickbd-edu'); ?></a></li>
-      <li><a href="<?php echo esc_url(home_url('/terms-and-conditions/')); ?>"><?php esc_html_e('ব্যবহারের শর্তাবলী', 'helptrickbd-edu'); ?></a></li>
-      <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>"><?php esc_html_e('সম্পাদকীয় নীতি', 'helptrickbd-edu'); ?></a></li>
+      <li><a href="<?php echo esc_url(home_url('/terms-conditions/')); ?>"><?php esc_html_e('ব্যবহারের শর্তাবলী', 'helptrickbd-edu'); ?></a></li>
+      <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>"><?php esc_html_e('দাবিত্যাগ (Disclaimer)', 'helptrickbd-edu'); ?></a></li>
+      <li><a href="<?php echo esc_url(home_url('/cookie-policy/')); ?>"><?php esc_html_e('কুকি নীতিমালা', 'helptrickbd-edu'); ?></a></li>
+      <li><a href="<?php echo esc_url(home_url('/sitemap/')); ?>"><?php esc_html_e('সাইটম্যাপ', 'helptrickbd-edu'); ?></a></li>
     </ul>
   </div>
 

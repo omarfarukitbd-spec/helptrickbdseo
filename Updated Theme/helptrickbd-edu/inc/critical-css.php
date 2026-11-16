@@ -130,7 +130,12 @@ button {
   max-width: var(--ht-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding: 0 16px;
+  padding: 0 10px;
+}
+@media (min-width: 600px) {
+  .ht-container {
+    padding: 0 16px;
+  }
 }
 @media (min-width: 768px) {
   .ht-container {

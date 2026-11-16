@@ -350,7 +350,7 @@ if (!function_exists('htbd_edu_customize_register')) {
         ));
         $wp_customize->add_setting('htbd_show_lead_hero', array('default' => true, 'sanitize_callback' => 'wp_validate_boolean'));
         $wp_customize->add_control('htbd_show_lead_hero', array('label' => esc_html__('লিড হিরো সেকশন প্রদর্শন করুন', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_hero', 'type' => 'checkbox'));
-        $wp_customize->add_setting('htbd_hero_badge_text', array('default' => 'নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_setting('htbd_hero_badge_text', array('default' => 'সর্বশেষ পোস্ট', 'sanitize_callback' => 'sanitize_text_field'));
         $wp_customize->add_control('htbd_hero_badge_text', array('label' => esc_html__('হিরো স্টোরি ব্যাজ টেক্সট', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_hero', 'type' => 'text'));
         $wp_customize->add_setting('htbd_hero_category', array('default' => 0, 'sanitize_callback' => 'absint'));
         $wp_customize->add_control('htbd_hero_category', array('label' => esc_html__('হিরো সেকশন ক্যাটাগরি', 'helptrickbd-edu'), 'section' => 'htbd_sec_ctrl_hero', 'type' => 'select', 'choices' => $cat_choices));

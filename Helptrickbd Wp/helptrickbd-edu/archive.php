@@ -58,47 +58,32 @@ get_header();
     </div>
 
     <?php if (have_posts()) : ?>
-      <div class="n-list">
+      <div class="n-archive-grid-2col">
         <?php
-        $post_index = 1;
         while (have_posts()) :
             the_post();
             ?>
-            <article>
-              <div class="no" aria-hidden="true">
-                <?php echo esc_html(htbd_bengali_number(sprintf('%02d', $post_index))); ?>
-              </div>
-
-              <?php if (has_post_thumbnail()) : ?>
-                <a href="<?php the_permalink(); ?>" class="lth-wrap">
+            <article class="n-archive-card">
+              <a href="<?php the_permalink(); ?>" class="n-archive-card-thumb">
+                <?php if (has_post_thumbnail()) : ?>
                   <?php
-                  the_post_thumbnail(array(108, 80), array(
-                      'class'    => 'lth',
+                  the_post_thumbnail('medium_large', array(
+                      'class'    => 'n-card-img',
                       'loading'  => 'lazy',
                       'decoding' => 'async',
-                      'width'    => 108,
-                      'height'   => 80,
                       'alt'      => esc_attr(get_the_title()),
                   ));
                   ?>
-                </a>
-              <?php endif; ?>
+                <?php else : ?>
+                  <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/ssc.webp" width="600" height="338" loading="lazy" decoding="async" class="n-card-img" alt="<?php the_title_attribute(); ?>">
+                <?php endif; ?>
+              </a>
 
-              <div class="info">
-                <h4>
-                  <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                  </a>
-                </h4>
-                <p><?php echo esc_html(wp_trim_words(get_the_excerpt(), 22, '...')); ?></p>
-                <div class="meta">
-                  <span><?php echo esc_html(get_the_date('j F, Y')); ?></span> &bull; 
-                  <span><?php echo esc_html(htbd_reading_time()); ?></span>
-                </div>
-              </div>
+              <h2 class="n-archive-card-title">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              </h2>
             </article>
             <?php
-            $post_index++;
         endwhile;
         ?>
       </div>

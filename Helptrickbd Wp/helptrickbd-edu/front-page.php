@@ -22,15 +22,15 @@ get_header();
   get_template_part('template-parts/home/section-lead-hero');
   ?>
 
-  <!-- In-Feed Ad Slot 1 -->
-  <div class="htbd-ad-slot htbd-ad-infeed" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd-edu'); ?>">
-    <?php
-    $ad_slot_1 = get_theme_mod('htbd_ad_infeed_1', get_theme_mod('htbd_ad_infeed'));
-    if ($ad_slot_1) {
-        echo $ad_slot_1; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-    }
-    ?>
-  </div>
+  <?php
+  $ad_slot_1 = get_theme_mod('htbd_ad_infeed_1', get_theme_mod('htbd_ad_infeed'));
+  if (!empty($ad_slot_1)) :
+  ?>
+    <!-- In-Feed Ad Slot 1 -->
+    <div class="htbd-ad-slot htbd-ad-infeed" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd-edu'); ?>">
+      <?php echo $ad_slot_1; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+    </div>
+  <?php endif; ?>
 
   <?php
   // 3. 3-Column Specialized Subject Cards Grid (Strict SSC & Dakhil)
@@ -47,15 +47,15 @@ get_header();
     </aside>
   </div>
 
-  <!-- In-Feed Ad Slot 2 -->
-  <div class="htbd-ad-slot htbd-ad-infeed" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd-edu'); ?>">
-    <?php
-    $ad_slot_2 = get_theme_mod('htbd_ad_infeed_2', get_theme_mod('htbd_ad_infeed'));
-    if ($ad_slot_2) {
-        echo $ad_slot_2; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-    }
-    ?>
-  </div>
+  <?php
+  $ad_slot_2 = get_theme_mod('htbd_ad_infeed_2', get_theme_mod('htbd_ad_infeed'));
+  if (!empty($ad_slot_2)) :
+  ?>
+    <!-- In-Feed Ad Slot 2 -->
+    <div class="htbd-ad-slot htbd-ad-infeed" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd-edu'); ?>">
+      <?php echo $ad_slot_2; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+    </div>
+  <?php endif; ?>
 
   <?php
   // 5. National University & Board Special Focus Desk (Clean Single Container)

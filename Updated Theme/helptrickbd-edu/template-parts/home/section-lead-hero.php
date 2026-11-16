@@ -14,12 +14,17 @@ if (!get_theme_mod('htbd_show_lead_hero', true)) {
 }
 
 $hero_cat   = (int) get_theme_mod('htbd_hero_category', 0);
-$badge_text = get_theme_mod('htbd_hero_badge_text', 'নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড');
+$badge_text = get_theme_mod('htbd_hero_badge_text', 'সর্বশেষ পোস্ট');
+if (empty($badge_text) || $badge_text === 'নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড') {
+    $badge_text = 'সর্বশেষ পোস্ট';
+}
 
 $query_args = array(
     'posts_per_page'      => 4,
     'post_status'         => 'publish',
     'ignore_sticky_posts' => 1,
+    'orderby'             => 'date',
+    'order'               => 'DESC',
     'no_found_rows'       => true,
 );
 
