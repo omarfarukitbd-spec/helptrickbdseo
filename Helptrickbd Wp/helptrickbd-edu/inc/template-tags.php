@@ -311,7 +311,10 @@ if (!function_exists('htbd_post_views')) {
      */
     function htbd_post_views($post_id) {
         $post_id = (int) $post_id;
-        $count   = (int) get_post_meta($post_id, 'htbd_post_views_count', true);
+        $count   = (int) get_post_meta($post_id, 'ht_post_views_count', true);
+        if (!$count) {
+            $count = (int) get_post_meta($post_id, 'htbd_post_views_count', true);
+        }
         return $count;
     }
 }
@@ -336,7 +339,8 @@ if (!function_exists('htbd_increment_post_views')) {
             return;
         }
 
-        $current = (int) get_post_meta($post_id, 'htbd_post_views_count', true);
+        $current = htbd_post_views($post_id);
+        update_post_meta($post_id, 'ht_post_views_count', $current + 1);
         update_post_meta($post_id, 'htbd_post_views_count', $current + 1);
     }
 }

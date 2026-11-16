@@ -1606,17 +1606,25 @@ select:focus-visible,
   padding: 10px 0 40px;
 }
 
-/* Category & Archive 2-Column Visual Card Grid (Matches Image 2) */
+/* Category & Archive Visual Card Grid (Desktop 4-Col, Tablet 3-Col, Mobile 2-Col) */
 .n-archive-grid-2col {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 16px;
-  margin: 18px 0 36px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px 14px;
+  margin: 14px 0 32px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .n-archive-grid-2col {
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .n-archive-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 10px;
   }
 }
 

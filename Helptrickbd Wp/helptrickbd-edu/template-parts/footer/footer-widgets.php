@@ -29,7 +29,7 @@ if (!defined('ABSPATH')) {
       <li><a href="<?php echo esc_url(home_url('/category/national-university/')); ?>"><?php esc_html_e('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd-edu'); ?></a></li>
       <li><a href="<?php echo esc_url(home_url('/category/ssc-dakhil/')); ?>"><?php esc_html_e('এসএসসি ও দাখিল প্রস্তুতি', 'helptrickbd-edu'); ?></a></li>
       <li><a href="<?php echo esc_url(home_url('/category/political-science/')); ?>"><?php esc_html_e('রাষ্ট্রবিজ্ঞান হ্যান্ডনোট', 'helptrickbd-edu'); ?></a></li>
-      <li><a href="<?php echo esc_url(home_url('/category/english/')); ?>"><?php esc_html_e('ইংরেজি গ্রামার ও রুলস', 'helptrickbd-edu'); ?></a></li>
+      <li><a href="<?php echo esc_url(home_url('/category/english-2nd-paper/')); ?>"><?php esc_html_e('ইংরেজি ২য় পত্র ও গ্রামার', 'helptrickbd-edu'); ?></a></li>
       <li><a href="<?php echo esc_url(home_url('/nu-cgpa-calculator/')); ?>"><?php esc_html_e('NU সিজিপিএ ক্যালকুলেটর', 'helptrickbd-edu'); ?></a></li>
     </ul>
   </div>

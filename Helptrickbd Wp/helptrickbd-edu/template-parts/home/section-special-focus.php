@@ -61,16 +61,17 @@ if (!$focus_query->have_posts()) {
         <a href="<?php the_permalink(); ?>" class="n-lrow">
           <?php if (has_post_thumbnail()) : ?>
             <?php
-            the_post_thumbnail(array(54, 54), array(
+            the_post_thumbnail('medium', array(
                 'loading'  => 'lazy',
                 'decoding' => 'async',
-                'width'    => 54,
-                'height'   => 54,
+                'class'    => 'n-lrow-img',
+                'width'    => 96,
+                'height'   => 68,
                 'alt'      => esc_attr(get_the_title()),
             ));
             ?>
           <?php else : ?>
-            <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/nu.webp" loading="lazy" decoding="async" width="54" height="54" alt="<?php the_title_attribute(); ?>">
+            <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/nu.webp" loading="lazy" decoding="async" class="n-lrow-img" width="96" height="68" alt="<?php the_title_attribute(); ?>">
           <?php endif; ?>
 
           <div class="n-lrow-text">
