@@ -224,24 +224,34 @@ button {
 }
 .n-masthead {
   background: var(--ht-surface);
-  text-align: center;
-  padding: 14px 0 12px;
+  padding: 12px 0 10px;
   border-bottom: 2px solid var(--ht-border);
 }
 @media (min-width: 768px) {
   .n-masthead {
-    padding: 24px 0 18px;
+    padding: 18px 0 16px;
     border-bottom: 3.5px double var(--ht-rule);
   }
 }
+.n-masthead-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.n-brand-left {
+  display: flex;
+  align-items: center;
+}
 .n-brand-wordmark {
   font-family: var(--ht-font-serif);
-  font-size: clamp(1.65rem, 5vw, 3.25rem);
-  font-weight: 800;
+  font-size: clamp(1.6rem, 4vw, 2.75rem);
+  font-weight: 900;
   letter-spacing: -0.02em;
   color: var(--ht-text-primary);
   line-height: 1.15;
-  margin-bottom: 4px;
+  margin: 0;
+  text-align: left;
 }
 .n-brand-wordmark a {
   color: inherit;
@@ -256,11 +266,22 @@ button {
 .n-brand-subdomain {
   display: none !important;
 }
-.n-brand-tagline {
-  font-size: clamp(0.75rem, 2vw, 0.875rem);
-  color: var(--ht-text-secondary);
-  margin: 0;
-  line-height: 1.4;
+.n-brand-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.n-masthead-search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--ht-radius-full);
+  border: 1.5px solid var(--ht-border);
+  background: var(--ht-surface-alt);
+  color: var(--ht-text-primary);
+  cursor: pointer;
 }
 .n-navwrap {
   position: sticky;

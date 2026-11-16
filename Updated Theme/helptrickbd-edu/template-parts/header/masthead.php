@@ -30,17 +30,23 @@ if (stripos($display_brand, '.com') === false) {
 <header class="n-masthead">
   <div class="ht-container">
     <div class="n-masthead-inner">
-      <?php if (is_front_page() || is_home()) : ?>
-        <h1 class="n-brand-wordmark">
-          <a href="<?php echo $site_url; ?>"><?php echo $brand_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a>
-        </h1>
-      <?php else : ?>
-        <div class="n-brand-wordmark">
-          <a href="<?php echo $site_url; ?>"><?php echo $brand_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a>
-        </div>
-      <?php endif; ?>
+      <div class="n-brand-left">
+        <?php if (is_front_page() || is_home()) : ?>
+          <h1 class="n-brand-wordmark">
+            <a href="<?php echo $site_url; ?>"><?php echo $brand_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a>
+          </h1>
+        <?php else : ?>
+          <div class="n-brand-wordmark">
+            <a href="<?php echo $site_url; ?>"><?php echo $brand_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a>
+          </div>
+        <?php endif; ?>
+      </div>
 
-      <p class="n-brand-tagline"><?php echo esc_html($site_desc); ?></p>
+      <div class="n-brand-right">
+        <button type="button" class="n-masthead-search-btn ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান', 'helptrickbd-edu'); ?>">
+          <?php htbd_icon('search', array('width' => 20, 'height' => 20)); ?>
+        </button>
+      </div>
     </div>
   </div>
 </header>

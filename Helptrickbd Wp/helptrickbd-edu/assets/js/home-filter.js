@@ -68,7 +68,7 @@
       var visibleCount = 0;
       rows.forEach(function (row) {
         var rowCats = (row.getAttribute('data-cats') || '').split(/\s+/);
-        if (selectedCat === 'all' || rowCats.indexOf(selectedCat) !== -1) {
+        if (rowCats.indexOf(selectedCat) !== -1) {
           row.style.display = 'grid';
           visibleCount++;
         } else {

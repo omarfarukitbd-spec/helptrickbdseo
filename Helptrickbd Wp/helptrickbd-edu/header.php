@@ -27,13 +27,10 @@ if (!defined('ABSPATH')) {
   <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('সরাসরি কনটেন্টে যান', 'helptrickbd-edu'); ?></a>
 
   <?php
-  // 1. Top Dateline & Font Resizer Bar
-  get_template_part('template-parts/header/topbar');
-
-  // 2. Grand Serif Newspaper Masthead
+  // 1. Grand Serif Newspaper Masthead (Left-aligned brand + Right search)
   get_template_part('template-parts/header/masthead');
 
-  // 3. Sticky Newspaper Navigation & Category Track
+  // 2. Sticky Newspaper Navigation & Category Track
   get_template_part('template-parts/header/navbar');
   ?>
 

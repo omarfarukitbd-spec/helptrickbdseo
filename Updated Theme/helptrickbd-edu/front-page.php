@@ -33,12 +33,19 @@ get_header();
   </div>
 
   <?php
-  // 3. 3-Column Specialized Subject Cards Grid
+  // 3. 3-Column Specialized Subject Cards Grid (Strict SSC & Dakhil)
   get_template_part('template-parts/home/section-subject-grid');
-
-  // 4. Interactive Filterable Thumb-Rows & Quick Revision Digest
-  get_template_part('template-parts/home/section-filter-rows');
   ?>
+
+  <!-- 4. Subject-Based Filterable Posts & Newspaper Sidebar (Popular Posts & Categories) -->
+  <div class="n-home-layout-grid">
+    <div class="n-home-layout-main">
+      <?php get_template_part('template-parts/home/section-filter-rows'); ?>
+    </div>
+    <aside class="n-home-layout-sidebar">
+      <?php get_template_part('template-parts/home/sidebar-popular-cats'); ?>
+    </aside>
+  </div>
 
   <!-- In-Feed Ad Slot 2 -->
   <div class="htbd-ad-slot htbd-ad-infeed" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd-edu'); ?>">
@@ -51,14 +58,11 @@ get_header();
   </div>
 
   <?php
-  // 5. National University & Board Special Focus Desk (Dot Header)
+  // 5. National University & Board Special Focus Desk (Clean Single Container)
   get_template_part('template-parts/home/section-special-focus');
 
-  // 6. Infographic & Visual Study Photo Gallery (4-Column)
+  // 6. Infographic & Visual Study Photo Gallery (Full Titles, No Line Clamp)
   get_template_part('template-parts/home/section-photo-grid');
-
-  // 7. Institutional Trust Deck, Popular Posts & Exam Schedule
-  get_template_part('template-parts/home/section-trust-deck');
   ?>
 </div>
 
