@@ -118,6 +118,11 @@ button {
   margin-right: auto;
   padding: 0 16px;
 }
+@media (min-width: 768px) {
+  .ht-container {
+    padding: 0 24px;
+  }
+}
 .skip-link {
   position: absolute;
   top: -100px;
@@ -196,32 +201,52 @@ button {
   background: var(--ht-border);
   color: var(--ht-text-primary);
 }
+@media (max-width: 639px) {
+  .n-fsbar { display: none !important; }
+  .n-dateline-inner { flex-wrap: nowrap; gap: 10px; }
+  .n-dateline-left { min-width: 0; flex: 1; }
+  .n-date-text { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-dateline-right { gap: 6px; flex-shrink: 0; }
+}
 .n-masthead {
   background: var(--ht-surface);
   text-align: center;
-  padding: 24px 0 16px;
-  border-bottom: 3.5px double var(--ht-rule);
+  padding: 14px 0 12px;
+  border-bottom: 2px solid var(--ht-border);
+}
+@media (min-width: 768px) {
+  .n-masthead {
+    padding: 24px 0 18px;
+    border-bottom: 3.5px double var(--ht-rule);
+  }
 }
 .n-brand-wordmark {
   font-family: var(--ht-font-serif);
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(1.65rem, 5vw, 3.25rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--ht-text-primary);
   line-height: 1.15;
   margin-bottom: 4px;
 }
-.n-brand-subdomain {
-  font-size: 0.6875rem;
-  letter-spacing: 0.25em;
+.n-brand-wordmark a {
+  color: inherit;
+  text-decoration: none;
+}
+.n-brand-tld {
+  color: var(--ht-accent, #b3271e);
   font-weight: 700;
-  color: var(--ht-text-muted);
-  text-transform: uppercase;
-  margin-bottom: 6px;
+  font-size: 0.85em;
+  letter-spacing: -0.01em;
+}
+.n-brand-subdomain {
+  display: none !important;
 }
 .n-brand-tagline {
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   color: var(--ht-text-secondary);
+  margin: 0;
+  line-height: 1.4;
 }
 .n-navwrap {
   position: sticky;
@@ -273,6 +298,11 @@ button {
 .n-nav-item:hover, .n-nav-item.active {
   background: var(--ht-primary);
   color: #ffffff;
+}
+@media (max-width: 767px) {
+  .n-kbd-shortcut {
+    display: none !important;
+  }
 }
 
 /* ==========================================================================

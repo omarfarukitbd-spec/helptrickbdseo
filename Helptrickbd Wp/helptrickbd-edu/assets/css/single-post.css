@@ -25,6 +25,15 @@
   color: var(--ht-text-primary);
   margin-bottom: 16px;
 }
+@media (max-width: 767px) {
+  .ht-single-title {
+    font-size: clamp(1.35rem, 5vw, 1.75rem);
+    line-height: 1.35;
+  }
+  .ht-single-layout {
+    padding: 16px 0 32px;
+  }
+}
 
 .ht-single-meta {
   display: flex;

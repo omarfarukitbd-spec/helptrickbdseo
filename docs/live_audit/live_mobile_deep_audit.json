@@ -1,0 +1,119 @@
+{
+  "homepage": {
+    "bodyWidth": 485,
+    "elementsTouchingEdge": [
+      {
+        "className": "n-ticker",
+        "padding": "0px",
+        "tag": "SECTION"
+      },
+      {
+        "className": "n-lead",
+        "padding": "16px 0px 24px",
+        "tag": "SECTION"
+      },
+      {
+        "className": "n-sec",
+        "padding": "24px 0px 12px",
+        "tag": "SECTION"
+      },
+      {
+        "className": "n-sec",
+        "padding": "24px 0px 12px",
+        "tag": "SECTION"
+      },
+      {
+        "className": "n-sec",
+        "padding": "24px 0px 12px",
+        "tag": "SECTION"
+      },
+      {
+        "className": "n-sec",
+        "padding": "24px 0px 12px",
+        "tag": "SECTION"
+      },
+      {
+        "className": "n-sec",
+        "padding": "24px 0px 12px",
+        "tag": "SECTION"
+      }
+    ],
+    "hasHorizontalScroll": false,
+    "headerSections": {
+      "container": {
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "width": 485
+      },
+      "masthead": {
+        "borderBottom": "3px double rgb(15, 23, 42)",
+        "margin": "0px",
+        "padding": "28px 0px 20px"
+      },
+      "subdomain": {
+        "color": "rgb(179, 39, 30)",
+        "display": "block",
+        "fontSize": "13px",
+        "margin": "0px 0px 6px",
+        "text": "HELPTRICKBD.COM"
+      },
+      "tagline": {
+        "color": "rgb(100, 116, 139)",
+        "fontSize": "14px",
+        "margin": "0px 0px 16px",
+        "text": "The Future of Online Education"
+      },
+      "ticker": {
+        "borderRadius": "8px",
+        "left": 0,
+        "margin": "14px 0px",
+        "right": 485,
+        "width": 485
+      },
+      "topbar": {
+        "display": "block",
+        "flexWrap": "nowrap",
+        "margin": "0px",
+        "padding": "8px 0px"
+      },
+      "wordmark": {
+        "fontSize": "35.2px",
+        "lineHeight": "38.72px",
+        "margin": "0px 0px 4px",
+        "text": "HelpTrickBD"
+      }
+    },
+    "issues": [
+      {
+        "detail": "Container padding is left: 0px, right: 0px. Content touches screen edge.",
+        "type": "CONTAINER_ZERO_PADDING"
+      },
+      {
+        "detail": "Found desktop shortcut 'অনুসন্ধান...\nCtrl+K' visible in mobile view",
+        "type": "KEYBOARD_SHORTCUT_ON_MOBILE"
+      }
+    ],
+    "scrollWidth": 485,
+    "title": "HelpTrickBD - The Future of Online Education",
+    "viewportWidth": 500
+  },
+  "singlePost": {
+    "articlePadding": "0px",
+    "featuredImage": {
+      "borderRadius": "0px",
+      "width": 483
+    },
+    "fontSizeH1": "28.8px",
+    "hasHorizontalScroll": false,
+    "issues": [
+      {
+        "detail": "H1 title touches screen edge (left: 0px)",
+        "type": "TITLE_TOUCHING_EDGE"
+      }
+    ],
+    "lineHeightH1": "38.88px",
+    "scrollWidth": 485,
+    "title": "কৃষি গুচ্ছ ভর্তি ২০২৬-২৭: পরীক্ষা ২ জানুয়ারি, আবেদন, যোগ্যতা ও ফি | Agriculture Cluster Admission 2026-27 - HelpTrickBD",
+    "viewportWidth": 500
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "containerPaddings": {
+    "maxWidth": "1240px",
+    "paddingLeft": "0px",
+    "paddingRight": "0px",
+    "width": "485px"
+  },
+  "headerComponents": {
+    "brandWordmark": {
+      "fontSize": "35.2px",
+      "fontWeight": "900",
+      "lineHeight": "38.72px",
+      "margin": "0px 0px 4px",
+      "padding": "0px",
+      "text": "HelpTrickBD"
+    },
+    "masthead": {
+      "margin": "0px",
+      "padding": "28px 0px 20px",
+      "textAlign": "center",
+      "width": "485px"
+    },
+    "navbar": {
+      "height": 48,
+      "scrollWidth": 485,
+      "width": 485
+    },
+    "subdomain": {
+      "color": "rgb(179, 39, 30)",
+      "display": "block",
+      "fontSize": "13px",
+      "margin": "0px 0px 6px",
+      "text": "HELPTRICKBD.COM"
+    },
+    "tagline": {
+      "color": "rgb(100, 116, 139)",
+      "fontSize": "14px",
+      "lineHeight": "22.4px",
+      "margin": "0px 0px 16px",
+      "text": "The Future of Online Education"
+    },
+    "ticker": {
+      "borderRadius": "8px",
+      "margin": "14px 0px",
+      "padding": "0px",
+      "width": 485
+    }
+  },
+  "layoutObservations": [],
+  "overflowElements": [
+    {
+      "class": "n-nav-item",
+      "id": "",
+      "right": 498.421875,
+      "tag": "A",
+      "text": "SSC & Dakhil",
+      "width": 107.015625
+    },
+    {
+      "class": "n-nav-item",
+      "id": "",
+      "right": 635.046875,
+      "tag": "A",
+      "text": "Bangla 1st Paper",
+      "width": 128.625
+    },
+    {
+      "class": "n-nav-item",
+      "id": "",
+      "right": 758.0625,
+      "tag": "A",
+      "text": "Islamic Article",
+      "width": 115.015625
+    },
+    {
+      "class": "n-nav-item",
+      "id": "",
+      "right": 912.296875,
+      "tag": "A",
+      "text": "National University",
+      "width": 146.234375
+    },
+    {
+      "class": "n-nav-item",
+      "id": "",
+      "right": 1014,
+      "tag": "A",
+      "text": "Economics",
+      "width": 93.703125
+    },
+    {
+      "class": "n-nav-item",
+      "id": "",
+      "right": 1158.46875,
+      "tag": "A",
+      "text": "ICT & Technology",
+      "width": 136.46875
+    },
+    {
+      "class": "n-nav-item",
+      "id": "",
+      "right": 1304.4375,
+      "tag": "A",
+      "text": "English 2nd Paper",
+      "width": 137.96875
+    },
+    {
+      "class": "n-nav-item",
+      "id": "",
+      "right": 1437.71875,
+      "tag": "A",
+      "text": "Job Preparation",
+      "width": 125.28125
+    },
+    {
+      "class": "n-ticker-move",
+      "id": "",
+      "right": 3492.1629638671875,
+      "tag": "DIV",
+      "text": "কৃষি গুচ্ছ ভর্তি ২০২৬-২৭: পরীক্ষা ২ জানু",
+      "width": 3820.03125
+    },
+    {
+      "class": "n-ticker-item",
+      "id": "",
+      "right": 1141.8504638671875,
+      "tag": "A",
+      "text": "অনার্স ৩য় বর্ষ অ্যাডভান্সড অ্যাকাউন্টিং",
+      "width": 743.09375
+    },
+    {
+      "class": "",
+      "id": "",
+      "right": 1141.8504638671875,
+      "tag": "SPAN",
+      "text": "অনার্স ৩য় বর্ষ অ্যাডভান্সড অ্যাকাউন্টিং",
+      "width": 743.09375
+    },
+    {
+      "class": "n-ticker-sep",
+      "id": "",
+      "right": 1180.3660888671875,
+      "tag": "SPAN",
+      "text": "•",
+      "width": 6.515625
+    },
+    {
+      "class": "n-ticker-item",
+      "id": "",
+      "right": 1880.8348388671875,
+      "tag": "A",
+      "text": "দাখিল ও ইবতেদায়ি বৃত্তি পরীক্ষায় ক্যাল",
+      "width": 668.46875
+    },
+    {
+      "class": "",
+      "id": "",
+      "right": 1880.8348388671875,
+      "tag": "SPAN",
+      "text": "দাখিল ও ইবতেদায়ি বৃত্তি পরীক্ষায় ক্যাল",
+      "width": 668.46875
+    },
+    {
+      "class": "n-ticker-sep",
+      "id": "",
+      "right": 1919.3504638671875,
+      "tag": "SPAN",
+      "text": "•",
+      "width": 6.515625
+    },
+    {
+      "class": "n-ticker-item",
+      "id": "",
+      "right": 2425.3349609375,
+      "tag": "A",
+      "text": "আইএইচটি-ম্যাটস ভর্তি পরীক্ষার ফল ২০২৬ | ",
+      "width": 473.9844970703125
+    },
+    {
+      "class": "",
+      "id": "",
+      "right": 2425.3349609375,
+      "tag": "SPAN",
+      "text": "আইএইচটি-ম্যাটস ভর্তি পরীক্ষার ফল ২০২৬ | ",
+      "width": 473.9844970703125
+    },
+    {
+      "class": "n-ticker-sep",
+      "id": "",
+      "right": 2463.8505859375,
+      "tag": "SPAN",
+      "text": "•",
+      "width": 6.515625
+    },
+    {
+      "class": "n-ticker-item",
+      "id": "",
+      "right": 2830.7255859375,
+      "tag": "A",
+      "text": "SSC গণিত সাজেশন ২০২৭ | SSC Math Suggesti",
+      "width": 334.875
+    },
+    {
+      "class": "",
+      "id": "",
+      "right": 2830.7255859375,
+      "tag": "SPAN",
+      "text": "SSC গণিত সাজেশন ২০২৭ | SSC Math Suggesti",
+      "width": 334.875
+    },
+    {
+      "class": "n-ticker-sep",
+      "id": "",
+      "right": 2869.2412109375,
+      "tag": "SPAN",
+      "text": "•",
+      "width": 6.515625
+    },
+    {
+      "class": "n-ticker-item",
+      "id": "",
+      "right": 3453.6474609375,
+      "tag": "A",
+      "text": "রাজশাহী বিশ্ববিদ্যালয় ভর্তি ২০২৬-২৭ | R",
+      "width": 552.40625
+    },
+    {
+      "class": "",
+      "id": "",
+      "right": 3453.6474609375,
+      "tag": "SPAN",
+      "text": "রাজশাহী বিশ্ববিদ্যালয় ভর্তি ২০২৬-২৭ | R",
+      "width": 552.40625
+    },
+    {
+      "class": "n-ticker-sep",
+      "id": "",
+      "right": 3492.1630859375,
+      "tag": "SPAN",
+      "text": "•",
+      "width": 6.515625
+    },
+    {
+      "class": "n-thumb-tab-btn",
+      "id": "",
+      "right": 553.578125,
+      "tag": "BUTTON",
+      "text": "ইংরেজি",
+      "width": 74.859375
+    }
+  ],
+  "typographyIssues": [],
+  "viewport": {
+    "height": 693,
+    "width": 500
+  }
+}
