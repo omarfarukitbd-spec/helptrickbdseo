@@ -26,7 +26,7 @@ function ht_render_schema_jsonld() {
             'url'             => home_url('/'),
             'name'            => get_bloginfo('name'),
             'description'     => get_bloginfo('description'),
-            'inLanguage'      => 'bn-BD',
+            'inLanguage'      => function_exists('ht_get_schema_in_language') ? ht_get_schema_in_language() : 'bn-BD',
             'potentialAction' => [
                 '@type'       => 'SearchAction',
                 'target'      => [
@@ -167,7 +167,7 @@ function ht_render_schema_jsonld() {
                 'url'   => esc_url($image_url),
             ] : null,
             'wordCount'        => (int) $word_count,
-            'inLanguage'       => 'bn-BD',
+            'inLanguage'       => function_exists('ht_get_schema_in_language') ? ht_get_schema_in_language() : 'bn-BD',
         ];
 
         // 3. Auto-detect FAQ Q&A patterns in post content

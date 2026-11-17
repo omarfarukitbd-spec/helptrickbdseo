@@ -1,0 +1,22 @@
+<wpml-config>
+    <admin-texts>
+        <key name="theme_mods_helptrickbd-theme">
+            <key name="htbd_ticker_badge_text" />
+            <key name="htbd_hero_badge_text" />
+            <key name="htbd_sec_ssc_title" />
+            <key name="htbd_sec_ssc_link_text" />
+            <key name="htbd_sec_filter_title" />
+            <key name="htbd_sec_filter_link_text" />
+            <key name="htbd_sec_nu_title" />
+            <key name="htbd_sec_nu_link_text" />
+            <key name="htbd_sec_gallery_title" />
+            <key name="htbd_sec_gallery_link_text" />
+            <key name="ht_sidebar_popular_title" />
+            <key name="ht_footer_desc" />
+            <key name="ht_footer_trust_text" />
+            <key name="ht_footer_copyright" />
+            <key name="ht_footer_credit" />
+            <key name="ht_reviewer_name" />
+        </key>
+    </admin-texts>
+</wpml-config>

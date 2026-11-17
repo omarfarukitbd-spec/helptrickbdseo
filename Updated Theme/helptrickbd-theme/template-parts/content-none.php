@@ -15,9 +15,9 @@ if (!defined('ABSPATH')) {
     <h3 class="ht-empty-title">
         <?php
         if (is_search()) :
-            esc_html_e('কোনো ফলাফল পাওয়া যায়নি', 'helptrickbd');
+            echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('No Results Found', 'helptrickbd') : esc_html__('কোনো ফলাফল পাওয়া যায়নি', 'helptrickbd');
         else :
-            esc_html_e('কোনো তথ্য বা পোস্ট পাওয়া যায়নি', 'helptrickbd');
+            echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('No Articles Found', 'helptrickbd') : esc_html__('কোনো তথ্য বা পোস্ট পাওয়া যায়নি', 'helptrickbd');
         endif;
         ?>
     </h3>
@@ -33,9 +33,9 @@ if (!defined('ABSPATH')) {
                 esc_url(admin_url('post-new.php'))
             );
         elseif (is_search()) :
-            esc_html_e('দুঃখিত, আপনার অনুসন্ধানের সাথে মিলে এমন কোনো হ্যান্ডনোট বা গাইড পাওয়া যায়নি। অনুগ্রহ করে ভিন্ন কি-ওয়ার্ড দিয়ে আবার চেষ্টা করুন।', 'helptrickbd');
+            echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Sorry, no handnotes or guides matched your search query. Please try again with different keywords.', 'helptrickbd') : esc_html__('দুঃখিত, আপনার অনুসন্ধানের সাথে মিলে এমন কোনো হ্যান্ডনোট বা গাইড পাওয়া যায়নি। অনুগ্রহ করে ভিন্ন কি-ওয়ার্ড দিয়ে আবার চেষ্টা করুন।', 'helptrickbd');
         else :
-            esc_html_e('আপনি যা খুঁজছেন তা এই মুহূর্তে পাওয়া যায়নি। উপরের সার্চ বক্সে কি-ওয়ার্ড লিখে অনুসন্ধান করতে পারেন।', 'helptrickbd');
+            echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('What you are looking for could not be found at this time. Try searching above with another keyword.', 'helptrickbd') : esc_html__('আপনি যা খুঁজছেন তা এই মুহূর্তে পাওয়া যায়নি। উপরের সার্চ বক্সে কি-ওয়ার্ড লিখে অনুসন্ধান করতে পারেন।', 'helptrickbd');
         endif;
         ?>
     </p>

@@ -31,20 +31,20 @@ get_header();
                 <div class="ht-404-badge-wrap">
                     <span class="ht-404-status-badge">
                         <?php ht_m3_icon('help_outline', 16); ?>
-                        <span>এরর ৪০৪</span>
+                        <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Error 404', 'helptrickbd') : esc_html__('এরর ৪০৪', 'helptrickbd'); ?></span>
                     </span>
                     <div class="ht-404-num" aria-hidden="true">404</div>
                 </div>
 
-                <h1 class="ht-404-title"><?php esc_html_e('দুঃখিত, কাঙ্ক্ষিত পাতাটি পাওয়া যায়নি!', 'helptrickbd'); ?></h1>
+                <h1 class="ht-404-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Sorry, the page you are looking for was not found!', 'helptrickbd') : esc_html__('দুঃখিত, কাঙ্ক্ষিত পাতাটি পাওয়া যায়নি!', 'helptrickbd'); ?></h1>
                 <p class="ht-404-desc">
-                    <?php esc_html_e('আপনি যে পাতা বা লিঙ্কটি খুঁজছেন তা হয়তো সরানো হয়েছে, নাম পরিবর্তন করা হয়েছে অথবা সাময়িকভাবে অনুপলব্ধ। নিচের সার্চ বক্স ব্যবহার করে অথবা জনপ্রিয় ক্যাটাগরিগুলো থেকে আপনার প্রয়োজনীয় তথ্যটি সহজে খুঁজে নিতে পারেন।', 'helptrickbd'); ?>
+                    <?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('The page or link you are looking for may have been moved, renamed, or is temporarily unavailable. Use the search box below or explore popular categories to find the academic information you need.', 'helptrickbd') : esc_html__('আপনি যে পাতা বা লিঙ্কটি খুঁজছেন তা হয়তো সরানো হয়েছে, নাম পরিবর্তন করা হয়েছে অথবা সাময়িকভাবে অনুপলব্ধ। নিচের সার্চ বক্স ব্যবহার করে অথবা জনপ্রিয় ক্যাটাগরিগুলো থেকে আপনার প্রয়োজনীয় তথ্যটি সহজে খুঁজে নিতে পারেন।', 'helptrickbd'); ?>
                 </p>
 
                 <!-- Prominent Search Bar -->
                 <div class="ht-404-search-box">
                     <form role="search" method="get" class="ht-404-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                        <label for="ht-404-search-field" class="screen-reader-text"><?php esc_html_e('ওয়েবসাইট অনুসন্ধান', 'helptrickbd'); ?></label>
+                        <label for="ht-404-search-field" class="screen-reader-text"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Search Website', 'helptrickbd') : esc_html__('ওয়েবসাইট অনুসন্ধান', 'helptrickbd'); ?></label>
                         <div class="ht-404-search-input-wrap">
                             <span class="ht-404-search-icon" aria-hidden="true">
                                 <?php ht_m3_icon('search', 22); ?>
@@ -53,14 +53,14 @@ get_header();
                                 type="search" 
                                 id="ht-404-search-field"
                                 class="ht-404-search-input" 
-                                placeholder="<?php esc_attr_e('আপনি কী খুঁজছেন? যেমন: ডিগ্রি রুটিন, বিসিএস প্রস্তুতি...', 'helptrickbd'); ?>" 
+                                placeholder="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('What are you looking for? e.g. Degree routine, BCS prep...', 'helptrickbd') : esc_attr__('আপনি কী খুঁজছেন? যেমন: ডিগ্রি রুটিন, বিসিএস প্রস্তুতি...', 'helptrickbd'); ?>" 
                                 value="<?php echo esc_attr(get_search_query()); ?>" 
                                 name="s" 
                                 required 
                                 autocomplete="off"
                             />
-                            <button type="submit" class="ht-404-search-btn" aria-label="<?php esc_attr_e('অনুসন্ধান করুন', 'helptrickbd'); ?>">
-                                <span><?php esc_html_e('অনুসন্ধান', 'helptrickbd'); ?></span>
+                            <button type="submit" class="ht-404-search-btn" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Search', 'helptrickbd') : esc_attr__('অনুসন্ধান করুন', 'helptrickbd'); ?>">
+                                <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Search', 'helptrickbd') : esc_html__('অনুসন্ধান', 'helptrickbd'); ?></span>
                                 <?php ht_m3_icon('arrow_forward', 18); ?>
                             </button>
                         </div>
@@ -71,7 +71,7 @@ get_header();
                 <div class="ht-404-categories-section">
                     <div class="ht-404-cat-label">
                         <?php ht_m3_icon('category', 16); ?>
-                        <span><?php esc_html_e('জনপ্রিয় বিষয় ও ক্যাটাগরি:', 'helptrickbd'); ?></span>
+                        <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Popular Academic Categories:', 'helptrickbd') : esc_html__('জনপ্রিয় বিষয় ও ক্যাটাগরি:', 'helptrickbd'); ?></span>
                     </div>
                     <div class="ht-404-cat-pills">
                         <a href="<?php echo esc_url(home_url('/category/national-university/')); ?>" class="ht-404-cat-pill ht-cat-nu">
@@ -105,11 +105,11 @@ get_header();
                 <div class="ht-404-actions">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="ht-btn ht-btn-primary ht-404-home-btn">
                         <?php ht_m3_icon('home', 20); ?>
-                        <span><?php esc_html_e('মূল পাতায় ফিরে যান', 'helptrickbd'); ?></span>
+                        <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Back to Home', 'helptrickbd') : esc_html__('মূল পাতায় ফিরে যান', 'helptrickbd'); ?></span>
                     </a>
                     <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="ht-btn ht-404-contact-btn">
                         <?php ht_m3_icon('chat_bubble_outline', 18); ?>
-                        <span><?php esc_html_e('ভুল লিঙ্ক রিপোর্ট / যোগাযোগ', 'helptrickbd'); ?></span>
+                        <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Report Broken Link / Contact', 'helptrickbd') : esc_html__('ভুল লিঙ্ক রিপোর্ট / যোগাযোগ', 'helptrickbd'); ?></span>
                     </a>
                 </div>
             </div>
@@ -119,10 +119,10 @@ get_header();
                 <div class="ht-404-section-head">
                     <div class="ht-404-section-badge">
                         <?php ht_m3_icon('trending_up', 18); ?>
-                        <span><?php esc_html_e('প্রয়োজনীয় গাইডলাইন', 'helptrickbd'); ?></span>
+                        <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Recommended Guides', 'helptrickbd') : esc_html__('প্রয়োজনীয় গাইডলাইন', 'helptrickbd'); ?></span>
                     </div>
-                    <h2 id="ht-404-rec-title" class="ht-404-section-title"><?php esc_html_e('জনপ্রিয় ও সর্বশেষ প্রকাশনাসমূহ', 'helptrickbd'); ?></h2>
-                    <p class="ht-404-section-sub"><?php esc_html_e('আপনার কাঙ্ক্ষিত তথ্যটি হয়তো নিচের শীর্ষ আর্টিকেলগুলোর মধ্যে রয়েছে:', 'helptrickbd'); ?></p>
+                    <h2 id="ht-404-rec-title" class="ht-404-section-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Latest & Popular Publications', 'helptrickbd') : esc_html__('জনপ্রিয় ও সর্বশেষ প্রকাশনাসমূহ', 'helptrickbd'); ?></h2>
+                    <p class="ht-404-section-sub"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('The academic resource you are seeking might be among these featured articles:', 'helptrickbd') : esc_html__('আপনার কাঙ্ক্ষিত তথ্যটি হয়তো নিচের শীর্ষ আর্টিকেলগুলোর মধ্যে রয়েছে:', 'helptrickbd'); ?></p>
                 </div>
 
                 <div class="ht-cards-grid ht-404-cards-grid">

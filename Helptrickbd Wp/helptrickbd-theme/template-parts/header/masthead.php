@@ -43,7 +43,8 @@ if (stripos($display_brand, '.com') === false) {
       </div>
 
       <div class="n-brand-right">
-        <button type="button" class="n-masthead-search-btn ht-search-trigger" id="ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান', 'helptrickbd'); ?>">
+        <?php get_template_part('template-parts/header/language-switcher'); ?>
+        <button type="button" class="n-masthead-search-btn ht-search-trigger" id="ht-search-trigger" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Search', 'helptrickbd') : esc_attr__('অনুসন্ধান', 'helptrickbd'); ?>">
           <?php htbd_icon('search', array('width' => 20, 'height' => 20)); ?>
         </button>
       </div>

@@ -16,16 +16,18 @@ $categories = get_categories(array(
     'hide_empty' => false,
 ));
 
-$nav_home_text = get_theme_mod('htbd_nav_home_text', get_theme_mod('ht_nav_home_text', 'মূল পাতা'));
-if (empty($nav_home_text) || $nav_home_text === 'All Posts') {
-    $nav_home_text = 'মূল পাতা';
+$nav_home_text = get_theme_mod('htbd_nav_home_text', get_theme_mod('ht_nav_home_text', ''));
+if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) {
+    $nav_home_text = (!empty($nav_home_text) && $nav_home_text !== 'মূল পাতা') ? $nav_home_text : esc_html__('Home', 'helptrickbd');
+} else {
+    $nav_home_text = !empty($nav_home_text) ? $nav_home_text : esc_html__('মূল পাতা', 'helptrickbd');
 }
 ?>
 <div class="n-navwrap">
   <div class="ht-container">
-    <nav class="n-nav-inner" aria-label="<?php esc_attr_e('মূল নেভিগেশন মেনু', 'helptrickbd'); ?>">
+    <nav class="n-nav-inner" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Primary Navigation', 'helptrickbd') : esc_attr__('মূল নেভিগেশন মেনু', 'helptrickbd'); ?>">
       <!-- Mobile Drawer Toggle Button -->
-      <button type="button" id="ht-drawer-toggle" class="n-mobile-toggle" aria-label="<?php esc_attr_e('মেনু খুলুন', 'helptrickbd'); ?>">
+      <button type="button" id="ht-drawer-toggle" class="n-mobile-toggle" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Open Menu', 'helptrickbd') : esc_attr__('মেনু খুলুন', 'helptrickbd'); ?>">
         <?php htbd_icon('menu', array('width' => 22, 'height' => 22)); ?>
       </button>
 

@@ -23,19 +23,28 @@ get_header();
         <header class="ht-archive-header ht-search-header">
             <div class="ht-archive-header-badge">
                 <?php ht_m3_icon('search', 20); ?>
-                <span><?php esc_html_e('অনুসন্ধানের ফলাফল', 'helptrickbd'); ?></span>
+                <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Search Results', 'helptrickbd') : esc_html__('অনুসন্ধানের ফলাফল', 'helptrickbd'); ?></span>
             </div>
             <h1 class="ht-archive-title">
                 "<?php echo esc_html(get_search_query()); ?>"
             </h1>
             <p class="ht-search-count">
                 <?php
-                $found_num = function_exists('ht_bn_number') ? ht_bn_number($wp_query->found_posts) : $wp_query->found_posts;
-                printf(
-                    /* translators: %s: number of found posts */
-                    esc_html__('মোট %s টি ফলাফল পাওয়া গেছে', 'helptrickbd'),
-                    esc_html($found_num)
-                );
+                $num_fn = function_exists('ht_number') ? 'ht_number' : 'ht_bn_number';
+                $found_num = $num_fn($wp_query->found_posts);
+                if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) {
+                    printf(
+                        /* translators: %s: number of found posts */
+                        esc_html__('Found %s results', 'helptrickbd'),
+                        esc_html($found_num)
+                    );
+                } else {
+                    printf(
+                        /* translators: %s: number of found posts */
+                        esc_html__('মোট %s টি ফলাফল পাওয়া গেছে', 'helptrickbd'),
+                        esc_html($found_num)
+                    );
+                }
                 ?>
             </p>
         </header>
@@ -58,9 +67,11 @@ get_header();
                     <!-- Numbered Pagination -->
                     <div class="ht-pagination-wrap">
                         <?php
+                        $prev_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Previous', 'helptrickbd') : esc_html__('পূর্ববর্তী', 'helptrickbd');
+                        $next_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Next', 'helptrickbd') : esc_html__('পরবর্তী', 'helptrickbd');
                         the_posts_pagination([
-                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . esc_html__('পূর্ববর্তী', 'helptrickbd'),
-                            'next_text' => esc_html__('পরবর্তী', 'helptrickbd') . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
+                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . $prev_label,
+                            'next_text' => $next_label . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
                         ]);
                         ?>
                     </div>
