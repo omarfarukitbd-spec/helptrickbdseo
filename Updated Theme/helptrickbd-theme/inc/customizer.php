@@ -485,17 +485,6 @@ function ht_customize_register($wp_customize) {
         'type'    => 'checkbox',
     ]);
 
-    // Academic Citation
-    $wp_customize->add_setting('ht_citation_enable', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('ht_citation_enable', [
-        'label'   => esc_html__('Enable Academic Source Citation Box (APA 7th)', 'helptrickbd'),
-        'section' => 'ht_study_tools_section',
-        'type'    => 'checkbox',
-    ]);
-
     // Related Posts
     $wp_customize->add_setting('ht_related_posts_enable', [
         'default'           => true,
