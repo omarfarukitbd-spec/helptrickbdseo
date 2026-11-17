@@ -212,6 +212,5 @@ class HT_Categories_Widget extends WP_Widget {
  */
 function ht_register_custom_widgets() {
     register_widget('HT_Popular_Posts_Widget');
-    register_widget('HT_Categories_Widget');
 }
 add_action('widgets_init', 'ht_register_custom_widgets');

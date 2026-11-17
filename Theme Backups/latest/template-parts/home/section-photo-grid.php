@@ -43,13 +43,16 @@ if (false === $photo_post_ids) {
 
     $photo_q = new WP_Query($query_args);
     $photo_post_ids = !empty($photo_q->posts) ? $photo_q->posts : array();
-    set_transient($photo_cache_key, $photo_post_ids, 2 * HOUR_IN_SECONDS);
+    if (!empty($photo_post_ids)) {
+        set_transient($photo_cache_key, $photo_post_ids, 2 * HOUR_IN_SECONDS);
+    }
 }
 
 if ($cat_id > 0) {
     $target_link = get_category_link($cat_id);
 } else {
-    $target_link = home_url('/blog/');
+    $blog_page_id = get_option('page_for_posts');
+    $target_link  = $blog_page_id ? get_permalink($blog_page_id) : home_url('/');
 }
 
 if (empty($photo_post_ids)) {

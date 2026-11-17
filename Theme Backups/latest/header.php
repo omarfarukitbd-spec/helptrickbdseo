@@ -31,12 +31,10 @@ if (!defined('ABSPATH')) {
 <div id="page" class="ht-site-wrapper site-wrapper">
 
     <?php
-
-
-    // 2. Newspaper Masthead (Left Logo, Right Search, No Tagline)
+    // 1. Newspaper Masthead (Left Logo, Right Search, No Tagline)
     get_template_part('template-parts/header/masthead');
 
-    // 3. Sticky Newspaper Navigation & Category Track
+    // 2. Sticky Newspaper Navigation & Category Track
     get_template_part('template-parts/header/navbar');
     ?>
 

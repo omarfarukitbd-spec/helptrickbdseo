@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Homepage Section 5: National University & Special Focus (Single Clean Container)
  *
@@ -110,7 +110,6 @@ if (!$focus_query->have_posts()) {
 
           <div class="n-lrow-text">
             <span class="lt-t"><?php the_title(); ?></span>
-            <span class="lt-m"><?php echo esc_html(get_the_date('j F, Y')); ?></span>
           </div>
         </a>
         <?php

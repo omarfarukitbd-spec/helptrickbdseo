@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Homepage Section 3: Specialized Subject Grid (Configurable from Admin Panel)
  * Strictly queries SSC & Dakhil category (6 posts on desktop, 5 on mobile, titles only)
@@ -105,10 +105,6 @@ if (!$grid_query->have_posts()) {
               <?php the_title(); ?>
             </a>
           </h4>
-          <div class="meta">
-            <span><?php echo esc_html(get_the_date('j F, Y')); ?></span> &bull; 
-            <span><?php echo esc_html(htbd_reading_time()); ?></span>
-          </div>
         </div>
         <?php
     endwhile;

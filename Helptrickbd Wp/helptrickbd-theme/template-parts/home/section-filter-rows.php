@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Homepage Section 5: Subject-Based Posts & Dynamic Filter Rows ("বিষয়ভিত্তিক পোস্ট")
  * Features 2-column card grid on computer, mobile 1-column, and robust multi-category queries
@@ -209,16 +209,6 @@ if (empty($all_posts_data)) {
           <div class="info">
             <span class="tag"><?php echo esc_html($item['cat_name']); ?></span>
             <h4><?php echo esc_html($item['title']); ?></h4>
-            <div class="meta">
-              <span><?php echo esc_html($item['date']); ?></span> &bull; 
-              <span><?php 
-                if (is_array($item['read'])) {
-                    echo esc_html(isset($item['read']['minutes']) ? (function_exists('ht_bn_number') ? ht_bn_number($item['read']['minutes']) . ' মিনিট পড়া' : $item['read']['minutes'] . ' মিনিট পড়া') : '৩ মিনিট পড়া');
-                } else {
-                    echo esc_html($item['read']);
-                }
-              ?></span>
-            </div>
           </div>
 
           <div class="arr" aria-hidden="true">&rarr;</div>

@@ -452,6 +452,36 @@ button {
   margin: 20px 0;
   text-align: center;
 }
+.ht-sidebar-area .widget_search,
+.ht-sidebar-area .wp-block-search,
+.ht-sidebar-wrapper .widget_search,
+.ht-sidebar-wrapper .wp-block-search,
+.n-home-layout-sidebar .widget_search,
+.n-home-layout-sidebar .wp-block-search,
+.ht-sidebar-area .widget_archive,
+.ht-sidebar-area .wp-block-archives,
+.ht-sidebar-wrapper .widget_archive,
+.ht-sidebar-wrapper .wp-block-archives,
+.n-home-layout-sidebar .widget_archive,
+.n-home-layout-sidebar .wp-block-archives,
+.ht-sidebar-area .widget_categories,
+.ht-sidebar-area .wp-block-categories,
+.ht-sidebar-wrapper .widget_categories,
+.ht-sidebar-wrapper .wp-block-categories,
+.n-home-layout-sidebar .widget_categories,
+.n-home-layout-sidebar .wp-block-categories,
+.ht-widget:has(.wp-block-archives),
+.ht-widget:has(.wp-block-categories),
+.ht-widget:has(.wp-block-search),
+.ht-widget:has(.widget_search),
+.ht-widget:has(.widget_archive),
+.ht-widget:has(.widget_categories),
+.ht-widget.widget_search,
+.ht-widget.widget_archive,
+.ht-widget.widget_categories,
+.n-sidebar-cats-widget {
+  display: none !important;
+}
 </style>
         <?php
     }

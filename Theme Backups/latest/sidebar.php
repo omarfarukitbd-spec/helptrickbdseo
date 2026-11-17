@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 <div id="secondary" class="ht-sidebar-wrapper">
   <?php get_template_part('template-parts/home/sidebar-popular-cats'); ?>
 
-  <?php if (is_active_sidebar('ht-primary-sidebar')) : ?>
+  <?php if (get_theme_mod('ht_sidebar_widgets_enable', false) && is_active_sidebar('ht-primary-sidebar')) : ?>
     <div class="ht-dynamic-sidebar-widgets" style="margin-top:20px;">
       <?php dynamic_sidebar('ht-primary-sidebar'); ?>
     </div>
