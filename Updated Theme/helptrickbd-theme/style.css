@@ -4,7 +4,7 @@ Theme URI: https://www.helptrickbd.com
 Author: Help Trick BD Team
 Author URI: https://www.helptrickbd.com
 Description: World-class, responsive, and ultra-high-performance WordPress educational and technology magazine theme tailored for academic portals, National University, SSC/Dakhil, ICT, and job study articles. 100% Core Web Vitals speed optimized, zero external bloat, pure Google Material 3 vector SVG icons, zero emojis, and complete Rank Math SEO & Google AdSense integration.
-Version: 1.6.1
+Version: 2.0.0
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.1
@@ -45,12 +45,18 @@ Tags: education, technology, news, two-columns, custom-menu, featured-images, th
     --ht-info: #0284c7;
     --ht-info-light: #f0f9ff;
 
-    /* Typography - SolaimanLipi High-Precision Primary Typography */
-    --ht-font-bn: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Professional Centralized Typography Tokens */
+    --ht-font-heading: 'Shurjo', 'SolaimanLipi', Georgia, 'Times New Roman', serif;
+    --ht-font-serif: var(--ht-font-heading);
+    --ht-heading-weight: 700;
+    --ht-heading-line-height: 1.35;
+
+    --ht-font-body: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --ht-font-bn: var(--ht-font-body);
     --ht-font-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'SolaimanLipi', sans-serif;
-    --ht-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'SolaimanLipi', sans-serif;
-    --ht-font-heading: 'SolaimanLipi', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --ht-font-sans: var(--ht-font-body);
     --ht-font-code: 'Fira Code', Consolas, Monaco, monospace;
+    --ht-body-line-height: 1.8;
 
     /* Layout & Dimensions */
     --ht-max-width: 1240px;

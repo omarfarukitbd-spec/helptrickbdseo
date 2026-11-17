@@ -395,11 +395,10 @@
 
 @media (max-width: 767px) {
   .n-ticker {
-    margin: 0 -10px 10px;
-    width: calc(100% + 20px);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
+    margin: 0 0 10px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--ht-border);
   }
 }
 
@@ -1479,8 +1478,25 @@
 
 @media (max-width: 600px) {
   .n-ticker {
-    margin: 0 -10px 12px;
-    width: calc(100% + 20px);
-    border-radius: 0;
+    margin: 0 0 12px;
+    width: 100%;
+    border-radius: 6px;
+  }
+}
+
+/* -------------------------------------------------------------------------
+ * Mobile Container Gutter Standard (12px Safety Side Padding)
+ * ------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .ht-container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ht-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
 }
