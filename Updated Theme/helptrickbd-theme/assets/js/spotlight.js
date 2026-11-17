@@ -126,7 +126,7 @@
                 }
             })
             .catch(() => {
-                resultsContainer.innerHTML = '<div style="padding:20px;text-align:center;color:var(--ht-danger);">অনুসন্ধানে সমস্যা হয়েছে। পুনরায় চেষ্টা করুন।</div>';
+                resultsContainer.innerHTML = '<div style="padding:20px;text-align:center;color:var(--ht-danger);">অনুসন্ধানে সমস্যা হয়েছে। পুনরায় চেষ্টা করুন।</div>';
             });
     }
 

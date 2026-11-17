@@ -11,10 +11,11 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '1.4.11');
+define('HT_THEME_VERSION', '1.5.0');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/material-icons.php';
+require_once get_template_directory() . '/inc/critical-css.php';
 require_once get_template_directory() . '/inc/template-tags.php';
 require_once get_template_directory() . '/inc/breadcrumbs.php';
 require_once get_template_directory() . '/inc/schema.php';
@@ -222,6 +223,11 @@ function ht_enqueue_scripts() {
     wp_enqueue_style('ht-style', get_stylesheet_uri(), [], HT_THEME_VERSION);
     wp_enqueue_style('ht-main', get_template_directory_uri() . '/assets/css/main.css', ['ht-style'], HT_THEME_VERSION);
     wp_enqueue_style('ht-spotlight', get_template_directory_uri() . '/assets/css/spotlight.css', ['ht-main'], HT_THEME_VERSION);
+    wp_enqueue_style('ht-home-sections', get_template_directory_uri() . '/assets/css/home-sections.css', ['ht-main'], HT_THEME_VERSION);
+
+    if (is_front_page() || is_home()) {
+        wp_enqueue_script('ht-home-filter', get_template_directory_uri() . '/assets/js/home-filter.js', [], HT_THEME_VERSION, true);
+    }
 
     if (is_singular()) {
         wp_enqueue_style('ht-single', get_template_directory_uri() . '/assets/css/single.css', ['ht-main'], HT_THEME_VERSION);
@@ -259,7 +265,7 @@ function ht_enqueue_scripts() {
         'currentPostId'  => is_singular('post') ? get_the_ID() : 0,
         'siteUrl'        => home_url(),
         'countdownDate'  => get_theme_mod('ht_countdown_date', '2026-11-20'),
-        'countdownTitle' => get_theme_mod('ht_countdown_title', 'অনার্স ২য় বর্ষ পরীক্ষা ২০২৬'),
+        'countdownTitle' => get_theme_mod('ht_countdown_title', 'অনার্স ২য় বর্ষ পরীক্ষা ২০২৬'),
         'downloadTimer'  => get_theme_mod('ht_download_timer', 5),
     ]);
 }
@@ -449,7 +455,7 @@ function ht_get_category_icon($slug = '', $name = '') {
     }
 
     // 4. National University & Honours
-    if (strpos($slug, 'national') !== false || strpos($slug, 'honours') !== false || strpos($slug, 'nu') !== false || strpos($name, 'জাতীয়') !== false || strpos($name, 'জাতীয়') !== false || strpos($name, 'অনার্স') !== false) {
+    if (strpos($slug, 'national') !== false || strpos($slug, 'honours') !== false || strpos($slug, 'nu') !== false || strpos($name, 'জাতীয়') !== false || strpos($name, 'জাতীয়') !== false || strpos($name, 'অনার্স') !== false) {
         return 'account_balance';
     }
 
@@ -528,7 +534,7 @@ function ht_get_category_palette($slug = '', $name = '') {
             'border' => 'rgba(192, 38, 211, 0.22)',
         ];
     }
-    if (strpos($slug, 'national') !== false || strpos($slug, 'honours') !== false || strpos($slug, 'nu') !== false || strpos($name, 'জাতীয়') !== false || strpos($name, 'জাতীয়') !== false || strpos($name, 'অনার্স') !== false) {
+    if (strpos($slug, 'national') !== false || strpos($slug, 'honours') !== false || strpos($slug, 'nu') !== false || strpos($name, 'জাতীয়') !== false || strpos($name, 'জাতীয়') !== false || strpos($name, 'অনার্স') !== false) {
         return [
             'color'  => '#1d4ed8', // Sapphire Navy
             'bg'     => 'rgba(29, 78, 216, 0.08)',

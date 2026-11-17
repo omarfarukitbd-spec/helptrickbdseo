@@ -97,3 +97,10 @@ function ht_breadcrumbs() {
     echo '</ol>';
     echo '</nav>';
 }
+
+
+if (!function_exists('htbd_breadcrumbs')) {
+    function htbd_breadcrumbs() {
+        ht_breadcrumbs();
+    }
+}

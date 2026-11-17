@@ -216,7 +216,8 @@ def package_theme():
 
     # 1. Sync files to Updated Theme/helptrickbd-theme/
     os.makedirs(UPDATED_THEME_DIR, exist_ok=True)
-    shutil.copytree(src, UPDATED_THEME_SOURCE, dirs_exist_ok=True)
+    if os.path.abspath(src) != os.path.abspath(UPDATED_THEME_SOURCE):
+        shutil.copytree(src, UPDATED_THEME_SOURCE, dirs_exist_ok=True)
 
     # Also keep Primary Working Theme in sync if different
     if os.path.abspath(src) != os.path.abspath(PRIMARY_WORKING_THEME):

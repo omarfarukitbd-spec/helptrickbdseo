@@ -63,7 +63,7 @@ if (!defined('ABSPATH')) {
                     </p>
                     <div class="ht-footer-trust">
                         <?php ht_m3_icon('verified', 16, 'ht-icon-verified'); ?>
-                        <span><?php echo esc_html(get_theme_mod('ht_footer_trust_text', 'সহজ ভাষায় লেখা শিক্ষামূলক কনটেন্ট')); ?></span>
+                        <span><?php echo esc_html(get_theme_mod('ht_footer_trust_text', 'সহজ ভাষায় লেখা শিক্ষামূলক কনটেন্ট')); ?></span>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@ if (!defined('ABSPATH')) {
                 <div class="ht-footer-col">
                     <h4 class="ht-footer-title"><?php esc_html_e('গুরুত্বপূর্ণ বিষয়সমূহ', 'helptrickbd'); ?></h4>
                     <ul class="ht-footer-links">
-                        <li><a href="<?php echo esc_url(home_url('/category/national-university/')); ?>"><?php esc_html_e('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/national-university/')); ?>"><?php esc_html_e('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd'); ?></a></li>
                         <li><a href="<?php echo esc_url(home_url('/category/education-guide/')); ?>"><?php esc_html_e('এডুকেশন ও রুটিন', 'helptrickbd'); ?></a></li>
                         <li><a href="<?php echo esc_url(home_url('/category/ssc-dakhil/')); ?>"><?php esc_html_e('এসএসসি ও দাখিল সাজেশন', 'helptrickbd'); ?></a></li>
                         <li><a href="<?php echo esc_url(home_url('/category/political-science/')); ?>"><?php esc_html_e('রাষ্ট্রবিজ্ঞান হ্যান্ডনোট', 'helptrickbd'); ?></a></li>
@@ -95,7 +95,7 @@ if (!defined('ABSPATH')) {
                         ?>
                     <?php else : ?>
                         <ul class="ht-footer-links">
-                            <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-routine-2026/')); ?>"><?php esc_html_e('অনার্স ২য় বর্ষ রুটিন ২০২৬', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-routine-2026/')); ?>"><?php esc_html_e('অনার্স ২য় বর্ষ রুটিন ২০২৬', 'helptrickbd'); ?></a></li>
                             <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-guide-and/')); ?>"><?php esc_html_e('অনার্স প্রমোশন ও পাস মার্ক নিয়ম', 'helptrickbd'); ?></a></li>
                             <li><a href="<?php echo esc_url(home_url('/dhaka-board-certificate-name-age-correction-guide-2026/')); ?>"><?php esc_html_e('সার্টিফিকেট নাম ও বয়স সংশোধন', 'helptrickbd'); ?></a></li>
                             <li><a href="<?php echo esc_url(home_url('/nu-cgpa-calculator/')); ?>"><?php esc_html_e('এনইউ সিজিপিএ ক্যালকুলেটর', 'helptrickbd'); ?></a></li>
@@ -194,7 +194,7 @@ if (!defined('ABSPATH')) {
                 <div class="ht-spotlight-trending">
                     <span class="ht-spotlight-section-title"><?php esc_html_e('জনপ্রিয় অনুসন্ধানসমূহ', 'helptrickbd'); ?></span>
                     <div class="ht-trending-tags">
-                        <button class="ht-trending-tag" data-query="অনার্স ২য় বর্ষ রুটিন">অনার্স ২য় বর্ষ রুটিন</button>
+                        <button class="ht-trending-tag" data-query="অনার্স ২য় বর্ষ রুটিন">অনার্স ২য় বর্ষ রুটিন</button>
                         <button class="ht-trending-tag" data-query="এসএসসি বাংলা ১ম পত্র">এসএসসি বাংলা ১ম পত্র</button>
                         <button class="ht-trending-tag" data-query="সার্টিফিকেট নাম সংশোধন">সার্টিফিকেট সংশোধন</button>
                         <button class="ht-trending-tag" data-query="রাষ্ট্রবিজ্ঞান হ্যান্ডনোট">রাষ্ট্রবিজ্ঞান হ্যান্ডনোট</button>
@@ -212,7 +212,7 @@ if (!defined('ABSPATH')) {
                 <?php ht_m3_icon('bookmark', 20); ?>
                 <span class="ht-drawer-title"><?php esc_html_e('আপনার পড়ার তালিকা', 'helptrickbd'); ?></span>
             </div>
-            <button class="ht-drawer-close" id="ht-bm-close" aria-label="<?php esc_attr_e('ড্রয়ার বন্ধ করুন', 'helptrickbd'); ?>">
+            <button class="ht-drawer-close" id="ht-bm-close" aria-label="<?php esc_attr_e('ড্রয়ার বন্ধ করুন', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('close', 20); ?>
             </button>
         </div>

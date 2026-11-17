@@ -187,10 +187,10 @@
   // DASHBOARD UPDATER (PURE CSS BADGES & GAUGE ACCURACY)
   // ---------------------------------------------------------------------------
   function getDivisionText(cgpa, credits) {
-    if (credits === 0 || cgpa === 0) return _bn('পয়েন্ট বা গ্রেড ইনপুট দিন');
+    if (credits === 0 || cgpa === 0) return _bn('পয়েন্ট বা গ্রেড ইনপুট দিন');
     if (cgpa >= 3.00) return _bn('First Class (১ম শ্রেণি)');
-    if (cgpa >= 2.25) return _bn('Second Class (২য় শ্রেণি)');
-    if (cgpa >= 2.00) return _bn('Third Class (৩য় শ্রেণি)');
+    if (cgpa >= 2.25) return _bn('Second Class (২য় শ্রেণি)');
+    if (cgpa >= 2.00) return _bn('Third Class (৩য় শ্রেণি)');
     return _bn('নট প্রমোটেড / ডিগ্রি অপ্রাপ্ত');
   }
 
@@ -403,13 +403,13 @@
           </select>
         </div>
         <div class="cr-col cr-col-point">
-          <span class="cr-label">পয়েন্ট (GP)</span>
+          <span class="cr-label">পয়েন্ট (GP)</span>
           <input type="number" class="c-point"
             min="0.00" max="4.00" step="0.01"
             value="${initialPoint}"
             placeholder="0.00"
             style="width:100%;box-sizing:border-box;padding:7px 4px;border:1.5px solid #94a3b8;border-radius:6px;font-size:14px;font-weight:700;text-align:center;"
-            title="পয়েন্ট টাইপ করলে গ্রেড অটো-সিলেক্ট হবে" />
+            title="পয়েন্ট টাইপ করলে গ্রেড অটো-সিলেক্ট হবে" />
         </div>
       </div>
     `;
@@ -637,7 +637,7 @@
       targetAdvice.textContent = 'আপনাকে প্রতিটি বিষয়ে A বা A+ গ্রেড পেতে হবে। প্রয়োজনে পূর্ববর্তী বছরের C বা D পাওয়া বিষয়ে মানোন্নয়ন পরীক্ষা দেওয়ার পরামর্শ রইল।';
     } else {
       targetBadge.classList.add('htbd-target-impossible');
-      targetBadge.textContent = 'অসম্ভব (মানোন্নয়ন পরীক্ষা দিন)';
+      targetBadge.textContent = 'অসম্ভব (মানোন্নয়ন পরীক্ষা দিন)';
       targetAdvice.textContent = 'গাণিতিকভাবে ৪.০০ এর বেশি জিপিএ তোলা অসম্ভব। পূর্ববর্তী বর্ষগুলোর খারাপ হওয়া বিষয়ের মানোন্নয়ন (Improvement) পরীক্ষা দেওয়া ছাড়া ৩.০০ স্পর্শ করা সম্ভব নয়।';
     }
 
@@ -809,11 +809,11 @@
     scrubEntities(certStudentName);
   });
   modalInpCollege.addEventListener('input', () => {
-    certCollegeName.textContent = modalInpCollege.value.trim() || _bn('জাতীয় বিশ্ববিদ্যালয় অধিভুক্ত কলেজ');
+    certCollegeName.textContent = modalInpCollege.value.trim() || _bn('জাতীয় বিশ্ববিদ্যালয় অধিভুক্ত কলেজ');
     scrubEntities(certCollegeName);
   });
   modalInpSession.addEventListener('input', () => {
-    certRegSession.textContent = modalInpSession.value.trim() || _bn('২০২০-২১ (নিয়মিত)');
+    certRegSession.textContent = modalInpSession.value.trim() || _bn('২০২০-২১ (নিয়মিত)');
     scrubEntities(certRegSession);
   });
 
@@ -824,7 +824,7 @@
   }
 
   function getBnDateString(date) {
-    const bnMonths = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+    const bnMonths = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
     const day = toBnDigits(date.getDate());
     const month = _bn(bnMonths[date.getMonth()]);
     const year = toBnDigits(date.getFullYear());
@@ -840,8 +840,8 @@
 
     // Student identity
     certStudentName.textContent = modalInpName.value.trim() || _bn('পরীক্ষার্থী (Examinee)');
-    certCollegeName.textContent = modalInpCollege.value.trim() || _bn('জাতীয় বিশ্ববিদ্যালয় অধিভুক্ত কলেজ');
-    certRegSession.textContent = modalInpSession.value.trim() || _bn('২০২০-২১ (নিয়মিত)');
+    certCollegeName.textContent = modalInpCollege.value.trim() || _bn('জাতীয় বিশ্ববিদ্যালয় অধিভুক্ত কলেজ');
+    certRegSession.textContent = modalInpSession.value.trim() || _bn('২০২০-২১ (নিয়মিত)');
 
     // Degree Name
     let progName = _bn('স্নাতক (সম্মান) চার বছর');
@@ -868,8 +868,8 @@
     certTableBody.innerHTML = '';
     const yearLabels = {
       '1': { bn: _bn('১ম বর্ষ বার্ষিক পরীক্ষা'), en: '1st Year Final Examination' },
-      '2': { bn: _bn('২য় বর্ষ বার্ষিক পরীক্ষা'), en: '2nd Year Final Examination' },
-      '3': { bn: _bn('৩য় বর্ষ বার্ষিক পরীক্ষা'), en: '3rd Year Final Examination' },
+      '2': { bn: _bn('২য় বর্ষ বার্ষিক পরীক্ষা'), en: '2nd Year Final Examination' },
+      '3': { bn: _bn('৩য় বর্ষ বার্ষিক পরীক্ষা'), en: '3rd Year Final Examination' },
       '4': { bn: _bn('৪র্থ বর্ষ বার্ষিক পরীক্ষা'), en: '4th Year Final Examination' }
     };
 

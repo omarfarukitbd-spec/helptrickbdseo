@@ -161,7 +161,7 @@ def check_core_web_vitals(file_path, content):
     # In template-parts, check <img> tags have loading or aspect-ratio or sizes
     if file_path.endswith('.php'):
         # Strip PHP tags first so ?> does not break the HTML tag boundary
-        clean_html = re.sub(r'<\?php[\s\S]*?\?>', '""', content)
+        clean_html = re.sub(r'<\?php[\s\S]*?(?:\?>|\Z)', '""', content)
         img_tags = re.findall(r'<img\b[^>]*>', clean_html, re.IGNORECASE)
         for img in img_tags:
             if 'loading=' not in img and 'class="skip-lazy"' not in img and 'fetchpriority=' not in img:

@@ -189,7 +189,7 @@ function ht_customize_register($wp_customize) {
 
     // Section Subtitle
     $wp_customize->add_setting('ht_multi_cat_subtitle', [
-        'default'           => 'জাতীয় বিশ্ববিদ্যালয়, বোর্ড পরীক্ষা ও সাম্প্রতিক একাডেমিক স্টাডিজ',
+        'default'           => 'জাতীয় বিশ্ববিদ্যালয়, বোর্ড পরীক্ষা ও সাম্প্রতিক একাডেমিক স্টাডিজ',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('ht_multi_cat_subtitle', [
