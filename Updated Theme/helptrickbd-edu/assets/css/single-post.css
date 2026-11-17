@@ -306,6 +306,640 @@
 }
 
 /* -------------------------------------------------------------------------
+ * 11. Legacy Academic Components & Golden Post Architecture
+ * (Full support for .htbd-academic-*, .htbd-overview-box, .htbd-table, etc.)
+ * ------------------------------------------------------------------------- */
+
+/* Academic Headings & Subheadings */
+.ht-entry-content .htbd-academic-heading,
+.entry-content .htbd-academic-heading,
+.post-body .htbd-academic-heading,
+#mainContent .htbd-academic-heading,
+.htbd-academic-heading,
+.htbd-heading {
+  color: #0c2340 !important;
+  border-left: 5px solid #d4af37 !important;
+  border-bottom: none !important;
+  padding-left: 14px !important;
+  margin-top: 36px !important;
+  margin-bottom: 16px !important;
+  font-size: 1.45rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  display: block !important;
+}
+
+.ht-entry-content .htbd-academic-subheading,
+.entry-content .htbd-academic-subheading,
+.post-body .htbd-academic-subheading,
+#mainContent .htbd-academic-subheading,
+.htbd-academic-subheading,
+.htbd-subheading {
+  color: #1e3a8a !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-top: 26px !important;
+  margin-bottom: 12px !important;
+  line-height: 1.4 !important;
+  display: block !important;
+}
+
+/* Academic Overview & Summary Boxes */
+.ht-entry-content .htbd-overview-box,
+.entry-content .htbd-overview-box,
+.post-body .htbd-overview-box,
+#mainContent .htbd-overview-box,
+.htbd-overview-box,
+.htbd-qbox,
+.htbd-academic-container,
+.htbd-silo-box {
+  background: #f8fafd !important;
+  border: 1px solid #dbeafe !important;
+  border-left: 5px solid #0c2340 !important;
+  border-radius: 8px !important;
+  padding: 20px 24px !important;
+  margin: 24px 0 !important;
+  box-shadow: 0 2px 6px rgba(12, 35, 64, 0.06) !important;
+  color: var(--ht-text-primary, #1e293b) !important;
+  box-sizing: border-box !important;
+}
+
+/* Academic Tables & Mobile Responsive Horizontal Scroll */
+.ht-entry-content .htbd-academic-table,
+.entry-content .htbd-academic-table,
+.post-body .htbd-academic-table,
+#mainContent .htbd-academic-table,
+.htbd-academic-table,
+.htbd-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 20px 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  font-size: 0.95rem !important;
+}
+
+.htbd-academic-table th,
+.htbd-table th {
+  background-color: #0c2340 !important;
+  color: #ffffff !important;
+  padding: 13px 16px !important;
+  text-align: left !important;
+  font-size: 1.02rem !important;
+  font-weight: 700 !important;
+  border: 1px solid #1e3a8a !important;
+}
+
+.htbd-academic-table td,
+.htbd-table td {
+  padding: 12px 16px !important;
+  border: 1px solid #e2e8f0 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.7 !important;
+  color: #334155 !important;
+}
+
+.htbd-academic-table tr:nth-child(even) td,
+.htbd-table tr:nth-child(even) td {
+  background-color: #f8fafc !important;
+}
+
+.htbd-table-wrapper,
+.ht-table-responsive,
+.scroll-wrapper {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  margin: 20px 0 !important;
+  border-radius: 8px !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+/* Exam Cards, Tips & Warning Callouts */
+.htbd-exam-card {
+  background: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+  border-left: 5px solid #16a34a !important;
+  border-radius: 8px !important;
+  padding: 20px 24px !important;
+  margin: 28px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.htbd-tip-box,
+.htbd-tip-card,
+.alert-message.passed,
+.alert-message.success,
+.ht-alert-routine {
+  background: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+  border-left: 5px solid #16a34a !important;
+  padding: 16px 20px !important;
+  border-radius: 6px !important;
+  margin: 20px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.htbd-warning-box,
+.alert-message.warning,
+.ht-alert-warning {
+  background: #fffbeb !important;
+  border: 1px solid #fde68a !important;
+  border-left: 5px solid #f59e0b !important;
+  padding: 16px 20px !important;
+  border-radius: 6px !important;
+  margin: 20px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.alert-message.error {
+  background: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  border-left: 5px solid #ef4444 !important;
+  padding: 16px 20px !important;
+  border-radius: 6px !important;
+  margin: 20px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.htbd-quote-box {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 5px solid #3b82f6 !important;
+  padding: 18px 22px !important;
+  border-radius: 6px !important;
+  margin: 22px 0 !important;
+  font-style: italic !important;
+  box-sizing: border-box !important;
+}
+
+/* Creative Questions, Q&A and FAQ Blocks */
+.htbd-qcard,
+.htbd-qa-card,
+.htbd-faq-item,
+.htbd-faq-wrap,
+.ht-mcq-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 18px 22px !important;
+  margin: 18px 0 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+  box-sizing: border-box !important;
+}
+
+.htbd-faq-q,
+.htbd-qa-card h3,
+.htbd-qa-card h4,
+.ht-mcq-question {
+  color: #0c2340 !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  margin-bottom: 8px !important;
+}
+
+.htbd-faq-a,
+.htbd-ans-box,
+.ht-mcq-answer {
+  color: #334155 !important;
+  line-height: 1.7 !important;
+  font-size: 1.05rem !important;
+}
+
+/* Jump Pills, Series Navigation & Badges */
+.htbd-jump-pill,
+.htbd-back-btn,
+.htbd-back-text-link,
+.ht-author-eeat-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 6px 14px !important;
+  background: #eff6ff !important;
+  color: #1e40af !important;
+  border: 1px solid #bfdbfe !important;
+  border-radius: 20px !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  margin: 4px 6px 4px 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.htbd-jump-pill:hover,
+.htbd-back-btn:hover,
+.htbd-back-text-link:hover {
+  background: #1e40af !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+.htbd-series-nav,
+.htbd-link-box {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  padding: 14px 18px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  margin: 22px 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Custom In-Post Table of Contents Cards */
+.htbd-toc-card,
+.htbd-toc-box,
+.ht-toc-container {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 4px solid #0c2340 !important;
+  border-radius: 8px !important;
+  padding: 18px 22px !important;
+  margin: 24px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.htbd-toc-card .toc-title,
+.htbd-toc-box .toc-title,
+.ht-toc-container .ht-toc-title {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #0c2340 !important;
+  margin-bottom: 12px !important;
+  padding-bottom: 6px !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.htbd-toc-list,
+.ht-toc-list {
+  list-style: decimal !important;
+  padding-left: 20px !important;
+  margin: 0 !important;
+}
+
+.htbd-toc-list li,
+.ht-toc-list li {
+  margin-bottom: 8px !important;
+}
+
+.htbd-toc-list li a,
+.ht-toc-list li a {
+  color: #1e3a8a !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+  text-decoration: none !important;
+}
+
+.htbd-toc-list li a:hover,
+.ht-toc-list li a:hover {
+  text-decoration: underline !important;
+  color: #d4af37 !important;
+}
+
+/* Rank Math PRO Gutenberg TOC Deep Styling */
+.wp-block-rank-math-toc-block {
+  background: var(--ht-surface, #ffffff) !important;
+  border: 2px solid #e2e8f0 !important;
+  border-left: 5px solid #1e40af !important;
+  border-radius: 8px !important;
+  padding: 20px 24px !important;
+  margin: 28px 0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+.wp-block-rank-math-toc-block h2 {
+  font-family: var(--ht-font-serif, 'Shurjo', serif) !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: #0c2340 !important;
+  margin: 0 0 14px 0 !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1.5px solid #e2e8f0 !important;
+}
+
+.wp-block-rank-math-toc-block nav ul {
+  list-style: decimal !important;
+  padding-left: 22px !important;
+  margin: 0 !important;
+}
+
+.wp-block-rank-math-toc-block nav ul li {
+  margin-bottom: 8px !important;
+  line-height: 1.6 !important;
+}
+
+.wp-block-rank-math-toc-block nav ul li a {
+  color: #1e40af !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.wp-block-rank-math-toc-block nav ul li a:hover {
+  color: #b3271e !important;
+  text-decoration: underline !important;
+}
+
+/* PDF Download & Source Link Pill Buttons */
+.pdf-download-btn,
+.htbd-download-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  padding: 10px 14px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  margin: 24px 0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  box-sizing: border-box !important;
+}
+
+.pdf-download-btn:hover,
+.htbd-download-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1) !important;
+}
+
+.pdf-download-action,
+.htbd-download-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 8px 16px !important;
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  text-decoration: none !important;
+}
+
+.pdf-download-action:hover,
+.htbd-download-btn:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b) !important;
+}
+
+.source-link-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 18px !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  margin: 16px 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.source-link-btn:hover {
+  background: #e2e8f0 !important;
+  color: #1e40af !important;
+}
+
+/* =========================================================================
+ * 12. Bi-Modal Dark Mode Overrides (WCAG 2.1 AA Compliant)
+ * ========================================================================= */
+[data-theme="dark"] .htbd-academic-heading,
+body.dark .htbd-academic-heading,
+.dark .htbd-academic-heading,
+[data-theme="dark"] .htbd-heading,
+body.dark .htbd-heading,
+.dark .htbd-heading {
+  color: #ffffff !important;
+  border-left-color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .htbd-academic-subheading,
+body.dark .htbd-academic-subheading,
+.dark .htbd-academic-subheading,
+[data-theme="dark"] .htbd-subheading,
+body.dark .htbd-subheading,
+.dark .htbd-subheading {
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .htbd-overview-box,
+[data-theme="dark"] .htbd-qbox,
+[data-theme="dark"] .htbd-academic-container,
+[data-theme="dark"] .htbd-silo-box,
+[data-theme="dark"] .htbd-toc-card,
+[data-theme="dark"] .htbd-toc-box,
+[data-theme="dark"] .ht-toc-container,
+[data-theme="dark"] .htbd-exam-card,
+[data-theme="dark"] .htbd-qcard,
+[data-theme="dark"] .htbd-qa-card,
+[data-theme="dark"] .htbd-faq-item,
+[data-theme="dark"] .htbd-faq-wrap,
+[data-theme="dark"] .ht-mcq-card,
+[data-theme="dark"] .htbd-quote-box,
+[data-theme="dark"] .htbd-series-nav,
+[data-theme="dark"] .htbd-link-box,
+[data-theme="dark"] .wp-block-rank-math-toc-block,
+body.dark .htbd-overview-box,
+body.dark .htbd-qbox,
+body.dark .htbd-academic-container,
+body.dark .htbd-silo-box,
+body.dark .htbd-toc-card,
+body.dark .htbd-toc-box,
+body.dark .ht-toc-container,
+body.dark .htbd-exam-card,
+body.dark .htbd-qcard,
+body.dark .htbd-qa-card,
+body.dark .htbd-faq-item,
+body.dark .htbd-faq-wrap,
+body.dark .ht-mcq-card,
+body.dark .htbd-quote-box,
+body.dark .htbd-series-nav,
+body.dark .htbd-link-box,
+body.dark .wp-block-rank-math-toc-block,
+.dark .htbd-overview-box,
+.dark .htbd-qbox,
+.dark .htbd-academic-container,
+.dark .htbd-silo-box,
+.dark .htbd-toc-card,
+.dark .htbd-toc-box,
+.dark .ht-toc-container,
+.dark .htbd-exam-card,
+.dark .htbd-qcard,
+.dark .htbd-qa-card,
+.dark .htbd-faq-item,
+.dark .htbd-faq-wrap,
+.dark .ht-mcq-card,
+.dark .htbd-quote-box,
+.dark .htbd-series-nav,
+.dark .htbd-link-box,
+.dark .wp-block-rank-math-toc-block {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .htbd-overview-box *,
+[data-theme="dark"] .htbd-qbox *,
+[data-theme="dark"] .htbd-academic-container *,
+[data-theme="dark"] .htbd-silo-box *,
+[data-theme="dark"] .htbd-toc-card *,
+[data-theme="dark"] .htbd-toc-box *,
+[data-theme="dark"] .ht-toc-container *,
+[data-theme="dark"] .htbd-exam-card *,
+[data-theme="dark"] .htbd-qcard *,
+[data-theme="dark"] .htbd-qa-card *,
+[data-theme="dark"] .htbd-faq-item *,
+[data-theme="dark"] .htbd-faq-wrap *,
+[data-theme="dark"] .ht-mcq-card *,
+[data-theme="dark"] .htbd-quote-box *,
+[data-theme="dark"] .htbd-series-nav *,
+[data-theme="dark"] .htbd-link-box *,
+[data-theme="dark"] .wp-block-rank-math-toc-block *,
+body.dark .htbd-overview-box *,
+body.dark .htbd-qbox *,
+body.dark .htbd-academic-container *,
+body.dark .htbd-silo-box *,
+body.dark .htbd-toc-card *,
+body.dark .htbd-toc-box *,
+body.dark .ht-toc-container *,
+body.dark .htbd-exam-card *,
+body.dark .htbd-qcard *,
+body.dark .htbd-qa-card *,
+body.dark .htbd-faq-item *,
+body.dark .htbd-faq-wrap *,
+body.dark .ht-mcq-card *,
+body.dark .htbd-quote-box *,
+body.dark .htbd-series-nav *,
+body.dark .htbd-link-box *,
+body.dark .wp-block-rank-math-toc-block *,
+.dark .htbd-overview-box *,
+.dark .htbd-qbox *,
+.dark .htbd-academic-container *,
+.dark .htbd-silo-box *,
+.dark .htbd-toc-card *,
+.dark .htbd-toc-box *,
+.dark .ht-toc-container *,
+.dark .htbd-exam-card *,
+.dark .htbd-qcard *,
+.dark .htbd-qa-card *,
+.dark .htbd-faq-item *,
+.dark .htbd-faq-wrap *,
+.dark .ht-mcq-card *,
+.dark .htbd-quote-box *,
+.dark .htbd-series-nav *,
+.dark .htbd-link-box *,
+.dark .wp-block-rank-math-toc-block * {
+  color: inherit !important;
+}
+
+[data-theme="dark"] .htbd-overview-box a,
+[data-theme="dark"] .htbd-toc-card a,
+[data-theme="dark"] .htbd-toc-box a,
+[data-theme="dark"] .ht-toc-container a,
+[data-theme="dark"] .htbd-qcard a,
+[data-theme="dark"] .htbd-qa-card a,
+[data-theme="dark"] .wp-block-rank-math-toc-block a,
+body.dark .htbd-overview-box a,
+body.dark .htbd-toc-card a,
+body.dark .htbd-toc-box a,
+body.dark .ht-toc-container a,
+body.dark .htbd-qcard a,
+body.dark .htbd-qa-card a,
+body.dark .wp-block-rank-math-toc-block a,
+.dark .htbd-overview-box a,
+.dark .htbd-toc-card a,
+.dark .htbd-toc-box a,
+.dark .ht-toc-container a,
+.dark .htbd-qcard a,
+.dark .htbd-qa-card a,
+.dark .wp-block-rank-math-toc-block a {
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .htbd-academic-table,
+[data-theme="dark"] .htbd-table,
+body.dark .htbd-academic-table,
+body.dark .htbd-table,
+.dark .htbd-academic-table,
+.dark .htbd-table {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .htbd-academic-table th,
+[data-theme="dark"] .htbd-table th,
+body.dark .htbd-academic-table th,
+body.dark .htbd-table th,
+.dark .htbd-academic-table th,
+.dark .htbd-table th {
+  background-color: #0f172a !important;
+  color: #38bdf8 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .htbd-academic-table td,
+[data-theme="dark"] .htbd-table td,
+body.dark .htbd-academic-table td,
+body.dark .htbd-table td,
+.dark .htbd-academic-table td,
+.dark .htbd-table td {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .htbd-academic-table tr:nth-child(even) td,
+[data-theme="dark"] .htbd-table tr:nth-child(even) td,
+body.dark .htbd-academic-table tr:nth-child(even) td,
+body.dark .htbd-table tr:nth-child(even) td,
+.dark .htbd-academic-table tr:nth-child(even) td,
+.dark .htbd-table tr:nth-child(even) td {
+  background-color: #0f172a !important;
+}
+
+[data-theme="dark"] .htbd-jump-pill,
+[data-theme="dark"] .htbd-back-btn,
+[data-theme="dark"] .htbd-back-text-link,
+body.dark .htbd-jump-pill,
+body.dark .htbd-back-btn,
+body.dark .htbd-back-text-link,
+.dark .htbd-jump-pill,
+.dark .htbd-back-btn,
+.dark .htbd-back-text-link {
+  background: #1e293b !important;
+  color: #38bdf8 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .pdf-download-btn,
+[data-theme="dark"] .htbd-download-card,
+body.dark .pdf-download-btn,
+body.dark .htbd-download-card,
+.dark .pdf-download-btn,
+.dark .htbd-download-card {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .source-link-btn,
+body.dark .source-link-btn,
+.dark .source-link-btn {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+/* -------------------------------------------------------------------------
  * Print Optimization (@media print) for Academic Study & Revision
  * ------------------------------------------------------------------------- */
 @media print {

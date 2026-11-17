@@ -40,6 +40,26 @@ require_once get_template_directory() . '/inc/assets-enqueue.php';
 // 6. Theme Customizer Options
 require_once get_template_directory() . '/inc/customizer.php';
 
+// 7. Smart 301 Permanent Redirect Engine (Blogger to WordPress Migration & 404 Prevention)
+if (file_exists(get_template_directory() . '/inc/redirect-engine.php')) {
+    require_once get_template_directory() . '/inc/redirect-engine.php';
+}
+
+// 8. Dynamic Internal Link Rewriter (Legacy .html Link Auto-Healer)
+if (file_exists(get_template_directory() . '/inc/link-rewriter.php')) {
+    require_once get_template_directory() . '/inc/link-rewriter.php';
+}
+
+// 9. Schema.org JSON-LD Structured Data Engine (Rich Results & Google E-E-A-T)
+if (file_exists(get_template_directory() . '/inc/schema.php')) {
+    require_once get_template_directory() . '/inc/schema.php';
+}
+
+// 10. Generative Engine Optimization (GEO & AI Search Crawler Directives)
+if (file_exists(get_template_directory() . '/inc/geo-engine.php')) {
+    require_once get_template_directory() . '/inc/geo-engine.php';
+}
+
 // =============================================================================
 // CORE HOOKS & FILTERS
 // =============================================================================
