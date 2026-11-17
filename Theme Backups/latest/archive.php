@@ -23,7 +23,7 @@ get_header();
         <header class="ht-archive-header">
             <div class="ht-archive-header-badge">
                 <?php ht_m3_icon('category', 20); ?>
-                <span><?php esc_html_e('বিভাগ ও বিষয়ভিত্তিক আর্কাইভ', 'helptrickbd'); ?></span>
+                <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Topic & Category Archive', 'helptrickbd') : esc_html__('বিভাগ ও বিষয়ভিত্তিক আর্কাইভ', 'helptrickbd'); ?></span>
             </div>
             <h1 class="ht-archive-title"><?php the_archive_title(); ?></h1>
             <?php
@@ -36,9 +36,11 @@ get_header();
             // v1.4.10 (F7): post count + sub-category chips under the H1.
             global $wp_query;
             $ht_archive_count = (int) $wp_query->found_posts;
+            $count_str = function_exists('ht_number') ? ht_number($ht_archive_count) : (function_exists('ht_bn_number') ? ht_bn_number($ht_archive_count) : $ht_archive_count);
+            $posts_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Articles', 'helptrickbd') : esc_html__('টি পোস্ট', 'helptrickbd');
             ?>
             <div class="ht-archive-meta">
-                <span class="ht-archive-count"><?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($ht_archive_count) : $ht_archive_count); ?> <?php esc_html_e('টি পোস্ট', 'helptrickbd'); ?></span>
+                <span class="ht-archive-count"><?php echo esc_html($count_str); ?> <?php echo esc_html($posts_label); ?></span>
             </div>
             <?php
             if (is_category()) :
@@ -50,10 +52,13 @@ get_header();
                     'order'      => 'DESC',
                 ]);
                 if (!empty($ht_sub_cats)) :
+                    $subcat_aria = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Subcategories', 'helptrickbd') : esc_attr__('সাব-ক্যাটাগরি', 'helptrickbd');
             ?>
-                <div class="ht-archive-subcats" role="navigation" aria-label="<?php esc_attr_e('সাব-ক্যাটাগরি', 'helptrickbd'); ?>">
-                    <?php foreach ($ht_sub_cats as $ht_sub_cat) : ?>
-                        <a href="<?php echo esc_url(get_category_link($ht_sub_cat->term_id)); ?>" class="ht-archive-subcat-chip"><?php echo esc_html($ht_sub_cat->name); ?> (<?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($ht_sub_cat->count) : $ht_sub_cat->count); ?>)</a>
+                <div class="ht-archive-subcats" role="navigation" aria-label="<?php echo esc_attr($subcat_aria); ?>">
+                    <?php foreach ($ht_sub_cats as $ht_sub_cat) : 
+                        $sub_count = function_exists('ht_number') ? ht_number($ht_sub_cat->count) : $ht_sub_cat->count;
+                    ?>
+                        <a href="<?php echo esc_url(get_category_link($ht_sub_cat->term_id)); ?>" class="ht-archive-subcat-chip"><?php echo esc_html($ht_sub_cat->name); ?> (<?php echo esc_html($sub_count); ?>)</a>
                     <?php endforeach; ?>
                 </div>
             <?php

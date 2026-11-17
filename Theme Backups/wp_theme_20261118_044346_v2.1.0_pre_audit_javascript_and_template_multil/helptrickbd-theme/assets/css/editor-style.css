@@ -1,0 +1,156 @@
+/**
+ * HelpTrickBD Pro - Gutenberg Block Editor Stylesheet
+ * Ensures what the author sees in Gutenberg matches 100% with front-end rendering.
+ * Pure typography, Material 3 tokens, responsive tables, blockquotes & callouts.
+ *
+ * @package HelpTrickBD_Pro
+ */
+
+/* Import Fonts */
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+/* Editor Base Variables */
+:root {
+    --ht-primary: #2563eb;
+    --ht-primary-dark: #1d4ed8;
+    --ht-primary-light: #eff6ff;
+    --ht-text-main: #0f172a;
+    --ht-text-muted: #475569;
+    --ht-border: #e2e8f0;
+    --ht-surface: #ffffff;
+    --ht-font-bn: 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --ht-font-en: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ht-font-code: 'Fira Code', monospace;
+    --ht-radius: 12px;
+}
+
+/* Editor Wrapper */
+.editor-styles-wrapper {
+    font-family: var(--ht-font-bn);
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: var(--ht-text-main);
+    background-color: var(--ht-surface);
+}
+
+.editor-styles-wrapper p,
+.editor-styles-wrapper li {
+    font-family: var(--ht-font-bn);
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: var(--ht-text-main);
+}
+
+/* Headings */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+    font-family: var(--ht-font-bn);
+    font-weight: 700;
+    color: var(--ht-text-main);
+    line-height: 1.35;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+}
+
+.editor-styles-wrapper h1 { font-size: 2.25rem; }
+.editor-styles-wrapper h2 { font-size: 1.75rem; border-bottom: 2px solid var(--ht-primary-light); padding-bottom: 0.3em; }
+.editor-styles-wrapper h3 { font-size: 1.35rem; }
+.editor-styles-wrapper h4 { font-size: 1.2rem; }
+
+/* Links */
+.editor-styles-wrapper a {
+    color: var(--ht-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Blockquotes */
+.editor-styles-wrapper blockquote,
+.editor-styles-wrapper .wp-block-quote {
+    border-left: 4px solid var(--ht-primary);
+    background: var(--ht-primary-light);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--ht-radius) var(--ht-radius) 0;
+    margin: 1.5rem 0;
+    font-style: normal;
+}
+
+.editor-styles-wrapper .wp-block-quote p {
+    color: #1e3a8a;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Tables */
+.editor-styles-wrapper table,
+.editor-styles-wrapper .wp-block-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border: 1px solid var(--ht-border);
+    border-radius: var(--ht-radius);
+    overflow: hidden;
+}
+
+.editor-styles-wrapper th,
+.editor-styles-wrapper td {
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--ht-border);
+    text-align: left;
+    font-size: 1rem;
+}
+
+.editor-styles-wrapper th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: var(--ht-text-main);
+}
+
+.editor-styles-wrapper tr:nth-child(even) td {
+    background: #fcfcfd;
+}
+
+/* Code Blocks */
+.editor-styles-wrapper code,
+.editor-styles-wrapper pre {
+    font-family: var(--ht-font-code);
+    background: #f1f5f9;
+    border-radius: 6px;
+}
+
+.editor-styles-wrapper code {
+    padding: 0.2em 0.4em;
+    font-size: 0.9em;
+    color: #d946ef;
+}
+
+.editor-styles-wrapper pre {
+    padding: 1.25rem;
+    overflow-x: auto;
+    font-size: 0.95rem;
+    border: 1px solid var(--ht-border);
+}
+
+/* Buttons */
+.editor-styles-wrapper .wp-block-button__link {
+    font-family: var(--ht-font-bn);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.65rem 1.4rem;
+    transition: all 0.2s ease;
+}
+
+/* Notice / Callout Blocks */
+.editor-styles-wrapper .wp-block-group.is-style-notice,
+.editor-styles-wrapper .ht-callout-box {
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--ht-radius);
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    margin: 1.5rem 0;
+}

@@ -28,9 +28,10 @@ function ht_breadcrumbs() {
     }
 
     $sep = ht_m3_icon('arrow_forward', 14, 'ht-crumb-sep', false);
-    $home_title = esc_html__('প্রচ্ছদ', 'helptrickbd');
+    $home_title = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Home', 'helptrickbd') : esc_html__('মূল পাতা', 'helptrickbd');
+    $aria_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Breadcrumb Navigation', 'helptrickbd') : esc_attr__('ব্রেডক্রাম্ব নেভিগেশন', 'helptrickbd');
 
-    echo '<nav class="ht-breadcrumbs" aria-label="' . esc_attr__('ব্রেডক্রাম্ব নেভিগেশন', 'helptrickbd') . '">';
+    echo '<nav class="ht-breadcrumbs" aria-label="' . $aria_label . '">';
     echo '<ol itemscope itemtype="https://schema.org/BreadcrumbList">';
 
     // Home item
@@ -86,12 +87,14 @@ function ht_breadcrumbs() {
         echo '</li>';
 
     } elseif (is_search()) {
+        $search_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Search Results for: ', 'helptrickbd') : esc_html__('অনুসন্ধানের ফলাফল: ', 'helptrickbd');
         echo '<li class="ht-crumb-sep-item">' . $sep . '</li>';
-        echo '<li class="ht-crumb-current" aria-current="page">' . esc_html__('অনুসন্ধানের ফলাফল: ', 'helptrickbd') . '"' . esc_html(get_search_query()) . '"</li>';
+        echo '<li class="ht-crumb-current" aria-current="page">' . $search_label . '"' . esc_html(get_search_query()) . '"</li>';
 
     } elseif (is_404()) {
+        $not_found_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('404: Page Not Found', 'helptrickbd') : esc_html__('৪০৪: পৃষ্ঠা পাওয়া যায়নি', 'helptrickbd');
         echo '<li class="ht-crumb-sep-item">' . $sep . '</li>';
-        echo '<li class="ht-crumb-current" aria-current="page">' . esc_html__('৪০৪: পৃষ্ঠা পাওয়া যায়নি', 'helptrickbd') . '</li>';
+        echo '<li class="ht-crumb-current" aria-current="page">' . $not_found_label . '</li>';
     }
 
     echo '</ol>';

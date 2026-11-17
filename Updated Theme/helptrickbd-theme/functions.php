@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.1.0');
+define('HT_THEME_VERSION', '2.1.1');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -253,7 +253,10 @@ function ht_enqueue_scripts() {
         );
     }
 
-    // Localize data for AJAX and features
+    $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
+    $current_lang = function_exists('ht_get_current_lang') ? ht_get_current_lang() : ($is_bn ? 'bn' : 'en');
+
+    // Localize data for AJAX and features with full bilingual i18n dictionary
     wp_localize_script('ht-main-js', 'htConfig', [
         'ajaxUrl'        => admin_url('admin-ajax.php'),
         'searchNonce'    => wp_create_nonce('ht_live_search_nonce'),
@@ -261,9 +264,49 @@ function ht_enqueue_scripts() {
         'likeNonce'      => wp_create_nonce('ht_post_like_nonce'),
         'currentPostId'  => is_singular('post') ? get_the_ID() : 0,
         'siteUrl'        => home_url(),
+        'lang'           => $current_lang,
+        'isBn'           => $is_bn,
         'countdownDate'  => get_theme_mod('ht_countdown_date', '2026-11-20'),
-        'countdownTitle' => get_theme_mod('ht_countdown_title', 'অনার্স ২য় বর্ষ পরীক্ষা ২০২৬'),
+        'countdownTitle' => get_theme_mod('ht_countdown_title', $is_bn ? 'অনার্স ২য় বর্ষ পরীক্ষা ২০২৬' : 'Degree / Honours Exam 2026'),
         'downloadTimer'  => get_theme_mod('ht_download_timer', 5),
+        'i18n'           => [
+            'isBn'                => $is_bn,
+            'lang'                => $current_lang,
+            'tocChapters'         => $is_bn ? 'টি অধ্যায়' : ' Sections',
+            'focusActive'         => $is_bn ? 'ফোকাস রিডিং মোড সক্রিয় হয়েছে' : 'Focus reading mode activated',
+            'focusInactive'       => $is_bn ? 'ফোকাস মোড বন্ধ করা হয়েছে' : 'Focus mode turned off',
+            'textCopied'          => $is_bn ? 'টেক্সট ক্লিপবোর্ডে কপি করা হয়েছে' : 'Text copied to clipboard',
+            'codeCopy'            => $is_bn ? 'কপি করুন' : 'Copy',
+            'codeCopiedBtn'       => $is_bn ? 'কপি সম্পন্ন!' : 'Copied!',
+            'codeCopiedToast'     => $is_bn ? 'কোড সফলভাবে কপি করা হয়েছে' : 'Code copied to clipboard',
+            'linkCopied'          => $is_bn ? 'আর্টিকেলের লিঙ্ক কপি করা হয়েছে!' : 'Article link copied to clipboard!',
+            'alreadyReacted'      => $is_bn ? 'ইতিমধ্যে আপনি প্রতিক্রিয়া জানিয়েছেন!' : 'You already reacted to this article!',
+            'feedbackThanks'      => $is_bn ? 'আপনার মতামতের জন্য ধন্যবাদ!' : 'Thank you for your feedback!',
+            'bookmarkEmptyTitle'  => $is_bn ? 'পড়ার তালিকা বর্তমানে খালি' : 'Your reading list is currently empty',
+            'bookmarkEmptySub'    => $is_bn ? 'অফলাইনে পড়তে যেকোনো আর্টিকেলের বুকমার্ক আইকনে ক্লিক করুন।' : 'Click the bookmark icon on any post to save it for reading.',
+            'bookmarkRemoveAria'  => $is_bn ? 'তালিকা থেকে সরান' : 'Remove from list',
+            'bookmarkSaved'       => $is_bn ? 'পড়ার তালিকায় সেভ হয়েছে' : 'Saved to reading list',
+            'bookmarkRemoved'     => $is_bn ? 'পড়ার তালিকা থেকে সরানো হয়েছে' : 'Removed from reading list',
+            'bookmarkClearConfirm'=> $is_bn ? 'আপনি কি নিশ্চিত যে পড়ার তালিকা মুছে ফেলতে চান?' : 'Are you sure you want to clear your reading list?',
+            'bookmarksCleared'    => $is_bn ? 'পড়ার তালিকা খালি করা হয়েছে' : 'All bookmarks cleared',
+            'searchLoading'       => $is_bn ? 'অনুসন্ধান করা হচ্ছে...' : 'Searching...',
+            'searchNoResults'     => $is_bn ? 'এর জন্য কোনো ফলাফল পাওয়া যায়নি' : 'No results found for',
+            'searchNoResultsSub'  => $is_bn ? 'বানান পরীক্ষা করুন বা অন্য কোনো সাধারণ বিষয় অনুসন্ধান করুন।' : 'Please check your spelling or search for another topic.',
+            'searchError'         => $is_bn ? 'অনুসন্ধানে সমস্যা হয়েছে। পুনরায় চেষ্টা করুন।' : 'Search error. Please try again.',
+            'viewAllResults'      => $is_bn ? 'সকল ফলাফল দেখুন' : 'View all results',
+            'sideNoResults'       => $is_bn ? 'কোন ফলাফল পাওয়া যায়নি' : 'No results found',
+            'mcqViewAnswer'       => $is_bn ? 'সঠিক উত্তর দেখুন' : 'View Answer',
+            'mcqHideAnswer'       => $is_bn ? 'উত্তর ও ব্যাখ্যা লুকান' : 'Hide Answer',
+            'downloadGen'         => $is_bn ? 'ডাউনলোড লিংক তৈরি হচ্ছে: ' : 'Generating download link: ',
+            'downloadNow'         => $is_bn ? 'এখন ডাউনলোড করুন' : 'Download Now',
+            'tableScrollHint'     => $is_bn ? 'ডানে-বামে স্ক্রল করে সম্পূর্ণ তালিকা দেখুন' : 'Scroll horizontally to view complete table',
+            'filterAria'          => $is_bn ? 'বিষয় অনুযায়ী ফিল্টার' : 'Filter by subject',
+            'filterEmpty'         => $is_bn ? 'এই ক্যাটাগরিতে বর্তমানে কোনো পোস্ট নেই।' : 'No articles currently available in this category.',
+            'viewsLabel'          => $is_bn ? 'বার পঠিত' : 'views',
+            'daysLeft'            => $is_bn ? 'দিন বাকি' : 'days left',
+            'pdfPreparing'        => $is_bn ? 'লিংক প্রস্তুত হচ্ছে...' : 'Preparing link...',
+            'pdfReady'            => $is_bn ? 'ফাইল প্রস্তুত! এখনই নিন' : 'File ready! Download now',
+        ],
     ]);
 }
 add_action('wp_enqueue_scripts', 'ht_enqueue_scripts');

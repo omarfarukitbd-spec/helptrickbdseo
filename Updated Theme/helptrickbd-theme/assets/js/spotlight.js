@@ -102,12 +102,14 @@
 
         if (!resultsContainer || !window.htConfig) return;
 
-        resultsContainer.innerHTML = '<div class="ht-search-loading" style="padding:24px;text-align:center;color:var(--ht-text-muted);">অনুসন্ধান করা হচ্ছে...</div>';
+        const searchLoading = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.searchLoading) ? window.htConfig.i18n.searchLoading : 'অনুসন্ধান করা হচ্ছে...';
+        resultsContainer.innerHTML = `<div class="ht-search-loading" style="padding:24px;text-align:center;color:var(--ht-text-muted);">${escapeHtml(searchLoading)}</div>`;
 
         const formData = new FormData();
         formData.append('action', 'ht_live_search');
         formData.append('nonce', window.htConfig.searchNonce);
         formData.append('query', query);
+        formData.append('lang', (window.htConfig && window.htConfig.lang) ? window.htConfig.lang : ((document.documentElement.lang && document.documentElement.lang.startsWith('en')) ? 'en' : 'bn'));
 
         fetch(window.htConfig.ajaxUrl, {
             method: 'POST',
@@ -118,15 +120,24 @@
                 if (data.success && data.data && data.data.results && data.data.results.length > 0) {
                     renderSearchResults(data.data.results);
                 } else {
+                    const isEn = (window.htConfig && window.htConfig.isBn === false) || (document.documentElement.lang && document.documentElement.lang.startsWith('en'));
+                    const noResHeading = isEn 
+                        ? `No results found for "${escapeHtml(query)}"` 
+                        : `"${escapeHtml(query)}" এর জন্য কোনো ফলাফল পাওয়া যায়নি`;
+                    const noResSub = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.searchNoResultsSub) 
+                        ? window.htConfig.i18n.searchNoResultsSub 
+                        : (isEn ? 'Please check your spelling or search for another topic.' : 'বানান পরীক্ষা করুন বা অন্য কোনো সাধারণ বিষয় অনুসন্ধান করুন।');
+
                     resultsContainer.innerHTML = `
                         <div class="ht-search-no-results" style="padding:28px 12px;text-align:center;color:var(--ht-text-muted);">
-                            <p style="font-weight:600;margin-bottom:6px;">"${escapeHtml(query)}" এর জন্য কোনো ফলাফল পাওয়া যায়নি</p>
-                            <span style="font-size:0.85rem;">বানান পরীক্ষা করুন বা অন্য কোনো সাধারণ বিষয় অনুসন্ধান করুন।</span>
+                            <p style="font-weight:600;margin-bottom:6px;">${noResHeading}</p>
+                            <span style="font-size:0.85rem;">${noResSub}</span>
                         </div>`;
                 }
             })
             .catch(() => {
-                resultsContainer.innerHTML = '<div style="padding:20px;text-align:center;color:var(--ht-danger);">অনুসন্ধানে সমস্যা হয়েছে। পুনরায় চেষ্টা করুন।</div>';
+                const searchError = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.searchError) ? window.htConfig.i18n.searchError : 'অনুসন্ধানে সমস্যা হয়েছে। পুনরায় চেষ্টা করুন।';
+                resultsContainer.innerHTML = `<div style="padding:20px;text-align:center;color:var(--ht-danger);">${escapeHtml(searchError)}</div>`;
             });
     }
 

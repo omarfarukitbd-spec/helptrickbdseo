@@ -14,41 +14,48 @@ if (!get_theme_mod('htbd_show_sec_filter', get_theme_mod('ht_show_sec_filter', t
     return;
 }
 
-$sec_title = get_theme_mod('htbd_sec_filter_title', get_theme_mod('ht_sec_filter_title', 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড'));
-if (empty($sec_title) || $sec_title === 'Explore by Academic Subject') {
-    $sec_title = 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড';
+$is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
+
+$sec_title = get_theme_mod('htbd_sec_filter_title', get_theme_mod('ht_sec_filter_title', ''));
+if (empty($sec_title)) {
+    $sec_title = $is_en ? 'Explore by Academic Subject' : 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড';
 }
 
-$link_text = get_theme_mod('htbd_sec_filter_link_text', get_theme_mod('ht_sec_filter_link_text', 'সকল পোস্ট দেখুন →'));
-if (empty($link_text) || $link_text === 'All Articles →') {
-    $link_text = 'সকল পোস্ট দেখুন →';
+$link_text = get_theme_mod('htbd_sec_filter_link_text', get_theme_mod('ht_sec_filter_link_text', ''));
+if (empty($link_text)) {
+    $link_text = $is_en ? 'All Articles →' : 'সকল পোস্ট দেখুন →';
 }
 
-// Define tabs with verified slugs and display labels in authentic Bengali
+// Define tabs with verified slugs and display labels in authentic Bengali and English
 $tabs = array(
-    'all'                 => 'সকল বিষয়',
-    'ssc-dakhil'          => 'এসএসসি ও দাখিল',
-    'political-science'   => 'রাষ্ট্রবিজ্ঞান',
-    'bangla-1st-paper'    => 'বাংলা ১ম পত্র',
-    'islamic-article'     => 'ইসলামিক প্রবন্ধ',
-    'national-university' => 'জাতীয় বিশ্ববিদ্যালয়',
-    'ict-technology'      => 'আইসিটি ও প্রযুক্তি',
+    'all'                 => $is_en ? 'All Subjects' : 'সকল বিষয়',
+    'ssc-dakhil'          => $is_en ? 'SSC & Dakhil' : 'এসএসসি ও দাখিল',
+    'political-science'   => $is_en ? 'Political Science' : 'রাষ্ট্রবিজ্ঞান',
+    'bangla-1st-paper'    => $is_en ? 'Bangla 1st Paper' : 'বাংলা ১ম পত্র',
+    'islamic-article'     => $is_en ? 'Islamic Articles' : 'ইসলামিক প্রবন্ধ',
+    'national-university' => $is_en ? 'National University' : 'জাতীয় বিশ্ববিদ্যালয়',
+    'ict-technology'      => $is_en ? 'ICT & Tech' : 'আইসিটি ও প্রযুক্তি',
 );
 
-// 6-Hour Transient Caching for Homepage Filter Posts to Eliminate 7 Queries per Load
-$all_posts_data = get_transient('ht_home_filter_posts_cache');
+// 6-Hour Locale-Aware Transient Caching for Homepage Filter Posts
+$transient_key  = 'ht_home_filter_posts_cache_' . ($is_en ? 'en' : 'bn');
+$all_posts_data = get_transient($transient_key);
 
 if (false === $all_posts_data) {
     $rendered_ids = array();
     $all_posts_data = array();
 
     // 1. Initial 8 posts for 'all'
-    $all_query = new WP_Query(array(
+    $all_args = array(
         'posts_per_page'      => 8,
         'post_status'         => 'publish',
         'ignore_sticky_posts' => 1,
         'no_found_rows'       => true,
-    ));
+    );
+    if (function_exists('pll_the_languages') && $is_en) {
+        $all_args['lang'] = 'en';
+    }
+    $all_query = new WP_Query($all_args);
 
     if ($all_query->have_posts()) {
         while ($all_query->have_posts()) {
@@ -64,16 +71,16 @@ if (false === $all_posts_data) {
                 }
             }
             $rendered_ids[$pid] = $cat_slugs;
-            $rt = function_exists('ht_get_reading_time') ? ht_get_reading_time($pid) : null;
-            $read_text = is_array($rt) && isset($rt['minutes']) ? (function_exists('ht_bn_number') ? ht_bn_number($rt['minutes']) . ' মিনিট পড়া' : $rt['minutes'] . ' মিনিট পড়া') : '৩ মিনিট পড়া';
+            $read_text = function_exists('ht_get_localized_reading_time') ? ht_get_localized_reading_time($pid) : ($is_en ? '3 min read' : '৩ মিনিট পড়া');
+            $date_text = function_exists('ht_get_localized_post_date') ? ht_get_localized_post_date($pid) : get_the_date('j F, Y');
             $all_posts_data[] = array(
                 'id'       => $pid,
                 'title'    => get_the_title(),
                 'url'      => get_permalink(),
                 'cats'     => $cat_slugs,
                 'cat_slug' => $first_slug,
-                'cat_name' => !empty($cats) ? $cats[0]->name : 'হ্যান্ডনোট',
-                'date'     => get_the_date('j F, Y'),
+                'cat_name' => !empty($cats) ? $cats[0]->name : ($is_en ? 'Article' : 'হ্যান্ডনোট'),
+                'date'     => $date_text,
                 'read'     => $read_text,
                 'thumb'    => has_post_thumbnail($pid) ? get_the_post_thumbnail_url($pid, 'ht-card-thumb') : '',
                 'initial'  => true,
@@ -93,13 +100,17 @@ if (false === $all_posts_data) {
             continue;
         }
 
-        $cat_query = new WP_Query(array(
+        $cat_args = array(
             'cat'                 => $cat_obj->term_id,
             'posts_per_page'      => 6,
             'post_status'         => 'publish',
             'ignore_sticky_posts' => 1,
             'no_found_rows'       => true,
-        ));
+        );
+        if (function_exists('pll_the_languages') && $is_en) {
+            $cat_args['lang'] = 'en';
+        }
+        $cat_query = new WP_Query($cat_args);
 
         if ($cat_query->have_posts()) {
             while ($cat_query->have_posts()) {
@@ -125,8 +136,8 @@ if (false === $all_posts_data) {
                         }
                     }
                     $rendered_ids[$pid] = $cat_slugs;
-                    $rt = function_exists('ht_get_reading_time') ? ht_get_reading_time($pid) : null;
-                    $read_text = is_array($rt) && isset($rt['minutes']) ? (function_exists('ht_bn_number') ? ht_bn_number($rt['minutes']) . ' মিনিট পড়া' : $rt['minutes'] . ' মিনিট পড়া') : '৩ মিনিট পড়া';
+                    $read_text = function_exists('ht_get_localized_reading_time') ? ht_get_localized_reading_time($pid) : ($is_en ? '3 min read' : '৩ মিনিট পড়া');
+                    $date_text = function_exists('ht_get_localized_post_date') ? ht_get_localized_post_date($pid) : get_the_date('j F, Y');
                     $all_posts_data[] = array(
                         'id'       => $pid,
                         'title'    => get_the_title(),
@@ -134,7 +145,7 @@ if (false === $all_posts_data) {
                         'cats'     => $cat_slugs,
                         'cat_slug' => $slug,
                         'cat_name' => $cat_obj->name,
-                        'date'     => get_the_date('j F, Y'),
+                        'date'     => $date_text,
                         'read'     => $read_text,
                         'thumb'    => has_post_thumbnail($pid) ? get_the_post_thumbnail_url($pid, 'ht-card-thumb') : '',
                         'initial'  => false,
@@ -145,7 +156,7 @@ if (false === $all_posts_data) {
         }
     }
 
-    set_transient('ht_home_filter_posts_cache', $all_posts_data, 6 * HOUR_IN_SECONDS);
+    set_transient($transient_key, $all_posts_data, 6 * HOUR_IN_SECONDS);
 }
 
 if (empty($all_posts_data)) {
@@ -162,7 +173,7 @@ if (empty($all_posts_data)) {
   </div>
 
   <!-- Interactive Filter Tabs (All Categories Guaranteed to Have Posts) -->
-  <div class="n-thumb-tabs" role="tablist" aria-label="<?php esc_attr_e('বিষয় অনুযায়ী ফিল্টার', 'helptrickbd'); ?>">
+  <div class="n-thumb-tabs" role="tablist" aria-label="<?php echo $is_en ? esc_attr__('Filter by academic subject', 'helptrickbd') : esc_attr__('বিষয় অনুযায়ী ফিল্টার', 'helptrickbd'); ?>">
     <?php foreach ($tabs as $slug => $label) : ?>
       <button type="button" 
               class="n-thumb-tab-btn <?php echo $slug === 'all' ? 'active' : ''; ?>" 

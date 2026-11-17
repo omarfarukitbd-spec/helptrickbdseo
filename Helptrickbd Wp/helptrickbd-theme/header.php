@@ -26,7 +26,7 @@ if (!defined('ABSPATH')) {
 <?php wp_body_open(); ?>
 
 <!-- Skip to content for accessibility -->
-<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('সরাসরি মূল কনটেন্টে যান', 'helptrickbd'); ?></a>
+<a class="skip-link screen-reader-text" href="#primary"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Skip to content', 'helptrickbd') : esc_html__('সরাসরি মূল কনটেন্টে যান', 'helptrickbd'); ?></a>
 
 <div id="page" class="ht-site-wrapper site-wrapper">
 
@@ -44,7 +44,7 @@ if (!defined('ABSPATH')) {
             <div class="ht-drawer-brand">
                 <span class="ht-logo-text">HelpTrick<span class="ht-logo-accent">BD</span></span>
             </div>
-            <button class="ht-drawer-close" id="ht-drawer-close" aria-label="<?php esc_attr_e('মেনু বন্ধ করুন', 'helptrickbd'); ?>">
+            <button class="ht-drawer-close" id="ht-drawer-close" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Close menu', 'helptrickbd') : esc_attr__('মেনু বন্ধ করুন', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('close', 20); ?>
             </button>
         </div>
@@ -53,12 +53,12 @@ if (!defined('ABSPATH')) {
             <!-- Dynamic All Categories Engine -->
             <div class="ht-drawer-categories-wrap">
                 <div class="ht-drawer-section-header">
-                    <span class="ht-drawer-section-title"><?php esc_html_e('সকল ক্যাটাগরি ও বিষয়', 'helptrickbd'); ?></span>
+                    <span class="ht-drawer-section-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('All Categories & Topics', 'helptrickbd') : esc_html__('সকল ক্যাটাগরি ও বিষয়', 'helptrickbd'); ?></span>
                     <?php 
                     $cat_count_total = wp_count_terms(['taxonomy' => 'category', 'hide_empty' => true]);
                     if (!is_wp_error($cat_count_total) && $cat_count_total > 0) :
                     ?>
-                        <span class="ht-drawer-cat-total"><?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($cat_count_total) : $cat_count_total); ?></span>
+                        <span class="ht-drawer-cat-total"><?php echo esc_html(function_exists('ht_number') ? ht_number($cat_count_total) : (function_exists('ht_bn_number') ? ht_bn_number($cat_count_total) : $cat_count_total)); ?></span>
                     <?php endif; ?>
                 </div>
                 <div class="ht-drawer-cat-list">
@@ -81,7 +81,7 @@ if (!defined('ABSPATH')) {
                                style="--cat-color: <?php echo esc_attr($cat_pal['color']); ?>; --cat-bg: <?php echo esc_attr($cat_pal['bg']); ?>; --cat-border: <?php echo esc_attr($cat_pal['border']); ?>;">
                                 <span class="ht-drawer-cat-icon"><?php ht_m3_icon($cat_icon, 18); ?></span>
                                 <span class="ht-drawer-cat-name"><?php echo esc_html($d_cat->name); ?></span>
-                                <span class="ht-drawer-cat-badge"><?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($d_cat->count) : $d_cat->count); ?></span>
+                                <span class="ht-drawer-cat-badge"><?php echo esc_html(function_exists('ht_number') ? ht_number($d_cat->count) : (function_exists('ht_bn_number') ? ht_bn_number($d_cat->count) : $d_cat->count)); ?></span>
                             </a>
                     <?php
                         endforeach;

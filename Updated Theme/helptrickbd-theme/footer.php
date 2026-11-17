@@ -95,40 +95,45 @@ if (!defined('ABSPATH')) {
                         echo esc_html($custom_copy);
                     else :
                     ?>
-                        &copy; <?php echo esc_html(date('Y')); ?> <a href="<?php echo esc_url(home_url('/')); ?>">HelpTrickBD.com</a> &mdash; <?php esc_html_e('সর্বস্বত্ব সংরক্ষিত।', 'helptrickbd'); ?>
+                        &copy; <?php echo esc_html(date('Y')); ?> <a href="<?php echo esc_url(home_url('/')); ?>">HelpTrickBD.com</a> &mdash; <?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('All rights reserved.', 'helptrickbd') : esc_html__('সর্বস্বত্ব সংরক্ষিত।', 'helptrickbd'); ?>
                     <?php endif; ?>
                 </div>
                 <div class="ht-credit">
-                    <?php echo esc_html(get_theme_mod('ht_footer_credit', esc_html__('উন্মুক্ত শিক্ষা ও জ্ঞান প্রসারে নিবেদিত', 'helptrickbd'))); ?>
+                    <?php 
+                    $default_credit = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Dedicated to Open Education & Knowledge Sharing', 'helptrickbd') : esc_html__('উন্মুক্ত শিক্ষা ও জ্ঞান প্রসারে নিবেদিত', 'helptrickbd');
+                    echo esc_html(get_theme_mod('ht_footer_credit', $default_credit)); 
+                    ?>
                 </div>
             </div>
         </div>
 
     </footer>
 
-    <?php if (get_theme_mod('ht_mobile_dock_enable', true)) : ?>
+    <?php if (get_theme_mod('ht_mobile_dock_enable', true)) : 
+        $is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
+    ?>
         <!-- Mobile Bottom App Dock -->
         <nav class="ht-mobile-dock" aria-label="<?php esc_attr_e('Mobile Navigation Dock', 'helptrickbd'); ?>">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="ht-dock-item <?php echo is_front_page() ? 'ht-active' : ''; ?>">
                 <?php ht_m3_icon('home', 20); ?>
-                <span>হোম</span>
+                <span><?php echo $is_en ? esc_html__('Home', 'helptrickbd') : esc_html__('হোম', 'helptrickbd'); ?></span>
             </a>
-            <button class="ht-dock-item" id="ht-dock-menu-btn" aria-label="<?php esc_attr_e('ক্যাটাগরি', 'helptrickbd'); ?>">
+            <button class="ht-dock-item" id="ht-dock-menu-btn" aria-label="<?php echo $is_en ? esc_attr__('Categories', 'helptrickbd') : esc_attr__('ক্যাটাগরি', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('category', 20); ?>
-                <span>ক্যাটাগরি</span>
+                <span><?php echo $is_en ? esc_html__('Categories', 'helptrickbd') : esc_html__('ক্যাটাগরি', 'helptrickbd'); ?></span>
             </button>
-            <a href="<?php echo esc_url(get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd_official')); ?>" target="_blank" rel="noopener noreferrer" class="ht-dock-item ht-dock-telegram" aria-label="<?php esc_attr_e('টেলিগ্রাম চ্যানেল', 'helptrickbd'); ?>">
+            <a href="<?php echo esc_url(get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd_official')); ?>" target="_blank" rel="noopener noreferrer" class="ht-dock-item ht-dock-telegram" aria-label="<?php echo $is_en ? esc_attr__('Telegram Channel', 'helptrickbd') : esc_attr__('টেলিগ্রাম চ্যানেল', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('telegram', 20); ?>
-                <span>টেলিগ্রাম</span>
+                <span><?php echo $is_en ? esc_html__('Telegram', 'helptrickbd') : esc_html__('টেলিগ্রাম', 'helptrickbd'); ?></span>
             </a>
-            <button class="ht-dock-item" id="ht-dock-bookmark-btn" aria-label="<?php esc_attr_e('পড়ার তালিকা', 'helptrickbd'); ?>">
+            <button class="ht-dock-item" id="ht-dock-bookmark-btn" aria-label="<?php echo $is_en ? esc_attr__('Reading List', 'helptrickbd') : esc_attr__('পড়ার তালিকা', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('bookmark', 20); ?>
                 <span class="ht-dock-badge" id="ht-dock-bm-count">0</span>
-                <span>পড়ার তালিকা</span>
+                <span><?php echo $is_en ? esc_html__('Reading List', 'helptrickbd') : esc_html__('পড়ার তালিকা', 'helptrickbd'); ?></span>
             </button>
-            <button class="ht-dock-item" id="ht-dock-search-btn" aria-label="<?php esc_attr_e('অনুসন্ধান', 'helptrickbd'); ?>">
+            <button class="ht-dock-item" id="ht-dock-search-btn" aria-label="<?php echo $is_en ? esc_attr__('Search', 'helptrickbd') : esc_attr__('অনুসন্ধান', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('search', 20); ?>
-                <span>অনুসন্ধান</span>
+                <span><?php echo $is_en ? esc_html__('Search', 'helptrickbd') : esc_html__('অনুসন্ধান', 'helptrickbd'); ?></span>
             </button>
         </nav>
     <?php endif; ?>
@@ -160,11 +165,19 @@ if (!defined('ABSPATH')) {
                 <div class="ht-spotlight-trending">
                     <span class="ht-spotlight-section-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Trending Searches', 'helptrickbd') : esc_html__('জনপ্রিয় অনুসন্ধানসমূহ', 'helptrickbd'); ?></span>
                     <div class="ht-trending-tags">
-                        <button class="ht-trending-tag" data-query="অনার্স ২য় বর্ষ রুটিন">অনার্স ২য় বর্ষ রুটিন</button>
-                        <button class="ht-trending-tag" data-query="এসএসসি বাংলা ১ম পত্র">এসএসসি বাংলা ১ম পত্র</button>
-                        <button class="ht-trending-tag" data-query="সার্টিফিকেট নাম সংশোধন">সার্টিফিকেট সংশোধন</button>
-                        <button class="ht-trending-tag" data-query="রাষ্ট্রবিজ্ঞান হ্যান্ডনোট">রাষ্ট্রবিজ্ঞান হ্যান্ডনোট</button>
-                        <button class="ht-trending-tag" data-query="কম্পিউটার ভাইরাস">কম্পিউটার ভাইরাস</button>
+                        <?php if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) : ?>
+                            <button class="ht-trending-tag" data-query="Honours 2nd Year Routine">Honours 2nd Year Routine</button>
+                            <button class="ht-trending-tag" data-query="SSC Bangla Suggestion">SSC Bangla Suggestion</button>
+                            <button class="ht-trending-tag" data-query="Certificate Name Correction">Certificate Correction</button>
+                            <button class="ht-trending-tag" data-query="Political Science Handnotes">Political Science</button>
+                            <button class="ht-trending-tag" data-query="Computer Virus Guide">Computer Virus</button>
+                        <?php else : ?>
+                            <button class="ht-trending-tag" data-query="অনার্স ২য় বর্ষ রুটিন">অনার্স ২য় বর্ষ রুটিন</button>
+                            <button class="ht-trending-tag" data-query="এসএসসি বাংলা ১ম পত্র">এসএসসি বাংলা ১ম পত্র</button>
+                            <button class="ht-trending-tag" data-query="সার্টিফিকেট নাম সংশোধন">সার্টিফিকেট সংশোধন</button>
+                            <button class="ht-trending-tag" data-query="রাষ্ট্রবিজ্ঞান হ্যান্ডনোট">রাষ্ট্রবিজ্ঞান হ্যান্ডনোট</button>
+                            <button class="ht-trending-tag" data-query="কম্পিউটার ভাইরাস">কম্পিউটার ভাইরাস</button>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -186,40 +199,43 @@ if (!defined('ABSPATH')) {
             <!-- Dynamically populated from localStorage -->
             <div class="ht-empty-bookmarks">
                 <?php ht_m3_icon('bookmark', 48, 'ht-empty-icon'); ?>
-                <p><?php esc_html_e('আপনার পড়ার তালিকা বর্তমানে খালি রয়েছে।', 'helptrickbd'); ?></p>
-                <span><?php esc_html_e('যেকোনো পোস্ট সেভ করে অফলাইনে পড়তে বুকমার্ক আইকনে ক্লিক করুন।', 'helptrickbd'); ?></span>
+                <p><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Your reading list is currently empty.', 'helptrickbd') : esc_html__('আপনার পড়ার তালিকা বর্তমানে খালি রয়েছে।', 'helptrickbd'); ?></p>
+                <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Click the bookmark icon on any post to save it for reading.', 'helptrickbd') : esc_html__('যেকোনো পোস্ট সেভ করে অফলাইনে পড়তে বুকমার্ক আইকনে ক্লিক করুন।', 'helptrickbd'); ?></span>
             </div>
         </div>
         <div class="ht-drawer-footer">
-            <button class="ht-btn ht-btn-sm ht-btn-outline" id="ht-clear-bookmarks"><?php esc_html_e('তালিকা খালি করুন', 'helptrickbd'); ?></button>
+            <button class="ht-btn ht-btn-sm ht-btn-outline" id="ht-clear-bookmarks"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Clear List', 'helptrickbd') : esc_html__('তালিকা খালি করুন', 'helptrickbd'); ?></button>
         </div>
     </aside>
     <div class="ht-drawer-overlay" id="ht-bm-overlay"></div>
 
     <!-- Polite AdBlocker Notice Modal -->
-    <?php if (get_theme_mod('ht_adblock_notice_enable', true)) : ?>
+    <?php if (get_theme_mod('ht_adblock_notice_enable', true)) : 
+        $is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
+    ?>
         <div class="ht-modal ht-adblock-modal" id="ht-adblock-modal" aria-hidden="true">
             <div class="ht-adblock-dialog">
                 <?php ht_m3_icon('shield', 44, 'ht-adblock-icon'); ?>
-                <h3 class="ht-adblock-title"><?php esc_html_e('একটি বিনীত অনুরোধ', 'helptrickbd'); ?></h3>
+                <h3 class="ht-adblock-title"><?php echo $is_en ? esc_html__('A Polite Request', 'helptrickbd') : esc_html__('একটি বিনীত অনুরোধ', 'helptrickbd'); ?></h3>
                 <p class="ht-adblock-desc">
-                    <?php esc_html_e('হেল্পট্রিকবিডি একটি উন্মুক্ত শিক্ষামূলক প্ল্যাটফর্ম। শিক্ষার্থীদের জন্য মানসম্মত কনটেন্ট নিয়মিত প্রকাশ করতে আমাদের কার্যক্রম বিজ্ঞাপন সমর্থিত। অনুগ্রহ করে আপনার অ্যাডব্লকারে সাইটটি অনুমোদিত (হোয়াইটলিস্ট) করুন।', 'helptrickbd'); ?>
+                    <?php echo $is_en ? esc_html__('HelpTrickBD is an open education platform. To continue publishing quality guides for students, our operations are supported by clean ads. Please consider whitelisting our site in your adblocker.', 'helptrickbd') : esc_html__('হেল্পট্রিকবিডি একটি উন্মুক্ত শিক্ষামূলক প্ল্যাটফর্ম। শিক্ষার্থীদের জন্য মানসম্মত কনটেন্ট নিয়মিত প্রকাশ করতে আমাদের কার্যক্রম বিজ্ঞাপন সমর্থিত। অনুগ্রহ করে আপনার অ্যাডব্লকারে সাইটটি অনুমোদিত (হোয়াইটলিস্ট) করুন।', 'helptrickbd'); ?>
                 </p>
-                <button class="ht-btn ht-btn-primary" id="ht-adblock-dismiss"><?php esc_html_e('বুঝেছি, ধন্যবাদ', 'helptrickbd'); ?></button>
+                <button class="ht-btn ht-btn-primary" id="ht-adblock-dismiss"><?php echo $is_en ? esc_html__('Got it, Thanks', 'helptrickbd') : esc_html__('বুঝেছি, ধন্যবাদ', 'helptrickbd'); ?></button>
             </div>
         </div>
     <?php endif; ?>
 
     <!-- Cookie Consent Banner -->
+    <?php $is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale(); ?>
     <div class="ht-cookie-banner" id="ht-cookie-banner">
         <div class="ht-cookie-inner">
             <div class="ht-cookie-text">
                 <?php ht_m3_icon('shield', 18, 'ht-cookie-icon'); ?>
-                <span><?php esc_html_e('আপনার ব্রাউজিং অভিজ্ঞতা উন্নত করতে এবং সঠিক শিক্ষামূলক তথ্য প্রদানে আমরা কুকিজ ব্যবহার করি। সাইটটি ব্যবহারের মাধ্যমে আপনি আমাদের নীতিমালায় সম্মত হচ্ছেন।', 'helptrickbd'); ?></span>
+                <span><?php echo $is_en ? esc_html__('We use cookies to enhance your browsing experience and provide accurate educational information. By continuing to use our website, you agree to our policies.', 'helptrickbd') : esc_html__('আপনার ব্রাউজিং অভিজ্ঞতা উন্নত করতে এবং সঠিক শিক্ষামূলক তথ্য প্রদানে আমরা কুকিজ ব্যবহার করি। সাইটটি ব্যবহারের মাধ্যমে আপনি আমাদের নীতিমালায় সম্মত হচ্ছেন।', 'helptrickbd'); ?></span>
             </div>
             <div class="ht-cookie-actions">
-                <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="ht-cookie-link"><?php esc_html_e('বিস্তারিত পড়ুন', 'helptrickbd'); ?></a>
-                <button class="ht-btn ht-btn-sm ht-btn-primary" id="ht-cookie-accept"><?php esc_html_e('সম্মতি দিচ্ছি', 'helptrickbd'); ?></button>
+                <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="ht-cookie-link"><?php echo $is_en ? esc_html__('Learn More', 'helptrickbd') : esc_html__('বিস্তারিত পড়ুন', 'helptrickbd'); ?></a>
+                <button class="ht-btn ht-btn-sm ht-btn-primary" id="ht-cookie-accept"><?php echo $is_en ? esc_html__('Accept', 'helptrickbd') : esc_html__('সম্মতি দিচ্ছি', 'helptrickbd'); ?></button>
             </div>
         </div>
     </div>

@@ -11,9 +11,12 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.0.0');
+define('HT_THEME_VERSION', '2.1.0');
 
 // Include Inc Modules
+require_once get_template_directory() . '/inc/i18n/i18n-core.php';
+require_once get_template_directory() . '/inc/i18n/locale-helpers.php';
+require_once get_template_directory() . '/inc/i18n/multilingual-bridge.php';
 require_once get_template_directory() . '/inc/material-icons.php';
 require_once get_template_directory() . '/inc/critical-css.php';
 require_once get_template_directory() . '/inc/template-tags.php';

@@ -35,6 +35,10 @@ function ht_bn_date($timestamp = null) {
         $timestamp = strtotime($timestamp);
     }
 
+    if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) {
+        return date('F j, Y', $timestamp);
+    }
+
     $day = date('j', $timestamp);
     $month = date('n', $timestamp);
     $year = date('Y', $timestamp);
@@ -45,11 +49,13 @@ function ht_bn_date($timestamp = null) {
         9 => 'সেপ্টেম্বর', 10 => 'অক্টোবর', 11 => 'নভেম্বর', 12 => 'ডিসেম্বর'
     ];
 
+    $num_fn = function_exists('ht_number') ? 'ht_number' : 'ht_bn_number';
+
     return sprintf(
-        '%s %s %s',
-        ht_bn_number($day),
+        '%s %s, %s',
+        $num_fn($day),
         isset($months_bn[$month]) ? $months_bn[$month] : '',
-        ht_bn_number($year)
+        $num_fn($year)
     );
 }
 
@@ -81,11 +87,20 @@ function ht_get_reading_time($post_id = null) {
     // Average reading speed: 180 words per minute for Bengali/academic content
     $minutes = max(1, ceil($word_count / 180));
 
+    $num_fn = function_exists('ht_number') ? 'ht_number' : 'ht_bn_number';
+    if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) {
+        $title_text = esc_attr($num_fn($word_count)) . ' ' . esc_attr__('words', 'helptrickbd');
+        $label_text = esc_html($num_fn($minutes)) . ' ' . esc_html__('min read', 'helptrickbd');
+    } else {
+        $title_text = esc_attr($num_fn($word_count)) . ' শব্দ';
+        $label_text = esc_html($num_fn($minutes)) . ' মিনিট পড়া';
+    }
+
     $html = sprintf(
-        '<span class="ht-meta-item ht-reading-time" title="%s শব্দ">%s %s মিনিট পড়া</span>',
-        esc_attr(ht_bn_number($word_count)),
+        '<span class="ht-meta-item ht-reading-time" title="%s">%s %s</span>',
+        $title_text,
         ht_m3_icon('schedule', 16, '', false),
-        esc_html(ht_bn_number($minutes))
+        $label_text
     );
 
     return [
@@ -228,11 +243,15 @@ function ht_post_views($post_id = null) {
         $count = 1;
     }
 
+    $num_fn = function_exists('ht_number') ? 'ht_number' : 'ht_bn_number';
+    $formatted_count = $num_fn(number_format_i18n($count));
+    $views_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Views', 'helptrickbd') : esc_html__('বার পঠিত', 'helptrickbd');
+
     printf(
         '<span class="ht-meta-item ht-views">%s %s %s</span>',
         ht_m3_icon('visibility', 16, '', false),
-        esc_html(ht_bn_number(number_format_i18n($count))),
-        esc_html__('বার পঠিত', 'helptrickbd')
+        esc_html($formatted_count),
+        $views_label
     );
 }
 
@@ -357,17 +376,22 @@ function ht_post_reaction_box($post_id = null) {
     if ($likes <= 0) {
         $likes = 28;
     }
+    $question_text = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Was this study guide helpful for your preparation?', 'helptrickbd') : esc_html__('এই গাইডটি কি আপনার প্রস্তুতিতে সহায়ক হয়েছে?', 'helptrickbd');
+    $sub_text = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Student feedback helps us create accurate, high-quality handnotes and guides.', 'helptrickbd') : esc_html__('শিক্ষার্থীদের মূল্যায়ন আমাদের নির্ভুল ও মানসম্মত হ্যান্ডনোট তৈরি করতে সহায়তা করে।', 'helptrickbd');
+    $btn_aria = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Helpful', 'helptrickbd') : esc_attr__('সহায়ক হয়েছে', 'helptrickbd');
+    $btn_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Helpful', 'helptrickbd') : esc_html__('সহায়ক হয়েছে', 'helptrickbd');
+    $num_fn = function_exists('ht_number') ? 'ht_number' : 'ht_bn_number';
     ?>
     <div class="ht-reaction-card" id="ht-reaction-card" data-id="<?php echo esc_attr($post_id); ?>">
         <div class="ht-reaction-content">
-            <span class="ht-reaction-question"><?php esc_html_e('এই গাইডটি কি আপনার প্রস্তুতিতে সহায়ক হয়েছে?', 'helptrickbd'); ?></span>
-            <span class="ht-reaction-sub"><?php esc_html_e('শিক্ষার্থীদের মূল্যায়ন আমাদের নির্ভুল ও মানসম্মত হ্যান্ডনোট তৈরি করতে সহায়তা করে।', 'helptrickbd'); ?></span>
+            <span class="ht-reaction-question"><?php echo $question_text; ?></span>
+            <span class="ht-reaction-sub"><?php echo $sub_text; ?></span>
         </div>
         <div class="ht-reaction-action">
-            <button type="button" class="ht-reaction-btn" id="ht-btn-like" aria-label="<?php esc_attr_e('সহায়ক হয়েছে', 'helptrickbd'); ?>">
+            <button type="button" class="ht-reaction-btn" id="ht-btn-like" aria-label="<?php echo $btn_aria; ?>">
                 <?php ht_m3_icon('thumb_up', 20, 'ht-icon-reaction'); ?>
-                <span class="ht-reaction-label"><?php esc_html_e('সহায়ক হয়েছে', 'helptrickbd'); ?></span>
-                <span class="ht-reaction-count" id="ht-reaction-count-val"><?php echo esc_html(ht_bn_number($likes)); ?></span>
+                <span class="ht-reaction-label"><?php echo $btn_label; ?></span>
+                <span class="ht-reaction-count" id="ht-reaction-count-val"><?php echo esc_html($num_fn($likes)); ?></span>
             </button>
         </div>
     </div>

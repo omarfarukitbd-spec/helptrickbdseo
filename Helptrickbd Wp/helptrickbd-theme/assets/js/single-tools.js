@@ -67,9 +67,12 @@
             // Append Chapter/Heading count badge for clear visibility
             const titleWrap = tocContainer.querySelector('.ht-toc-title-wrap');
             if (titleWrap && !titleWrap.querySelector('.ht-toc-count-badge')) {
+                const isEn = (window.htConfig && window.htConfig.isBn === false) || (document.documentElement.lang && document.documentElement.lang.startsWith('en'));
+                const tocSuffix = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.tocChapters) ? window.htConfig.i18n.tocChapters : (isEn ? ' Sections' : 'টি অধ্যায়');
+                const h2Display = isEn ? h2Count : (typeof window.htToBnNumber === 'function' ? window.htToBnNumber(h2Count) : h2Count);
                 const countBadge = document.createElement('span');
                 countBadge.className = 'ht-toc-count-badge';
-                countBadge.textContent = `${h2Count}টি অধ্যায়`;
+                countBadge.textContent = `${h2Display}${tocSuffix}`;
                 titleWrap.appendChild(countBadge);
             }
 
@@ -218,7 +221,10 @@
             const isActive = document.body.classList.contains('ht-focus-mode');
             this.classList.toggle('ht-active', isActive);
             if (window.htToast) {
-                window.htToast(isActive ? 'ফোকাস রিডিং মোড সক্রিয় হয়েছে' : 'ফোকাস মোড বন্ধ করা হয়েছে');
+                const isEn = (window.htConfig && window.htConfig.isBn === false) || (document.documentElement.lang && document.documentElement.lang.startsWith('en'));
+                const focusActive = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.focusActive) ? window.htConfig.i18n.focusActive : (isEn ? 'Focus reading mode activated' : 'ফোকাস রিডিং মোড সক্রিয় হয়েছে');
+                const focusInactive = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.focusInactive) ? window.htConfig.i18n.focusInactive : (isEn ? 'Focus mode turned off' : 'ফোকাস মোড বন্ধ করা হয়েছে');
+                window.htToast(isActive ? focusActive : focusInactive);
             }
         });
     }
@@ -263,7 +269,8 @@
             const selectedText = window.getSelection().toString().trim();
             if (selectedText) {
                 navigator.clipboard.writeText(selectedText).then(() => {
-                    if (window.htToast) window.htToast('টেক্সট ক্লিপবোর্ডে কপি করা হয়েছে');
+                    const textCopied = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.textCopied) ? window.htConfig.i18n.textCopied : 'টেক্সট ক্লিপবোর্ডে কপি করা হয়েছে';
+                    if (window.htToast) window.htToast(textCopied);
                     if (highlightDock) highlightDock.style.display = 'none';
                 });
             }
@@ -274,7 +281,7 @@
         dockShareWa.addEventListener('click', function () {
             const selectedText = window.getSelection().toString().trim();
             if (selectedText) {
-                const url = `https://api.whatsapp.com/send?text=${encodeURIComponent('"' + selectedText + '"\n\nপড়ুন বিস্তারিত: ' + window.location.href)}`;
+                const url = `https://api.whatsapp.com/send?text=${encodeURIComponent('"' + selectedText + '"\n\n' + window.location.href)}`;
                 window.open(url, '_blank');
                 if (highlightDock) highlightDock.style.display = 'none';
             }
@@ -285,14 +292,19 @@
     // 7. 1-Click Code Copy Box
     // -------------------------------------------------------------
     articleBody.querySelectorAll('pre').forEach(pre => {
+        const isEn = (window.htConfig && window.htConfig.isBn === false) || (document.documentElement.lang && document.documentElement.lang.startsWith('en'));
+        const codeCopyText = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.codeCopy) ? window.htConfig.i18n.codeCopy : (isEn ? 'Copy' : 'কপি করুন');
+        const codeCopiedText = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.codeCopiedBtn) ? window.htConfig.i18n.codeCopiedBtn : (isEn ? 'Copied!' : 'কপি সম্পন্ন!');
+        const codeToastText = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.codeCopiedToast) ? window.htConfig.i18n.codeCopiedToast : (isEn ? 'Code copied to clipboard' : 'কোড সফলভাবে কপি করা হয়েছে');
+
         const copyBtn = document.createElement('button');
         copyBtn.className = 'ht-code-copy-btn';
-        copyBtn.setAttribute('aria-label', 'কোড কপি করুন');
+        copyBtn.setAttribute('aria-label', codeCopyText);
         copyBtn.innerHTML = `
             <svg class="ht-m3-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
             </svg>
-            <span>কপি করুন</span>`;
+            <span>${codeCopyText}</span>`;
 
         copyBtn.addEventListener('click', function () {
             const code = pre.querySelector('code') || pre;
@@ -301,15 +313,15 @@
                     <svg class="ht-m3-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                     </svg>
-                    <span>কপি সম্পন্ন!</span>`;
+                    <span>${codeCopiedText}</span>`;
                 setTimeout(() => {
                     copyBtn.innerHTML = `
                         <svg class="ht-m3-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
                         </svg>
-                        <span>কপি করুন</span>`;
+                        <span>${codeCopyText}</span>`;
                 }, 2500);
-                if (window.htToast) window.htToast('কোড সফলভাবে কপি করা হয়েছে');
+                if (window.htToast) window.htToast(codeToastText);
             });
         });
 
@@ -327,7 +339,10 @@
                 const answer = card.querySelector('.ht-mcq-answer');
                 if (answer) {
                     answer.classList.toggle('ht-open');
-                    this.textContent = answer.classList.contains('ht-open') ? 'উত্তর ও ব্যাখ্যা লুকান' : 'সঠিক উত্তর দেখুন';
+                    const isEn = (window.htConfig && window.htConfig.isBn === false) || (document.documentElement.lang && document.documentElement.lang.startsWith('en'));
+                    const viewAns = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.mcqViewAnswer) ? window.htConfig.i18n.mcqViewAnswer : (isEn ? 'View Answer' : 'সঠিক উত্তর দেখুন');
+                    const hideAns = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.mcqHideAnswer) ? window.htConfig.i18n.mcqHideAnswer : (isEn ? 'Hide Answer' : 'উত্তর ও ব্যাখ্যা লুকান');
+                    this.textContent = answer.classList.contains('ht-open') ? hideAns : viewAns;
                 }
             }
         });
@@ -363,12 +378,14 @@
             const originalHTML = this.innerHTML;
 
             this.style.pointerEvents = 'none';
-            this.textContent = `ডাউনলোড লিংক তৈরি হচ্ছে: ${seconds} সেকেন্ড...`;
+            const dlGenText = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.downloadGen) ? window.htConfig.i18n.downloadGen : 'ডাউনলোড লিংক তৈরি হচ্ছে: ';
+            const dlNowText = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.downloadNow) ? window.htConfig.i18n.downloadNow : 'এখন ডাউনলোড করুন';
+            this.textContent = `${dlGenText}${seconds}s...`;
 
             const interval = setInterval(() => {
                 seconds--;
                 if (seconds > 0) {
-                    this.textContent = `ডাউনলোড লিংক তৈরি হচ্ছে: ${seconds} সেকেন্ড...`;
+                    this.textContent = `${dlGenText}${seconds}s...`;
                 } else {
                     clearInterval(interval);
                     this.setAttribute('data-ready', 'true');
@@ -377,7 +394,7 @@
                         <svg class="ht-m3-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
                         </svg>
-                        <span>এখন ডাউনলোড করুন</span>`;
+                        <span>${dlNowText}</span>`;
                     window.location.href = targetUrl;
                 }
             }, 1000);
@@ -438,11 +455,12 @@
 
             const hint = document.createElement('div');
             hint.className = 'ht-table-scroll-hint';
+            const tableHintText = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.tableScrollHint) ? window.htConfig.i18n.tableScrollHint : 'ডানে-বামে স্ক্রল করে সম্পূর্ণ তালিকা দেখুন';
             hint.innerHTML = `
                 <svg class="ht-m3-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/>
                 </svg>
-                <span>ডানে-বামে স্ক্রল করে সম্পূর্ণ তালিকা দেখুন</span>`;
+                <span>${tableHintText}</span>`;
 
             table.parentNode.insertBefore(wrapper, table);
             wrapper.appendChild(hint);
@@ -494,7 +512,8 @@
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(url).then(() => {
                     if (window.htToast) {
-                        window.htToast('Article link copied to clipboard!');
+                        const linkCopied = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.linkCopied) ? window.htConfig.i18n.linkCopied : 'Article link copied to clipboard!';
+                        window.htToast(linkCopied);
                     }
                 }).catch(() => {
                     prompt('Press Ctrl+C to copy link:', url);
@@ -525,7 +544,8 @@
         likeBtn.addEventListener('click', function () {
             if (localStorage.getItem(storageKey) === 'true') {
                 if (window.htToast) {
-                    window.htToast('You already reacted to this article!');
+                    const alreadyReacted = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.alreadyReacted) ? window.htConfig.i18n.alreadyReacted : 'You already reacted to this article!';
+                    window.htToast(alreadyReacted);
                 }
                 return;
             }
@@ -550,10 +570,12 @@
                     likeBtn.classList.remove('ht-animating');
                     if (data.success && data.data) {
                         if (countVal && data.data.count) {
-                            countVal.textContent = data.data.count;
+                            const isEn = (window.htConfig && window.htConfig.isBn === false) || (document.documentElement.lang && document.documentElement.lang.startsWith('en'));
+                            countVal.textContent = isEn ? (data.data.countFormatted || data.data.count) : (data.data.countBn || data.data.count);
                         }
                         if (window.htToast) {
-                            window.htToast(data.data.message || 'Thank you for your feedback!');
+                            const thanksMsg = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.feedbackThanks) ? window.htConfig.i18n.feedbackThanks : (data.data.message || 'Thank you for your feedback!');
+                            window.htToast(thanksMsg);
                         }
                     }
                 })
@@ -587,8 +609,11 @@
             const titleEl = btn.querySelector('.pdf-title');
             const actionEl = btn.querySelector('.pdf-download-action');
 
+            const pdfPrep = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.pdfPreparing) ? window.htConfig.i18n.pdfPreparing : 'লিংক প্রস্তুত হচ্ছে...';
+            const pdfReady = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.pdfReady) ? window.htConfig.i18n.pdfReady : 'ফাইল প্রস্তুত! এখনই নিন';
+
             if (titleEl) {
-                titleEl.textContent = 'লিংক প্রস্তুত হচ্ছে...';
+                titleEl.textContent = pdfPrep;
             }
             if (actionEl) {
                 actionEl.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span>' + seconds + 's</span>';
@@ -606,7 +631,7 @@
                     btn.classList.remove('is-counting');
                     btn.classList.add('is-ready');
                     if (titleEl) {
-                        titleEl.textContent = 'ফাইল প্রস্তুত! এখনই নিন';
+                        titleEl.textContent = pdfReady;
                     }
                     if (actionEl) {
                         actionEl.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg> <span>Download</span>';

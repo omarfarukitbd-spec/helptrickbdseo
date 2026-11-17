@@ -145,20 +145,20 @@ if (!defined('ABSPATH')) {
     <?php endif; ?>
 
     <!-- "Ctrl+K" Spotlight Instant Search Modal -->
-    <div class="ht-modal ht-spotlight-modal" id="ht-spotlight-modal" aria-hidden="true" role="dialog" aria-label="<?php esc_attr_e('তাত্ক্ষণিক অনুসন্ধান', 'helptrickbd'); ?>">
+    <div class="ht-modal ht-spotlight-modal" id="ht-spotlight-modal" aria-hidden="true" role="dialog" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Instant Search', 'helptrickbd') : esc_attr__('তাত্ক্ষণিক অনুসন্ধান', 'helptrickbd'); ?>">
         <div class="ht-spotlight-overlay" id="ht-spotlight-overlay"></div>
         <div class="ht-spotlight-dialog">
             <div class="ht-spotlight-header">
                 <?php ht_m3_icon('search', 22, 'ht-spotlight-icon'); ?>
-                <input type="search" id="ht-spotlight-input" class="ht-spotlight-input" placeholder="<?php esc_attr_e('হ্যান্ডনোট, রুটিন বা বিষয় লিখে খুঁজুন...', 'helptrickbd'); ?>" autocomplete="off" enterkeyhint="search">
-                <button class="ht-spotlight-close" id="ht-spotlight-close" aria-label="<?php esc_attr_e('সার্চ বন্ধ করুন', 'helptrickbd'); ?>">
+                <input type="search" id="ht-spotlight-input" class="ht-spotlight-input" placeholder="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Search handnotes, routines, suggestions...', 'helptrickbd') : esc_attr__('হ্যান্ডনোট, রুটিন বা বিষয় লিখে খুঁজুন...', 'helptrickbd'); ?>" autocomplete="off" enterkeyhint="search">
+                <button class="ht-spotlight-close" id="ht-spotlight-close" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Close search', 'helptrickbd') : esc_attr__('সার্চ বন্ধ করুন', 'helptrickbd'); ?>">
                     <kbd>ESC</kbd>
                 </button>
             </div>
             <div class="ht-spotlight-body" id="ht-spotlight-results">
                 <!-- Trending suggestions default state -->
                 <div class="ht-spotlight-trending">
-                    <span class="ht-spotlight-section-title"><?php esc_html_e('জনপ্রিয় অনুসন্ধানসমূহ', 'helptrickbd'); ?></span>
+                    <span class="ht-spotlight-section-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Trending Searches', 'helptrickbd') : esc_html__('জনপ্রিয় অনুসন্ধানসমূহ', 'helptrickbd'); ?></span>
                     <div class="ht-trending-tags">
                         <button class="ht-trending-tag" data-query="অনার্স ২য় বর্ষ রুটিন">অনার্স ২য় বর্ষ রুটিন</button>
                         <button class="ht-trending-tag" data-query="এসএসসি বাংলা ১ম পত্র">এসএসসি বাংলা ১ম পত্র</button>
@@ -176,9 +176,9 @@ if (!defined('ABSPATH')) {
         <div class="ht-drawer-header">
             <div class="ht-drawer-title-wrap">
                 <?php ht_m3_icon('bookmark', 20); ?>
-                <span class="ht-drawer-title"><?php esc_html_e('আপনার পড়ার তালিকা', 'helptrickbd'); ?></span>
+                <span class="ht-drawer-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Your Saved Articles', 'helptrickbd') : esc_html__('আপনার পড়ার তালিকা', 'helptrickbd'); ?></span>
             </div>
-            <button class="ht-drawer-close" id="ht-bm-close" aria-label="<?php esc_attr_e('ড্রয়ার বন্ধ করুন', 'helptrickbd'); ?>">
+            <button class="ht-drawer-close" id="ht-bm-close" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Close reading list', 'helptrickbd') : esc_attr__('ড্রয়ার বন্ধ করুন', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('close', 20); ?>
             </button>
         </div>

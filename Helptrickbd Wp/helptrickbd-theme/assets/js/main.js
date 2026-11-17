@@ -25,12 +25,17 @@
         }, 3000);
     };
 
-    // Helper: English to Bengali Numerals
+    // Helper: Locale-Aware Numerals
     function toBnNumber(num) {
-        const en = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        const isEn = (window.htConfig && window.htConfig.isBn === false) || 
+                     (document.documentElement.lang && document.documentElement.lang.startsWith('en'));
+        if (isEn) {
+            return String(num);
+        }
         const bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
         return String(num).replace(/[0-9]/g, (w) => bn[+w]);
     }
+    window.htToBnNumber = toBnNumber;
 
     // -------------------------------------------------------------
     // 2. Dark / Light Mode Switcher
@@ -155,14 +160,15 @@
                 const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
                 const daysBn = toBnNumber(days);
 
+                const daysLabel = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.daysLeft) ? window.htConfig.i18n.daysLeft : 'দিন বাকি';
                 const topVal = document.getElementById('ht-countdown-val');
-                if (topVal) topVal.textContent = `${daysBn} দিন বাকি`;
+                if (topVal) topVal.textContent = `${daysBn} ${daysLabel}`;
 
                 const sideVal = document.getElementById('ht-sidebar-days-val');
                 if (sideVal) sideVal.textContent = daysBn;
 
                 const drawerVal = document.getElementById('ht-drawer-countdown-val');
-                if (drawerVal) drawerVal.textContent = `${daysBn} দিন বাকি`;
+                if (drawerVal) drawerVal.textContent = `${daysBn} ${daysLabel}`;
             }
         }
 
@@ -417,19 +423,22 @@
         // Render in drawer
         if (bmList) {
             if (count === 0) {
+                const emptyTitle = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.bookmarkEmptyTitle) ? window.htConfig.i18n.bookmarkEmptyTitle : 'Your reading list is currently empty.';
+                const emptySub = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.bookmarkEmptySub) ? window.htConfig.i18n.bookmarkEmptySub : 'Click the bookmark icon on any post to save it for offline reading.';
                 bmList.innerHTML = `
                     <div class="ht-empty-bookmarks">
                         <svg class="ht-m3-icon ht-empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
-                        <p>Your reading list is currently empty.</p>
-                        <span>Click the bookmark icon on any post to save it for offline reading.</span>
+                        <p>${emptyTitle}</p>
+                        <span>${emptySub}</span>
                     </div>`;
             } else {
+                const removeAria = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.bookmarkRemoveAria) ? window.htConfig.i18n.bookmarkRemoveAria : 'Remove from list';
                 let html = '<div class="ht-bm-items-wrap">';
                 bms.forEach(item => {
                     html += `
                         <div class="ht-bm-item">
                             <a href="${item.url}" class="ht-bm-title">${item.title}</a>
-                            <button class="ht-bm-remove" data-id="${item.id}" aria-label="Remove from list">
+                            <button class="ht-bm-remove" data-id="${item.id}" aria-label="${removeAria}">
                                 <svg class="ht-m3-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
                             </button>
                         </div>`;
@@ -443,7 +452,8 @@
                         const id = this.getAttribute('data-id');
                         const updated = getBookmarks().filter(i => i.id != id);
                         saveBookmarks(updated);
-                        window.htToast('Removed from reading list');
+                        const msgRemoved = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.bookmarkRemoved) ? window.htConfig.i18n.bookmarkRemoved : 'Removed from reading list';
+                        window.htToast(msgRemoved);
                     });
                 });
             }
@@ -456,11 +466,13 @@
         if (index > -1) {
             bms.splice(index, 1);
             saveBookmarks(bms);
-            window.htToast('Removed from reading list');
+            const msgRemoved = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.bookmarkRemoved) ? window.htConfig.i18n.bookmarkRemoved : 'Removed from reading list';
+            window.htToast(msgRemoved);
         } else {
             bms.unshift({ id, title, url });
             saveBookmarks(bms);
-            window.htToast('Saved to reading list');
+            const msgSaved = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.bookmarkSaved) ? window.htConfig.i18n.bookmarkSaved : 'Saved to reading list';
+            window.htToast(msgSaved);
         }
     }
 
@@ -518,9 +530,11 @@
 
     if (clearBmBtn) {
         clearBmBtn.addEventListener('click', function () {
-            if (confirm('Are you sure you want to clear your reading list?')) {
+            const confirmMsg = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.bookmarkClearConfirm) ? window.htConfig.i18n.bookmarkClearConfirm : 'Are you sure you want to clear your reading list?';
+            const clearedMsg = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.bookmarksCleared) ? window.htConfig.i18n.bookmarksCleared : 'All bookmarks cleared';
+            if (confirm(confirmMsg)) {
                 saveBookmarks([]);
-                window.htToast('All bookmarks cleared');
+                window.htToast(clearedMsg);
             }
         });
     }
@@ -619,6 +633,7 @@
             formData.append('action', 'ht_live_search');
             formData.append('nonce', window.htConfig.searchNonce);
             formData.append('query', query);
+            formData.append('lang', (window.htConfig && window.htConfig.lang) ? window.htConfig.lang : ((document.documentElement.lang && document.documentElement.lang.startsWith('en')) ? 'en' : 'bn'));
 
             fetch(window.htConfig.ajaxUrl, {
                 method: 'POST',
@@ -646,16 +661,18 @@
                             </a>
                         `;
                     });
+                    const viewAllText = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.viewAllResults) ? window.htConfig.i18n.viewAllResults : 'সকল ফলাফল দেখুন';
                     html += `
                         <a href="${window.htConfig.siteUrl}/?s=${encodeURIComponent(query)}" class="ht-side-result-all">
-                            <span>সকল ফলাফল দেখুন</span>
+                            <span>${viewAllText}</span>
                             <svg class="ht-m3-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
                         </a>
                     </div>`;
                     sideSearchResults.innerHTML = html;
                     sideSearchResults.style.display = 'block';
                 } else {
-                    sideSearchResults.innerHTML = '<div class="ht-side-result-none">কোন ফলাফল পাওয়া যায়নি</div>';
+                    const noResultsText = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.sideNoResults) ? window.htConfig.i18n.sideNoResults : 'কোন ফলাফল পাওয়া যায়নি';
+                    sideSearchResults.innerHTML = `<div class="ht-side-result-none">${noResultsText}</div>`;
                     sideSearchResults.style.display = 'block';
                 }
             })
@@ -725,10 +742,13 @@
             .then(data => {
                 if (data && data.success && data.data && data.data.status === 'incremented') {
                     const viewsEl = document.querySelector('.ht-views');
-                    if (viewsEl && data.data.countBn) {
+                    if (viewsEl) {
+                        const isEn = (window.htConfig && window.htConfig.isBn === false) || (document.documentElement.lang && document.documentElement.lang.startsWith('en'));
+                        const countDisplay = isEn ? (data.data.countFormatted || data.data.count) : (data.data.countBn || data.data.count);
+                        const viewsLabel = (window.htConfig && window.htConfig.i18n && window.htConfig.i18n.viewsLabel) ? window.htConfig.i18n.viewsLabel : (isEn ? 'views' : 'বার পঠিত');
                         const icon = viewsEl.querySelector('svg');
                         const iconHtml = icon ? icon.outerHTML : '';
-                        viewsEl.innerHTML = `${iconHtml} ${data.data.countBn} বার পঠিত`;
+                        viewsEl.innerHTML = `${iconHtml} ${countDisplay} ${viewsLabel}`;
                     }
                 }
             })

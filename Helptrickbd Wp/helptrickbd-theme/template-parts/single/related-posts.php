@@ -44,11 +44,13 @@ if (!empty($related_ids)) :
         'no_found_rows'       => true,
     ]);
     if ($cached_query->have_posts()) :
+        $is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
+        $related_heading = $is_en ? esc_html__('Related Guides & Articles', 'helptrickbd') : esc_html__('সম্পর্কিত হ্যান্ডনোট ও গাইড', 'helptrickbd');
 ?>
-    <section class="ht-related-section" aria-label="<?php esc_attr_e('সম্পর্কিত হ্যান্ডনোট ও গাইড', 'helptrickbd'); ?>">
+    <section class="ht-related-section" aria-label="<?php echo esc_attr($related_heading); ?>">
         <h3 class="ht-related-heading">
             <?php ht_m3_icon('menu_book', 20); ?>
-            <span><?php esc_html_e('সম্পর্কিত হ্যান্ডনোট ও গাইড', 'helptrickbd'); ?></span>
+            <span><?php echo esc_html($related_heading); ?></span>
         </h3>
         <div class="ht-related-grid">
             <?php

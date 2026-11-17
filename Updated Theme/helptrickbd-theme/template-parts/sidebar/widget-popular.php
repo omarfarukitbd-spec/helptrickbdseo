@@ -13,7 +13,11 @@ if (!get_theme_mod('ht_sidebar_popular_enable', true)) {
     return;
 }
 
-$popular_title = get_theme_mod('ht_sidebar_popular_title', 'জনপ্রিয় ও আলোচিত হ্যান্ডনোট');
+$is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
+$popular_title = get_theme_mod('ht_sidebar_popular_title', '');
+if (empty($popular_title)) {
+    $popular_title = $is_en ? 'Popular & Trending Articles' : 'জনপ্রিয় ও আলোচিত হ্যান্ডনোট';
+}
 $popular_count = (int) get_theme_mod('ht_sidebar_popular_count', 6);
 if ($popular_count < 1) {
     $popular_count = 6;
@@ -78,7 +82,7 @@ if (!$cached_popular_query->have_posts()) {
     return;
 }
 ?>
-<div class="n-popular-widget" aria-label="<?php esc_attr_e('জনপ্রিয় হ্যান্ডনোট', 'helptrickbd'); ?>">
+<div class="n-popular-widget" aria-label="<?php echo $is_en ? esc_attr__('Popular Articles', 'helptrickbd') : esc_attr__('জনপ্রিয় হ্যান্ডনোট', 'helptrickbd'); ?>">
   <div class="n-pop-tab-header">
     <span class="n-pop-tab active"><?php echo esc_html($popular_title); ?></span>
   </div>
@@ -90,7 +94,7 @@ if (!$cached_popular_query->have_posts()) {
         $cached_popular_query->the_post();
         ?>
         <a href="<?php the_permalink(); ?>" class="n-pop-item">
-          <span class="n-pop-num"><?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($rank) : $rank); ?></span>
+          <span class="n-pop-num"><?php echo esc_html(function_exists('ht_number') ? ht_number($rank) : (function_exists('ht_bn_number') ? ht_bn_number($rank) : $rank)); ?></span>
           <span class="n-pop-title"><?php the_title(); ?></span>
         </a>
         <?php
