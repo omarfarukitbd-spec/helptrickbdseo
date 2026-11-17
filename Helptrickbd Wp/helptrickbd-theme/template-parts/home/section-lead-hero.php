@@ -91,7 +91,7 @@ if (!$lead_post) {
     </h2>
 
     <div class="n-byline">
-      <span><?php echo esc_html(get_the_author_meta('display_name', \->post_author)); ?></span>
+      <span><?php echo esc_html(get_the_author_meta('display_name', $lead_post->post_author)); ?></span>
     </div>
 
     <?php if (has_post_thumbnail($lead_post->ID)) : ?>

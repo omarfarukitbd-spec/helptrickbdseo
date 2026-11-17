@@ -117,6 +117,12 @@ def check_php_syntax(file_path, content):
     if open_curly != close_curly:
         errors.append(f"Curly brace mismatch: '{open_curly}' open vs '{close_curly}' close")
         
+    # Check for broken PHP variable references or escaped arrows (e.g. \->)
+    if re.search(r'\\->', content):
+        errors.append("Invalid PHP arrow syntax '\\->' detected (should be '->' on a variable)")
+    if re.search(r'[\s\(,]\->[a-zA-Z_]', clean_code):
+        errors.append("Invalid PHP property access without variable (e.g. '->prop')")
+        
     # Check WP_Query has wp_reset_postdata
     if "new WP_Query" in content and "wp_reset_postdata" not in content:
         errors.append("new WP_Query found without corresponding wp_reset_postdata()")
