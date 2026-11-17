@@ -2259,56 +2259,86 @@ button {
 .ht-sidebar-wrapper .wp-block-archives,
 .n-home-layout-sidebar .widget_archive,
 .n-home-layout-sidebar .wp-block-archives,
-.ht-sidebar-area .widget_categories,
-.ht-sidebar-area .wp-block-categories,
-.ht-sidebar-wrapper .widget_categories,
-.ht-sidebar-wrapper .wp-block-categories,
-.n-home-layout-sidebar .widget_categories,
-.n-home-layout-sidebar .wp-block-categories,
 .ht-widget:has(.wp-block-archives),
-.ht-widget:has(.wp-block-categories),
 .ht-widget:has(.wp-block-search),
 .ht-widget:has(.widget_search),
 .ht-widget:has(.widget_archive),
-.ht-widget:has(.widget_categories),
 .ht-widget.widget_search,
-.ht-widget.widget_archive,
-.ht-widget.widget_categories,
-.n-sidebar-cats-widget {
+.ht-widget.widget_archive {
     display: none !important;
 }
 
+/* 2-Column Categories Grid (Homepage & Single Post Sidebar) */
+.n-sidebar-cats-widget {
+    display: block !important;
+    background: var(--ht-surface);
+    border: 1px solid var(--ht-border);
+    border-radius: var(--ht-radius-md, 8px);
+    padding: 12px 10px 12px;
+}
+
+.n-sidebar-cats-widget .n-sec-head {
+    margin-top: 0 !important;
+    margin-bottom: 10px;
+}
+
+.n-cats-grid-2col,
+.widget_categories ul,
+.wp-block-categories {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.n-cat-card,
 .widget_categories ul li,
 .wp-block-categories li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 14px;
-    background: var(--ht-surface);
-    border: 1px solid var(--ht-surface-border);
-    border-radius: var(--ht-radius-sm);
-    transition: var(--ht-transition);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: var(--ht-surface-alt) !important;
+    border: 1px solid var(--ht-border) !important;
+    border-radius: 6px !important;
+    padding: 7px 8px !important;
+    text-decoration: none !important;
+    transition: var(--ht-transition) !important;
+    min-height: 38px !important;
 }
 
+.n-cat-card:hover,
 .widget_categories ul li:hover,
 .wp-block-categories li:hover {
-    background: var(--ht-primary-light);
-    border-color: var(--ht-primary-border);
-    transform: translateX(4px);
+    border-color: var(--ht-primary) !important;
+    background: var(--ht-primary-soft) !important;
+    transform: translateY(-1px) !important;
 }
 
+.n-cat-name,
 .widget_categories ul li a,
 .wp-block-categories li a {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--ht-text-primary);
-    transition: var(--ht-transition);
+    font-size: 0.8125rem !important;
+    font-weight: 700 !important;
+    color: var(--ht-text-primary) !important;
+    line-height: 1.25 !important;
+    text-decoration: none !important;
 }
 
-.widget_categories ul li:hover a,
-.wp-block-categories li:hover a {
-    color: var(--ht-primary);
+.n-cat-count {
+    font-size: 0.6875rem !important;
+    color: var(--ht-text-muted) !important;
+    font-weight: 600 !important;
+    background: var(--ht-surface) !important;
+    border: 1px solid var(--ht-border) !important;
+    padding: 1px 5px !important;
+    border-radius: 999px !important;
+    flex-shrink: 0 !important;
+    margin-left: 4px !important;
 }
+
+
 
 /* -------------------------------------------------------------
  * 9. Pagination

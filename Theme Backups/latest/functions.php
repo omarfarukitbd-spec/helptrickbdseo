@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * HelpTrickBD Pro Theme Functions and Definitions
  * Zero external bloat, pure PHP 8.1+, pure Material 3 SVG vector icons.
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '1.5.7');
+define('HT_THEME_VERSION', '1.5.9');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/material-icons.php';

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Homepage Section 3: Magazine Lead Hero & Spotlight Deck
  *
@@ -92,8 +92,6 @@ if (!$lead_post) {
 
     <div class="n-byline">
       <span><?php echo esc_html(get_the_author_meta('display_name', $lead_post->post_author)); ?></span>
-      <span><?php echo esc_html(get_the_date('j F, Y', $lead_post->ID)); ?></span>
-      <span><?php echo esc_html(htbd_reading_time($lead_post->ID)); ?></span>
     </div>
 
     <?php if (has_post_thumbnail($lead_post->ID)) : ?>
