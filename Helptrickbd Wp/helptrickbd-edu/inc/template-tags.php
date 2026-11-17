@@ -301,6 +301,15 @@ if (!function_exists('htbd_get_breadcrumbs')) {
     }
 }
 
+if (!function_exists('ht_breadcrumbs')) {
+    /**
+     * Backward-compatible echo wrapper for breadcrumbs.
+     */
+    function ht_breadcrumbs() {
+        echo htbd_get_breadcrumbs();
+    }
+}
+
 if (!function_exists('htbd_post_views')) {
     /**
      * Returns the total view count for a post.

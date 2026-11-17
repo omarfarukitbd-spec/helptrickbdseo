@@ -14,11 +14,17 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
-<main id="primary" class="ht-main-site ht-cgpa-app-site">
+<div class="ht-main-site ht-cgpa-app-site">
     <div class="ht-container ht-calc-canvas">
 
         <!-- Breadcrumbs Navigation -->
-        <?php ht_breadcrumbs(); ?>
+        <?php
+        if (function_exists('ht_breadcrumbs')) {
+            ht_breadcrumbs();
+        } elseif (function_exists('htbd_get_breadcrumbs')) {
+            echo htbd_get_breadcrumbs();
+        }
+        ?>
 
         <!-- App Hero Card -->
         <header class="ht-app-header-card">
@@ -927,7 +933,7 @@ CGPA = (মোট অর্জিত ক্রেডিট পয়েন্টে
         </section>
 
     </div><!-- .ht-calc-canvas -->
-</main><!-- #primary -->
+</div><!-- .ht-main-site -->
 
 <script type="application/ld+json">
 {
