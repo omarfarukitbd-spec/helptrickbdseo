@@ -252,6 +252,18 @@ function ht_customize_register($wp_customize) {
         'type'    => 'checkbox',
     ]);
 
+    // Dynamic WordPress Widgets Area Toggle (Appearance > Widgets)
+    $wp_customize->add_setting('ht_sidebar_widgets_enable', [
+        'default'           => false,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('ht_sidebar_widgets_enable', [
+        'label'       => esc_html__('Enable Additional Custom Widgets in Sidebar', 'helptrickbd'),
+        'description' => esc_html__('Display widgets configured under Appearance > Widgets. (Default: Hidden)', 'helptrickbd'),
+        'section'     => 'ht_sidebar_section',
+        'type'        => 'checkbox',
+    ]);
+
     // =============================================================
     // Section 3: Social & Community Links
     // =============================================================

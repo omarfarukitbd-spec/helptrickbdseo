@@ -470,6 +470,15 @@ button {
 .ht-sidebar-wrapper .wp-block-categories,
 .n-home-layout-sidebar .widget_categories,
 .n-home-layout-sidebar .wp-block-categories,
+.ht-widget:has(.wp-block-archives),
+.ht-widget:has(.wp-block-categories),
+.ht-widget:has(.wp-block-search),
+.ht-widget:has(.widget_search),
+.ht-widget:has(.widget_archive),
+.ht-widget:has(.widget_categories),
+.ht-widget.widget_search,
+.ht-widget.widget_archive,
+.ht-widget.widget_categories,
 .n-sidebar-cats-widget {
   display: none !important;
 }
