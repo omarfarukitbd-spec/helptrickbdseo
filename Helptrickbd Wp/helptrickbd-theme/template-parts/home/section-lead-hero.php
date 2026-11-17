@@ -13,13 +13,15 @@ if (!get_theme_mod('htbd_show_lead_hero', get_theme_mod('ht_show_lead_hero', tru
     return;
 }
 
+$is_bn      = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
 $hero_cat   = (int) get_theme_mod('htbd_hero_category', get_theme_mod('ht_hero_category', 0));
-$badge_text = get_theme_mod('htbd_hero_badge_text', get_theme_mod('ht_hero_badge_text', 'সর্বশেষ প্রকাশনা'));
-if (empty($badge_text) || $badge_text === 'LATEST POSTS') {
-    $badge_text = 'সর্বশেষ প্রকাশনা';
+$default_badge = $is_bn ? 'সর্বশেষ প্রকাশনা' : 'LATEST POSTS';
+$badge_text = get_theme_mod('htbd_hero_badge_text', get_theme_mod('ht_hero_badge_text', $default_badge));
+if (empty($badge_text)) {
+    $badge_text = $default_badge;
 }
 
-$hero_cache_key = 'ht_home_lead_hero_ids_' . $hero_cat;
+$hero_cache_key = 'ht_home_lead_hero_ids_' . $hero_cat . '_' . ($is_bn ? 'bn' : 'en');
 $hero_post_ids = get_transient($hero_cache_key);
 
 if (false === $hero_post_ids) {
@@ -77,7 +79,7 @@ if (!$lead_post) {
     return;
 }
 ?>
-<section class="n-lead" aria-label="<?php esc_attr_e('নির্বাচিত ও সর্বশেষ প্রবন্ধসমূহ', 'helptrickbd'); ?>">
+<section class="n-lead" aria-label="<?php echo $is_bn ? esc_attr__('নির্বাচিত ও সর্বশেষ প্রবন্ধসমূহ', 'helptrickbd') : esc_attr__('Featured and Latest Articles', 'helptrickbd'); ?>">
   <!-- Main Lead Article (Left 65%) -->
   <article>
     <span class="n-kicker">
@@ -120,7 +122,7 @@ if (!$lead_post) {
         <span class="sk">
           <?php
           $cats = get_the_category($spot->ID);
-          echo !empty($cats) ? esc_html($cats[0]->name) : esc_html__('একাডেমিক', 'helptrickbd');
+          echo !empty($cats) ? esc_html($cats[0]->name) : ($is_bn ? esc_html__('একাডেমিক', 'helptrickbd') : esc_html__('Academic', 'helptrickbd'));
           ?>
         </span>
         <h4>

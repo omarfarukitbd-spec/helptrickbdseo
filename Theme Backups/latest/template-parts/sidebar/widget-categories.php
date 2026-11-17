@@ -22,10 +22,13 @@ $sidebar_cats = get_categories(array(
 if (empty($sidebar_cats)) {
     return;
 }
+
+$is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
+$widget_title = $is_en ? esc_html__('Topics & Departments', 'helptrickbd') : esc_html__('সকল বিষয় ও বিভাগ', 'helptrickbd');
 ?>
-<div class="n-sidebar-cats-widget" aria-label="<?php esc_attr_e('সকল বিষয় ও বিভাগ', 'helptrickbd'); ?>" style="margin-top:16px;">
+<div class="n-sidebar-cats-widget" aria-label="<?php echo esc_attr($widget_title); ?>" style="margin-top:16px;">
   <div class="n-sec-head" style="margin-top:0;margin-bottom:10px;">
-    <h3 style="font-size:1.15rem;"><?php esc_html_e('সকল বিষয় ও বিভাগ', 'helptrickbd'); ?></h3>
+    <h3 style="font-size:1.15rem;"><?php echo esc_html($widget_title); ?></h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
 
@@ -38,7 +41,7 @@ if (empty($sidebar_cats)) {
         ?>
         <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="n-cat-card">
           <span class="n-cat-name"><?php echo esc_html($cat->name); ?></span>
-          <span class="n-cat-count"><?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($cat->count) : $cat->count); ?></span>
+          <span class="n-cat-count"><?php echo esc_html(function_exists('ht_number') ? ht_number($cat->count) : (function_exists('ht_bn_number') ? ht_bn_number($cat->count) : $cat->count)); ?></span>
         </a>
         <?php
     endforeach;

@@ -13,16 +13,18 @@ if (!get_theme_mod('htbd_show_ticker', get_theme_mod('ht_ticker_enable', true)))
     return;
 }
 
-$badge_text = get_theme_mod('htbd_ticker_badge_text', get_theme_mod('ht_ticker_badge_label', 'সর্বশেষ আপডেট'));
-if (empty($badge_text) || $badge_text === 'LATEST UPDATES') {
-    $badge_text = 'সর্বশেষ আপডেট';
+$is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
+$default_badge = $is_bn ? 'সর্বশেষ আপডেট' : 'LATEST UPDATES';
+$badge_text = get_theme_mod('htbd_ticker_badge_text', get_theme_mod('ht_ticker_badge_label', $default_badge));
+if (empty($badge_text)) {
+    $badge_text = $default_badge;
 }
 
 $ticker_count = (int) get_theme_mod('htbd_ticker_count', 5);
 $ticker_cat   = (int) get_theme_mod('htbd_ticker_category', 0);
 
 // Use transient caching for ticker query
-$ticker_cache_key = 'ht_home_ticker_ids_' . $ticker_cat . '_' . $ticker_count;
+$ticker_cache_key = 'ht_home_ticker_ids_' . $ticker_cat . '_' . $ticker_count . '_' . ($is_bn ? 'bn' : 'en');
 $ticker_ids = get_transient($ticker_cache_key);
 
 if (false === $ticker_ids) {

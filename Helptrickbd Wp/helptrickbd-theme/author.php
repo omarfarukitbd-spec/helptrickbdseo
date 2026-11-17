@@ -23,13 +23,16 @@ $total_author_posts = count_user_posts($curauth->ID, 'post', true);
         <?php ht_breadcrumbs(); ?>
 
         <!-- Author Profile Banner -->
+        <?php
+        $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
+        ?>
         <header class="ht-author-profile-card">
             <div class="ht-author-profile-avatar">
                 <?php echo get_avatar($curauth->ID, 96, '', '', ['class' => 'ht-avatar-lg']); ?>
             </div>
             <div class="ht-author-profile-info">
                 <div class="ht-author-profile-badge-row">
-                    <span class="ht-author-role"><?php esc_html_e('Educator & Author', 'helptrickbd'); ?></span>
+                    <span class="ht-author-role"><?php echo $is_bn ? esc_html__('শিক্ষক ও লেখক', 'helptrickbd') : esc_html__('Educator & Author', 'helptrickbd'); ?></span>
                     <?php ht_eeat_badge(); ?>
                 </div>
                 <h1 class="ht-author-profile-name">
@@ -38,13 +41,16 @@ $total_author_posts = count_user_posts($curauth->ID, 'post', true);
                 <p class="ht-author-profile-bio">
                     <?php
                     $bio = get_the_author_meta('description', $curauth->ID);
-                    echo esc_html($bio ? $bio : 'Education and technology researcher, writer, and regular content contributor at HelpTrickBD.');
+                    $default_bio = $is_bn
+                        ? 'হেল্পট্রিকবিডির নিয়মিত লেখক, গবেষক ও শিক্ষা বিষয়ক কন্টেন্ট বিশেষজ্ঞ।'
+                        : 'Education and technology researcher, writer, and regular content contributor at HelpTrickBD.';
+                    echo esc_html($bio ? $bio : $default_bio);
                     ?>
                 </p>
                 <div class="ht-author-profile-meta">
                     <span class="ht-author-count">
                         <?php ht_m3_icon('auto_stories', 16); ?>
-                        <strong><?php echo esc_html($total_author_posts); ?></strong> <?php esc_html_e('Published Articles', 'helptrickbd'); ?>
+                        <strong><?php echo esc_html(function_exists('ht_number') ? ht_number($total_author_posts) : (function_exists('ht_bn_number') ? ht_bn_number($total_author_posts) : $total_author_posts)); ?></strong> <?php echo $is_bn ? esc_html__('টি প্রকাশিত লেখা', 'helptrickbd') : esc_html__('Published Articles', 'helptrickbd'); ?>
                     </span>
                 </div>
             </div>
@@ -58,7 +64,7 @@ $total_author_posts = count_user_posts($curauth->ID, 'post', true);
                 <div class="ht-section-header">
                     <h2 class="ht-section-title">
                         <?php ht_m3_icon('format_list_bulleted', 20, 'ht-icon-primary'); ?>
-                        <span><?php esc_html_e('Articles by Author', 'helptrickbd'); ?></span>
+                        <span><?php echo $is_bn ? esc_html__('লেখকের সকল আর্টিকেল', 'helptrickbd') : esc_html__('Articles by Author', 'helptrickbd'); ?></span>
                     </h2>
                 </div>
 
@@ -75,15 +81,17 @@ $total_author_posts = count_user_posts($curauth->ID, 'post', true);
                     <!-- Numbered Pagination -->
                     <div class="ht-pagination-wrap">
                         <?php
+                        $prev_text = $is_bn ? esc_html__('পূর্ববর্তী', 'helptrickbd') : esc_html__('Previous', 'helptrickbd');
+                        $next_text = $is_bn ? esc_html__('পরবর্তী', 'helptrickbd') : esc_html__('Next', 'helptrickbd');
                         the_posts_pagination([
-                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . esc_html__('Previous', 'helptrickbd'),
-                            'next_text' => esc_html__('Next', 'helptrickbd') . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
+                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . $prev_text,
+                            'next_text' => $next_text . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
                         ]);
                         ?>
                     </div>
 
                 <?php else : ?>
-                    <p class="ht-no-posts"><?php esc_html_e('No posts published by this author yet.', 'helptrickbd'); ?></p>
+                    <p class="ht-no-posts"><?php echo $is_bn ? esc_html__('এই লেখকের কোনো প্রকাশিত পোস্ট পাওয়া যায়নি।', 'helptrickbd') : esc_html__('No posts published by this author yet.', 'helptrickbd'); ?></p>
                 <?php endif; ?>
 
             </div><!-- .ht-content-area -->

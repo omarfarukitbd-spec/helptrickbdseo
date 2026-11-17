@@ -17,6 +17,8 @@ function ht_ajax_live_search_handler() {
     check_ajax_referer('ht_live_search_nonce', 'nonce');
 
     $query = isset($_POST['query']) ? sanitize_text_field(wp_unslash($_POST['query'])) : '';
+    $req_lang = isset($_POST['lang']) ? sanitize_key($_POST['lang']) : (function_exists('ht_get_current_lang') ? ht_get_current_lang() : 'bn');
+    $is_en = ($req_lang === 'en');
 
     if (empty($query) || mb_strlen($query) < 2) {
         wp_send_json_success(['results' => [], 'empty' => true]);
@@ -30,6 +32,11 @@ function ht_ajax_live_search_handler() {
         'ignore_sticky_posts' => 1,
         'no_found_rows'       => true,
     ];
+
+    // Filter by language if Polylang is present
+    if (function_exists('pll_the_languages') && !empty($req_lang)) {
+        $args['lang'] = $req_lang;
+    }
 
     $search_query = new WP_Query($args);
     $results = [];
@@ -53,17 +60,22 @@ function ht_ajax_live_search_handler() {
 
             // Categories
             $cats = get_the_category($post_id);
-            $cat_name = !empty($cats) ? $cats[0]->name : 'সাধারণ';
+            $default_cat = $is_en ? 'General' : 'সাধারণ';
+            $cat_name = !empty($cats) ? $cats[0]->name : $default_cat;
 
             // Decode HTML entities to pure Unicode characters (e.g. &#8211; -> –, &#038; -> &)
             $clean_title = html_entity_decode(wp_specialchars_decode(get_the_title($post_id), ENT_QUOTES), ENT_QUOTES | ENT_HTML5, 'UTF-8');
             $clean_category = html_entity_decode(wp_specialchars_decode($cat_name, ENT_QUOTES), ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
+            $date_display = $is_en 
+                ? get_the_date('M j, Y', $post_id) 
+                : (function_exists('ht_get_localized_post_date') ? ht_get_localized_post_date($post_id) : ht_bn_date(get_post_time('U', false, $post_id)));
+
             $results[] = [
                 'id'        => $post_id,
                 'title'     => $clean_title,
                 'url'       => get_permalink(),
-                'date'      => ht_bn_date(get_post_time('U', false, $post_id)),
+                'date'      => $date_display,
                 'thumbnail' => $thumb,
                 'category'  => $clean_category,
             ];
@@ -129,9 +141,10 @@ function ht_ajax_record_view_handler() {
     }
 
     wp_send_json_success([
-        'status'  => 'incremented',
-        'count'   => $count,
-        'countBn' => ht_bn_number($count)
+        'status'         => 'incremented',
+        'count'          => $count,
+        'countBn'        => ht_bn_number($count),
+        'countFormatted' => function_exists('ht_number') ? ht_number($count) : $count,
     ]);
 }
 add_action('wp_ajax_ht_record_view', 'ht_ajax_record_view_handler');
@@ -161,9 +174,10 @@ function ht_ajax_like_post_handler() {
     update_post_meta($post_id, $count_key, $count);
 
     wp_send_json_success([
-        'count'   => $count,
-        'countBn' => ht_bn_number($count),
-        'message' => esc_html__('Thank you! Your feedback has been recorded.', 'helptrickbd'),
+        'count'          => $count,
+        'countBn'        => ht_bn_number($count),
+        'countFormatted' => function_exists('ht_number') ? ht_number($count) : $count,
+        'message'        => esc_html__('Thank you! Your feedback has been recorded.', 'helptrickbd'),
     ]);
 }
 add_action('wp_ajax_ht_like_post', 'ht_ajax_like_post_handler');

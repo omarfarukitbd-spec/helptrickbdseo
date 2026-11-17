@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.1.1');
+define('HT_THEME_VERSION', '2.1.2');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -389,8 +389,11 @@ add_filter('the_content', 'ht_clean_migrated_post_content', 15);
  */
 function ht_wrap_responsive_tables($content) {
     if (is_singular() && !is_admin()) {
+        $hint_text = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale())
+            ? esc_html__('Scroll horizontally to view complete table', 'helptrickbd')
+            : esc_html__('সম্পূর্ণ তথ্য দেখতে ডানে-বামে স্ক্রোল করুন', 'helptrickbd');
         $pattern = '/<table(?![^>]*class=[\'"][^\'"]*ht-table-responsive)([^>]*)>(.*?)<\/table>/is';
-        $replacement = '<div class="ht-table-responsive"><div class="ht-table-scroll-hint">' . ht_m3_icon('swap_horiz', 16, '', false) . ' <span>সম্পূর্ণ তথ্য দেখতে ডানে-বামে স্ক্রোল করুন</span></div><table$1>$2</table></div>';
+        $replacement = '<div class="ht-table-responsive"><div class="ht-table-scroll-hint">' . ht_m3_icon('swap_horiz', 16, '', false) . ' <span>' . $hint_text . '</span></div><table$1>$2</table></div>';
         $content = preg_replace($pattern, $replacement, $content);
     }
     return $content;

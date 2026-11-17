@@ -25,30 +25,42 @@ if (!defined('ABSPATH')) {
                         <span class="ht-logo-text">HelpTrick<span class="ht-logo-accent">BD</span></span>
                     </a>
                     <p class="ht-footer-desc">
-                        <?php echo esc_html(get_theme_mod('ht_footer_desc', 'হেল্পট্রিকবিডি একটি উন্মুক্ত শিক্ষামূলক তথ্য ও প্রযুক্তি পোর্টাল। এখানে জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষার রুটিন, এসএসসি ও দাখিল সাজেশন, বিসিএস প্রস্তুতি, রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ও তথ্যপ্রযুক্তি নির্দেশিকা নিয়মিত প্রকাশ করা হয়।')); ?>
+                        <?php
+                        $default_footer_desc = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale())
+                            ? 'HelpTrickBD is an open educational information and technology portal offering academic routines, study guides, job prep resources, and IT tutorials.'
+                            : 'হেল্পট্রিকবিডি একটি উন্মুক্ত শিক্ষামূলক তথ্য ও প্রযুক্তি পোর্টাল। এখানে জাতীয় বিশ্ববিদ্যালয়ের পরীক্ষার রুটিন, এসএসসি ও দাখিল সাজেশন, বিসিএস প্রস্তুতি, রাষ্ট্রবিজ্ঞান হ্যান্ডনোট ও তথ্যপ্রযুক্তি নির্দেশিকা নিয়মিত প্রকাশ করা হয়।';
+                        echo esc_html(get_theme_mod('ht_footer_desc', $default_footer_desc));
+                        ?>
                     </p>
                     <div class="ht-footer-trust">
                         <?php ht_m3_icon('verified', 16, 'ht-icon-verified'); ?>
-                        <span><?php echo esc_html(get_theme_mod('ht_footer_trust_text', 'সহজ ভাষায় লেখা শিক্ষামূলক কনটেন্ট')); ?></span>
+                        <span>
+                            <?php
+                            $default_trust = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale())
+                                ? 'Clear & Verified Educational Content'
+                                : 'সহজ ভাষায় লেখা শিক্ষামূলক কনটেন্ট';
+                            echo esc_html(get_theme_mod('ht_footer_trust_text', $default_trust));
+                            ?>
+                        </span>
                     </div>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div class="ht-footer-col">
-                    <h4 class="ht-footer-title"><?php esc_html_e('গুরুত্বপূর্ণ বিষয়সমূহ', 'helptrickbd'); ?></h4>
+                    <h4 class="ht-footer-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Important Topics', 'helptrickbd') : esc_html__('গুরুত্বপূর্ণ বিষয়সমূহ', 'helptrickbd'); ?></h4>
                     <ul class="ht-footer-links">
-                        <li><a href="<?php echo esc_url(home_url('/category/national-university/')); ?>"><?php esc_html_e('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/education-guide/')); ?>"><?php esc_html_e('এডুকেশন ও রুটিন', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/ssc-dakhil/')); ?>"><?php esc_html_e('এসএসসি ও দাখিল সাজেশন', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/political-science/')); ?>"><?php esc_html_e('রাষ্ট্রবিজ্ঞান হ্যান্ডনোট', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/ict-technology/')); ?>"><?php esc_html_e('আইসিটি ও প্রযুক্তি', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/category/job-preparation/')); ?>"><?php esc_html_e('চাকরি ও বিসিএস প্রস্তুতি', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/national-university/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('National University', 'helptrickbd') : esc_html__('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/education-guide/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Education & Routine', 'helptrickbd') : esc_html__('এডুকেশন ও রুটিন', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/ssc-dakhil/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('SSC & Dakhil Suggestions', 'helptrickbd') : esc_html__('এসএসসি ও দাখিল সাজেশন', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/political-science/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Political Science Handnotes', 'helptrickbd') : esc_html__('রাষ্ট্রবিজ্ঞান হ্যান্ডনোট', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/ict-technology/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('ICT & Technology', 'helptrickbd') : esc_html__('আইসিটি ও প্রযুক্তি', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/category/job-preparation/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Career & BCS Preparation', 'helptrickbd') : esc_html__('চাকরি ও বিসিএস প্রস্তুতি', 'helptrickbd'); ?></a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Exam Categories & Guides -->
                 <div class="ht-footer-col">
-                    <h4 class="ht-footer-title"><?php esc_html_e('রুটিন ও গাইড', 'helptrickbd'); ?></h4>
+                    <h4 class="ht-footer-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Routines & Guides', 'helptrickbd') : esc_html__('রুটিন ও গাইড', 'helptrickbd'); ?></h4>
                     <?php if (has_nav_menu('footer-menu')) : ?>
                         <?php
                         wp_nav_menu([
@@ -61,24 +73,24 @@ if (!defined('ABSPATH')) {
                         ?>
                     <?php else : ?>
                         <ul class="ht-footer-links">
-                            <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-routine-2026/')); ?>"><?php esc_html_e('অনার্স ২য় বর্ষ রুটিন ২০২৬', 'helptrickbd'); ?></a></li>
-                            <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-guide-and/')); ?>"><?php esc_html_e('অনার্স প্রমোশন ও পাস মার্ক নিয়ম', 'helptrickbd'); ?></a></li>
-                            <li><a href="<?php echo esc_url(home_url('/dhaka-board-certificate-name-age-correction-guide-2026/')); ?>"><?php esc_html_e('সার্টিফিকেট নাম ও বয়স সংশোধন', 'helptrickbd'); ?></a></li>
-                            <li><a href="<?php echo esc_url(home_url('/nu-cgpa-calculator/')); ?>"><?php esc_html_e('এনইউ সিজিপিএ ক্যালকুলেটর', 'helptrickbd'); ?></a></li>
-                            <li><a href="<?php echo esc_url(home_url('/category/islamic-article/')); ?>"><?php esc_html_e('ইসলামিক প্রবন্ধ ও দোয়া', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-routine-2026/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Honours 2nd Year Routine 2026', 'helptrickbd') : esc_html__('অনার্স ২য় বর্ষ রুটিন ২০২৬', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/nu-honours-2nd-year-exam-guide-and/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Honours Promotion Rules', 'helptrickbd') : esc_html__('অনার্স প্রমোশন ও পাস মার্ক নিয়ম', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/dhaka-board-certificate-name-age-correction-guide-2026/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Certificate Name & Age Correction', 'helptrickbd') : esc_html__('সার্টিফিকেট নাম ও বয়স সংশোধন', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/nu-cgpa-calculator/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('NU CGPA Calculator', 'helptrickbd') : esc_html__('এনইউ সিজিপিএ ক্যালকুলেটর', 'helptrickbd'); ?></a></li>
+                            <li><a href="<?php echo esc_url(home_url('/category/islamic-article/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Islamic Articles & Duas', 'helptrickbd') : esc_html__('ইসলামিক প্রবন্ধ ও দোয়া', 'helptrickbd'); ?></a></li>
                         </ul>
                     <?php endif; ?>
                 </div>
 
                 <!-- Column 4: Legal & Pages -->
                 <div class="ht-footer-col">
-                    <h4 class="ht-footer-title"><?php esc_html_e('Legal & Support', 'helptrickbd'); ?></h4>
+                    <h4 class="ht-footer-title"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Legal & Support', 'helptrickbd') : esc_html__('আইনি ও সহায়তা', 'helptrickbd'); ?></h4>
                     <ul class="ht-footer-links">
-                        <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>"><?php esc_html_e('About Us', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php esc_html_e('Contact Us', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('Privacy Policy', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/terms-conditions/')); ?>"><?php esc_html_e('Terms & Conditions', 'helptrickbd'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>"><?php esc_html_e('Disclaimer', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/about-us/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('About Us', 'helptrickbd') : esc_html__('আমাদের সম্পর্কে', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Contact Us', 'helptrickbd') : esc_html__('যোগাযোগ', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Privacy Policy', 'helptrickbd') : esc_html__('গোপনীয়তা নীতি', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/terms-conditions/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Terms & Conditions', 'helptrickbd') : esc_html__('শর্তাবলী', 'helptrickbd'); ?></a></li>
+                        <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>"><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Disclaimer', 'helptrickbd') : esc_html__('দাবিত্যাগ', 'helptrickbd'); ?></a></li>
                     </ul>
                 </div>
 

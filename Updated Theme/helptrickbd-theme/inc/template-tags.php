@@ -132,11 +132,12 @@ function ht_post_date($post_id = null) {
     if (!$post_id) {
         $post_id = get_the_ID();
     }
+    $date_text = function_exists('ht_get_localized_post_date') ? ht_get_localized_post_date($post_id) : (function_exists('ht_bn_date') ? ht_bn_date(get_post_time('U', false, $post_id)) : get_the_date('', $post_id));
     printf(
         '<time class="ht-meta-item ht-date" datetime="%s">%s %s</time>',
         esc_attr(get_the_date('c', $post_id)),
         ht_m3_icon('event', 16, '', false),
-        esc_html(get_the_date('', $post_id))
+        esc_html($date_text)
     );
 }
 
@@ -155,12 +156,16 @@ function ht_last_updated($post_id = null) {
 
     // Only display if updated more than 24 hours after publishing
     if (($modified_time - $published_time) > 86400) {
+        $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
+        $badge_title = $is_bn ? __('সর্বশেষ হালনাগাদ', 'helptrickbd') : __('Last Updated', 'helptrickbd');
+        $label = $is_bn ? __('হালনাগাদ', 'helptrickbd') : __('Updated', 'helptrickbd');
+        $date_text = function_exists('ht_get_localized_post_date') ? ht_get_localized_post_date($post_id, true) : (function_exists('ht_bn_date') ? ht_bn_date($modified_time) : get_the_modified_date('', $post_id));
         printf(
             '<div class="ht-updated-badge" title="%s">%s <span>%s: %s</span></div>',
-            esc_attr__('সর্বশেষ হালনাগাদ', 'helptrickbd'),
+            esc_attr($badge_title),
             ht_m3_icon('history', 16, '', false),
-            esc_html__('হালনাগাদ', 'helptrickbd'),
-            esc_html(get_the_modified_date('', $post_id))
+            esc_html($label),
+            esc_html($date_text)
         );
     }
 }
@@ -169,11 +174,14 @@ function ht_last_updated($post_id = null) {
  * Render Google E-E-A-T Fact-Checked Verified Badge.
  */
 function ht_eeat_badge() {
+    $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
+    $badge_title = $is_bn ? __('শিক্ষক ও গবেষক দ্বারা তথ্য যাচাইকৃত', 'helptrickbd') : __('Fact-Checked & Verified by Educators', 'helptrickbd');
+    $badge_text = $is_bn ? __('তথ্য যাচাইকৃত', 'helptrickbd') : __('Fact-Checked', 'helptrickbd');
     printf(
         '<div class="ht-eeat-badge" title="%s">%s <span>%s</span></div>',
-        esc_attr__('শিক্ষক ও গবেষক দ্বারা তথ্য যাচাইকৃত', 'helptrickbd'),
+        esc_attr($badge_title),
         ht_m3_icon('verified', 18, 'ht-icon-verified', false),
-        esc_html__('তথ্য যাচাইকৃত', 'helptrickbd')
+        esc_html($badge_text)
     );
 }
 
@@ -301,37 +309,51 @@ function ht_social_share_bar($location = 'bottom', $post_id = null) {
     $tw_url = "https://twitter.com/intent/tweet?text={$title}&url={$encoded_url}";
     $li_url = "https://www.linkedin.com/sharing/share-offsite/?url={$encoded_url}";
 
+    $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
+
     if ($location === 'top') :
+        $share_aria  = $is_bn ? __('গাইডটি শেয়ার করুন', 'helptrickbd') : __('Share this article', 'helptrickbd');
+        $share_label = $is_bn ? __('শেয়ার:', 'helptrickbd') : __('Share:', 'helptrickbd');
+        $fb_aria     = $is_bn ? __('ফেসবুকে শেয়ার করুন', 'helptrickbd') : __('Share on Facebook', 'helptrickbd');
+        $wa_aria     = $is_bn ? __('হোয়াটসঅ্যাপে শেয়ার করুন', 'helptrickbd') : __('Share on WhatsApp', 'helptrickbd');
+        $tg_aria     = $is_bn ? __('টেলিগ্রামে শেয়ার করুন', 'helptrickbd') : __('Share on Telegram', 'helptrickbd');
+        $tw_aria     = $is_bn ? __('এক্স-এ শেয়ার করুন', 'helptrickbd') : __('Share on X', 'helptrickbd');
+        $copy_label  = $is_bn ? __('লিংক কপি করুন', 'helptrickbd') : __('Copy link', 'helptrickbd');
     ?>
-        <div class="ht-share-bar ht-share-top" aria-label="<?php esc_attr_e('গাইডটি শেয়ার করুন', 'helptrickbd'); ?>">
-            <span class="ht-share-label"><?php ht_m3_icon('share', 15); ?> <span><?php esc_html_e('শেয়ার:', 'helptrickbd'); ?></span></span>
+        <div class="ht-share-bar ht-share-top" aria-label="<?php echo esc_attr($share_aria); ?>">
+            <span class="ht-share-label"><?php ht_m3_icon('share', 15); ?> <span><?php echo esc_html($share_label); ?></span></span>
             <div class="ht-share-pills">
-                <a href="<?php echo esc_url($fb_url); ?>" target="_blank" rel="noopener noreferrer" class="ht-share-btn ht-share-fb" aria-label="<?php esc_attr_e('ফেসবুকে শেয়ার করুন', 'helptrickbd'); ?>" title="Facebook">
+                <a href="<?php echo esc_url($fb_url); ?>" target="_blank" rel="noopener noreferrer" class="ht-share-btn ht-share-fb" aria-label="<?php echo esc_attr($fb_aria); ?>" title="Facebook">
                     <?php ht_m3_icon('facebook', 16); ?>
                 </a>
-                <a href="<?php echo esc_url($wa_url); ?>" target="_blank" rel="noopener noreferrer" class="ht-share-btn ht-share-wa" aria-label="<?php esc_attr_e('হোয়াটসঅ্যাপে শেয়ার করুন', 'helptrickbd'); ?>" title="WhatsApp">
+                <a href="<?php echo esc_url($wa_url); ?>" target="_blank" rel="noopener noreferrer" class="ht-share-btn ht-share-wa" aria-label="<?php echo esc_attr($wa_aria); ?>" title="WhatsApp">
                     <?php ht_m3_icon('whatsapp', 16); ?>
                 </a>
-                <a href="<?php echo esc_url($tg_url); ?>" target="_blank" rel="noopener noreferrer" class="ht-share-btn ht-share-tg" aria-label="<?php esc_attr_e('টেলিগ্রামে শেয়ার করুন', 'helptrickbd'); ?>" title="Telegram">
+                <a href="<?php echo esc_url($tg_url); ?>" target="_blank" rel="noopener noreferrer" class="ht-share-btn ht-share-tg" aria-label="<?php echo esc_attr($tg_aria); ?>" title="Telegram">
                     <?php ht_m3_icon('telegram', 16); ?>
                 </a>
-                <a href="<?php echo esc_url($tw_url); ?>" target="_blank" rel="noopener noreferrer" class="ht-share-btn ht-share-tw" aria-label="<?php esc_attr_e('এক্স-এ শেয়ার করুন', 'helptrickbd'); ?>" title="X">
+                <a href="<?php echo esc_url($tw_url); ?>" target="_blank" rel="noopener noreferrer" class="ht-share-btn ht-share-tw" aria-label="<?php echo esc_attr($tw_aria); ?>" title="X">
                     <?php ht_m3_icon('twitter_x', 14); ?>
                 </a>
-                <button type="button" class="ht-share-btn ht-share-copy ht-btn-copy-link" data-url="<?php echo esc_url($permalink); ?>" aria-label="<?php esc_attr_e('লিংক কপি করুন', 'helptrickbd'); ?>" title="<?php esc_attr_e('লিংক কপি করুন', 'helptrickbd'); ?>">
+                <button type="button" class="ht-share-btn ht-share-copy ht-btn-copy-link" data-url="<?php echo esc_url($permalink); ?>" aria-label="<?php echo esc_attr($copy_label); ?>" title="<?php echo esc_attr($copy_label); ?>">
                     <?php ht_m3_icon('link', 16); ?>
                 </button>
             </div>
         </div>
-    <?php else : ?>
-        <div class="ht-share-card ht-share-bottom" aria-label="<?php esc_attr_e('সহপাঠীদের সাথে শেয়ার করুন', 'helptrickbd'); ?>">
+    <?php else : 
+        $bottom_aria  = $is_bn ? __('সহপাঠীদের সাথে শেয়ার করুন', 'helptrickbd') : __('Share with friends and peers', 'helptrickbd');
+        $bottom_title = $is_bn ? __('সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন', 'helptrickbd') : __('Share with classmates and friends', 'helptrickbd');
+        $bottom_sub   = $is_bn ? __('আপনার সহপাঠী ও বন্ধুদের প্রস্তুতিতে সহায়তা করতে সোশ্যাল মিডিয়ায় শেয়ার করুন।', 'helptrickbd') : __('Help your peers with their preparation by sharing this guide.', 'helptrickbd');
+        $copy_btn_txt = $is_bn ? __('লিংক কপি', 'helptrickbd') : __('Copy Link', 'helptrickbd');
+    ?>
+        <div class="ht-share-card ht-share-bottom" aria-label="<?php echo esc_attr($bottom_aria); ?>">
             <div class="ht-share-card-header">
                 <div class="ht-share-icon-wrap">
                     <?php ht_m3_icon('share', 20); ?>
                 </div>
                 <div class="ht-share-card-text">
-                    <h4 class="ht-share-card-title"><?php esc_html_e('সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন', 'helptrickbd'); ?></h4>
-                    <p class="ht-share-card-sub"><?php esc_html_e('আপনার সহপাঠী ও বন্ধুদের প্রস্তুতিতে সহায়তা করতে সোশ্যাল মিডিয়ায় শেয়ার করুন।', 'helptrickbd'); ?></p>
+                    <h4 class="ht-share-card-title"><?php echo esc_html($bottom_title); ?></h4>
+                    <p class="ht-share-card-sub"><?php echo esc_html($bottom_sub); ?></p>
                 </div>
             </div>
             <div class="ht-share-card-btns">
@@ -357,7 +379,7 @@ function ht_social_share_bar($location = 'bottom', $post_id = null) {
                 </a>
                 <button type="button" class="ht-share-large-btn ht-share-copy ht-btn-copy-link" data-url="<?php echo esc_url($permalink); ?>">
                     <?php ht_m3_icon('link', 18); ?>
-                    <span><?php esc_html_e('লিংক কপি', 'helptrickbd'); ?></span>
+                    <span><?php echo esc_html($copy_btn_txt); ?></span>
                 </button>
             </div>
         </div>
@@ -533,13 +555,17 @@ function ht_post_navigation_cards() {
     if (!$prev_post && !$next_post) {
         return;
     }
+    $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
+    $nav_aria   = $is_bn ? __('পোস্ট নেভিগেশন', 'helptrickbd') : __('Post Navigation', 'helptrickbd');
+    $prev_label = $is_bn ? __('পূর্ববর্তী গাইড', 'helptrickbd') : __('Previous Article', 'helptrickbd');
+    $next_label = $is_bn ? __('পরবর্তী গাইড', 'helptrickbd') : __('Next Article', 'helptrickbd');
     ?>
-    <nav class="ht-post-nav-cards" aria-label="<?php esc_attr_e('পোস্ট নেভিগেশন', 'helptrickbd'); ?>">
+    <nav class="ht-post-nav-cards" aria-label="<?php echo esc_attr($nav_aria); ?>">
         <?php if ($prev_post) : ?>
             <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" class="ht-nav-card ht-nav-card-prev">
                 <div class="ht-nav-card-arrow">
                     <?php ht_m3_icon('arrow_back', 18); ?>
-                    <span><?php esc_html_e('পূর্ববর্তী গাইড', 'helptrickbd'); ?></span>
+                    <span><?php echo esc_html($prev_label); ?></span>
                 </div>
                 <div class="ht-nav-card-content">
                     <h4 class="ht-nav-card-title"><?php echo esc_html(get_the_title($prev_post->ID)); ?></h4>
@@ -552,7 +578,7 @@ function ht_post_navigation_cards() {
         <?php if ($next_post) : ?>
             <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" class="ht-nav-card ht-nav-card-next">
                 <div class="ht-nav-card-arrow">
-                    <span><?php esc_html_e('পরবর্তী গাইড', 'helptrickbd'); ?></span>
+                    <span><?php echo esc_html($next_label); ?></span>
                     <?php ht_m3_icon('arrow_forward', 18); ?>
                 </div>
                 <div class="ht-nav-card-content">

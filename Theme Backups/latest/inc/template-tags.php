@@ -17,6 +17,9 @@ if (!defined('ABSPATH')) {
  * @return string Bengali numeral string.
  */
 function ht_bn_number($number) {
+    if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) {
+        return strval($number);
+    }
     $en = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     $bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
     return str_replace($en, $bn, strval($number));
@@ -477,8 +480,9 @@ function ht_author_bio_box($author_id = null) {
     $author_posts_url = get_author_posts_url($author_id);
     $total_posts = count_user_posts($author_id, 'post', true);
     $avatar_url = ht_get_author_avatar_url($author_id);
+    $is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
     ?>
-    <section class="ht-author-bio-card" aria-label="<?php esc_attr_e('লেখক পরিচিতি', 'helptrickbd'); ?>">
+    <section class="ht-author-bio-card" aria-label="<?php echo $is_en ? esc_attr__('About the Author', 'helptrickbd') : esc_attr__('লেখক পরিচিতি', 'helptrickbd'); ?>">
         <div class="ht-author-avatar-col">
             <a href="<?php echo esc_url($author_posts_url); ?>" class="ht-author-avatar-link">
                 <?php if (!empty($avatar_url)) : ?>
@@ -496,9 +500,9 @@ function ht_author_bio_box($author_id = null) {
                         <a href="<?php echo esc_url($author_posts_url); ?>"><?php echo esc_html($author_name); ?></a>
                     </h3>
                 </div>
-                <div class="ht-author-eeat-pill" title="<?php esc_attr_e('গুগল E-E-A-T ভেরিফাইড শিক্ষক ও গবেষক', 'helptrickbd'); ?>">
+                <div class="ht-author-eeat-pill" title="<?php echo $is_en ? esc_attr__('Google E-E-A-T Verified Educator & Researcher', 'helptrickbd') : esc_attr__('গুগল E-E-A-T ভেরিফাইড শিক্ষক ও গবেষক', 'helptrickbd'); ?>">
                     <?php ht_m3_icon('verified', 16, 'ht-icon-verified'); ?>
-                    <span><?php esc_html_e('ভেরিফাইড লেখক', 'helptrickbd'); ?></span>
+                    <span><?php echo $is_en ? esc_html__('Verified Author', 'helptrickbd') : esc_html__('ভেরিফাইড লেখক', 'helptrickbd'); ?></span>
                 </div>
             </div>
             <p class="ht-author-bio-text">
@@ -507,10 +511,10 @@ function ht_author_bio_box($author_id = null) {
             <div class="ht-author-footer-line">
                 <div class="ht-author-stats">
                     <?php ht_m3_icon('auto_stories', 15); ?>
-                    <span><?php esc_html_e('মোট প্রকাশনা:', 'helptrickbd'); ?> <strong><?php echo esc_html(ht_bn_number($total_posts)); ?></strong> <?php esc_html_e('টি হ্যান্ডনোট', 'helptrickbd'); ?></span>
+                    <span><?php echo $is_en ? esc_html__('Total Publications:', 'helptrickbd') : esc_html__('মোট প্রকাশনা:', 'helptrickbd'); ?> <strong><?php echo esc_html(function_exists('ht_number') ? ht_number($total_posts) : ht_bn_number($total_posts)); ?></strong> <?php echo $is_en ? esc_html__('Articles', 'helptrickbd') : esc_html__('টি হ্যান্ডনোট', 'helptrickbd'); ?></span>
                 </div>
                 <a href="<?php echo esc_url($author_posts_url); ?>" class="ht-author-all-posts-link">
-                    <span><?php esc_html_e('লেখকের সকল পোস্ট দেখুন', 'helptrickbd'); ?></span>
+                    <span><?php echo $is_en ? esc_html__('View all posts by author', 'helptrickbd') : esc_html__('লেখকের সকল পোস্ট দেখুন', 'helptrickbd'); ?></span>
                     <?php ht_m3_icon('arrow_forward', 15); ?>
                 </a>
             </div>
