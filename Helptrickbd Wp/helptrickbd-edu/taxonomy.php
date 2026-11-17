@@ -33,10 +33,10 @@ $term_url  = isset($term_obj->term_id) ? esc_url(get_term_link($term_obj)) : esc
 </script>
 
 <div class="ht-container">
-  <nav class="ht-breadcrumb" aria-label="<?php esc_attr_e('ব্রেডক্রাম্ব', 'helptrickbd-edu'); ?>">
-    <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('হোম', 'helptrickbd-edu'); ?></a>
+  <nav class="ht-breadcrumb" aria-label="<?php esc_attr_e('Breadcrumbs', 'helptrickbd-edu'); ?>">
+    <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'helptrickbd-edu'); ?></a>
     <span aria-hidden="true"> › </span>
-    <span><?php esc_html_e('আর্কাইভ', 'helptrickbd-edu'); ?></span>
+    <span><?php esc_html_e('Archive', 'helptrickbd-edu'); ?></span>
     <?php if ($term_name) : ?>
       <span aria-hidden="true"> › </span>
       <span aria-current="page"><?php echo esc_html($term_name); ?></span>
@@ -53,14 +53,14 @@ $term_url  = isset($term_obj->term_id) ? esc_url(get_term_link($term_obj)) : esc
     </div>
 
     <div class="n-toolbar">
-      <span class="lab"><?php esc_html_e('আর্টিকেল তালিকা:', 'helptrickbd-edu'); ?></span>
+      <span class="lab"><?php esc_html_e('Articles:', 'helptrickbd-edu'); ?></span>
       <span class="cnt">
         <?php
         global $wp_query;
         printf(
             /* translators: %s: number of posts */
-            esc_html__('মোট %sটি আর্টিকেল', 'helptrickbd-edu'),
-            esc_html(htbd_bengali_number($wp_query->found_posts))
+            esc_html__('Total %s Articles Found', 'helptrickbd-edu'),
+            esc_html($wp_query->found_posts)
         );
         ?>
       </span>
@@ -97,19 +97,11 @@ $term_url  = isset($term_obj->term_id) ? esc_url(get_term_link($term_obj)) : esc
         ?>
       </div>
 
-      <div class="ht-pagination" style="margin: 32px 0;">
-        <?php
-        the_posts_pagination(array(
-            'mid_size'  => 2,
-            'prev_text' => '&larr; পূর্ববর্তী',
-            'next_text' => 'পরবর্তী &rarr;',
-        ));
-        ?>
-      </div>
+      <?php htbd_advanced_pagination(); ?>
 
     <?php else : ?>
       <div class="ht-no-posts" style="padding: 40px 0; text-align: center;">
-        <p><?php esc_html_e('এই বিভাগে বর্তমানে কোনো পোস্ট পাওয়া যায়নি।', 'helptrickbd-edu'); ?></p>
+        <p><?php esc_html_e('No articles found in this archive.', 'helptrickbd-edu'); ?></p>
       </div>
     <?php endif; ?>
   </div>

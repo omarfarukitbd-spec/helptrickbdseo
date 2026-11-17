@@ -4,9 +4,35 @@
  */
 
 .ht-single-layout {
-  max-width: 880px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: var(--ht-max-width, 1200px);
   margin: 0 auto;
-  padding: 24px 0 48px;
+  padding: 16px 0 48px;
+}
+
+@media (min-width: 1024px) {
+  .ht-single-layout {
+    grid-template-columns: 1fr 340px;
+    gap: 28px;
+    align-items: start;
+  }
+}
+
+.ht-single-main {
+  min-width: 0;
+}
+
+.ht-single-sidebar {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .ht-single-sidebar {
+    position: sticky;
+    top: 80px;
+  }
 }
 
 .ht-single-header {

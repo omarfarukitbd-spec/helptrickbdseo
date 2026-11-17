@@ -13,10 +13,16 @@ if (!get_theme_mod('htbd_show_sec_nu', true)) {
     return;
 }
 
-$sec_title  = get_theme_mod('htbd_sec_nu_title', 'জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা');
+$sec_title  = get_theme_mod('htbd_sec_nu_title', 'National University & Higher Studies');
+if ($sec_title === 'জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা' || $sec_title === 'জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা') {
+    $sec_title = 'National University & Higher Studies';
+}
 $cat_id     = (int) get_theme_mod('htbd_sec_nu_category', 0);
 $post_count = (int) get_theme_mod('htbd_sec_nu_count', 6);
-$link_text  = get_theme_mod('htbd_sec_nu_link_text', 'সব হ্যান্ডনোট →');
+$link_text  = get_theme_mod('htbd_sec_nu_link_text', 'All NU Handnotes →');
+if ($link_text === 'সব হ্যান্ডনোট →' || $link_text === 'সব লেখা →') {
+    $link_text = 'All NU Handnotes →';
+}
 
 $query_args = array(
     'posts_per_page'      => $post_count > 0 ? $post_count : 6,

@@ -837,49 +837,52 @@
 }
 
 .n-social-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
 .n-soc-card {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   background: var(--ht-surface-alt);
   border: 1px solid var(--ht-border);
-  border-radius: 6px;
-  padding: 7px 8px;
+  border-radius: var(--ht-radius, 8px);
+  padding: 8px 12px;
   text-decoration: none;
-  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-  min-height: 42px;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  min-height: 46px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .n-soc-card:hover {
   transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .n-soc-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   flex-shrink: 0;
 }
 
-.n-soc-fb .n-soc-icon { background: rgba(24, 119, 242, 0.1); color: #1877f2; }
-.n-soc-fb:hover { border-color: #1877f2; background: rgba(24, 119, 242, 0.04); }
+.n-soc-fb .n-soc-icon { background: rgba(24, 119, 242, 0.12); color: #1877f2; }
+.n-soc-fb:hover { border-color: #1877f2; background: rgba(24, 119, 242, 0.05); }
 
-.n-soc-yt .n-soc-icon { background: rgba(255, 0, 0, 0.1); color: #ff0000; }
-.n-soc-yt:hover { border-color: #ff0000; background: rgba(255, 0, 0, 0.04); }
+.n-soc-yt .n-soc-icon { background: rgba(255, 0, 0, 0.12); color: #ff0000; }
+.n-soc-yt:hover { border-color: #ff0000; background: rgba(255, 0, 0, 0.05); }
 
-.n-soc-tg .n-soc-icon { background: rgba(34, 158, 217, 0.1); color: #229ed9; }
-.n-soc-tg:hover { border-color: #229ed9; background: rgba(34, 158, 217, 0.04); }
+.n-soc-tg .n-soc-icon { background: rgba(34, 158, 217, 0.12); color: #229ed9; }
+.n-soc-tg:hover { border-color: #229ed9; background: rgba(34, 158, 217, 0.05); }
 
-.n-soc-wa .n-soc-icon { background: rgba(37, 211, 102, 0.1); color: #25d366; }
-.n-soc-wa:hover { border-color: #25d366; background: rgba(37, 211, 102, 0.04); }
+.n-soc-wa .n-soc-icon { background: rgba(37, 211, 102, 0.12); color: #25d366; }
+.n-soc-wa:hover { border-color: #25d366; background: rgba(37, 211, 102, 0.05); }
 
 .n-soc-info {
   display: flex;
@@ -889,29 +892,38 @@
 }
 
 .n-soc-name {
-  font-size: 0.8125rem;
+  font-family: var(--ht-font-serif);
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--ht-text-primary);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .n-soc-sub {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   color: var(--ht-text-muted);
-  line-height: 1.2;
+  line-height: 1.3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .n-soc-btn {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--ht-primary);
   background: var(--ht-primary-soft);
-  padding: 2px 6px;
-  border-radius: 4px;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  padding: 4px 10px;
+  border-radius: var(--ht-radius-full, 999px);
   flex-shrink: 0;
+  transition: var(--ht-transition);
+}
+
+.n-soc-card:hover .n-soc-btn {
+  background: var(--ht-primary);
+  color: #ffffff;
+  border-color: var(--ht-primary);
 }
 
 /* -------------------------------------------------------------------------

@@ -39,7 +39,7 @@ if (!defined('ABSPATH')) {
     the_content();
 
     wp_link_pages(array(
-        'before' => '<div class="page-links">' . esc_html__('পৃষ্ঠা:', 'helptrickbd-edu'),
+        'before' => '<div class="page-links">' . esc_html__('Pages:', 'helptrickbd-edu'),
         'after'  => '</div>',
     ));
     ?>
@@ -58,7 +58,7 @@ if (!defined('ABSPATH')) {
     if (!empty($tags)) :
         ?>
         <div class="ht-post-tags">
-          <span class="ht-tag-label"><?php esc_html_e('ট্যাগসমূহ:', 'helptrickbd-edu'); ?></span>
+          <span class="ht-tag-label"><?php esc_html_e('Tags:', 'helptrickbd-edu'); ?></span>
           <?php foreach ($tags as $tag) : ?>
             <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" class="ht-tag-link">
               #<?php echo esc_html($tag->name); ?>

@@ -101,15 +101,7 @@ $post_count = count_user_posts($author_id);
       </div>
 
       <!-- Pagination -->
-      <div class="n-pagination" style="margin-top:36px;text-align:center;">
-        <?php
-        echo paginate_links(array(
-            'prev_text' => '&laquo; ' . esc_html__('পূর্ববর্তী', 'helptrickbd-edu'),
-            'next_text' => esc_html__('পরবর্তী', 'helptrickbd-edu') . ' &raquo;',
-            'type'      => 'list',
-        ));
-        ?>
-      </div>
+      <?php htbd_advanced_pagination(); ?>
 
     <?php else : ?>
       <p style="text-align:center;padding:40px;color:var(--ht-text-muted);">

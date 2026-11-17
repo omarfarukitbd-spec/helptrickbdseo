@@ -21,7 +21,7 @@ $cat_url     = isset($cat_obj->term_id) ? esc_url(get_category_link($cat_obj->te
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": <?php echo wp_json_encode($cat_name); ?>,
-  "description": <?php echo wp_json_encode($cat_desc ?: $cat_name . ' বিভাগের সকল আর্টিকেল'); ?>,
+  "description": <?php echo wp_json_encode($cat_desc ?: $cat_name . ' Archive - HelpTrickBD'); ?>,
   "url": "<?php echo esc_url($cat_url); ?>",
   "inLanguage": "bn-BD",
   "publisher": {
@@ -33,10 +33,10 @@ $cat_url     = isset($cat_obj->term_id) ? esc_url(get_category_link($cat_obj->te
 </script>
 
 <div class="ht-container">
-  <nav class="ht-breadcrumb" aria-label="<?php esc_attr_e('ব্রেডক্রাম্ব', 'helptrickbd-edu'); ?>">
-    <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('হোম', 'helptrickbd-edu'); ?></a>
+  <nav class="ht-breadcrumb" aria-label="<?php esc_attr_e('Breadcrumbs', 'helptrickbd-edu'); ?>">
+    <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'helptrickbd-edu'); ?></a>
     <span aria-hidden="true"> › </span>
-    <span><?php esc_html_e('ক্যাটাগরি', 'helptrickbd-edu'); ?></span>
+    <span><?php esc_html_e('Categories', 'helptrickbd-edu'); ?></span>
     <?php if ($cat_name) : ?>
       <span aria-hidden="true"> › </span>
       <span aria-current="page"><?php echo esc_html($cat_name); ?></span>
@@ -55,14 +55,14 @@ $cat_url     = isset($cat_obj->term_id) ? esc_url(get_category_link($cat_obj->te
     </div>
 
     <div class="n-toolbar">
-      <span class="lab"><?php esc_html_e('আর্টিকেল তালিকা:', 'helptrickbd-edu'); ?></span>
+      <span class="lab"><?php esc_html_e('Articles:', 'helptrickbd-edu'); ?></span>
       <span class="cnt">
         <?php
         global $wp_query;
         printf(
             /* translators: %s: number of posts */
-            esc_html__('মোট %sটি আর্টিকেল', 'helptrickbd-edu'),
-            esc_html(htbd_bengali_number($wp_query->found_posts))
+            esc_html__('Total %s Articles Found', 'helptrickbd-edu'),
+            esc_html($wp_query->found_posts)
         );
         ?>
       </span>
@@ -99,19 +99,11 @@ $cat_url     = isset($cat_obj->term_id) ? esc_url(get_category_link($cat_obj->te
         ?>
       </div>
 
-      <div class="ht-pagination" style="margin: 32px 0;">
-        <?php
-        the_posts_pagination(array(
-            'mid_size'  => 2,
-            'prev_text' => '&larr; পূর্ববর্তী',
-            'next_text' => 'পরবর্তী &rarr;',
-        ));
-        ?>
-      </div>
+      <?php htbd_advanced_pagination(); ?>
 
     <?php else : ?>
       <div class="ht-no-posts" style="padding: 40px 0; text-align: center;">
-        <p><?php esc_html_e('এই বিভাগে বর্তমানে কোনো পোস্ট পাওয়া যায়নি।', 'helptrickbd-edu'); ?></p>
+        <p><?php esc_html_e('No articles found in this category.', 'helptrickbd-edu'); ?></p>
       </div>
     <?php endif; ?>
   </div>

@@ -128,7 +128,7 @@ if (!function_exists('htbd_edu_customize_register')) {
                 '15px' => esc_html__('১৫ পিক্সেল', 'helptrickbd-edu'),
                 '16px' => esc_html__('১৬ পিক্সেল (আদর্শ)', 'helptrickbd-edu'),
                 '17px' => esc_html__('১৭ পিক্সেল', 'helptrickbd-edu'),
-                '18px' => esc_html__('১৮ পিক্সেল (বড়)', 'helptrickbd-edu'),
+                '18px' => esc_html__('১৮ পিক্সেল (বড)', 'helptrickbd-edu'),
             ),
         ));
 

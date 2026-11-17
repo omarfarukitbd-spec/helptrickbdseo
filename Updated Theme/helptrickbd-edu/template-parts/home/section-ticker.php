@@ -13,7 +13,7 @@ if (!get_theme_mod('htbd_show_ticker', true)) {
     return;
 }
 
-$badge_text = get_theme_mod('htbd_ticker_badge_text', 'সর্বশেষ');
+$badge_text = get_theme_mod('htbd_ticker_badge_text', 'LATEST UPDATES');
 $ticker_count = (int) get_theme_mod('htbd_ticker_count', 5);
 $ticker_cat   = (int) get_theme_mod('htbd_ticker_category', 0);
 

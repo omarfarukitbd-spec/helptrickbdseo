@@ -1,7 +1,7 @@
 <?php
 /**
  * Homepage Sidebar Component: Most Popular Posts & All Categories 2-Column Grid
- * Matches Prothom-alo style numbered list (১-৬) and 2-column categories grid
+ * Matches Flagship Style Numbered List (1-6) and 2-Column Categories Grid
  *
  * @package HelpTrickBD_EduPortal
  */
@@ -53,10 +53,10 @@ $all_cats = get_categories(array(
 ));
 ?>
 <div class="n-home-sidebar-wrap">
-  <!-- Widget 1: সর্বাধিক পঠিত (Prothom-alo Style Underline Tab & Numbers ১-৬) -->
-  <div class="n-popular-widget" aria-label="<?php esc_attr_e('সর্বাধিক পঠিত', 'helptrickbd-edu'); ?>">
+  <!-- Widget 1: Trending Handnotes (Numbered List 1-6) -->
+  <div class="n-popular-widget" aria-label="<?php esc_attr_e('Trending Handnotes', 'helptrickbd-edu'); ?>">
     <div class="n-pop-tab-header">
-      <span class="n-pop-tab active"><?php esc_html_e('সর্বাধিক পঠিত', 'helptrickbd-edu'); ?></span>
+      <span class="n-pop-tab active"><?php esc_html_e('Trending Handnotes', 'helptrickbd-edu'); ?></span>
     </div>
 
     <div class="n-pop-list">
@@ -67,7 +67,7 @@ $all_cats = get_categories(array(
               $popular_query->the_post();
               ?>
               <a href="<?php the_permalink(); ?>" class="n-pop-item">
-                <span class="n-pop-num"><?php echo esc_html(htbd_bengali_number($rank)); ?></span>
+                <span class="n-pop-num"><?php echo esc_html($rank); ?></span>
                 <span class="n-pop-title"><?php the_title(); ?></span>
               </a>
               <?php
@@ -79,10 +79,10 @@ $all_cats = get_categories(array(
     </div>
   </div>
 
-  <!-- Widget 2: সোশ্যাল মিডিয়া ও কমিউনিটি (Facebook, YouTube, Telegram, WhatsApp) -->
-  <div class="n-sidebar-social-widget" aria-label="<?php esc_attr_e('যুক্ত থাকুন', 'helptrickbd-edu'); ?>">
+  <!-- Widget 2: Social Media & Community (Facebook, YouTube, Telegram, WhatsApp) -->
+  <div class="n-sidebar-social-widget" aria-label="<?php esc_attr_e('Stay Connected', 'helptrickbd-edu'); ?>">
     <div class="n-sec-head" style="margin-top:0;margin-bottom:10px;">
-      <h3 style="font-size:1.15rem;"><?php esc_html_e('যুক্ত থাকুন', 'helptrickbd-edu'); ?></h3>
+      <h3 style="font-size:1.15rem;"><?php esc_html_e('Stay Connected', 'helptrickbd-edu'); ?></h3>
       <span class="rule" aria-hidden="true"></span>
     </div>
     <div class="n-social-grid">
@@ -90,41 +90,41 @@ $all_cats = get_categories(array(
         <span class="n-soc-icon"><?php htbd_icon('facebook', array('width' => 18, 'height' => 18)); ?></span>
         <div class="n-soc-info">
           <span class="n-soc-name">Facebook</span>
-          <span class="n-soc-sub">অফিসিয়াল পেজ</span>
+          <span class="n-soc-sub"><?php esc_html_e('Official Page', 'helptrickbd-edu'); ?></span>
         </div>
-        <span class="n-soc-btn">ফলো</span>
+        <span class="n-soc-btn"><?php esc_html_e('Follow', 'helptrickbd-edu'); ?></span>
       </a>
       <a href="https://www.youtube.com/@helptrickbd" target="_blank" rel="noopener noreferrer" class="n-soc-card n-soc-yt">
         <span class="n-soc-icon"><?php htbd_icon('youtube', array('width' => 18, 'height' => 18)); ?></span>
         <div class="n-soc-info">
           <span class="n-soc-name">YouTube</span>
-          <span class="n-soc-sub">ভিডিও লেকচার</span>
+          <span class="n-soc-sub"><?php esc_html_e('Video Tutorials', 'helptrickbd-edu'); ?></span>
         </div>
-        <span class="n-soc-btn">সাবস্ক্রাইব</span>
+        <span class="n-soc-btn"><?php esc_html_e('Subscribe', 'helptrickbd-edu'); ?></span>
       </a>
       <a href="https://t.me/helptrickbd_official" target="_blank" rel="noopener noreferrer" class="n-soc-card n-soc-tg">
         <span class="n-soc-icon"><?php htbd_icon('telegram', array('width' => 18, 'height' => 18)); ?></span>
         <div class="n-soc-info">
           <span class="n-soc-name">Telegram</span>
-          <span class="n-soc-sub">নোটিশ ও সাজেশন</span>
+          <span class="n-soc-sub"><?php esc_html_e('Study Channel', 'helptrickbd-edu'); ?></span>
         </div>
-        <span class="n-soc-btn">যুক্ত হন</span>
+        <span class="n-soc-btn"><?php esc_html_e('Join', 'helptrickbd-edu'); ?></span>
       </a>
       <a href="https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a" target="_blank" rel="noopener noreferrer" class="n-soc-card n-soc-wa">
         <span class="n-soc-icon"><?php htbd_icon('whatsapp', array('width' => 18, 'height' => 18)); ?></span>
         <div class="n-soc-info">
           <span class="n-soc-name">WhatsApp</span>
-          <span class="n-soc-sub">স্টাডি চ্যানেল</span>
+          <span class="n-soc-sub"><?php esc_html_e('Exam Updates', 'helptrickbd-edu'); ?></span>
         </div>
-        <span class="n-soc-btn">যুক্ত হন</span>
+        <span class="n-soc-btn"><?php esc_html_e('Join', 'helptrickbd-edu'); ?></span>
       </a>
     </div>
   </div>
 
-  <!-- Widget 3: সকল বিষয় ও বিভাগ (2-Column Category Cards Grid) -->
-  <div class="n-sidebar-cats-widget" aria-label="<?php esc_attr_e('সকল বিষয় ও বিভাগ', 'helptrickbd-edu'); ?>">
+  <!-- Widget 3: Categories & Departments (2-Column Category Cards Grid) -->
+  <div class="n-sidebar-cats-widget" aria-label="<?php esc_attr_e('Categories & Departments', 'helptrickbd-edu'); ?>">
     <div class="n-sec-head" style="margin-top:0;margin-bottom:10px;">
-      <h3 style="font-size:1.15rem;"><?php esc_html_e('সকল বিষয় ও বিভাগ', 'helptrickbd-edu'); ?></h3>
+      <h3 style="font-size:1.15rem;"><?php esc_html_e('Categories & Departments', 'helptrickbd-edu'); ?></h3>
       <span class="rule" aria-hidden="true"></span>
     </div>
 
@@ -138,7 +138,7 @@ $all_cats = get_categories(array(
               ?>
               <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="n-cat-card">
                 <span class="n-cat-name"><?php echo esc_html($cat->name); ?></span>
-                <span class="n-cat-count"><?php echo esc_html(htbd_bengali_number($cat->count)); ?></span>
+                <span class="n-cat-count"><?php echo esc_html($cat->count); ?></span>
               </a>
               <?php
           endforeach;

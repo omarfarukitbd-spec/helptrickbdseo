@@ -14,18 +14,24 @@ if (!get_theme_mod('htbd_show_sec_filter', true)) {
     return;
 }
 
-$sec_title  = get_theme_mod('htbd_sec_filter_title', 'বিষয়ভিত্তিক পোস্ট');
-$link_text  = get_theme_mod('htbd_sec_filter_link_text', 'সব লেখা →');
+$sec_title  = get_theme_mod('htbd_sec_filter_title', 'Explore by Academic Subject');
+if ($sec_title === 'বিষয়ভিত্তিক পোস্ট') {
+    $sec_title = 'Explore by Academic Subject';
+}
+$link_text  = get_theme_mod('htbd_sec_filter_link_text', 'All Articles →');
+if ($link_text === 'সব লেখা →' || $link_text === 'সব পোস্ট দেখুন →') {
+    $link_text = 'All Articles →';
+}
 
 // Define tabs with verified slugs and display labels
 $tabs = array(
-    'all'                 => 'সব বিষয়',
-    'ssc-dakhil'          => 'এসএসসি ও দাখিল',
-    'political-science'   => 'রাষ্ট্রবিজ্ঞান',
-    'bangla-1st-paper'    => 'বাংলা ১ম পত্র',
-    'islamic-article'     => 'ইসলামিক আর্টিকেল',
-    'national-university' => 'জাতীয় বিশ্ববিদ্যালয়',
-    'ict-technology'      => 'আইসিটি ও প্রযুক্তি',
+    'all'                 => 'All Subjects',
+    'ssc-dakhil'          => 'SSC & Dakhil',
+    'political-science'   => 'Political Science',
+    'bangla-1st-paper'    => 'Bangla 1st Paper',
+    'islamic-article'     => 'Islamic Articles',
+    'national-university' => 'National University',
+    'ict-technology'      => 'ICT & Technology',
 );
 
 // Collect posts for each tab ensuring every tab has 6 relevant posts

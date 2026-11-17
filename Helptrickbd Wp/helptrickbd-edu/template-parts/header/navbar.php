@@ -18,9 +18,9 @@ $categories = get_categories(array(
 ?>
 <div class="n-navwrap">
   <div class="ht-container">
-    <nav class="n-nav-inner" aria-label="<?php esc_attr_e('প্রধান ন্যাভিগেশন', 'helptrickbd-edu'); ?>">
+    <nav class="n-nav-inner" aria-label="<?php esc_attr_e('Main Navigation', 'helptrickbd-edu'); ?>">
       <!-- Mobile Drawer Toggle Button -->
-      <button type="button" id="ht-drawer-toggle" class="n-mobile-toggle" aria-label="<?php esc_attr_e('মেনু খুলুন', 'helptrickbd-edu'); ?>">
+      <button type="button" id="ht-drawer-toggle" class="n-mobile-toggle" aria-label="<?php esc_attr_e('Open Menu', 'helptrickbd-edu'); ?>">
         <?php htbd_icon('menu', array('width' => 22, 'height' => 22)); ?>
       </button>
 

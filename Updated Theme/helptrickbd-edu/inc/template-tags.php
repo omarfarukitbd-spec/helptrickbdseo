@@ -149,7 +149,7 @@ if (!function_exists('htbd_reading_time')) {
     function htbd_reading_time($post_id = null) {
         $post = get_post($post_id);
         if (!$post) {
-            return '১ মিনিট পাঠ';
+            return '1 min read';
         }
 
         $content    = strip_tags(strip_shortcodes($post->post_content));
@@ -157,7 +157,7 @@ if (!function_exists('htbd_reading_time')) {
         $word_count = count($words);
         $minutes    = max(1, (int) ceil($word_count / 200));
 
-        return htbd_bengali_number($minutes) . ' মিনিট পাঠ';
+        return $minutes . ' min read';
     }
 }
 
@@ -690,5 +690,100 @@ if (!function_exists('htbd_output_blogposting_schema')) {
         echo '<script type="application/ld+json">' . "\n";
         echo wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . "\n";
         echo '</script>' . "\n";
+    }
+}
+
+if (!function_exists('htbd_advanced_pagination')) {
+    /**
+     * Renders modern advanced pagination with status info and numbered buttons.
+     *
+     * @param WP_Query|null $query Custom query or defaults to global $wp_query.
+     */
+    function htbd_advanced_pagination($query = null) {
+        if (!$query) {
+            global $wp_query;
+            $query = $wp_query;
+        }
+
+        $total_pages = (int) $query->max_num_pages;
+        if ($total_pages <= 1) {
+            return;
+        }
+
+        $current_page = max(1, get_query_var('paged'), get_query_var('page'));
+        $total_posts  = (int) $query->found_posts;
+        $posts_per_page = (int) $query->get('posts_per_page');
+        if ($posts_per_page <= 0) {
+            $posts_per_page = (int) get_option('posts_per_page', 10);
+        }
+
+        $start_post = (($current_page - 1) * $posts_per_page) + 1;
+        $end_post   = min($current_page * $posts_per_page, $total_posts);
+
+        echo '<nav class="ht-adv-pagination" aria-label="' . esc_attr__('Pagination Navigation', 'helptrickbd-edu') . '">';
+        
+        // Page status info bar
+        echo '<div class="ht-adv-page-info">';
+        printf(
+            /* translators: 1: current page, 2: total pages, 3: start post, 4: end post, 5: total posts */
+            esc_html__('Page %1$d of %2$d • Showing %3$d–%4$d of %5$d Articles', 'helptrickbd-edu'),
+            $current_page,
+            $total_pages,
+            $start_post,
+            $end_post,
+            $total_posts
+        );
+        echo '</div>';
+
+        // Page buttons list
+        echo '<ul class="ht-adv-page-list">';
+
+        // « First button
+        if ($current_page > 1) {
+            echo '<li class="ht-adv-item"><a href="' . esc_url(get_pagenum_link(1)) . '" class="ht-adv-btn ht-adv-first" aria-label="' . esc_attr__('First Page', 'helptrickbd-edu') . '">&laquo; First</a></li>';
+            echo '<li class="ht-adv-item"><a href="' . esc_url(get_pagenum_link($current_page - 1)) . '" class="ht-adv-btn ht-adv-prev" aria-label="' . esc_attr__('Previous Page', 'helptrickbd-edu') . '">&lsaquo; Prev</a></li>';
+        } else {
+            echo '<li class="ht-adv-item disabled"><span class="ht-adv-btn ht-adv-first" aria-disabled="true">&laquo; First</span></li>';
+            echo '<li class="ht-adv-item disabled"><span class="ht-adv-btn ht-adv-prev" aria-disabled="true">&lsaquo; Prev</span></li>';
+        }
+
+        // Numbered buttons with ellipsis
+        $mid_size = 2;
+        $start_loop = max(1, $current_page - $mid_size);
+        $end_loop   = min($total_pages, $current_page + $mid_size);
+
+        if ($start_loop > 1) {
+            echo '<li class="ht-adv-item"><a href="' . esc_url(get_pagenum_link(1)) . '" class="ht-adv-btn ht-adv-num">1</a></li>';
+            if ($start_loop > 2) {
+                echo '<li class="ht-adv-item ht-adv-dots"><span>&hellip;</span></li>';
+            }
+        }
+
+        for ($i = $start_loop; $i <= $end_loop; $i++) {
+            if ($i === $current_page) {
+                echo '<li class="ht-adv-item active"><span class="ht-adv-btn ht-adv-num active" aria-current="page">' . esc_html($i) . '</span></li>';
+            } else {
+                echo '<li class="ht-adv-item"><a href="' . esc_url(get_pagenum_link($i)) . '" class="ht-adv-btn ht-adv-num">' . esc_html($i) . '</a></li>';
+            }
+        }
+
+        if ($end_loop < $total_pages) {
+            if ($end_loop < $total_pages - 1) {
+                echo '<li class="ht-adv-item ht-adv-dots"><span>&hellip;</span></li>';
+            }
+            echo '<li class="ht-adv-item"><a href="' . esc_url(get_pagenum_link($total_pages)) . '" class="ht-adv-btn ht-adv-num">' . esc_html($total_pages) . '</a></li>';
+        }
+
+        // Next › and Last » buttons
+        if ($current_page < $total_pages) {
+            echo '<li class="ht-adv-item"><a href="' . esc_url(get_pagenum_link($current_page + 1)) . '" class="ht-adv-btn ht-adv-next" aria-label="' . esc_attr__('Next Page', 'helptrickbd-edu') . '">Next &rsaquo;</a></li>';
+            echo '<li class="ht-adv-item"><a href="' . esc_url(get_pagenum_link($total_pages)) . '" class="ht-adv-btn ht-adv-last" aria-label="' . esc_attr__('Last Page', 'helptrickbd-edu') . '">Last &raquo;</a></li>';
+        } else {
+            echo '<li class="ht-adv-item disabled"><span class="ht-adv-btn ht-adv-next" aria-disabled="true">Next &rsaquo;</span></li>';
+            echo '<li class="ht-adv-item disabled"><span class="ht-adv-btn ht-adv-last" aria-disabled="true">Last &raquo;</span></li>';
+        }
+
+        echo '</ul>';
+        echo '</nav>';
     }
 }

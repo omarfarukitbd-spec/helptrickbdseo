@@ -80,15 +80,7 @@ $found_posts  = $wp_query->found_posts;
       </div>
 
       <!-- Pagination -->
-      <div class="n-pagination" style="margin-top:36px;text-align:center;">
-        <?php
-        echo paginate_links(array(
-            'prev_text' => '&laquo; ' . esc_html__('পূর্ববর্তী', 'helptrickbd-edu'),
-            'next_text' => esc_html__('পরবর্তী', 'helptrickbd-edu') . ' &raquo;',
-            'type'      => 'list',
-        ));
-        ?>
-      </div>
+      <?php htbd_advanced_pagination(); ?>
 
     <?php else : ?>
       <!-- Comprehensive Empty State -->

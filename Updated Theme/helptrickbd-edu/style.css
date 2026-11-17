@@ -4,7 +4,7 @@ Theme URI: https://www.helptrickbd.com/
 Author: HelpTrickBD Engineering Team
 Author URI: https://www.helptrickbd.com/
 Description: Ultra-fast, responsive Newspaper & Educational Portal WordPress theme designed for high Core Web Vitals, E-E-A-T academic authority, and seamless mobile learning experience.
-Version: 1.4.0
+Version: 1.5.0
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
@@ -43,9 +43,9 @@ Tags: education, newspaper, blog, grid-layout, two-columns, custom-menu, feature
   --ht-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
   --ht-card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
 
-  /* Typography Scale */
-  --ht-font-sans: "SolaimanLipi", "Hind Siliguri", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --ht-font-serif: "Noto Serif Bengali", "SolaimanLipi", Georgia, serif;
+  /* Typography Scale: Heading Shurjo, Body SolaimanLipi */
+  --ht-font-sans: "SolaimanLipi", "Siyam Rupali", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ht-font-serif: "Shurjo", Georgia, "Times New Roman", serif;
   
   /* Font Resizer Dynamic Multipliers (Default Medium = 100%) */
   --ht-font-scale: 1;

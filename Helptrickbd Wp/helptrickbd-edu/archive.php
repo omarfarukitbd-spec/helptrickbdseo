@@ -44,14 +44,14 @@ get_header();
     </div>
 
     <div class="n-toolbar">
-      <span class="lab"><?php esc_html_e('হ্যান্ডনোট তালিকা:', 'helptrickbd-edu'); ?></span>
+      <span class="lab"><?php esc_html_e('Articles:', 'helptrickbd-edu'); ?></span>
       <span class="cnt">
         <?php
         global $wp_query;
         printf(
             /* translators: %s: number of posts */
-            esc_html__('মোট %sটি আর্টিকেল', 'helptrickbd-edu'),
-            esc_html(htbd_bengali_number($wp_query->found_posts))
+            esc_html__('Total %s Articles Found', 'helptrickbd-edu'),
+            esc_html($wp_query->found_posts)
         );
         ?>
       </span>
@@ -88,20 +88,11 @@ get_header();
         ?>
       </div>
 
-      <!-- Numeric Pagination -->
-      <div class="ht-pagination" style="margin: 32px 0;">
-        <?php
-        the_posts_pagination(array(
-            'mid_size'  => 2,
-            'prev_text' => '&larr; পূর্ববর্তী',
-            'next_text' => 'পরবর্তী &rarr;',
-        ));
-        ?>
-      </div>
+      <?php htbd_advanced_pagination(); ?>
 
     <?php else : ?>
       <div class="ht-no-posts" style="padding: 40px 0; text-align: center;">
-        <p><?php esc_html_e('এই বিভাগে বর্তমানে কোনো পোস্ট পাওয়া যায়নি।', 'helptrickbd-edu'); ?></p>
+        <p><?php esc_html_e('No articles found in this archive.', 'helptrickbd-edu'); ?></p>
       </div>
     <?php endif; ?>
   </div>

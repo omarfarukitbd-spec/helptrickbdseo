@@ -13,10 +13,16 @@ if (!get_theme_mod('htbd_show_sec_gallery', true)) {
     return;
 }
 
-$sec_title  = get_theme_mod('htbd_sec_gallery_title', 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড');
+$sec_title  = get_theme_mod('htbd_sec_gallery_title', 'Visual Study Guides & Infographics');
+if ($sec_title === 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড') {
+    $sec_title = 'Visual Study Guides & Infographics';
+}
 $cat_id     = (int) get_theme_mod('htbd_sec_gallery_category', 0);
 $post_count = (int) get_theme_mod('htbd_sec_gallery_count', 4);
-$link_text  = get_theme_mod('htbd_sec_gallery_link_text', 'সকল গ্যালারি →');
+$link_text  = get_theme_mod('htbd_sec_gallery_link_text', 'View Gallery →');
+if ($link_text === 'সকল গ্যালারি →') {
+    $link_text = 'View Gallery →';
+}
 
 $query_args = array(
     'posts_per_page'      => $post_count > 0 ? $post_count : 4,

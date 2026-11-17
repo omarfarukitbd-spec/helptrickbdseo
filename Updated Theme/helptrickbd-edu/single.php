@@ -14,7 +14,7 @@ get_header();
 
 <div class="ht-container">
   <div class="ht-single-layout">
-    <div class="ht-single-main">
+    <main class="ht-single-main" id="primary">
       <?php
       while (have_posts()) :
           the_post();
@@ -29,7 +29,10 @@ get_header();
           comments_template();
       endif;
       ?>
-    </div>
+    </main>
+    <aside class="ht-single-sidebar" aria-label="<?php esc_attr_e('Sidebar', 'helptrickbd-edu'); ?>">
+      <?php get_sidebar(); ?>
+    </aside>
   </div>
 </div>
 

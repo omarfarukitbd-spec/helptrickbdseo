@@ -32,7 +32,7 @@ $ht_author_url  = get_author_posts_url($ht_author_id);
       <span><?php echo esc_html(htbd_reading_time()); ?></span>
     </span>
 
-    <button type="button" class="ht-bookmark-btn" data-post-id="<?php the_ID(); ?>" data-post-title="<?php echo esc_attr(get_the_title()); ?>" data-post-url="<?php echo esc_url(get_permalink()); ?>" aria-label="<?php esc_attr_e('হ্যান্ডনোট সংরক্ষণ করুন', 'helptrickbd-edu'); ?>" title="<?php esc_attr_e('সংরক্ষণ করুন', 'helptrickbd-edu'); ?>">
+    <button type="button" class="ht-bookmark-btn" data-post-id="<?php the_ID(); ?>" data-post-title="<?php echo esc_attr(get_the_title()); ?>" data-post-url="<?php echo esc_url(get_permalink()); ?>" aria-label="<?php esc_attr_e('Bookmark this handnote', 'helptrickbd-edu'); ?>" title="<?php esc_attr_e('Save Handnote', 'helptrickbd-edu'); ?>">
       <?php htbd_icon('bookmark', array('width' => 16, 'height' => 16)); ?>
     </button>
   </div>

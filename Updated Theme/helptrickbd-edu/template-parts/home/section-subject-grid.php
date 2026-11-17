@@ -14,9 +14,15 @@ if (!get_theme_mod('htbd_show_sec_ssc', true)) {
     return;
 }
 
-$sec_title     = get_theme_mod('htbd_sec_ssc_title', 'এসএসসি / দাখিল');
+$sec_title     = get_theme_mod('htbd_sec_ssc_title', 'SSC & Dakhil Examination Hub');
+if ($sec_title === 'এসএসসি / দাখিল') {
+    $sec_title = 'SSC & Dakhil Examination Hub';
+}
 $cat_id        = (int) get_theme_mod('htbd_sec_ssc_category', 0);
-$link_text     = get_theme_mod('htbd_sec_ssc_link_text', 'সব লেখা →');
+$link_text     = get_theme_mod('htbd_sec_ssc_link_text', 'View All Handnotes →');
+if ($link_text === 'সব লেখা →' || $link_text === 'সব পোস্ট দেখুন →') {
+    $link_text = 'View All Handnotes →';
+}
 
 // Strict SSC & Dakhil Category Resolution
 $target_term_id = 0;

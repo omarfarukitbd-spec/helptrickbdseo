@@ -99,15 +99,7 @@ get_header();
         ?>
       </div>
 
-      <div class="ht-pagination" style="margin: 32px 0;">
-        <?php
-        the_posts_pagination(array(
-            'mid_size'  => 2,
-            'prev_text' => '&larr; পূর্ববর্তী',
-            'next_text' => 'পরবর্তী &rarr;',
-        ));
-        ?>
-      </div>
+      <?php htbd_advanced_pagination(); ?>
 
     <?php else : ?>
       <div class="ht-no-posts" style="padding: 40px 0; text-align: center;">

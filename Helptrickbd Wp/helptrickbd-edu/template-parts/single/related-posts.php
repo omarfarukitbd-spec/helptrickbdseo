@@ -28,9 +28,9 @@ if (!$related_query->have_posts()) {
     return;
 }
 ?>
-<section class="ht-related-section" aria-label="<?php esc_attr_e('সম্পর্কিত গুরুত্বপূর্ণ হ্যান্ডনোট', 'helptrickbd-edu'); ?>">
+<section class="ht-related-section" aria-label="<?php esc_attr_e('Related Handnotes & Suggestions', 'helptrickbd-edu'); ?>">
   <div class="n-sec-head">
-    <h3><?php esc_html_e('সম্পর্কিত গুরুত্বপূর্ণ হ্যান্ডনোট', 'helptrickbd-edu'); ?></h3>
+    <h3><?php esc_html_e('Related Handnotes & Suggestions', 'helptrickbd-edu'); ?></h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
 

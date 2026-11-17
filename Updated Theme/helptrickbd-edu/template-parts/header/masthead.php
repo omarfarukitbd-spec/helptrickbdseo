@@ -43,7 +43,7 @@ if (stripos($display_brand, '.com') === false) {
       </div>
 
       <div class="n-brand-right">
-        <button type="button" class="n-masthead-search-btn ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান', 'helptrickbd-edu'); ?>">
+        <button type="button" class="n-masthead-search-btn ht-search-trigger" aria-label="<?php esc_attr_e('Search', 'helptrickbd-edu'); ?>">
           <?php htbd_icon('search', array('width' => 20, 'height' => 20)); ?>
         </button>
       </div>

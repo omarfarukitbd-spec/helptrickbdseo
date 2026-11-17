@@ -14,9 +14,9 @@ if (!get_theme_mod('htbd_show_lead_hero', true)) {
 }
 
 $hero_cat   = (int) get_theme_mod('htbd_hero_category', 0);
-$badge_text = get_theme_mod('htbd_hero_badge_text', 'সর্বশেষ পোস্ট');
-if (empty($badge_text) || $badge_text === 'নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড') {
-    $badge_text = 'সর্বশেষ পোস্ট';
+$badge_text = get_theme_mod('htbd_hero_badge_text', 'LATEST POSTS');
+if (empty($badge_text) || $badge_text === 'নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড' || $badge_text === 'সর্বশেষ পোস্ট') {
+    $badge_text = 'LATEST POSTS';
 }
 
 $query_args = array(
@@ -57,7 +57,7 @@ if (!$lead_post) {
     return;
 }
 ?>
-<section class="n-lead" aria-label="<?php esc_attr_e('প্রধান সংবাদ ও নির্বাচিত হ্যান্ডনোট', 'helptrickbd-edu'); ?>">
+<section class="n-lead" aria-label="<?php esc_attr_e('Featured and Latest Articles', 'helptrickbd-edu'); ?>">
   <!-- Main Lead Article (Left 65%) -->
   <article>
     <span class="n-kicker">
