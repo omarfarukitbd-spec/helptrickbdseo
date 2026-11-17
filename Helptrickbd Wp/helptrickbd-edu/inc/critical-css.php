@@ -36,8 +36,14 @@ if (!function_exists('htbd_inline_critical_css')) {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('https://cdn.jsdelivr.net/gh/maateen/solaimanlipi@master/font/SolaimanLipi.woff2') format('woff2'),
-       url('https://cdn.jsdelivr.net/gh/maateen/solaimanlipi@master/font/SolaimanLipi.woff') format('woff');
+  src: url('<?php echo esc_url(get_template_directory_uri() . '/assets/fonts/SolaimanLipi_400.woff2'); ?>') format('woff2');
+}
+@font-face {
+  font-family: 'SolaimanLipi';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('<?php echo esc_url(get_template_directory_uri() . '/assets/fonts/SolaimanLipi_700.woff2'); ?>') format('woff2');
 }
 /* ==========================================================================
    1. CSS Custom Properties (Tokens)

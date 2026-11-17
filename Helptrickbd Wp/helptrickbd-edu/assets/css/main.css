@@ -110,18 +110,38 @@
 
 @font-face {
   font-family: 'SolaimanLipi';
-  src: url('https://cdn.jsdelivr.net/gh/maateen/solaimanlipi@master/font/SolaimanLipi.woff2') format('woff2'),
-       url('https://cdn.jsdelivr.net/gh/maateen/solaimanlipi@master/font/SolaimanLipi.woff') format('woff');
-  font-weight: normal;
+  src: url('../fonts/SolaimanLipi_400.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--ht-font-serif);
+@font-face {
+  font-family: 'SolaimanLipi';
+  src: url('../fonts/SolaimanLipi_700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'SolaimanLipi', 'Siyam Rupali', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.n-lead-title,
+.ht-single-title,
+.n-sec-head h3,
+.n-pop-title,
+.n-item h4,
+.n-trow h4,
+.n-lrow .lt-t,
+.n-pcard h4,
+.n-archive-card-title {
+  font-family: 'Shurjo', Georgia, serif !important;
   color: var(--ht-text-primary);
   line-height: 1.35;
-  font-weight: 700;
+  font-weight: 700 !important;
   margin-bottom: 0.5rem;
 }
 

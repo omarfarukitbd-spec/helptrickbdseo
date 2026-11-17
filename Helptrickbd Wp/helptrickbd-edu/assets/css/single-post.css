@@ -44,9 +44,9 @@
 }
 
 .ht-single-title {
-  font-family: var(--ht-font-serif);
+  font-family: 'Shurjo', Georgia, serif !important;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 800;
+  font-weight: 700 !important;
   line-height: 1.35;
   color: var(--ht-text-primary);
   margin-bottom: 16px;
@@ -105,17 +105,33 @@
   object-fit: cover;
 }
 
-/* Article Body Typography */
+/* Article Body Typography (Strict SolaimanLipi Enforcement) */
 .ht-entry-content {
+  font-family: 'SolaimanLipi', 'Siyam Rupali', sans-serif !important;
   font-size: 1.125rem;
   line-height: 1.8;
   color: var(--ht-text-secondary);
 }
 
+.ht-entry-content p,
+.ht-entry-content li,
+.ht-entry-content div,
+.ht-entry-content td,
+.ht-entry-content th,
+.ht-entry-content blockquote {
+  font-family: 'SolaimanLipi', 'Siyam Rupali', sans-serif !important;
+}
+
+.ht-entry-content strong,
+.ht-entry-content b {
+  font-family: 'SolaimanLipi', 'Siyam Rupali', sans-serif !important;
+  font-weight: 700;
+}
+
 .ht-entry-content h2 {
-  font-family: var(--ht-font-serif);
+  font-family: 'Shurjo', Georgia, serif !important;
   font-size: 1.625rem;
-  font-weight: 800;
+  font-weight: 700 !important;
   margin: 36px 0 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--ht-border);
@@ -123,9 +139,9 @@
 }
 
 .ht-entry-content h3 {
-  font-family: var(--ht-font-serif);
+  font-family: 'Shurjo', Georgia, serif !important;
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 700 !important;
   margin: 28px 0 12px;
   color: var(--ht-text-primary);
 }
