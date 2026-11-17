@@ -2,7 +2,7 @@
 /**
  * Header Topbar Component (Dateline, Font Resizer, Search Trigger, Theme Toggle)
  *
- * @package HelpTrickBD_EduPortal
+ * @package HelpTrickBD_Pro
  */
 
 if (!defined('ABSPATH')) {
@@ -20,26 +20,26 @@ if (!defined('ABSPATH')) {
 
       <div class="n-dateline-right">
         <!-- Newspaper Font Resizer Bar -->
-        <div class="n-fsbar" role="group" aria-label="<?php esc_attr_e('Text Size Controller', 'helptrickbd-edu'); ?>">
-          <span><?php esc_html_e('Text:', 'helptrickbd-edu'); ?></span>
-          <button type="button" class="n-fsbtn" data-scale="sm"><?php esc_html_e('Small', 'helptrickbd-edu'); ?></button>
-          <button type="button" class="n-fsbtn active" data-scale="md"><?php esc_html_e('Normal', 'helptrickbd-edu'); ?></button>
-          <button type="button" class="n-fsbtn" data-scale="lg"><?php esc_html_e('Large', 'helptrickbd-edu'); ?></button>
+        <div class="n-fsbar" role="group" aria-label="<?php esc_attr_e('ফন্ট সাইজ নিয়ন্ত্রক', 'helptrickbd'); ?>">
+          <span><?php esc_html_e('ফন্ট:', 'helptrickbd'); ?></span>
+          <button type="button" class="n-fsbtn" data-scale="sm"><?php esc_html_e('ছোট', 'helptrickbd'); ?></button>
+          <button type="button" class="n-fsbtn active" data-scale="md"><?php esc_html_e('স্বাভাবিক', 'helptrickbd'); ?></button>
+          <button type="button" class="n-fsbtn" data-scale="lg"><?php esc_html_e('বড়', 'helptrickbd'); ?></button>
         </div>
 
         <!-- Spotlight Search Trigger -->
-        <button type="button" class="ht-icon-btn ht-search-trigger" aria-label="<?php esc_attr_e('Search articles', 'helptrickbd-edu'); ?>" title="<?php esc_attr_e('Search', 'helptrickbd-edu'); ?>">
+        <button type="button" class="ht-icon-btn ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান করুন', 'helptrickbd'); ?>" title="<?php esc_attr_e('অনুসন্ধান', 'helptrickbd'); ?>">
           <?php htbd_icon('search', array('width' => 16, 'height' => 16)); ?>
         </button>
 
         <!-- Saved Bookmarks Drawer Trigger -->
-        <button type="button" id="ht-bookmark-trigger" class="ht-icon-btn" aria-label="<?php esc_attr_e('Saved Handnotes', 'helptrickbd-edu'); ?>" title="<?php esc_attr_e('Saved Handnotes', 'helptrickbd-edu'); ?>" style="position:relative;">
+        <button type="button" id="ht-bookmark-trigger" class="ht-icon-btn" aria-label="<?php esc_attr_e('পড়ার তালিকা', 'helptrickbd'); ?>" title="<?php esc_attr_e('পড়ার তালিকা', 'helptrickbd'); ?>" style="position:relative;">
           <?php htbd_icon('bookmark', array('width' => 16, 'height' => 16)); ?>
           <span id="ht-bookmark-badge" style="display:none;position:absolute;top:-4px;right:-4px;background:var(--ht-accent);color:#ffffff;font-size:0.65rem;font-weight:700;padding:1px 5px;border-radius:999px;line-height:1.2;">0</span>
         </button>
 
         <!-- Dark / Light Theme Toggle -->
-        <button type="button" id="ht-theme-toggle" class="ht-icon-btn" aria-label="<?php esc_attr_e('Toggle Dark or Light Mode', 'helptrickbd-edu'); ?>">
+        <button type="button" id="ht-theme-toggle" class="ht-icon-btn" aria-label="<?php esc_attr_e('ডার্ক বা লাইট মোড পরিবর্তন করুন', 'helptrickbd'); ?>">
           <?php htbd_icon('moon', array('width' => 16, 'height' => 16)); ?>
         </button>
       </div>

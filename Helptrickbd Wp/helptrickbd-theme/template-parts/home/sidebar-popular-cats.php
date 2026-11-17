@@ -10,12 +10,19 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// 1. Query Top 6 Most-Viewed Posts with 6-Hour Transient Caching to Prevent MySQL Query Bloat
+$popular_enabled = get_theme_mod('ht_sidebar_popular_enable', true);
+$popular_title   = get_theme_mod('ht_sidebar_popular_title', 'জনপ্রিয় ও আলোচিত হ্যান্ডনোট');
+$popular_count   = (int) get_theme_mod('ht_sidebar_popular_count', 6);
+if ($popular_count < 1) {
+    $popular_count = 6;
+}
+
+// 1. Query Top Most-Viewed Posts with 6-Hour Transient Caching
 $popular_post_ids = get_transient('ht_sidebar_pop_ids');
 
 if (false === $popular_post_ids) {
     $pop_q = new WP_Query(array(
-        'posts_per_page'      => 6,
+        'posts_per_page'      => $popular_count,
         'post_status'         => 'publish',
         'meta_key'            => 'ht_post_views_count',
         'orderby'             => 'meta_value_num date',
@@ -28,7 +35,7 @@ if (false === $popular_post_ids) {
     // Fallback 1: htbd_post_views_count
     if (empty($pop_q->posts)) {
         $pop_q = new WP_Query(array(
-            'posts_per_page'      => 6,
+            'posts_per_page'      => $popular_count,
             'post_status'         => 'publish',
             'meta_key'            => 'htbd_post_views_count',
             'orderby'             => 'meta_value_num date',
@@ -42,7 +49,7 @@ if (false === $popular_post_ids) {
     // Fallback 2: Comment count + date
     if (empty($pop_q->posts)) {
         $pop_q = new WP_Query(array(
-            'posts_per_page'      => 6,
+            'posts_per_page'      => $popular_count,
             'post_status'         => 'publish',
             'orderby'             => 'comment_count date',
             'order'               => 'DESC',
@@ -56,23 +63,17 @@ if (false === $popular_post_ids) {
     set_transient('ht_sidebar_pop_ids', $popular_post_ids, 6 * HOUR_IN_SECONDS);
 }
 
-// 2. Fetch All Valid Categories
-$all_cats = get_categories(array(
-    'orderby'    => 'count',
-    'order'      => 'DESC',
-    'hide_empty' => true,
-));
-
 $fb_url = get_theme_mod('ht_facebook_url', 'https://facebook.com/helptrickbd');
 $yt_url = get_theme_mod('ht_youtube_url', 'https://www.youtube.com/@helptrickbd');
 $tg_url = get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd_official');
 $wa_url = get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a');
 ?>
 <div class="n-home-sidebar-wrap">
+  <?php if ($popular_enabled) : ?>
   <!-- Widget 1: Trending Handnotes (Numbered List 1-6) -->
   <div class="n-popular-widget" aria-label="<?php esc_attr_e('জনপ্রিয় হ্যান্ডনোট', 'helptrickbd'); ?>">
     <div class="n-pop-tab-header">
-      <span class="n-pop-tab active"><?php esc_html_e('জনপ্রিয় ও আলোচিত হ্যান্ডনোট', 'helptrickbd'); ?></span>
+      <span class="n-pop-tab active"><?php echo esc_html($popular_title); ?></span>
     </div>
 
     <div class="n-pop-list">
@@ -104,6 +105,7 @@ $wa_url = get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb9
       ?>
     </div>
   </div>
+  <?php endif; ?>
 
   <!-- Widget 2: Sticky Sidebar Google AdSlot (Restored for 100% Monetization Safety) -->
   <?php if (get_theme_mod('ht_sidebar_ad_enable', true)) : ?>
@@ -166,32 +168,6 @@ $wa_url = get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb9
           <span class="n-soc-btn"><?php esc_html_e('যুক্ত হোন', 'helptrickbd'); ?></span>
         </a>
       <?php endif; ?>
-    </div>
-  </div>
-
-  <!-- Widget 4: Categories & Departments (2-Column Category Cards Grid) -->
-  <div class="n-sidebar-cats-widget" aria-label="<?php esc_attr_e('বিষয় ও বিভাগসমূহ', 'helptrickbd'); ?>">
-    <div class="n-sec-head" style="margin-top:0;margin-bottom:10px;">
-      <h3 style="font-size:1.15rem;"><?php esc_html_e('বিষয় ও বিভাগসমূহ', 'helptrickbd'); ?></h3>
-      <span class="rule" aria-hidden="true"></span>
-    </div>
-
-    <div class="n-cats-grid-2col">
-      <?php
-      if (!empty($all_cats)) :
-          foreach ($all_cats as $cat) :
-              if ($cat->slug === 'uncategorized' || (int) $cat->count === 0) {
-                  continue;
-              }
-              ?>
-              <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="n-cat-card">
-                <span class="n-cat-name"><?php echo esc_html($cat->name); ?></span>
-                <span class="n-cat-count"><?php echo esc_html(function_exists('ht_bn_number') ? ht_bn_number($cat->count) : $cat->count); ?></span>
-              </a>
-              <?php
-          endforeach;
-      endif;
-      ?>
     </div>
   </div>
 </div>

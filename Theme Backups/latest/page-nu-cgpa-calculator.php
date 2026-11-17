@@ -19,10 +19,14 @@ get_header();
 
         <!-- Breadcrumbs Navigation -->
         <?php
-        if (function_exists('ht_breadcrumbs')) {
-            ht_breadcrumbs();
-        } elseif (function_exists('htbd_breadcrumbs')) {
-            htbd_breadcrumbs();
+        try {
+            if (function_exists('ht_breadcrumbs')) {
+                ht_breadcrumbs();
+            } elseif (function_exists('htbd_breadcrumbs')) {
+                htbd_breadcrumbs();
+            }
+        } catch (\Throwable $e) {
+            // Fail-safe breadcrumbs
         }
         ?>
 
@@ -62,19 +66,23 @@ get_header();
 
         <!-- Optional WordPress Post Content Notice -->
         <?php
-        if (have_posts()) :
-            while (have_posts()) :
-                the_post();
-                $content = trim(get_the_content());
-                if (!empty($content)) :
-        ?>
-            <div class="ht-cgpa-admin-banner">
-                <?php the_content(); ?>
-            </div>
-        <?php
-                endif;
-            endwhile;
-        endif;
+        try {
+            if (have_posts()) :
+                while (have_posts()) :
+                    the_post();
+                    $content = trim(get_the_content());
+                    if (!empty($content)) :
+            ?>
+                <div class="ht-cgpa-admin-banner">
+                    <?php the_content(); ?>
+                </div>
+            <?php
+                    endif;
+                endwhile;
+            endif;
+        } catch (\Throwable $e) {
+            // Fail-safe post loop
+        }
         ?>
 
         <!-- Interactive Web Application Canvas -->

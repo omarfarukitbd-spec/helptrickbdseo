@@ -3,25 +3,26 @@
  * Homepage Section 3: Specialized Subject Grid (Configurable from Admin Panel)
  * Strictly queries SSC & Dakhil category (6 posts on desktop, 5 on mobile, titles only)
  *
- * @package HelpTrickBD_EduPortal
+ * @package HelpTrickBD_Pro
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!get_theme_mod('htbd_show_sec_ssc', true)) {
+if (!get_theme_mod('htbd_show_sec_ssc', get_theme_mod('ht_show_sec_ssc', true))) {
     return;
 }
 
-$sec_title     = get_theme_mod('htbd_sec_ssc_title', 'SSC & Dakhil Examination Hub');
-if ($sec_title === 'এসএসসি / দাখিল') {
-    $sec_title = 'SSC & Dakhil Examination Hub';
+$sec_title = get_theme_mod('htbd_sec_ssc_title', get_theme_mod('ht_sec_ssc_title', 'এসএসসি ও দাখিল প্রস্তুতি'));
+if (empty($sec_title) || $sec_title === 'SSC & Dakhil Examination Hub') {
+    $sec_title = 'এসএসসি ও দাখিল প্রস্তুতি';
 }
-$cat_id        = (int) get_theme_mod('htbd_sec_ssc_category', 0);
-$link_text     = get_theme_mod('htbd_sec_ssc_link_text', 'View All Handnotes →');
-if ($link_text === 'সব লেখা →' || $link_text === 'সব পোস্ট দেখুন →') {
-    $link_text = 'View All Handnotes →';
+
+$cat_id = (int) get_theme_mod('htbd_sec_ssc_category', get_theme_mod('ht_sec_ssc_category', 0));
+$link_text = get_theme_mod('htbd_sec_ssc_link_text', get_theme_mod('ht_sec_ssc_link_text', 'সকল হ্যান্ডনোট →'));
+if (empty($link_text) || $link_text === 'View All Handnotes →') {
+    $link_text = 'সকল হ্যান্ডনোট →';
 }
 
 // Strict SSC & Dakhil Category Resolution
@@ -38,21 +39,44 @@ if ($cat_id > 0) {
     }
 }
 
-$query_args = array(
-    'posts_per_page'      => 6, // 6 on desktop, 5 on mobile via CSS
-    'post_status'         => 'publish',
-    'ignore_sticky_posts' => 1,
-    'no_found_rows'       => true,
-);
+$ssc_cache_key = 'ht_home_ssc_post_ids_' . $target_term_id;
+$ssc_post_ids = get_transient($ssc_cache_key);
+
+if (false === $ssc_post_ids) {
+    $query_args = array(
+        'posts_per_page'      => 6,
+        'post_status'         => 'publish',
+        'ignore_sticky_posts' => 1,
+        'fields'              => 'ids',
+        'no_found_rows'       => true,
+    );
+
+    if ($target_term_id > 0) {
+        $query_args['cat'] = $target_term_id;
+    }
+
+    $q = new WP_Query($query_args);
+    $ssc_post_ids = !empty($q->posts) ? $q->posts : array();
+    set_transient($ssc_cache_key, $ssc_post_ids, 2 * HOUR_IN_SECONDS);
+}
 
 if ($target_term_id > 0) {
-    $query_args['cat'] = $target_term_id;
     $target_link = get_category_link($target_term_id);
 } else {
     $target_link = home_url('/category/ssc-dakhil/');
 }
 
-$grid_query = new WP_Query($query_args);
+if (empty($ssc_post_ids)) {
+    return;
+}
+
+$grid_query = new WP_Query(array(
+    'post__in'            => $ssc_post_ids,
+    'orderby'             => 'post__in',
+    'posts_per_page'      => count($ssc_post_ids),
+    'ignore_sticky_posts' => 1,
+    'no_found_rows'       => true,
+));
 
 if (!$grid_query->have_posts()) {
     return;
@@ -74,7 +98,7 @@ if (!$grid_query->have_posts()) {
         ?>
         <div class="n-item">
           <span class="sk">
-            <?php esc_html_e('SSC & Dakhil', 'helptrickbd-edu'); ?>
+            <?php esc_html_e('এসএসসি ও দাখিল', 'helptrickbd'); ?>
           </span>
           <h4>
             <a href="<?php the_permalink(); ?>">

@@ -43,86 +43,6 @@ function ht_customize_register($wp_customize) {
         'priority' => 10,
     ]);
 
-    // Ticker Toggle
-    $wp_customize->add_setting('ht_ticker_enable', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('ht_ticker_enable', [
-        'label'   => esc_html__('Enable Topbar Breaking Notice Ticker', 'helptrickbd'),
-        'section' => 'ht_header_section',
-        'type'    => 'checkbox',
-    ]);
-
-    // Ticker Badge Label
-    $wp_customize->add_setting('ht_ticker_badge_label', [
-        'default'           => 'নোটিশ ও আপডেট',
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('ht_ticker_badge_label', [
-        'label'   => esc_html__('Notice Ticker Badge Label', 'helptrickbd'),
-        'section' => 'ht_header_section',
-        'type'    => 'text',
-    ]);
-
-    // Ticker Text
-    $wp_customize->add_setting('ht_ticker_text', [
-        'default'           => esc_html__('National University Honours 2nd Year Exam Routine & Guidelines 2026 Published', 'helptrickbd'),
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'postMessage',
-    ]);
-    $wp_customize->add_control('ht_ticker_text', [
-        'label'   => esc_html__('Notice Ticker Text', 'helptrickbd'),
-        'section' => 'ht_header_section',
-        'type'    => 'text',
-    ]);
-
-    // Ticker Link
-    $wp_customize->add_setting('ht_ticker_link', [
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ]);
-    $wp_customize->add_control('ht_ticker_link', [
-        'label'   => esc_html__('Notice Target URL (Optional)', 'helptrickbd'),
-        'section' => 'ht_header_section',
-        'type'    => 'url',
-    ]);
-
-    // Header Countdown Toggle
-    $wp_customize->add_setting('ht_countdown_enable', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('ht_countdown_enable', [
-        'label'   => esc_html__('Display Exam Countdown in Header', 'helptrickbd'),
-        'section' => 'ht_header_section',
-        'type'    => 'checkbox',
-    ]);
-
-    // Exam countdown title
-    $wp_customize->add_setting('ht_countdown_title', [
-        'default'           => esc_html__('Honours 2nd Year Exam 2026', 'helptrickbd'),
-        'sanitize_callback' => 'sanitize_text_field',
-        'transport'         => 'postMessage',
-    ]);
-    $wp_customize->add_control('ht_countdown_title', [
-        'label'   => esc_html__('Exam Countdown Label / Title', 'helptrickbd'),
-        'section' => 'ht_header_section',
-        'type'    => 'text',
-    ]);
-
-    // Exam countdown date
-    $wp_customize->add_setting('ht_countdown_date', [
-        'default'           => '2026-11-20',
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('ht_countdown_date', [
-        'label'       => esc_html__('Target Exam Date (YYYY-MM-DD)', 'helptrickbd'),
-        'description' => esc_html__('Format: 2026-11-20', 'helptrickbd'),
-        'section'     => 'ht_header_section',
-        'type'        => 'date',
-    ]);
-
     // Search Trigger in Header
     $wp_customize->add_setting('ht_header_search_enable', [
         'default'           => true,
@@ -269,89 +189,14 @@ function ht_customize_register($wp_customize) {
         'type'    => 'text',
     ]);
 
-    // 5. National University Special Focus
-    $wp_customize->add_setting('htbd_show_sec_nu', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('htbd_show_sec_nu', [
-        'label'   => esc_html__('Enable National University Focus Section', 'helptrickbd'),
-        'section' => 'ht_homepage_sections',
-        'type'    => 'checkbox',
-    ]);
-
-    $wp_customize->add_setting('htbd_sec_nu_title', [
-        'default'           => 'জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা',
+    $wp_customize->add_setting('htbd_sec_filter_link_text', [
+        'default'           => 'সকল পোস্ট দেখুন →',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('htbd_sec_nu_title', [
-        'label'   => esc_html__('National University Section Title', 'helptrickbd'),
+    $wp_customize->add_control('htbd_sec_filter_link_text', [
+        'label'   => esc_html__('Subject Filter Link Text', 'helptrickbd'),
         'section' => 'ht_homepage_sections',
         'type'    => 'text',
-    ]);
-
-    $wp_customize->add_setting('htbd_sec_nu_count', [
-        'default'           => 6,
-        'sanitize_callback' => 'absint',
-    ]);
-    $wp_customize->add_control('htbd_sec_nu_count', [
-        'label'   => esc_html__('National University Post Count', 'helptrickbd'),
-        'section' => 'ht_homepage_sections',
-        'type'    => 'number',
-    ]);
-
-    // 6. Visual Study Photo Gallery
-    $wp_customize->add_setting('htbd_show_sec_gallery', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('htbd_show_sec_gallery', [
-        'label'   => esc_html__('Enable Visual Study Photo Gallery', 'helptrickbd'),
-        'section' => 'ht_homepage_sections',
-        'type'    => 'checkbox',
-    ]);
-
-    $wp_customize->add_setting('htbd_sec_gallery_title', [
-        'default'           => 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড',
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('htbd_sec_gallery_title', [
-        'label'   => esc_html__('Photo Gallery Section Title', 'helptrickbd'),
-        'section' => 'ht_homepage_sections',
-        'type'    => 'text',
-    ]);
-
-    // 7. Trust Deck & Countdown
-    $wp_customize->add_setting('htbd_show_sec_trust', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('htbd_show_sec_trust', [
-        'label'   => esc_html__('Enable Institutional Trust Deck & Live Exam Countdown', 'helptrickbd'),
-        'section' => 'ht_homepage_sections',
-        'type'    => 'checkbox',
-    ]);
-
-    $wp_customize->add_setting('htbd_exam_date_ssc', [
-        'default'           => '2027-02-01T09:00:00',
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('htbd_exam_date_ssc', [
-        'label'       => esc_html__('Target Exam Countdown Date (ISO)', 'helptrickbd'),
-        'description' => esc_html__('Format: YYYY-MM-DDTHH:MM:SS (e.g. 2027-02-01T09:00:00)', 'helptrickbd'),
-        'section'     => 'ht_homepage_sections',
-        'type'        => 'text',
-    ]);
-
-    // 8. Community Join Bar
-    $wp_customize->add_setting('htbd_show_social_cta', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('htbd_show_social_cta', [
-        'label'   => esc_html__('Enable Telegram & WhatsApp Join Bar', 'helptrickbd'),
-        'section' => 'ht_homepage_sections',
-        'type'    => 'checkbox',
     ]);
 
     // =============================================================
@@ -405,39 +250,6 @@ function ht_customize_register($wp_customize) {
         'label'   => esc_html__('Display Sticky AdSlot in Sidebar', 'helptrickbd'),
         'section' => 'ht_sidebar_section',
         'type'    => 'checkbox',
-    ]);
-
-    // Sidebar Categories
-    $wp_customize->add_setting('ht_sidebar_categories_enable', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('ht_sidebar_categories_enable', [
-        'label'       => esc_html__('Enable Category Cards Widget', 'helptrickbd'),
-        'description' => esc_html__('Displays categories with vector icons and post count badges.', 'helptrickbd'),
-        'section'     => 'ht_sidebar_section',
-        'type'        => 'checkbox',
-    ]);
-
-    $wp_customize->add_setting('ht_sidebar_categories_title', [
-        'default'           => esc_html__('Explore Categories', 'helptrickbd'),
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('ht_sidebar_categories_title', [
-        'label'   => esc_html__('Categories Section Title', 'helptrickbd'),
-        'section' => 'ht_sidebar_section',
-        'type'    => 'text',
-    ]);
-
-    $wp_customize->add_setting('ht_sidebar_categories_count', [
-        'default'           => 10,
-        'sanitize_callback' => 'absint',
-    ]);
-    $wp_customize->add_control('ht_sidebar_categories_count', [
-        'label'       => esc_html__('Max Categories to Display (4 to 20)', 'helptrickbd'),
-        'section'     => 'ht_sidebar_section',
-        'type'        => 'number',
-        'input_attrs' => ['min' => 4, 'max' => 20, 'step' => 1],
     ]);
 
     // =============================================================
@@ -517,37 +329,6 @@ function ht_customize_register($wp_customize) {
         'title'    => esc_html__('Footer & Copyright', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
         'priority' => 25,
-    ]);
-
-    // Pre-Footer Community Bar
-    $wp_customize->add_setting('ht_pre_footer_enable', [
-        'default'           => true,
-        'sanitize_callback' => 'wp_validate_boolean',
-    ]);
-    $wp_customize->add_control('ht_pre_footer_enable', [
-        'label'   => esc_html__('Enable Pre-Footer Community Bar (WhatsApp/Telegram)', 'helptrickbd'),
-        'section' => 'ht_footer_section',
-        'type'    => 'checkbox',
-    ]);
-
-    $wp_customize->add_setting('ht_pre_footer_title', [
-        'default'           => esc_html__('Want exam routines & special suggestions first?', 'helptrickbd'),
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('ht_pre_footer_title', [
-        'label'   => esc_html__('Community Bar Main Title', 'helptrickbd'),
-        'section' => 'ht_footer_section',
-        'type'    => 'text',
-    ]);
-
-    $wp_customize->add_setting('ht_pre_footer_sub', [
-        'default'           => esc_html__('Join our official WhatsApp and Telegram study groups.', 'helptrickbd'),
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('ht_pre_footer_sub', [
-        'label'   => esc_html__('Community Bar Subtitle', 'helptrickbd'),
-        'section' => 'ht_footer_section',
-        'type'    => 'text',
     ]);
 
     // Footer Description

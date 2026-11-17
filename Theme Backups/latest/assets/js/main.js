@@ -102,32 +102,72 @@
     }
 
     // -------------------------------------------------------------
-    // 4. Live Exam Countdown Timer
+    // -------------------------------------------------------------
+    // 4. Live Exam Countdown Timer (Zero CLS & Real-time Ticking)
     // -------------------------------------------------------------
     function initExamCountdown() {
-        if (!window.htConfig || !window.htConfig.countdownDate) return;
+        const timerCards = document.querySelectorAll('.ht-exam-timer-card, [data-countdown-date]');
+        
+        function tickAllTimers() {
+            const now = new Date().getTime();
 
-        const targetDate = new Date(window.htConfig.countdownDate).getTime();
-        const now = new Date().getTime();
-        const diff = targetDate - now;
+            // Handle timer card instances (Homepage Trust Deck & Widgets)
+            timerCards.forEach(card => {
+                const dateAttr = card.getAttribute('data-countdown-date');
+                if (!dateAttr) return;
+                const targetTime = new Date(dateAttr).getTime();
+                const diff = targetTime - now;
 
-        const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
-        const daysBn = toBnNumber(days);
+                if (isNaN(diff)) return;
 
-        const topVal = document.getElementById('ht-countdown-val');
-        if (topVal) {
-            topVal.textContent = `${days} Days Left`;
+                if (diff <= 0) {
+                    const daysEl = card.querySelector('[data-cd-days]');
+                    const hoursEl = card.querySelector('[data-cd-hours]');
+                    const minsEl = card.querySelector('[data-cd-minutes]');
+                    const secsEl = card.querySelector('[data-cd-seconds]');
+                    if (daysEl) daysEl.textContent = toBnNumber(0);
+                    if (hoursEl) hoursEl.textContent = toBnNumber(0);
+                    if (minsEl) minsEl.textContent = toBnNumber(0);
+                    if (secsEl) secsEl.textContent = toBnNumber(0);
+                    return;
+                }
+
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                const daysEl = card.querySelector('[data-cd-days]');
+                const hoursEl = card.querySelector('[data-cd-hours]');
+                const minsEl = card.querySelector('[data-cd-minutes]');
+                const secsEl = card.querySelector('[data-cd-seconds]');
+
+                if (daysEl) daysEl.textContent = toBnNumber(d);
+                if (hoursEl) hoursEl.textContent = toBnNumber(h < 10 ? '0' + h : h);
+                if (minsEl) minsEl.textContent = toBnNumber(m < 10 ? '0' + m : m);
+                if (secsEl) secsEl.textContent = toBnNumber(s < 10 ? '0' + s : s);
+            });
+
+            // Backward compatibility with legacy IDs
+            if (window.htConfig && window.htConfig.countdownDate) {
+                const targetDate = new Date(window.htConfig.countdownDate).getTime();
+                const diff = targetDate - now;
+                const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+                const daysBn = toBnNumber(days);
+
+                const topVal = document.getElementById('ht-countdown-val');
+                if (topVal) topVal.textContent = `${daysBn} দিন বাকি`;
+
+                const sideVal = document.getElementById('ht-sidebar-days-val');
+                if (sideVal) sideVal.textContent = daysBn;
+
+                const drawerVal = document.getElementById('ht-drawer-countdown-val');
+                if (drawerVal) drawerVal.textContent = `${daysBn} দিন বাকি`;
+            }
         }
 
-        const sideVal = document.getElementById('ht-sidebar-days-val');
-        if (sideVal) {
-            sideVal.textContent = days;
-        }
-
-        const drawerVal = document.getElementById('ht-drawer-countdown-val');
-        if (drawerVal) {
-            drawerVal.textContent = `${days} Days Left`;
-        }
+        tickAllTimers();
+        setInterval(tickAllTimers, 1000);
     }
 
     initExamCountdown();

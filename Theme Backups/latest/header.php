@@ -31,10 +31,7 @@ if (!defined('ABSPATH')) {
 <div id="page" class="ht-site-wrapper site-wrapper">
 
     <?php
-    // 1. Topbar / Dateline (Optional or sitewide)
-    if (get_theme_mod('ht_topbar_enable', true)) {
-        get_template_part('template-parts/header/topbar');
-    }
+
 
     // 2. Newspaper Masthead (Left Logo, Right Search, No Tagline)
     get_template_part('template-parts/header/masthead');

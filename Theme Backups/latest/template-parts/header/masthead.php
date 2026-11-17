@@ -2,7 +2,7 @@
 /**
  * Header Masthead Component (Single Refined Brand Wordmark & Institutional Tagline)
  *
- * @package HelpTrickBD_EduPortal
+ * @package HelpTrickBD_Pro
  */
 
 if (!defined('ABSPATH')) {
@@ -43,7 +43,7 @@ if (stripos($display_brand, '.com') === false) {
       </div>
 
       <div class="n-brand-right">
-        <button type="button" class="n-masthead-search-btn ht-search-trigger" id="ht-search-trigger" aria-label="<?php esc_attr_e('Search', 'helptrickbd-edu'); ?>">
+        <button type="button" class="n-masthead-search-btn ht-search-trigger" id="ht-search-trigger" aria-label="<?php esc_attr_e('অনুসন্ধান', 'helptrickbd'); ?>">
           <?php htbd_icon('search', array('width' => 20, 'height' => 20)); ?>
         </button>
       </div>

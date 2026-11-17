@@ -14,40 +14,6 @@ if (!defined('ABSPATH')) {
 
     <!-- Main Footer -->
     <footer id="colophon" class="ht-footer">
-        
-        <!-- Pre-Footer Community Bar -->
-        <?php if (get_theme_mod('ht_pre_footer_enable', true)) : ?>
-            <div class="ht-pre-footer">
-                <div class="ht-container ht-pre-footer-inner">
-                    <div class="ht-pre-footer-content">
-                        <div class="ht-pre-footer-icon-badge" aria-hidden="true">
-                            <?php ht_m3_icon('campaign', 26); ?>
-                        </div>
-                        <div class="ht-pre-footer-text">
-                            <span class="ht-pre-footer-title"><?php echo esc_html(get_theme_mod('ht_pre_footer_title', 'সবার আগে পরীক্ষার রুটিন ও স্পেশাল সাজেশন পেতে চান?')); ?></span>
-                            <span class="ht-pre-footer-sub"><?php echo esc_html(get_theme_mod('ht_pre_footer_sub', 'আমাদের অফিসিয়াল হোয়াটসঅ্যাপ ও টেলিগ্রাম স্টাডি চ্যানেলে যুক্ত হোন।')); ?></span>
-                        </div>
-                    </div>
-                    <div class="ht-pre-footer-btns">
-                        <?php
-                        $wa_link = get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a');
-                        if (empty($wa_link) || $wa_link === 'https://chat.whatsapp.com/') {
-                            $wa_link = 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a';
-                        }
-                        $tg_link = get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd_official');
-                        ?>
-                        <a href="<?php echo esc_url($wa_link); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
-                            <?php ht_m3_icon('whatsapp', 18); ?>
-                            <span>হোয়াটসঅ্যাপ চ্যানেল</span>
-                        </a>
-                        <a href="<?php echo esc_url($tg_link); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-telegram">
-                            <?php ht_m3_icon('telegram', 18); ?>
-                            <span>টেলিগ্রাম চ্যানেল</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        <?php endif; ?>
 
         <!-- 4-Column Main Footer Grid -->
         <div class="ht-container ht-footer-main">

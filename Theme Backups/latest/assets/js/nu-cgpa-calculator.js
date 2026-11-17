@@ -1127,6 +1127,7 @@
   }
 
   const btnToolbarReset = document.getElementById('ht-btn-toolbar-reset');
+  const btnResetYear = document.getElementById('btn-reset-year');
   if (btnToolbarReset && btnResetYear) {
     btnToolbarReset.addEventListener('click', () => {
       if (confirm('আপনি কি নিশ্চিত যে সকল হিসাব মুছে রিসেট করতে চান?')) {

@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '1.5.0');
+define('HT_THEME_VERSION', '1.5.3');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/material-icons.php';
@@ -46,6 +46,7 @@ function ht_theme_setup() {
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size(800, 450, true);
     add_image_size('ht-hero-large', 1200, 675, true);
+    add_image_size('ht-lead-banner', 800, 450, true);
     add_image_size('ht-card-thumb', 600, 338, true);
 
     // Register Navigation Menus
@@ -194,44 +195,42 @@ function ht_widgets_init() {
 add_action('widgets_init', 'ht_widgets_init');
 
 /**
+ * Returns dynamic filemtime asset version for instant cache-busting (Rule 12 standard).
+ *
+ * @param string $relative_path Relative path from template directory.
+ * @return string Version string.
+ */
+function ht_asset_version($relative_path) {
+    $file_path = get_template_directory() . $relative_path;
+    if (file_exists($file_path)) {
+        return (string) filemtime($file_path);
+    }
+    return HT_THEME_VERSION;
+}
+
+/**
  * Enqueue scripts and styles.
+ * 100% Core Web Vitals speed optimized, zero external render-blocking font bloat.
  */
 function ht_enqueue_scripts() {
-    // SolaimanLipi High-Precision Bengali Web Font + Inter (Latin Numerals)
-    wp_enqueue_style(
-        'ht-solaiman-lipi',
-        'https://fonts.maateen.me/solaiman-lipi/font.css',
-        [],
-        null
-    );
-    wp_enqueue_style(
-        'ht-google-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
-        [],
-        null
-    );
-    // v1.4.10 (F19): Fira Code was declared in --ht-font-code but never
-    // enqueued on the front end, so code blocks fell back to Consolas.
-    wp_enqueue_style(
-        'ht-fira-code',
-        'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap',
-        [],
-        null
-    );
+    // Stylesheets with Dynamic filemtime Cache-Busting
+    wp_enqueue_style('ht-style', get_stylesheet_uri(), [], ht_asset_version('/style.css'));
+    wp_enqueue_style('ht-main', get_template_directory_uri() . '/assets/css/main.css', ['ht-style'], ht_asset_version('/assets/css/main.css'));
+    wp_enqueue_style('ht-spotlight', get_template_directory_uri() . '/assets/css/spotlight.css', ['ht-main'], ht_asset_version('/assets/css/spotlight.css'));
+    wp_enqueue_style('ht-home-sections', get_template_directory_uri() . '/assets/css/home-sections.css', ['ht-main'], ht_asset_version('/assets/css/home-sections.css'));
 
-    // Main Theme Stylesheet
-    wp_enqueue_style('ht-style', get_stylesheet_uri(), [], HT_THEME_VERSION);
-    wp_enqueue_style('ht-main', get_template_directory_uri() . '/assets/css/main.css', ['ht-style'], HT_THEME_VERSION);
-    wp_enqueue_style('ht-spotlight', get_template_directory_uri() . '/assets/css/spotlight.css', ['ht-main'], HT_THEME_VERSION);
-    wp_enqueue_style('ht-home-sections', get_template_directory_uri() . '/assets/css/home-sections.css', ['ht-main'], HT_THEME_VERSION);
+    // Main JavaScript Core (Registered first so child dependencies resolve correctly)
+    wp_enqueue_script('ht-main-js', get_template_directory_uri() . '/assets/js/main.js', [], ht_asset_version('/assets/js/main.js'), true);
+    wp_enqueue_script('ht-spotlight-js', get_template_directory_uri() . '/assets/js/spotlight.js', ['ht-main-js'], ht_asset_version('/assets/js/spotlight.js'), true);
+    wp_enqueue_script('ht-prefetch-js', get_template_directory_uri() . '/assets/js/prefetch.js', ['ht-main-js'], ht_asset_version('/assets/js/prefetch.js'), true);
 
     if (is_front_page() || is_home()) {
-        wp_enqueue_script('ht-home-filter', get_template_directory_uri() . '/assets/js/home-filter.js', [], HT_THEME_VERSION, true);
+        wp_enqueue_script('ht-home-filter', get_template_directory_uri() . '/assets/js/home-filter.js', ['ht-main-js'], ht_asset_version('/assets/js/home-filter.js'), true);
     }
 
     if (is_singular()) {
-        wp_enqueue_style('ht-single', get_template_directory_uri() . '/assets/css/single.css', ['ht-main'], HT_THEME_VERSION);
-        wp_enqueue_script('ht-single-tools', get_template_directory_uri() . '/assets/js/single-tools.js', ['ht-main-js'], HT_THEME_VERSION, true);
+        wp_enqueue_style('ht-single', get_template_directory_uri() . '/assets/css/single.css', ['ht-main'], ht_asset_version('/assets/css/single.css'));
+        wp_enqueue_script('ht-single-tools', get_template_directory_uri() . '/assets/js/single-tools.js', ['ht-main-js'], ht_asset_version('/assets/js/single-tools.js'), true);
     }
 
     // National University CGPA Calculator Web App Assets
@@ -240,21 +239,16 @@ function ht_enqueue_scripts() {
             'ht-nu-cgpa-calculator-css',
             get_template_directory_uri() . '/assets/css/nu-cgpa-calculator.css',
             ['ht-main'],
-            HT_THEME_VERSION
+            ht_asset_version('/assets/css/nu-cgpa-calculator.css')
         );
         wp_enqueue_script(
             'ht-nu-cgpa-calculator-js',
             get_template_directory_uri() . '/assets/js/nu-cgpa-calculator.js',
-            [],
-            HT_THEME_VERSION,
+            ['ht-main-js'],
+            ht_asset_version('/assets/js/nu-cgpa-calculator.js'),
             true
         );
     }
-
-    // Main JavaScript
-    wp_enqueue_script('ht-main-js', get_template_directory_uri() . '/assets/js/main.js', [], HT_THEME_VERSION, true);
-    wp_enqueue_script('ht-spotlight-js', get_template_directory_uri() . '/assets/js/spotlight.js', ['ht-main-js'], HT_THEME_VERSION, true);
-    wp_enqueue_script('ht-prefetch-js', get_template_directory_uri() . '/assets/js/prefetch.js', ['ht-main-js'], HT_THEME_VERSION, true);
 
     // Localize data for AJAX and features
     wp_localize_script('ht-main-js', 'htConfig', [

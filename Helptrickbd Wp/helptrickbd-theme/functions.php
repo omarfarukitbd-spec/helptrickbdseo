@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '1.5.3');
+define('HT_THEME_VERSION', '1.5.4');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/material-icons.php';
@@ -412,13 +412,14 @@ function ht_the_thumbnail($post_id = null, $size = 'ht-card-thumb', $extra_class
 
 
 /**
- * Completely unregister legacy default WordPress widgets (Recent Posts, Comments, Archives, Categories).
+ * Completely unregister legacy default WordPress widgets (Recent Posts, Comments, Archives, Categories, Search).
  */
 function ht_unregister_default_widgets() {
     unregister_widget('WP_Widget_Recent_Posts');
     unregister_widget('WP_Widget_Recent_Comments');
     unregister_widget('WP_Widget_Archives');
     unregister_widget('WP_Widget_Categories');
+    unregister_widget('WP_Widget_Search');
 }
 add_action('widgets_init', 'ht_unregister_default_widgets', 15);
 

@@ -564,7 +564,13 @@ if (!function_exists('htbd_reading_time')) {
      */
     function htbd_reading_time($post_id = 0) {
         if (function_exists('ht_get_reading_time')) {
-            return ht_get_reading_time($post_id);
+            $data = ht_get_reading_time($post_id);
+            if (is_array($data) && isset($data['minutes'])) {
+                return function_exists('ht_bn_number') ? ht_bn_number($data['minutes']) . ' মিনিট পড়া' : $data['minutes'] . ' min read';
+            }
+            if (is_string($data)) {
+                return $data;
+            }
         }
         return '৩ মিনিট পড়া';
     }

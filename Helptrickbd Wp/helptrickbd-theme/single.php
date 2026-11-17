@@ -227,29 +227,6 @@ get_header();
                 <!-- Interactive Post Helpful / Like Reaction Box -->
                 <?php ht_post_reaction_box(); ?>
 
-                <?php if (get_theme_mod('ht_post_community_enable', true)) : ?>
-                    <!-- Official Community Study Group Join Card -->
-                    <div class="ht-single-community-card">
-                        <div class="ht-community-icon-box">
-                            <?php ht_m3_icon('campaign', 28); ?>
-                        </div>
-                        <div class="ht-community-info">
-                            <h4 class="ht-community-title"><?php esc_html_e('সবার আগে পরীক্ষার রুটিন ও স্পেশাল সাজেশন পেতে চান?', 'helptrickbd'); ?></h4>
-                            <p class="ht-community-desc"><?php esc_html_e('যুক্ত হোন আমাদের অফিসিয়াল হোয়াটসঅ্যাপ ও টেলিগ্রাম স্টাডি চ্যানেলে।', 'helptrickbd'); ?></p>
-                        </div>
-                        <div class="ht-community-links">
-                            <a href="<?php echo esc_url(get_theme_mod('ht_whatsapp_url', 'https://whatsapp.com/channel/0029Vb956jgCHDyrx1wkUh2a')); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-whatsapp">
-                                <?php ht_m3_icon('whatsapp', 18); ?>
-                                <span>WhatsApp Channel</span>
-                            </a>
-                            <a href="<?php echo esc_url(get_theme_mod('ht_telegram_url', 'https://t.me/helptrickbd_official')); ?>" target="_blank" rel="noopener noreferrer" class="ht-btn ht-btn-telegram">
-                                <?php ht_m3_icon('telegram', 18); ?>
-                                <span>Telegram Channel</span>
-                            </a>
-                        </div>
-                    </div>
-                <?php endif; ?>
-
                 <!-- Tags Cloud -->
                 <?php
                 $tags = get_the_tags();

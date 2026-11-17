@@ -2,37 +2,57 @@
 /**
  * Homepage Section 3: Magazine Lead Hero & Spotlight Deck
  *
- * @package HelpTrickBD_EduPortal
+ * @package HelpTrickBD_Pro
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!get_theme_mod('htbd_show_lead_hero', true)) {
+if (!get_theme_mod('htbd_show_lead_hero', get_theme_mod('ht_show_lead_hero', true))) {
     return;
 }
 
-$hero_cat   = (int) get_theme_mod('htbd_hero_category', 0);
-$badge_text = get_theme_mod('htbd_hero_badge_text', 'LATEST POSTS');
-if (empty($badge_text) || $badge_text === 'নির্বাচিত হ্যান্ডনোট ও বিশেষ গাইড' || $badge_text === 'সর্বশেষ পোস্ট') {
-    $badge_text = 'LATEST POSTS';
+$hero_cat   = (int) get_theme_mod('htbd_hero_category', get_theme_mod('ht_hero_category', 0));
+$badge_text = get_theme_mod('htbd_hero_badge_text', get_theme_mod('ht_hero_badge_text', 'সর্বশেষ প্রকাশনা'));
+if (empty($badge_text) || $badge_text === 'LATEST POSTS') {
+    $badge_text = 'সর্বশেষ প্রকাশনা';
 }
 
-$query_args = array(
-    'posts_per_page'      => 4,
-    'post_status'         => 'publish',
+$hero_cache_key = 'ht_home_lead_hero_ids_' . $hero_cat;
+$hero_post_ids = get_transient($hero_cache_key);
+
+if (false === $hero_post_ids) {
+    $query_args = array(
+        'posts_per_page'      => 4,
+        'post_status'         => 'publish',
+        'ignore_sticky_posts' => 1,
+        'orderby'             => 'date',
+        'order'               => 'DESC',
+        'fields'              => 'ids',
+        'no_found_rows'       => true,
+    );
+
+    if ($hero_cat > 0) {
+        $query_args['cat'] = $hero_cat;
+    }
+
+    $hero_q = new WP_Query($query_args);
+    $hero_post_ids = !empty($hero_q->posts) ? $hero_q->posts : array();
+    set_transient($hero_cache_key, $hero_post_ids, 2 * HOUR_IN_SECONDS);
+}
+
+if (empty($hero_post_ids)) {
+    return;
+}
+
+$hero_query = new WP_Query(array(
+    'post__in'            => $hero_post_ids,
+    'orderby'             => 'post__in',
+    'posts_per_page'      => count($hero_post_ids),
     'ignore_sticky_posts' => 1,
-    'orderby'             => 'date',
-    'order'               => 'DESC',
     'no_found_rows'       => true,
-);
-
-if ($hero_cat > 0) {
-    $query_args['cat'] = $hero_cat;
-}
-
-$hero_query = new WP_Query($query_args);
+));
 
 if (!$hero_query->have_posts()) {
     return;
@@ -57,7 +77,7 @@ if (!$lead_post) {
     return;
 }
 ?>
-<section class="n-lead" aria-label="<?php esc_attr_e('Featured and Latest Articles', 'helptrickbd-edu'); ?>">
+<section class="n-lead" aria-label="<?php esc_attr_e('নির্বাচিত ও সর্বশেষ প্রবন্ধসমূহ', 'helptrickbd'); ?>">
   <!-- Main Lead Article (Left 65%) -->
   <article>
     <span class="n-kicker">
@@ -79,7 +99,7 @@ if (!$lead_post) {
     <?php if (has_post_thumbnail($lead_post->ID)) : ?>
       <figure>
         <?php
-        echo get_the_post_thumbnail($lead_post->ID, 'ht-lead-banner', array(
+        echo get_the_post_thumbnail($lead_post->ID, 'ht-hero-large', array(
             'fetchpriority' => 'high',
             'decoding'      => 'async',
             'width'         => 800,
@@ -102,7 +122,7 @@ if (!$lead_post) {
         <span class="sk">
           <?php
           $cats = get_the_category($spot->ID);
-          echo !empty($cats) ? esc_html($cats[0]->name) : esc_html__('একাডেমিক', 'helptrickbd-edu');
+          echo !empty($cats) ? esc_html($cats[0]->name) : esc_html__('একাডেমিক', 'helptrickbd');
           ?>
         </span>
         <h4>
