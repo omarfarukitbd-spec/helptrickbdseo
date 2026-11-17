@@ -112,10 +112,29 @@ body {
   font-family: var(--ht-font-sans);
   background-color: var(--ht-bg);
   color: var(--ht-text-primary);
-  line-height: 1.6;
+  line-height: var(--ht-body-line-height, 1.75);
   font-size: calc(1rem * var(--ht-font-scale, 1));
   overflow-x: hidden;
   transition: background-color 0.2s ease, color 0.2s ease;
+  letter-spacing: normal;
+}
+html[lang="bn-BD"] body, body.ht-lang-bn {
+  font-family: 'SolaimanLipi', 'Noto Sans Bengali', var(--ht-font-sans);
+  line-height: 1.8;
+  letter-spacing: normal !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html[lang="bn-BD"] h1, html[lang="bn-BD"] h2, html[lang="bn-BD"] h3,
+html[lang="bn-BD"] h4, html[lang="bn-BD"] h5, html[lang="bn-BD"] h6,
+body.ht-lang-bn h1, body.ht-lang-bn h2, body.ht-lang-bn h3,
+body.ht-lang-bn h4, body.ht-lang-bn h5, body.ht-lang-bn h6,
+body.ht-lang-bn .n-lead-title, body.ht-lang-bn .ht-card-title,
+body.ht-lang-bn .ht-article-title, body.ht-lang-bn .n-sec-head h3 {
+  font-family: 'Shurjo', 'SolaimanLipi', var(--ht-font-serif);
+  line-height: 1.45;
+  letter-spacing: normal !important;
 }
 ul, ol, menu {
   list-style: none !important;

@@ -14,15 +14,19 @@ if (!get_theme_mod('htbd_show_sec_ssc', get_theme_mod('ht_show_sec_ssc', true)))
     return;
 }
 
-$sec_title = get_theme_mod('htbd_sec_ssc_title', get_theme_mod('ht_sec_ssc_title', 'এসএসসি ও দাখিল প্রস্তুতি'));
-if (empty($sec_title) || $sec_title === 'SSC & Dakhil Examination Hub') {
-    $sec_title = 'এসএসসি ও দাখিল প্রস্তুতি';
+$is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
+$default_title = $is_bn ? 'এসএসসি ও দাখিল প্রস্তুতি' : 'SSC & Dakhil Examination Hub';
+$sec_title = get_theme_mod('htbd_sec_ssc_title', get_theme_mod('ht_sec_ssc_title', $default_title));
+if (empty($sec_title)) {
+    $sec_title = $default_title;
 }
 
 $cat_id = (int) get_theme_mod('htbd_sec_ssc_category', get_theme_mod('ht_sec_ssc_category', 0));
-$link_text = get_theme_mod('htbd_sec_ssc_link_text', get_theme_mod('ht_sec_ssc_link_text', 'সকল হ্যান্ডনোট →'));
-if (empty($link_text) || $link_text === 'View All Handnotes →') {
-    $link_text = 'সকল হ্যান্ডনোট →';
+
+$default_link = $is_bn ? 'সকল হ্যান্ডনোট →' : 'View All Handnotes →';
+$link_text = get_theme_mod('htbd_sec_ssc_link_text', get_theme_mod('ht_sec_ssc_link_text', $default_link));
+if (empty($link_text)) {
+    $link_text = $default_link;
 }
 
 // Strict SSC & Dakhil Category Resolution
@@ -39,7 +43,7 @@ if ($cat_id > 0) {
     }
 }
 
-$ssc_cache_key = 'ht_home_ssc_post_ids_' . $target_term_id;
+$ssc_cache_key = 'ht_home_ssc_post_ids_' . $target_term_id . '_' . ($is_bn ? 'bn' : 'en');
 $ssc_post_ids = get_transient($ssc_cache_key);
 
 if (false === $ssc_post_ids) {

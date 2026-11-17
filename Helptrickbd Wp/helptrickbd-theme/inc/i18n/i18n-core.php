@@ -42,15 +42,77 @@ function ht_get_current_lang() {
         return sanitize_key($_GET['lang']);
     }
 
-    // 4. Native WordPress Locale Check
-    $locale = get_locale();
-    if (stripos($locale, 'en') === 0) {
-        return 'en';
+    // 4. Cookie Persistence (30-day sticky language selection)
+    if (isset($_COOKIE['ht_lang']) && in_array(sanitize_key($_COOKIE['ht_lang']), ['en', 'bn'], true)) {
+        return sanitize_key($_COOKIE['ht_lang']);
     }
 
     // Default to Bengali
     return 'bn';
 }
+
+/**
+ * Persist user language choice in cookie on request.
+ */
+function ht_handle_lang_cookie() {
+    if (isset($_GET['lang']) && in_array(sanitize_key($_GET['lang']), ['en', 'bn'], true)) {
+        $target_lang = sanitize_key($_GET['lang']);
+        if (!headers_sent()) {
+            $cookie_path = defined('COOKIEPATH') && COOKIEPATH ? COOKIEPATH : '/';
+            $cookie_domain = defined('COOKIE_DOMAIN') ? COOKIE_DOMAIN : '';
+            setcookie('ht_lang', $target_lang, time() + (30 * 86400), $cookie_path, $cookie_domain, is_ssl(), false);
+            $_COOKIE['ht_lang'] = $target_lang;
+        }
+    }
+}
+add_action('init', 'ht_handle_lang_cookie', 1);
+
+/**
+ * Filter WordPress Core Locale dynamically.
+ *
+ * @param string $locale Core locale string.
+ * @return string Filtered locale ('bn_BD' or 'en_US').
+ */
+function ht_dynamic_locale_filter($locale) {
+    if (function_exists('pll_current_language') || defined('ICL_LANGUAGE_CODE')) {
+        return $locale;
+    }
+    return ht_is_bangla_locale() ? 'bn_BD' : 'en_US';
+}
+add_filter('locale', 'ht_dynamic_locale_filter', 99);
+
+/**
+ * Dynamically filter HTML language attributes for strict W3C and SEO conformance.
+ *
+ * @param string $output Language attributes string.
+ * @return string Filtered language attributes.
+ */
+function ht_dynamic_language_attributes($output) {
+    $lang_code = ht_is_bangla_locale() ? 'bn-BD' : 'en-US';
+    if (preg_match('/lang=[\'"][^\'"]*[\'"]/i', $output)) {
+        $output = preg_replace('/lang=[\'"][^\'"]*[\'"]/i', 'lang="' . $lang_code . '"', $output);
+    } else {
+        $output .= ' lang="' . $lang_code . '"';
+    }
+    return $output;
+}
+add_filter('language_attributes', 'ht_dynamic_language_attributes', 99);
+
+/**
+ * Add language class to body.
+ *
+ * @param array $classes Array of body classes.
+ * @return array Filtered array of body classes.
+ */
+function ht_dynamic_body_class($classes) {
+    if (ht_is_bangla_locale()) {
+        $classes[] = 'ht-lang-bn';
+    } else {
+        $classes[] = 'ht-lang-en';
+    }
+    return $classes;
+}
+add_filter('body_class', 'ht_dynamic_body_class', 20);
 
 /**
  * Check if the current locale/language is Bengali.

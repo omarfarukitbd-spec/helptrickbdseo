@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> data-theme="light">
+<html <?php language_attributes(); ?> data-theme="light" data-lang="<?php echo esc_attr(function_exists('ht_get_current_lang') ? ht_get_current_lang() : 'bn'); ?>">
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -19,6 +19,10 @@ if (!defined('ABSPATH')) {
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="manifest" href="<?php echo esc_url(get_template_directory_uri() . '/manifest.json'); ?>">
     <link rel="apple-touch-icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icon-192.png'); ?>">
+    <?php if (function_exists('ht_is_bangla_locale') && ht_is_bangla_locale()) : ?>
+        <link rel="preload" href="<?php echo esc_url(get_template_directory_uri() . '/assets/fonts/SolaimanLipi_400.woff2'); ?>" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="<?php echo esc_url(get_template_directory_uri() . '/assets/fonts/ShurjoWeb_700.woff2'); ?>" as="font" type="font/woff2" crossorigin>
+    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 

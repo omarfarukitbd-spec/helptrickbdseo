@@ -15,7 +15,12 @@ if (!defined('ABSPATH')) {
         <a href="<?php the_permalink(); ?>">
             <?php ht_the_thumbnail(get_the_ID(), 'ht-card-thumb'); ?>
         </a>
-        <button class="ht-card-bm-btn ht-bookmark-toggle" data-id="<?php the_ID(); ?>" data-title="<?php echo esc_attr(get_the_title()); ?>" data-url="<?php the_permalink(); ?>" aria-label="<?php esc_attr_e('Save to reading list', 'helptrickbd'); ?>">
+        <?php
+        $bm_aria = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale())
+            ? esc_attr__('Save to reading list', 'helptrickbd')
+            : esc_attr__('বুকমার্কে সংরক্ষণ করুন', 'helptrickbd');
+        ?>
+        <button class="ht-card-bm-btn ht-bookmark-toggle" data-id="<?php the_ID(); ?>" data-title="<?php echo esc_attr(get_the_title()); ?>" data-url="<?php the_permalink(); ?>" aria-label="<?php echo $bm_aria; ?>">
             <?php ht_m3_icon('bookmark', 18); ?>
         </button>
         <div class="ht-card-cat-float">
