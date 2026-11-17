@@ -122,7 +122,11 @@ if (!$lead_post) {
         <span class="sk">
           <?php
           $cats = get_the_category($spot->ID);
-          echo !empty($cats) ? esc_html($cats[0]->name) : ($is_bn ? esc_html__('একাডেমিক', 'helptrickbd') : esc_html__('Academic', 'helptrickbd'));
+          if (!empty($cats)) {
+              echo esc_html(function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($cats[0]) : $cats[0]->name);
+          } else {
+              echo $is_bn ? esc_html__('একাডেমিক', 'helptrickbd') : esc_html__('Academic', 'helptrickbd');
+          }
           ?>
         </span>
         <h4>

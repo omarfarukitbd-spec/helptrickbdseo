@@ -57,8 +57,9 @@ get_header();
                 <div class="ht-archive-subcats" role="navigation" aria-label="<?php echo esc_attr($subcat_aria); ?>">
                     <?php foreach ($ht_sub_cats as $ht_sub_cat) : 
                         $sub_count = function_exists('ht_number') ? ht_number($ht_sub_cat->count) : $ht_sub_cat->count;
+                        $sub_name  = function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($ht_sub_cat) : $ht_sub_cat->name;
                     ?>
-                        <a href="<?php echo esc_url(get_category_link($ht_sub_cat->term_id)); ?>" class="ht-archive-subcat-chip"><?php echo esc_html($ht_sub_cat->name); ?> (<?php echo esc_html($sub_count); ?>)</a>
+                        <a href="<?php echo esc_url(get_category_link($ht_sub_cat->term_id)); ?>" class="ht-archive-subcat-chip"><?php echo esc_html($sub_name); ?> (<?php echo esc_html($sub_count); ?>)</a>
                     <?php endforeach; ?>
                 </div>
             <?php
@@ -92,9 +93,11 @@ get_header();
                     <!-- Numbered Pagination -->
                     <div class="ht-pagination-wrap">
                         <?php
+                        $prev_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Previous', 'helptrickbd') : esc_html__('পূর্ববর্তী', 'helptrickbd');
+                        $next_label = (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Next', 'helptrickbd') : esc_html__('পরবর্তী', 'helptrickbd');
                         the_posts_pagination([
-                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . esc_html__('পূর্ববর্তী', 'helptrickbd'),
-                            'next_text' => esc_html__('পরবর্তী', 'helptrickbd') . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
+                            'prev_text' => ht_m3_icon('arrow_back', 16, '', false) . ' ' . $prev_label,
+                            'next_text' => $next_label . ' ' . ht_m3_icon('arrow_forward', 16, '', false),
                         ]);
                         ?>
                     </div>

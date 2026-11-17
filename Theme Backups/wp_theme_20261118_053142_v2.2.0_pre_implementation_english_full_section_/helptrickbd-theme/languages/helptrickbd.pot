@@ -1,0 +1,1913 @@
+# Copyright (C) 2026 HelpTrickBD Team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: HelpTrickBD Pro 2.2.0\n"
+"Report-Msgid-Bugs-To: https://www.helptrickbd.com/contact-us/\n"
+"POT-Creation-Date: 2026-11-17 23:27+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: HelpTrickBD Team <support@helptrickbd.com>\n"
+"Language-Team: HelpTrickBD Translation Team <support@helptrickbd.com>\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: HelpTrickBD Pro Autonomous Pot Generator 2.2.0\n"
+"X-Domain: helptrickbd\n"
+
+#: 404.php:34
+msgid "Error 404"
+msgstr ""
+
+#: 404.php:34
+msgid "এরর ৪০৪"
+msgstr ""
+
+#: 404.php:39
+msgid "Sorry, the page you are looking for was not found!"
+msgstr ""
+
+#: 404.php:39
+msgid "দুঃখিত, কাঙ্ক্ষিত পাতাটি পাওয়া যায়নি!"
+msgstr ""
+
+#: 404.php:41
+msgid "The page or link you are looking for may have been moved, renamed, or is temporarily unavailable. Use the search box below or explore popular categories to find the academic information you need."
+msgstr ""
+
+#: 404.php:41
+msgid "আপনি যে পাতা বা লিঙ্কটি খুঁজছেন তা হয়তো সরানো হয়েছে, নাম পরিবর্তন করা হয়েছে অথবা সাময়িকভাবে অনুপলব্ধ। নিচের সার্চ বক্স ব্যবহার করে অথবা জনপ্রিয় ক্যাটাগরিগুলো থেকে আপনার প্রয়োজনীয় তথ্যটি সহজে খুঁজে নিতে পারেন।"
+msgstr ""
+
+#: 404.php:47
+msgid "Search Website"
+msgstr ""
+
+#: 404.php:47
+msgid "ওয়েবসাইট অনুসন্ধান"
+msgstr ""
+
+#: 404.php:56
+msgid "What are you looking for? e.g. Degree routine, BCS prep..."
+msgstr ""
+
+#: 404.php:56
+msgid "আপনি কী খুঁজছেন? যেমন: ডিগ্রি রুটিন, বিসিএস প্রস্তুতি..."
+msgstr ""
+
+#: 404.php:62 404.php:63 footer.php:146 footer.php:148
+msgid "Search"
+msgstr ""
+
+#: 404.php:62
+msgid "অনুসন্ধান করুন"
+msgstr ""
+
+#: 404.php:63 footer.php:146 footer.php:148 template-parts/header/masthead.php:47
+msgid "অনুসন্ধান"
+msgstr ""
+
+#: 404.php:74
+msgid "Popular Academic Categories:"
+msgstr ""
+
+#: 404.php:74
+msgid "জনপ্রিয় বিষয় ও ক্যাটাগরি:"
+msgstr ""
+
+#: 404.php:79 footer.php:52
+msgid "জাতীয় বিশ্ববিদ্যালয়"
+msgstr ""
+
+#: 404.php:83
+msgid "বিসিএস ও চাকরি প্রস্তুতি"
+msgstr ""
+
+#: 404.php:87
+msgid "শিক্ষা সহায়িকা ও রুটিন"
+msgstr ""
+
+#: 404.php:91 template-parts/home/section-subject-grid.php:105
+msgid "এসএসসি ও দাখিল"
+msgstr ""
+
+#: 404.php:95 footer.php:56
+msgid "আইসিটি ও প্রযুক্তি"
+msgstr ""
+
+#: 404.php:99
+msgid "রাষ্ট্রবিজ্ঞান বিভাগ"
+msgstr ""
+
+#: 404.php:108
+msgid "Back to Home"
+msgstr ""
+
+#: 404.php:108
+msgid "মূল পাতায় ফিরে যান"
+msgstr ""
+
+#: 404.php:112
+msgid "Report Broken Link / Contact"
+msgstr ""
+
+#: 404.php:112
+msgid "ভুল লিঙ্ক রিপোর্ট / যোগাযোগ"
+msgstr ""
+
+#: 404.php:122
+msgid "Recommended Guides"
+msgstr ""
+
+#: 404.php:122
+msgid "প্রয়োজনীয় গাইডলাইন"
+msgstr ""
+
+#: 404.php:124
+msgid "Latest & Popular Publications"
+msgstr ""
+
+#: 404.php:124
+msgid "জনপ্রিয় ও সর্বশেষ প্রকাশনাসমূহ"
+msgstr ""
+
+#: 404.php:125
+msgid "The academic resource you are seeking might be among these featured articles:"
+msgstr ""
+
+#: 404.php:125
+msgid "আপনার কাঙ্ক্ষিত তথ্যটি হয়তো নিচের শীর্ষ আর্টিকেলগুলোর মধ্যে রয়েছে:"
+msgstr ""
+
+#: archive.php:26
+msgid "Topic & Category Archive"
+msgstr ""
+
+#: archive.php:26
+msgid "বিভাগ ও বিষয়ভিত্তিক আর্কাইভ"
+msgstr ""
+
+#: archive.php:40 inc/template-tags.php:536
+msgid "Articles"
+msgstr ""
+
+#: archive.php:40
+msgid "টি পোস্ট"
+msgstr ""
+
+#: archive.php:55
+msgid "Subcategories"
+msgstr ""
+
+#: archive.php:55
+msgid "সাব-ক্যাটাগরি"
+msgstr ""
+
+#: archive.php:96 author.php:84 search.php:70
+msgid "পূর্ববর্তী"
+msgstr ""
+
+#: archive.php:97 author.php:85 search.php:71
+msgid "পরবর্তী"
+msgstr ""
+
+#: author.php:35
+msgid "শিক্ষক ও লেখক"
+msgstr ""
+
+#: author.php:35
+msgid "Educator & Author"
+msgstr ""
+
+#: author.php:53
+msgid "টি প্রকাশিত লেখা"
+msgstr ""
+
+#: author.php:53
+msgid "Published Articles"
+msgstr ""
+
+#: author.php:67
+msgid "লেখকের সকল আর্টিকেল"
+msgstr ""
+
+#: author.php:67
+msgid "Articles by Author"
+msgstr ""
+
+#: author.php:84 index.php:50 search.php:70
+msgid "Previous"
+msgstr ""
+
+#: author.php:85 index.php:51 search.php:71
+msgid "Next"
+msgstr ""
+
+#: author.php:94
+msgid "এই লেখকের কোনো প্রকাশিত পোস্ট পাওয়া যায়নি।"
+msgstr ""
+
+#: author.php:94
+msgid "No posts published by this author yet."
+msgstr ""
+
+#: comments.php:34
+msgid "&ldquo;%1$s&rdquo;-এর ওপর একটি মন্তব্য"
+msgstr ""
+
+#: comments.php:40
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:48
+msgid "&ldquo;%2$s&rdquo;-এর ওপর %1$s টি মন্তব্য"
+msgstr ""
+
+#: comments.php:83
+msgid "মন্তব্য করার সুবিধা বন্ধ রয়েছে।"
+msgstr ""
+
+#: comments.php:83
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:90
+msgid "মতামত বা প্রশ্ন লিখুন"
+msgstr ""
+
+#: comments.php:90
+msgid "Leave a Comment or Question"
+msgstr ""
+
+#: comments.php:91
+msgid "%s-কে উত্তর দিন"
+msgstr ""
+
+#: comments.php:91
+msgid "Reply to %s"
+msgstr ""
+
+#: comments.php:92
+msgid "উত্তর বাতিল করুন"
+msgstr ""
+
+#: comments.php:92
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:93
+msgid "মন্তব্য প্রকাশ করুন"
+msgstr ""
+
+#: comments.php:93
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:94
+msgid "আপনার ইমেইল ঠিকানা প্রকাশ করা হবে না।"
+msgstr ""
+
+#: comments.php:94
+msgid "Your email address will not be published."
+msgstr ""
+
+#: footer.php:50
+msgid "Important Topics"
+msgstr ""
+
+#: footer.php:50
+msgid "গুরুত্বপূর্ণ বিষয়সমূহ"
+msgstr ""
+
+#: footer.php:52
+msgid "National University"
+msgstr ""
+
+#: footer.php:53
+msgid "Education & Routine"
+msgstr ""
+
+#: footer.php:53
+msgid "এডুকেশন ও রুটিন"
+msgstr ""
+
+#: footer.php:54
+msgid "SSC & Dakhil Suggestions"
+msgstr ""
+
+#: footer.php:54
+msgid "এসএসসি ও দাখিল সাজেশন"
+msgstr ""
+
+#: footer.php:55
+msgid "Political Science Handnotes"
+msgstr ""
+
+#: footer.php:55
+msgid "রাষ্ট্রবিজ্ঞান হ্যান্ডনোট"
+msgstr ""
+
+#: footer.php:56
+msgid "ICT & Technology"
+msgstr ""
+
+#: footer.php:57
+msgid "Career & BCS Preparation"
+msgstr ""
+
+#: footer.php:57
+msgid "চাকরি ও বিসিএস প্রস্তুতি"
+msgstr ""
+
+#: footer.php:63
+msgid "Routines & Guides"
+msgstr ""
+
+#: footer.php:63
+msgid "রুটিন ও গাইড"
+msgstr ""
+
+#: footer.php:76
+msgid "Honours 2nd Year Routine 2026"
+msgstr ""
+
+#: footer.php:76
+msgid "অনার্স ২য় বর্ষ রুটিন ২০২৬"
+msgstr ""
+
+#: footer.php:77
+msgid "Honours Promotion Rules"
+msgstr ""
+
+#: footer.php:77
+msgid "অনার্স প্রমোশন ও পাস মার্ক নিয়ম"
+msgstr ""
+
+#: footer.php:78
+msgid "Certificate Name & Age Correction"
+msgstr ""
+
+#: footer.php:78
+msgid "সার্টিফিকেট নাম ও বয়স সংশোধন"
+msgstr ""
+
+#: footer.php:79
+msgid "NU CGPA Calculator"
+msgstr ""
+
+#: footer.php:79
+msgid "এনইউ সিজিপিএ ক্যালকুলেটর"
+msgstr ""
+
+#: footer.php:80
+msgid "Islamic Articles & Duas"
+msgstr ""
+
+#: footer.php:80
+msgid "ইসলামিক প্রবন্ধ ও দোয়া"
+msgstr ""
+
+#: footer.php:87
+msgid "Legal & Support"
+msgstr ""
+
+#: footer.php:87
+msgid "আইনি ও সহায়তা"
+msgstr ""
+
+#: footer.php:89
+msgid "About Us"
+msgstr ""
+
+#: footer.php:89
+msgid "আমাদের সম্পর্কে"
+msgstr ""
+
+#: footer.php:90
+msgid "Contact Us"
+msgstr ""
+
+#: footer.php:90
+msgid "যোগাযোগ"
+msgstr ""
+
+#: footer.php:91
+msgid "Privacy Policy"
+msgstr ""
+
+#: footer.php:91
+msgid "গোপনীয়তা নীতি"
+msgstr ""
+
+#: footer.php:92
+msgid "Terms & Conditions"
+msgstr ""
+
+#: footer.php:92
+msgid "শর্তাবলী"
+msgstr ""
+
+#: footer.php:93
+msgid "Disclaimer"
+msgstr ""
+
+#: footer.php:93
+msgid "দাবিত্যাগ"
+msgstr ""
+
+#: footer.php:110
+msgid "All rights reserved."
+msgstr ""
+
+#: footer.php:110
+msgid "সর্বস্বত্ব সংরক্ষিত।"
+msgstr ""
+
+#: footer.php:115
+msgid "Dedicated to Open Education & Knowledge Sharing"
+msgstr ""
+
+#: footer.php:115
+msgid "উন্মুক্ত শিক্ষা ও জ্ঞান প্রসারে নিবেদিত"
+msgstr ""
+
+#: footer.php:128
+msgid "Mobile Navigation Dock"
+msgstr ""
+
+#: footer.php:131 inc/breadcrumbs.php:31 template-parts/header/navbar.php:21
+msgid "Home"
+msgstr ""
+
+#: footer.php:131
+msgid "হোম"
+msgstr ""
+
+#: footer.php:133 footer.php:135
+msgid "Categories"
+msgstr ""
+
+#: footer.php:133 footer.php:135
+msgid "ক্যাটাগরি"
+msgstr ""
+
+#: footer.php:137
+msgid "Telegram Channel"
+msgstr ""
+
+#: footer.php:137
+msgid "টেলিগ্রাম চ্যানেল"
+msgstr ""
+
+#: footer.php:139
+msgid "Telegram"
+msgstr ""
+
+#: footer.php:139
+msgid "টেলিগ্রাম"
+msgstr ""
+
+#: footer.php:141 footer.php:144
+msgid "Reading List"
+msgstr ""
+
+#: footer.php:141 footer.php:144
+msgid "পড়ার তালিকা"
+msgstr ""
+
+#: footer.php:155 footer.php:155
+msgid "Scroll to top"
+msgstr ""
+
+#: footer.php:165
+msgid "Instant Search"
+msgstr ""
+
+#: footer.php:165
+msgid "তাত্ক্ষণিক অনুসন্ধান"
+msgstr ""
+
+#: footer.php:170
+msgid "Search handnotes, routines, suggestions..."
+msgstr ""
+
+#: footer.php:170
+msgid "হ্যান্ডনোট, রুটিন বা বিষয় লিখে খুঁজুন..."
+msgstr ""
+
+#: footer.php:171
+msgid "Close search"
+msgstr ""
+
+#: footer.php:171
+msgid "সার্চ বন্ধ করুন"
+msgstr ""
+
+#: footer.php:178
+msgid "Trending Searches"
+msgstr ""
+
+#: footer.php:178
+msgid "জনপ্রিয় অনুসন্ধানসমূহ"
+msgstr ""
+
+#: footer.php:204
+msgid "Your Saved Articles"
+msgstr ""
+
+#: footer.php:204
+msgid "আপনার পড়ার তালিকা"
+msgstr ""
+
+#: footer.php:206
+msgid "Close reading list"
+msgstr ""
+
+#: footer.php:206
+msgid "ড্রয়ার বন্ধ করুন"
+msgstr ""
+
+#: footer.php:214
+msgid "Your reading list is currently empty."
+msgstr ""
+
+#: footer.php:214
+msgid "আপনার পড়ার তালিকা বর্তমানে খালি রয়েছে।"
+msgstr ""
+
+#: footer.php:215
+msgid "Click the bookmark icon on any post to save it for reading."
+msgstr ""
+
+#: footer.php:215
+msgid "যেকোনো পোস্ট সেভ করে অফলাইনে পড়তে বুকমার্ক আইকনে ক্লিক করুন।"
+msgstr ""
+
+#: footer.php:219
+msgid "Clear List"
+msgstr ""
+
+#: footer.php:219
+msgid "তালিকা খালি করুন"
+msgstr ""
+
+#: footer.php:231
+msgid "A Polite Request"
+msgstr ""
+
+#: footer.php:231
+msgid "একটি বিনীত অনুরোধ"
+msgstr ""
+
+#: footer.php:233
+msgid "HelpTrickBD is an open education platform. To continue publishing quality guides for students, our operations are supported by clean ads. Please consider whitelisting our site in your adblocker."
+msgstr ""
+
+#: footer.php:233
+msgid "হেল্পট্রিকবিডি একটি উন্মুক্ত শিক্ষামূলক প্ল্যাটফর্ম। শিক্ষার্থীদের জন্য মানসম্মত কনটেন্ট নিয়মিত প্রকাশ করতে আমাদের কার্যক্রম বিজ্ঞাপন সমর্থিত। অনুগ্রহ করে আপনার অ্যাডব্লকারে সাইটটি অনুমোদিত (হোয়াইটলিস্ট) করুন।"
+msgstr ""
+
+#: footer.php:235
+msgid "Got it, Thanks"
+msgstr ""
+
+#: footer.php:235
+msgid "বুঝেছি, ধন্যবাদ"
+msgstr ""
+
+#: footer.php:246
+msgid "We use cookies to enhance your browsing experience and provide accurate educational information. By continuing to use our website, you agree to our policies."
+msgstr ""
+
+#: footer.php:246
+msgid "আপনার ব্রাউজিং অভিজ্ঞতা উন্নত করতে এবং সঠিক শিক্ষামূলক তথ্য প্রদানে আমরা কুকিজ ব্যবহার করি। সাইটটি ব্যবহারের মাধ্যমে আপনি আমাদের নীতিমালায় সম্মত হচ্ছেন।"
+msgstr ""
+
+#: footer.php:249
+msgid "Learn More"
+msgstr ""
+
+#: footer.php:249
+msgid "বিস্তারিত পড়ুন"
+msgstr ""
+
+#: footer.php:250
+msgid "Accept"
+msgstr ""
+
+#: footer.php:250
+msgid "সম্মতি দিচ্ছি"
+msgstr ""
+
+#: functions.php:57
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:58
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:59
+msgid "Mobile Drawer Menu"
+msgstr ""
+
+#: functions.php:84
+msgid "Primary Blue"
+msgstr ""
+
+#: functions.php:89
+msgid "Primary Dark"
+msgstr ""
+
+#: functions.php:94
+msgid "Surface Dark"
+msgstr ""
+
+#: functions.php:99
+msgid "Surface Card"
+msgstr ""
+
+#: functions.php:104
+msgid "Text Main"
+msgstr ""
+
+#: functions.php:109
+msgid "Text Muted"
+msgstr ""
+
+#: functions.php:114
+msgid "Accent Emerald"
+msgstr ""
+
+#: functions.php:119
+msgid "Accent Amber"
+msgstr ""
+
+#: functions.php:128
+msgid "Small"
+msgstr ""
+
+#: functions.php:133
+msgid "Normal"
+msgstr ""
+
+#: functions.php:138
+msgid "Medium"
+msgstr ""
+
+#: functions.php:143
+msgid "Large"
+msgstr ""
+
+#: functions.php:148
+msgid "Huge"
+msgstr ""
+
+#: functions.php:177
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:179
+msgid "Main sidebar displayed on single posts and archives."
+msgstr ""
+
+#: functions.php:188
+msgid "Footer Column %d"
+msgstr ""
+
+#: functions.php:190
+msgid "Widget area for footer column %d."
+msgstr ""
+
+#: functions.php:393
+msgid "Scroll horizontally to view complete table"
+msgstr ""
+
+#: functions.php:394
+msgid "সম্পূর্ণ তথ্য দেখতে ডানে-বামে স্ক্রোল করুন"
+msgstr ""
+
+#: header.php:33
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:33
+msgid "সরাসরি মূল কনটেন্টে যান"
+msgstr ""
+
+#: header.php:51
+msgid "Close menu"
+msgstr ""
+
+#: header.php:51
+msgid "মেনু বন্ধ করুন"
+msgstr ""
+
+#: header.php:60
+msgid "All Categories & Topics"
+msgstr ""
+
+#: header.php:60
+msgid "সকল ক্যাটাগরি ও বিষয়"
+msgstr ""
+
+#: inc/ajax-search.php:180
+msgid "Thank you! Your feedback has been recorded."
+msgstr ""
+
+#: inc/breadcrumbs.php:31 template-parts/header/navbar.php:23
+msgid "মূল পাতা"
+msgstr ""
+
+#: inc/breadcrumbs.php:32
+msgid "Breadcrumb Navigation"
+msgstr ""
+
+#: inc/breadcrumbs.php:32
+msgid "ব্রেডক্রাম্ব নেভিগেশন"
+msgstr ""
+
+#: inc/breadcrumbs.php:90
+msgid "Search Results for: "
+msgstr ""
+
+#: inc/breadcrumbs.php:90
+msgid "অনুসন্ধানের ফলাফল: "
+msgstr ""
+
+#: inc/breadcrumbs.php:95
+msgid "404: Page Not Found"
+msgstr ""
+
+#: inc/breadcrumbs.php:95
+msgid "৪০৪: পৃষ্ঠা পাওয়া যায়নি"
+msgstr ""
+
+#: inc/customizer/customizer-base.php:30
+msgid "HelpTrickBD Theme Settings"
+msgstr ""
+
+#: inc/customizer/customizer-base.php:31
+msgid "Configure typography, header navigation, homepage hubs, sidebar modules, footer columns, study tools, social links, and Google AdSense slots."
+msgstr ""
+
+#: inc/customizer/section-ads.php:22
+msgid "Google AdSense & Monetization"
+msgstr ""
+
+#: inc/customizer/section-ads.php:28
+msgid "Header Ad (728x90 or Responsive)"
+msgstr ""
+
+#: inc/customizer/section-ads.php:28
+msgid "Displayed directly below primary header"
+msgstr ""
+
+#: inc/customizer/section-ads.php:29
+msgid "Below Post Title Ad"
+msgstr ""
+
+#: inc/customizer/section-ads.php:29
+msgid "Displayed directly beneath article header"
+msgstr ""
+
+#: inc/customizer/section-ads.php:30
+msgid "In-Content Ad"
+msgstr ""
+
+#: inc/customizer/section-ads.php:30
+msgid "Automatically inserted after paragraphs 3 or 4"
+msgstr ""
+
+#: inc/customizer/section-ads.php:31
+msgid "After Post Content Ad"
+msgstr ""
+
+#: inc/customizer/section-ads.php:31
+msgid "Displayed after post text concludes"
+msgstr ""
+
+#: inc/customizer/section-ads.php:32
+msgid "Homepage In-Feed Ad Slot 1 (After Hero)"
+msgstr ""
+
+#: inc/customizer/section-ads.php:32
+msgid "Responsive in-feed ad banner displayed between Hero and SSC hub"
+msgstr ""
+
+#: inc/customizer/section-ads.php:33
+msgid "Homepage In-Feed Ad Slot 2 (After Subject Filter)"
+msgstr ""
+
+#: inc/customizer/section-ads.php:33
+msgid "Responsive in-feed ad banner displayed between Subject Filter and Focus block"
+msgstr ""
+
+#: inc/customizer/section-ads.php:34
+msgid "Sticky Sidebar Ad (300x600 / 300x250)"
+msgstr ""
+
+#: inc/customizer/section-ads.php:34
+msgid "Fixed desktop sidebar ad during scrolling"
+msgstr ""
+
+#: inc/customizer/section-ads.php:35
+msgid "Google Auto Ads Script"
+msgstr ""
+
+#: inc/customizer/section-ads.php:35
+msgid "Injected inside head element for Auto Ads"
+msgstr ""
+
+#: inc/customizer/section-ads.php:57
+msgid "Enable Polite AdBlocker Notice"
+msgstr ""
+
+#: inc/customizer/section-ads.php:58
+msgid "Politely asks visitors using ad blockers to whitelist the website."
+msgstr ""
+
+#: inc/customizer/section-community.php:22
+msgid "Social & Community Links"
+msgstr ""
+
+#: inc/customizer/section-community.php:32
+msgid "WhatsApp Channel URL"
+msgstr ""
+
+#: inc/customizer/section-community.php:33
+msgid "Official WhatsApp channel link for students."
+msgstr ""
+
+#: inc/customizer/section-community.php:43
+msgid "Telegram Channel URL"
+msgstr ""
+
+#: inc/customizer/section-community.php:53
+msgid "Facebook Page URL"
+msgstr ""
+
+#: inc/customizer/section-community.php:63
+msgid "YouTube Channel URL"
+msgstr ""
+
+#: inc/customizer/section-community.php:73
+msgid "X (Twitter) Profile URL"
+msgstr ""
+
+#: inc/customizer/section-community.php:83
+msgid "Support & Contact Email"
+msgstr ""
+
+#: inc/customizer/section-footer.php:22
+msgid "Footer & Copyright"
+msgstr ""
+
+#: inc/customizer/section-footer.php:29
+msgid "HelpTrickBD is a trusted educational portal providing National University routines, SSC/Dakhil suggestions, BCS preparation, Political Science handnotes, and modern ICT guides for students."
+msgstr ""
+
+#: inc/customizer/section-footer.php:33
+msgid "Footer Brand About Description"
+msgstr ""
+
+#: inc/customizer/section-footer.php:40
+msgid "100% Authentic Information & Expert-Reviewed Content"
+msgstr ""
+
+#: inc/customizer/section-footer.php:44
+msgid "Footer Trust Badge Text"
+msgstr ""
+
+#: inc/customizer/section-footer.php:56
+msgid "Custom Copyright Notice (Leave blank for automatic current year)"
+msgstr ""
+
+#: inc/customizer/section-footer.php:63
+msgid "Built for educational excellence and open knowledge"
+msgstr ""
+
+#: inc/customizer/section-footer.php:68
+msgid "Footer Credit Line"
+msgstr ""
+
+#: inc/customizer/section-footer.php:79
+msgid "Enable Circular Scroll-to-Top Button"
+msgstr ""
+
+#: inc/customizer/section-footer.php:90
+msgid "Enable Mobile Bottom Navigation Dock"
+msgstr ""
+
+#: inc/customizer/section-header.php:22
+msgid "Header & Navigation"
+msgstr ""
+
+#: inc/customizer/section-header.php:33
+msgid "Show Instant Search Button (Ctrl+K) in Header"
+msgstr ""
+
+#: inc/customizer/section-header.php:44
+msgid "Show Reading List (Bookmarks) Button in Header"
+msgstr ""
+
+#: inc/customizer/section-header.php:55
+msgid "Show Dark/Light Mode Switcher in Header"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:18
+msgid "— ডিফল্ট / সর্বশেষ পোস্ট —"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:27
+msgid "Homepage Sections & Educational Hubs"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:38
+msgid "Enable Notice Marquee Ticker"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:48
+msgid "Notice Ticker Badge Text"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:58
+msgid "Number of Ticker Notices"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:69
+msgid "Enable Magazine Lead Hero Story & Spotlights"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:79
+msgid "Lead Hero Kicker Badge Text"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:90
+msgid "Enable SSC & Dakhil Hub Section"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:100
+msgid "SSC Hub Heading"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:110
+msgid "SSC Hub Link Text"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:121
+msgid "Enable Subject Filterable Posts Section"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:131
+msgid "Subject Filter Section Title"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:141
+msgid "Subject Filter Link Text"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:152
+msgid "Enable National University & Higher Studies Section"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:162
+msgid "National University Section Title"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:172
+msgid "Select Category for NU Section"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:183
+msgid "Number of Posts for NU Section"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:193
+msgid "NU Section Link Text"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:204
+msgid "Enable Photo Guides & Gallery Section"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:214
+msgid "Photo Guides Section Title"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:224
+msgid "Select Category for Photo Guides"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:235
+msgid "Number of Posts for Photo Guides"
+msgstr ""
+
+#: inc/customizer/section-homepage.php:245
+msgid "Photo Guides Link Text"
+msgstr ""
+
+#: inc/customizer/section-sidebar.php:22
+msgid "Sidebar Modules"
+msgstr ""
+
+#: inc/customizer/section-sidebar.php:33
+msgid "Enable Popular Posts & Handnotes Widget"
+msgstr ""
+
+#: inc/customizer/section-sidebar.php:34
+msgid "Displays top viewed posts with numbered ranking badges and circular thumbnails."
+msgstr ""
+
+#: inc/customizer/section-sidebar.php:44
+msgid "Popular Posts Section Title"
+msgstr ""
+
+#: inc/customizer/section-sidebar.php:54
+msgid "Number of Popular Posts (3 to 10)"
+msgstr ""
+
+#: inc/customizer/section-sidebar.php:66
+msgid "Display Sticky AdSlot in Sidebar"
+msgstr ""
+
+#: inc/customizer/section-sidebar.php:77
+msgid "Enable Additional Custom Widgets in Sidebar"
+msgstr ""
+
+#: inc/customizer/section-sidebar.php:78
+msgid "Display widgets configured under Appearance > Widgets. (Default: Hidden)"
+msgstr ""
+
+#: inc/customizer/section-single.php:22
+msgid "Single Post & Study Tools"
+msgstr ""
+
+#: inc/customizer/section-single.php:33
+msgid "Enable Top Live Reading Progress Bar"
+msgstr ""
+
+#: inc/customizer/section-single.php:44
+msgid "Enable Font Resizer Tool (A- / A / A+)"
+msgstr ""
+
+#: inc/customizer/section-single.php:55
+msgid "Enable Focus Reading Mode Button"
+msgstr ""
+
+#: inc/customizer/section-single.php:66
+msgid "Enable Reading List Bookmark Button"
+msgstr ""
+
+#: inc/customizer/section-single.php:77
+msgid "Enable 1-Click Print & PDF Button"
+msgstr ""
+
+#: inc/customizer/section-single.php:88
+msgid "Enable Automatic Table of Contents (TOC)"
+msgstr ""
+
+#: inc/customizer/section-single.php:99
+msgid "Display Telegram & WhatsApp Community Card Below Post"
+msgstr ""
+
+#: inc/customizer/section-single.php:110
+msgid "Display Related Articles Grid Below Content"
+msgstr ""
+
+#: inc/customizer/section-single.php:117
+msgid "Senior Faculty Panel"
+msgstr ""
+
+#: inc/customizer/section-single.php:121
+msgid "Fact-Check Reviewer / Educator Name"
+msgstr ""
+
+#: inc/customizer/section-single.php:122
+msgid "Displayed in the top E-E-A-T verified badge."
+msgstr ""
+
+#: inc/customizer/section-single.php:133
+msgid "PDF Download Countdown Seconds"
+msgstr ""
+
+#: inc/customizer/section-single.php:134
+msgid "Between 1 and 30 seconds (Default: 5)."
+msgstr ""
+
+#: inc/customizer/section-single.php:146
+msgid "Author Profile Photo (Optional Override)"
+msgstr ""
+
+#: inc/customizer/section-single.php:147
+msgid "Upload your author profile photo. If empty, automatically uses your WordPress User Profile photo/avatar."
+msgstr ""
+
+#: inc/customizer/section-single.php:157
+msgid "Author Public Display Name (Optional Override)"
+msgstr ""
+
+#: inc/customizer/section-single.php:158
+msgid "Leave empty to automatically pull Display Name from WordPress Users -> Profile."
+msgstr ""
+
+#: inc/customizer/section-single.php:165
+msgid "Author & Researcher"
+msgstr ""
+
+#: inc/customizer/section-single.php:169
+msgid "Author Academic Credential / Title"
+msgstr ""
+
+#: inc/customizer/section-single.php:170
+msgid "E.g., \"Author & Senior Researcher\" or \"Education Specialist\"."
+msgstr ""
+
+#: inc/customizer/section-single.php:181
+msgid "Author Biography (Optional Override)"
+msgstr ""
+
+#: inc/customizer/section-single.php:182
+msgid "Leave empty to automatically pull from WordPress Users -> Profile -> Biographical Info."
+msgstr ""
+
+#: inc/customizer/section-typography.php:26
+msgid "Typography: Heading Fonts (H1-H6)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:27
+msgid "Configure font family, font weight, and line height for all headings (H1-H6), article titles, and section headers across the entire website."
+msgstr ""
+
+#: inc/customizer/section-typography.php:38
+msgid "Heading Font Family"
+msgstr ""
+
+#: inc/customizer/section-typography.php:39
+msgid "Select the font family for all headings and section titles."
+msgstr ""
+
+#: inc/customizer/section-typography.php:43
+msgid "Shurjo Serif (Newspaper Editorial - Default)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:44
+msgid "SolaimanLipi (Standard Bengali Newspaper)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:45
+msgid "Hind Siliguri (Modern Clean Sans)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:46
+msgid "System Serif (Georgia, Times)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:47
+msgid "System Sans-Serif (Modern Clean)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:57
+msgid "Heading Font Weight"
+msgstr ""
+
+#: inc/customizer/section-typography.php:61
+msgid "Semi-Bold (600)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:62
+msgid "Bold (700) - Default"
+msgstr ""
+
+#: inc/customizer/section-typography.php:63
+msgid "Extra Bold (800)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:73
+msgid "Heading Line Height Scale"
+msgstr ""
+
+#: inc/customizer/section-typography.php:77
+msgid "Tight (1.25)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:78
+msgid "Balanced (1.35) - Default"
+msgstr ""
+
+#: inc/customizer/section-typography.php:79
+msgid "Spacious (1.45)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:87
+msgid "Typography: Body & Reading Content"
+msgstr ""
+
+#: inc/customizer/section-typography.php:88
+msgid "Configure font family, font size, and line height for all paragraphs, long-form content, and general body text."
+msgstr ""
+
+#: inc/customizer/section-typography.php:99
+msgid "Body Font Family"
+msgstr ""
+
+#: inc/customizer/section-typography.php:100
+msgid "Select the font family for all body copy, notes, and paragraphs."
+msgstr ""
+
+#: inc/customizer/section-typography.php:104
+msgid "SolaimanLipi (Newspaper Standard - Default)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:105
+msgid "Shurjo Serif (Literary Reading)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:106
+msgid "Hind Siliguri (Clean Sans)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:107
+msgid "System Sans-Serif (-apple-system, BlinkMacSystemFont)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:117
+msgid "Base Body Font Size"
+msgstr ""
+
+#: inc/customizer/section-typography.php:121
+msgid "Compact (15px)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:122
+msgid "Standard (16px) - Default"
+msgstr ""
+
+#: inc/customizer/section-typography.php:123
+msgid "Enhanced (17px)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:124
+msgid "Large & Accessible (18px)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:134
+msgid "Body Line Height (Line Spacing)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:138
+msgid "Standard (1.7)"
+msgstr ""
+
+#: inc/customizer/section-typography.php:139
+msgid "Comfortable Reading (1.8) - Default"
+msgstr ""
+
+#: inc/customizer/section-typography.php:140
+msgid "Spacious / Academic (1.9)"
+msgstr ""
+
+#: inc/i18n/locale-helpers.php:82
+msgid "মিনিট পড়া"
+msgstr ""
+
+#: inc/template-tags.php:95
+msgid "words"
+msgstr ""
+
+#: inc/template-tags.php:96 inc/i18n/locale-helpers.php:85
+msgid "min read"
+msgstr ""
+
+#: inc/template-tags.php:160
+msgid "সর্বশেষ হালনাগাদ"
+msgstr ""
+
+#: inc/template-tags.php:160
+msgid "Last Updated"
+msgstr ""
+
+#: inc/template-tags.php:161
+msgid "হালনাগাদ"
+msgstr ""
+
+#: inc/template-tags.php:161
+msgid "Updated"
+msgstr ""
+
+#: inc/template-tags.php:178
+msgid "শিক্ষক ও গবেষক দ্বারা তথ্য যাচাইকৃত"
+msgstr ""
+
+#: inc/template-tags.php:178
+msgid "Fact-Checked & Verified by Educators"
+msgstr ""
+
+#: inc/template-tags.php:179
+msgid "তথ্য যাচাইকৃত"
+msgstr ""
+
+#: inc/template-tags.php:179
+msgid "Fact-Checked"
+msgstr ""
+
+#: inc/template-tags.php:259 inc/i18n/locale-helpers.php:99
+msgid "Views"
+msgstr ""
+
+#: inc/template-tags.php:259 inc/i18n/locale-helpers.php:97
+msgid "বার পঠিত"
+msgstr ""
+
+#: inc/template-tags.php:315
+msgid "গাইডটি শেয়ার করুন"
+msgstr ""
+
+#: inc/template-tags.php:315
+msgid "Share this article"
+msgstr ""
+
+#: inc/template-tags.php:316
+msgid "শেয়ার:"
+msgstr ""
+
+#: inc/template-tags.php:316
+msgid "Share:"
+msgstr ""
+
+#: inc/template-tags.php:317
+msgid "ফেসবুকে শেয়ার করুন"
+msgstr ""
+
+#: inc/template-tags.php:317
+msgid "Share on Facebook"
+msgstr ""
+
+#: inc/template-tags.php:318 template-parts/single/highlight-dock.php:18
+msgid "হোয়াটসঅ্যাপে শেয়ার করুন"
+msgstr ""
+
+#: inc/template-tags.php:318
+msgid "Share on WhatsApp"
+msgstr ""
+
+#: inc/template-tags.php:319
+msgid "টেলিগ্রামে শেয়ার করুন"
+msgstr ""
+
+#: inc/template-tags.php:319
+msgid "Share on Telegram"
+msgstr ""
+
+#: inc/template-tags.php:320
+msgid "এক্স-এ শেয়ার করুন"
+msgstr ""
+
+#: inc/template-tags.php:320
+msgid "Share on X"
+msgstr ""
+
+#: inc/template-tags.php:321
+msgid "লিংক কপি করুন"
+msgstr ""
+
+#: inc/template-tags.php:321
+msgid "Copy link"
+msgstr ""
+
+#: inc/template-tags.php:344
+msgid "সহপাঠীদের সাথে শেয়ার করুন"
+msgstr ""
+
+#: inc/template-tags.php:344
+msgid "Share with friends and peers"
+msgstr ""
+
+#: inc/template-tags.php:345
+msgid "সহপাঠী ও বন্ধুদের সাথে শেয়ার করুন"
+msgstr ""
+
+#: inc/template-tags.php:345
+msgid "Share with classmates and friends"
+msgstr ""
+
+#: inc/template-tags.php:346
+msgid "আপনার সহপাঠী ও বন্ধুদের প্রস্তুতিতে সহায়তা করতে সোশ্যাল মিডিয়ায় শেয়ার করুন।"
+msgstr ""
+
+#: inc/template-tags.php:346
+msgid "Help your peers with their preparation by sharing this guide."
+msgstr ""
+
+#: inc/template-tags.php:347
+msgid "লিংক কপি"
+msgstr ""
+
+#: inc/template-tags.php:347
+msgid "Copy Link"
+msgstr ""
+
+#: inc/template-tags.php:404
+msgid "Was this study guide helpful for your preparation?"
+msgstr ""
+
+#: inc/template-tags.php:404
+msgid "এই গাইডটি কি আপনার প্রস্তুতিতে সহায়ক হয়েছে?"
+msgstr ""
+
+#: inc/template-tags.php:405
+msgid "Student feedback helps us create accurate, high-quality handnotes and guides."
+msgstr ""
+
+#: inc/template-tags.php:405
+msgid "শিক্ষার্থীদের মূল্যায়ন আমাদের নির্ভুল ও মানসম্মত হ্যান্ডনোট তৈরি করতে সহায়তা করে।"
+msgstr ""
+
+#: inc/template-tags.php:406 inc/template-tags.php:407
+msgid "Helpful"
+msgstr ""
+
+#: inc/template-tags.php:406 inc/template-tags.php:407
+msgid "সহায়ক হয়েছে"
+msgstr ""
+
+#: inc/template-tags.php:501
+msgid "লেখক ও গবেষক"
+msgstr ""
+
+#: inc/template-tags.php:507
+msgid "About the Author"
+msgstr ""
+
+#: inc/template-tags.php:507
+msgid "লেখক পরিচিতি"
+msgstr ""
+
+#: inc/template-tags.php:525
+msgid "Google E-E-A-T Verified Educator & Researcher"
+msgstr ""
+
+#: inc/template-tags.php:525
+msgid "গুগল E-E-A-T ভেরিফাইড শিক্ষক ও গবেষক"
+msgstr ""
+
+#: inc/template-tags.php:527
+msgid "Verified Author"
+msgstr ""
+
+#: inc/template-tags.php:527
+msgid "ভেরিফাইড লেখক"
+msgstr ""
+
+#: inc/template-tags.php:536
+msgid "Total Publications:"
+msgstr ""
+
+#: inc/template-tags.php:536
+msgid "মোট প্রকাশনা:"
+msgstr ""
+
+#: inc/template-tags.php:536
+msgid "টি হ্যান্ডনোট"
+msgstr ""
+
+#: inc/template-tags.php:539
+msgid "View all posts by author"
+msgstr ""
+
+#: inc/template-tags.php:539
+msgid "লেখকের সকল পোস্ট দেখুন"
+msgstr ""
+
+#: inc/template-tags.php:559
+msgid "পোস্ট নেভিগেশন"
+msgstr ""
+
+#: inc/template-tags.php:559
+msgid "Post Navigation"
+msgstr ""
+
+#: inc/template-tags.php:560
+msgid "পূর্ববর্তী গাইড"
+msgstr ""
+
+#: inc/template-tags.php:560
+msgid "Previous Article"
+msgstr ""
+
+#: inc/template-tags.php:561
+msgid "পরবর্তী গাইড"
+msgstr ""
+
+#: inc/template-tags.php:561
+msgid "Next Article"
+msgstr ""
+
+#: inc/widgets.php:21
+msgid "HelpTrickBD: Popular Posts"
+msgstr ""
+
+#: inc/widgets.php:22
+msgid "Ranked 1-5 badge and round thumbnail popular posts list"
+msgstr ""
+
+#: inc/widgets.php:27 inc/widgets.php:103 inc/customizer/section-sidebar.php:40
+msgid "Trending Handnotes"
+msgstr ""
+
+#: inc/widgets.php:107 inc/widgets.php:192
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets.php:111
+msgid "Number of posts:"
+msgstr ""
+
+#: inc/widgets.php:133
+msgid "HelpTrickBD: Category Cards"
+msgstr ""
+
+#: inc/widgets.php:134
+msgid "Modern category cards grid with vector icons and post count badges"
+msgstr ""
+
+#: inc/widgets.php:139 inc/widgets.php:188
+msgid "Explore Categories"
+msgstr ""
+
+#: inc/widgets.php:196
+msgid "Number of categories:"
+msgstr ""
+
+#: index.php:27
+msgid "Latest Publications"
+msgstr ""
+
+#: search.php:26
+msgid "Search Results"
+msgstr ""
+
+#: search.php:26
+msgid "অনুসন্ধানের ফলাফল"
+msgstr ""
+
+#: search.php:38
+msgid "Found %s results"
+msgstr ""
+
+#: search.php:44
+msgid "মোট %s টি ফলাফল পাওয়া গেছে"
+msgstr ""
+
+#: template-parts/content-card.php:20 template-parts/single/reading-toolbelt.php:34
+msgid "Save to reading list"
+msgstr ""
+
+#: template-parts/content-card.php:21
+msgid "বুকমার্কে সংরক্ষণ করুন"
+msgstr ""
+
+#: template-parts/content-none.php:18
+msgid "No Results Found"
+msgstr ""
+
+#: template-parts/content-none.php:18
+msgid "কোনো ফলাফল পাওয়া যায়নি"
+msgstr ""
+
+#: template-parts/content-none.php:20
+msgid "No Articles Found"
+msgstr ""
+
+#: template-parts/content-none.php:20
+msgid "কোনো তথ্য বা পোস্ট পাওয়া যায়নি"
+msgstr ""
+
+#: template-parts/content-none.php:30
+msgid "প্রথম পোস্ট প্রকাশ করতে প্রস্তুত? <a href=\"%1$s\">এখানে শুরু করুন</a>।"
+msgstr ""
+
+#: template-parts/content-none.php:36
+msgid "Sorry, no handnotes or guides matched your search query. Please try again with different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:36
+msgid "দুঃখিত, আপনার অনুসন্ধানের সাথে মিলে এমন কোনো হ্যান্ডনোট বা গাইড পাওয়া যায়নি। অনুগ্রহ করে ভিন্ন কি-ওয়ার্ড দিয়ে আবার চেষ্টা করুন।"
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid "What you are looking for could not be found at this time. Try searching above with another keyword."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid "আপনি যা খুঁজছেন তা এই মুহূর্তে পাওয়া যায়নি। উপরের সার্চ বক্সে কি-ওয়ার্ড লিখে অনুসন্ধান করতে পারেন।"
+msgstr ""
+
+#: template-parts/content.php:43
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/header/language-switcher.php:17
+msgid "Language Selector"
+msgstr ""
+
+#: template-parts/header/language-switcher.php:21
+msgid "বাংলা সংস্করণ"
+msgstr ""
+
+#: template-parts/header/language-switcher.php:28
+msgid "English Edition"
+msgstr ""
+
+#: template-parts/header/navbar.php:28
+msgid "Primary Navigation"
+msgstr ""
+
+#: template-parts/header/navbar.php:28
+msgid "মূল নেভিগেশন মেনু"
+msgstr ""
+
+#: template-parts/header/navbar.php:30
+msgid "Open Menu"
+msgstr ""
+
+#: template-parts/header/navbar.php:30
+msgid "মেনু খুলুন"
+msgstr ""
+
+#: template-parts/home/section-filter-rows.php:176
+msgid "Filter by academic subject"
+msgstr ""
+
+#: template-parts/home/section-filter-rows.php:176
+msgid "বিষয় অনুযায়ী ফিল্টার"
+msgstr ""
+
+#: template-parts/home/section-lead-hero.php:82
+msgid "নির্বাচিত ও সর্বশেষ প্রবন্ধসমূহ"
+msgstr ""
+
+#: template-parts/home/section-lead-hero.php:82
+msgid "Featured and Latest Articles"
+msgstr ""
+
+#: template-parts/home/section-lead-hero.php:125
+msgid "একাডেমিক"
+msgstr ""
+
+#: template-parts/home/section-lead-hero.php:125
+msgid "Academic"
+msgstr ""
+
+#: template-parts/sidebar/widget-categories.php:27
+msgid "Topics & Departments"
+msgstr ""
+
+#: template-parts/sidebar/widget-categories.php:27
+msgid "সকল বিষয় ও বিভাগ"
+msgstr ""
+
+#: template-parts/sidebar/widget-popular.php:85
+msgid "Popular Articles"
+msgstr ""
+
+#: template-parts/sidebar/widget-popular.php:85
+msgid "জনপ্রিয় হ্যান্ডনোট"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:22
+msgid "যুক্ত থাকুন"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:22
+msgid "Stay Connected"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:35
+msgid "অফিসিয়াল পেজ"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:35
+msgid "Official Page"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:37
+msgid "ফলো করুন"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:37
+msgid "Follow"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:46
+msgid "ভিডিও টিউটোরিয়াল"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:46
+msgid "Video Tutorials"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:48
+msgid "সাবস্ক্রাইব"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:48
+msgid "Subscribe"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:57
+msgid "স্টাডি চ্যানেল"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:57
+msgid "Study Channel"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:59 template-parts/sidebar/widget-social.php:70
+msgid "যুক্ত হোন"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:59 template-parts/sidebar/widget-social.php:70
+msgid "Join Now"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:68
+msgid "পরীক্ষার আপডেট"
+msgstr ""
+
+#: template-parts/sidebar/widget-social.php:68
+msgid "Exam Updates"
+msgstr ""
+
+#: template-parts/single/article-content.php:18
+msgid "পৃষ্ঠাসমূহ:"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:14
+msgid "Copy Selected Text"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:14
+msgid "নির্বাচিত অংশ কপি করুন"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:16
+msgid "Copy"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:16
+msgid "কপি"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:18
+msgid "Share via WhatsApp"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:20
+msgid "Share"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:20
+msgid "শেয়ার"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:28
+msgid "Education & Technology Resource Portal"
+msgstr ""
+
+#: template-parts/single/highlight-dock.php:28
+msgid "শিক্ষা ও তথ্যপ্রযুক্তি রিসোর্স পোর্টাল"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:16
+msgid "Change font size"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:16
+msgid "ফন্টের আকার পরিবর্তন করুন"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:17
+msgid "Font:"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:17
+msgid "ফন্ট:"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:18
+msgid "Decrease font size"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:18
+msgid "ফন্ট ছোট করুন"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:19
+msgid "Reset font size"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:19
+msgid "স্বাভাবিক আকার"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:20
+msgid "Increase font size"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:20
+msgid "ফন্ট বড় করুন"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:26
+msgid "Focus reading mode"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:26
+msgid "ফোকাস রিডিং মোড"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:28
+msgid "Focus Mode"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:28
+msgid "ফোকাস মোড"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:34
+msgid "পড়ার তালিকায় সেভ করুন"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:36
+msgid "Save Post"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:36
+msgid "পোস্ট সেভ করুন"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:42
+msgid "Print or save PDF"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:42
+msgid "প্রিন্ট বা পিডিএফ সেভ করুন"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:44
+msgid "Print / PDF"
+msgstr ""
+
+#: template-parts/single/reading-toolbelt.php:44
+msgid "প্রিন্ট বা পিডিএফ"
+msgstr ""
+
+#: template-parts/single/related-posts.php:48
+msgid "Related Guides & Articles"
+msgstr ""
+
+#: template-parts/single/related-posts.php:48
+msgid "সম্পর্কিত হ্যান্ডনোট ও গাইড"
+msgstr ""
+
+#: template-parts/single/tags-list.php:15
+msgid "Tags:"
+msgstr ""
+
+#: template-parts/single/tags-list.php:15
+msgid "ট্যাগ:"
+msgstr ""
+
+#: template-parts/single/tags-list.php:16
+msgid "Article Tags"
+msgstr ""
+
+#: template-parts/single/tags-list.php:16
+msgid "বিষয়ভিত্তিক ট্যাগসমূহ"
+msgstr ""
+
+#: template-parts/single/toc.php:17
+msgid "Table of Contents"
+msgstr ""
+
+#: template-parts/single/toc.php:17
+msgid "সূচিপত্র"
+msgstr ""
+
+#: template-parts/single/toc.php:18
+msgid "Toggle table of contents"
+msgstr ""
+
+#: template-parts/single/toc.php:18
+msgid "সূচিপত্র খুলুন বা বন্ধ করুন"
+msgstr ""
+
+#: comments.php
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+

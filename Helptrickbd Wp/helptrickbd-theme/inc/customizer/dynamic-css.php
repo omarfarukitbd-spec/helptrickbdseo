@@ -75,6 +75,33 @@ function ht_customizer_dynamic_css() {
     $css .= "  letter-spacing: normal !important;\n";
     $css .= "}\n";
 
+    // English Locale Typography Rules
+    $css .= "html[lang=\"en-US\"], body.ht-lang-en {\n";
+    $css .= "  font-family: var(--ht-font-body);\n";
+    $css .= "  line-height: var(--ht-body-line-height);\n";
+    $css .= "  letter-spacing: normal;\n";
+    $css .= "  text-rendering: optimizeLegibility;\n";
+    $css .= "  -webkit-font-smoothing: antialiased;\n";
+    $css .= "  -moz-osx-font-smoothing: grayscale;\n";
+    $css .= "}\n";
+
+    $css .= "html[lang=\"en-US\"] h1, html[lang=\"en-US\"] h2, html[lang=\"en-US\"] h3,\n";
+    $css .= "html[lang=\"en-US\"] h4, html[lang=\"en-US\"] h5, html[lang=\"en-US\"] h6,\n";
+    $css .= "body.ht-lang-en h1, body.ht-lang-en h2, body.ht-lang-en h3,\n";
+    $css .= "body.ht-lang-en h4, body.ht-lang-en h5, body.ht-lang-en h6,\n";
+    $css .= "body.ht-lang-en .n-lead-title, body.ht-lang-en .ht-card-title,\n";
+    $css .= "body.ht-lang-en .n-sec-head h3, body.ht-lang-en .ht-article-title {\n";
+    $css .= "  font-family: var(--ht-font-heading);\n";
+    $css .= "  line-height: var(--ht-heading-line-height);\n";
+    $css .= "  letter-spacing: -0.015em;\n";
+    $css .= "}\n";
+
+    $css .= "body.ht-lang-en .n-kicker,\n";
+    $css .= "body.ht-lang-en .ht-drawer-section-title {\n";
+    $css .= "  text-transform: uppercase !important;\n";
+    $css .= "  letter-spacing: 0.05em !important;\n";
+    $css .= "}\n";
+
     // Attach inline style to enqueued stylesheets
     if (wp_style_is('ht-main', 'enqueued')) {
         wp_add_inline_style('ht-main', $css);

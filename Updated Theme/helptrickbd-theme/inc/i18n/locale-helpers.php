@@ -98,3 +98,103 @@ function ht_get_localized_post_views($count) {
     }
     return $formatted_count . ' ' . esc_html__('Views', 'helptrickbd');
 }
+
+/**
+ * Smart Localized Taxonomy Term Name (Category/Tag).
+ * Translates Bengali database term names to standard English when English locale is active.
+ *
+ * @param int|WP_Term|string $term_or_id Term object, ID, or slug.
+ * @param string $taxonomy Taxonomy name (default 'category').
+ * @return string Localized term name.
+ */
+function ht_get_localized_term_name($term_or_id, $taxonomy = 'category') {
+    if (empty($term_or_id)) {
+        return '';
+    }
+
+    $term = null;
+    if ($term_or_id instanceof WP_Term) {
+        $term = $term_or_id;
+    } elseif (is_numeric($term_or_id)) {
+        $term = get_term((int) $term_or_id, $taxonomy);
+    } elseif (is_string($term_or_id)) {
+        $term = get_term_by('slug', $term_or_id, $taxonomy);
+    }
+
+    if (!$term || is_wp_error($term)) {
+        return is_string($term_or_id) ? esc_html($term_or_id) : '';
+    }
+
+    // 1. If Polylang or WPML has a translation
+    if (function_exists('pll_get_term')) {
+        $target_lang = ht_is_bangla_locale() ? 'bn' : 'en';
+        $trans_id    = pll_get_term($term->term_id, $target_lang);
+        if ($trans_id && $trans_id !== $term->term_id) {
+            $trans_term = get_term($trans_id, $taxonomy);
+            if ($trans_term && !is_wp_error($trans_term)) {
+                return $trans_term->name;
+            }
+        }
+    }
+
+    // 2. If Bengali locale is active, return native term name
+    if (ht_is_bangla_locale()) {
+        return $term->name;
+    }
+
+    // 3. English Mode: Map known slugs to standardized English names
+    $slug_map = array(
+        'national-university' => __('National University', 'helptrickbd'),
+        'education-guide'     => __('Education & Routines', 'helptrickbd'),
+        'ssc-dakhil'          => __('SSC & Dakhil Suggestions', 'helptrickbd'),
+        'political-science'   => __('Political Science Handnotes', 'helptrickbd'),
+        'ict-technology'      => __('ICT & Technology', 'helptrickbd'),
+        'job-preparation'     => __('Career & BCS Preparation', 'helptrickbd'),
+        'islamic-article'     => __('Islamic Articles & Duas', 'helptrickbd'),
+        'bangla-1st-paper'    => __('Bangla 1st Paper', 'helptrickbd'),
+        'english-grammar'     => __('English Grammar & Composition', 'helptrickbd'),
+        'hsc'                 => __('HSC Suggestions & Guides', 'helptrickbd'),
+        'degree'              => __('Degree Routine & Handnotes', 'helptrickbd'),
+        'routine'             => __('Exam Routines & Notices', 'helptrickbd'),
+        'admission'           => __('College & University Admission', 'helptrickbd'),
+        'bcs'                 => __('BCS & Job Preparation', 'helptrickbd'),
+        'academic'            => __('Academic Handnotes', 'helptrickbd'),
+        'notice'              => __('Official Notices & Updates', 'helptrickbd'),
+    );
+
+    if (isset($slug_map[$term->slug])) {
+        return $slug_map[$term->slug];
+    }
+
+    // Check partial slug matches
+    foreach ($slug_map as $key => $val) {
+        if (strpos($term->slug, $key) !== false) {
+            return $val;
+        }
+    }
+
+    // If term name contains Bengali characters, convert slug to Clean English Title Case
+    if (preg_match('/[\x{0980}-\x{09FF}]/u', $term->name)) {
+        return ucwords(str_replace(array('-', '_'), ' ', $term->slug));
+    }
+
+    return $term->name;
+}
+
+/**
+ * Filter archive titles in English mode so category archive headers appear in English.
+ *
+ * @param string $title Original archive title.
+ * @return string Localized archive title.
+ */
+function ht_localize_archive_title($title) {
+    if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale() && is_category()) {
+        $term = get_queried_object();
+        if ($term instanceof WP_Term) {
+            return ht_get_localized_term_name($term);
+        }
+    }
+    return $title;
+}
+add_filter('get_the_archive_title', 'ht_localize_archive_title');
+
