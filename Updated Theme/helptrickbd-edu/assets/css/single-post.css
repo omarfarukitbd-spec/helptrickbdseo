@@ -940,6 +940,266 @@ body.dark .source-link-btn,
 }
 
 /* -------------------------------------------------------------------------
+ * 13. Modern Interactive Academic Comments & Discussion Engine
+ * ------------------------------------------------------------------------- */
+.ht-comments-area {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 2px solid var(--ht-rule, #e2e8f0);
+}
+
+.ht-comments-title {
+  font-family: var(--ht-font-serif, 'Shurjo', serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ht-text-primary, #0f172a);
+  margin-bottom: 24px;
+}
+
+.ht-comment-list,
+.commentlist {
+  list-style: none;
+  margin: 0 0 36px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ht-comment-list li.comment {
+  background: var(--ht-surface-alt, #f8fafc);
+  border: 1px solid var(--ht-border, #e2e8f0);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+.ht-comment-list .comment-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ht-comment-list .comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ht-comment-list .comment-author img {
+  border-radius: 50%;
+  border: 2px solid var(--ht-surface, #ffffff);
+}
+
+.ht-comment-list .fn {
+  font-weight: 700;
+  color: var(--ht-text-primary, #0f172a);
+}
+
+.ht-comment-list .comment-metadata a {
+  font-size: 0.8rem;
+  color: var(--ht-text-muted, #64748b);
+  text-decoration: none;
+}
+
+.ht-comment-list .comment-content p {
+  margin: 0 0 10px;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--ht-text-secondary, #334155);
+}
+
+.ht-comment-list .reply a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ht-primary, #1e40af);
+  text-decoration: none;
+}
+
+.ht-comment-list .reply a:hover {
+  text-decoration: underline;
+}
+
+.ht-comment-list .children {
+  list-style: none;
+  margin-top: 16px;
+  padding-left: 20px;
+  border-left: 2px solid var(--ht-border, #cbd5e1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Comment Respond & Form */
+.comment-respond {
+  margin-top: 28px;
+  background: var(--ht-surface, #ffffff);
+  border: 1px solid var(--ht-border, #e2e8f0);
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.comment-reply-title {
+  font-family: var(--ht-font-serif, 'Shurjo', serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ht-text-primary, #0f172a);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comment-reply-title #cancel-comment-reply-link {
+  font-size: 0.85rem;
+  color: #ef4444;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.comment-notes {
+  font-size: 0.85rem;
+  color: var(--ht-text-muted, #64748b);
+  margin-bottom: 16px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comment-form-comment {
+  margin: 0;
+}
+
+.comment-form-comment textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--ht-border, #cbd5e1);
+  background: var(--ht-surface-alt, #f8fafc);
+  color: var(--ht-text-primary, #0f172a);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: all 0.2s ease;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.comment-form-comment textarea:focus,
+.comment-form input[type="text"]:focus,
+.comment-form input[type="email"]:focus,
+.comment-form input[type="url"]:focus {
+  outline: none;
+  background: var(--ht-surface, #ffffff);
+  border-color: var(--ht-primary, #1e40af);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ht-text-secondary, #334155);
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"] {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1.5px solid var(--ht-border, #cbd5e1);
+  background: var(--ht-surface-alt, #f8fafc);
+  color: var(--ht-text-primary, #0f172a);
+  font-family: inherit;
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-submit {
+  margin: 8px 0 0 0;
+}
+
+.form-submit input[type="submit"],
+.comment-form #submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--ht-primary, #1e40af) 0%, #1d4ed8 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(30, 64, 175, 0.25);
+  transition: all 0.25s ease;
+}
+
+.form-submit input[type="submit"]:hover,
+.comment-form #submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.35);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+}
+
+/* Dark Mode Comments */
+[data-theme="dark"] .ht-comments-area {
+  border-color: #334155;
+}
+
+[data-theme="dark"] .ht-comment-list li.comment {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .comment-respond {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .comment-form-comment textarea,
+[data-theme="dark"] .comment-form input[type="text"],
+[data-theme="dark"] .comment-form input[type="email"],
+[data-theme="dark"] .comment-form input[type="url"] {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .comment-form-comment textarea:focus,
+[data-theme="dark"] .comment-form input[type="text"]:focus,
+[data-theme="dark"] .comment-form input[type="email"]:focus,
+[data-theme="dark"] .comment-form input[type="url"]:focus {
+  background: #1e293b !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
+}
+
+/* -------------------------------------------------------------------------
  * Print Optimization (@media print) for Academic Study & Revision
  * ------------------------------------------------------------------------- */
 @media print {

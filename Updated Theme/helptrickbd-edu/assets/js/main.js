@@ -271,4 +271,13 @@
       }
     }, { passive: true });
   }
+
+  // 5. Progressive Web App (PWA) Service Worker Registration
+  if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').catch(function () {
+        // Safe fallback if offline or restricted
+      });
+    });
+  }
 })();

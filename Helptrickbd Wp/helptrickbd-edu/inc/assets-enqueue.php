@@ -136,6 +136,24 @@ if (!function_exists('htbd_edu_enqueue_scripts')) {
             $copy_js_ver = filemtime($theme_dir . '/assets/js/copy-question.js');
             wp_enqueue_script('htbd-copy-question-js', $theme_uri . '/assets/js/copy-question.js', array(), $copy_js_ver, true);
         }
+
+        // 15. Instant Hover Link Prefetch Engine JS (Zero CLS / <100ms Page Loads)
+        if (file_exists($theme_dir . '/assets/js/prefetch.js')) {
+            $prefetch_ver = filemtime($theme_dir . '/assets/js/prefetch.js');
+            wp_enqueue_script('htbd-prefetch-js', $theme_uri . '/assets/js/prefetch.js', array(), $prefetch_ver, true);
+        }
+
+        // 16. National University (NU) CGPA Calculator (Conditional Enqueue - Zero Overhead on Blog)
+        if (is_page_template('page-nu-cgpa-calculator.php')) {
+            if (file_exists($theme_dir . '/assets/css/nu-cgpa-calculator.css')) {
+                $calc_css_ver = filemtime($theme_dir . '/assets/css/nu-cgpa-calculator.css');
+                wp_enqueue_style('htbd-nu-calculator-css', $theme_uri . '/assets/css/nu-cgpa-calculator.css', array('htbd-main-css'), $calc_css_ver);
+            }
+            if (file_exists($theme_dir . '/assets/js/nu-cgpa-calculator.js')) {
+                $calc_js_ver = filemtime($theme_dir . '/assets/js/nu-cgpa-calculator.js');
+                wp_enqueue_script('htbd-nu-calculator-js', $theme_uri . '/assets/js/nu-cgpa-calculator.js', array(), $calc_js_ver, true);
+            }
+        }
     }
 }
 add_action('wp_enqueue_scripts', 'htbd_edu_enqueue_scripts');
@@ -157,6 +175,8 @@ function htbd_edu_defer_scripts($tag, $handle) {
         'htbd-exam-countdown-js',
         'htbd-reading-progress-js',
         'htbd-copy-question-js',
+        'htbd-prefetch-js',
+        'htbd-nu-calculator-js',
     );
     if (in_array($handle, $defer_handles, true)) {
         return str_replace(' src', ' defer="defer" src', $tag);

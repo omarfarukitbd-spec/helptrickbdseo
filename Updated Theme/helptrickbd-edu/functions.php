@@ -60,6 +60,11 @@ if (file_exists(get_template_directory() . '/inc/geo-engine.php')) {
     require_once get_template_directory() . '/inc/geo-engine.php';
 }
 
+// 11. Zero-CLS AdSense Inserter Engine (High-CTR Native Placements)
+if (file_exists(get_template_directory() . '/inc/ad-inserter.php')) {
+    require_once get_template_directory() . '/inc/ad-inserter.php';
+}
+
 // =============================================================================
 // CORE HOOKS & FILTERS
 // =============================================================================
