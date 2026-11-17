@@ -79,6 +79,14 @@ function ht_customize_register($wp_customize) {
     // =============================================================
     // Section 1.5: Homepage Modern Modules & Educational Sections
     // =============================================================
+    $cat_choices = ['0' => esc_html__('— ডিফল্ট / সর্বশেষ পোস্ট —', 'helptrickbd')];
+    $all_cats    = get_categories(['hide_empty' => false]);
+    if (!empty($all_cats) && !is_wp_error($all_cats)) {
+        foreach ($all_cats as $c) {
+            $cat_choices[$c->term_id] = esc_html($c->name) . ' (' . $c->count . ')';
+        }
+    }
+
     $wp_customize->add_section('ht_homepage_sections', [
         'title'    => esc_html__('Homepage Sections & Educational Hubs', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
@@ -195,6 +203,110 @@ function ht_customize_register($wp_customize) {
     ]);
     $wp_customize->add_control('htbd_sec_filter_link_text', [
         'label'   => esc_html__('Subject Filter Link Text', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'text',
+    ]);
+
+    // 5. National University & Higher Studies Section
+    $wp_customize->add_setting('htbd_show_sec_nu', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_sec_nu', [
+        'label'   => esc_html__('Enable National University & Higher Studies Section', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_nu_title', [
+        'default'           => 'জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('htbd_sec_nu_title', [
+        'label'   => esc_html__('National University Section Title', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'text',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_nu_category', [
+        'default'           => 0,
+        'sanitize_callback' => 'absint',
+    ]);
+    $wp_customize->add_control('htbd_sec_nu_category', [
+        'label'   => esc_html__('Select Category for NU Section', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'select',
+        'choices' => $cat_choices,
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_nu_count', [
+        'default'           => 6,
+        'sanitize_callback' => 'absint',
+    ]);
+    $wp_customize->add_control('htbd_sec_nu_count', [
+        'label'   => esc_html__('Number of Posts for NU Section', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'number',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_nu_link_text', [
+        'default'           => 'সকল হ্যান্ডনোট →',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('htbd_sec_nu_link_text', [
+        'label'   => esc_html__('NU Section Link Text', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'text',
+    ]);
+
+    // 6. Photo Guides & Gallery Section
+    $wp_customize->add_setting('htbd_show_sec_gallery', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_sec_gallery', [
+        'label'   => esc_html__('Enable Photo Guides & Gallery Section', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_gallery_title', [
+        'default'           => 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('htbd_sec_gallery_title', [
+        'label'   => esc_html__('Photo Guides Section Title', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'text',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_gallery_category', [
+        'default'           => 0,
+        'sanitize_callback' => 'absint',
+    ]);
+    $wp_customize->add_control('htbd_sec_gallery_category', [
+        'label'   => esc_html__('Select Category for Photo Guides', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'select',
+        'choices' => $cat_choices,
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_gallery_count', [
+        'default'           => 4,
+        'sanitize_callback' => 'absint',
+    ]);
+    $wp_customize->add_control('htbd_sec_gallery_count', [
+        'label'   => esc_html__('Number of Posts for Photo Guides', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'number',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_gallery_link_text', [
+        'default'           => 'সকল গ্যালারি →',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('htbd_sec_gallery_link_text', [
+        'label'   => esc_html__('Photo Guides Link Text', 'helptrickbd'),
         'section' => 'ht_homepage_sections',
         'type'    => 'text',
     ]);

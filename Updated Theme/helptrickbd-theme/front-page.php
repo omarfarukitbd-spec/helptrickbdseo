@@ -41,6 +41,21 @@ get_header();
       <?php get_template_part('template-parts/home/sidebar-popular-cats'); ?>
     </aside>
   </div>
+
+  <?php
+  // Homepage In-Feed Ad Slot 2 (Between Filter Rows and Special Focus)
+  if (function_exists('ht_render_ad')) {
+      ht_render_ad('ht_ad_infeed_2', 'ht-infeed-ad-2', 250);
+  }
+  ?>
+
+  <?php
+  // 5. National University & Board Special Focus Desk (Clean Single Container)
+  get_template_part('template-parts/home/section-special-focus');
+
+  // 6. Infographic & Visual Study Photo Gallery (Full Titles, No Line Clamp)
+  get_template_part('template-parts/home/section-photo-grid');
+  ?>
 </div>
 
 <?php

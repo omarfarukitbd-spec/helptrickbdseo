@@ -57,7 +57,9 @@ if (false === $nu_post_ids) {
 
     $nu_q = new WP_Query($query_args);
     $nu_post_ids = !empty($nu_q->posts) ? $nu_q->posts : array();
-    set_transient($nu_cache_key, $nu_post_ids, 2 * HOUR_IN_SECONDS);
+    if (!empty($nu_post_ids)) {
+        set_transient($nu_cache_key, $nu_post_ids, 2 * HOUR_IN_SECONDS);
+    }
 }
 
 if (empty($nu_post_ids)) {

@@ -64,6 +64,8 @@ if (false === $all_posts_data) {
                 }
             }
             $rendered_ids[$pid] = $cat_slugs;
+            $rt = function_exists('ht_get_reading_time') ? ht_get_reading_time($pid) : null;
+            $read_text = is_array($rt) && isset($rt['minutes']) ? (function_exists('ht_bn_number') ? ht_bn_number($rt['minutes']) . ' মিনিট পড়া' : $rt['minutes'] . ' মিনিট পড়া') : '৩ মিনিট পড়া';
             $all_posts_data[] = array(
                 'id'       => $pid,
                 'title'    => get_the_title(),
@@ -72,7 +74,7 @@ if (false === $all_posts_data) {
                 'cat_slug' => $first_slug,
                 'cat_name' => !empty($cats) ? $cats[0]->name : 'হ্যান্ডনোট',
                 'date'     => get_the_date('j F, Y'),
-                'read'     => function_exists('ht_get_reading_time') ? ht_get_reading_time($pid) : '৩ মিনিট পড়া',
+                'read'     => $read_text,
                 'thumb'    => has_post_thumbnail($pid) ? get_the_post_thumbnail_url($pid, 'ht-card-thumb') : '',
                 'initial'  => true,
             );
@@ -123,6 +125,8 @@ if (false === $all_posts_data) {
                         }
                     }
                     $rendered_ids[$pid] = $cat_slugs;
+                    $rt = function_exists('ht_get_reading_time') ? ht_get_reading_time($pid) : null;
+                    $read_text = is_array($rt) && isset($rt['minutes']) ? (function_exists('ht_bn_number') ? ht_bn_number($rt['minutes']) . ' মিনিট পড়া' : $rt['minutes'] . ' মিনিট পড়া') : '৩ মিনিট পড়া';
                     $all_posts_data[] = array(
                         'id'       => $pid,
                         'title'    => get_the_title(),
@@ -131,7 +135,7 @@ if (false === $all_posts_data) {
                         'cat_slug' => $slug,
                         'cat_name' => $cat_obj->name,
                         'date'     => get_the_date('j F, Y'),
-                        'read'     => function_exists('ht_get_reading_time') ? ht_get_reading_time($pid) : '৩ মিনিট পড়া',
+                        'read'     => $read_text,
                         'thumb'    => has_post_thumbnail($pid) ? get_the_post_thumbnail_url($pid, 'ht-card-thumb') : '',
                         'initial'  => false,
                     );
@@ -207,7 +211,13 @@ if (empty($all_posts_data)) {
             <h4><?php echo esc_html($item['title']); ?></h4>
             <div class="meta">
               <span><?php echo esc_html($item['date']); ?></span> &bull; 
-              <span><?php echo esc_html($item['read']); ?></span>
+              <span><?php 
+                if (is_array($item['read'])) {
+                    echo esc_html(isset($item['read']['minutes']) ? (function_exists('ht_bn_number') ? ht_bn_number($item['read']['minutes']) . ' মিনিট পড়া' : $item['read']['minutes'] . ' মিনিট পড়া') : '৩ মিনিট পড়া');
+                } else {
+                    echo esc_html($item['read']);
+                }
+              ?></span>
             </div>
           </div>
 
