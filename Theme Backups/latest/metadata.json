@@ -1,10 +1,10 @@
 {
-  "timestamp": "20261118_004928",
-  "date_human": "2026-11-18 00:49:28",
-  "theme_version": "1.5.9",
-  "reason": "restore 2-column category grid in homepage and single post sidebars",
+  "timestamp": "20261118_020626",
+  "date_human": "2026-11-18 02:06:26",
+  "theme_version": "1.6.0",
+  "reason": "fix mobile homepage side padding 12px and update rules v1.6.1",
   "total_files": 68,
-  "total_size_bytes": 1323213,
-  "zip_size_kb": 658.96,
-  "backup_zip_name": "helptrickbd-theme-v1.5.9-20261118_004928.zip"
+  "total_size_bytes": 1325506,
+  "zip_size_kb": 659.43,
+  "backup_zip_name": "helptrickbd-theme-v1.6.0-20261118_020626.zip"
 }
