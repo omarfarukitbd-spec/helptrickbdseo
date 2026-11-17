@@ -171,7 +171,7 @@ get_header();
                         <div class="ht-citation-meta-grid">
                             <div class="ht-cite-meta-item">
                                 <span class="ht-cite-meta-label"><?php esc_html_e('মানদণ্ড ও কর্তৃপক্ষ:', 'helptrickbd'); ?></span>
-                                <span class="ht-cite-meta-val"><?php esc_html_e('জাতীয় শিক্ষাক্রম (NCTB) ও জাতীয় বিশ্ববিদ্যালয় (NU) সিলেবাস কাঠামো', 'helptrickbd'); ?></span>
+                                <span class="ht-cite-meta-val"><?php esc_html_e('জাতীয় শিক্ষাক্রম (NCTB) ও জাতীয় বিশ্ববিদ্যালয় (NU) সিলেবাস কাঠামো', 'helptrickbd'); ?></span>
                             </div>
                             <div class="ht-cite-meta-item">
                                 <span class="ht-cite-meta-label"><?php esc_html_e('প্রকাশের তারিখ:', 'helptrickbd'); ?></span>

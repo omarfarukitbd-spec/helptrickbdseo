@@ -23,11 +23,11 @@ get_header();
   ?>
 
   <?php
-  $ad_slot_1 = get_theme_mod('htbd_ad_infeed_1', get_theme_mod('htbd_ad_infeed'));
+  $ad_slot_1 = get_theme_mod('htbd_ad_infeed_1', get_theme_mod('ht_ad_infeed_1', get_theme_mod('htbd_ad_infeed')));
   if (!empty($ad_slot_1)) :
   ?>
     <!-- In-Feed Ad Slot 1 -->
-    <div class="htbd-ad-slot htbd-ad-infeed" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd'); ?>">
+    <div class="htbd-ad-slot htbd-ad-infeed" style="min-height:250px;margin:24px 0;display:flex;justify-content:center;align-items:center;background:var(--ht-surface-alt);border:1px dashed var(--ht-border);border-radius:var(--ht-radius-sm);" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd'); ?>">
       <?php echo $ad_slot_1; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
     </div>
   <?php endif; ?>
@@ -48,11 +48,11 @@ get_header();
   </div>
 
   <?php
-  $ad_slot_2 = get_theme_mod('htbd_ad_infeed_2', get_theme_mod('htbd_ad_infeed'));
+  $ad_slot_2 = get_theme_mod('htbd_ad_infeed_2', get_theme_mod('ht_ad_infeed_2', get_theme_mod('htbd_ad_infeed')));
   if (!empty($ad_slot_2)) :
   ?>
     <!-- In-Feed Ad Slot 2 -->
-    <div class="htbd-ad-slot htbd-ad-infeed" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd'); ?>">
+    <div class="htbd-ad-slot htbd-ad-infeed" style="min-height:250px;margin:24px 0;display:flex;justify-content:center;align-items:center;background:var(--ht-surface-alt);border:1px dashed var(--ht-border);border-radius:var(--ht-radius-sm);" aria-label="<?php esc_attr_e('বিজ্ঞাপন', 'helptrickbd'); ?>">
       <?php echo $ad_slot_2; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
     </div>
   <?php endif; ?>

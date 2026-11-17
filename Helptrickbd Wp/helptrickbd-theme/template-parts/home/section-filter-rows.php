@@ -3,136 +3,145 @@
  * Homepage Section 5: Subject-Based Posts & Dynamic Filter Rows ("বিষয়ভিত্তিক পোস্ট")
  * Features 2-column card grid on computer, mobile 1-column, and robust multi-category queries
  *
- * @package HelpTrickBD_EduPortal
+ * @package HelpTrickBD_Pro
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!get_theme_mod('htbd_show_sec_filter', true)) {
+if (!get_theme_mod('htbd_show_sec_filter', get_theme_mod('ht_show_sec_filter', true))) {
     return;
 }
 
-$sec_title  = get_theme_mod('htbd_sec_filter_title', 'Explore by Academic Subject');
-if ($sec_title === 'বিষয়ভিত্তিক পোস্ট') {
-    $sec_title = 'Explore by Academic Subject';
-}
-$link_text  = get_theme_mod('htbd_sec_filter_link_text', 'All Articles →');
-if ($link_text === 'সব লেখা →' || $link_text === 'সব পোস্ট দেখুন →') {
-    $link_text = 'All Articles →';
+$sec_title = get_theme_mod('htbd_sec_filter_title', get_theme_mod('ht_sec_filter_title', 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড'));
+if (empty($sec_title) || $sec_title === 'Explore by Academic Subject') {
+    $sec_title = 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড';
 }
 
-// Define tabs with verified slugs and display labels
+$link_text = get_theme_mod('htbd_sec_filter_link_text', get_theme_mod('ht_sec_filter_link_text', 'সকল পোস্ট দেখুন →'));
+if (empty($link_text) || $link_text === 'All Articles →') {
+    $link_text = 'সকল পোস্ট দেখুন →';
+}
+
+// Define tabs with verified slugs and display labels in authentic Bengali
 $tabs = array(
-    'all'                 => 'All Subjects',
-    'ssc-dakhil'          => 'SSC & Dakhil',
-    'political-science'   => 'Political Science',
-    'bangla-1st-paper'    => 'Bangla 1st Paper',
-    'islamic-article'     => 'Islamic Articles',
-    'national-university' => 'National University',
-    'ict-technology'      => 'ICT & Technology',
+    'all'                 => 'সকল বিষয়',
+    'ssc-dakhil'          => 'এসএসসি ও দাখিল',
+    'political-science'   => 'রাষ্ট্রবিজ্ঞান',
+    'bangla-1st-paper'    => 'বাংলা ১ম পত্র',
+    'islamic-article'     => 'ইসলামিক প্রবন্ধ',
+    'national-university' => 'জাতীয় বিশ্ববিদ্যালয়',
+    'ict-technology'      => 'আইসিটি ও প্রযুক্তি',
 );
 
-// Collect posts for each tab ensuring every tab has 6 relevant posts
-$rendered_ids = array();
-$all_posts_data = array();
+// 6-Hour Transient Caching for Homepage Filter Posts to Eliminate 7 Queries per Load
+$all_posts_data = get_transient('ht_home_filter_posts_cache');
 
-// 1. Initial 8 posts for 'all'
-$all_query = new WP_Query(array(
-    'posts_per_page'      => 8,
-    'post_status'         => 'publish',
-    'ignore_sticky_posts' => 1,
-    'no_found_rows'       => true,
-));
+if (false === $all_posts_data) {
+    $rendered_ids = array();
+    $all_posts_data = array();
 
-if ($all_query->have_posts()) {
-    while ($all_query->have_posts()) {
-        $all_query->the_post();
-        $pid = get_the_ID();
-        $cats = get_the_category();
-        $cat_slugs = array('all');
-        if (!empty($cats)) {
-            foreach ($cats as $c) {
-                $cat_slugs[] = $c->slug;
-            }
-        }
-        $rendered_ids[$pid] = $cat_slugs;
-        $all_posts_data[] = array(
-            'id'       => $pid,
-            'title'    => get_the_title(),
-            'url'      => get_permalink(),
-            'cats'     => $cat_slugs,
-            'cat_name' => !empty($cats) ? $cats[0]->name : 'হ্যান্ডনোট',
-            'date'     => get_the_date('j F, Y'),
-            'read'     => htbd_reading_time($pid),
-            'thumb'    => has_post_thumbnail($pid) ? get_the_post_thumbnail_url($pid, 'ht-thumb-row') : '',
-            'initial'  => true,
-        );
-    }
-    wp_reset_postdata();
-}
-
-// 2. Query up to 6 posts for each specific category tab to guarantee non-empty tabs
-foreach ($tabs as $slug => $label) {
-    if ($slug === 'all') {
-        continue;
-    }
-
-    $cat_obj = get_category_by_slug($slug);
-    if (!$cat_obj) {
-        continue;
-    }
-
-    $cat_query = new WP_Query(array(
-        'cat'                 => $cat_obj->term_id,
-        'posts_per_page'      => 6,
+    // 1. Initial 8 posts for 'all'
+    $all_query = new WP_Query(array(
+        'posts_per_page'      => 8,
         'post_status'         => 'publish',
         'ignore_sticky_posts' => 1,
         'no_found_rows'       => true,
     ));
 
-    if ($cat_query->have_posts()) {
-        while ($cat_query->have_posts()) {
-            $cat_query->the_post();
+    if ($all_query->have_posts()) {
+        while ($all_query->have_posts()) {
+            $all_query->the_post();
             $pid = get_the_ID();
-
-            if (isset($rendered_ids[$pid])) {
-                // Already in list, ensure this category slug is present in data-cats
-                if (!in_array($slug, $rendered_ids[$pid], true)) {
-                    $rendered_ids[$pid][] = $slug;
-                    foreach ($all_posts_data as &$pd) {
-                        if ($pd['id'] === $pid && !in_array($slug, $pd['cats'], true)) {
-                            $pd['cats'][] = $slug;
-                        }
-                    }
-                    unset($pd);
+            $cats = get_the_category();
+            $cat_slugs = array('all');
+            $first_slug = 'ssc-dakhil';
+            if (!empty($cats)) {
+                $first_slug = $cats[0]->slug;
+                foreach ($cats as $c) {
+                    $cat_slugs[] = $c->slug;
                 }
-            } else {
-                // New post not yet rendered
-                $cats = get_the_category();
-                $cat_slugs = array($slug);
-                if (!empty($cats)) {
-                    foreach ($cats as $c) {
-                        $cat_slugs[] = $c->slug;
-                    }
-                }
-                $rendered_ids[$pid] = $cat_slugs;
-                $all_posts_data[] = array(
-                    'id'       => $pid,
-                    'title'    => get_the_title(),
-                    'url'      => get_permalink(),
-                    'cats'     => $cat_slugs,
-                    'cat_name' => $cat_obj->name,
-                    'date'     => get_the_date('j F, Y'),
-                    'read'     => htbd_reading_time($pid),
-                    'thumb'    => has_post_thumbnail($pid) ? get_the_post_thumbnail_url($pid, 'ht-thumb-row') : '',
-                    'initial'  => false, // Hidden until this tab is selected
-                );
             }
+            $rendered_ids[$pid] = $cat_slugs;
+            $all_posts_data[] = array(
+                'id'       => $pid,
+                'title'    => get_the_title(),
+                'url'      => get_permalink(),
+                'cats'     => $cat_slugs,
+                'cat_slug' => $first_slug,
+                'cat_name' => !empty($cats) ? $cats[0]->name : 'হ্যান্ডনোট',
+                'date'     => get_the_date('j F, Y'),
+                'read'     => function_exists('ht_get_reading_time') ? ht_get_reading_time($pid) : '৩ মিনিট পড়া',
+                'thumb'    => has_post_thumbnail($pid) ? get_the_post_thumbnail_url($pid, 'ht-card-thumb') : '',
+                'initial'  => true,
+            );
         }
         wp_reset_postdata();
     }
+
+    // 2. Query up to 6 posts for each specific category tab
+    foreach ($tabs as $slug => $label) {
+        if ($slug === 'all') {
+            continue;
+        }
+
+        $cat_obj = get_category_by_slug($slug);
+        if (!$cat_obj) {
+            continue;
+        }
+
+        $cat_query = new WP_Query(array(
+            'cat'                 => $cat_obj->term_id,
+            'posts_per_page'      => 6,
+            'post_status'         => 'publish',
+            'ignore_sticky_posts' => 1,
+            'no_found_rows'       => true,
+        ));
+
+        if ($cat_query->have_posts()) {
+            while ($cat_query->have_posts()) {
+                $cat_query->the_post();
+                $pid = get_the_ID();
+
+                if (isset($rendered_ids[$pid])) {
+                    if (!in_array($slug, $rendered_ids[$pid], true)) {
+                        $rendered_ids[$pid][] = $slug;
+                        foreach ($all_posts_data as &$pd) {
+                            if ($pd['id'] === $pid && !in_array($slug, $pd['cats'], true)) {
+                                $pd['cats'][] = $slug;
+                            }
+                        }
+                        unset($pd);
+                    }
+                } else {
+                    $cats = get_the_category();
+                    $cat_slugs = array($slug);
+                    if (!empty($cats)) {
+                        foreach ($cats as $c) {
+                            $cat_slugs[] = $c->slug;
+                        }
+                    }
+                    $rendered_ids[$pid] = $cat_slugs;
+                    $all_posts_data[] = array(
+                        'id'       => $pid,
+                        'title'    => get_the_title(),
+                        'url'      => get_permalink(),
+                        'cats'     => $cat_slugs,
+                        'cat_slug' => $slug,
+                        'cat_name' => $cat_obj->name,
+                        'date'     => get_the_date('j F, Y'),
+                        'read'     => function_exists('ht_get_reading_time') ? ht_get_reading_time($pid) : '৩ মিনিট পড়া',
+                        'thumb'    => has_post_thumbnail($pid) ? get_the_post_thumbnail_url($pid, 'ht-card-thumb') : '',
+                        'initial'  => false,
+                    );
+                }
+            }
+            wp_reset_postdata();
+        }
+    }
+
+    set_transient('ht_home_filter_posts_cache', $all_posts_data, 6 * HOUR_IN_SECONDS);
 }
 
 if (empty($all_posts_data)) {
@@ -149,7 +158,7 @@ if (empty($all_posts_data)) {
   </div>
 
   <!-- Interactive Filter Tabs (All Categories Guaranteed to Have Posts) -->
-  <div class="n-thumb-tabs" role="tablist" aria-label="<?php esc_attr_e('বিষয় অনুযায়ী ফিল্টার', 'helptrickbd-edu'); ?>">
+  <div class="n-thumb-tabs" role="tablist" aria-label="<?php esc_attr_e('বিষয় অনুযায়ী ফিল্টার', 'helptrickbd'); ?>">
     <?php foreach ($tabs as $slug => $label) : ?>
       <button type="button" 
               class="n-thumb-tab-btn <?php echo $slug === 'all' ? 'active' : ''; ?>" 
@@ -166,6 +175,20 @@ if (empty($all_posts_data)) {
     <?php foreach ($all_posts_data as $item) : 
         $cat_classes = implode(' ', array_unique($item['cats']));
         $is_visible = $item['initial'];
+
+        // Dynamic category-based fallback thumbnail
+        $fallback_img = 'ssc.webp';
+        $slug_check = !empty($item['cat_slug']) ? $item['cat_slug'] : '';
+        if (strpos($slug_check, 'political') !== false) {
+            $fallback_img = 'political_science.webp';
+        } elseif (strpos($slug_check, 'islamic') !== false) {
+            $fallback_img = 'islamic.webp';
+        } elseif (strpos($slug_check, 'national') !== false || strpos($slug_check, 'nu') !== false) {
+            $fallback_img = 'nu.webp';
+        } elseif (strpos($slug_check, 'ict') !== false || strpos($slug_check, 'tech') !== false) {
+            $fallback_img = 'ict.webp';
+        }
+        $fallback_url = 'https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/' . $fallback_img;
         ?>
         <a href="<?php echo esc_url($item['url']); ?>" 
            class="n-trow" 
@@ -175,7 +198,7 @@ if (empty($all_posts_data)) {
             <?php if (!empty($item['thumb'])) : ?>
               <img src="<?php echo esc_url($item['thumb']); ?>" loading="lazy" decoding="async" width="110" height="78" alt="<?php echo esc_attr($item['title']); ?>">
             <?php else : ?>
-              <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/ssc.webp" loading="lazy" decoding="async" width="110" height="78" alt="<?php echo esc_attr($item['title']); ?>">
+              <img src="<?php echo esc_url($fallback_url); ?>" loading="lazy" decoding="async" width="110" height="78" alt="<?php echo esc_attr($item['title']); ?>">
             <?php endif; ?>
           </div>
 

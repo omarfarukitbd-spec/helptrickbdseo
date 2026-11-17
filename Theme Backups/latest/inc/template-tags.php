@@ -40,7 +40,7 @@ function ht_bn_date($timestamp = null) {
     $year = date('Y', $timestamp);
 
     $months_bn = [
-        1 => 'জানুয়ারি', 2 => 'ফেব্রুয়ারি', 3 => 'মার্চ', 4 => 'এপ্রিল',
+        1 => 'জানুয়ারি', 2 => 'ফেব্রুয়ারি', 3 => 'মার্চ', 4 => 'এপ্রিল',
         5 => 'মে', 6 => 'জুন', 7 => 'জুলাই', 8 => 'আগস্ট',
         9 => 'সেপ্টেম্বর', 10 => 'অক্টোবর', 11 => 'নভেম্বর', 12 => 'ডিসেম্বর'
     ];
@@ -360,8 +360,8 @@ function ht_post_reaction_box($post_id = null) {
     ?>
     <div class="ht-reaction-card" id="ht-reaction-card" data-id="<?php echo esc_attr($post_id); ?>">
         <div class="ht-reaction-content">
-            <span class="ht-reaction-question"><?php esc_html_e('এই গাইডটি কি আপনার প্রস্তুতিতে সহায়ক হয়েছে?', 'helptrickbd'); ?></span>
-            <span class="ht-reaction-sub"><?php esc_html_e('শিক্ষার্থীদের মূল্যায়ন আমাদের নির্ভুল ও মানসম্মত হ্যান্ডনোট তৈরি করতে সহায়তা করে।', 'helptrickbd'); ?></span>
+            <span class="ht-reaction-question"><?php esc_html_e('এই গাইডটি কি আপনার প্রস্তুতিতে সহায়ক হয়েছে?', 'helptrickbd'); ?></span>
+            <span class="ht-reaction-sub"><?php esc_html_e('শিক্ষার্থীদের মূল্যায়ন আমাদের নির্ভুল ও মানসম্মত হ্যান্ডনোট তৈরি করতে সহায়তা করে।', 'helptrickbd'); ?></span>
         </div>
         <div class="ht-reaction-action">
             <button type="button" class="ht-reaction-btn" id="ht-btn-like" aria-label="<?php esc_attr_e('সহায়ক হয়েছে', 'helptrickbd'); ?>">
@@ -537,4 +537,51 @@ function ht_post_navigation_cards() {
     </nav>
     <?php
 }
+
+if (!function_exists('htbd_bengali_number')) {
+    /**
+     * Convert English digits to Bengali numeral string.
+     *
+     * @param int|string $number
+     * @return string
+     */
+    function htbd_bengali_number($number) {
+        if (function_exists('ht_bn_number')) {
+            return ht_bn_number($number);
+        }
+        $en = array('0','1','2','3','4','5','6','7','8','9');
+        $bn = array('০','১','২','৩','৪','৫','৬','৭','৮','৯');
+        return str_replace($en, $bn, (string)$number);
+    }
+}
+
+if (!function_exists('htbd_reading_time')) {
+    /**
+     * Estimated reading time formatted in Bengali.
+     *
+     * @param int $post_id
+     * @return string
+     */
+    function htbd_reading_time($post_id = 0) {
+        if (function_exists('ht_get_reading_time')) {
+            return ht_get_reading_time($post_id);
+        }
+        return '৩ মিনিট পড়া';
+    }
+}
+
+if (!function_exists('htbd_bengali_today')) {
+    /**
+     * Get current Bengali date representation.
+     *
+     * @return string
+     */
+    function htbd_bengali_today() {
+        if (function_exists('ht_bn_date')) {
+            return ht_bn_date(current_time('timestamp'));
+        }
+        return date_i18n(get_option('date_format'));
+    }
+}
+
 

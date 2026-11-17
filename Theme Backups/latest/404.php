@@ -44,7 +44,7 @@ get_header();
                 <!-- Prominent Search Bar -->
                 <div class="ht-404-search-box">
                     <form role="search" method="get" class="ht-404-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                        <label for="ht-404-search-field" class="screen-reader-text"><?php esc_html_e('ওয়েবসাইট অনুসন্ধান', 'helptrickbd'); ?></label>
+                        <label for="ht-404-search-field" class="screen-reader-text"><?php esc_html_e('ওয়েবসাইট অনুসন্ধান', 'helptrickbd'); ?></label>
                         <div class="ht-404-search-input-wrap">
                             <span class="ht-404-search-icon" aria-hidden="true">
                                 <?php ht_m3_icon('search', 22); ?>
@@ -76,7 +76,7 @@ get_header();
                     <div class="ht-404-cat-pills">
                         <a href="<?php echo esc_url(home_url('/category/national-university/')); ?>" class="ht-404-cat-pill ht-cat-nu">
                             <?php ht_m3_icon('school', 16); ?>
-                            <span><?php esc_html_e('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd'); ?></span>
+                            <span><?php esc_html_e('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd'); ?></span>
                         </a>
                         <a href="<?php echo esc_url(home_url('/category/job-preparation/')); ?>" class="ht-404-cat-pill ht-cat-job">
                             <?php ht_m3_icon('work', 16); ?>

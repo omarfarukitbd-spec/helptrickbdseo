@@ -11,6 +11,12 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<aside id="secondary" class="ht-sidebar-area ht-sidebar-wrapper" aria-label="<?php esc_attr_e('সাইডবার', 'helptrickbd'); ?>">
+<div id="secondary" class="ht-sidebar-wrapper">
   <?php get_template_part('template-parts/home/sidebar-popular-cats'); ?>
-</aside>
+
+  <?php if (is_active_sidebar('ht-primary-sidebar')) : ?>
+    <div class="ht-dynamic-sidebar-widgets" style="margin-top:20px;">
+      <?php dynamic_sidebar('ht-primary-sidebar'); ?>
+    </div>
+  <?php endif; ?>
+</div>

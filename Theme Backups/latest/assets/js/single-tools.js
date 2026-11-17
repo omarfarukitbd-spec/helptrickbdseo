@@ -52,7 +52,7 @@
             return h.offsetParent !== null;
         });
         // The badge counts numbered chapters (H2s) only — H3s are nested
-        // sub-items, so counting them produced "১৫টি অধ্যায়" for 8 chapters.
+        // sub-items, so counting them produced "১৫টি অধ্যায়" for 8 chapters.
         const h2Count = headings.filter(function (h) { return h.tagName.toLowerCase() === 'h2'; }).length;
 
         if (headings.length < 2 || h2Count < 1) {
@@ -69,7 +69,7 @@
             if (titleWrap && !titleWrap.querySelector('.ht-toc-count-badge')) {
                 const countBadge = document.createElement('span');
                 countBadge.className = 'ht-toc-count-badge';
-                countBadge.textContent = `${h2Count}টি অধ্যায়`;
+                countBadge.textContent = `${h2Count}টি অধ্যায়`;
                 titleWrap.appendChild(countBadge);
             }
 
@@ -218,7 +218,7 @@
             const isActive = document.body.classList.contains('ht-focus-mode');
             this.classList.toggle('ht-active', isActive);
             if (window.htToast) {
-                window.htToast(isActive ? 'ফোকাস রিডিং মোড সক্রিয় হয়েছে' : 'ফোকাস মোড বন্ধ করা হয়েছে');
+                window.htToast(isActive ? 'ফোকাস রিডিং মোড সক্রিয় হয়েছে' : 'ফোকাস মোড বন্ধ করা হয়েছে');
             }
         });
     }

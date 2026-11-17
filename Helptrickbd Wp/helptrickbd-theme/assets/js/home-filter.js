@@ -40,7 +40,7 @@
       notice.className = 'n-filter-empty';
       notice.setAttribute('role', 'status');
       notice.style.cssText = 'grid-column: 1 / -1; width: 100%; text-align: center; padding: 36px 16px; color: var(--ht-text-muted); font-size: 0.95rem; border: 1px dashed var(--ht-border); border-radius: var(--ht-radius-sm); margin: 12px 0; background: var(--ht-surface);';
-      notice.innerHTML = '<div style="font-size:1.5rem;margin-bottom:8px;" aria-hidden="true">\uD83D\uDCDD</div>\u098f\u0987 \u0995\u09cd\u09af\u09be\u099f\u09be\u0997\u09b0\u09bf\u09a4\u09c7 \u09ac\u09b0\u09cd\u09a4\u09ae\u09be\u09a8\u09c7 \u0995\u09cb\u09a8\u09cb \u09aa\u09cb\u09b8\u09cd\u099f \u09a8\u09c7\u0987\u0964'; // এই ক্যাটাগরিতে বর্তমানে কোনো পোস্ট নেই।
+      notice.innerHTML = '<div style="margin-bottom:8px;" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;opacity:0.6;"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>\u098f\u0987 \u0995\u09cd\u09af\u09be\u099f\u09be\u0997\u09b0\u09bf\u09a4\u09c7 \u09ac\u09b0\u09cd\u09a4\u09ae\u09be\u09a8\u09c7 \u0995\u09cb\u09a8\u09cb \u09aa\u09cb\u09b8\u09cd\u099f \u09a8\u09c7\u0987\u0964'; // এই ক্যাটাগরিতে বর্তমানে কোনো পোস্ট নেই।
       listContainer.appendChild(notice);
     }
     return notice;

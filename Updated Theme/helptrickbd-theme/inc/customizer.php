@@ -157,89 +157,201 @@ function ht_customize_register($wp_customize) {
     ]);
 
     // =============================================================
-    // Section 1.5: Homepage 4-Column Multi-Category Grid
+    // Section 1.5: Homepage Modern Modules & Educational Sections
     // =============================================================
-    $wp_customize->add_section('ht_multi_cat_section', [
-        'title'    => esc_html__('Homepage Multi-Category Grid', 'helptrickbd'),
+    $wp_customize->add_section('ht_homepage_sections', [
+        'title'    => esc_html__('Homepage Sections & Educational Hubs', 'helptrickbd'),
         'panel'    => 'ht_main_panel',
         'priority' => 12,
     ]);
 
-    // Multi-Cat Toggle
-    $wp_customize->add_setting('ht_multi_cat_enable', [
+    // 1. Ticker Settings
+    $wp_customize->add_setting('htbd_show_ticker', [
         'default'           => true,
         'sanitize_callback' => 'wp_validate_boolean',
     ]);
-    $wp_customize->add_control('ht_multi_cat_enable', [
-        'label'   => esc_html__('Enable 4-Column Departmental Grid', 'helptrickbd'),
-        'section' => 'ht_multi_cat_section',
+    $wp_customize->add_control('htbd_show_ticker', [
+        'label'   => esc_html__('Enable Notice Marquee Ticker', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
         'type'    => 'checkbox',
     ]);
 
-    // Section Title
-    $wp_customize->add_setting('ht_multi_cat_title', [
-        'default'           => 'বিভাগ ও বিষয়ভিত্তিক বিশেষ হ্যান্ডনোট',
+    $wp_customize->add_setting('htbd_ticker_badge_text', [
+        'default'           => 'সর্বশেষ আপডেট',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('ht_multi_cat_title', [
-        'label'   => esc_html__('Section Main Heading', 'helptrickbd'),
-        'section' => 'ht_multi_cat_section',
+    $wp_customize->add_control('htbd_ticker_badge_text', [
+        'label'   => esc_html__('Notice Ticker Badge Text', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
         'type'    => 'text',
     ]);
 
-    // Section Subtitle
-    $wp_customize->add_setting('ht_multi_cat_subtitle', [
-        'default'           => 'জাতীয় বিশ্ববিদ্যালয়, বোর্ড পরীক্ষা ও সাম্প্রতিক একাডেমিক স্টাডিজ',
+    $wp_customize->add_setting('htbd_ticker_count', [
+        'default'           => 5,
+        'sanitize_callback' => 'absint',
+    ]);
+    $wp_customize->add_control('htbd_ticker_count', [
+        'label'   => esc_html__('Number of Ticker Notices', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'number',
+    ]);
+
+    // 2. Magazine Lead Hero Story & Spotlights
+    $wp_customize->add_setting('htbd_show_lead_hero', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_lead_hero', [
+        'label'   => esc_html__('Enable Magazine Lead Hero Story & Spotlights', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
+    ]);
+
+    $wp_customize->add_setting('htbd_hero_badge_text', [
+        'default'           => 'সর্বশেষ প্রকাশনা',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('ht_multi_cat_subtitle', [
-        'label'   => esc_html__('Section Subtitle', 'helptrickbd'),
-        'section' => 'ht_multi_cat_section',
+    $wp_customize->add_control('htbd_hero_badge_text', [
+        'label'   => esc_html__('Lead Hero Kicker Badge Text', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
         'type'    => 'text',
     ]);
 
-    // Column 1 Category Slug
-    $wp_customize->add_setting('ht_multi_cat_1', [
-        'default'           => 'national-university',
+    // 3. SSC & Dakhil Examination Hub
+    $wp_customize->add_setting('htbd_show_sec_ssc', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_sec_ssc', [
+        'label'   => esc_html__('Enable SSC & Dakhil Hub Section', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_ssc_title', [
+        'default'           => 'এসএসসি ও দাখিল প্রস্তুতি',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('ht_multi_cat_1', [
-        'label'   => esc_html__('Column 1 Category Slug', 'helptrickbd'),
-        'section' => 'ht_multi_cat_section',
+    $wp_customize->add_control('htbd_sec_ssc_title', [
+        'label'   => esc_html__('SSC Hub Heading', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
         'type'    => 'text',
     ]);
 
-    // Column 2 Category Slug
-    $wp_customize->add_setting('ht_multi_cat_2', [
-        'default'           => 'political-science',
+    $wp_customize->add_setting('htbd_sec_ssc_link_text', [
+        'default'           => 'সকল হ্যান্ডনোট →',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('ht_multi_cat_2', [
-        'label'   => esc_html__('Column 2 Category Slug', 'helptrickbd'),
-        'section' => 'ht_multi_cat_section',
+    $wp_customize->add_control('htbd_sec_ssc_link_text', [
+        'label'   => esc_html__('SSC Hub Link Text', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
         'type'    => 'text',
     ]);
 
-    // Column 3 Category Slug
-    $wp_customize->add_setting('ht_multi_cat_3', [
-        'default'           => 'education-guide',
+    // 4. Subject Filter Rows Section
+    $wp_customize->add_setting('htbd_show_sec_filter', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_sec_filter', [
+        'label'   => esc_html__('Enable Subject Filterable Posts Section', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_filter_title', [
+        'default'           => 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('ht_multi_cat_3', [
-        'label'   => esc_html__('Column 3 Category Slug', 'helptrickbd'),
-        'section' => 'ht_multi_cat_section',
+    $wp_customize->add_control('htbd_sec_filter_title', [
+        'label'   => esc_html__('Subject Filter Section Title', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
         'type'    => 'text',
     ]);
 
-    // Column 4 Category Slug
-    $wp_customize->add_setting('ht_multi_cat_4', [
-        'default'           => 'ssc-dakhil',
+    // 5. National University Special Focus
+    $wp_customize->add_setting('htbd_show_sec_nu', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_sec_nu', [
+        'label'   => esc_html__('Enable National University Focus Section', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_nu_title', [
+        'default'           => 'জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('ht_multi_cat_4', [
-        'label'   => esc_html__('Column 4 Category Slug', 'helptrickbd'),
-        'section' => 'ht_multi_cat_section',
+    $wp_customize->add_control('htbd_sec_nu_title', [
+        'label'   => esc_html__('National University Section Title', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
         'type'    => 'text',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_nu_count', [
+        'default'           => 6,
+        'sanitize_callback' => 'absint',
+    ]);
+    $wp_customize->add_control('htbd_sec_nu_count', [
+        'label'   => esc_html__('National University Post Count', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'number',
+    ]);
+
+    // 6. Visual Study Photo Gallery
+    $wp_customize->add_setting('htbd_show_sec_gallery', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_sec_gallery', [
+        'label'   => esc_html__('Enable Visual Study Photo Gallery', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
+    ]);
+
+    $wp_customize->add_setting('htbd_sec_gallery_title', [
+        'default'           => 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('htbd_sec_gallery_title', [
+        'label'   => esc_html__('Photo Gallery Section Title', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'text',
+    ]);
+
+    // 7. Trust Deck & Countdown
+    $wp_customize->add_setting('htbd_show_sec_trust', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_sec_trust', [
+        'label'   => esc_html__('Enable Institutional Trust Deck & Live Exam Countdown', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
+    ]);
+
+    $wp_customize->add_setting('htbd_exam_date_ssc', [
+        'default'           => '2027-02-01T09:00:00',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('htbd_exam_date_ssc', [
+        'label'       => esc_html__('Target Exam Countdown Date (ISO)', 'helptrickbd'),
+        'description' => esc_html__('Format: YYYY-MM-DDTHH:MM:SS (e.g. 2027-02-01T09:00:00)', 'helptrickbd'),
+        'section'     => 'ht_homepage_sections',
+        'type'        => 'text',
+    ]);
+
+    // 8. Community Join Bar
+    $wp_customize->add_setting('htbd_show_social_cta', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control('htbd_show_social_cta', [
+        'label'   => esc_html__('Enable Telegram & WhatsApp Join Bar', 'helptrickbd'),
+        'section' => 'ht_homepage_sections',
+        'type'    => 'checkbox',
     ]);
 
     // =============================================================
@@ -700,6 +812,8 @@ function ht_customize_register($wp_customize) {
         'ht_ad_below_title'   => [esc_html__('Below Post Title Ad', 'helptrickbd'), esc_html__('Displayed directly beneath article header', 'helptrickbd')],
         'ht_ad_in_content'    => [esc_html__('In-Content Ad', 'helptrickbd'), esc_html__('Automatically inserted after paragraphs 3 or 4', 'helptrickbd')],
         'ht_ad_after_content' => [esc_html__('After Post Content Ad', 'helptrickbd'), esc_html__('Displayed after post text concludes', 'helptrickbd')],
+        'ht_ad_infeed_1'      => [esc_html__('Homepage In-Feed Ad Slot 1 (After Hero)', 'helptrickbd'), esc_html__('Responsive in-feed ad banner displayed between Hero and SSC hub', 'helptrickbd')],
+        'ht_ad_infeed_2'      => [esc_html__('Homepage In-Feed Ad Slot 2 (After Subject Filter)', 'helptrickbd'), esc_html__('Responsive in-feed ad banner displayed between Subject Filter and Focus block', 'helptrickbd')],
         'ht_ad_sticky_sidebar'=> [esc_html__('Sticky Sidebar Ad (300x600 / 300x250)', 'helptrickbd'), esc_html__('Fixed desktop sidebar ad during scrolling', 'helptrickbd')],
         'ht_ad_auto_ads'      => [esc_html__('Google Auto Ads Script', 'helptrickbd'), esc_html__('Injected inside head element for Auto Ads', 'helptrickbd')],
     ];
