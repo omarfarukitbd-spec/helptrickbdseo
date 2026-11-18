@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.5.1');
+define('HT_THEME_VERSION', '2.5.2');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -220,7 +220,6 @@ function ht_enqueue_scripts() {
     wp_enqueue_style('ht-style', get_stylesheet_uri(), [], ht_asset_version('/style.css'));
     wp_enqueue_style('ht-main', get_template_directory_uri() . '/assets/css/main.css', ['ht-style'], ht_asset_version('/assets/css/main.css'));
     wp_enqueue_style('ht-spotlight', get_template_directory_uri() . '/assets/css/spotlight.css', ['ht-main'], ht_asset_version('/assets/css/spotlight.css'));
-    wp_enqueue_style('ht-home-sections', get_template_directory_uri() . '/assets/css/home-sections.css', ['ht-main'], ht_asset_version('/assets/css/home-sections.css'));
 
     // Main JavaScript Core (Registered first so child dependencies resolve correctly)
     wp_enqueue_script('ht-main-js', get_template_directory_uri() . '/assets/js/main.js', [], ht_asset_version('/assets/js/main.js'), true);
@@ -228,6 +227,7 @@ function ht_enqueue_scripts() {
     wp_enqueue_script('ht-prefetch-js', get_template_directory_uri() . '/assets/js/prefetch.js', ['ht-main-js'], ht_asset_version('/assets/js/prefetch.js'), true);
 
     if (is_front_page() || is_home()) {
+        wp_enqueue_style('ht-home-sections', get_template_directory_uri() . '/assets/css/home-sections.css', ['ht-main'], ht_asset_version('/assets/css/home-sections.css'));
         wp_enqueue_script('ht-home-filter', get_template_directory_uri() . '/assets/js/home-filter.js', ['ht-main-js'], ht_asset_version('/assets/js/home-filter.js'), true);
     }
 
@@ -312,13 +312,16 @@ function ht_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'ht_enqueue_scripts');
 
 /**
- * Output Head Meta (Preconnect, PWA manifest, Theme Color, LCP Preload, Google Auto Ads).
+ * Output Head Meta (Preconnect, PWA manifest, Theme Color, Font Preload, LCP Preload, Google Auto Ads).
  */
 function ht_head_meta() {
     echo '<link rel="preconnect" href="https://cdn.jsdelivr.net">' . "\n";
     echo '<meta name="theme-color" content="#2563eb">' . "\n";
     echo '<link rel="manifest" href="' . esc_url(get_template_directory_uri() . '/manifest.json') . '">' . "\n";
     echo '<link rel="apple-touch-icon" href="' . esc_url(get_template_directory_uri() . '/assets/images/icon-192.png') . '">' . "\n";
+
+    // High-Priority Bengali Body Font Preload (SolaimanLipi WOFF2) - Completely rules out text LCP delay (FOIT)
+    echo '<link rel="preload" href="' . esc_url(get_template_directory_uri() . '/assets/fonts/SolaimanLipi_400.woff2') . '" as="font" type="font/woff2" crossorigin>' . "\n";
 
     // High-Priority LCP Hero Image Preload (Rules out LCP delay in PageSpeed Insights)
     if (is_singular('post') && has_post_thumbnail()) {
@@ -339,10 +342,35 @@ function ht_head_meta() {
         }
     }
 
-    // Auto Ads code if provided
+    // Auto Ads code if provided (with Smart Interaction Delay for zero main-thread blocking)
     $auto_ads = get_theme_mod('ht_ad_auto_ads', '');
     if (!empty(trim($auto_ads))) {
-        echo $auto_ads . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        if (strpos($auto_ads, 'pagead2.googlesyndication.com') !== false) {
+            $client_id = 'ca-pub-5722984027647168';
+            if (preg_match('/ca-pub-\d+/', $auto_ads, $matches)) {
+                $client_id = $matches[0];
+            }
+            echo '<script>
+            (function(){
+                var loaded = false;
+                function loadAdSense(){
+                    if(loaded) return;
+                    loaded = true;
+                    var s = document.createElement("script");
+                    s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' . esc_attr($client_id) . '";
+                    s.async = true;
+                    s.crossOrigin = "anonymous";
+                    document.head.appendChild(s);
+                }
+                ["scroll","touchstart","mousemove","keydown","click"].forEach(function(e){
+                    window.addEventListener(e, loadAdSense, {passive:true, once:true});
+                });
+                setTimeout(loadAdSense, 3500);
+            })();
+            </script>' . "\n";
+        } else {
+            echo $auto_ads . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        }
     }
 }
 add_action('wp_head', 'ht_head_meta', 1);
@@ -366,11 +394,17 @@ function ht_async_style_loader_tag($html, $handle, $href, $media) {
 add_filter('style_loader_tag', 'ht_async_style_loader_tag', 10, 4);
 
 /**
- * Automatically Defer Frontend Theme Scripts to eliminate parser blocking.
+ * Automatically Defer Frontend Theme Scripts & External Trackers to eliminate parser blocking.
  */
 function ht_defer_script_loader_tag($tag, $handle, $src) {
     if (is_admin()) {
         return $tag;
+    }
+    // Defer heavy third-party marketing/analytics scripts if enqueued
+    if (strpos($src, 'googletagmanager.com') !== false || strpos($src, 'google-analytics') !== false) {
+        if (strpos($tag, ' defer') === false) {
+            $tag = str_replace('<script ', '<script defer ', $tag);
+        }
     }
     $defer_handles = ['ht-main-js', 'ht-spotlight-js', 'ht-prefetch-js', 'ht-home-filter', 'ht-single-tools', 'ht-nu-cgpa-calculator-js'];
     if (in_array($handle, $defer_handles, true)) {
