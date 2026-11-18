@@ -64,4 +64,4 @@ Allow: /
 # Sitemaps & LLMs Manifest
 Sitemap: https://www.helptrickbd.com/sitemap_index.xml
 Sitemap: https://www.helptrickbd.com/sitemap.xml
-llms-txt: https://www.helptrickbd.com/llms.txt
+# LLMs Manifest: https://www.helptrickbd.com/llms.txt

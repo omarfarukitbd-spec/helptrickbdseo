@@ -140,7 +140,7 @@ if (!defined('ABSPATH')) {
             </a>
             <button class="ht-dock-item" id="ht-dock-bookmark-btn" aria-label="<?php echo $is_en ? esc_attr__('Reading List', 'helptrickbd') : esc_attr__('পড়ার তালিকা', 'helptrickbd'); ?>">
                 <?php ht_m3_icon('bookmark', 20); ?>
-                <span class="ht-dock-badge" id="ht-dock-bm-count">0</span>
+                <span class="ht-dock-badge" id="ht-dock-bm-count" aria-hidden="true">0</span>
                 <span><?php echo $is_en ? esc_html__('Reading List', 'helptrickbd') : esc_html__('পড়ার তালিকা', 'helptrickbd'); ?></span>
             </button>
             <button class="ht-dock-item" id="ht-dock-search-btn" aria-label="<?php echo $is_en ? esc_attr__('Search', 'helptrickbd') : esc_attr__('অনুসন্ধান', 'helptrickbd'); ?>">
@@ -162,7 +162,7 @@ if (!defined('ABSPATH')) {
     <?php endif; ?>
 
     <!-- "Ctrl+K" Spotlight Instant Search Modal -->
-    <div class="ht-modal ht-spotlight-modal" id="ht-spotlight-modal" aria-hidden="true" role="dialog" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Instant Search', 'helptrickbd') : esc_attr__('তাত্ক্ষণিক অনুসন্ধান', 'helptrickbd'); ?>">
+    <div class="ht-modal ht-spotlight-modal" id="ht-spotlight-modal" aria-hidden="true" inert role="dialog" aria-label="<?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_attr__('Instant Search', 'helptrickbd') : esc_attr__('তাত্ক্ষণিক অনুসন্ধান', 'helptrickbd'); ?>">
         <div class="ht-spotlight-overlay" id="ht-spotlight-overlay"></div>
         <div class="ht-spotlight-dialog">
             <div class="ht-spotlight-header">
@@ -197,7 +197,7 @@ if (!defined('ABSPATH')) {
     </div>
 
     <!-- LocalStorage Saved Bookmarks Drawer ("পড়ার তালিকা") -->
-    <aside class="ht-drawer ht-bookmarks-drawer" id="ht-bookmarks-drawer" aria-hidden="true">
+    <aside class="ht-drawer ht-bookmarks-drawer" id="ht-bookmarks-drawer" aria-hidden="true" inert>
         <div class="ht-drawer-header">
             <div class="ht-drawer-title-wrap">
                 <?php ht_m3_icon('bookmark', 20); ?>

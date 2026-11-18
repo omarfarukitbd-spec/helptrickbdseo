@@ -744,6 +744,11 @@ body.ht-cookie-banner-visible {
 }
 
 @media (max-width: 768px) {
+    .ht-cookie-banner {
+        bottom: 64px;
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+        border-bottom: 1px solid var(--ht-surface-border);
+    }
     body.ht-cookie-banner-visible {
         padding-bottom: calc(70px + var(--ht-cookie-banner-height, 56px));
     }

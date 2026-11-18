@@ -20,6 +20,7 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
+<main id="primary" class="ht-main-site ht-front-page" role="main">
 <div class="ht-container">
   <?php
   // 1. Breaking Notice Marquee Ticker
@@ -57,6 +58,7 @@ get_header();
   get_template_part('template-parts/home/section-photo-grid');
   ?>
 </div>
+</main>
 
 <?php
 get_footer();

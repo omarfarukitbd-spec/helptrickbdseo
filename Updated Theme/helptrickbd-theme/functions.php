@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.4.0');
+define('HT_THEME_VERSION', '2.5.0');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -312,17 +312,32 @@ function ht_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'ht_enqueue_scripts');
 
 /**
- * Output Head Meta (Fonts Preconnect, PWA manifest, Theme Color, Google Auto Ads).
+ * Output Head Meta (Preconnect, PWA manifest, Theme Color, LCP Preload, Google Auto Ads).
  */
 function ht_head_meta() {
-    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
-    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
-    echo '<link rel="preconnect" href="https://fonts.maateen.me">' . "\n";
-    echo '<link rel="dns-prefetch" href="https://fonts.maateen.me">' . "\n";
     echo '<link rel="preconnect" href="https://cdn.jsdelivr.net">' . "\n";
     echo '<meta name="theme-color" content="#2563eb">' . "\n";
     echo '<link rel="manifest" href="' . esc_url(get_template_directory_uri() . '/manifest.json') . '">' . "\n";
     echo '<link rel="apple-touch-icon" href="' . esc_url(get_template_directory_uri() . '/assets/images/icon-192.png') . '">' . "\n";
+
+    // High-Priority LCP Hero Image Preload (Rules out LCP delay in PageSpeed Insights)
+    if (is_singular('post') && has_post_thumbnail()) {
+        $img_src = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        if ($img_src) {
+            echo '<link rel="preload" as="image" href="' . esc_url($img_src) . '" fetchpriority="high">' . "\n";
+        }
+    } elseif (is_front_page()) {
+        $recent_posts = wp_get_recent_posts(['numberposts' => 1, 'post_status' => 'publish']);
+        if (!empty($recent_posts)) {
+            $lead_id = $recent_posts[0]['ID'];
+            if (has_post_thumbnail($lead_id)) {
+                $hero_src = get_the_post_thumbnail_url($lead_id, 'ht-hero-large');
+                if ($hero_src) {
+                    echo '<link rel="preload" as="image" href="' . esc_url($hero_src) . '" fetchpriority="high">' . "\n";
+                }
+            }
+        }
+    }
 
     // Auto Ads code if provided
     $auto_ads = get_theme_mod('ht_ad_auto_ads', '');
@@ -331,6 +346,40 @@ function ht_head_meta() {
     }
 }
 add_action('wp_head', 'ht_head_meta', 1);
+
+/**
+ * Asynchronous Non-Blocking Stylesheet Loading (Eliminates Render-Blocking CSS).
+ * Critical above-the-fold CSS is already inlined in <head> by inc/critical-css.php.
+ */
+function ht_async_style_loader_tag($html, $handle, $href, $media) {
+    if (is_admin()) {
+        return $html;
+    }
+    $async_handles = ['ht-main', 'ht-spotlight', 'ht-home-sections', 'ht-single', 'ht-style'];
+    if (in_array($handle, $async_handles, true)) {
+        return '<link rel="preload" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
+             . '<noscript>' . $html . '</noscript>' . "\n";
+    }
+    return $html;
+}
+add_filter('style_loader_tag', 'ht_async_style_loader_tag', 10, 4);
+
+/**
+ * Automatically Defer Frontend Theme Scripts to eliminate parser blocking.
+ */
+function ht_defer_script_loader_tag($tag, $handle, $src) {
+    if (is_admin()) {
+        return $tag;
+    }
+    $defer_handles = ['ht-main-js', 'ht-spotlight-js', 'ht-prefetch-js', 'ht-home-filter', 'ht-single-tools', 'ht-nu-cgpa-calculator-js'];
+    if (in_array($handle, $defer_handles, true)) {
+        if (strpos($tag, ' defer') === false) {
+            $tag = str_replace(' src=', ' defer src=', $tag);
+        }
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'ht_defer_script_loader_tag', 10, 3);
 
 // Disable comments globally site-wide
 add_filter('comments_open', '__return_false', 20, 2);

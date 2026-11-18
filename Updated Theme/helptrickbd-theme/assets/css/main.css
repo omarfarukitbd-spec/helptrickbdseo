@@ -93,21 +93,27 @@ button {
     word-wrap: normal !important;
 }
 
+.skip-link.screen-reader-text:focus,
 .screen-reader-text:focus {
-    background-color: var(--ht-primary);
-    color: #fff;
+    background-color: #1d4ed8;
+    color: #ffffff !important;
     clip: auto !important;
-    clip-path: none;
+    clip-path: none !important;
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 700;
     height: auto;
-    left: 10px;
-    padding: 10px 15px;
+    left: 1rem;
+    padding: 0.75rem 1.25rem;
     position: fixed;
-    top: 10px;
+    top: 1rem;
     width: auto;
-    z-index: 100000;
-    border-radius: var(--ht-radius-sm);
+    z-index: 999999;
+    border-radius: var(--ht-radius-sm, 6px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    text-decoration: none;
 }
 
 /* Material 3 Vector SVG Icon Styling */

@@ -217,6 +217,42 @@
   transform: scale(1.05);
 }
 
+.n-masthead-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--ht-radius-full);
+  border: 1.5px solid var(--ht-border);
+  background: var(--ht-surface-alt);
+  color: var(--ht-text-primary);
+  cursor: pointer;
+  transition: var(--ht-transition);
+  position: relative;
+}
+
+.n-masthead-theme-btn:hover {
+  background: var(--ht-primary-soft);
+  border-color: var(--ht-primary);
+  color: var(--ht-primary);
+  transform: scale(1.05);
+}
+
+.n-masthead-theme-btn .ht-theme-icon-sun {
+  display: none;
+}
+.n-masthead-theme-btn .ht-theme-icon-moon {
+  display: inline-flex;
+}
+
+[data-theme="dark"] .n-masthead-theme-btn .ht-theme-icon-sun {
+  display: inline-flex;
+}
+[data-theme="dark"] .n-masthead-theme-btn .ht-theme-icon-moon {
+  display: none;
+}
+
 /* -------------------------------------------------------------------------
  * 5. Sticky Newspaper Navigation & Category Track
  * ------------------------------------------------------------------------- */
@@ -320,6 +356,94 @@
 
 [data-theme="dark"] .n-nav-sep {
   color: #475569;
+}
+
+/* More Categories Desktop Dropdown */
+.n-nav-more-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.n-nav-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ht-text-primary);
+  border-radius: var(--ht-radius-sm, 4px);
+  transition: var(--ht-transition);
+}
+
+.n-nav-more-btn:hover,
+.n-nav-more-wrapper:hover .n-nav-more-btn {
+  background: var(--ht-primary-soft, #eff6ff);
+  color: var(--ht-primary, #2563eb);
+}
+
+.n-more-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.n-nav-more-wrapper:hover .n-more-arrow {
+  transform: rotate(180deg);
+}
+
+.n-nav-more-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 190px;
+  background: var(--ht-surface, #ffffff);
+  border: 1px solid var(--ht-surface-border, #e2e8f0);
+  border-radius: var(--ht-radius-md, 8px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  padding: 6px 0;
+  z-index: 105;
+  margin-top: 4px;
+}
+
+.n-nav-more-wrapper:hover .n-nav-more-menu,
+.n-nav-more-wrapper:focus-within .n-nav-more-menu {
+  display: block;
+}
+
+.n-nav-more-item {
+  display: block;
+  padding: 8px 16px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ht-text-primary);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.n-nav-more-item:hover {
+  background: var(--ht-surface-hover, #f1f5f9);
+  color: var(--ht-primary, #2563eb);
+}
+
+[data-theme="dark"] .n-nav-more-menu {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .n-nav-more-item {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .n-nav-more-item:hover {
+  background: #334155;
+  color: #60a5fa;
 }
 
 .n-nav-search-trigger {
@@ -443,7 +567,9 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding-left: 14px;
+  padding-left: 16px;
+  mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
 }
 
 .n-ticker-move {
@@ -1102,6 +1228,14 @@
 
 .n-home-layout-sidebar {
   min-width: 0;
+}
+
+@media (min-width: 841px) {
+  .n-home-sidebar-wrap > div:last-child {
+    position: sticky;
+    top: 68px;
+    z-index: 10;
+  }
 }
 
 /* -------------------------------------------------------------------------

@@ -129,11 +129,11 @@ if (!$lead_post) {
           }
           ?>
         </span>
-        <h4>
+        <h3>
           <a href="<?php echo esc_url(get_permalink($spot->ID)); ?>">
             <?php echo esc_html(get_the_title($spot->ID)); ?>
           </a>
-        </h4>
+        </h3>
         <p><?php echo esc_html(wp_trim_words(get_the_excerpt($spot->ID), 16, '...')); ?></p>
       </div>
     <?php endforeach; ?>

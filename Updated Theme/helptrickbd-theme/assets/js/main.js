@@ -237,6 +237,7 @@
         if (drawer) {
             drawer.classList.add('ht-open');
             drawer.setAttribute('aria-hidden', 'false');
+            drawer.removeAttribute('inert');
         }
         if (drawerOverlay) drawerOverlay.classList.add('ht-open');
         if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
@@ -248,6 +249,7 @@
         if (drawer) {
             drawer.classList.remove('ht-open');
             drawer.setAttribute('aria-hidden', 'true');
+            drawer.setAttribute('inert', '');
         }
         if (drawerOverlay) drawerOverlay.classList.remove('ht-open');
         if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
@@ -496,6 +498,7 @@
         if (bmDrawer) {
             bmDrawer.classList.add('ht-open');
             bmDrawer.setAttribute('aria-hidden', 'false');
+            bmDrawer.removeAttribute('inert');
         }
         if (bmOverlay) bmOverlay.classList.add('ht-open');
         updateBookmarksUI();
@@ -506,6 +509,7 @@
         if (bmDrawer) {
             bmDrawer.classList.remove('ht-open');
             bmDrawer.setAttribute('aria-hidden', 'true');
+            bmDrawer.setAttribute('inert', '');
         }
         if (bmOverlay) bmOverlay.classList.remove('ht-open');
         if (bmTrapCleanup) {

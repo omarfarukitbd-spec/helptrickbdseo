@@ -1,10 +1,10 @@
 {
-  "timestamp": "20261118_181611",
-  "date_human": "2026-11-18 18:16:11",
-  "theme_version": "2.3.0",
-  "reason": "v2.4.0 UI/UX Remediation - dark toggle, compact mobile toolbelt, navbar and ticker polish",
+  "timestamp": "20261119_001101",
+  "date_human": "2026-11-19 00:11:01",
+  "theme_version": "2.4.0",
+  "reason": "Pre-100-percent-PageSpeed-and-CWV-optimization",
   "total_files": 97,
-  "total_size_bytes": 1451756,
-  "zip_size_kb": 698.61,
-  "backup_zip_name": "helptrickbd-theme-v2.3.0-20261118_181611.zip"
+  "total_size_bytes": 1458877,
+  "zip_size_kb": 699.51,
+  "backup_zip_name": "helptrickbd-theme-v2.4.0-20261119_001101.zip"
 }

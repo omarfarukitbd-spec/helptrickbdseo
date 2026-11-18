@@ -43,7 +43,7 @@ if (!defined('ABSPATH')) {
     ?>
 
     <!-- Mobile Drawer Navigation -->
-    <div class="ht-mobile-drawer" id="ht-mobile-drawer" aria-hidden="true">
+    <div class="ht-mobile-drawer" id="ht-mobile-drawer" aria-hidden="true" inert>
         <div class="ht-mobile-drawer-header">
             <div class="ht-drawer-brand">
                 <span class="ht-logo-text">HelpTrick<span class="ht-logo-accent">BD</span></span>

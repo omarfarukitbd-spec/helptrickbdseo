@@ -24,6 +24,8 @@
     function openSpotlight() {
         if (!modal) return;
         modal.classList.add('ht-open');
+        modal.setAttribute('aria-hidden', 'false');
+        modal.removeAttribute('inert');
         document.body.style.overflow = 'hidden';
         setTimeout(() => {
             if (searchInput) {
@@ -36,6 +38,8 @@
     function closeSpotlight() {
         if (!modal) return;
         modal.classList.remove('ht-open');
+        modal.setAttribute('aria-hidden', 'true');
+        modal.setAttribute('inert', '');
         document.body.style.overflow = '';
         if (searchInput) searchInput.value = '';
         if (resultsContainer) resultsContainer.innerHTML = defaultTrendingHTML;
