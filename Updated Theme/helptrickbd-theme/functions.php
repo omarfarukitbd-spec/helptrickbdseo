@@ -348,14 +348,15 @@ function ht_head_meta() {
 add_action('wp_head', 'ht_head_meta', 1);
 
 /**
- * Asynchronous Non-Blocking Stylesheet Loading (Eliminates Render-Blocking CSS).
- * Critical above-the-fold CSS is already inlined in <head> by inc/critical-css.php.
+ * Asynchronous Non-Blocking Stylesheet Loading for Non-Critical Modals & Auxiliary Assets.
+ * Core structural stylesheets (main, home-sections) are kept synchronous to guarantee 0 CLS.
  */
 function ht_async_style_loader_tag($html, $handle, $href, $media) {
     if (is_admin()) {
         return $html;
     }
-    $async_handles = ['ht-main', 'ht-spotlight', 'ht-home-sections', 'ht-single', 'ht-style'];
+    // Only async load strictly non-structural, modal, or auxiliary stylesheets to prevent layout shift (CLS)
+    $async_handles = ['ht-spotlight', 'ht-nu-cgpa-calculator-css'];
     if (in_array($handle, $async_handles, true)) {
         return '<link rel="preload" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
              . '<noscript>' . $html . '</noscript>' . "\n";
