@@ -231,11 +231,13 @@ function ht_category_badge($post_id = null, $preferred_cat = null) {
         }
     }
 
+    $primary_cat_name = function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($primary_cat) : $primary_cat->name;
+
     printf(
         '<a href="%s" class="ht-cat-badge ht-cat-%s">%s</a>',
         esc_url(get_category_link($primary_cat->term_id)),
         esc_attr($primary_cat->slug),
-        esc_html($primary_cat->name)
+        esc_html($primary_cat_name)
     );
 }
 
@@ -492,17 +494,31 @@ function ht_author_bio_box($author_id = null) {
         $author_name = get_the_author();
     }
 
+    $is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
+
     // 2. Dynamic Biographical Info from WordPress Profile
     $author_bio = get_the_author_meta('description', $author_id);
     if (empty($author_bio)) {
-        $author_bio = get_theme_mod('ht_author_custom_bio', 'শিক্ষা ও প্রযুক্তি বিষয়ক গবেষক, জাতীয় বিশ্ববিদ্যালয় এবং বিসিএস স্টাডি বিশ্লেষক। শিক্ষার্থীদের জন্য নির্ভুল, তথ্যবহুল ও সময়োপযোগী হ্যান্ডনোট প্রস্তুত করাই HelpTrickBD-এর মূল লক্ষ্য।');
+        $custom_bio = get_theme_mod('ht_author_custom_bio', '');
+        if (!empty($custom_bio)) {
+            $author_bio = $custom_bio;
+        } else {
+            $author_bio = $is_en
+                ? 'Education and technology researcher, writer, and regular content contributor at HelpTrickBD.'
+                : 'শিক্ষা ও প্রযুক্তি বিষয়ক গবেষক, জাতীয় বিশ্ববিদ্যালয় এবং বিসিএস স্টাডি বিশ্লেষক। শিক্ষার্থীদের জন্য নির্ভুল, তথ্যবহুল ও সময়োপযোগী হ্যান্ডনোট প্রস্তুত করাই HelpTrickBD-এর মূল লক্ষ্য।';
+        }
     }
 
-    $author_role = get_theme_mod('ht_author_custom_title', esc_html__('লেখক ও গবেষক', 'helptrickbd'));
+    $default_role = $is_en ? 'Educator & Author' : 'লেখক ও গবেষক';
+    $custom_title = get_theme_mod('ht_author_custom_title', '');
+    if (!empty($custom_title) && $custom_title !== 'Educator & Author' && $custom_title !== 'লেখক ও গবেষক') {
+        $author_role = $custom_title;
+    } else {
+        $author_role = $default_role;
+    }
     $author_posts_url = get_author_posts_url($author_id);
     $total_posts = count_user_posts($author_id, 'post', true);
     $avatar_url = ht_get_author_avatar_url($author_id);
-    $is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
     ?>
     <section class="ht-author-bio-card" aria-label="<?php echo $is_en ? esc_attr__('About the Author', 'helptrickbd') : esc_attr__('লেখক পরিচিতি', 'helptrickbd'); ?>">
         <div class="ht-author-avatar-col">

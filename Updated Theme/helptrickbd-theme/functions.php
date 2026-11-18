@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.3.0');
+define('HT_THEME_VERSION', '2.4.0');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';

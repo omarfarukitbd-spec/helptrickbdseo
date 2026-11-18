@@ -40,7 +40,7 @@ $widget_title = $is_en ? esc_html__('Topics & Departments', 'helptrickbd') : esc
         }
         ?>
         <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="n-cat-card">
-          <span class="n-cat-name"><?php echo esc_html($cat->name); ?></span>
+          <span class="n-cat-name"><?php echo esc_html(function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($cat) : $cat->name); ?></span>
           <span class="n-cat-count"><?php echo esc_html(function_exists('ht_number') ? ht_number($cat->count) : (function_exists('ht_bn_number') ? ht_bn_number($cat->count) : $cat->count)); ?></span>
         </a>
         <?php

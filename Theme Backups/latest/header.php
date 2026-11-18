@@ -84,7 +84,7 @@ if (!defined('ABSPATH')) {
                                class="ht-drawer-cat-item"
                                style="--cat-color: <?php echo esc_attr($cat_pal['color']); ?>; --cat-bg: <?php echo esc_attr($cat_pal['bg']); ?>; --cat-border: <?php echo esc_attr($cat_pal['border']); ?>;">
                                 <span class="ht-drawer-cat-icon"><?php ht_m3_icon($cat_icon, 18); ?></span>
-                                <span class="ht-drawer-cat-name"><?php echo esc_html($d_cat->name); ?></span>
+                                <span class="ht-drawer-cat-name"><?php echo esc_html(function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($d_cat) : $d_cat->name); ?></span>
                                 <span class="ht-drawer-cat-badge"><?php echo esc_html(function_exists('ht_number') ? ht_number($d_cat->count) : (function_exists('ht_bn_number') ? ht_bn_number($d_cat->count) : $d_cat->count)); ?></span>
                             </a>
                     <?php

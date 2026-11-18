@@ -74,29 +74,30 @@ get_header();
                         <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('Popular Academic Categories:', 'helptrickbd') : esc_html__('জনপ্রিয় বিষয় ও ক্যাটাগরি:', 'helptrickbd'); ?></span>
                     </div>
                     <div class="ht-404-cat-pills">
+                        <?php $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true; ?>
                         <a href="<?php echo esc_url(home_url('/category/national-university/')); ?>" class="ht-404-cat-pill ht-cat-nu">
                             <?php ht_m3_icon('school', 16); ?>
-                            <span><?php esc_html_e('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd'); ?></span>
+                            <span><?php echo $is_bn ? esc_html__('জাতীয় বিশ্ববিদ্যালয়', 'helptrickbd') : esc_html__('National University', 'helptrickbd'); ?></span>
                         </a>
                         <a href="<?php echo esc_url(home_url('/category/job-preparation/')); ?>" class="ht-404-cat-pill ht-cat-job">
                             <?php ht_m3_icon('work', 16); ?>
-                            <span><?php esc_html_e('বিসিএস ও চাকরি প্রস্তুতি', 'helptrickbd'); ?></span>
+                            <span><?php echo $is_bn ? esc_html__('বিসিএস ও চাকরি প্রস্তুতি', 'helptrickbd') : esc_html__('Career & BCS Prep', 'helptrickbd'); ?></span>
                         </a>
                         <a href="<?php echo esc_url(home_url('/category/education-guide/')); ?>" class="ht-404-cat-pill ht-cat-edu">
                             <?php ht_m3_icon('menu_book', 16); ?>
-                            <span><?php esc_html_e('শিক্ষা সহায়িকা ও রুটিন', 'helptrickbd'); ?></span>
+                            <span><?php echo $is_bn ? esc_html__('শিক্ষা সহায়িকা ও রুটিন', 'helptrickbd') : esc_html__('Education & Routines', 'helptrickbd'); ?></span>
                         </a>
                         <a href="<?php echo esc_url(home_url('/category/ssc-dakhil/')); ?>" class="ht-404-cat-pill ht-cat-ssc">
                             <?php ht_m3_icon('history_edu', 16); ?>
-                            <span><?php esc_html_e('এসএসসি ও দাখিল', 'helptrickbd'); ?></span>
+                            <span><?php echo $is_bn ? esc_html__('এসএসসি ও দাখিল', 'helptrickbd') : esc_html__('SSC & Dakhil', 'helptrickbd'); ?></span>
                         </a>
                         <a href="<?php echo esc_url(home_url('/category/ict-technology/')); ?>" class="ht-404-cat-pill ht-cat-ict">
                             <?php ht_m3_icon('laptop_mac', 16); ?>
-                            <span><?php esc_html_e('আইসিটি ও প্রযুক্তি', 'helptrickbd'); ?></span>
+                            <span><?php echo $is_bn ? esc_html__('আইসিটি ও প্রযুক্তি', 'helptrickbd') : esc_html__('ICT & Technology', 'helptrickbd'); ?></span>
                         </a>
                         <a href="<?php echo esc_url(home_url('/category/political-science/')); ?>" class="ht-404-cat-pill ht-cat-poli">
                             <?php ht_m3_icon('balance', 16); ?>
-                            <span><?php esc_html_e('রাষ্ট্রবিজ্ঞান বিভাগ', 'helptrickbd'); ?></span>
+                            <span><?php echo $is_bn ? esc_html__('রাষ্ট্রবিজ্ঞান বিভাগ', 'helptrickbd') : esc_html__('Political Science', 'helptrickbd'); ?></span>
                         </a>
                     </div>
                 </div>

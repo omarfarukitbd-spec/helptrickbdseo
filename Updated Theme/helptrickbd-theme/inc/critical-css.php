@@ -309,7 +309,8 @@ button {
   align-items: center;
   gap: 12px;
 }
-.n-masthead-search-btn {
+.n-masthead-search-btn,
+.n-masthead-theme-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -321,6 +322,10 @@ button {
   color: var(--ht-text-primary);
   cursor: pointer;
 }
+.n-masthead-theme-btn .ht-theme-icon-sun { display: none; }
+.n-masthead-theme-btn .ht-theme-icon-moon { display: inline-flex; }
+[data-theme="dark"] .n-masthead-theme-btn .ht-theme-icon-sun { display: inline-flex; }
+[data-theme="dark"] .n-masthead-theme-btn .ht-theme-icon-moon { display: none; }
 .n-navwrap {
   position: sticky;
   top: 0;

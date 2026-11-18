@@ -53,7 +53,7 @@ if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) {
             <?php foreach ($categories as $cat) : ?>
               <span class="n-nav-sep" aria-hidden="true">|</span>
               <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="n-nav-item">
-                <?php echo esc_html($cat->name); ?>
+                <?php echo esc_html(function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($cat) : $cat->name); ?>
               </a>
             <?php endforeach; ?>
           <?php endif; ?>

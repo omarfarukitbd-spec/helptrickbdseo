@@ -50,12 +50,33 @@ if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) {
           ?>
         <?php else : ?>
           <?php if (!empty($categories)) : ?>
-            <?php foreach ($categories as $cat) : ?>
+            <?php
+            $primary_cats  = array_slice($categories, 0, 7);
+            $overflow_cats = array_slice($categories, 7);
+            ?>
+            <?php foreach ($primary_cats as $cat) : ?>
               <span class="n-nav-sep" aria-hidden="true">|</span>
               <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="n-nav-item">
                 <?php echo esc_html(function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($cat) : $cat->name); ?>
               </a>
             <?php endforeach; ?>
+
+            <?php if (!empty($overflow_cats)) : ?>
+              <span class="n-nav-sep" aria-hidden="true">|</span>
+              <div class="n-nav-more-wrapper">
+                <button type="button" class="n-nav-item n-nav-more-btn" aria-haspopup="true" aria-expanded="false">
+                  <span><?php echo (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) ? esc_html__('More', 'helptrickbd') : esc_html__('আরও বিষয়', 'helptrickbd'); ?></span>
+                  <span class="n-more-arrow" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="n-nav-more-menu" role="menu">
+                  <?php foreach ($overflow_cats as $ocat) : ?>
+                    <a href="<?php echo esc_url(get_category_link($ocat->term_id)); ?>" class="n-nav-more-item" role="menuitem">
+                      <?php echo esc_html(function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($ocat) : $ocat->name); ?>
+                    </a>
+                  <?php endforeach; ?>
+                </div>
+              </div>
+            <?php endif; ?>
           <?php endif; ?>
         <?php endif; ?>
       </div>

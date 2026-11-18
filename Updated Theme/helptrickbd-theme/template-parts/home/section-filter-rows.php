@@ -102,7 +102,7 @@ if (false === $all_posts_data) {
 
         $cat_args = array(
             'cat'                 => $cat_obj->term_id,
-            'posts_per_page'      => 6,
+            'posts_per_page'      => 8,
             'post_status'         => 'publish',
             'ignore_sticky_posts' => 1,
             'no_found_rows'       => true,

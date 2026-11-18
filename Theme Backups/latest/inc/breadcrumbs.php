@@ -49,10 +49,11 @@ function ht_breadcrumbs() {
         $cats = get_the_category();
         if (!empty($cats)) {
             $cat = $cats[0];
+            $cat_display = function_exists('ht_get_localized_term_name') ? ht_get_localized_term_name($cat) : $cat->name;
             echo '<li class="ht-crumb-sep-item">' . $sep . '</li>';
             echo '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
             echo '<a itemprop="item" href="' . esc_url(get_category_link($cat->term_id)) . '">';
-            echo '<span itemprop="name">' . esc_html($cat->name) . '</span>';
+            echo '<span itemprop="name">' . esc_html($cat_display) . '</span>';
             echo '</a>';
             echo '<meta itemprop="position" content="' . $position . '" />';
             echo '</li>';
@@ -66,9 +67,11 @@ function ht_breadcrumbs() {
         echo '</li>';
 
     } elseif (is_category()) {
+        $queried = get_queried_object();
+        $cat_title = ($queried && function_exists('ht_get_localized_term_name')) ? ht_get_localized_term_name($queried) : single_cat_title('', false);
         echo '<li class="ht-crumb-sep-item">' . $sep . '</li>';
         echo '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="ht-crumb-current" aria-current="page">';
-        echo '<span itemprop="name">' . esc_html(single_cat_title('', false)) . '</span>';
+        echo '<span itemprop="name">' . esc_html($cat_title) . '</span>';
         echo '<meta itemprop="position" content="' . $position . '" />';
         echo '</li>';
 
