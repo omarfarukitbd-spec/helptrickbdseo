@@ -211,9 +211,9 @@ if (empty($all_posts_data)) {
            style="<?php echo $is_visible ? 'display:grid;' : 'display:none;'; ?>">
           <div class="th">
             <?php if (!empty($item['thumb'])) : ?>
-              <img src="<?php echo esc_url($item['thumb']); ?>" loading="lazy" decoding="async" width="110" height="78" alt="<?php echo esc_attr($item['title']); ?>">
+              <img src="<?php echo esc_url($item['thumb']); ?>" loading="lazy" decoding="async" width="110" height="78" alt="" aria-hidden="true">
             <?php else : ?>
-              <img src="<?php echo esc_url($fallback_url); ?>" loading="lazy" decoding="async" width="110" height="78" alt="<?php echo esc_attr($item['title']); ?>">
+              <img src="<?php echo esc_url($fallback_url); ?>" loading="lazy" decoding="async" width="110" height="78" alt="" aria-hidden="true">
             <?php endif; ?>
           </div>
 

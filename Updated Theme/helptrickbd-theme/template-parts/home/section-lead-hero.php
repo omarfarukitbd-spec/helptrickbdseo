@@ -104,7 +104,7 @@ if (!$lead_post) {
             'decoding'      => 'async',
             'width'         => 800,
             'height'        => 450,
-            'alt'           => esc_attr(get_the_title($lead_post->ID)),
+            'alt'           => sprintf(esc_attr__('%s - প্রচ্ছদ চিত্র', 'helptrickbd'), get_the_title($lead_post->ID)),
         ));
         ?>
       </figure>

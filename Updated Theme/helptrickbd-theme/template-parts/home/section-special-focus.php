@@ -100,16 +100,17 @@ if (!$focus_query->have_posts()) {
           <?php if (has_post_thumbnail()) : ?>
             <?php
             the_post_thumbnail('medium', array(
-                'loading'  => 'lazy',
-                'decoding' => 'async',
-                'class'    => 'n-lrow-img',
-                'width'    => 96,
-                'height'   => 68,
-                'alt'      => esc_attr(get_the_title()),
+                'loading'     => 'lazy',
+                'decoding'    => 'async',
+                'class'       => 'n-lrow-img',
+                'width'       => 96,
+                'height'      => 68,
+                'alt'         => '',
+                'aria-hidden' => 'true',
             ));
             ?>
           <?php else : ?>
-            <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/nu.webp" loading="lazy" decoding="async" class="n-lrow-img" width="96" height="68" alt="<?php the_title_attribute(); ?>">
+            <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/nu.webp" loading="lazy" decoding="async" class="n-lrow-img" width="96" height="68" alt="" aria-hidden="true">
           <?php endif; ?>
 
           <div class="n-lrow-text">

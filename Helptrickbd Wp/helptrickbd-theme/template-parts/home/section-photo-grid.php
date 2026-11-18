@@ -94,15 +94,16 @@ if (!$photo_query->have_posts()) {
             <?php if (has_post_thumbnail()) : ?>
               <?php
               the_post_thumbnail('ht-card-thumb', array(
-                  'loading'  => 'lazy',
-                  'decoding' => 'async',
-                  'width'    => 300,
-                  'height'   => 200,
-                  'alt'      => esc_attr(get_the_title()),
+                  'loading'     => 'lazy',
+                  'decoding'    => 'async',
+                  'width'       => 300,
+                  'height'      => 200,
+                  'alt'         => '',
+                  'aria-hidden' => 'true',
               ));
               ?>
             <?php else : ?>
-              <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/ict.webp" loading="lazy" decoding="async" width="300" height="200" alt="<?php the_title_attribute(); ?>">
+              <img src="https://cdn.jsdelivr.net/gh/omarfarukitbd-spec/helptrickbdseo@main/Thumbnail%20BG/ict.webp" loading="lazy" decoding="async" width="300" height="200" alt="" aria-hidden="true">
             <?php endif; ?>
           </div>
           <h4><?php the_title(); ?></h4>

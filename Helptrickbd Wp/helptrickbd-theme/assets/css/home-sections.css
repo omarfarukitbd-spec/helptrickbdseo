@@ -878,6 +878,15 @@
   margin-bottom: 3px;
 }
 
+[data-theme="dark"] .n-item .sk,
+[data-theme="dark"] .n-side-card .sk,
+[data-theme="dark"] .n-trow .tag,
+[data-theme="dark"] .n-kicker,
+[data-theme="dark"] .sk,
+[data-theme="dark"] .n-brand-tld {
+  color: #f87171 !important;
+}
+
 .n-item h4 {
   font-family: var(--ht-font-serif);
   font-size: 1.15rem;
