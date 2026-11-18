@@ -32,7 +32,18 @@
         }
     }
 
-    window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    let progressTicking = false;
+    function requestProgressUpdate() {
+        if (!progressTicking) {
+            window.requestAnimationFrame(() => {
+                updateReadingProgress();
+                progressTicking = false;
+            });
+            progressTicking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestProgressUpdate, { passive: true });
 
     // -------------------------------------------------------------
     // -------------------------------------------------------------

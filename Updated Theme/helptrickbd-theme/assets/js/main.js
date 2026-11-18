@@ -555,14 +555,16 @@
     // height as body padding so it never covers the footer copyright.
     function updateCookieBannerPadding() {
         if (!cookieBanner) return;
-        var visible = cookieBanner.style.display !== 'none' && cookieBanner.offsetHeight > 0;
-        if (visible) {
-            document.body.classList.add('ht-cookie-banner-visible');
-            document.body.style.setProperty('--ht-cookie-banner-height', cookieBanner.offsetHeight + 'px');
-        } else {
-            document.body.classList.remove('ht-cookie-banner-visible');
-            document.body.style.removeProperty('--ht-cookie-banner-height');
-        }
+        window.requestAnimationFrame(() => {
+            var visible = cookieBanner.style.display !== 'none' && cookieBanner.offsetHeight > 0;
+            if (visible) {
+                document.body.classList.add('ht-cookie-banner-visible');
+                document.body.style.setProperty('--ht-cookie-banner-height', cookieBanner.offsetHeight + 'px');
+            } else {
+                document.body.classList.remove('ht-cookie-banner-visible');
+                document.body.style.removeProperty('--ht-cookie-banner-height');
+            }
+        });
     }
 
     if (cookieBanner && !localStorage.getItem('ht_cookie_accepted')) {
@@ -603,11 +605,13 @@
         document.body.appendChild(testAd);
 
         setTimeout(() => {
-            if (testAd.offsetHeight === 0 && adblockModal) {
-                adblockModal.classList.add('ht-open');
-            }
-            testAd.remove();
-        }, 2000);
+            window.requestAnimationFrame(() => {
+                if (testAd.offsetHeight === 0 && adblockModal) {
+                    adblockModal.classList.add('ht-open');
+                }
+                testAd.remove();
+            });
+        }, 2500);
     }
 
     // -------------------------------------------------------------

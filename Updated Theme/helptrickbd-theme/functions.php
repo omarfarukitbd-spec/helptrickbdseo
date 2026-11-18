@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.5.2');
+define('HT_THEME_VERSION', '2.5.3');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -312,16 +312,13 @@ function ht_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'ht_enqueue_scripts');
 
 /**
- * Output Head Meta (Preconnect, PWA manifest, Theme Color, Font Preload, LCP Preload, Google Auto Ads).
+ * Output Head Meta (Preconnect, PWA manifest, Theme Color, LCP Preload, Google Auto Ads).
  */
 function ht_head_meta() {
     echo '<link rel="preconnect" href="https://cdn.jsdelivr.net">' . "\n";
     echo '<meta name="theme-color" content="#2563eb">' . "\n";
     echo '<link rel="manifest" href="' . esc_url(get_template_directory_uri() . '/manifest.json') . '">' . "\n";
     echo '<link rel="apple-touch-icon" href="' . esc_url(get_template_directory_uri() . '/assets/images/icon-192.png') . '">' . "\n";
-
-    // High-Priority Bengali Body Font Preload (SolaimanLipi WOFF2) - Completely rules out text LCP delay (FOIT)
-    echo '<link rel="preload" href="' . esc_url(get_template_directory_uri() . '/assets/fonts/SolaimanLipi_400.woff2') . '" as="font" type="font/woff2" crossorigin>' . "\n";
 
     // High-Priority LCP Hero Image Preload (Rules out LCP delay in PageSpeed Insights)
     if (is_singular('post') && has_post_thumbnail()) {
@@ -376,17 +373,18 @@ function ht_head_meta() {
 add_action('wp_head', 'ht_head_meta', 1);
 
 /**
- * Asynchronous Non-Blocking Stylesheet Loading for Non-Critical Modals & Auxiliary Assets.
- * Core structural stylesheets (main, home-sections) are kept synchronous to guarantee 0 CLS.
+ * Asynchronous Non-Blocking Stylesheet Loading (Eliminates Render-Blocking CSS).
+ * Critical above-the-fold CSS is already compiled and inlined in <head> by inc/critical-css.php.
+ * Uses the standard 'media=print onload=this.media=all' pattern with noscript fallback.
  */
 function ht_async_style_loader_tag($html, $handle, $href, $media) {
     if (is_admin()) {
         return $html;
     }
-    // Only async load strictly non-structural, modal, or auxiliary stylesheets to prevent layout shift (CLS)
-    $async_handles = ['ht-spotlight', 'ht-nu-cgpa-calculator-css'];
+    // Whitelist stylesheets that have inlined critical CSS coverage
+    $async_handles = ['ht-main', 'ht-style', 'ht-single', 'ht-spotlight', 'ht-nu-cgpa-calculator-css'];
     if (in_array($handle, $async_handles, true)) {
-        return '<link rel="preload" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
+        return '<link rel="stylesheet" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" media="print" onload="this.media=\'all\'">' . "\n"
              . '<noscript>' . $html . '</noscript>' . "\n";
     }
     return $html;
