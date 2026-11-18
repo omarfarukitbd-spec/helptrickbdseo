@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.5.4');
+define('HT_THEME_VERSION', '2.5.5');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -374,16 +374,17 @@ add_action('wp_head', 'ht_head_meta', 1);
 
 /**
  * Asynchronous Non-Blocking Stylesheet Loading for Non-Critical Auxiliary Stylesheets.
- * Core structural stylesheets (main, style, single) are kept synchronous to guarantee 100% Zero Cumulative Layout Shift (CLS = 0).
+ * Core global structural stylesheets (main, style) are kept synchronous to guarantee 100% Zero Cumulative Layout Shift (CLS = 0).
+ * Single post above-the-fold critical CSS is inlined in <head> by inc/critical-css.php, allowing ht-single to load asynchronously.
  */
 function ht_async_style_loader_tag($html, $handle, $href, $media) {
     if (is_admin()) {
         return $html;
     }
-    // Only async load strictly auxiliary or modal stylesheets to guarantee ZERO layout shift (CLS = 0)
-    $async_handles = ['ht-spotlight', 'ht-nu-cgpa-calculator-css'];
+    // Async load auxiliary and below-the-fold stylesheets (critical above-the-fold CSS is inlined in <head>)
+    $async_handles = ['ht-single', 'ht-spotlight', 'ht-nu-cgpa-calculator-css'];
     if (in_array($handle, $async_handles, true)) {
-        return '<link rel="preload" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
+        return '<link rel="stylesheet" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" media="print" onload="this.media=\'all\'">' . "\n"
              . '<noscript>' . $html . '</noscript>' . "\n";
     }
     return $html;
