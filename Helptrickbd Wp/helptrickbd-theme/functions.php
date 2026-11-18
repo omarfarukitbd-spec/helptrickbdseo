@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.5.3');
+define('HT_THEME_VERSION', '2.5.4');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -373,18 +373,17 @@ function ht_head_meta() {
 add_action('wp_head', 'ht_head_meta', 1);
 
 /**
- * Asynchronous Non-Blocking Stylesheet Loading (Eliminates Render-Blocking CSS).
- * Critical above-the-fold CSS is already compiled and inlined in <head> by inc/critical-css.php.
- * Uses the standard 'media=print onload=this.media=all' pattern with noscript fallback.
+ * Asynchronous Non-Blocking Stylesheet Loading for Non-Critical Auxiliary Stylesheets.
+ * Core structural stylesheets (main, style, single) are kept synchronous to guarantee 100% Zero Cumulative Layout Shift (CLS = 0).
  */
 function ht_async_style_loader_tag($html, $handle, $href, $media) {
     if (is_admin()) {
         return $html;
     }
-    // Whitelist stylesheets that have inlined critical CSS coverage
-    $async_handles = ['ht-main', 'ht-style', 'ht-single', 'ht-spotlight', 'ht-nu-cgpa-calculator-css'];
+    // Only async load strictly auxiliary or modal stylesheets to guarantee ZERO layout shift (CLS = 0)
+    $async_handles = ['ht-spotlight', 'ht-nu-cgpa-calculator-css'];
     if (in_array($handle, $async_handles, true)) {
-        return '<link rel="stylesheet" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" media="print" onload="this.media=\'all\'">' . "\n"
+        return '<link rel="preload" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
              . '<noscript>' . $html . '</noscript>' . "\n";
     }
     return $html;
@@ -400,6 +399,14 @@ function ht_defer_script_loader_tag($tag, $handle, $src) {
     }
     // Defer heavy third-party marketing/analytics scripts if enqueued
     if (strpos($src, 'googletagmanager.com') !== false || strpos($src, 'google-analytics') !== false) {
+        $tag = str_replace(' async', '', $tag);
+        if (strpos($tag, ' defer') === false) {
+            $tag = str_replace('<script ', '<script defer ', $tag);
+        }
+    }
+    // Defer Google AdSense if enqueued via script tag
+    if (strpos($src, 'pagead2.googlesyndication.com') !== false) {
+        $tag = str_replace(' async', '', $tag);
         if (strpos($tag, ' defer') === false) {
             $tag = str_replace('<script ', '<script defer ', $tag);
         }
