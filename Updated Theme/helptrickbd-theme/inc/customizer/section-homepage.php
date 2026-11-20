@@ -41,7 +41,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_ticker_badge_text', [
-        'default'           => 'সর্বশেষ আপডেট',
+        'default'           => 'তাজা আপডেট',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_ticker_badge_text', [
@@ -93,7 +93,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_sec_ssc_title', [
-        'default'           => 'এসএসসি ও দাখিল প্রস্তুতি',
+        'default'           => 'এসএসসি ও দাখিল',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_sec_ssc_title', [
@@ -103,7 +103,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_sec_ssc_link_text', [
-        'default'           => 'সকল হ্যান্ডনোট →',
+        'default'           => 'সব দেখুন →',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_sec_ssc_link_text', [
@@ -124,7 +124,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_sec_filter_title', [
-        'default'           => 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড',
+        'default'           => 'বিষয়ভিত্তিক গাইড',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_sec_filter_title', [
@@ -134,7 +134,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_sec_filter_link_text', [
-        'default'           => 'সকল পোস্ট দেখুন →',
+        'default'           => 'সব দেখুন →',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_sec_filter_link_text', [
@@ -155,7 +155,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_sec_nu_title', [
-        'default'           => 'জাতীয় বিশ্ববিদ্যালয় ও উচ্চশিক্ষা',
+        'default'           => 'জাতীয় বিশ্ববিদ্যালয়',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_sec_nu_title', [
@@ -186,7 +186,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_sec_nu_link_text', [
-        'default'           => 'সকল হ্যান্ডনোট →',
+        'default'           => 'সব দেখুন →',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_sec_nu_link_text', [
@@ -207,7 +207,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_sec_gallery_title', [
-        'default'           => 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড',
+        'default'           => 'সচিত্র স্টাডি গাইড',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_sec_gallery_title', [
@@ -238,7 +238,7 @@ function ht_customize_register_homepage($wp_customize) {
     ]);
 
     $wp_customize->add_setting('htbd_sec_gallery_link_text', [
-        'default'           => 'সকল গ্যালারি →',
+        'default'           => 'সব দেখুন →',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('htbd_sec_gallery_link_text', [

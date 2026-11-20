@@ -14,18 +14,18 @@ if (!get_theme_mod('htbd_show_sec_gallery', get_theme_mod('ht_show_sec_gallery',
 }
 
 $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
-$default_title = $is_bn ? 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড' : 'Visual Study Guides & Infographics';
-$sec_title = get_theme_mod('htbd_sec_gallery_title', get_theme_mod('ht_sec_gallery_title', $default_title));
-if (empty($sec_title)) {
+$default_title = $is_bn ? 'সচিত্র স্টাডি গাইড' : 'Visual Guides';
+$sec_title = get_theme_mod('htbd_sec_gallery_title', get_theme_mod('ht_sec_gallery_title', ''));
+if (empty($sec_title) || $sec_title === 'পরীক্ষা প্রস্তুতি ও সচিত্র গাইড' || $sec_title === 'Visual Study Guides & Infographics') {
     $sec_title = $default_title;
 }
 
 $cat_id     = (int) get_theme_mod('htbd_sec_gallery_category', get_theme_mod('ht_sec_gallery_category', 0));
 $post_count = (int) get_theme_mod('htbd_sec_gallery_count', get_theme_mod('ht_sec_gallery_count', 4));
 
-$default_link = $is_bn ? 'সকল গ্যালারি →' : 'View Gallery →';
-$link_text  = get_theme_mod('htbd_sec_gallery_link_text', get_theme_mod('ht_sec_gallery_link_text', $default_link));
-if (empty($link_text)) {
+$default_link = $is_bn ? 'সব দেখুন →' : 'View All →';
+$link_text  = get_theme_mod('htbd_sec_gallery_link_text', get_theme_mod('ht_sec_gallery_link_text', ''));
+if (empty($link_text) || $link_text === 'সকল গ্যালারি →' || $link_text === 'View Gallery →') {
     $link_text = $default_link;
 }
 

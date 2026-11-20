@@ -12,9 +12,26 @@ if (!defined('ABSPATH')) {
 $categories = get_categories(array(
     'orderby'    => 'count',
     'order'      => 'DESC',
-    'number'     => 10,
-    'hide_empty' => false,
+    'number'     => 15,
+    'hide_empty' => true,
+    'exclude'    => array(1, 148, (int) get_option('default_category', 1)),
 ));
+
+// Strictly filter out any Uncategorized, empty, or default unassigned categories
+$categories = array_filter($categories, function($cat) {
+    if (!$cat || empty($cat->name) || (int) $cat->count <= 0) {
+        return false;
+    }
+    $slug = strtolower($cat->slug);
+    $name = strtolower($cat->name);
+    if (strpos($slug, 'uncategorized') !== false || strpos($name, 'uncategorized') !== false || $slug === 'oshrenibhukto') {
+        return false;
+    }
+    if ((int) $cat->term_id === 1 || (int) $cat->term_id === 148 || (int) $cat->term_id === (int) get_option('default_category', 1)) {
+        return false;
+    }
+    return true;
+});
 
 $nav_home_text = get_theme_mod('htbd_nav_home_text', get_theme_mod('ht_nav_home_text', ''));
 if (function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale()) {

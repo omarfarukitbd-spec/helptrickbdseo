@@ -15,15 +15,16 @@ if (!get_theme_mod('htbd_show_sec_filter', get_theme_mod('ht_show_sec_filter', t
 }
 
 $is_en = function_exists('ht_is_bangla_locale') && !ht_is_bangla_locale();
-
+$default_title = $is_en ? 'Academic Subjects' : 'বিষয়ভিত্তিক গাইড';
 $sec_title = get_theme_mod('htbd_sec_filter_title', get_theme_mod('ht_sec_filter_title', ''));
-if (empty($sec_title)) {
-    $sec_title = $is_en ? 'Explore by Academic Subject' : 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড';
+if (empty($sec_title) || $sec_title === 'Explore by Academic Subject' || $sec_title === 'বিষয়ভিত্তিক হ্যান্ডনোট ও গাইড') {
+    $sec_title = $default_title;
 }
 
+$default_link = $is_en ? 'View All →' : 'সব দেখুন →';
 $link_text = get_theme_mod('htbd_sec_filter_link_text', get_theme_mod('ht_sec_filter_link_text', ''));
-if (empty($link_text)) {
-    $link_text = $is_en ? 'All Articles →' : 'সকল পোস্ট দেখুন →';
+if (empty($link_text) || $link_text === 'All Articles →' || $link_text === 'সকল পোস্ট দেখুন →') {
+    $link_text = $default_link;
 }
 
 // Define tabs with verified slugs and display labels in authentic Bengali and English

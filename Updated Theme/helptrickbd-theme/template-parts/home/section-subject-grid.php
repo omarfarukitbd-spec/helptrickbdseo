@@ -15,17 +15,17 @@ if (!get_theme_mod('htbd_show_sec_ssc', get_theme_mod('ht_show_sec_ssc', true)))
 }
 
 $is_bn = function_exists('ht_is_bangla_locale') ? ht_is_bangla_locale() : true;
-$default_title = $is_bn ? 'এসএসসি ও দাখিল প্রস্তুতি' : 'SSC & Dakhil Examination Hub';
-$sec_title = get_theme_mod('htbd_sec_ssc_title', get_theme_mod('ht_sec_ssc_title', $default_title));
-if (empty($sec_title)) {
+$default_title = $is_bn ? 'এসএসসি ও দাখিল' : 'SSC & Dakhil';
+$sec_title = get_theme_mod('htbd_sec_ssc_title', get_theme_mod('ht_sec_ssc_title', ''));
+if (empty($sec_title) || $sec_title === 'এসএসসি ও দাখিল প্রস্তুতি' || $sec_title === 'SSC & Dakhil Examination Hub') {
     $sec_title = $default_title;
 }
 
 $cat_id = (int) get_theme_mod('htbd_sec_ssc_category', get_theme_mod('ht_sec_ssc_category', 0));
 
-$default_link = $is_bn ? 'সকল হ্যান্ডনোট →' : 'View All Handnotes →';
-$link_text = get_theme_mod('htbd_sec_ssc_link_text', get_theme_mod('ht_sec_ssc_link_text', $default_link));
-if (empty($link_text)) {
+$default_link = $is_bn ? 'সব দেখুন →' : 'View All →';
+$link_text = get_theme_mod('htbd_sec_ssc_link_text', get_theme_mod('ht_sec_ssc_link_text', ''));
+if (empty($link_text) || $link_text === 'সকল হ্যান্ডনোট →' || $link_text === 'View All Handnotes →') {
     $link_text = $default_link;
 }
 

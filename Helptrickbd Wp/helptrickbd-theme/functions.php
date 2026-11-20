@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.5.6');
+define('HT_THEME_VERSION', '2.5.7');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -427,6 +427,27 @@ add_filter('script_loader_tag', 'ht_defer_script_loader_tag', 10, 3);
 add_filter('comments_open', '__return_false', 20, 2);
 add_filter('pings_open', '__return_false', 20, 2);
 add_filter('comments_array', '__return_empty_array', 10, 2);
+
+/**
+ * Filter WordPress Nav Menu Objects to strictly eliminate 'Uncategorized' from all menus.
+ */
+function ht_filter_uncategorized_nav_items($items, $args) {
+    if (empty($items) || !is_array($items)) {
+        return $items;
+    }
+    return array_values(array_filter($items, function($item) {
+        $title = strtolower(trim(isset($item->title) ? $item->title : ''));
+        $url   = strtolower(trim(isset($item->url) ? $item->url : ''));
+        if (strpos($title, 'uncategorized') !== false || strpos($title, 'অশ্রেণীভুক্ত') !== false) {
+            return false;
+        }
+        if (strpos($url, '/uncategorized') !== false || strpos($url, '/category/uncategorized') !== false) {
+            return false;
+        }
+        return true;
+    }));
+}
+add_filter('wp_nav_menu_objects', 'ht_filter_uncategorized_nav_items', 10, 2);
 
 function ht_disable_comments_post_types_support() {
     remove_post_type_support('post', 'comments');
