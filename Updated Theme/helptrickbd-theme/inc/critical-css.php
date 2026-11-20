@@ -502,8 +502,7 @@ button {
 .ht-widget:has(.widget_categories),
 .ht-widget.widget_search,
 .ht-widget.widget_archive,
-.ht-widget.widget_categories,
-.n-sidebar-cats-widget {
+.ht-widget.widget_categories {
   display: none !important;
 }
 <?php if (is_singular('post')) : ?>

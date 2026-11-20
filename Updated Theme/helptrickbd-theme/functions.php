@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define Theme Version
-define('HT_THEME_VERSION', '2.5.5');
+define('HT_THEME_VERSION', '2.5.6');
 
 // Include Inc Modules
 require_once get_template_directory() . '/inc/i18n/i18n-core.php';
@@ -226,8 +226,10 @@ function ht_enqueue_scripts() {
     wp_enqueue_script('ht-spotlight-js', get_template_directory_uri() . '/assets/js/spotlight.js', ['ht-main-js'], ht_asset_version('/assets/js/spotlight.js'), true);
     wp_enqueue_script('ht-prefetch-js', get_template_directory_uri() . '/assets/js/prefetch.js', ['ht-main-js'], ht_asset_version('/assets/js/prefetch.js'), true);
 
+    // Global Newspaper Header Navigation & Master Sidebar Widgets Stylesheet
+    wp_enqueue_style('ht-home-sections', get_template_directory_uri() . '/assets/css/home-sections.css', ['ht-main'], ht_asset_version('/assets/css/home-sections.css'));
+
     if (is_front_page() || is_home()) {
-        wp_enqueue_style('ht-home-sections', get_template_directory_uri() . '/assets/css/home-sections.css', ['ht-main'], ht_asset_version('/assets/css/home-sections.css'));
         wp_enqueue_script('ht-home-filter', get_template_directory_uri() . '/assets/js/home-filter.js', ['ht-main-js'], ht_asset_version('/assets/js/home-filter.js'), true);
     }
 
@@ -374,17 +376,16 @@ add_action('wp_head', 'ht_head_meta', 1);
 
 /**
  * Asynchronous Non-Blocking Stylesheet Loading for Non-Critical Auxiliary Stylesheets.
- * Core global structural stylesheets (main, style) are kept synchronous to guarantee 100% Zero Cumulative Layout Shift (CLS = 0).
- * Single post above-the-fold critical CSS is inlined in <head> by inc/critical-css.php, allowing ht-single to load asynchronously.
+ * Core structural stylesheets (main, home-sections, style, single) are kept synchronous to guarantee 100% Zero Cumulative Layout Shift (CLS = 0) and pristine layout fidelity.
  */
 function ht_async_style_loader_tag($html, $handle, $href, $media) {
     if (is_admin()) {
         return $html;
     }
-    // Async load auxiliary and below-the-fold stylesheets (critical above-the-fold CSS is inlined in <head>)
-    $async_handles = ['ht-single', 'ht-spotlight', 'ht-nu-cgpa-calculator-css'];
+    // Only async load strictly auxiliary or modal stylesheets to guarantee ZERO layout shift (CLS = 0)
+    $async_handles = ['ht-spotlight', 'ht-nu-cgpa-calculator-css'];
     if (in_array($handle, $async_handles, true)) {
-        return '<link rel="stylesheet" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" media="print" onload="this.media=\'all\'">' . "\n"
+        return '<link rel="preload" id="' . esc_attr($handle) . '-css" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
              . '<noscript>' . $html . '</noscript>' . "\n";
     }
     return $html;
